@@ -1,84 +1,83 @@
 # DEV_AUX current research
 
-## Authority and shared infrastructure
+The direct Leaper instruction governs. Use committed sandbox infrastructure;
+runtime source734d606f8f6594820d457803bf8f5dbe5e0666f4 reuses mainline
+a552355e32a39fcff7d720d1181aebb904b79b79. No product default changed.
+Closing fetch69a3c84ab0be9875611e751e78d3225f0fa8973c changes research records
+only;all238 shared package files still match,with no new shared test changes.
+Conditional contribution, useful search parameters and intrinsic-price claims
+remain distinct. Oracle labels never enter experiential training.
 
-The direct Leaper instruction governs. Conditional strategic contribution,
-useful search parameters and prediction targets remain distinct. No intrinsic
-price, additivity, unique optimum or convergence is assumed. Oracle labels stay
-outside experiential training.
+Current report: LEAPER_C_LEARNING_AND_DEPTH_20261022.md.
+Compact evidence: data/leaper_C_learning_depth_20261022.json.
+Prior composition graphs, trajectories, models, caps and failures remain retained.
 
-Execution source: sandbox 528c6d896e09c7f3c1008f09a07b04538ca20ef0.
-Closing published source: a552355e32a39fcff7d720d1181aebb904b79b79.
-The intervening commit changes PRIMARY research records only. All 238 shared
-package modules match the latest committed infrastructure; terminal-aware
-game-quality code/tests are reused. No other-role state or task is adopted.
+## What changed
 
-Current report: LEAPER_COMPOSITION_AND_CONTRIBUTION_20261022.md.
-Compact evidence: data/leaper_composition_contribution_20261022.json (~233 KB).
-Previous reports, models, caps and failures remain closed and retained.
+* Same learner, six512-episode arms across two initializations/three foe streams.
+  C falls to.457–.574; final B remains initialization-dependent. No missing
+  training slots;40 training UNKNOWNs retained. All3072 updates reconstruct
+  within2.23e-16. This is not numeric convergence or a universal piece value.
+* H opening errors12→3 and6→2; learned-B Creset gives7/6. Frozen H random-foe
+  gains over own initial models have positive finite censoring bounds. Mobility
+  already gives2 errors; uniform-trained models remain weaker than that prior.
+* On the disjoint evaluation RNG stream, each initialization's three endpoints
+  have identical117 choices AND256 complete game records,despite different
+  weights. Exposed finite policy equivalence,not heldout/general convergence.
+* Selected D2 rescue removes one unsafe material tie at C<1 while critic stays
+  constant. Another DRAW tie survives. Six-node WIN proof; four weighted
+  occurrences are two histories/one board. C=.57 is not uniquely identified.
+* Actual winners contain learner mistakes. Selected episode123 lowers C after
+  learner/foe gap sums2/2;episode268 raises C after0/2. Interior TD terms include
+  actual terminal-PV information; final-outcome credit alone is not its total.
+* All41944 matched-panel public queries completeD2/4/6/8 with0fallback/missing.
+  H transfer errors38→28 atD2 but8/5/2 unchanged atD4/6/8. V44→29,12→10,8/4
+  unchanged. Deeper search dominates most parameter gains. Core reference146
+  checks match; selected H720 D4 LOSS vs DRAW is a verified equal-score tie,
+  with32-node opponent WIN certificate; D2/D6 are correct. No default change.
+* Stronger-foe C study hits its1200s cap:2296records,3848missing,43UNKNOWN.
+  Keep all47 completed opening groups plus40tailgames; no fill/rerun/extension.
+* Old KAB mobility baseline189errors vs old uniform381/TD170 on1824 roots.
+  Actual TD-vs-mobility7296games complete: D2 advantage19/3648 over half;
+  D4 bounds[89/7296,99/7296],5UNKNOWN. Exposed finite comparison,not Elo.
+* Second ordinal A/B reversal593 has six actual legal prefixes and3WINproofs;
+  deletion remains a constructed intervention,not a move or additive price.
+* All4624 original training/H/V games replay,plus13944 newly closed records;
+  every new recorded query action/RNG choice checked,1653 new PVs sampled.
+  All5 outgoing WIN proofs independently cover legal defender replies.
+  124 relevant tests pass. Raw journals/drivers and sensitive metadata stay ignored.
 
-## Current results and limits
-
-* Three complete King-B composition components: ABA 83,685 vertices,
-  ABC-H 68,613, ABC-V 61,189; 547,057 total edges. The same default occupancy
-  gives player-0 WIN/LOSS/WIN. All original graph caps remain unchanged.
-* At a matched board, changing second A to horizontal C reverses the ordinal
-  A/B deletion contribution: ABA removing A gives DRAW and removing B keeps
-  WIN; H gives the opposite. Six legal six-ply prefixes have matching actual
-  history values. Four WIN proofs plus complete DRAW labels support the case.
-* C can hurt its owner: a selected forced-C-move LOSS becomes actual rule
-  stalemate DRAW after C removal. Deletion is a constructed-state intervention,
-  not a playable action or an intrinsic negative price.
-* The 749 matched-root panel has one ideal D2 disjoint-safe-B pair, but the
-  deployed high-B policy wins in both worlds. All 22,944 public root choices
-  attain exact Core depth-limited maxima; 54,230 PV moves replay.
-* C=0 lowers ideal error and actual D2 errors, while H actual D4 errors rise
-  8 to10 at transferred B. At a selected D4 tie both actions score1 with
-  either C weight; actual ordering selects different WDL.
-* All 588 frozen-transfer games and 2,711 query histories replay. Random-foe
-  paired score gains are 3/16,17/128,3/16; one initial board/world,not independent
-  rules or holdout. No benefit over oracle-selected constant B3.5 established.
-* No C training was run. Frozen local TD directions have nonzero C gradients
-  and depend on B initialization. At one actual prefix, C=.999/1/1.001 yields
-  WIN/WIN/DRAW with constant critic0 and leaf-C gradients0/.1/0.
-  All 511 nonzero-gradient origins checked;56 flat-envelope cases occur in H.
-* Label-blind 128-opening feasibility:117 ongoing/world;54/65 have different-WDL
-  choices;35/46 C1 gradients nonzero. All468 queries and859 PV moves replay.
-  Terminal/duplicate paths retained;frozen seeds/hash evidence saved.
-* 124 relevant tests pass. Actual outgoing evidence checks 16 WIN certificates,
-  selected D2 reply trees and D4 scores in 366 Core visits. Rotation and owner
-  exchange are checked with complete Core transition controls.
-* Preserve 80 deletion UNKNOWNs,88 keyed-geometry unlabelled queries,old 65 UNKNOWN
-  games and 394 unprocessed oracle queries. The old training-order 126/128 bug
-  is not rerun. Checked-initial-setup rejection and corrected V arithmetic/
-  extra no-C-state/attribute failures remain explicit,not rewritten as success.
+Keep the32-unique first-fork cap (fifth pair partially labelled),old80 deletion
+UNKNOWNs,88 unlabelled geometry queries,65 UNKNOWN games and394 unprocessed
+oracle queries. Preserve syntax/relative-ply repairs and original failed receipts.
+No new Agent,worker,Goal,timer,other-role write or closed-experiment cap reset.
 
 ## Next executable research
 
-Main: Does the same TD learn useful C behavior, and does initial B change it? |
-  freeze horizontal-C 128-opening seed 2026102221 from saved actual legal paths;
-  compare 512 episodes each from uniform versus transferred B=2.4171096107122936,
-  C=1,other weights uniform;two trials/all 128 paths/both colors;RNG seed2026102222 |
-  actual parameter/TD credit and frozen D2 policy/terminal evidence |
-  per arm existing 120s/2M nodes;combined training240s+eval600s+replay180s=1020s;
-  no oracle targets,terminal/duplicate openings retained,no heldout claim.
+Main: Does opening ORDER change the acquired policy with experience/RNG fixed? |
+  read artifacts/leaper-C-opening-order-protocol-20261022.json;use existing
+  play_episode,reverse128 opening groups inside each trial,keep colors0/1;
+  bind RNG to256*trial+2*opening_index+color rather than execution index |
+  frozen actions/actual terminal records versus natural-order endpoints and
+  mobility,with literal TD updates | NOT_LAUNCHED;512episodes/two initializations,
+  120s/2Mnodes each,eval600s/replay180s,total1020s;no oracle selection or unchanged
+  old-arm rerun. Recheck source compatibility before claiming order-only effect.
 
-Backup1: Which exact tie-boundary gradients matter during learning? |
-  reuse frozen511-origin envelope census and selected common-prefix example |
-  bounded origin-credit/action-region explanation | no new representation,
-  epsilon sweep or causal/convergence claim without actual evidence.
+Backup1: Do the three H-equivalent endpoints remain equivalent in V? |
+  reuse saved V128 actual histories and frozen six endpoints,query first |
+  action/WDL differences across geometry | bounded600s,no new training,
+  no heldout claim or missing-slot fill.
 
-Backup2: Why does the second deletion-order reversal occur? |
-  inspect saved panel593 with actual Core prefixes,keeping original/
-  counterfactual history definitions separate | one finite mechanism |
-  no full panel rerun or filling outside-component UNKNOWNs.
+Backup2: Why does the first selected D8 error remain? |
+  inspect saved transfer-learned error and146 Core-reference checks;derive one
+  actual-history WIN strategy or material tie | one falsifiable horizon/leaf
+  mechanism |120s/no broad auditor or replay of capped direct experiment.
 
 ## Recovery and delivery
 
-Own DEV_AUX/sidemission only. Read memo,role/stops,doctor,new Chat/Claude and
-latest committed sandbox before research. Keep active UUID/origin/work.
-Normal segments require60 effective minutes,proceeding toward90;admin/offline
-time excluded. Existing ACTIVE90-minute recurrence unchanged. No new Agent,
-worker,Goal or timer. Runs>=120minutes need explicit Chat mailbox assessment.
-Before Slack,push and verify full origin/sidemission SHA. Historical
-SEND_UNCERTAIN is not resent. Raw graphs/journals/drivers remain ignored.
+Own DEV_AUX/sidemission only. Read memo,role/stops,doctor,latest committed
+sandbox and new Chat/Claude before research. Preserve active UUID/origin/work.
+Normal research needs60 effective minutes,proceeding toward90;admin/offline
+time excluded. Existing ACTIVE90-minute cadence unchanged. Runs>=120minutes
+need explicit Chat mailbox scope/budget assessment. Before Slack,push and
+verify full origin/sidemission SHA. Historical SEND_UNCERTAIN is not resent.
