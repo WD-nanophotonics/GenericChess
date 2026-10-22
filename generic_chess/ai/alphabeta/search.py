@@ -93,6 +93,18 @@ class _Budget:
         if self._deadline is not None and time.perf_counter() >= self._deadline:
             raise SearchAborted("time_limit")
 
+    def check_controls_after_completed_goal(self) -> None:
+        """Observe live controls after a complete atomic goal, not another node.
+
+        Reaching the goal on the last allowed node keeps its existing success
+        contract. A cancellation/deadline that arrived during that work must
+        still be reported, independently of the retained result source.
+        """
+        if self._cancel is not None and self._cancel.is_cancelled():
+            raise SearchAborted("cancelled")
+        if self._deadline is not None and time.perf_counter() >= self._deadline:
+            raise SearchAborted("time_limit")
+
     def check_iteration(self, stats: SearchStatistics) -> None:
         if self._cancel is not None and self._cancel.is_cancelled():
             raise SearchAborted("cancelled")
@@ -1245,7 +1257,15 @@ def run_root_search(
                 fallback = sorted(actions, key=str)[0]
             return root_fallback(fallback, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
     if immediate_win is not None:
+        # The terminal proof is complete, but its atomic push may have crossed
+        # a deadline or observed cancellation. Keep the proved move/value while
+        # reporting the live control cause. This completed goal needs no next
+        # node: the existing last-allowed-node success contract is unchanged.
         stats.termination_reason = "root_immediate_win"
+        try:
+            budget.check_controls_after_completed_goal()
+        except SearchAborted as exc:
+            stats.termination_reason = str(exc)
         _set_result_provenance(stats, 'root_immediate_win')
         return immediate_win, MATE_SCORE - 1, (immediate_win,), stats.termination_reason
 

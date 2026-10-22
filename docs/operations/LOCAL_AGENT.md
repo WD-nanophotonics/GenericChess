@@ -173,6 +173,23 @@ contributions, actual coordination, corrections, adoption and limits. Read sourc
 and results at a fixed revision; distinguish publication from someone reading or
 independently executing the work. Keep the repository PUBLIC for Chat readers.
 
+## Existing complete-state cost caller
+
+Use scripts/semantic_probe_cost.py with full canonical --input records and a NEW
+output path. Existing optional --pvs, --aspiration-delta <positive N> and
+--staged-move-picker expose current switches; omission preserves defaults.
+--evaluation-backend unit explicitly supplies1000CURRENT-board/900BASE-hand,
+metadata-anchor0 prices for ALL declared/future types with bonuses OFF. It does
+not silently change default profile admission or establish price quality.
+The caller saves immutable inputs before setup/query, preserves error/traceback
+and missing slots before rethrowing, and retains actual returns before validation.
+For service costs separate actual source/q policy, cold process/player/warmTT
+state and first-call order. Whole runner elapsed time may include recording
+cost absent from inner search time; use the declared qualification clock, retain
+both originals, never relax its threshold or rerun a frozen panel to hide failure.
+Repository text is UTF-8; specify encoding explicitly when reading/editing it
+on Windows rather than using the platform Python default.
+
 ## Publication
 
 Do not change a test's expected number to the observed number without locating

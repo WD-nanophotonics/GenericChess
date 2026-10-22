@@ -1,0 +1,11 @@
+--- a/study.py
++++ b/study.py
+@@ -56,7 +56,7 @@
+   outcome,events=play_game(c,(),str(seed),str(index),slot['owner'],candidate,control,config)
+  except Censored as exc:stop='batch_cap';row['censor']=str(exc)
+  except Exception as exc:stop='error';row['failure']={'type':type(exc).__name__,'message':str(exc),'traceback':traceback.format_exc()}
+- session=candidate.latest or control.latest or initial;record=session.to_record();fallback=any(q['decision']['result_source'] in {'fallback','legal_fallback','root_scan_fallback'} or q['decision']['termination_reason']=='fallback' for q in row['queries']);timing=any(_timing_invalid(q['seconds'],1) for q in row['queries']);operational=any(q['decision']['native_legality_operational_failures'] for q in row['queries']);fallback=fallback or bool(outcome and (outcome.candidate_fallback or outcome.control_fallback));timing=timing or bool(outcome and (outcome.candidate_timing_invalid or outcome.control_timing_invalid));eligible=not(row['failure'] or fallback or timing or operational or bool(outcome and outcome.result=='failed'))
++ session=candidate.latest or control.latest or initial;record=session.to_record();fallback=any(q['decision']['result_source'] in {'fallback','legal_fallback','root_scan_fallback'} or q['decision']['termination_reason']=='fallback' for q in row['queries']);timing=any(_timing_invalid(q['seconds'],1) for q in row['queries']);operational=any(q['decision']['native_legality_operational_failures'] for q in row['queries']);eligible=not(row['failure'] or fallback or timing or operational)
+  raw=outcome.result if outcome else 'unresolved';v={'candidate_win':1,'candidate_loss':-1,'rule_draw':0}.get(raw);utility=[v,v] if eligible and v is not None else [-1,1]
+  for q in row['queries']:
+   k=q['root_ply']

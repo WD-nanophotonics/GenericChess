@@ -1,0 +1,20 @@
+--- a/scripts/semantic_probe_cost.py
++++ b/scripts/semantic_probe_cost.py
+@@ -46,6 +46,8 @@
+                     default='default', help='Existing attack evaluator with the exact default static profile; may change score semantics')
+     ap.add_argument('--capture-only-qsearch', action='store_true',
+                     help='Existing selective q option: omit quiet checking continuations; can miss forced wins')
++    ap.add_argument('--pvs', action='store_true',
++                    help='Existing opt-in principal variation search; defaults and all other switches unchanged')
+     ap.add_argument('--stop-after-root-win', action='store_true',
+                     help='Existing opt-in any-completed-win objective; does not seek shortest mate/full depth')
+     ap.add_argument('--allow-hybrid', action='store_true')
+@@ -148,7 +150,7 @@
+                         use_native_semantic_legality=variant != 'core',
+                         use_native_semantic_availability=variant in ('availability', 'all', 'ordered', 'ordered_evasions'),
+                         use_native_semantic_check=variant in ('check', 'all', 'ordered', 'ordered_evasions'),
+-                        tuning=SearchTuning(use_ordered_qsearch=variant in ('ordered', 'ordered_evasions'),
++                        tuning=SearchTuning(use_pvs=args.pvs, use_ordered_qsearch=variant in ('ordered', 'ordered_evasions'),
+                             use_ordered_qsearch_in_check=variant == 'ordered_evasions',
+                             stop_after_root_win=args.stop_after_root_win,
+                             use_capture_only_qsearch=args.capture_only_qsearch))

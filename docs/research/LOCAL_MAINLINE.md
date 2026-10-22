@@ -9,7 +9,7 @@ This replaces the chronological daily entry, whose complete decisions/reasons
 remain at [897a110d](https://github.com/WD-nanophotonics/GenericChess/blob/897a110db22483c8fa99b8156a6d4547a655ca0d/docs/research/LOCAL_MAINLINE.md).
 Old dated next actions are evidence, not a backlog or a competing live policy.
 
-## Current selection and reason — 2026-10-21
+## Current selection and reason — 2026-10-22
 
 Continue rule-only generic prices/cross-game ratios and stable unfamiliar-rule
 search. Static, Unit and learned candidates remain. New incoming theory advice
@@ -236,16 +236,47 @@ A potential-type reference fixes that example but fails an impossible-guard
 negative control (B1000->620). Keep full fields and limits; do not build a generic
 reachability/guard framework or manufacture new fitness for18 identical E profiles.
 
-Next: use the already-prepared `next-component-inputs.json` from this study.
-Both real first-divergence roots have complete four-ply histories and actual D3
-returns from R/Gexact/Gtable. Does whole-evaluator scaling separate material/
-dynamics balance from the state denominator? Freeze60s/100kCoreentries, retain
-all IDs, future types, hand BASE/current distinctions and actual incomplete
-checks. The component search is NOT executed yet. No new policy cohort is needed
-until this inexpensive question changes the choice.
+## Current next choice — 2026-10-22
 
-Backup1: use closed cohort coverage/cost to predeclare pair-block allocation for
-a genuinely NEW question; do not reorder/rerun closed panels or relabel UNKNOWN.
-Backup2: unread primary work only when it gives a decision-changing cheap test;
-no old-Clune reread credit, solver admission gate or AUX learner duplication.
-Science OPEN.
+[SEARCH_WINDOWS_COMPLETE_STATE_AND_POLICY_20261022.md](SEARCH_WINDOWS_COMPLETE_STATE_AND_POLICY_20261022.md)
+closes the normalization followup selection and tests existing search controls.
+The prepared two-negative-example decomposition is NOT executed and no longer
+Main: regardless of its result it would not change present priority. Preserve
+the actual negative examples and scope, not an assertion of no effects. The
+latest incoming Claude advice supports this stop; no new approval or AUX task.
+
+PVS/aspiration/staged median cost gates fail on the exposed curve. A NEW18-rule,
+36-role staged-vs-fixed-B panel executes32games/1317queries at its900second cap.
+After actual whole-runner eligibility correction,13W11L2D10UNKNOWN gives finite
+[-2/9,1/3]; all11 resolved rule-pair contrasts0. Four unexecuted slots, five
+ongoing games and one timing-invalid outcome remain UNKNOWN. No cap refill,
+Elo/population inference, default order/evaluator/learner or AUX change.
+
+Two real defects are corrected: post-proof cancellation/deadline reporting keeps
+the complete winning payload AND the established last-node success contract;
+the maintained cost caller now saves prepared full input and errors before
+propagation. Explicit Unit control covers complete metadata types without legacy
+price metadata; defaults and all rule/history/aux/promotion/drop semantics remain.
+Full3616 regressions and24 later consumer controls pass; old expected values stay.
+
+A new18-root evaluation-repeat trace fails actual-cost feasibility (predicted
+0.66%/0.182ms), so do not engineer that cache. This is not a universal ban.
+Ninety-six late-history service queries add one D2q4 completion, but grouped
+process first-call bias and terminal-predecessor sampling prevent a generic
+latency/default claim. All actual q-policy strata and original timings remain.
+
+Main: use the already-prepared readable `balanced-service-next.json` controls
+only if they decide an actual next existing-service consumer choice. Separate
+short/95ply full-history roots, rotated process-first modes, within-process later
+calls and matching q policy/value; queries are NOT executed. A20%/1ms scoped
+result may guide that explicit caller, never default or game utility from two
+exposed states. Otherwise choose a new discriminating question, not more timing
+receipts or a gate before research.
+
+Backup1: one unread primary source that yields a falsifiable cheap test for
+rule-general search/prices; no old-Clune reread credit or AUX solver/learning
+replication. Backup2: use the NEW actual family costs to predeclare allocation
+for a genuinely new question, not to refill this closed panel. The15minute
+forecast missed4slots; analytical B/B cancellation saved18redundant games.
+Closed large evidence packets are fixed PUBLIC indexes with verified private
+copies. No historical result, source or failure was withdrawn. Science OPEN.

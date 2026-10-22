@@ -1,0 +1,46 @@
+{
+  "status": "complete inputs prepared; NO balanced queries executed",
+  "question": "Does a scoped availability/check cost gain survive a controlled first-call order and matching q-policy, so it can guide which existing service mode the next useful caller uses?",
+  "inputs": [
+    {
+      "seed": 202610226006,
+      "ply": 1,
+      "purpose": "short-identical-input-startup-control",
+      "input": "balanced-input-202610226006.json",
+      "sha256": "239c811076cc433ae9f1c2c01719a0c3854fac410316d002af1b60048e5e506d"
+    },
+    {
+      "seed": 202610226027,
+      "ply": 95,
+      "purpose": "long-history-matched-D2q4-candidate",
+      "input": "balanced-input-202610226027.json",
+      "sha256": "7fc050cf9157a3b3cf127c194b4b810aea9d2427a79cfdbf9ca598e363fee13c"
+    }
+  ],
+  "rotations": [
+    [
+      "legal",
+      "availability",
+      "all"
+    ],
+    [
+      "availability",
+      "all",
+      "legal"
+    ],
+    [
+      "all",
+      "legal",
+      "availability"
+    ]
+  ],
+  "rounds": 2,
+  "depth": 2,
+  "qdepth": 4,
+  "nodes": 4096,
+  "query_seconds": 1,
+  "whole_seconds": 60,
+  "expected_seconds": 12,
+  "decision": "Separate first-in-process and warmed measurements; require same actual q-policy/score and20percent/1ms gain before optional caller selection. If order-only, defer service route; never infer default or game utility from two exposed cases. Execute only if this changes an actual next consumer choice; it is not a research gate.",
+  "scope": "Fresh processes/cold players vs within-process later calls; full95ply history, no state truncation, no frozen game/timing overwrite or rerun."
+}

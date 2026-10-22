@@ -1,0 +1,3762 @@
+{
+  "worlds": [
+    {
+      "seed": 202610226027,
+      "source_seed": 202610225014,
+      "source_game_slot": 27,
+      "rule": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "King",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "P",
+            "name": "Pawn",
+            "movement_atoms": [
+              {
+                "kind": "ray",
+                "direction": [
+                  1,
+                  0
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  -2,
+                  1
+                ],
+                "max_steps": null
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": true,
+            "promotion_target_ids": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          {
+            "type_id": "X",
+            "name": "Companion",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": true,
+            "promotion_target_ids": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          {
+            "type_id": "A",
+            "name": "Piece A",
+            "movement_atoms": [
+              {
+                "kind": "ray",
+                "direction": [
+                  -1,
+                  -1
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  -1,
+                  2
+                ],
+                "max_steps": null
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "B",
+            "name": "Piece B",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  3,
+                  -3
+                ]
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  1,
+                  0
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "C",
+            "name": "Piece C",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -3,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          }
+        ],
+        "initial_position": [
+          [
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 1,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            }
+          ]
+        ],
+        "drop_allowed": {
+          "P": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "X": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "A": [
+            [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ]
+          ],
+          "B": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "C": [
+            [
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {
+          "P": [
+            [
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                3,
+                1,
+                3
+              ],
+              [
+                0,
+                4,
+                1,
+                4
+              ],
+              [
+                0,
+                5,
+                1,
+                5
+              ],
+              [
+                0,
+                6,
+                1,
+                6
+              ],
+              [
+                0,
+                7,
+                1,
+                7
+              ],
+              [
+                0,
+                7,
+                2,
+                7
+              ],
+              [
+                0,
+                7,
+                3,
+                7
+              ],
+              [
+                0,
+                7,
+                4,
+                7
+              ],
+              [
+                0,
+                7,
+                5,
+                7
+              ],
+              [
+                0,
+                7,
+                6,
+                7
+              ],
+              [
+                0,
+                7,
+                7,
+                7
+              ],
+              [
+                1,
+                7,
+                2,
+                7
+              ],
+              [
+                1,
+                7,
+                3,
+                7
+              ],
+              [
+                1,
+                7,
+                4,
+                7
+              ],
+              [
+                1,
+                7,
+                5,
+                7
+              ],
+              [
+                1,
+                7,
+                6,
+                7
+              ],
+              [
+                1,
+                7,
+                7,
+                7
+              ],
+              [
+                2,
+                0,
+                0,
+                1
+              ],
+              [
+                2,
+                1,
+                0,
+                2
+              ],
+              [
+                2,
+                2,
+                0,
+                3
+              ],
+              [
+                2,
+                3,
+                0,
+                4
+              ],
+              [
+                2,
+                4,
+                0,
+                5
+              ],
+              [
+                2,
+                5,
+                0,
+                6
+              ],
+              [
+                2,
+                6,
+                0,
+                7
+              ],
+              [
+                2,
+                7,
+                3,
+                7
+              ],
+              [
+                2,
+                7,
+                4,
+                7
+              ],
+              [
+                2,
+                7,
+                5,
+                7
+              ],
+              [
+                2,
+                7,
+                6,
+                7
+              ],
+              [
+                2,
+                7,
+                7,
+                7
+              ],
+              [
+                3,
+                0,
+                1,
+                1
+              ],
+              [
+                3,
+                1,
+                1,
+                2
+              ],
+              [
+                3,
+                2,
+                1,
+                3
+              ],
+              [
+                3,
+                3,
+                1,
+                4
+              ],
+              [
+                3,
+                4,
+                1,
+                5
+              ],
+              [
+                3,
+                5,
+                1,
+                6
+              ],
+              [
+                3,
+                6,
+                1,
+                7
+              ],
+              [
+                3,
+                7,
+                4,
+                7
+              ],
+              [
+                3,
+                7,
+                5,
+                7
+              ],
+              [
+                3,
+                7,
+                6,
+                7
+              ],
+              [
+                3,
+                7,
+                7,
+                7
+              ],
+              [
+                4,
+                0,
+                0,
+                2
+              ],
+              [
+                4,
+                1,
+                0,
+                3
+              ],
+              [
+                4,
+                2,
+                0,
+                4
+              ],
+              [
+                4,
+                3,
+                0,
+                5
+              ],
+              [
+                4,
+                4,
+                0,
+                6
+              ],
+              [
+                4,
+                5,
+                0,
+                7
+              ],
+              [
+                4,
+                6,
+                2,
+                7
+              ],
+              [
+                4,
+                7,
+                5,
+                7
+              ],
+              [
+                4,
+                7,
+                6,
+                7
+              ],
+              [
+                4,
+                7,
+                7,
+                7
+              ],
+              [
+                5,
+                0,
+                1,
+                2
+              ],
+              [
+                5,
+                1,
+                1,
+                3
+              ],
+              [
+                5,
+                2,
+                1,
+                4
+              ],
+              [
+                5,
+                3,
+                1,
+                5
+              ],
+              [
+                5,
+                4,
+                1,
+                6
+              ],
+              [
+                5,
+                5,
+                1,
+                7
+              ],
+              [
+                5,
+                6,
+                3,
+                7
+              ],
+              [
+                5,
+                7,
+                6,
+                7
+              ],
+              [
+                5,
+                7,
+                7,
+                7
+              ],
+              [
+                6,
+                0,
+                0,
+                3
+              ],
+              [
+                6,
+                1,
+                0,
+                4
+              ],
+              [
+                6,
+                2,
+                0,
+                5
+              ],
+              [
+                6,
+                3,
+                0,
+                6
+              ],
+              [
+                6,
+                4,
+                0,
+                7
+              ],
+              [
+                6,
+                5,
+                2,
+                7
+              ],
+              [
+                6,
+                6,
+                4,
+                7
+              ],
+              [
+                6,
+                7,
+                7,
+                7
+              ],
+              [
+                7,
+                0,
+                1,
+                3
+              ],
+              [
+                7,
+                1,
+                1,
+                4
+              ],
+              [
+                7,
+                2,
+                1,
+                5
+              ],
+              [
+                7,
+                3,
+                1,
+                6
+              ],
+              [
+                7,
+                4,
+                1,
+                7
+              ],
+              [
+                7,
+                5,
+                3,
+                7
+              ],
+              [
+                7,
+                6,
+                5,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                2,
+                4,
+                0
+              ],
+              [
+                0,
+                3,
+                6,
+                0
+              ],
+              [
+                0,
+                4,
+                6,
+                1
+              ],
+              [
+                0,
+                5,
+                6,
+                2
+              ],
+              [
+                0,
+                6,
+                6,
+                3
+              ],
+              [
+                0,
+                7,
+                6,
+                4
+              ],
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                3,
+                0
+              ],
+              [
+                1,
+                2,
+                5,
+                0
+              ],
+              [
+                1,
+                3,
+                7,
+                0
+              ],
+              [
+                1,
+                4,
+                7,
+                1
+              ],
+              [
+                1,
+                5,
+                7,
+                2
+              ],
+              [
+                1,
+                6,
+                7,
+                3
+              ],
+              [
+                1,
+                7,
+                7,
+                4
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                4,
+                0
+              ],
+              [
+                2,
+                2,
+                6,
+                0
+              ],
+              [
+                2,
+                3,
+                6,
+                1
+              ],
+              [
+                2,
+                4,
+                6,
+                2
+              ],
+              [
+                2,
+                5,
+                6,
+                3
+              ],
+              [
+                2,
+                6,
+                6,
+                4
+              ],
+              [
+                2,
+                7,
+                6,
+                5
+              ],
+              [
+                3,
+                0,
+                0,
+                0
+              ],
+              [
+                3,
+                0,
+                1,
+                0
+              ],
+              [
+                3,
+                0,
+                2,
+                0
+              ],
+              [
+                3,
+                1,
+                5,
+                0
+              ],
+              [
+                3,
+                2,
+                7,
+                0
+              ],
+              [
+                3,
+                3,
+                7,
+                1
+              ],
+              [
+                3,
+                4,
+                7,
+                2
+              ],
+              [
+                3,
+                5,
+                7,
+                3
+              ],
+              [
+                3,
+                6,
+                7,
+                4
+              ],
+              [
+                3,
+                7,
+                7,
+                5
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                1,
+                0
+              ],
+              [
+                4,
+                0,
+                2,
+                0
+              ],
+              [
+                4,
+                0,
+                3,
+                0
+              ],
+              [
+                4,
+                1,
+                6,
+                0
+              ],
+              [
+                4,
+                2,
+                6,
+                1
+              ],
+              [
+                4,
+                3,
+                6,
+                2
+              ],
+              [
+                4,
+                4,
+                6,
+                3
+              ],
+              [
+                4,
+                5,
+                6,
+                4
+              ],
+              [
+                4,
+                6,
+                6,
+                5
+              ],
+              [
+                4,
+                7,
+                6,
+                6
+              ],
+              [
+                5,
+                0,
+                0,
+                0
+              ],
+              [
+                5,
+                0,
+                1,
+                0
+              ],
+              [
+                5,
+                0,
+                2,
+                0
+              ],
+              [
+                5,
+                0,
+                3,
+                0
+              ],
+              [
+                5,
+                0,
+                4,
+                0
+              ],
+              [
+                5,
+                1,
+                7,
+                0
+              ],
+              [
+                5,
+                2,
+                7,
+                1
+              ],
+              [
+                5,
+                3,
+                7,
+                2
+              ],
+              [
+                5,
+                4,
+                7,
+                3
+              ],
+              [
+                5,
+                5,
+                7,
+                4
+              ],
+              [
+                5,
+                6,
+                7,
+                5
+              ],
+              [
+                5,
+                7,
+                7,
+                6
+              ],
+              [
+                6,
+                0,
+                0,
+                0
+              ],
+              [
+                6,
+                0,
+                1,
+                0
+              ],
+              [
+                6,
+                0,
+                2,
+                0
+              ],
+              [
+                6,
+                0,
+                3,
+                0
+              ],
+              [
+                6,
+                0,
+                4,
+                0
+              ],
+              [
+                6,
+                0,
+                5,
+                0
+              ],
+              [
+                7,
+                0,
+                0,
+                0
+              ],
+              [
+                7,
+                0,
+                1,
+                0
+              ],
+              [
+                7,
+                0,
+                2,
+                0
+              ],
+              [
+                7,
+                0,
+                3,
+                0
+              ],
+              [
+                7,
+                0,
+                4,
+                0
+              ],
+              [
+                7,
+                0,
+                5,
+                0
+              ],
+              [
+                7,
+                0,
+                6,
+                0
+              ],
+              [
+                7,
+                1,
+                6,
+                1
+              ],
+              [
+                7,
+                2,
+                6,
+                2
+              ],
+              [
+                7,
+                3,
+                6,
+                3
+              ],
+              [
+                7,
+                4,
+                6,
+                4
+              ],
+              [
+                7,
+                5,
+                6,
+                5
+              ],
+              [
+                7,
+                6,
+                6,
+                6
+              ],
+              [
+                7,
+                7,
+                6,
+                7
+              ]
+            ]
+          ],
+          "X": [
+            [
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                3,
+                1,
+                3
+              ],
+              [
+                0,
+                4,
+                1,
+                4
+              ],
+              [
+                0,
+                5,
+                1,
+                5
+              ],
+              [
+                0,
+                6,
+                1,
+                6
+              ],
+              [
+                0,
+                7,
+                1,
+                7
+              ],
+              [
+                1,
+                7,
+                2,
+                7
+              ],
+              [
+                2,
+                0,
+                0,
+                1
+              ],
+              [
+                2,
+                1,
+                0,
+                2
+              ],
+              [
+                2,
+                2,
+                0,
+                3
+              ],
+              [
+                2,
+                3,
+                0,
+                4
+              ],
+              [
+                2,
+                4,
+                0,
+                5
+              ],
+              [
+                2,
+                5,
+                0,
+                6
+              ],
+              [
+                2,
+                6,
+                0,
+                7
+              ],
+              [
+                2,
+                7,
+                3,
+                7
+              ],
+              [
+                3,
+                0,
+                1,
+                1
+              ],
+              [
+                3,
+                1,
+                1,
+                2
+              ],
+              [
+                3,
+                2,
+                1,
+                3
+              ],
+              [
+                3,
+                3,
+                1,
+                4
+              ],
+              [
+                3,
+                4,
+                1,
+                5
+              ],
+              [
+                3,
+                5,
+                1,
+                6
+              ],
+              [
+                3,
+                6,
+                1,
+                7
+              ],
+              [
+                3,
+                7,
+                4,
+                7
+              ],
+              [
+                4,
+                6,
+                2,
+                7
+              ],
+              [
+                4,
+                7,
+                5,
+                7
+              ],
+              [
+                5,
+                6,
+                3,
+                7
+              ],
+              [
+                5,
+                7,
+                6,
+                7
+              ],
+              [
+                6,
+                6,
+                4,
+                7
+              ],
+              [
+                6,
+                7,
+                7,
+                7
+              ],
+              [
+                7,
+                6,
+                5,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                3,
+                0
+              ],
+              [
+                2,
+                0,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                4,
+                0
+              ],
+              [
+                3,
+                0,
+                2,
+                0
+              ],
+              [
+                3,
+                1,
+                5,
+                0
+              ],
+              [
+                4,
+                0,
+                3,
+                0
+              ],
+              [
+                4,
+                1,
+                6,
+                0
+              ],
+              [
+                4,
+                2,
+                6,
+                1
+              ],
+              [
+                4,
+                3,
+                6,
+                2
+              ],
+              [
+                4,
+                4,
+                6,
+                3
+              ],
+              [
+                4,
+                5,
+                6,
+                4
+              ],
+              [
+                4,
+                6,
+                6,
+                5
+              ],
+              [
+                4,
+                7,
+                6,
+                6
+              ],
+              [
+                5,
+                0,
+                4,
+                0
+              ],
+              [
+                5,
+                1,
+                7,
+                0
+              ],
+              [
+                5,
+                2,
+                7,
+                1
+              ],
+              [
+                5,
+                3,
+                7,
+                2
+              ],
+              [
+                5,
+                4,
+                7,
+                3
+              ],
+              [
+                5,
+                5,
+                7,
+                4
+              ],
+              [
+                5,
+                6,
+                7,
+                5
+              ],
+              [
+                5,
+                7,
+                7,
+                6
+              ],
+              [
+                6,
+                0,
+                5,
+                0
+              ],
+              [
+                7,
+                0,
+                6,
+                0
+              ],
+              [
+                7,
+                1,
+                6,
+                1
+              ],
+              [
+                7,
+                2,
+                6,
+                2
+              ],
+              [
+                7,
+                3,
+                6,
+                3
+              ],
+              [
+                7,
+                4,
+                6,
+                4
+              ],
+              [
+                7,
+                5,
+                6,
+                5
+              ],
+              [
+                7,
+                6,
+                6,
+                6
+              ],
+              [
+                7,
+                7,
+                6,
+                7
+              ]
+            ]
+          ]
+        },
+        "promotion_forced": {
+          "P": [
+            [
+              [
+                7,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ]
+            ]
+          ],
+          "X": [
+            [
+              [
+                7,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ]
+            ]
+          ]
+        },
+        "repetition_limit": 4,
+        "max_ply": 512,
+        "stalemate_result": "draw",
+        "board_size": 8,
+        "metadata": {
+          "seed": 202610225014,
+          "setup_preset": "classic_like",
+          "movement_symmetry": "none",
+          "generator": "generic_chess.generation"
+        }
+      },
+      "roots": [
+        {
+          "target": 95,
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  7,
+                  0
+                ],
+                "geometry_id": "g1",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_003",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  0,
+                  7
+                ],
+                "geometry_id": "g1",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_003",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  4,
+                  6
+                ],
+                "geometry_id": "g0",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_000",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  4
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  6,
+                  1
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  3,
+                  1
+                ],
+                "geometry_id": "g0",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_001",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  2,
+                  4
+                ],
+                "geometry_id": "g1",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_003",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  6
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_015",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "C",
+                "from": [
+                  5,
+                  0
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_030",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  4,
+                  2
+                ],
+                "geometry_id": "g0",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_000",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  3
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  0,
+                  5
+                ]
+              },
+              {
+                "base_type_id": "A",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_038",
+                "to": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  6,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "C",
+                "from": [
+                  2,
+                  7
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_030",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  2
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": "B",
+                "to": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  3
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_015",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  1
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": "B",
+                "to": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  5,
+                  3
+                ],
+                "geometry_id": "g0",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_000",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  6,
+                  5
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  5,
+                  6
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_015",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  6
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  2,
+                  4
+                ]
+              },
+              {
+                "base_type_id": "C",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_040",
+                "to": [
+                  7,
+                  0
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  0,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  0,
+                  3
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_024",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  3,
+                  6
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": "B",
+                "to": [
+                  7,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  2
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_014",
+                "promotion_target_id": "B",
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  4
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  1,
+                  2
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_025",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  3,
+                  4
+                ],
+                "geometry_id": "g1",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_003",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  3,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  5,
+                  5
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  6
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_015",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  6
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  6,
+                  5
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  5
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_014",
+                "promotion_target_id": "B",
+                "to": [
+                  1,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  2
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": "A",
+                "to": [
+                  6,
+                  0
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  7,
+                  1
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  6
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  1,
+                  5
+                ],
+                "geometry_id": "g2",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_023",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "base_type_id": "B",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_039",
+                "to": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "base_type_id": "A",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_038",
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  7
+                ],
+                "geometry_id": "g9",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_036",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "X",
+                "from": [
+                  4,
+                  0
+                ],
+                "geometry_id": "g18",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  0
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  5,
+                  6
+                ],
+                "geometry_id": "g9",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_037",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "X",
+                "from": [
+                  5,
+                  0
+                ],
+                "geometry_id": "g18",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_021",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  0
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  5,
+                  0
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  4
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_014",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  1
+                ],
+                "geometry_id": "g12",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_009",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  0
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  1,
+                  4
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  4,
+                  2
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_027",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  5,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_014",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  0,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  1,
+                  4
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  5,
+                  2
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  4
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_015",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  7,
+                  4
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_025",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  4
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  5,
+                  2
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  3,
+                  0
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  6,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  6,
+                  5
+                ],
+                "geometry_id": "g12",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_008",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  6
+                ]
+              },
+              {
+                "base_type_id": "A",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_038",
+                "to": [
+                  5,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  1,
+                  6
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_014",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  6,
+                  3
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": "B",
+                "to": [
+                  0,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  3,
+                  6
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_015",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "A",
+                "from": [
+                  5,
+                  3
+                ],
+                "geometry_id": "g0",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_001",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  2
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  4,
+                  6
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  7,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  5,
+                  6
+                ],
+                "geometry_id": "g9",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_036",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  7,
+                  5
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_017",
+                "promotion_target_id": "B",
+                "to": [
+                  3,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  6,
+                  4
+                ],
+                "geometry_id": "g2",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_023",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  7
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  0,
+                  4
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  0,
+                  5
+                ]
+              },
+              {
+                "base_type_id": "X",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_042",
+                "to": [
+                  4,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  5,
+                  5
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_026",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "X",
+                "from": [
+                  4,
+                  1
+                ],
+                "geometry_id": "g17",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_019",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  6,
+                  4
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_025",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  1,
+                  3
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_027",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  4
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  3,
+                  5
+                ]
+              },
+              {
+                "base_type_id": "B",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_039",
+                "to": [
+                  4,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  6,
+                  5
+                ],
+                "geometry_id": "g12",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_008",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  6
+                ]
+              },
+              {
+                "base_type_id": "P",
+                "geometry_id": "g19",
+                "kind": "semantic_drop",
+                "pattern_id": "legacy_041",
+                "to": [
+                  6,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  6
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "X",
+                "from": [
+                  2,
+                  2
+                ],
+                "geometry_id": "g17",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_018",
+                "promotion_target_id": "B",
+                "to": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  6
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": "B",
+                "to": [
+                  6,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  4,
+                  5
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_026",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  6
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  5,
+                  6
+                ],
+                "geometry_id": "g11",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "B",
+                "from": [
+                  0,
+                  3
+                ],
+                "geometry_id": "g2",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_023",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "99621a1df00f9159ff1afaf938b72fbae997559091489828612fe0fb94e34fdb",
+            "schema_version": 1
+          }
+        }
+      ]
+    }
+  ]
+}

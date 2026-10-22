@@ -381,3 +381,51 @@ def test_full_candidate_keeps_mate_ruleset_optimal():
     evaluator = _evaluator(compiled)
     _ref_score, optimal = _optimal_actions(compiled, evaluator, 3)
     assert decision.action in optimal
+
+
+@pytest.mark.parametrize('native', [False, True])
+@pytest.mark.parametrize('semantic', [False, True])
+@pytest.mark.parametrize('interruption', ['cancelled', 'time_limit'])
+def test_root_immediate_proof_keeps_result_but_observes_post_push_control(monkeypatch, semantic, interruption, native):
+    from generic_chess.ai.cancellation import CancellationToken
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from generic_chess.rules.compiler import compile_legacy_ruleset_for_semantic_execution
+
+    compiled = (compile_legacy_ruleset_for_semantic_execution(_mate_ruleset())
+                if semantic else compile_ruleset(_mate_ruleset()))
+    session = GameSession(compiled)
+    before = session.state, session.to_record(), session._search_witnesses
+    token = CancellationToken()
+    clock = [0.0]
+    original = SearchPathRuntime.push
+    completed_proofs = []
+    def interrupt_after_atomic_push(runtime, action, checkpoint=None):
+        child = original(runtime, action, checkpoint)
+        if child.terminal_status.is_terminal and child.terminal_status.winner == before[0].position.side_to_move:
+            completed_proofs.append(action)
+            if interruption == 'cancelled':
+                token.cancel()
+            else:
+                clock[0] = 2.0
+        return child
+    monkeypatch.setattr(SearchPathRuntime, 'push', interrupt_after_atomic_push)
+    monkeypatch.setattr('generic_chess.ai.alphabeta.search.time.perf_counter', lambda: clock[0])
+    player = AlphaBetaPlayer(compiled, use_disk_cache=False,
+        use_native_semantic_legality=native)
+    decision = player.choose_action(session,
+            SearchLimits(max_depth=2, max_time_seconds=1, quiescence_max_depth=0),
+            cancel_token=token)
+    assert completed_proofs
+    if player.native_legality_provider is not None:
+        assert decision.native_legality_calls > 0
+        assert decision.native_legality_operational_failures == 0
+    assert decision.termination_reason == interruption
+    assert decision.result_source == 'root_immediate_win'
+    assert decision.action in completed_proofs
+    assert decision.score == MATE_SCORE - 1 and decision.completed_depth == 0
+    assert decision.principal_variation == (decision.action,)
+    assert decision.runtime_depth_balanced
+    assert before == (session.state, session.to_record(), session._search_witnesses)
+    session.submit(decision.action)
+    assert session.state.terminal_status.is_terminal
+    assert session.state.terminal_status.winner == before[0].position.side_to_move

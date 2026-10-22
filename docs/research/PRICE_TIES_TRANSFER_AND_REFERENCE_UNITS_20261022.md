@@ -7,7 +7,7 @@ established. Product code, Native binaries, public result fields and cache
 algorithms are unchanged in this segment.
 
 [summary.json](data/price_ties_transfer_20261022/summary.json) is the short entry;
-[evidence.json](data/price_ties_transfer_20261022/evidence.json) contains complete
+[evidence.json](data/price_ties_transfer_20261022/README.md) indexes the sealed packet with complete
 inputs, 141 new episode records, action/PV projections, protocols, sources,
 failures and validation. Every registered RuleSet, GameState and GameRecord was
 losslessly decoded and compared with its private original. Selected decision

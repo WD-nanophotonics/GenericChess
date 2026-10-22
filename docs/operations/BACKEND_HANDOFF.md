@@ -392,8 +392,14 @@ is the root side, including stalemate-loss and history-dependent continuous-chec
 loss of the opponent. A previously discovered win could return score0/emptyPV
 as root_scan_fallback when the next scan hit its budget. It now retains the
 winning score/one-actionPV/root_immediate_win, as checkmate already did.
-Draw terminals, root declaration precedence, legal fallback and cancellation
-keep their existing contracts. Six actual draw/loss/history regressions plus
+Draw terminals, root declaration precedence and legal fallback keep their
+contracts. A completed immediate root proof on the last allowed node still
+returns root_immediate_win. Live cancellation/deadline arriving during its
+atomic push now retain the proved payload/source but report the actual control
+cause; this is cooperative reporting, not atomic-call preemption. Eight real
+carrier/Native controls and the unchanged stalemate/perpetual-check boundary
+regressions cover the distinction. No Native ABI rebuild is needed for this
+Python-source fix. Six actual draw/loss/history regressions plus
 Core/actual Native-query controls cover this correction. This is Python source;
 restart a consumer to load it. No new Native ABI, private C reader deployment,
 q-policy default or UI maintenance is included. Scope/results:

@@ -1,0 +1,17 @@
+--- a/generic_chess/ai/alphabeta/search.py
++++ b/generic_chess/ai/alphabeta/search.py
+@@ -1245,7 +1245,14 @@
+                 fallback = sorted(actions, key=str)[0]
+             return root_fallback(fallback, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
+     if immediate_win is not None:
++        # The terminal proof is complete, but its atomic push may have crossed
++        # a deadline or observed cancellation. Keep the proved move/value while
++        # reporting the live control cause, just as for completed_root_win.
+         stats.termination_reason = "root_immediate_win"
++        try:
++            budget.check(stats, force=True)
++        except SearchAborted as exc:
++            stats.termination_reason = str(exc)
+         _set_result_provenance(stats, 'root_immediate_win')
+         return immediate_win, MATE_SCORE - 1, (immediate_win,), stats.termination_reason
+ 

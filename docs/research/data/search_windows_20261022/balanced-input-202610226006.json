@@ -1,0 +1,718 @@
+{
+  "worlds": [
+    {
+      "seed": 202610226006,
+      "source_seed": 202610225004,
+      "source_game_slot": 6,
+      "rule": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "King",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "P",
+            "name": "Pawn",
+            "movement_atoms": [
+              {
+                "kind": "ray",
+                "direction": [
+                  2,
+                  1
+                ],
+                "max_steps": null
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": true,
+            "promotion_target_ids": [
+              "X"
+            ]
+          },
+          {
+            "type_id": "X",
+            "name": "Companion",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "A",
+            "name": "Piece A",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  3
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": true,
+            "promotion_target_ids": [
+              "X"
+            ]
+          }
+        ],
+        "initial_position": [
+          [
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 1,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            }
+          ]
+        ],
+        "drop_allowed": {
+          "P": [
+            [
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true
+            ]
+          ],
+          "X": [
+            [
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true
+            ]
+          ],
+          "A": [
+            [
+              false,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {
+          "P": [
+            [
+              [
+                0,
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                1,
+                2,
+                2
+              ],
+              [
+                0,
+                2,
+                2,
+                3
+              ],
+              [
+                1,
+                0,
+                3,
+                1
+              ],
+              [
+                1,
+                1,
+                3,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                3
+              ]
+            ],
+            [
+              [
+                2,
+                1,
+                0,
+                0
+              ],
+              [
+                2,
+                2,
+                0,
+                1
+              ],
+              [
+                2,
+                3,
+                0,
+                2
+              ],
+              [
+                3,
+                1,
+                1,
+                0
+              ],
+              [
+                3,
+                2,
+                1,
+                1
+              ],
+              [
+                3,
+                3,
+                1,
+                2
+              ]
+            ]
+          ],
+          "A": [
+            [
+              [
+                1,
+                0,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                1,
+                3
+              ],
+              [
+                3,
+                0,
+                2,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                3,
+                1,
+                0
+              ],
+              [
+                1,
+                3,
+                2,
+                0
+              ],
+              [
+                2,
+                3,
+                3,
+                0
+              ]
+            ]
+          ]
+        },
+        "promotion_forced": {
+          "P": [
+            [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ]
+          ],
+          "A": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                3,
+                3
+              ]
+            ]
+          ]
+        },
+        "repetition_limit": 4,
+        "max_ply": 512,
+        "stalemate_result": "draw",
+        "board_size": 4,
+        "metadata": {
+          "seed": 202610225004,
+          "setup_preset": "bilateral_random",
+          "movement_symmetry": "none",
+          "generator": "generic_chess.generation"
+        }
+      },
+      "roots": [
+        {
+          "target": 1,
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "X",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_005",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "cb3485656eba146c08601451013f9fb58fdddbea0a67c6a6eb0f1411d4442a06",
+            "schema_version": 1
+          }
+        }
+      ]
+    }
+  ]
+}

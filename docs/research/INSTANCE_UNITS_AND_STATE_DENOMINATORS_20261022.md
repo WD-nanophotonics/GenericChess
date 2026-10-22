@@ -16,8 +16,8 @@ whole-policy examples favor the root-frozen controller even after coefficient
 quantization is removed. No universal price or interaction winner is selected.
 
 [Readable summary](data/instance_units_20261022/summary.json) provides all cohort
-bounds/costs and limits. [Technical evidence](data/instance_units_20261022/evidence.json)
-contains explicit selected inputs/results, source hashes and 36 frozen source
+bounds/costs and limits. [Technical evidence](data/instance_units_20261022/README.md)
+indexes the sealed packet with explicit selected inputs/results, source hashes and 36 frozen source
 texts. Its `$kind` dictionaries losslessly retain complete rules, GameRecords,
 states, positions, history entries, pieces and both action encodings. Position
 boards use piece indices with -1 for empty. Every registered object round-trips;

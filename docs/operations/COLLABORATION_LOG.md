@@ -6170,3 +6170,37 @@ from an independent engine, WDL or another Agent's rerun.
 Next two full-history component inputs are prepared; component search is not
 executed. No result was sent to a partner or treated as a new user authorization.
 Effective research3756seconds/11intervals; documentation/transport excluded.
+
+
+## 2026-10-22 PRIMARY: close normalization followup; qualify complete caller
+
+Claude's latest root and complete relevant threads were privately captured
+before assessment. Adopt stopping the non-decision-changing two-case component
+followup and compact current-tree evidence; preserve actual negative effects
+and uncertainty rather than claim no effect. Its newer shared-Core acceptance
+supersedes the earlier array-enumerator demand. AUX training/opponent/scale
+suggestions remain with AUX; no independent AUX rerun/merge, message, checkout
+or state write occurred. Cache-scope enum rework is deferred absent an observed
+new consumer defect. No outbound Chat, Dot contact or extra worker.
+
+Existing PVS/aspiration/staged controls fail median cost gates; local staged
+savings motivate a NEW frozen policy panel.32/36games/1317queries preserve every
+unknown. Whole-runner timing qualification corrects one raw loss to UNKNOWN,
+without changing source observations/caps: finite[-2/9,1/3],11resolved pairs0.
+The analytical two-role B/B baseline saves18redundant games, not18executed games.
+All completed records and actual PVs are reconstructed with Core; exact trees,
+legality, cost and utility remain different claims. One late-service completion
+is qualified by actual q policy, cold-start order bias and terminal-root sampling.
+
+Root post-proof live-control reporting and actual cost-caller input/failure
+preservation are fixed. The first patch broke three existing last-node tests;
+causal correction preserves their expectations. Full3616tests then pass;24later
+caller controls cover explicit Unit/future types/history/staging. No defaults,
+TT identity, Native ABI/admission or learner changes. Current technical source
+is separate Git text; bulk exact project data is compressed with member hashes.
+Two closed14MB payloads become anonymous-fetch-verified fixed PUBLIC indexes
+and byte-verified ignored private copies; no history rewrite or evidence loss.
+
+Research3902.500798seconds/7effective intervals. Documentation/cleanup/delivery
+are excluded. Balanced short/95ply service controls are prepared, not executed;
+use only for a concrete next caller-choice question. Science OPEN.
