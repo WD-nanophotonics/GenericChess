@@ -6,7 +6,7 @@ import pytest
 
 from generic_chess.core.terminal import TerminalStatus
 from generic_chess.core.transition import apply_action, initial_state
-from scripts.leaper_microgames import ExactTree, Exhaustion, make_rules, quiet_layouts
+from scripts.leaper_microgames import DIAGONAL, KING, ExactTree, Exhaustion, make_rules, quiet_layouts
 from scripts.leaper_retrograde import attractor, fresh_state, history_value, inactive_clock, root_action_labels, solve_world
 
 
@@ -364,15 +364,19 @@ def test_fresh_setup_experience_uses_public_setup_identity_and_empty_history(tmp
 
 
 @pytest.mark.parametrize('depth',[1,2])
-def test_selfplay_uses_same_episode_frozen_model_on_both_sides(tmp_path,depth):
+@pytest.mark.parametrize('b_geometry',[DIAGONAL,KING])
+def test_selfplay_uses_same_episode_frozen_model_on_both_sides(tmp_path,depth,b_geometry):
     import json
     from scripts.leaper_retrograde import experiential_probe
     folder=tmp_path/'selfplay'
     result=experiential_probe(folder,episodes=4,lineup=('A','B'),depth=depth,
-        initial_weights=[1.,.8,1.,1.],selfplay=True)
+        initial_weights=[1.,.8,1.,1.],selfplay=True,b_geometry=b_geometry)
     assert result['missing']==0
     assert result['config']['foe_policy']==f'episode-frozen adaptive D{depth} selfplay'
     assert result['config']['foe_depth']==depth
+    from generic_chess.rules.schema import ruleset_from_dict
+    rules=ruleset_from_dict(json.loads((folder/'rules.json').read_text(encoding='utf-8')))
+    assert tuple(a.offset for p in rules.piece_types if p.type_id=='B' for a in p.movement_atoms)==b_geometry
     queries=[json.loads(x)for x in(folder/'queries.jsonl').read_text(encoding='utf-8').splitlines()]
     assert queries and {q['actor']for q in queries}=={0,1}
     assert all(q['search_weights']==q['candidate_weights']for q in queries)

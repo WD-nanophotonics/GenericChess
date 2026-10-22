@@ -14,11 +14,12 @@ from scripts.research_record import write_record, record_value
 from scripts import semantic_probe_cost
 
 
+@pytest.mark.parametrize('countermove', [False, True])
 @pytest.mark.parametrize('staged', [False, True])
 @pytest.mark.parametrize('pvs', [False, True])
 @pytest.mark.parametrize('semantic', [False, True])
 @pytest.mark.parametrize('variant', ['core', 'all'])
-def test_saved_semantic_and_legacy_inputs_use_actual_requested_services(tmp_path, monkeypatch, semantic, variant, pvs, staged):
+def test_saved_semantic_and_legacy_inputs_use_actual_requested_services(tmp_path, monkeypatch, semantic, variant, pvs, staged, countermove):
     rules = (castling_ruleset() if semantic else make_ruleset(
         4, [king_type(), T('A', LeapAtom((1, 0)))],
         lines=['...k', '....', '....', 'KA..']))
@@ -32,12 +33,15 @@ def test_saved_semantic_and_legacy_inputs_use_actual_requested_services(tmp_path
         '--output', str(output), '--seed-count', '1', '--prefixes', '0',
         '--variants', variant, '--depth', '1', '--qdepth', '0', '--nodes', '4096',
         '--seconds', '2', '--total-seconds', '10'])
+    if countermove:
+        sys.argv.append('--countermove')
     if pvs:
         sys.argv.append('--pvs')
     if staged:
         sys.argv.append('--staged-move-picker')
     semantic_probe_cost.main()
     result = json.loads(output.read_bytes())
+    assert result['protocol']['countermove'] is countermove
     assert result['protocol']['pvs'] is pvs
     assert result['protocol']['staged_move_picker'] is staged
     assert not result['missing_slots']

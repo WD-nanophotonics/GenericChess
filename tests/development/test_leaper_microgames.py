@@ -44,6 +44,24 @@ def test_homogeneous_mechanics_are_equal_and_anchors_remain_royal():
     assert not rules.pass_enabled and not rules.semantic_actions and not rules.declarations
 
 
+def test_coexistence_B_geometry_control_uses_actual_Core_and_preserves_default():
+    from scripts.leaper_microgames import DIAGONAL
+    from generic_chess.session.session import GameSession
+    from generic_chess.core.actions import BoardMove
+    from generic_chess.core.coordinates import Square
+    default=coexistence_rules(('A','B'))
+    assert default==coexistence_rules(('A','B'),b_geometry=DIAGONAL)
+    changed=coexistence_rules(('A','B'),b_geometry=KING)
+    assert changed.initial_position==default.initial_position
+    sessions=[GameSession(compile_ruleset_for_execution(r))for r in(default,changed)]
+    orthogonal=BoardMove(Square(0,1),Square(1,1))
+    assert orthogonal not in sessions[0].legal_actions()
+    assert orthogonal in sessions[1].legal_actions()
+    sessions[1].submit(orthogonal)
+    assert sessions[1].state.position.board[4].current_type_id=='B'
+    assert len(sessions[1].state.history)==2
+
+
 def test_reference_budget_failure_is_unknown_not_a_draw():
     compiled=compile_ruleset_for_execution(make_rules())
     tree=ExactTree(compiled,max_states=0)

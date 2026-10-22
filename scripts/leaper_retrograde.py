@@ -94,7 +94,7 @@ def solve_world(*, kinds=('M','M'), width=3, layouts=None, b_geometry=DIAGONAL, 
         # overcounts Anchor/piece multiplicities, but bounds all repeat keys.
         alphabet=1+2*(1+len(set(lineup)))
         rules=coexistence_rules(lineup,horizon=2*alphabet**9+1,layout=composition_layout,
-            initial_position=initial_position,c_axis=composition_c_axis)
+            initial_position=initial_position,c_axis=composition_c_axis,b_geometry=b_geometry)
         layouts=[tuple(i for i,p in enumerate(sum(rules.initial_position,()))if p)]
     else:
         if composition_layout!='original'or initial_position is not None or composition_c_axis!='horizontal':raise ValueError('composition setup requires lineup')
@@ -525,7 +525,7 @@ def paired_history_study(output, *, caches, prefixes, models, depths=(1,2,3),
 def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening_seed=20261022,
                        random_foe_seed=None, initial_weights=None,
                        lineup=('A','B','C'), c_axis='horizontal', initial_positions=None,
-                       selfplay=False):
+                       selfplay=False, b_geometry=DIAGONAL):
     """One declared coexistence experiential check, with NO label interface.
 
     The default fresh root, or explicit sampled openings and opponent policies,
@@ -545,7 +545,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     if not isinstance(selfplay,bool) or (selfplay and random_foe_seed is not None):
         raise ValueError('selfplay is boolean and cannot use a random foe')
     output=Path(output);output.mkdir(parents=True,exist_ok=False);began=time.perf_counter()
-    rules=coexistence_rules(lineup,horizon=2*9**9+1,c_axis=c_axis)
+    rules=coexistence_rules(lineup,horizon=2*9**9+1,c_axis=c_axis,b_geometry=b_geometry)
     setups=[None]
     if initial_positions is not None:
         from dataclasses import replace
@@ -565,7 +565,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     model=Model(weights);foe=model if selfplay else Model([1.]*len(env.names))
     config=dict(episodes=episodes,candidate_depth=depth,foe_depth=depth if selfplay else 2,initial=model.weights,
         names=env.names,eta=.05,lam=.95,scale=10,root='one symmetric fresh coexistence start',
-        lineup=lineup,c_axis=c_axis,
+        lineup=lineup,c_axis=c_axis,b_geometry=b_geometry,
         colors='episode%2',query_nodes=8192,game_nodes=524288,game_horizon=64,
         game_seconds=10,whole_nodes=2000000,whole_seconds=120,
         oracle='NONE: no reference labels available to the training runner',

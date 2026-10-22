@@ -75,6 +75,46 @@ def uniform_tie_distance(scores, other_scores):
     return 1-Fraction(len(a&b),max(len(a),len(b)))
 
 
+def decision_relevance(graph, labels, *, ratios, depths=(1,2,4), cancel=lambda: None):
+    """Complete finite price-cell diagnostic on supplied, proved fresh labels.
+
+    ``ratios`` must cover the caller's declared leaf-order cells and boundaries;
+    this function does not infer coverage or label an incomplete graph. A=C=1.
+    Oracle best-per-root is a diagnostic envelope, never a trainable policy.
+    Keep literal graph action order when constructing ``labels``. The returned
+    root rows permit label-blind inventory/initial-admission stratification.
+    All expectations randomize uniformly over ideal argmax sets; they are not
+    actual public tie choices, independent observations or game win rates.
+    """
+    ratios=tuple(Fraction(r)for r in ratios)
+    if not ratios or len(set(ratios))!=len(ratios):
+        raise ValueError('distinct nonempty price representatives required')
+    if not labels or any(i in graph['terminals']or
+            len(lab)!=len(graph['edges'][i])or not lab or
+            any(v not in(-1,0,1)for v in lab)for i,lab in labels.items()):
+        raise ValueError('complete proved ongoing root-action labels required')
+    phi=[material_vector(p)for p in graph['positions']]
+    result={}
+    for depth in depths:
+        cancel();root_rows={i:[]for i in labels};totals=[]
+        for ratio in ratios:
+            cancel();leaf=[a+ratio*b+c for a,b,c in phi];total=Fraction(0)
+            for ordinal,(i,lab)in enumerate(labels.items()):
+                if ordinal%64==0:cancel()
+                scores=action_scores(graph,i,leaf,depth);top=max(scores)
+                selected=tuple(j for j,s in enumerate(scores)if s==top)
+                error=Fraction(sum(lab[j]<max(lab)for j in selected),len(selected))
+                wdl=sum((Fraction(lab[j])for j in selected),Fraction(0))/len(selected)
+                root_rows[i].append(dict(selected=selected,error=error,wdl=wdl))
+                total+=error
+            totals.append(total)
+        result[depth]=dict(ratios=ratios,total_errors=totals,roots=root_rows,
+            minimum_global_error=min(totals),
+            rootwise_oracle_error=sum((min(r['error']for r in rows)
+                for rows in root_rows.values()),Fraction(0)))
+    return result
+
+
 def tie_study(output, *, regions, models_by_world, whole_seconds=300,depths=(1,2)):
     """Compare frozen models under uniform action-set ties on cached graphs.
 

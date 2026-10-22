@@ -61,10 +61,10 @@ def make_rules(*, kinds=('M','M'), horizon=6, layouts=None, b_geometry=DIAGONAL,
 
 
 def coexistence_rules(lineup=('A','B'), *, horizon=6, layout='original', initial_position=None,
-                       c_axis='horizontal'):
+                       c_axis='horizontal', b_geometry=DIAGONAL):
     """Default matched actors, with explicit layout/axis or fresh-setup controls."""
     if c_axis not in('horizontal','vertical'):raise ValueError('C axis must be horizontal or vertical')
-    geometry={'M':KING,'A':ORTHOGONAL,'B':DIAGONAL,
+    geometry={'M':KING,'A':ORTHOGONAL,'B':b_geometry,
         'C':((-1,0),(1,0))if c_axis=='horizontal'else((0,-1),(0,1))}
     if len(lineup)not in(2,3):raise ValueError('declare two or three ordinary actors per side')
     base=make_rules(kinds=('M','M'),horizon=horizon)

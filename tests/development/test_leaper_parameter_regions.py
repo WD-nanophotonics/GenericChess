@@ -51,6 +51,32 @@ def test_uniform_tie_error_is_an_expectation_not_a_forced_error():
     with pytest.raises(ValueError):tie_error_counts((2,2),(None,0))
 
 
+def test_decision_relevance_keeps_action_binding_and_cancellation(graph):
+    from fractions import Fraction
+    from scripts.leaper_parameter_regions import decision_relevance,tie_error_counts
+    from scripts.leaper_retrograde import root_action_labels
+    g=graph;indices=[i for i,e in enumerate(g['edges'])if e][::137]
+    labels={i:tuple(root_action_labels(g,i)[a]for a in g['actions'][i])for i in indices}
+    result=decision_relevance(g,labels,ratios=('1/4','1','3/2'),depths=(1,4))
+    # Independent scalar API checks the batched observer, including D4 root
+    # repetition and a deliberate reversal of action order plus its labels.
+    for depth,observation in result.items():
+        for j,b in enumerate(observation['ratios']):
+            leaf=[a+b*bb+c for a,bb,c in map(material_vector,g['positions'])]
+            errors=[tie_error_counts(action_scores(g,i,leaf,depth),labels[i])['expected_error']for i in indices]
+            assert observation['total_errors'][j]==sum(errors,Fraction(0))
+        assert observation['rootwise_oracle_error']<=observation['minimum_global_error']
+    reversed_graph=dict(g,edges=[tuple(reversed(e))for e in g['edges']])
+    reversed_labels={i:tuple(reversed(lab))for i,lab in labels.items()}
+    reverse=decision_relevance(reversed_graph,reversed_labels,ratios=('1/4','1','3/2'),depths=(4,))
+    assert reverse[4]['total_errors']==result[4]['total_errors']
+    def stop():raise RuntimeError('actual cancellation')
+    with pytest.raises(RuntimeError,match='actual cancellation'):
+        decision_relevance(g,labels,ratios=(1,),cancel=stop)
+    with pytest.raises(ValueError):decision_relevance(g,{indices[0]:(None,)},ratios=(1,))
+    with pytest.raises(ValueError):decision_relevance(g,labels,ratios=(1,1))
+
+
 def test_uniform_tie_distance_bounds_every_missing_binary_error_assignment():
     from fractions import Fraction
     from itertools import product

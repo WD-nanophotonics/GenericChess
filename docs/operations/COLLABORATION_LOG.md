@@ -667,3 +667,14 @@ Raw journals/one-off drivers stay ignored; the compact JSON is about200KB.
 The old uncertain Slack report is not resent. No Chat reading/execution of this
 new work is claimed. Own sidemission publication and full remote-SHA verification
 follow review; existing90-minute recurrence and role stops/caps remain unchanged.
+
+
+## DEV_AUX 2026-10-22: components and learnability
+
+PRIMARY contribution reused: committed sandbox 32dc8ac898c76b7f440b5722a03667bfb68d5872 countermove cost-probe interface/tests; all 238 shared package files match. No PRIMARY state or task is adopted. Claude1792637349 advice to pause representation and diagnose decision information is adopted, while its universal16-root ceiling and arbitrary1percent gate are rejected. Existing sparse4x4/5x5 controls are not rerun.
+
+DEV_AUX completes color-component, quantity and King-like-B controls using shared Core. The same uniformly initialized TD learner reaches the better B>2 region. Frozen public errors fall381to170 on1824excluded initial layouts, with12WDL regressions; paired score-gain censoring bounds are[11/256,15/256]. The learner matches oracle-selected B3, so no advantage over that control or cross-rule strength is claimed. A full D4 tree proves a limited arbitrary-inventory obstruction; D7 repairs the selected cases.
+
+A setup-order extraction bug changes126/128indices in the diagonal training comparison. Keep the runs/source: same board set, not strict paired order/seed evidence. No cap reset or rerun. A portable fork-example projection is repaired within its original180second allowance.174tests pass; all4608records/38057PVs/3072TDupdates replay,65UNKNOWN retained. Published selected Core proofs are checked. Main moves to occupancy-matched King-B ABA/ABC-H/ABC-V; actual initialization begun, no new solve or training claimed.
+
+[Components and learnability](../research/LEAPER_COMPONENTS_AND_LEARNABILITY_20261022.md). Raw journals/graphs/drivers stay ignored; compact data about152KB. Existing90min recurrence, stops and caps unchanged. Old uncertain Slack report is not resent; Chat reading/adoption/execution of the new work remains unconfirmed.

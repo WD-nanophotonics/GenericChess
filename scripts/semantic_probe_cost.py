@@ -76,6 +76,8 @@ def main():
                     help='Opt in to existing aspiration from depth4 with this positive window; omitted keeps it OFF')
     ap.add_argument('--staged-move-picker', action='store_true',
                     help='Existing opt-in staged ordering; evaluator, legal frontier and default remain unchanged')
+    ap.add_argument('--countermove', action='store_true',
+                    help='Existing opt-in previous-action response ordering; no legal frontier or default change')
     ap.add_argument('--pvs', action='store_true',
                     help='Existing opt-in principal variation search; defaults and all other switches unchanged')
     ap.add_argument('--stop-after-root-win', action='store_true',
@@ -190,6 +192,7 @@ def main():
                             use_native_semantic_availability=variant in ('availability', 'all', 'ordered', 'ordered_evasions'),
                             use_native_semantic_check=variant in ('check', 'all', 'ordered', 'ordered_evasions'),
                             tuning=SearchTuning(use_pvs=args.pvs,
+                                use_countermove=args.countermove,
                                 use_staged_move_picker=args.staged_move_picker,
                                 use_aspiration=args.aspiration_delta is not None,
                                 aspiration_delta=args.aspiration_delta if args.aspiration_delta is not None else 50,
