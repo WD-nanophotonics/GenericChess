@@ -483,3 +483,60 @@ def test_page_bundle_refuses_gaps_conflicts_and_truncated_rendering(env, fault):
     with pytest.raises(LocalFlowError):
         s.parse_plugin_pages(pages)
     assert s.status(r["request_id"])["state"] == "PENDING"
+
+
+@pytest.fixture
+def capture_env(tmp_path, monkeypatch):
+    monkeypatch.setattr(s, 'ROOT', tmp_path)
+    monkeypatch.setattr(s, 'STATE', tmp_path / '.local_agent')
+    calls = []
+    def ignored(*args, **kwargs):
+        calls.append((args, kwargs))
+        assert args[:2] == ('check-ignore', '--quiet')
+        assert kwargs['cwd'] == tmp_path.resolve()
+        return ''
+    monkeypatch.setattr(s, 'git', ignored)
+    return tmp_path / '.local_agent' / 'reads' / 'session-read-channel.json', calls
+
+
+def test_private_original_refuses_different_capture(capture_env):
+    path, calls = capture_env
+    first = b'{  "account": "fixture-original", "text": "first" }\n'
+    second = b'{"account":"next-day", "text":"different"}'
+    saved = s.save_plugin_original(path, first)
+    stamp = path.stat().st_mtime_ns
+    assert saved['status'] == 'SAVED' and saved['sha256'] == s.hashlib.sha256(first).hexdigest()
+    with pytest.raises(LocalFlowError, match='refusing to overwrite'):
+        s.save_plugin_original(path, second)
+    assert path.read_bytes() == first and path.stat().st_mtime_ns == stamp
+    assert len(calls) == 2
+
+
+def test_private_original_retry_preserves_unicode_bytes_and_timestamp(capture_env):
+    path, _ = capture_env
+    payload = json.dumps({'account': 'unchanged-fixture', 'text': '中文 "quoted"\nline'},
+                         ensure_ascii=False, indent=3).encode('utf-8') + b'\n'
+    s.save_plugin_original(path, payload)
+    stamp = path.stat().st_mtime_ns
+    again = s.save_plugin_original(path, payload)
+    assert again['status'] == 'ALREADY_SAVED'
+    assert again['bytes'] == len(payload)
+    assert path.read_bytes() == payload and path.stat().st_mtime_ns == stamp
+
+
+@pytest.mark.parametrize('kind', ['outside', 'not_ignored', 'not_bytes'])
+def test_private_original_rejects_unsafe_destination_without_writing(capture_env, monkeypatch, kind):
+    path, _ = capture_env
+    target = path
+    payload = b'original'
+    if kind == 'outside':
+        target = s.ROOT / 'public.json'
+    elif kind == 'not_ignored':
+        def not_ignored(*args, **kwargs):
+            raise LocalFlowError('not ignored')
+        monkeypatch.setattr(s, 'git', not_ignored)
+    else:
+        payload = 'not bytes'
+    with pytest.raises(LocalFlowError):
+        s.save_plugin_original(target, payload)
+    assert not target.exists()

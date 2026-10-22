@@ -7,6 +7,8 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
+from pathlib import Path
 import re
 import secrets
 import sqlite3
@@ -23,6 +25,39 @@ def stamp():
 
 def digest(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
+
+
+def save_plugin_original(path: Path, payload: bytes) -> dict:
+    """Create an ignored original once; a retry may only confirm identical bytes.
+
+    This is opaque private evidence, not mutable configuration or a send action.
+    A failed write is retained; the caller keeps its tool return and uses a new
+    capture path rather than overwriting a partial or earlier original.
+    """
+    if not isinstance(payload, bytes):
+        raise LocalFlowError('plugin original must be bytes')
+    root = ROOT.resolve()
+    state = STATE.resolve()
+    target = (root / Path(path)).resolve()
+    if (not state.is_relative_to(root) or not target.is_relative_to(state)
+            or target == state):
+        raise LocalFlowError('plugin original must stay inside this checkout .local_agent')
+    relative = target.relative_to(root).as_posix()
+    # A PUBLIC checkout is not an excuse to expose raw account/credential data.
+    git('check-ignore', '--quiet', '--', relative, cwd=root)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    status = 'SAVED'
+    try:
+        with target.open('xb') as stream:
+            stream.write(payload)
+            stream.flush()
+            os.fsync(stream.fileno())
+    except FileExistsError:
+        if not target.is_file() or target.read_bytes() != payload:
+            raise LocalFlowError('refusing to overwrite private original: ' + relative)
+        status = 'ALREADY_SAVED'
+    return {'status': status, 'path': relative, 'bytes': len(payload),
+            'sha256': hashlib.sha256(payload).hexdigest()}
 
 
 def config():

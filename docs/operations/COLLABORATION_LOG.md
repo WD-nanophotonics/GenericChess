@@ -6531,3 +6531,14 @@ worker/timer/default change. Reviewed source/data and the purpose report are the
 handoff; session finish and final-check remain required for final acceptance.
 
 [Report and technical evidence](../research/LEAPER_CONNECTED_PROPOSAL_20261023.md).
+
+
+Closing integrity correction for the connected segment: PRIMARY reused a private
+HHMM capture name and overwrote the preceding day's channel-wrapper original.
+Its complete old thread original is retained/strictly parsed; the original channel
+wrapper is not recovered or reconstructed. Current seven raw returns are now
+preserved by session/read UUID and byte comparison. A focused exclusive-create,
+identical-retry-only transport guard and five regressions prevent silent
+replacement; all59transport tests pass. Scientific packet/inputs/results are
+unchanged. This correction is administrative, not extra research credit; the
+private provenance amendment records the remaining historical limitation.

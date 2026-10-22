@@ -205,3 +205,18 @@ independent. Science remains OPEN.
 Recorded effective science plus necessary validation is5025.021296 seconds
 (83m45s). Administrative preparation, documentation, transport, unobserved gaps
 and post-verifier waiting are excluded; overlapping computations count once.
+
+
+## Closing capture-integrity correction
+
+A closing audit found that a time-only private channel-capture filename was
+reused on the next day and overwrote the preceding channel-wrapper original.
+The complete old thread original remains and was strictly parsed; the old
+channel wrapper itself has not been recovered and is not claimed reconstructed.
+Current seven raw responses are now byte-checked in a session/fresh-read UUID
+namespace. Scientific inputs/results and this qualified packet are unaffected.
+The existing transport now creates originals exclusively, rejects different
+bytes on collision and permits only byte-identical read-only retries in ignored
+checkout-private paths. Five preservation/path regressions plus existing
+transport checks pass (59 tests). This repair and delivery are administrative;
+they add no effective research time. The provenance amendment remains private.
