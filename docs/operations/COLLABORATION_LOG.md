@@ -6261,3 +6261,21 @@ SHA and session quality/finish/final-check must be verified separately.
 - Deliver one exact compact technical capsule with public-copy privacy/member
   checks instead of embedded vendor trees. Current prefix follow-up has24full
   inputs prepared and0queries;no generic-quality/learning/default claim.
+
+
+## 2026-10-22 PRIMARY: rule quality, competence floor and price controls
+
+One new Claude project root/full thread was saved exactly before assessment.
+Its rule-quality direction agrees with the preceding delivery; its fallback
+criticism cites an older revision. AUX training/roster work was not adopted or
+executed here. No outbound message, real-time contact or auxiliary write occurred.
+PRIMARY completed full-prefix/dense mechanism diagnostics, independently
+qualified policy counterfactuals and176newfixed-FLOOR games. Unit-leaf effects
+are positive onthisexposedacceptedcohort atbothorderingcontrols;interaction,
+missinggeneration andbroadertransfer remain unresolved. No default was changed.
+A cross-policy UNKNOWN-tail coupling assumption and a naiveD1leaf simplification
+were corrected with their original calculations/failure retained. Existingqsearch
+contracts and old assertions remain. Allscientificproducers closed;12fresh
+prospectiveinputs prepared,0fitnessqueries. Denseallreply costs23.8minutes and
+mustnot become a routinelearning gate. Details/evidence are in the new report
+and compact public capsule; qualifications use sharedCore,not an independentengine.

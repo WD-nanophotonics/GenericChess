@@ -296,11 +296,26 @@ control certifies mate3. The different q4 action is not a provenWDL error;no
 q/default/positionpatch follows. Quality aggregation defects were reproduced and
 fixed causally,oldassertions preserved,andall3655 active checks pass.
 
-Main: inspect rule-quality-prefix-next-20261022 registration/catalog and24actual
-canonical preflight inputs. Estimate total cost before a single fixed-prefix
-pass over existing full histories: immediatewin opportunities,restrictedclosed
-class and remainingUNKNOWN. Prefixes0/4/16/64,all unavailable slots and all
-promotion/drop/aux/history retained;no oracle-selected experience ornewlearner.
-No follow-up queries have run. Backup: compare rule/policy dependence using the
-saved complete traces;do not turn one exposed certificate into a quality gate or
-another unchanged search-cost sweep. All current producers CLOSED. Science OPEN.
+The fixed-prefix continuation is now closed in
+[RULE_QUALITY_FLOOR_AND_PRICE_CONTROLS_20261022.md](RULE_QUALITY_FLOOR_AND_PRICE_CONTROLS_20261022.md).
+Known closed-King occupation is only227/8519remove turns. Immediate-terminal
+recognition greatly reduces random censoring; continuing-policy UNKNOWN tails
+are distinct even for identical capped prefixes. Corrected bounds and the
+conditional common-tail calculation are separate. No raw outcome is relabelled.
+
+176new actualfixed-FLOOR games separate the completepricepolicy:Unit leaf has
+accepted finite effects[3/22,7/22]atStaticordering and[1/22,7/22]atUnitordering;
+order interaction crosseszero. Morepaidwork,negativefamilies,old envelopes and
+planned-generation sensitivities forbid a universal/defaultwinner. Ordinaryq0
+still has forcedcheck8:15quietfirstdivergences have qualifiedoneplyargmax,
+19checkedstates do not have full-valueproof fromthatmodel. PhysicalPVs pass.
+
+Main: execute `.local_agent/rule-quality-prefix-next-20261022/prospective-leaf-next/registration.json`
+with its12completeprepared inputs:48slots,twoleafcandidates/commonStaticorder,
+fixedFLOOR,1s/D1/q4hard8/caller96/shared900s. All12newconfigswerefixedbefore
+generation andsucceeded;0fitnessqueries. OpeningpreferenceON islocalexperiment
+scope,notproductiondefault. Preservefailures/UNKNOWN,fullfuturetypes,promotion,
+drop/aux/history,actualbackend/cost andpolicy-distincttails. Nooldpanelrefill,
+AUXlearner,training ordefaultchange. Backup: diagnose actualforcedcheckcontinuations
+with existingsearch,or reuse scoped terminal/price evidence for a concretechoice;
+never substitute a plainleaf expectation for that searchcontract. Science OPEN.

@@ -1,0 +1,533 @@
+{
+  "fixed_prefix": {
+    "scope": "SharedCore depth-two terminal witnesses;counts are finite repeatedviews,not independentstates/populationCI,fullWDL coverage or learnedprice utility.",
+    "strata": [
+      {
+        "mode": "pocket",
+        "prefix": 0,
+        "available_views": 176,
+        "ongoing_views": 176,
+        "exact_win_loss_choice_views": 16,
+        "oneply_win_views": 16,
+        "reply_loss_exposure_views": 48,
+        "all_actions_lose_within_reply_views": 0,
+        "other_unknown_actions_retained": 3440
+      },
+      {
+        "mode": "pocket",
+        "prefix": 4,
+        "available_views": 173,
+        "ongoing_views": 172,
+        "exact_win_loss_choice_views": 6,
+        "oneply_win_views": 16,
+        "reply_loss_exposure_views": 29,
+        "all_actions_lose_within_reply_views": 0,
+        "other_unknown_actions_retained": 4479
+      },
+      {
+        "mode": "pocket",
+        "prefix": 16,
+        "available_views": 162,
+        "ongoing_views": 162,
+        "exact_win_loss_choice_views": 2,
+        "oneply_win_views": 13,
+        "reply_loss_exposure_views": 40,
+        "all_actions_lose_within_reply_views": 2,
+        "other_unknown_actions_retained": 4349
+      },
+      {
+        "mode": "pocket",
+        "prefix": 64,
+        "available_views": 140,
+        "ongoing_views": 139,
+        "exact_win_loss_choice_views": 0,
+        "oneply_win_views": 5,
+        "reply_loss_exposure_views": 9,
+        "all_actions_lose_within_reply_views": 0,
+        "other_unknown_actions_retained": 4425
+      },
+      {
+        "mode": "remove",
+        "prefix": 0,
+        "available_views": 176,
+        "ongoing_views": 176,
+        "exact_win_loss_choice_views": 16,
+        "oneply_win_views": 16,
+        "reply_loss_exposure_views": 48,
+        "all_actions_lose_within_reply_views": 0,
+        "other_unknown_actions_retained": 3392
+      },
+      {
+        "mode": "remove",
+        "prefix": 4,
+        "available_views": 173,
+        "ongoing_views": 172,
+        "exact_win_loss_choice_views": 4,
+        "oneply_win_views": 12,
+        "reply_loss_exposure_views": 21,
+        "all_actions_lose_within_reply_views": 0,
+        "other_unknown_actions_retained": 3246
+      },
+      {
+        "mode": "remove",
+        "prefix": 16,
+        "available_views": 166,
+        "ongoing_views": 166,
+        "exact_win_loss_choice_views": 5,
+        "oneply_win_views": 15,
+        "reply_loss_exposure_views": 25,
+        "all_actions_lose_within_reply_views": 2,
+        "other_unknown_actions_retained": 2819
+      },
+      {
+        "mode": "remove",
+        "prefix": 64,
+        "available_views": 148,
+        "ongoing_views": 148,
+        "exact_win_loss_choice_views": 0,
+        "oneply_win_views": 0,
+        "reply_loss_exposure_views": 5,
+        "all_actions_lose_within_reply_views": 0,
+        "other_unknown_actions_retained": 2120
+      }
+    ],
+    "unique_roots": 570,
+    "reply_edges": 501312,
+    "whole_seconds": 60.96098850003909
+  },
+  "closure_occupation": [
+    {
+      "mode": "pocket",
+      "views": 176,
+      "actual_unique_games": 104,
+      "gameviews_ever_closed": 0,
+      "unique_games_ever_closed": 0,
+      "firstentry_plies": {},
+      "view_turns": 14000,
+      "view_closed_turns": 0,
+      "unique_turns": 7879,
+      "unique_closed_turns": 0,
+      "gamebalanced_closed_turn_fraction": 0.0,
+      "unique_promoted_turns": 6485,
+      "unique_drop_actions": 2013
+    },
+    {
+      "mode": "remove",
+      "views": 176,
+      "actual_unique_games": 104,
+      "gameviews_ever_closed": 18,
+      "unique_games_ever_closed": 9,
+      "firstentry_plies": {
+        "50": 1,
+        "69": 1,
+        "88": 1,
+        "90": 1,
+        "72": 2,
+        "66": 2,
+        "64": 1
+      },
+      "view_turns": 14853,
+      "view_closed_turns": 454,
+      "unique_turns": 8519,
+      "unique_closed_turns": 227,
+      "gamebalanced_closed_turn_fraction": 0.022736378205128208,
+      "unique_promoted_turns": 6497,
+      "unique_drop_actions": 0
+    }
+  ],
+  "terminal_floor": [
+    {
+      "mode": "pocket",
+      "views": 176,
+      "actual_unique_counterfactuals": 104,
+      "original_terminal_counts": {
+        "ongoing": 116,
+        "checkmate": 48,
+        "stalemate": 12
+      },
+      "derived_terminal_counts": {
+        "checkmate": 130,
+        "stalemate": 12,
+        "ongoing": 34
+      },
+      "firstWIN_activations": 130,
+      "changed_actions": 126,
+      "original_closed_views": 0,
+      "closed_entry_averted": 0,
+      "generation_missing_views": 16,
+      "unattempted_views": 0,
+      "raw_originals_unchanged": true
+    },
+    {
+      "mode": "remove",
+      "views": 176,
+      "actual_unique_counterfactuals": 104,
+      "original_terminal_counts": {
+        "ongoing": 140,
+        "stalemate": 20,
+        "repetition": 2,
+        "checkmate": 14
+      },
+      "derived_terminal_counts": {
+        "ongoing": 80,
+        "checkmate": 80,
+        "stalemate": 14,
+        "repetition": 2
+      },
+      "firstWIN_activations": 80,
+      "changed_actions": 78,
+      "original_closed_views": 18,
+      "closed_entry_averted": 6,
+      "generation_missing_views": 16,
+      "unattempted_views": 0,
+      "raw_originals_unchanged": true
+    }
+  ],
+  "policy_distinct_bounds": [
+    {
+      "separate_closed_proof": false,
+      "strata": [
+        {
+          "mode": "pocket",
+          "views": 176,
+          "bounds": {
+            "B-A": [
+              "13/88",
+              "129/88"
+            ],
+            "D-C": [
+              "7/11",
+              "103/88"
+            ],
+            "interaction": [
+              "-15/22",
+              "45/44"
+            ],
+            "rolebalanced_gain": [
+              "73/176",
+              "145/176"
+            ]
+          },
+          "generationmissing_views": 16,
+          "rawUNKNOWNnotrelabeled": true
+        },
+        {
+          "mode": "remove",
+          "views": 176,
+          "bounds": {
+            "B-A": [
+              "9/88",
+              "149/88"
+            ],
+            "D-C": [
+              "13/44",
+              "16/11"
+            ],
+            "interaction": [
+              "-101/88",
+              "119/88"
+            ],
+            "rolebalanced_gain": [
+              "17/88",
+              "19/22"
+            ]
+          },
+          "generationmissing_views": 16,
+          "rawUNKNOWNnotrelabeled": true
+        }
+      ]
+    },
+    {
+      "separate_closed_proof": true,
+      "strata": [
+        {
+          "mode": "pocket",
+          "views": 176,
+          "bounds": {
+            "B-A": [
+              "13/88",
+              "129/88"
+            ],
+            "D-C": [
+              "7/11",
+              "103/88"
+            ],
+            "interaction": [
+              "-15/22",
+              "45/44"
+            ],
+            "rolebalanced_gain": [
+              "73/176",
+              "145/176"
+            ]
+          },
+          "generationmissing_views": 16,
+          "rawUNKNOWNnotrelabeled": true
+        },
+        {
+          "mode": "remove",
+          "views": 176,
+          "bounds": {
+            "B-A": [
+              "1/8",
+              "133/88"
+            ],
+            "D-C": [
+              "27/88",
+              "115/88"
+            ],
+            "interaction": [
+              "-43/44",
+              "13/11"
+            ],
+            "rolebalanced_gain": [
+              "9/44",
+              "69/88"
+            ]
+          },
+          "generationmissing_views": 16,
+          "rawUNKNOWNnotrelabeled": true
+        }
+      ]
+    }
+  ],
+  "fourcell_prices": {
+    "accepted22slots44roles": {
+      "whole_D-A": [
+        "1/22",
+        "7/22"
+      ],
+      "leaf_C-A_staticorder": [
+        "3/22",
+        "7/22"
+      ],
+      "leaf_D-B_unitorder": [
+        "1/22",
+        "7/22"
+      ],
+      "order_B-A_staticleaf": [
+        "0",
+        "0"
+      ],
+      "order_D-C_unitleaf": [
+        "-3/11",
+        "2/11"
+      ],
+      "interaction_D-C-B+A": [
+        "-3/11",
+        "2/11"
+      ]
+    },
+    "planned24slots48roles_hypotheticalcompletion": {
+      "whole_D-A": [
+        "-1/8",
+        "11/24"
+      ],
+      "leaf_C-A_staticorder": [
+        "-1/24",
+        "11/24"
+      ],
+      "leaf_D-B_unitorder": [
+        "-1/8",
+        "11/24"
+      ],
+      "order_B-A_staticleaf": [
+        "-1/6",
+        "1/6"
+      ],
+      "order_D-C_unitleaf": [
+        "-5/12",
+        "1/3"
+      ],
+      "interaction_D-C-B+A": [
+        "-7/12",
+        "1/2"
+      ]
+    },
+    "unique13fullrules26roles_descriptive": {
+      "whole_D-A": [
+        "1/13",
+        "4/13"
+      ],
+      "leaf_C-A_staticorder": [
+        "2/13",
+        "4/13"
+      ],
+      "leaf_D-B_unitorder": [
+        "1/13",
+        "4/13"
+      ],
+      "order_B-A_staticleaf": [
+        "0",
+        "0"
+      ],
+      "order_D-C_unitleaf": [
+        "-3/13",
+        "2/13"
+      ],
+      "interaction_D-C-B+A": [
+        "-3/13",
+        "2/13"
+      ]
+    }
+  },
+  "new_match_costs": {
+    "scope": "All176paidnewD1vsFLOOR games acrossfourcells;actualreturns/costs,not equalpaidwork or samplingCI. Qordinary0 doesnot mean no forcedchecksearch.",
+    "cells": {
+      "A": {
+        "games": 44,
+        "candidate_queries": 391,
+        "floor_queries": 380,
+        "nodes": 49968,
+        "qnodes": 26604,
+        "checked_qnodes": 1770,
+        "max_candidate_wall_seconds": 0.09934939991217107,
+        "paid_candidate_seconds": 7.999507798929699,
+        "paid_floor_seconds": 0.7164015980670229,
+        "eligible_games": 44,
+        "fallback_games": 0,
+        "terminal_counts": {
+          "checkmate": 44
+        },
+        "depth_policy": {
+          "(1, 0, 8, 'main_iteration')": 358,
+          "(0, None, None, 'root_immediate_win')": 33
+        }
+      },
+      "B": {
+        "games": 44,
+        "candidate_queries": 391,
+        "floor_queries": 380,
+        "nodes": 49968,
+        "qnodes": 26619,
+        "checked_qnodes": 1770,
+        "max_candidate_wall_seconds": 0.09970360004808754,
+        "paid_candidate_seconds": 8.123856100137345,
+        "paid_floor_seconds": 0.7055629005189985,
+        "eligible_games": 44,
+        "fallback_games": 0,
+        "terminal_counts": {
+          "checkmate": 44
+        },
+        "depth_policy": {
+          "(1, 0, 8, 'main_iteration')": 358,
+          "(0, None, None, 'root_immediate_win')": 33
+        }
+      },
+      "C": {
+        "games": 44,
+        "candidate_queries": 623,
+        "floor_queries": 605,
+        "nodes": 70710,
+        "qnodes": 37550,
+        "checked_qnodes": 2508,
+        "max_candidate_wall_seconds": 0.10941020003519952,
+        "paid_candidate_seconds": 11.957045099930838,
+        "paid_floor_seconds": 1.2313133017159998,
+        "eligible_games": 44,
+        "fallback_games": 0,
+        "terminal_counts": {
+          "checkmate": 40,
+          "ongoing": 4
+        },
+        "depth_policy": {
+          "(1, 0, 8, 'main_iteration')": 587,
+          "(0, None, None, 'root_immediate_win')": 36
+        }
+      },
+      "D": {
+        "games": 44,
+        "candidate_queries": 659,
+        "floor_queries": 643,
+        "nodes": 72631,
+        "qnodes": 38598,
+        "checked_qnodes": 2638,
+        "max_candidate_wall_seconds": 0.10541269998066127,
+        "paid_candidate_seconds": 12.446306798723526,
+        "paid_floor_seconds": 1.2300551002845168,
+        "eligible_games": 44,
+        "fallback_games": 0,
+        "terminal_counts": {
+          "checkmate": 38,
+          "ongoing": 6
+        },
+        "depth_policy": {
+          "(1, 0, 8, 'main_iteration')": 625,
+          "(0, None, None, 'root_immediate_win')": 34
+        }
+      }
+    },
+    "total_candidate_queries": 2064,
+    "total_floor_queries": 2008,
+    "interpretation": "PositiveUnitleaf contrast holdsatbothorderingcontrols onacceptedcohort;order effectatUnitleaf andinteraction unidentifiable acrosszero. Missinggeneration includeszero underhypotheticalcompletion,knownnegativefamilies remain,wholepaidturns increase. Nodefaultwinner/learningbenefit."
+  },
+  "scientific_source_integrity": {
+    "source_random_original_hashes_unchanged": {
+      ".local_agent/rule-quality-random-20261022/results.json": true,
+      ".local_agent/rule-quality-capture-random-20261022/results.json": true
+    },
+    "closed_phases": {
+      "fixedprefix": {
+        "status": "CLOSED",
+        "seconds": 14.529390200041234
+      },
+      "fixedtwoturn": {
+        "status": "CLOSED",
+        "seconds": 60.96098850003909
+      },
+      "dense": {
+        "status": "CLOSED",
+        "seconds": 1430.2402539999457
+      },
+      "densequalification": {
+        "status": "CLOSED",
+        "seconds": 56.834903400042094
+      },
+      "firstWIN": {
+        "status": "CLOSED",
+        "seconds": 4.054815599927679
+      },
+      "firstWINqualification": {
+        "status": "CLOSED",
+        "seconds": 18.152379299979657
+      },
+      "floorfactorial": {
+        "status": "CLOSED",
+        "seconds": 4.150954699958675
+      },
+      "floorfactorialqualification": {
+        "status": "CLOSED",
+        "seconds": 34.73043360002339
+      },
+      "Staticcompetence": {
+        "status": "CLOSED",
+        "seconds": 15.158981299959123
+      },
+      "Unitcontrol": {
+        "status": "CLOSED",
+        "seconds": 28.42402969999239
+      },
+      "crossed": {
+        "status": "CLOSED",
+        "seconds": 43.31354000000283
+      }
+    },
+    "actual_new_match_games": 176,
+    "actual_new_candidate_Player_returns": 2064,
+    "actual_new_floor_returns_in_match_games": 2008,
+    "extra_crossed_prototype_Player_returns": 2,
+    "rawUNKNOWNretained": true,
+    "default_product_source_changed": false,
+    "prospective_next_inputs": {
+      "prepared": 12,
+      "failed": 0,
+      "fitness_queries": 0
+    },
+    "unresolved": [
+      "19checkedfirstdivergence states notfull-valuequalified byplainleafmodel;observedfailure causallydiagnosed,fullphysicalPV/historyqualified.",
+      "Currentpriceedge isexposed/scopeconditional;freshregisteredcohortNOTRUN;generationmissing remains.",
+      "No universalqualitythreshold,learnedpriceutility orpopulationclaim."
+    ],
+    "scope": "Source original integrity+closing substantive quality inventory;not evidence of additional walltime or scientific completion."
+  }
+}
