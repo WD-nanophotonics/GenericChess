@@ -124,3 +124,73 @@ def test_agent_ladder_is_an_interface_not_a_strength_claim():
     assert report["minimum_adjacent_advantage"] == pytest.approx(-0.3)
     incomplete = {("random_legal", "very_shallow"): 0.7}
     assert ladder.skill_discrimination(incomplete) is None
+
+
+@pytest.mark.parametrize("status", ("CENSORED", "UNRESOLVED", "ongoing"))
+def test_short_observation_cutoffs_are_not_rule_terminals(status):
+    profile = profile_from_observations([QualityObservation((3, 3), 2, status)])
+    assert profile.very_short_terminal_fraction == 0.0
+
+
+@pytest.mark.parametrize("status", ("stalemate", "perpetual_check"))
+def test_decisive_rule_outcomes_are_not_draw_quality_flags(status):
+    profile = profile_from_observations([
+        QualityObservation((3, 3), 2, status, 1.0, 0.0),
+    ])
+    assert "DRAW_DOMINATED" not in profile.classification_reasons
+    assert classify_game_quality(profile, thresholds={"draw_fraction": 0.9})[0] != "DRAW_DOMINATED"
+
+
+@pytest.mark.parametrize("status", ("max_ply", "no_progress_draw", "action_class_draw"))
+def test_actual_rule_draws_are_included_in_quality_diagnostics(status):
+    profile = profile_from_observations([
+        QualityObservation((3, 3), 2, status, 0.5, 0.5),
+    ])
+    assert "DRAW_DOMINATED" in profile.classification_reasons
+    assert classify_game_quality(profile, thresholds={"draw_fraction": 0.9})[0] == "DRAW_DOMINATED"
+
+
+@pytest.mark.parametrize("status", ("stalemate", "perpetual_check", "rule_loss"))
+def test_winner_is_preserved_when_reward_is_unavailable(status):
+    profile = profile_from_observations([
+        QualityObservation((3, 3), 2, status, terminal_winner=1),
+    ])
+    assert profile.rule_draw_fraction == 0.0
+    assert "DRAW_DOMINATED" not in profile.classification_reasons
+
+
+def test_mixed_censoring_does_not_inflate_actual_rule_draw_fraction():
+    profile = profile_from_observations([
+        QualityObservation((3, 3), 2, "max_ply", 0.5, 0.5),
+        QualityObservation((3, 3), 2, "stalemate", terminal_winner=1),
+        QualityObservation((3, 3), 2, "CENSORED"),
+        QualityObservation((3, 3), 2, "no_contest"),
+    ])
+    assert profile.rule_draw_fraction == 0.25
+    assert profile.very_short_terminal_fraction == 0.75
+    assert profile.first_player_score == 0.5
+    assert profile.classification == "UNRESOLVED"
+
+
+
+def test_authoritative_quality_reasons_each_meet_their_own_threshold():
+    from generic_chess.benchmark.game_quality import authoritative_reasons
+
+    profile = profile_from_observations([
+        *[QualityObservation((1,) * 20, 20, "repetition", 0.5, 0.5) for _ in range(9)],
+        QualityObservation((1,) * 20, 20, "checkmate", 1.0, 0.0),
+    ])
+    assert "DRAW_DOMINATED" in profile.classification_reasons
+    assert authoritative_reasons(profile, {"forced_line": 0.5, "draw_fraction": 0.99}) == ("FORCED_LINE",)
+
+
+def test_quality_reward_does_not_turn_no_contest_into_draw():
+    from dataclasses import replace
+    from generic_chess.core.terminal import TerminalResult, TerminalStatus
+    from generic_chess.benchmark.game_quality import _game_score
+
+    session = GameSession(generate_minimal_game(7, board_size=4, ordinary_count=2).compiled)
+    session._state = replace(session.state, terminal_status=TerminalResult(TerminalStatus.NO_CONTEST))
+    assert session.result.status.value == "no_contest"
+    assert _game_score(session, 0) is None
+    assert _game_score(session, 1) is None

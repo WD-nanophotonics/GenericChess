@@ -2,81 +2,83 @@
 
 ## Authority and shared infrastructure
 
-The direct Leaper instruction governs. Conditional contribution, useful search
-parameters, predictive value and exact strategic value remain distinct.
-No intrinsic price, additivity, unique optimum or convergence is assumed.
-Oracle labels stay outside experiential training.
+The direct Leaper instruction governs. Conditional strategic contribution,
+useful search parameters and prediction targets remain distinct. No intrinsic
+price, additivity, unique optimum or convergence is assumed. Oracle labels stay
+outside experiential training.
 
-Pinned sandbox: 32dc8ac898c76b7f440b5722a03667bfb68d5872.
-Its committed countermove cost-probe option and tests are reused. All 238 shared
-package files match. Three test differences and one omitted other-role test
-retain the documented role/historical boundaries. The two existing learner
-modules remain the only extra package modules. No parallel engine or default.
+Execution source: sandbox 528c6d896e09c7f3c1008f09a07b04538ca20ef0.
+Closing published source: a552355e32a39fcff7d720d1181aebb904b79b79.
+The intervening commit changes PRIMARY research records only. All 238 shared
+package modules match the latest committed infrastructure; terminal-aware
+game-quality code/tests are reused. No other-role state or task is adopted.
 
-Current report: LEAPER_COMPONENTS_AND_LEARNABILITY_20261022.md.
-Evidence: data/leaper_components_learning_20261022.json (about 152 KB).
-Previous reports, old caps, failures, partial results and the 394 unprocessed
-oracle queries remain closed and intact.
+Current report: LEAPER_COMPOSITION_AND_CONTRIBUTION_20261022.md.
+Compact evidence: data/leaper_composition_contribution_20261022.json (~233 KB).
+Previous reports, models, caps and failures remain closed and retained.
 
 ## Current results and limits
 
-* Two new diagonal-B color components complete 25,088/22,660 vertices. The old
-  16-root count compared B=.25/.75; D2 positive-price contrasts across all cells
-  are 64/5344, 152/5088, 144/4880. It was not an all-representation ceiling.
-* Equal-inventory quiet D4 roots can require disjoint B regions. Actual public
-  queries and all-defense WIN certificates verify the pair; D7 repairs both.
-  A complete Core D4 tree proves a specific inventory-only limitation: with
-  balanced inventory scored zero and terminal dominance, even nonlinear
-  inventory values cannot make the unique WIN uniquely best. Tempo, spatial,
-  biased values and deeper trees are outside this claim. No representation adopted.
-* The K+A+2B quantity control completes 85,217 vertices, 79,816 ongoing labels
-  and all D1/D2/D4 cells. Its particular component has only two quiet intact
-  side-0 starts. More quantity is not automatically an informative initial pool.
-* Adding four orthogonal B steps at fixed KAB inventory gives 35,144 vertices
-  and 31,040 complete ongoing labels. Of 1,952 quiet side-0 layouts, 704 have
-  positive-price D2 WDL contrasts. The best bounded B cell is (2,4].
-* The same TD learner, uniform initialization, two 768-episode arms: RNG ends
-  B=2.417109611, adaptive selfplay 2.462603514. All 6,046 learner-query histories
-  are diagnosed. Every update reconstructs; strategic gradient origins provide
-  positive credit. Observed dead PVs have zero B gradient, although the graph
-  still has dead B-containing states.
-* Frozen D2 errors on 1,824 excluded initial layouts fall 381 to 170, with 12 WDL
-  regressions. These are exposed-world layouts, possibly training descendants,
-  not untouched holdout rules. On 256 new-seed paired games, score-gain censoring
-  bounds are [11/256,15/256], not a confidence interval. Learned and oracle B=3
-  match all 1,952 root actions/PVs/nodes and every frozen game. No gain over B=3.
-* Diagonal training on the same 128-board set ends B=.923763/.755727. Extraction
-  changes 126 setup indices: it is not strictly paired order/seed evidence.
-  Preserve the failure and qualification; do not rerun or reset caps. Resolve keys.
-* All 4,608 new games, 38,057 PVs, 19,475 RNG choices and 3,072 TD updates replay;
-  65 UNKNOWN remain. 174 tests pass. Selected outgoing rules, a full D4 tree and
-  six WIN proofs are checked.
+* Three complete King-B composition components: ABA 83,685 vertices,
+  ABC-H 68,613, ABC-V 61,189; 547,057 total edges. The same default occupancy
+  gives player-0 WIN/LOSS/WIN. All original graph caps remain unchanged.
+* At a matched board, changing second A to horizontal C reverses the ordinal
+  A/B deletion contribution: ABA removing A gives DRAW and removing B keeps
+  WIN; H gives the opposite. Six legal six-ply prefixes have matching actual
+  history values. Four WIN proofs plus complete DRAW labels support the case.
+* C can hurt its owner: a selected forced-C-move LOSS becomes actual rule
+  stalemate DRAW after C removal. Deletion is a constructed-state intervention,
+  not a playable action or an intrinsic negative price.
+* The 749 matched-root panel has one ideal D2 disjoint-safe-B pair, but the
+  deployed high-B policy wins in both worlds. All 22,944 public root choices
+  attain exact Core depth-limited maxima; 54,230 PV moves replay.
+* C=0 lowers ideal error and actual D2 errors, while H actual D4 errors rise
+  8 to10 at transferred B. At a selected D4 tie both actions score1 with
+  either C weight; actual ordering selects different WDL.
+* All 588 frozen-transfer games and 2,711 query histories replay. Random-foe
+  paired score gains are 3/16,17/128,3/16; one initial board/world,not independent
+  rules or holdout. No benefit over oracle-selected constant B3.5 established.
+* No C training was run. Frozen local TD directions have nonzero C gradients
+  and depend on B initialization. At one actual prefix, C=.999/1/1.001 yields
+  WIN/WIN/DRAW with constant critic0 and leaf-C gradients0/.1/0.
+  All 511 nonzero-gradient origins checked;56 flat-envelope cases occur in H.
+* Label-blind 128-opening feasibility:117 ongoing/world;54/65 have different-WDL
+  choices;35/46 C1 gradients nonzero. All468 queries and859 PV moves replay.
+  Terminal/duplicate paths retained;frozen seeds/hash evidence saved.
+* 124 relevant tests pass. Actual outgoing evidence checks 16 WIN certificates,
+  selected D2 reply trees and D4 scores in 366 Core visits. Rotation and owner
+  exchange are checked with complete Core transition controls.
+* Preserve 80 deletion UNKNOWNs,88 keyed-geometry unlabelled queries,old 65 UNKNOWN
+  games and 394 unprocessed oracle queries. The old training-order 126/128 bug
+  is not rerun. Checked-initial-setup rejection and corrected V arithmetic/
+  extra no-C-state/attribute failures remain explicit,not rewritten as success.
 
 ## Next executable research
 
-Main: Does C change the useful B regime in the informative King-B world? |
-  use artifacts/leaper-KingB-C-feasibility-20261022.json: ABA/ABC-H/ABC-V
-  eight-actor rules already admitted, with 5/4/5 initial actions; freeze sources
-  and use the existing Core solver, 600 seconds/300,000 positions per graph |
-  complete fresh WDL/cost evidence or preserved UNKNOWN, then an occupancy-matched
-  A:B comparison | no automatic training, old cap reset or larger grid.
+Main: Does the same TD learn useful C behavior, and does initial B change it? |
+  freeze horizontal-C 128-opening seed 2026102221 from saved actual legal paths;
+  compare 512 episodes each from uniform versus transferred B=2.4171096107122936,
+  C=1,other weights uniform;two trials/all 128 paths/both colors;RNG seed2026102222 |
+  actual parameter/TD credit and frozen D2 policy/terminal evidence |
+  per arm existing 120s/2M nodes;combined training240s+eval600s+replay180s=1020s;
+  no oracle targets,terminal/duplicate openings retained,no heldout claim.
 
-Backup1: Why do 12 untrained-layout WDL choices regress despite net improvement? |
-  inspect one saved WIN-to-DRAW case from the closed 1,824-root panel |
-  actual-history/PV mechanism and bounded WIN certificate | no panel rerun.
+Backup1: Which exact tie-boundary gradients matter during learning? |
+  reuse frozen511-origin envelope census and selected common-prefix example |
+  bounded origin-credit/action-region explanation | no new representation,
+  epsilon sweep or causal/convergence claim without actual evidence.
 
-Backup2: Which fixed-policy geometry effects survive explicit setup pairing? |
-  resolve the existing 128 boards by setup keys and compare frozen parameters |
-  bounded common-root geometry evidence | no strict matched-training claim,
-  closed training rerun or new budget obtained by renaming an old run.
+Backup2: Why does the second deletion-order reversal occur? |
+  inspect saved panel593 with actual Core prefixes,keeping original/
+  counterfactual history definitions separate | one finite mechanism |
+  no full panel rerun or filling outside-component UNKNOWNs.
 
 ## Recovery and delivery
 
-Own DEV_AUX/sidemission only. Recover memo, role/stops, doctor, new Chat/Claude
-and latest committed sandbox before research. Keep active UUID/origin/work.
-Normal segments require 60 effective minutes, proceeding toward 90; administrative
-and offline time do not count. Existing ACTIVE 90-minute recurrence is unchanged.
-No new Agent, worker, Goal or timer. Runs >=120 minutes need explicit Chat assessment.
-Before Slack, push and verify full origin/sidemission SHA. Historical SEND_UNCERTAIN
-is not resent. Graphs, journals and one-off drivers stay ignored; publish compact
-checked project evidence without personal information, passwords or credentials.
+Own DEV_AUX/sidemission only. Read memo,role/stops,doctor,new Chat/Claude and
+latest committed sandbox before research. Keep active UUID/origin/work.
+Normal segments require60 effective minutes,proceeding toward90;admin/offline
+time excluded. Existing ACTIVE90-minute recurrence unchanged. No new Agent,
+worker,Goal or timer. Runs>=120minutes need explicit Chat mailbox assessment.
+Before Slack,push and verify full origin/sidemission SHA. Historical
+SEND_UNCERTAIN is not resent. Raw graphs/journals/drivers remain ignored.

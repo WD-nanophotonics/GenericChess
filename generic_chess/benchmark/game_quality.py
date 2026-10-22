@@ -49,6 +49,7 @@ class QualityObservation:
     forced_win: bool | None = None
     solved: bool | None = None
     unique_best: bool | None = None
+    terminal_winner: int | None = None
 
 
 def profile_from_observations(
@@ -78,6 +79,13 @@ def profile_from_observations(
     solved_values = [o.solved for o in observations if o.solved is not None]
     forced_values = [o.forced_win for o in observations if o.forced_win is not None]
     unique_values = [o.unique_best for o in observations if o.unique_best is not None]
+    draw_statuses = {"stalemate", "repetition", "max_ply", "action_class_draw", "no_progress_draw"}
+    draw_count = sum(
+        o.terminal_status in draw_statuses
+        and o.terminal_winner is None
+        and all(score is None or score == 0.5 for score in (o.first_player_score, o.second_player_score))
+        for o in observations
+    )
     profile = GameQualityProfile(
         ruleset_fingerprint=ruleset_fingerprint,
         board_size=board_size,
@@ -102,8 +110,11 @@ def profile_from_observations(
         p90_game_length=_percentile(lengths, 0.9),
         repetition_draw_fraction=terminals["repetition"] / len(observations),
         very_short_terminal_fraction=sum(
-            o.game_length <= 4 and o.terminal_status != "ongoing" for o in observations
+            o.game_length <= 4 and o.terminal_status not in {
+                "ongoing", CENSORED_TERMINAL_STATUS, UNRESOLVED_TERMINAL_STATUS
+            } for o in observations
         ) / len(observations),
+        rule_draw_fraction=draw_count / len(observations),
         first_player_score=first_score,
         second_player_score=second_score,
         paired_game_count=len(first) if first and len(first) == len(second) else 0,
@@ -156,6 +167,7 @@ class GameQualityProfile:
     classification: str = "UNRESOLVED"
     classification_reasons: tuple[str, ...] = field(default_factory=lambda: ("UNRESOLVED",))
     authoritative_reasons: tuple[str, ...] = ()
+    rule_draw_fraction: float | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -175,9 +187,13 @@ def classify_game_quality(
     diagnostic.append(("SEARCH_EXPLOSIVE", "p90_branching", profile.p90_game_branching is not None and profile.p90_game_branching >= 100))
     if profile.terminal_distribution:
         total = sum(profile.terminal_distribution.values())
-        draw_statuses = {"repetition", "stalemate", "perpetual_check"}
-        draws = sum(v for k, v in profile.terminal_distribution.items() if k in draw_statuses)
-        diagnostic.append(("DRAW_DOMINATED", "draw_fraction", bool(total and draws / total >= 0.9)))
+        # Legacy profiles without outcome-aware counts can establish only
+        # unambiguously drawn statuses; stalemate may be a rule-defined loss.
+        draws = sum(v for k, v in profile.terminal_distribution.items()
+                    if k in {"repetition", "max_ply", "action_class_draw", "no_progress_draw"})
+        draw_fraction = (profile.rule_draw_fraction if profile.rule_draw_fraction is not None
+                         else draws / total if total else 0.0)
+        diagnostic.append(("DRAW_DOMINATED", "draw_fraction", draw_fraction >= 0.9))
     diagnostic.append(("TACTICAL_ONLY", "forced_win", profile.shallow_forced_win_rate is not None and profile.shallow_forced_win_rate >= 0.75))
     diagnostic.append(("INSUFFICIENT_SKILL_DISCRIMINATION", "skill_discrimination", profile.skill_discrimination is not None and profile.skill_discrimination <= 0.01))
     reasons = [reason for reason, _key, matched in diagnostic if matched]
@@ -195,7 +211,7 @@ def classify_game_quality(
             if key == "forced_line" else
             (profile.p90_game_branching is not None and profile.p90_game_branching >= thresholds[key])
             if key == "p90_branching" else
-            (bool(profile.terminal_distribution) and sum(v for k, v in profile.terminal_distribution.items() if k in {"repetition", "stalemate", "perpetual_check"}) / sum(profile.terminal_distribution.values()) >= thresholds[key])
+            (bool(profile.terminal_distribution) and draw_fraction >= thresholds[key])
             if key == "draw_fraction" else
             (profile.shallow_forced_win_rate is not None and profile.shallow_forced_win_rate >= thresholds[key])
             if key == "forced_win" else
@@ -211,21 +227,22 @@ def classify_game_quality(
 def authoritative_reasons(profile: GameQualityProfile, thresholds: dict[str, float] | None = None) -> tuple[str, ...]:
     """Return only pathology flags backed by explicitly supplied thresholds."""
     thresholds = thresholds or {}
-    classification, diagnostics = classify_game_quality(profile, thresholds=thresholds)
-    if classification == "UNRESOLVED":
-        return ()
-    return tuple(reason for reason in diagnostics if reason == classification or reason in {
-        "SIDE_BIASED", "TRIVIAL_OR_SHALLOW_SOLVED", "FORCED_LINE", "SEARCH_EXPLOSIVE",
-        "DRAW_DOMINATED", "TACTICAL_ONLY", "INSUFFICIENT_SKILL_DISCRIMINATION",
-    } and {
+    keys = {
         "SIDE_BIASED": "side_bias", "TRIVIAL_OR_SHALLOW_SOLVED": "solved_fraction",
         "FORCED_LINE": "forced_line", "SEARCH_EXPLOSIVE": "p90_branching",
         "DRAW_DOMINATED": "draw_fraction", "TACTICAL_ONLY": "forced_win",
         "INSUFFICIENT_SKILL_DISCRIMINATION": "skill_discrimination",
-    }[reason] in thresholds)
+    }
+    return tuple(
+        reason for reason, key in keys.items()
+        if key in thresholds
+        and classify_game_quality(profile, thresholds={key: thresholds[key]})[0] == reason
+    )
 
 
-def _game_score(session: GameSession, player: int) -> float:
+def _game_score(session: GameSession, player: int) -> float | None:
+    if session.result.status.value in {"ongoing", "no_contest"}:
+        return None
     winner = session.result.winner
     if winner is None:
         return 0.5
@@ -312,7 +329,7 @@ def measure_game_quality(
         second_scores.append(None if terminal_status == CENSORED_TERMINAL_STATUS else _game_score(session, 1))
         observations.append(QualityObservation(
             tuple(trajectory_branchings), len(session.history), terminal_status,
-            first_scores[-1], second_scores[-1],
+            first_scores[-1], second_scores[-1], terminal_winner=session.result.winner,
         ))
         if raw_games is not None:
             raw_games.append({
@@ -339,7 +356,7 @@ def measure_game_quality(
         second_scores.append(None if paired_terminal_status == CENSORED_TERMINAL_STATUS else _game_score(paired_session, 1))
         observations.append(QualityObservation(
             tuple(paired_branchings), len(paired_session.history), paired_terminal_status,
-            first_scores[-1], second_scores[-1],
+            first_scores[-1], second_scores[-1], terminal_winner=paired_session.result.winner,
         ))
         if raw_games is not None:
             raw_games.append({
