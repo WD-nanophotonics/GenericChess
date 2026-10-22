@@ -1,0 +1,184 @@
+{
+  "science": "OPEN",
+  "role": "PRIMARY_SANDBOX",
+  "new_physical_games": 288,
+  "Player_returns": 10898,
+  "FLOOR_returns": 460,
+  "cold_Player_returns_separate": 38,
+  "exact_reused_cold_returns_not_new": 2,
+  "fixed_opponent_effects": {
+    "UnitD1-StaticSelf": [
+      "1/3",
+      "7/12"
+    ],
+    "StaticD2-StaticSelf": [
+      "1/24",
+      "3/8"
+    ],
+    "UnitD2-StaticSelf": [
+      "5/12",
+      "3/4"
+    ],
+    "leaf_D1_B-A": [
+      "1/3",
+      "7/12"
+    ],
+    "leaf_D2_D-C": [
+      "1/24",
+      "17/24"
+    ],
+    "resource_Static_C-A": [
+      "1/24",
+      "3/8"
+    ],
+    "resource_Unit_D-B": [
+      "-1/6",
+      "5/12"
+    ],
+    "interaction_D-C-B+A": [
+      "-13/24",
+      "3/8"
+    ],
+    "q1-q4_Static_C1-C": [
+      "1/24",
+      "19/24"
+    ],
+    "q1-q4_Unit_D1-D": [
+      "-1/6",
+      "5/12"
+    ],
+    "leaf_q1_D1-C1": [
+      "-1/4",
+      "5/12"
+    ]
+  },
+  "node_common_foe_effects": {
+    "N2-N1": [
+      "1/3",
+      "7/12"
+    ],
+    "N4-N1": [
+      "1/2",
+      "3/4"
+    ],
+    "N4-N2": [
+      "-1/12",
+      "5/12"
+    ],
+    "q0-q1_atN2": [
+      "0",
+      "1/3"
+    ],
+    "q0N2-N1": [
+      "7/12",
+      "2/3"
+    ]
+  },
+  "direct4096vs2048": {
+    "question": "Does4096q1 beat2048q1 directly,ratherthanjust havinghigherutilityagainstcommon1024opponent?",
+    "direct4096versus2048": [
+      "1/6",
+      "1/3"
+    ],
+    "outcomes": {
+      "[-1, -1]": 8,
+      "[1, 1]": 14,
+      "[-1, 1]": 2
+    },
+    "all24plannedslots": true,
+    "families": [
+      {
+        "world": 0,
+        "effect": [
+          "-1",
+          "-1"
+        ]
+      },
+      {
+        "world": 1,
+        "effect": [
+          "1",
+          "1"
+        ]
+      },
+      {
+        "world": 2,
+        "effect": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "world": 3,
+        "effect": [
+          "-1",
+          "0"
+        ]
+      },
+      {
+        "world": 4,
+        "effect": [
+          "1",
+          "1"
+        ]
+      },
+      {
+        "world": 5,
+        "effect": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "world": 6,
+        "effect": [
+          "1",
+          "1"
+        ]
+      },
+      {
+        "world": 7,
+        "effect": [
+          "-1",
+          "-1"
+        ]
+      },
+      {
+        "world": 8,
+        "effect": [
+          "0",
+          "0"
+        ]
+      },
+      {
+        "world": 9,
+        "effect": [
+          "0",
+          "1"
+        ]
+      },
+      {
+        "world": 10,
+        "effect": [
+          "1",
+          "1"
+        ]
+      },
+      {
+        "world": 11,
+        "effect": [
+          "1",
+          "1"
+        ]
+      }
+    ],
+    "physical_games": 24,
+    "queries": 1016,
+    "producer_seconds": 1165.6537979999557,
+    "scope": "Actualdirectrung,notcommon-foedifference;finitecensoringbound,notCI/untruncatedminimaxpathology/optimalstrategytheorem;all12rules andUNKNOWN kept."
+  },
+  "no_default_API_product_or_AUX_changes": true,
+  "unknown_policy_tails_distinct": true,
+  "future_prepared_notrun": "12newunfilteredfullinputs;0Playerqueries",
+  "scope": "Finitecensoringbounds,notpopulationCI/Elo/formalpathology/optimalstrategyladder. Projected costbounds countcandidate visitsonly."
+}

@@ -1,0 +1,81 @@
+{
+  "physical_games": 288,
+  "queries": 11358,
+  "history_plies": 11358,
+  "pv_plies": 16997,
+  "floor_returns": 460,
+  "Player_returns": 10898,
+  "all_passed": true,
+  "phases": [
+    {
+      "physical_games": 264,
+      "queries": 10342,
+      "history_plies": 10342,
+      "pv_plies": 14467,
+      "floor_returns": 460,
+      "Player_returns": 9882,
+      "batches": {
+        "prospective-leaf-next": {
+          "physical_games": 48,
+          "planned_physical": 48,
+          "unattempted": [],
+          "source_failures": 0
+        },
+        "prospective-fixed-search": {
+          "physical_games": 84,
+          "planned_physical": 84,
+          "unattempted": [],
+          "source_failures": 0
+        },
+        "prospective-q1-fixed-search": {
+          "physical_games": 48,
+          "planned_physical": 48,
+          "unattempted": [],
+          "source_failures": 0
+        },
+        "prospective-node-ladder": {
+          "physical_games": 60,
+          "planned_physical": 60,
+          "unattempted": [],
+          "source_failures": 0
+        },
+        "prospective-node-q0-control": {
+          "physical_games": 24,
+          "planned_physical": 24,
+          "unattempted": [],
+          "source_failures": 0
+        }
+      },
+      "scope": "SharedCorefull-history/literalPV/policy/configqualification,not independentengine orscalarq/WDLproof. RawUNKNOWN neverreplaced.",
+      "seconds": 76.6431243000552,
+      "all_retained_games_passed": true,
+      "qualification_phase": "Fiveclosedbatches;adjacent-rungnotincluded/notclaimed"
+    },
+    {
+      "physical_games": 24,
+      "queries": 1016,
+      "history_plies": 1016,
+      "pv_plies": 2530,
+      "floor_returns": 0,
+      "Player_returns": 1016,
+      "batches": {
+        "prospective-node-adjacent-rung": {
+          "physical_games": 24,
+          "planned_physical": 24,
+          "unattempted": [],
+          "source_failures": 0
+        }
+      },
+      "scope": "SharedCorefull-history/literalPV/policy/configqualification,not independentengine orscalarq/WDLproof. RawUNKNOWN neverreplaced.",
+      "seconds": 7.695345899905078,
+      "all_retained_games_passed": true,
+      "qualification_phase": "Newadjacentbatchonly;fivebasebatchespreviouslypassedandhashesunchanged",
+      "future_full_inputs_profiles_passed": 12,
+      "future_Player_queries": 0
+    }
+  ],
+  "scope": "Exactpubliccopies;fivebasebatchesandnewadjacentphase,no repeat ofpassedbase. SharedCore,notindependentengine/scalarWDLproof.",
+  "future_prepared_inputs": 12,
+  "future_Player_queries": 0,
+  "rawUNKNOWN_unchanged": true
+}

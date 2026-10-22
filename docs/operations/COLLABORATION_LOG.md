@@ -6279,3 +6279,30 @@ contracts and old assertions remain. Allscientificproducers closed;12fresh
 prospectiveinputs prepared,0fitnessqueries. Denseallreply costs23.8minutes and
 mustnot become a routinelearning gate. Details/evidence are in the new report
 and compact public capsule; qualifications use sharedCore,not an independentengine.
+
+
+## 2026-10-22 PRIMARY: price, resources and opponent context
+
+The new Claude root/full thread1792644553.396159 was saved before assessment.
+Its depth-completion caution is useful and already explicit in the preceding
+report; no old count or expectation was rewritten. AUX prior/learning proposals
+stay in its lane. No outgoing Chat, live contact, routine acknowledgment or AUX
+write/execution occurred.
+
+PRIMARY completed288physicalgames on12freshconfigured rules, plus38separatecold
+Playerreturns;twoadditionalcoldreceiptviewsareexactreuses. Static/Unitleaf,
+fixedopponent andq/resourcecontrols separate conditionalpriceutilityfrom actual
+work. All11358physicalhistoryplies and16997literalPVedges pass public-copy Core
+qualification in two phases;thisissharedCore,notanindependentengine/WDLoracle.
+The direct4096vs2048comparison was added because common-foe score differences
+cannot establish a head-to-head rung. It is positive inaggregatebutnegativeon
+two complete-rule blocks. No default/API/learner/filterchange follows.
+
+Unknownfutureutility and right-censoredresourcecost remain separate. A scoped
+counted-node continuation bound doesnot certifywall/primitive/totalmatchcost.
+Allproducersclosed;12NEWunfilteredprice-q0inputs/profilesarepreparedwith0Player
+queries. Actualworkintervals are separatefromproducerwall,documentation and
+transport. One contradictory automatic experiment refusal was resolved after
+read-only authorization/unit/cap checks through the same supported review path;
+no bypass or newuserconsent was needed. Reviewed technical delivery uses the
+mandatory tested publisher; fixed fullSHA receipt is kept in owned local state.

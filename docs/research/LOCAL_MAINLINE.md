@@ -310,12 +310,30 @@ planned-generation sensitivities forbid a universal/defaultwinner. Ordinaryq0
 still has forcedcheck8:15quietfirstdivergences have qualifiedoneplyargmax,
 19checkedstates do not have full-valueproof fromthatmodel. PhysicalPVs pass.
 
-Main: execute `.local_agent/rule-quality-prefix-next-20261022/prospective-leaf-next/registration.json`
-with its12completeprepared inputs:48slots,twoleafcandidates/commonStaticorder,
-fixedFLOOR,1s/D1/q4hard8/caller96/shared900s. All12newconfigswerefixedbefore
-generation andsucceeded;0fitnessqueries. OpeningpreferenceON islocalexperiment
-scope,notproductiondefault. Preservefailures/UNKNOWN,fullfuturetypes,promotion,
-drop/aux/history,actualbackend/cost andpolicy-distincttails. Nooldpanelrefill,
-AUXlearner,training ordefaultchange. Backup: diagnose actualforcedcheckcontinuations
-with existingsearch,or reuse scoped terminal/price evidence for a concretechoice;
-never substitute a plainleaf expectation for that searchcontract. Science OPEN.
+[PRICE_RESOURCE_AND_OPPONENT_CONTEXT_20261022.md](PRICE_RESOURCE_AND_OPPONENT_CONTEXT_20261022.md)
+closes that prospective continuation:288newphysicalgames/10898Playerreturns plus
+460FLOORchoices retain allUNKNOWN. New12-ruleFLOORleaf effect1/24 becomes
+[1/3,7/12]againstStaticD1;priceeffectsdependonopponent/search. q1D2leafcontrast
+crosseszero. Staticq1-q4[1/24,19/24]isconfiguration-sensitive,notadefaultgate.
+
+Realnode1024/2048/4096common-foecurvescannotreplacehead-to-head. The separately
+registered4096vs2048directrung gives[1/6,1/3],yetlargerbudgetlosesbothroleson
+rules0and7. Thisisbudgetedalgorithmbehavior,notuntruncatedminimaxpathology,
+populationstrengthoroptimalstrategyladder. q0at2048minusq1against1024is[0,1/3]
+withlowerobservedprefixcost. Continuedcandidate-counted-nodecostisbounded
+separatelyfromwall/primitive/totalmatchcost;rawUNKNOWNisunchanged.
+
+Oneactualhistoryseparatesreserve semanticsfromleafhandprice:zeroinghandprices
+doesnotremovepocketq4work;capture-to-removelegallyreplayssamehistoryandchanges
+resource/legal/payoffcontext. Fullqualifiedcoldcontrolsneednotbecomelearninggates.
+No product/default/filter/API/learner/AUXchanges. No oldcohortrefill.
+
+Main: execute `.local_agent/rule-quality-prefix-next-20261022/prospective-price-q0-next/registration.json`
+usingits12NEWpreparedunfiltered-generatorfullinputs/profiles:Static/Unitleaf,
+commonStaticorder,node2048/q0/maxdepth64, fixedStatic2048/q0;48roleframes,
+36physicalgamesifallaccepted,caller96/shared1800s,expected900s. Inputsareallready,
+0Playerqueries. Keepallfuturetypes/promotion/drop/aux/history,inert handzeros,
+allfailures/UNKNOWN. Thischangedsearch-and-generatorenvelopeisnotanisolated
+opening-filtereffectorhumanlabel/learningexperiment. Backup: reuseowncompleted
+price/opponent/resource/censoring evidencefora concretechoice;no unchanged
+panels,runtime/AUXtakeoverorblanketquality/WDLadmissiongate. Science OPEN.
