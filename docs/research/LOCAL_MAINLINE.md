@@ -1,83 +1,80 @@
 # DEV_AUX current research
 
-The direct Leaper instruction governs. Use committed sandbox infrastructure;
-runtime source734d606f8f6594820d457803bf8f5dbe5e0666f4 reuses mainline
-a552355e32a39fcff7d720d1181aebb904b79b79. No product default changed.
-Closing fetch69a3c84ab0be9875611e751e78d3225f0fa8973c changes research records
-only;all238 shared package files still match,with no new shared test changes.
-Conditional contribution, useful search parameters and intrinsic-price claims
-remain distinct. Oracle labels never enter experiential training.
+Direct Leaper instruction governs. Reuse committed sandbox Core/GameSession,
+search,terminal/history infrastructure. Closing baseline:
+69a3c84ab0be9875611e751e78d3225f0fa8973c. All238shared modules match in text;
+237working files are byte-identical,learning/__init__.py differs only in EOL.
+Own runtime/learner source remains840d322587b80cc7d1a58acd613c7406f628100b.
+No product default or PRIMARY state/task changes.
 
-Current report: LEAPER_C_LEARNING_AND_DEPTH_20261022.md.
-Compact evidence: data/leaper_C_learning_depth_20261022.json.
-Prior composition graphs, trajectories, models, caps and failures remain retained.
+Current report: LEAPER_ORDER_REGIONS_AND_D_20261022.md.
+Selected evidence: data/leaper_C_order_regions_D_feasibility_20261022.json.
+Prior reports,graphs,models,trajectories,failed/capped runs remain retained.
 
-## What changed
+## Current conclusions
 
-* Same learner, six512-episode arms across two initializations/three foe streams.
-  C falls to.457–.574; final B remains initialization-dependent. No missing
-  training slots;40 training UNKNOWNs retained. All3072 updates reconstruct
-  within2.23e-16. This is not numeric convergence or a universal piece value.
-* H opening errors12→3 and6→2; learned-B Creset gives7/6. Frozen H random-foe
-  gains over own initial models have positive finite censoring bounds. Mobility
-  already gives2 errors; uniform-trained models remain weaker than that prior.
-* On the disjoint evaluation RNG stream, each initialization's three endpoints
-  have identical117 choices AND256 complete game records,despite different
-  weights. Exposed finite policy equivalence,not heldout/general convergence.
-* Selected D2 rescue removes one unsafe material tie at C<1 while critic stays
-  constant. Another DRAW tie survives. Six-node WIN proof; four weighted
-  occurrences are two histories/one board. C=.57 is not uniquely identified.
-* Actual winners contain learner mistakes. Selected episode123 lowers C after
-  learner/foe gap sums2/2;episode268 raises C after0/2. Interior TD terms include
-  actual terminal-PV information; final-outcome credit alone is not its total.
-* All41944 matched-panel public queries completeD2/4/6/8 with0fallback/missing.
-  H transfer errors38→28 atD2 but8/5/2 unchanged atD4/6/8. V44→29,12→10,8/4
-  unchanged. Deeper search dominates most parameter gains. Core reference146
-  checks match; selected H720 D4 LOSS vs DRAW is a verified equal-score tie,
-  with32-node opponent WIN certificate; D2/D6 are correct. No default change.
-* Stronger-foe C study hits its1200s cap:2296records,3848missing,43UNKNOWN.
-  Keep all47 completed opening groups plus40tailgames; no fill/rerun/extension.
-* Old KAB mobility baseline189errors vs old uniform381/TD170 on1824 roots.
-  Actual TD-vs-mobility7296games complete: D2 advantage19/3648 over half;
-  D4 bounds[89/7296,99/7296],5UNKNOWN. Exposed finite comparison,not Elo.
-* Second ordinal A/B reversal593 has six actual legal prefixes and3WINproofs;
-  deletion remains a constructed intervention,not a move or additive price.
-* All4624 original training/H/V games replay,plus13944 newly closed records;
-  every new recorded query action/RNG choice checked,1653 new PVs sampled.
-  All5 outgoing WIN proofs independently cover legal defender replies.
-  124 relevant tests pass. Raw journals/drivers and sensitive metadata stay ignored.
+* Reversing128opening groups with canonical per-slot RNG completes2x512arms,
+  0missing/12UNKNOWN. Endpoints differ numerically but each matches its natural
+  endpoint in117rootactions and256fullgamerecords. All1024TDupdates reconstruct
+  exactly;1536records/8114queries/7654randomchoices replay. Not every permutation.
+* Exact27leaf-form ordering yields114open B/C regions in B[0,4],C[0,2],A1.
+  Natural/reverse endpoints share regions18/34. Different foe streams may lie
+  in different regions despite finite-panel equivalence. No unique price claim.
+* All341544 sampled ideal queries and14592publicD2/D4checks complete with
+  0mismatch/fallback. All373faces across60367H/54038Vfreshpositions yield
+  85346130idealrootcomputations. Rank-unprotected actions retain W/Dintervals.
+  Paired shared-label contrasts show learned-over-owninitial gains in both
+  depths/worlds;uniform-trained remains worse thanmobility,transfer-trained
+  better. These are finite ideal uniform-tie errors,not actual game strength.
+* Selected D8root needs a C sacrifice. Every admitted positive leaf-order region
+  prefers a certified loss;C0allowsdraw.28nodeall-defense proof independently
+  replayed. Old12deepPVtimeouts remainUNKNOWN. ExistingPVreserve with5scontrol
+  returns completed16/17/16/16safequeries;D18requests are fallbacks,notD18.
+* H/V rules rotate but original initial layout does not:59851cachedpositions/
+  152027edges and64actual rotated-history games checked. Not independent
+  movement families. Lexical tie choices need not respect rotation.
+* Symmetric10actorD needs more than3x3. Committed4x3execution is unsupported;
+  executable4x4ABCA/ABCD pilots preserve2UNKNOWNexactprobes/6UNKNOWNgames.
+  No Dtraining. Smaller asymmetricABvsCD/dual graphs have10254states each,
+  but default roots are trivialmate1/loss2.32hash-frozen quiet contexts contain
+  13genuineWDLchoices;unitD2has2errors,mobility/Htransfer0,D4all0.
+* All32Dcontexts now run through actual public initial setups.18turn1contexts
+  use verified color/180rotation;twoinventoryprofiles required.29strategies/
+  259Core nodes cover all defenses.192root-score controls complete;34action
+  rotation mismatches retain lexical-tie limits. Initial inventory rejection
+  preserved/repaired within original120sclock.146relevant existing tests pass.
 
-Keep the32-unique first-fork cap (fifth pair partially labelled),old80 deletion
-UNKNOWNs,88 unlabelled geometry queries,65 UNKNOWN games and394 unprocessed
-oracle queries. Preserve syntax/relative-ply repairs and original failed receipts.
-No new Agent,worker,Goal,timer,other-role write or closed-experiment cap reset.
+No oracle labels enter experiential training. UNKNOWN is never a draw. Existing
+3848missing Cdirect slots/43UNKNOWN,32-history fork cap,and prior80/88/65UNKNOWN
+plus394missing observer queries remain unchanged. Raw journals stay ignored;
+no regenerated receipt framework,newAgent,worker,Goal,timer or cross-role write.
 
 ## Next executable research
 
-Main: Does opening ORDER change the acquired policy with experience/RNG fixed? |
-  read artifacts/leaper-C-opening-order-protocol-20261022.json;use existing
-  play_episode,reverse128 opening groups inside each trial,keep colors0/1;
-  bind RNG to256*trial+2*opening_index+color rather than execution index |
-  frozen actions/actual terminal records versus natural-order endpoints and
-  mobility,with literal TD updates | NOT_LAUNCHED;512episodes/two initializations,
-  120s/2Mnodes each,eval600s/replay180s,total1020s;no oracle selection or unchanged
-  old-arm rerun. Recheck source compatibility before claiming order-only effect.
+Main: Does D-to-A replacement change exact strategic action quality? |
+  read artifacts/leaper-D-replacement-protocol-20261022.json and the two
+  portable rules-turn0/1.json;retain all32frozen canonical layouts,replaceDbyA
+  at same square/owner and validate actual Core initial legality before solving |
+  exact root/action WDL changes and selected actual-history witnesses |
+  NOT_LAUNCHED;2x180s/200k-position graphs,total600s;no old cap refill/training.
 
-Backup1: Do the three H-equivalent endpoints remain equivalent in V? |
-  reuse saved V128 actual histories and frozen six endpoints,query first |
-  action/WDL differences across geometry | bounded600s,no new training,
-  no heldout claim or missing-slot fill.
+Backup1: Can a whole-material parameter region force an unsafe D4 tie? |
+  inspect fullH/Vno-zero-lower-error root lists,select one fixed counterexample |
+  all373face maxsets versus actual all-defense witness |
+ 120s,posthoc mechanism only;do not impute other root labels.
 
-Backup2: Why does the first selected D8 error remain? |
-  inspect saved transfer-learned error and146 Core-reference checks;derive one
-  actual-history WIN strategy or material tie | one falsifiable horizon/leaf
-  mechanism |120s/no broad auditor or replay of capped direct experiment.
+Backup2: Which quiet D contexts distinguish D price from A/B/C transfer? |
+  query the already validated32initial setups with a fixed D0/1contrast first |
+  actual choices and exact WDL;retain both army profiles and ties |
+ 120s,no training/oracle selection or retrospective heldout claim.
 
 ## Recovery and delivery
 
-Own DEV_AUX/sidemission only. Read memo,role/stops,doctor,latest committed
+Only DEV_AUX/sidemission. Read own memo/role/stops,doctor,latest committed
 sandbox and new Chat/Claude before research. Preserve active UUID/origin/work.
-Normal research needs60 effective minutes,proceeding toward90;admin/offline
-time excluded. Existing ACTIVE90-minute cadence unchanged. Runs>=120minutes
-need explicit Chat mailbox scope/budget assessment. Before Slack,push and
-verify full origin/sidemission SHA. Historical SEND_UNCERTAIN is not resent.
+The latest explicit user changed existing DEV_AUX and PRIMARY patrols to ACTIVE
+60minutes on their original chats. Historical90minute records do not override
+that. Normal research still accumulates60effective minutes toward90;admin,
+offline and waiting excluded. Runs>=120minutes need explicit Chat scope/budget
+assessment. Before Slack,push and verify complete origin/sidemission SHA.
+Historical SEND_UNCERTAIN remains uncertain and is not resent.

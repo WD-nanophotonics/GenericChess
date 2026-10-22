@@ -1,5 +1,14 @@
 # GenericChess local research policy
 
+## Direct user cadence update — 2026-10-22
+
+The user explicitly changed both existing DEV_AUX and PRIMARY patrols to every
+60 minutes. The app updated both existing heartbeat IDs and read back ACTIVE,
+INTERVAL=60, with their original chat targets. This supersedes the historical
+90-minute cadence below. Research still requires60–90 effective minutes;
+administrative configuration time is not research credit. No new timer or
+other-role research/state ownership was created.
+
 ## Direct user research redirection — 2026-10-21
 
 The attached formal Leaper instruction supersedes the earlier Chess-first
