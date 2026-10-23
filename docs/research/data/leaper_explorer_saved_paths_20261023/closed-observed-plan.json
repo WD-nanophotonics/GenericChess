@@ -1,0 +1,7 @@
+{
+ "question":"Does the existing observed transition book contain a genuinely closed no-mate region that settles any remaining unknown history without discovering a new successor?",
+ "method":"Use already bound complete legal-action universes at saved roots and original recorded transitions. Remove mate,unbound/missing-action vertices and all their observed predecessors. The remaining greatest closed subset is a candidate no-mate certificate,not a conclusion from absence in an incomplete edgebook.",
+ "caps":{"prepare_seconds":180,"new_successor_expansion":0},
+ "decision":"If no cooperation-UNKNOWN source root lies in a closed candidate,record the negative feasibility result and stop;do not expand the graph. A positive candidate would need independent complete Core edge verification before any negative label.",
+ "scope":"Same frozen rules/records/current truth. This is an existing-data closed-deadzone feasibility check,not a continuation/refill of old full-graph900s/30graphcaps or another policy campaign. No new TRAIN or holdout selection."
+}

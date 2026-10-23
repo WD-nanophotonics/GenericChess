@@ -1,0 +1,9 @@
+{
+  "question": "Can a shortest path recombined entirely from existing recorded transitions certify further cooperation without successor expansion?",
+  "changed_premise": "A single saved record suffix may include loops or omit another record's escape. Use only the finite union of existing recorded Position/action transitions to propose a path, then actual target-history replay. Incomplete edgebook gives no negative conclusion.",
+  "sources": "Same369 frozen original records, input after saved-child bounds and161shortened-suffix proofs. No source game or graph is rerun; records are replayed, no legal-successor expansion.",
+  "budget": {"edgebook_seconds":180,"proof_seconds":180,"proof_proposals":2000,"verification_seconds":180},
+  "estimate": "Prior source passes16-56s. Expected under10min including preparation, candidate replay and independent positive verification; no >=120min experiment.",
+  "decision": "Additional actual literal witnesses narrow frozen-mu cooperation bounds. No path, repetition or cap keeps UNKNOWN and closes the method without alternative-path retry.",
+  "limits": "No forced WDL, empirical E0/FP/FN, learner signal selection, fresh layouts, policy rollout or production search claim. Raw165attempts and shortened165attempts remain closed records; this is a changed finite reuse premise, not old100k/1m/900s/50k cap refill."
+}

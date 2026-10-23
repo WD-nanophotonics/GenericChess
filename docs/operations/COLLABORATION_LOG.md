@@ -1338,3 +1338,47 @@ transport and packaging administration. Executable memo retains next actions.
 Report:LEAPER_EXPLORER_INITIAL_TRUTH_AND_BOUNDS_20261023.md. Only sidemission is
 published;full remote SHA is verified before the one report. Partner adoption
 of this new packet remains unconfirmed.
+## 2026-10-23 DEV_AUX saved-history path handoff
+
+Own sidemission only;committed PRIMARY source c7e7b84101ee286a4d3bc98a19a33463afd2809d
+is pinned from FETCH_HEAD. PRIMARY's frozen rules/369records and shared
+Core/search/history/Session/runtime are consumed;new sampling,E0/features,
+forward/depth campaigns,inverse/defaults stay PRIMARY-owned. No new shared
+code delta,other-role state write,worker,timer,Player game or training.
+
+AUX's same34037histories now have31889exactWDL,81new;fork1932TRUE/29901FALSE/
+2204UNKNOWN;cooperation5443TRUE/24780FALSE/3814UNKNOWN(818newknown). Exact
+full-history child joins and literal target-history replay certify these.
+Raw165saved-suffix proposals give160positives;loop deletion on the same165
+gives161;recombining original recorded transitions gives311more positives.
+Failed paths and incomplete observed edgebooks imply no negative truth.
+The5raw repetition failures are2terminal-history groups;1is rescued and4
+remainUNKNOWN. Current initial cooperation9TRUE1FALSE,initialfork9UNKNOWN;
+one initial[0,1]. Newcritical2events are RNG missing immediate mates,not a
+deeper-than-FLOOR,price or learning result.243recordactions/232histories and
+540protocol references keep their actual counting units.
+
+Fresh alternatives are closed with evidence:two-way bounds0newlabels;residual
+cooperationclauses0;Coresearchidentity0;capture-pruned keys not adopted;
+observedclosedsubset0ongoingcandidates;one distinct saved-child depth3WIN
+queryUNKNOWN154nodes0.662s,nocapextension. All earlier100k/1m/900s/50kstudies
+remainclosed. Fewer shortened targetactions do not establish wall-time or
+learner acceleration;extra source reconstruction and engineering are explicit.
+
+ProbeGC-MAIL-ee5fdfa7fd084ba7912d1a89e329c651 saves46threads/47rawreturns and
+7exact revision decisions. Claude1792759763 is qualified-adopted for initial
+mu and real baseline contracts. Its new3x3sampling is deferred to PRIMARY;
+the old H6four-actor/repeat2 cost is not a new H128six-actor/repeat4 budget.
+The request for board/count and base-rate baselines reveals one input class
+on initial10;equivalent information should be declared instead of duplicating
+computation. Saved-historymu has5actor classes and cannot replace initialmu.
+Reading,adoption and actual contract/proof execution are distinguished. No real
+E0/baseline or reply to the headline question arrived in this ordinary probe.
+
+138related tests+6new actual-case guards pass;fullportable reader257.460s,
+final additive reader68.276s. Sessiond19acb3d-cef7-4958-bc85-ac27053ca24b ends
+safe_checkpoint with3846.034857effective seconds(64.101min),memo synced and
+finishaccepted. Own publication/fullremoteSHA precedes the single combined
+report/question. Partner read/adoption/execution of this new handoff stays
+unconfirmed until later evidence. Patrol60min remains unchanged. Report:
+LEAPER_SAVED_HISTORY_PATH_TRUTH_20261023.md;data below4MiB,rawSlack/JUnitprivate.

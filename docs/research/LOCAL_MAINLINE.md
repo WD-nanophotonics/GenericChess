@@ -14,31 +14,43 @@ PRIMARY-specific calibration scripts are not adopted as an AUX campaign.
 
 ## Latest results and limits
 
-Report: LEAPER_EXPLORER_INITIAL_TRUTH_AND_BOUNDS_20261023.md.
-Separate packet: data/leaper_explorer_followup_20261023; parent remains intact.
-Same369records/34037histories. ExactWDL31808;2229nonexact includes29[0,1] and
-2200[-1,1]. Fork1918TRUE/29899FALSE/2220UNKNOWN. Cooperation4627TRUE/24778FALSE/
-4632UNKNOWN. No unknown bound becomes a scalar target or DRAW.
+Report: LEAPER_SAVED_HISTORY_PATH_TRUTH_20261023.md.
+Separate packet:data/leaper_explorer_saved_paths_20261023;both parents intact.
+Same369records/34037histories and mus. ExactWDL31889;2148nonexact are1945[-1,1],
+189[0,1],14[-1,0]. Fork1932TRUE/29901FALSE/2204UNKNOWN. Cooperation5443TRUE/
+24780FALSE/3814UNKNOWN. Bounds/UNKNOWN are never scalar TRAIN labels or DRAW.
 
-Colour invariant binds4134histories/19616Coreactions and adds372DRAW labels.
-Original initial cooperation now9TRUE1FALSE; initial fork9UNKNOWN1FALSE.
-One actual one-ply pass checks2275histories/14454edges in49.325component seconds:
-46WINs,29nonloss bounds,51singleton forkFALSE,4forkTRUE. Changed126roots/741edges
-independently checked. One new critical RNG mate-to-stalemate event makes241
-record-action occurrences, not241independent cases.
+One2271root/14407Coreedge pass joins2500exact saved child identities,adding
+81exactWDL,267narrowerintervals,14forkTRUE/2FALSE and346cooperationlabels.
+Independent all-edge check18.226sPASS. Saved suffixes at identical Positions
+are only proposals:165raw give160positives/5repetitionfailures;separate loop
+erasure on same165gives161/4UNKNOWN. Recombining only original recorded
+transitions yields474proposals/311positives/163UNKNOWN;no successor expansion
+or negative inference from an incomplete edgebook. All positives independently
+replayed from actual target full histories. Cooperation818newknown total.
 
-Saved episode fork events:148TRUE/185UNKNOWN/36FALSE; early unknown prefixes
-prevent exact first-event timing. Initial cooperation and uniform saved-history
-prevalence have different mu/weights. Initial exposed6/4split has5TRUE1FALSE
-versus4TRUE0FALSE: leaveout cannot estimate specificity or supply a FP case.
+Original initial cooperation9TRUE1FALSE;initial fork9UNKNOWN1FALSE. K3:8:16
+initial WDL now[0,1]via literal capture reaching a knownDRAWchild. One different
+saved-child WIN query atdepth3/2048nodes/30s returnsUNKNOWN154nodes0.662s;
+no extension. Closed observed subset has24terminal Positions/0ongoingsource
+histories;no newnegative. Two-way interval propagation/remainingORclauses and
+Core search-state identity add0labels. Capture-pruned keys are not adopted.
 
-Original100k initial-path UNKNOWN,1m suffix1complete/1partial22unstarted,
-prior900s/50k caps and all old results remain CLOSED, never refill. Invariant
-and local terminal/cardinality certificates are new evidence under distinct
-premises. Component timings exclude some loading/serialization and all theorem
-construction; no learner/player speed or population-calibration claim.
-184related tests PASS after fresh own-root temp repair. Full portable reader
-PASS103.773s, including parent compatibility and new proof/view checks.
+Distinct-record fork events150TRUE/183UNKNOWN/36FALSE;guaranteeloss83TRUE/
+250UNKNOWN/36FALSE.243criticalrecordactions at232histories are correlated.
+The2new events are RNG missing actual one-ply mates,not deeper-than-FLOOR or
+learning/price evidence;actual paths draw by repetition/max128. First-event
+timing stillunknown dueearlierUNKNOWN. Initial exposed6/4split is5TRUE1FALSE
+vs4TRUE0FALSE;specificity on leaveout is undefined. Board/countbaseline has
+one inputclass on initial10(board4,actors6),fiveclasses on saved-historymu.
+
+All old100k/1m/900s/50kfailures/partials stayCLOSED. No newrules/layouts,games,
+Player queries,training,default or PRIMARY writes. Component costs include
+explicit extra source reconstruction;no controlled speedup claim.138related
+testsPASS39.006s;fullreaderPASS257.460s,bothparents andnegative diagnostics
+included. Additive metadata/minimalchecksPASS67.492s;critical cases separately
+verify literal Core children andsource references. Final proof/guard receipts
+and exact publication hashes are retained with this own-role segment.
 
 ## Executable next work
 
@@ -48,19 +60,21 @@ view or original saved-history mu exactly | real paired finite errors/UNKNOWN/
 cost, with rate versus binary-Brier loss explicit | no synthetic E0 or blind
 claim; PRIMARY selects new metadata-based holdout, not oracle-labelled starts.
 
-Backup1: Which early unknown changes an actual explorer decision?
-| Use episode first-event intervals and local bounds to specify one minimal
-proof query and complete cost before launch | exact certificate/bound or UNKNOWN
-| no deep/broad graph or continuation of the old capped inputs.
+Backup1: Do known natural forks contain a deeper-than-FLOOR signal?
+| Bounded retrospective classification of existing known fork histories by
+literal immediate-win availability/sourcepolicy/actual outcomes | distinct
+history/record/family counts and complete cost | no newgames,priceeffectclaim,
+oracleTRAINstarts or repeat of PRIMARY's forward/depth campaign.
 
-Backup2: Which support/class mismatch changes a proposed score?
-| Compare final sampling contrasts and actual prediction coverage,including
-4positive0negative leaveout | matched target/mu and explicit unmeasurable class
-| no IID confidence, output-selected holdout refill or retired TD restart.
+Backup2: What blocks the163failed observed paths?
+| Analyze saved failure observations and actual prehistory barriers only |
+repetition/clock counts with correlated-prefix grouping | no alternative-path
+retry,no missingpath=>absence,no graph or oldcaprefill.
 
-ProbeGC-MAIL-daef0c5ca77b46c597e2537177484421 READ_SAVED:44threads/45raw returns,
-7formal revision decisions. Claude1792752568 qualified-adopted; unrelated old
-audits deferred. Saved PRIMARY reply1792756416 reviewed for finite-case/whole-
-policy qualifications; its192-slot study remains PRIMARY-owned. No actual E0 or
-reply to the previous AUX target question. One combined report/question follows
-own push/fullremoteSHA; no realtime wait, Dot wake or uncertain resend.
+ProbeGC-MAIL-ee5fdfa7fd084ba7912d1a89e329c651 READ_SAVED:46threads/47rawreturns,
+7exact revision decisions. Claude1792759763 qualified-adopted:initialmu/baseline
+requirements executed in truth contracts/metadataaudit. New3x3sampling deferred
+toPRIMARY;H6four-actor/repeat2 cost does not predict H128six-actor/repeat4 truth.
+No actual E0 or answer to the headline-target question. One checked progress/
+question follows ownpush/fullremoteSHA;partnerreading/adoption/execution remain
+unconfirmed. No realtimewait,Dotwake,newworker or schedulechange.

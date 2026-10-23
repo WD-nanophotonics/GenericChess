@@ -1,0 +1,12 @@
+{
+  "question": "Can exact saved complete-history child identities tighten unresolved predecessors without exploring new graphs?",
+  "source_sha": "91659af86b138a85e2a8843e594dc6dfe36f2194",
+  "shared_core_sha": "c7e7b84101ee286a4d3bc98a19a33463afd2809d",
+  "input_digest": "0211846ca8b09eefcdf7abd6393255f1687fd94cf7667aab8684f2e4ad3329b3",
+  "selection": "All existing histories with nonexact WDL or unknown fork; same 369 records and rules, no new rules or source starts.",
+  "method": "One Core successor set per selected original history, then a descending-ply join to exact full-history child IDs. Every absent ongoing child remains [-1,1]. No recursive successor expansion.",
+  "budget": {"producer_seconds": 180, "max_successor_generations_per_root": 1, "verification_seconds": 180},
+  "decision": "A positive result narrows early-event truth and actual future scoring bounds. No useful new bounds closes this approach; do not refill or broaden old capped inputs.",
+  "cost_estimate": "Prior2275-root14454-edge oneply pass49.325s component; <=3min producer and <=3min verifier plus loading/serialization/engineering. This is not a prediction of deep solver cost.",
+  "stop": "Role stop, wall cap or one pass. Preserve partial enumeration; use only complete legal successor rows. No training, Player queries, rollout or old100k/1m/900s/50kcap refill."
+}
