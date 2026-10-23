@@ -1,3 +1,37 @@
+## Structural, horizon and quantity continuation —2026-10-23
+
+PRIMARY read the new ChatGPT10:22 and Claude11:50 roots and both complete empty-
+reply threads once, saving exact private originals before assessment. ChatGPT's
+confirmed framework remains canonical small-rule forward portraits and gradual
+inverse work. Adopt the actual utility/price-sensitivity and cost questions;
+reject a finite price grid as an all-price TD ceiling, automatic learner gates,
+and exclusion of an entire ABC rule merely because A/B movement matches. Two
+actual old outcome-shift witnesses retain a C-versus-A/B price contrast. AUX
+truth/learning remains independent; its source, execution and unpublished work
+were not rerun or edited. No outbound Chat, Dot, extra Agent/worker or scheduler.
+
+PRIMARY closes 2,124 registered records, 1,832 continuations and 292 terminal
+starts, with 49,858 returns and zero UNKNOWN. New24-rule relative price effects
+are weak and context/horizon/opponent sensitive; Static/M0 has larger finite
+D2/D4 effects, not a learning theorem. Adding A preserves price vectors yet
+reduces cheap strategy utility on prefixes. Keep all negatives; no sampler,
+price/default or benchmark is promoted. Existing UNKNOWN remains closed.
+
+Efficiency:110 current NEW cost returns and12 next-design costs,16 OLD layout
+costs and8 exact parent cost reuses. No unchanged fitness replay. Actual public
+copies all pass135,949PV/5,041FLOOR and2,124 original-file value/hash checks.
+One protocol omission is caught at zero queries and corrected before costs.
+A raw-capture command syntax error is repaired from the SAME retained return,
+without rereading Chat; per-part exit/length checks now persist in the manual.
+The 2.190897-second postexit time overcount is removed with original-ledger and
+correction evidence, not hidden in wall time. Administrative/delivery time is
+excluded from the effective ledger. See the purpose report and technical data.
+
+Next step actually begun:48 novel AABC inputs with equal initial counts/prices and12
+actual costs;192 future games NOT RUN. No all-state, optimal-price, learner or
+population claim. The latest120-minute cadence is text reconciliation only;
+existing recurrence and role stop flags are not edited.
+
 ## Physical coupling and relative-price continuation —2026-10-23
 
 PRIMARY read one new Claude09:50 project Chat root and its complete empty-reply

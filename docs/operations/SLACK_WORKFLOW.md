@@ -6,12 +6,12 @@ existing GenericChess project Chat, carried through NanoMelon `#generic-chess`
 wait/poll and daily consultation. Read the existing Chat; do not start a separate
 advisor exchange or inspect auxiliary chats from this patrol.
 
-## 60-minute inbound read
+## 120-minute inbound read
 
-At most once per existing 60-minute PRIMARY heartbeat, read newly available project
+At most once per existing 120-minute PRIMARY heartbeat, read newly available project
 Chat messages and the complete relevant threads. Also perform this incoming read
-before Main at each explicit manual work start/resume unless the current 60-minute
-patrol already completed it; never reread within the same 60-minute patrol. Use the
+before Main at each explicit manual work start/resume unless the current 120-minute
+patrol already completed it; never reread within the same 120-minute patrol. Use the
 connected read path for the channel and individual threads; do not create a new
 channel, conversation, worker or polling loop. Keep the last completely covered
 boundary and any gaps.
@@ -28,7 +28,12 @@ Preflight the save/serialization path with synthetic Unicode and quoted text
 before making the patrol read. In functions.exec, immediately `store` the exact
 returned object under a project-specific key BEFORE any encoding, shell call or
 assessment, then save its lossless JSON privately. Do not rely on an unavailable
-global such as `btoa`, or interpolate untrusted message text as shell code. If
+global such as `btoa`, or interpolate untrusted message text as shell code.
+For chunked capture, check each native save exit code before continuing and
+verify the assembled byte count against the retained serialization before
+saving the final original. Refuse an empty or incomplete assembly. Exercise the
+same chunk-save expression in the synthetic preflight: a separate simpler call
+does not detect a syntax error in the real capture command. If
 disk capture fails, retry saving the SAME retained return after diagnosing the
 serializer; do not make another channel read. Only assess after the private save
 succeeds. If the returned object was lost, preserve the failure and leave that

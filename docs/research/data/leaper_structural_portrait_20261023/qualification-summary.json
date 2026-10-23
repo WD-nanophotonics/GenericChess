@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "groups": [
+    {
+      "group": "depth",
+      "games": 588,
+      "history_plies": 15220,
+      "AB_returns": 15220,
+      "literal_PV_edges": 35620,
+      "FLOOR_policy_checks": 0,
+      "compressed_sha256": "fba763bc7fc4de07859f07c4d93102e74e245594914873d0f03dcad7ff5eb321",
+      "compressed_bytes": 4397261
+    },
+    {
+      "group": "price",
+      "games": 960,
+      "history_plies": 21306,
+      "AB_returns": 16897,
+      "literal_PV_edges": 59836,
+      "FLOOR_policy_checks": 4409,
+      "compressed_sha256": "bbec1e89325985f49d03899f47951459f6df05a4247f059e9e0c09261382f506",
+      "compressed_bytes": 6077894
+    },
+    {
+      "group": "material",
+      "games": 384,
+      "history_plies": 10065,
+      "AB_returns": 10065,
+      "literal_PV_edges": 29642,
+      "FLOOR_policy_checks": 0,
+      "compressed_sha256": "d04ed57b669179f4942d863e9fe63d3eed4c4706a8676393a216ce44da913582",
+      "compressed_bytes": 3024450
+    },
+    {
+      "group": "quantity",
+      "games": 192,
+      "history_plies": 3267,
+      "AB_returns": 2635,
+      "literal_PV_edges": 10851,
+      "FLOOR_policy_checks": 632,
+      "compressed_sha256": "642b84f8c4a07a3f590880cb7a493324a964f5ed30e4a4442df4b59c00d9844d",
+      "compressed_bytes": 972350
+    }
+  ],
+  "current": {
+    "records": 2124,
+    "controller_returns": 49858,
+    "zero_turn_terminal_records": 292,
+    "UNKNOWN": 0,
+    "current_played_continuations": 1832,
+    "distinct_literal_records_not_IID": 1015
+  },
+  "original_file_bindings": 65,
+  "original_game_value_and_sha_bindings": 2124,
+  "source_capsule_self_hash_checks": 58,
+  "current_NEW_costs_by_run": {
+    "structural_depth": 32,
+    "fixeddepth_prices": 32,
+    "structural_price": 16,
+    "material": 16,
+    "quantity": 14
+  },
+  "current_NEW_costs": 110,
+  "current_NEW_cost_PV_edges": 301,
+  "current_NEW_cost_rows_replayed": 110,
+  "next_NEW_costs": 12,
+  "total_NEW_segment_costs": 122,
+  "old_layout_costs_NOT_NEW": 16,
+  "commonfoe_parent_costs_REUSED_NOT_NEW": 8,
+  "future_games_NOT_RUN": 192,
+  "native_counters": {
+    "native_legality_calls": 3192403,
+    "native_legality_fallbacks": 0,
+    "native_legality_operational_failures": 0
+  },
+  "started_at": "2026-10-23T05:17:28.572291+00:00",
+  "ended_at": "2026-10-23T05:17:33.332887+00:00",
+  "scope": "Independent archivevalue/raworiginalSHA/source-self-hash/inputbinding checks, composing with FULL actualpubliccopies Core/PV/FLOOR replays. No second fullgame replay, automaticcapsuleexecution, independentengine/WDL or IID inference. NewcostPVs replayed frompublicvalues; next12costPV34 separately qualified.",
+  "next_payload_validation": {
+    "status": "PASS",
+    "compressed_sha256": "957ea113b09a0ab7a04c0a13ed80cb2712b0b15858d523b1d78768213fea4602",
+    "decoded_sha256": "bebce8805e0a50191c4b5bdc0c9b8c21914609f1ba28954ba34245fb99aa96a4",
+    "exact_saved_original_bytes": true,
+    "worlds": 48,
+    "new_cost_returns": 12,
+    "fitness_games_NOT_RUN": 192,
+    "checked_at": "2026-10-23T05:18:47.480955+00:00"
+  }
+}

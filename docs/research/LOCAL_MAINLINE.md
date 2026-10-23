@@ -2,7 +2,7 @@
 
 AGENTS.md owns authority, PUBLIC, roles, stops and research integrity;
 LOCAL_AGENT.md owns operations. PRIMARY_SANDBOX owns sandbox here. DEV_AUX owns
-its separate learning/solver lane. The existing 60-minute patrol and read-only
+its separate learning/solver lane. The existing 120-minute patrol and read-only
 project Chat remain unchanged. No extra worker or outbound consultation.
 
 This replaces the chronological daily entry, whose complete decisions/reasons
@@ -11,33 +11,37 @@ Old dated next actions are evidence, not a backlog or a competing live policy.
 
 ## Current selection and reason — 2026-10-23
 
-The user-confirmed pure-Leaper direction retains cheap 512-node forward
-controls and complete RuleSet/history identity. Earlier `(10,19,8)` prefix
-material0, unresolved capped resource responses and label-dependent common-FLOOR
-contrasts remain; no old UNKNOWN is refilled or quality scalar/learner gate fit.
+Keep the user-confirmed canonical small pure-Leaper forward/inverse direction,
+cheap 512-node control and complete rules/history. The new 24 unordered distinct
+movement triples, two metadata layouts and initial/natural-eight contexts close
+all current controls in [LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md](LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md).
+All 2,124 current records finish: 1,832 continuations, 292 terminal starts,
+49,858 controller returns and zero UNKNOWN. The 1,015 distinct records are not IID.
 
-The physical FLOOR control closes32 new games: five first AB path differences
-across16 mapped pairs, with no outcome changes. Two are distinct immediate wins;
-three node-limit cases have equal saved depth/score but UNKNOWN argmax support.
-Explicit D1-D4 controls close96 games with positive average adjacent links and
-strong role asymmetry, not a transitive strength guarantee.
+Static/Unit is 1/64 at node512, 1/16 at fixedD2 and 5/192 at fixedD4, with role
+and prefix reversals/zeros. Against the SAME physical FLOOR, Unit minus Static
+is -1/32 over 192 paired frames. Static/M0 gives 59/192 at D2 and 5/48 at D4,
+but D4 role one is negative. Keep material presence, relative prices, actual
+horizon, opponent and total cost separate; no universal price/learning gate.
+The exploratory price-distance/outcome correlation .0556 does not justify a
+high-distance proposal or refit. The earlier `(5,12,8)` candidate's last depth
+link becomes zero on its 12 new layouts, so no benchmark promotion.
 
-All384 direct relative-price games close under their registered caps. Static/
-UNIT finite utility is7/64,1/16,1/32 on4x4,5x5,6x6, with role1 reversing on the
-larger boards. Static/MOBILITY is0 on all three envelopes; all96 physical winner/
-draw role-pair outcomes match, despite four changed paths. Counting alone does
-not match Static on the4x4 panel; neither this nor zero MOBILITY contrasts proves
-population strength, optimal prices or absence of learning space. Board/profile/
-layout changes are joint, not one-factor causality. No default is activated.
+Adding an A per side preserves all original coordinates and installed board
+prices but changes blocking, resources and new prefix histories. Its direct
+price contrast changes only +1/48 against matching ABC cells, while cheap
+Static/FLOOR changes -1/16 (prefix -7/48). Do not assume linear quantity utility
+or activate this generator operator. A fresh same-count alternative-placement
+control is now 0FITNESS_READY with 48 complete novel inputs and 12 actual cost
+returns; all 192 future games are NOT RUN. The selection uses ALL24 codes,
+not posthoc winner-only rescue. Current cost122 includes these12; old16 layout
+costs and eight parent cost reuses are not NEW.
 
-The completed segment retains512 executions,26,822 returns and672 new cost
-returns. Complete original history/PV replays and exact exported-value/hash
-checks compose with literal new FLOOR-stream replay; no independent WDL claim.
-The sole exposed all-three-positive-mean depth code `(5,12,8)` has FIRST3/4 new
-layout inputs and16 cost returns ready; its12 future games are NOT RUN. This is
-prospective layout-outcome replication, not independent-rule holdout or benchmark
-promotion. PRIMARY owns generation/forward work; AUX truth/learning, PUBLIC,
-read-only Chat and the60-minute recurrence remain unchanged. Full generated
+All 2,124 actual public records, 135,949 PV edges and 5,041 FLOOR choices pass
+shared Core replay and exact original/value/source checks. This is not an
+independent engine/WDL claim. PRIMARY owns generation/forward work; AUX keeps
+truth/learning. PUBLIC/read-only Chat and the existing120-minute recurrence
+remain; no timer, product, evaluator, learner or default change. Full generated
 promotion/drop/auxiliary/history semantics remain the long-term target.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
@@ -553,20 +557,20 @@ All512 current games finish, with282 distinct literal records (not IID samples).
 Sixteen same-price no-op role pairs preserve exact histories. Technical evidence
 contains full rules, profiles, histories, cost returns and actual source versions.
 
-Main: Does the exposed depth-chain candidate retain links on new layouts?
-| execute the ALREADY0FITNESS_READY12-game registration in
-`.local_agent/leaper-depth-layout-validation-20261023-2536445e` next segment
-| `(5,12,8)`, FIRST3/4 admitted layouts, three pairs, both roles; actual achieved
-depth and all outcomes | expected30seconds/sample forecast146.857/cap180;
-no extension/refill, benchmark promotion or independent-rule holdout claim.
-Backup1: What happens at actual first price-policy divergences?
-| decompose material terms on retained common-prefix roots and chosen PV leaves
-from the new384 price games without new truth/learner calls | full root/PV
-history, policy/price/score and unknown alternatives | descriptive mechanism,
-not all-root argmax, causal optimality or learner gate.
-Backup2: Do immediate-win returns distort the forward depth descriptors?
-| classify the new512 saved executions by actual root-immediate-win, achieved
-nominal depth and first capture, retaining every code/role | finite outcome/work
-vectors, no additional Player calls | do not activate an outcome-based sampler
-or treat selected-rule statistics as population strength.
+[LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md](LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md)
+closes the registered breadth, horizon, common-opponent, material and quantity
+continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled.
+
+Main: Does quantity response transfer to another added-A position?
+| NEXT segment run `.local_agent/leaper-quantity-placement-20261023-d0a78766`
+| ALL24 codes, 48 same-count/price inputs, 192 planned games;12 new costs ready
+| forecast1010.463seconds/cap1800; no extension/refill, holdout or benchmark claim.
+Backup1: Which code/context/opponent changes reverse the observed price effect?
+| examine saved direct/common-FLOOR/full-history cells only with a changed premise
+| current complete utility/cost vectors and actual first differences
+| no unchanged fitness, learner gate, scalar or AUX truth/learning duplication.
+Backup2: Is an alternative generator worth its full implementation cost?
+| use new placement results before choosing another quantity/geometry operator
+| failures, trivial starts, total cost and nontrivial utility kept separately
+| no promotion based on depth, score or path changes alone.
 Science is OPEN.

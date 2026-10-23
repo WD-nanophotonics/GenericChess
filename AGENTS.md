@@ -9,7 +9,7 @@ write prohibition. It does not transfer research ownership or permit worker
 creation, active-file interference, merges, history rewriting or Slack deletion.
 The user then directed: do not message/pause either researcher; clean only files
 confirmed static and mark the remainder incomplete. Preserve active work,
-sessions/stops and the existing recurrence (now60minutes for PRIMARY by the later user
+sessions/stops and the existing recurrence (now120minutes for PRIMARY by the later user
 direction). General rules/search/learning remain the
 mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
 Closed experiment payloads may leave the current tree after checking dependencies;
@@ -28,7 +28,7 @@ write its files/state or duplicate its assigned work. This PRIMARY patrol covers
 only its own mainline research and the existing project Chat. No additional
 workers may be created.
 
-## Current decisions and their reasons —2026-10-22
+## Current decisions and their reasons —2026-10-23
 
 - User confirmation2026-10-22: the latest ChatGPT project comment is the new
   research direction after registered bounded work closes: canonical small pure-
@@ -39,8 +39,8 @@ workers may be created.
   full-domain long-term target, frozen caps, role boundaries or current schedule.
   Claude comments remain auxiliary advice; do not turn them into new gates.
 
-- User correction2026-10-22: PRIMARY recurs every60minutes, superseding its
-  2026-10-21 90-minute interval. Preserve the existing scheduler and heartbeat
+- User correction2026-10-23: PRIMARY recurs every120minutes, superseding its
+  2026-10-22 60-minute interval. Preserve the existing scheduler and heartbeat
   identity; this does not change DEV_AUX cadence, role ownership or the
   60–90minute effective research requirement. A one-time pause stops only
   that inspection, not the recurrence.
@@ -49,7 +49,7 @@ workers may be created.
 - User correction2026-10-20: Dot is no longer an active contact. Do not @Dot,
   initiate real-time conversations, wait/poll for Dot, or send direct Dot
   consultations. Read the existing project Chat's incoming messages/comments
-  once per 60-minute heartbeat, privately save exact project-related reads before
+  once per 120-minute heartbeat, privately save exact project-related reads before
   assessment, and evaluate suggestions against current user decisions/evidence.
   For a >=120-minute run requiring the existing necessity review, do not start
   it until the user supplies the assessment in an incoming project Chat message
@@ -263,7 +263,7 @@ conditions; distinguish ordering prices from leaf prices.
 ## Chat messages and delivery
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing project's asynchronous
-Chat-message read path. Once per 60-minute patrol and at each explicit manual
+Chat-message read path. Once per 120-minute patrol and at each explicit manual
 work start/resume unless that patrol already completed its read, read newly
 available project Chat messages/comments and relevant complete threads. Save the
 exact project-related read in Git-ignored .local_agent before evaluation. Adopt,
