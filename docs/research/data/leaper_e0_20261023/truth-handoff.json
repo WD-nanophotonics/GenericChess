@@ -1,0 +1,2831 @@
+{
+  "schema": "genericchess.e0.truth_handoff.v1",
+  "status": "FROZEN_INPUT_PREDICTIONS_TRUTH_PENDING",
+  "role": "PRIMARY_SANDBOX",
+  "truth_owner": "DEV_AUX",
+  "source_packet": "e0-and-interrupted-panel.json.gz",
+  "compressed_source_sha256": "29d5825bb3c782e2a22d4abfb5c9767b24e298370482c1bcea78eb3a8d0e4b56",
+  "source_members": {
+    "rules_histories_states": "runs.small-interrupted.files.inputs.json.worlds",
+    "frozen_predictions": "runs.small-interrupted.files.e0-predictions.json",
+    "policy_outcome_evidence": "16finishedgames and1partial,1904outcomeUNKNOWN; no resumption"
+  },
+  "mu": "Eachmask:uniformindex overtwofixedlayouts andprefixlength0or4. Prefix4 usesseed202610231220+10000mask+100layout+4, each Core-legalaction uniform, stopactualterminal. Savedfourhistories are finite realizedsupport, not enumeration ofalluniform4paths. Policies/roles/seeds exactsource registration; nooraclefilter.",
+  "split": {
+    "calibration_masks": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      3
+    ],
+    "reserved_validation_masks": [
+      5,
+      6,
+      9,
+      10,
+      12,
+      31
+    ],
+    "unit": "movementmask family, BOTHlayouts/prefixes staytogether; no fitting thisround; frozen for possibleE1. Not IID/populationcalibration."
+  },
+  "rows": [
+    {
+      "world": 0,
+      "family_mask": 1,
+      "rule_fingerprint": "51b09118a763127e5863d928b5eed59a8d03a5ebcf7f79d09e74f3c0088ac80c",
+      "full_rule_json_sha256": "d2d72e9ddbe11edf07b0e6b8aae95e2cc1be38c9f7f6818184fbf303db0b1912",
+      "full_initial_record_json_sha256": "48f88e891183caf1370e8914b7611b04e7bcee8a28e1754751ddce569db9f28e",
+      "full_state_sha256": "1347614b5e2321a979145a5d22f63e6580003fc3df83a340f90b994b26e9f3de",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610241220,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 0,
+        "fingerprint": "51b09118a763127e5863d928b5eed59a8d03a5ebcf7f79d09e74f3c0088ac80c",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 1,
+      "family_mask": 1,
+      "rule_fingerprint": "51b09118a763127e5863d928b5eed59a8d03a5ebcf7f79d09e74f3c0088ac80c",
+      "full_rule_json_sha256": "d2d72e9ddbe11edf07b0e6b8aae95e2cc1be38c9f7f6818184fbf303db0b1912",
+      "full_initial_record_json_sha256": "8de75a311415964348c6b1384836e591dd6a7d0d1caa9bab57e1da0c01ee4141",
+      "full_state_sha256": "910f4f56536478066441fa69669da61e50b12f0df62ec7b7c11c87306e77d376",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610241224,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 1,
+        "fingerprint": "51b09118a763127e5863d928b5eed59a8d03a5ebcf7f79d09e74f3c0088ac80c",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 2,
+      "family_mask": 1,
+      "rule_fingerprint": "361074f1abf604918a22f4155f266eaeb85fe251afeea131fdaa87fb04439ab2",
+      "full_rule_json_sha256": "cbad09fe25c1e83ae8539ab45b0d4ee1fa9643b10dea0f145c150a1fc0af097b",
+      "full_initial_record_json_sha256": "2f250cca4cb75e3f6156dbe0ff134bcc20f0abb5ef987617dbf59132323461e5",
+      "full_state_sha256": "fbc920709cbcb72c54e13bb6576e4b16eab7f7bdcae7ced07d695fe22c10237e",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610241320,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 2,
+        "fingerprint": "361074f1abf604918a22f4155f266eaeb85fe251afeea131fdaa87fb04439ab2",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 3,
+      "family_mask": 1,
+      "rule_fingerprint": "361074f1abf604918a22f4155f266eaeb85fe251afeea131fdaa87fb04439ab2",
+      "full_rule_json_sha256": "cbad09fe25c1e83ae8539ab45b0d4ee1fa9643b10dea0f145c150a1fc0af097b",
+      "full_initial_record_json_sha256": "aa10157cb7f3a27689c4034771f9b33d7f37756a8bb078876ddb4b0fb64217ea",
+      "full_state_sha256": "01dd8c036f49e871cac859b1058d1c40c50aed9ae0072b4888c90f43cd5e411e",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610241324,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 3,
+        "fingerprint": "361074f1abf604918a22f4155f266eaeb85fe251afeea131fdaa87fb04439ab2",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 4,
+      "family_mask": 2,
+      "rule_fingerprint": "9e706d86ec66acae99c1bcfac24901aa13469c55b52ce539af179336e285d848",
+      "full_rule_json_sha256": "54d85ffe447845227a1f981e84b24c82a8a720a88f87a48d48e2f6aad976d172",
+      "full_initial_record_json_sha256": "e6c431e1f94e2e21e522e0c56ff0bfa44dea22878fe3c258609a2e7f2fc3130b",
+      "full_state_sha256": "bc8647cf4ac4896f46eb37a560de5c662b225e69b5f6df2b8fbacc7192442aec",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610251220,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 4,
+        "fingerprint": "9e706d86ec66acae99c1bcfac24901aa13469c55b52ce539af179336e285d848",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 5,
+      "family_mask": 2,
+      "rule_fingerprint": "9e706d86ec66acae99c1bcfac24901aa13469c55b52ce539af179336e285d848",
+      "full_rule_json_sha256": "54d85ffe447845227a1f981e84b24c82a8a720a88f87a48d48e2f6aad976d172",
+      "full_initial_record_json_sha256": "e35d81b746cb5ce9c60cad5cdcbc8f684740da99c15f039062143e6c3c5d1e78",
+      "full_state_sha256": "07616f9123875f89ad2e5a6dc015188d3c27c0209527df47f7b9e5095c2c5b80",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610251224,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 5,
+        "fingerprint": "9e706d86ec66acae99c1bcfac24901aa13469c55b52ce539af179336e285d848",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 6,
+      "family_mask": 2,
+      "rule_fingerprint": "93b3f22fd329eec9043d0eb318f4ab774a0cc69da4799fa1fb326eff17697b5e",
+      "full_rule_json_sha256": "70d664c5aa8598f93b9978af941be7b7911507ce7464c3b506e33d4361576261",
+      "full_initial_record_json_sha256": "312c3681c5be1497efd803af692b6c8a5609ee22049661fd2f89c8658d99d76c",
+      "full_state_sha256": "1b014eb1a41fea6e078a5fac42d2661de92d8307dbd53f62483b9cac73f5615e",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610251320,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 6,
+        "fingerprint": "93b3f22fd329eec9043d0eb318f4ab774a0cc69da4799fa1fb326eff17697b5e",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 7,
+      "family_mask": 2,
+      "rule_fingerprint": "93b3f22fd329eec9043d0eb318f4ab774a0cc69da4799fa1fb326eff17697b5e",
+      "full_rule_json_sha256": "70d664c5aa8598f93b9978af941be7b7911507ce7464c3b506e33d4361576261",
+      "full_initial_record_json_sha256": "3395423756e2d0e44ab49ce69aeab467bf4459a10c063b7ad6eb89ab6e6578f2",
+      "full_state_sha256": "ba53932f361dd677f3aa7410feec7b16eee1fa4dabfbc00bd69a7d730e7fd6f2",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610251324,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 7,
+        "fingerprint": "93b3f22fd329eec9043d0eb318f4ab774a0cc69da4799fa1fb326eff17697b5e",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 8,
+      "family_mask": 4,
+      "rule_fingerprint": "107fd4419fb1ab5401dcbbbbde925eac0778d9748273372624035ade3ac19194",
+      "full_rule_json_sha256": "12095365cd52a12e5ed858dacfa27494686ea50d47c2965db4ac60a6e268f300",
+      "full_initial_record_json_sha256": "1b0c0d74f7eb09ef1340c9a242ef9391ba671d3b22895eaa12003118b6675aad",
+      "full_state_sha256": "e394d007d368411887b8052bba5264884281be50dfef6f50a0f9db2acb4ed13f",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610271220,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 8,
+        "fingerprint": "107fd4419fb1ab5401dcbbbbde925eac0778d9748273372624035ade3ac19194",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 9,
+      "family_mask": 4,
+      "rule_fingerprint": "107fd4419fb1ab5401dcbbbbde925eac0778d9748273372624035ade3ac19194",
+      "full_rule_json_sha256": "12095365cd52a12e5ed858dacfa27494686ea50d47c2965db4ac60a6e268f300",
+      "full_initial_record_json_sha256": "c2de33f11612c47ab80e8d682afbe18b2b35ff317142d76125377fe9bf7fbcc3",
+      "full_state_sha256": "8071173a7facf2cdc6ce41d5f4465e0c64569ed22b4375b3a0310085d3b975bd",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610271224,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 9,
+        "fingerprint": "107fd4419fb1ab5401dcbbbbde925eac0778d9748273372624035ade3ac19194",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 10,
+      "family_mask": 4,
+      "rule_fingerprint": "c60c8c34bc5872702520c86d15f53691fd3a2ecb19dad1208dcdcb84c86f5691",
+      "full_rule_json_sha256": "24ee422797a1e37c0d070201ff07cce84e55ce3c64d0efc27e2d4433bd617879",
+      "full_initial_record_json_sha256": "7c17ba50c390a82995084f9f714a19bbf50e858014db16d2aefd0b9a8019c38b",
+      "full_state_sha256": "b88087a568ce2177cd0b4be633a8e114bee9c4c91fa35410e4ea2a113568f21c",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610271320,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 10,
+        "fingerprint": "c60c8c34bc5872702520c86d15f53691fd3a2ecb19dad1208dcdcb84c86f5691",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 11,
+      "family_mask": 4,
+      "rule_fingerprint": "c60c8c34bc5872702520c86d15f53691fd3a2ecb19dad1208dcdcb84c86f5691",
+      "full_rule_json_sha256": "24ee422797a1e37c0d070201ff07cce84e55ce3c64d0efc27e2d4433bd617879",
+      "full_initial_record_json_sha256": "9cb35f214d2ded5dc96bcabc8f4c8cf19dfbe49b1f5d009cda5204bb8baccecb",
+      "full_state_sha256": "6426d2ec493a60fec666eb48de3c9b70a6b730747772fe2899383d00368a1268",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610271324,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 11,
+        "fingerprint": "c60c8c34bc5872702520c86d15f53691fd3a2ecb19dad1208dcdcb84c86f5691",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 12,
+      "family_mask": 8,
+      "rule_fingerprint": "e8a3cb7c510b67b02884b586cabb9e22564af16f1a58639aecd0ded2b550e688",
+      "full_rule_json_sha256": "8a9ab796d33501b932ccb9979c1549c998ab03c6b394a768908f65a67ccfe444",
+      "full_initial_record_json_sha256": "97d04205dd814d8d240ca44f97c96eb378a67a95ff3e25ca3dba0580eac31940",
+      "full_state_sha256": "1a03cf9c95fba0eee735fb01b5e67b32f38532d21870fdb6dd50f2b9f17ba32e",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610311220,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 12,
+        "fingerprint": "e8a3cb7c510b67b02884b586cabb9e22564af16f1a58639aecd0ded2b550e688",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 13,
+      "family_mask": 8,
+      "rule_fingerprint": "e8a3cb7c510b67b02884b586cabb9e22564af16f1a58639aecd0ded2b550e688",
+      "full_rule_json_sha256": "8a9ab796d33501b932ccb9979c1549c998ab03c6b394a768908f65a67ccfe444",
+      "full_initial_record_json_sha256": "d18506b673ae89485c6c2c7d8d977754fb16a5144e912e9d3ed709ab4071f5da",
+      "full_state_sha256": "d79bf1af4389db2475019db4463a02d8c335736a0b2a2e4126fcca8d9410513e",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610311224,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 13,
+        "fingerprint": "e8a3cb7c510b67b02884b586cabb9e22564af16f1a58639aecd0ded2b550e688",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 14,
+      "family_mask": 8,
+      "rule_fingerprint": "02d45f7d32eed1f7cb9ed0c12aa9ae0a95d28f81c38a95aca44b392f407371dd",
+      "full_rule_json_sha256": "de478e7604ea10fcba8b6c7e48e6b4e8a61e41cd91940ebe7865d52fb382ef7b",
+      "full_initial_record_json_sha256": "c8020df6927374e698ebb67200b1929b776ce21aace3d8e8cd657f99ef7f8e2a",
+      "full_state_sha256": "46664b42ee75687f45ffc7b92a28ff676462855d8b3942e51a60736627fe7527",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610311320,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 14,
+        "fingerprint": "02d45f7d32eed1f7cb9ed0c12aa9ae0a95d28f81c38a95aca44b392f407371dd",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 15,
+      "family_mask": 8,
+      "rule_fingerprint": "02d45f7d32eed1f7cb9ed0c12aa9ae0a95d28f81c38a95aca44b392f407371dd",
+      "full_rule_json_sha256": "de478e7604ea10fcba8b6c7e48e6b4e8a61e41cd91940ebe7865d52fb382ef7b",
+      "full_initial_record_json_sha256": "7e4a7e1ab7f877ab561772defdfdd7e622601d10fcb3429295075d790fc69903",
+      "full_state_sha256": "5b422b49231c839dbac9806a8c0ea8842bc2cf2c18232d27f4055515d229d307",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610311324,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 15,
+        "fingerprint": "02d45f7d32eed1f7cb9ed0c12aa9ae0a95d28f81c38a95aca44b392f407371dd",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 16,
+      "family_mask": 16,
+      "rule_fingerprint": "ba40e346f8fe8966eb3e2a5bf2d6b9c1da5eef42dc889545f8cc3b0367545cc9",
+      "full_rule_json_sha256": "3ebc249d52463f65e17a777503353c389c13e690ad0bf60e188c6637676fedc0",
+      "full_initial_record_json_sha256": "4ddb04607a65f2b92c3c12aadb90f4ae8f3ed6480578b94f5e3ab50cc654a62e",
+      "full_state_sha256": "19b7b45705f3e2cd34536b6d0702af9c232253b23e46b26d8ebd1cfda94e77e7",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610391220,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 16,
+        "fingerprint": "ba40e346f8fe8966eb3e2a5bf2d6b9c1da5eef42dc889545f8cc3b0367545cc9",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 17,
+      "family_mask": 16,
+      "rule_fingerprint": "ba40e346f8fe8966eb3e2a5bf2d6b9c1da5eef42dc889545f8cc3b0367545cc9",
+      "full_rule_json_sha256": "3ebc249d52463f65e17a777503353c389c13e690ad0bf60e188c6637676fedc0",
+      "full_initial_record_json_sha256": "6787364d24b2071c27eec0326d7c842d30e07356b0284130cfe1e0ce34bdd452",
+      "full_state_sha256": "f694b746b704621a121a28408618a4e776f5ef5f885b07071a92f90b2e2ea736",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610391224,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 17,
+        "fingerprint": "ba40e346f8fe8966eb3e2a5bf2d6b9c1da5eef42dc889545f8cc3b0367545cc9",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 18,
+      "family_mask": 16,
+      "rule_fingerprint": "7ab4a937c3c6653ad8ab6b79aa8208a0e78148cf2cc4d19c503ba3588e111abf",
+      "full_rule_json_sha256": "49db41ce8b2d6bffd6187718c02e0b82d0c44ebf81d4e36086ce2bf3aab7aed7",
+      "full_initial_record_json_sha256": "786e8e320fa314fa99ae8316928120c066d701a21769b8d274f9b0ef8a26039f",
+      "full_state_sha256": "b9e055b1f00b3cfbe74771e146429e7124a7da42b83e2f6657155c9f7dfbf396",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610391320,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 18,
+        "fingerprint": "7ab4a937c3c6653ad8ab6b79aa8208a0e78148cf2cc4d19c503ba3588e111abf",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 19,
+      "family_mask": 16,
+      "rule_fingerprint": "7ab4a937c3c6653ad8ab6b79aa8208a0e78148cf2cc4d19c503ba3588e111abf",
+      "full_rule_json_sha256": "49db41ce8b2d6bffd6187718c02e0b82d0c44ebf81d4e36086ce2bf3aab7aed7",
+      "full_initial_record_json_sha256": "0bf7d03e47208c3f61048f8c82cb2e1dcfcae4bf12e8992cf0620af53954dd21",
+      "full_state_sha256": "e91d20162a59b719c1854fac6593877da708a1c8e6d2e62b31f2041791b49115",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610391324,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 19,
+        "fingerprint": "7ab4a937c3c6653ad8ab6b79aa8208a0e78148cf2cc4d19c503ba3588e111abf",
+        "rule_split": "calibration",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 20,
+      "family_mask": 3,
+      "rule_fingerprint": "7917b0f555447c172efd4e88b9d2012dfeb022bd261c6bad695886aeb41b8222",
+      "full_rule_json_sha256": "cc6da51683b3adb7854c6433fe985e4c826bd19fca7e7107a6d60a76b5acab9b",
+      "full_initial_record_json_sha256": "c7bd535d46561f842127555cb2e1d1f50256ed32ef1a4a1ba6c173f6b0ad15a9",
+      "full_state_sha256": "c11dbac7fb7f796bc779a1b550c442b078e7ab7643a916c866fe2ec4912f9ab3",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610261220,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 20,
+        "fingerprint": "7917b0f555447c172efd4e88b9d2012dfeb022bd261c6bad695886aeb41b8222",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 21,
+      "family_mask": 3,
+      "rule_fingerprint": "7917b0f555447c172efd4e88b9d2012dfeb022bd261c6bad695886aeb41b8222",
+      "full_rule_json_sha256": "cc6da51683b3adb7854c6433fe985e4c826bd19fca7e7107a6d60a76b5acab9b",
+      "full_initial_record_json_sha256": "aa25cc0b4c1dd95a234c3cc5150966561e1e457c415e36b49c3e869161ec96a3",
+      "full_state_sha256": "8769198e0ffc33ccf2a36a3865bb4aacbba74f7354563376882b8d77772eb024",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610261224,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 21,
+        "fingerprint": "7917b0f555447c172efd4e88b9d2012dfeb022bd261c6bad695886aeb41b8222",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 22,
+      "family_mask": 3,
+      "rule_fingerprint": "b5d1614e6ec9c417519aadc09de5024f358acdb98a99e10cef16b66fae55c2e5",
+      "full_rule_json_sha256": "db7a227cc9a312f55758de1725cb817b6d27869c606f7c31425b19d17efd6605",
+      "full_initial_record_json_sha256": "3f5b386b9aa79a41b8b1d74e71cb47864415f703af2031173b3ffbec8ba95f01",
+      "full_state_sha256": "bce8faed15919adbacd187665acf0f89d8253d1e5afc51f8109b6f0b8efa1ead",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610261320,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 22,
+        "fingerprint": "b5d1614e6ec9c417519aadc09de5024f358acdb98a99e10cef16b66fae55c2e5",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 23,
+      "family_mask": 3,
+      "rule_fingerprint": "b5d1614e6ec9c417519aadc09de5024f358acdb98a99e10cef16b66fae55c2e5",
+      "full_rule_json_sha256": "db7a227cc9a312f55758de1725cb817b6d27869c606f7c31425b19d17efd6605",
+      "full_initial_record_json_sha256": "7ba69bf0d31ddf8c8d8d3c0691d8a46d180e118fc61b160dc82e61a5534aa304",
+      "full_state_sha256": "b39cf14526104ea9776b20868df37d0d663b7964d252a48195afae99fdd25771",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610261324,
+      "rule_split": "calibration",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 23,
+        "fingerprint": "b5d1614e6ec9c417519aadc09de5024f358acdb98a99e10cef16b66fae55c2e5",
+        "rule_split": "calibration",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 24,
+      "family_mask": 5,
+      "rule_fingerprint": "f80604bcfeac0cdf6e49b671d3b7f0adbd78f1eae65ede94813550dfd66d51c5",
+      "full_rule_json_sha256": "abf0b7798066a9c8c147cdc419dd967aa527e962eaadac3ba6407c33187074ec",
+      "full_initial_record_json_sha256": "fda9e74e63c41467aed8da74a67d090de1150bda5a2cf4e2f7508cbbda758b98",
+      "full_state_sha256": "4d6b5d48a6c2cd9d83946663caf1a53759f0e581306687cf4abaa77ab278493b",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610281220,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 24,
+        "fingerprint": "f80604bcfeac0cdf6e49b671d3b7f0adbd78f1eae65ede94813550dfd66d51c5",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 25,
+      "family_mask": 5,
+      "rule_fingerprint": "f80604bcfeac0cdf6e49b671d3b7f0adbd78f1eae65ede94813550dfd66d51c5",
+      "full_rule_json_sha256": "abf0b7798066a9c8c147cdc419dd967aa527e962eaadac3ba6407c33187074ec",
+      "full_initial_record_json_sha256": "b843df2ff4dd14812b2b1fb181ecc1876b54d6ade95687c2eb6af081f75c8325",
+      "full_state_sha256": "633bea76bf7a4a41520b6615f4cf5e8e479118549468b203bcfa57a41385d2f9",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610281224,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 25,
+        "fingerprint": "f80604bcfeac0cdf6e49b671d3b7f0adbd78f1eae65ede94813550dfd66d51c5",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 26,
+      "family_mask": 5,
+      "rule_fingerprint": "5661d8bd876fc96be18223b311cd513ca4a1770f6bb5b15b5343334be3af192e",
+      "full_rule_json_sha256": "f97d8046ee1dc0e4d2319e08f01143cc8ba80eb903273ddace51a9c3e806c085",
+      "full_initial_record_json_sha256": "2bff4daa77ce58d3311126eaab833ae499790e9a8585943304b2f2fc48524551",
+      "full_state_sha256": "843d015235ffd2d4195b14011da642ed473705aea494357ad95e4a96f1f5833a",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610281320,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 26,
+        "fingerprint": "5661d8bd876fc96be18223b311cd513ca4a1770f6bb5b15b5343334be3af192e",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 27,
+      "family_mask": 5,
+      "rule_fingerprint": "5661d8bd876fc96be18223b311cd513ca4a1770f6bb5b15b5343334be3af192e",
+      "full_rule_json_sha256": "f97d8046ee1dc0e4d2319e08f01143cc8ba80eb903273ddace51a9c3e806c085",
+      "full_initial_record_json_sha256": "27b7a5b97c45c5ac110ddbfb7a6ef7ccf512f5ae37d14ddb76121384fc8f29ec",
+      "full_state_sha256": "790510036fb467c3574b380a606c13cc922a91d8978ecd3c1da210f37fbd368c",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610281324,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 27,
+        "fingerprint": "5661d8bd876fc96be18223b311cd513ca4a1770f6bb5b15b5343334be3af192e",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 28,
+      "family_mask": 6,
+      "rule_fingerprint": "68385aa50f2dfd8d96daa2085dca61ef462f20a79b4363a2d97fbbf130137f27",
+      "full_rule_json_sha256": "192237de24fc9374dc817bf5bca1a079e929d133fcbeea14c13a803a33d57ed6",
+      "full_initial_record_json_sha256": "cad78815c3fc210faef25e992159836c948b5fc80a372fdf815c9a79f25461a3",
+      "full_state_sha256": "8d2f42439e7dae7f992b0e036129e6c35a99f85db142145a18e33fb6f4d20157",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610291220,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 28,
+        "fingerprint": "68385aa50f2dfd8d96daa2085dca61ef462f20a79b4363a2d97fbbf130137f27",
+        "rule_split": "reserved_validation",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 29,
+      "family_mask": 6,
+      "rule_fingerprint": "68385aa50f2dfd8d96daa2085dca61ef462f20a79b4363a2d97fbbf130137f27",
+      "full_rule_json_sha256": "192237de24fc9374dc817bf5bca1a079e929d133fcbeea14c13a803a33d57ed6",
+      "full_initial_record_json_sha256": "9ab59ebef374c7605cf72074ca23d51d05457a1455d155d4231ac7c1d1d012e4",
+      "full_state_sha256": "d9e40c3a42b589eab3f258fdd13b183cd9063881eb9812f5ac4051c209ff4801",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610291224,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 29,
+        "fingerprint": "68385aa50f2dfd8d96daa2085dca61ef462f20a79b4363a2d97fbbf130137f27",
+        "rule_split": "reserved_validation",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 30,
+      "family_mask": 6,
+      "rule_fingerprint": "2cd87878f03e79c30e551f2ed7bc8cb00994c977e518c9ca37e17ff9fa669f0d",
+      "full_rule_json_sha256": "05a589bc2776ec58db7c6417c038a0044e84049e6832771633150321cfed4095",
+      "full_initial_record_json_sha256": "e39b46880ee14c43513cc36ad779e46322efac3d9b432b7077549a9a08c96464",
+      "full_state_sha256": "bae096c6de3a73aef265a60083233d9b42ddb145039716c543a8ad1fcb96b4a1",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610291320,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 30,
+        "fingerprint": "2cd87878f03e79c30e551f2ed7bc8cb00994c977e518c9ca37e17ff9fa669f0d",
+        "rule_split": "reserved_validation",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 31,
+      "family_mask": 6,
+      "rule_fingerprint": "2cd87878f03e79c30e551f2ed7bc8cb00994c977e518c9ca37e17ff9fa669f0d",
+      "full_rule_json_sha256": "05a589bc2776ec58db7c6417c038a0044e84049e6832771633150321cfed4095",
+      "full_initial_record_json_sha256": "3038695edf2d495d1014b0e10bb1643c8a43826d9f878e1e91e841829d37bf0a",
+      "full_state_sha256": "5d8aa2029684f727bbb53607798133f72b499693818b6272937906651be16934",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610291324,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 31,
+        "fingerprint": "2cd87878f03e79c30e551f2ed7bc8cb00994c977e518c9ca37e17ff9fa669f0d",
+        "rule_split": "reserved_validation",
+        "positive_feature": false,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.25,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 32,
+      "family_mask": 9,
+      "rule_fingerprint": "092312bf8a8139d6afa1fa4faa576af3fdae964b39a014be87b92754df322e6a",
+      "full_rule_json_sha256": "72f42afedc86362b56823e775a94eeda6b12ef47baca237d8a4a90a26b6868cb",
+      "full_initial_record_json_sha256": "6c8cb1815dcc24db5f13e73841a2fa09a0f01b462a1c2c3bbc47158ae134aae7",
+      "full_state_sha256": "7445868c5bc7ab361f619c7003b44c0b9900323d9c689658083c6035bdfdd191",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610321220,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 32,
+        "fingerprint": "092312bf8a8139d6afa1fa4faa576af3fdae964b39a014be87b92754df322e6a",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 33,
+      "family_mask": 9,
+      "rule_fingerprint": "092312bf8a8139d6afa1fa4faa576af3fdae964b39a014be87b92754df322e6a",
+      "full_rule_json_sha256": "72f42afedc86362b56823e775a94eeda6b12ef47baca237d8a4a90a26b6868cb",
+      "full_initial_record_json_sha256": "909f1358eb2fc3cb40bc3ca6607d68329148a3170faa861a71f5bf94ab92ac92",
+      "full_state_sha256": "772a419761343a7f8394ae6de0792af36b5d0ce794ed1b24cd4b5a79b305fc33",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610321224,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 33,
+        "fingerprint": "092312bf8a8139d6afa1fa4faa576af3fdae964b39a014be87b92754df322e6a",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 34,
+      "family_mask": 9,
+      "rule_fingerprint": "5d81fea7578fbe025adfab803f45ba5aaa12ed7b9fd8daa08b3804cdbc0f5086",
+      "full_rule_json_sha256": "b4dcfc22687300e2b7acf811972840b4a7e5c6014258adf8dc745d5a25562cec",
+      "full_initial_record_json_sha256": "1449d2ba475bf7e8ee763e0461395ae578b144c521f5a4e8d7cf5731fd870e3a",
+      "full_state_sha256": "df521426e5e02eff83bf51fd8642cc936e9f1f7bc6ff685c60d7d5c5c59f8654",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610321320,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 34,
+        "fingerprint": "5d81fea7578fbe025adfab803f45ba5aaa12ed7b9fd8daa08b3804cdbc0f5086",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 35,
+      "family_mask": 9,
+      "rule_fingerprint": "5d81fea7578fbe025adfab803f45ba5aaa12ed7b9fd8daa08b3804cdbc0f5086",
+      "full_rule_json_sha256": "b4dcfc22687300e2b7acf811972840b4a7e5c6014258adf8dc745d5a25562cec",
+      "full_initial_record_json_sha256": "5592d3adcf0321d82d098526d662af55a711ce336c254946388ac7c2ebac1e62",
+      "full_state_sha256": "50e1b4b271989303c665ea071a16eb89d9bacc1db2064db9451686ed597e1d44",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610321324,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 35,
+        "fingerprint": "5d81fea7578fbe025adfab803f45ba5aaa12ed7b9fd8daa08b3804cdbc0f5086",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 36,
+      "family_mask": 10,
+      "rule_fingerprint": "fd4af40f9dc1c8bf8c59553de0d24e080e5f491c383928932860ce8c14268b69",
+      "full_rule_json_sha256": "c3057e9794a7db6f2149853964d0e1aeb27ba4cd2dd533ea4ee561f73de32688",
+      "full_initial_record_json_sha256": "9a29954467864c35a6b6154211a66f71f95e2912149ffa052ebcf62e7aa7479f",
+      "full_state_sha256": "e03a5c73a0a0369808cf646819c3c768d340e9ae1a977a7468981e316975bee4",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610331220,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 36,
+        "fingerprint": "fd4af40f9dc1c8bf8c59553de0d24e080e5f491c383928932860ce8c14268b69",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 37,
+      "family_mask": 10,
+      "rule_fingerprint": "fd4af40f9dc1c8bf8c59553de0d24e080e5f491c383928932860ce8c14268b69",
+      "full_rule_json_sha256": "c3057e9794a7db6f2149853964d0e1aeb27ba4cd2dd533ea4ee561f73de32688",
+      "full_initial_record_json_sha256": "074e5877d4219a461c2db18bcf11d5c82f64567f05ee9b9f202167a03315eaff",
+      "full_state_sha256": "867459e1cef0b0c65fac8ee215c49f2c76f10fc6cf3dc8418abcd5960c68c3a8",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610331224,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 37,
+        "fingerprint": "fd4af40f9dc1c8bf8c59553de0d24e080e5f491c383928932860ce8c14268b69",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 38,
+      "family_mask": 10,
+      "rule_fingerprint": "3357b02b750ebe1ccd869d6f335a0961fe516cdf5a4a32e718e8d83dd7889c63",
+      "full_rule_json_sha256": "dfece59b5e183d62a60cc444ed4c11d9d20334af210e4d75efda7c70f26ca3a6",
+      "full_initial_record_json_sha256": "66b1c08fcf8c969ba4bf765ed32952d30ea50dd97dced7151cb3f766fe6b43ea",
+      "full_state_sha256": "2bc124234aa30743f229b89d92b9e20c2e064e82343cb71c72d9567ff514bad1",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610331320,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 38,
+        "fingerprint": "3357b02b750ebe1ccd869d6f335a0961fe516cdf5a4a32e718e8d83dd7889c63",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 39,
+      "family_mask": 10,
+      "rule_fingerprint": "3357b02b750ebe1ccd869d6f335a0961fe516cdf5a4a32e718e8d83dd7889c63",
+      "full_rule_json_sha256": "dfece59b5e183d62a60cc444ed4c11d9d20334af210e4d75efda7c70f26ca3a6",
+      "full_initial_record_json_sha256": "e9e3f022f7ee42afa9a05b082a4a66df26a4889ac68dd7932f86d0e1de0a4884",
+      "full_state_sha256": "54ec1da756aa2e9dd679cb593bed1e92f32281b3b23e87ac73d383343b89588e",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610331324,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 39,
+        "fingerprint": "3357b02b750ebe1ccd869d6f335a0961fe516cdf5a4a32e718e8d83dd7889c63",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 40,
+      "family_mask": 12,
+      "rule_fingerprint": "16cf0cc874b6001b5f032fbd28467680b1a566accac310bddc80b60424735ec7",
+      "full_rule_json_sha256": "3707fca4190a345d97cc9bc4226475c0a1c95b1466db0bf7f31479725186766a",
+      "full_initial_record_json_sha256": "03daadb40d22c11fddd8d559c878ac7fef8a4a21c3d3f8eaa129fa48194fcdd0",
+      "full_state_sha256": "56896fccaa087584432336516b7839972499c88d7795b04aedda3fe3834800cc",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610351220,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 40,
+        "fingerprint": "16cf0cc874b6001b5f032fbd28467680b1a566accac310bddc80b60424735ec7",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 41,
+      "family_mask": 12,
+      "rule_fingerprint": "16cf0cc874b6001b5f032fbd28467680b1a566accac310bddc80b60424735ec7",
+      "full_rule_json_sha256": "3707fca4190a345d97cc9bc4226475c0a1c95b1466db0bf7f31479725186766a",
+      "full_initial_record_json_sha256": "a7c8f3b7943ae3ee2b925fc7696a4d925e1d9b591886c8682b0d89cc0466ed0f",
+      "full_state_sha256": "91bc51ff6d7730816ef79e5ec26c476230a900be871114e957aecec22b19925d",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610351224,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 41,
+        "fingerprint": "16cf0cc874b6001b5f032fbd28467680b1a566accac310bddc80b60424735ec7",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 42,
+      "family_mask": 12,
+      "rule_fingerprint": "678e5461da0741ab4a1d157256614269b442a37c6b277a13b06a3c4aaf1ec369",
+      "full_rule_json_sha256": "4a71ec4284f9ad8afc5de62ffe8c9e8cca969100d1267003ceabf1d37147206a",
+      "full_initial_record_json_sha256": "fcf6cada91488edae4e76e780e4a92a2f387571c3e2b27c10c03ef8ff37b6298",
+      "full_state_sha256": "732ac3c1281fbe52cd952cf9fb8a0ed6987293c71b5c0197c000182ee7149f21",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610351320,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 42,
+        "fingerprint": "678e5461da0741ab4a1d157256614269b442a37c6b277a13b06a3c4aaf1ec369",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 43,
+      "family_mask": 12,
+      "rule_fingerprint": "678e5461da0741ab4a1d157256614269b442a37c6b277a13b06a3c4aaf1ec369",
+      "full_rule_json_sha256": "4a71ec4284f9ad8afc5de62ffe8c9e8cca969100d1267003ceabf1d37147206a",
+      "full_initial_record_json_sha256": "d186373b9023d408c85799aa68a4e5fbc21ed506852ad8d6228f4596a417e834",
+      "full_state_sha256": "e2c9cf1511919995ad23ab59d3639c5a224638bf20b4b2766f170f5372726f7c",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610351324,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 43,
+        "fingerprint": "678e5461da0741ab4a1d157256614269b442a37c6b277a13b06a3c4aaf1ec369",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 44,
+      "family_mask": 31,
+      "rule_fingerprint": "ad45d305bf861698c2107865ea1c416020b35fb92a3ddddfd85641b1ff2dcbfd",
+      "full_rule_json_sha256": "9e807fea1e6ab3f88e757e7a74fb7e57844c9e5f2c2de0e9530383cd8b3f476a",
+      "full_initial_record_json_sha256": "e1a50d73592f8130a99b8f03b30faebc1e3c11dbf5beb6ffbc34b19a41c1a771",
+      "full_state_sha256": "dc31f6cab696b9e90f71b3d23e076d8b9aef9e9ff57e2445fdd45f6ada667727",
+      "layout": 0,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610541220,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 44,
+        "fingerprint": "ad45d305bf861698c2107865ea1c416020b35fb92a3ddddfd85641b1ff2dcbfd",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 45,
+      "family_mask": 31,
+      "rule_fingerprint": "ad45d305bf861698c2107865ea1c416020b35fb92a3ddddfd85641b1ff2dcbfd",
+      "full_rule_json_sha256": "9e807fea1e6ab3f88e757e7a74fb7e57844c9e5f2c2de0e9530383cd8b3f476a",
+      "full_initial_record_json_sha256": "c426d90719da1ed59631dadaf31d2f2486153ee527fa125a1439bbe8d98c29e1",
+      "full_state_sha256": "8e4a685dcd9669d0d0d8a0b1bc5629d2409d6ca16e61cbb040ecf1f02dcd2d5f",
+      "layout": 0,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 1,
+      "prefix_seed": 202610541224,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 63,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "checkmate",
+        "winner": 0,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 45,
+        "fingerprint": "ad45d305bf861698c2107865ea1c416020b35fb92a3ddddfd85641b1ff2dcbfd",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": true,
+        "probability_decisive_policy_terminal": 1,
+        "zero_information_baseline_probability": 1,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 46,
+      "family_mask": 31,
+      "rule_fingerprint": "d8a31ea997b3cac79bff73ac25dff649ea4bc735e5f3a336df656213156c847d",
+      "full_rule_json_sha256": "7db46c786d43c444394ee08217daa5ed4ee4ec090702293830ed73aaa19674ab",
+      "full_initial_record_json_sha256": "63793f071992145453b4b65d928c435b88c9e756d32798e3c6a75200efd6cdf3",
+      "full_state_sha256": "d6c770e5a2fa071ca7e45dd3681489f882fd21ac95ba79f5d40f3bd03f46a5bf",
+      "layout": 1,
+      "prefix_requested": 0,
+      "actual_prefix_plies": 0,
+      "prefix_seed": 202610541320,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 64,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 46,
+        "fingerprint": "d8a31ea997b3cac79bff73ac25dff649ea4bc735e5f3a336df656213156c847d",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    },
+    {
+      "world": 47,
+      "family_mask": 31,
+      "rule_fingerprint": "d8a31ea997b3cac79bff73ac25dff649ea4bc735e5f3a336df656213156c847d",
+      "full_rule_json_sha256": "7db46c786d43c444394ee08217daa5ed4ee4ec090702293830ed73aaa19674ab",
+      "full_initial_record_json_sha256": "81c8ead64bc637d80bc3333023eea87e89d71cb84e0c3a1af1f9a6083a2e3ba5",
+      "full_state_sha256": "be7cb1b1d68fb4b4d295f4c81dd3f0c761d1fb933076ed019b191230aeef86fd",
+      "layout": 1,
+      "prefix_requested": 4,
+      "actual_prefix_plies": 4,
+      "prefix_seed": 202610541324,
+      "rule_split": "reserved_validation",
+      "actual_rule_max_ply": 64,
+      "remaining_rule_plies": 60,
+      "repetition_limit": 4,
+      "Core_terminal": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "prediction_vector": {
+        "world": 47,
+        "fingerprint": "d8a31ea997b3cac79bff73ac25dff649ea4bc735e5f3a336df656213156c847d",
+        "rule_split": "reserved_validation",
+        "positive_feature": true,
+        "terminal_at_start": false,
+        "probability_decisive_policy_terminal": 0.75,
+        "zero_information_baseline_probability": 0.5,
+        "structural_deadzone": "UNKNOWN",
+        "minimax_WDL": "UNKNOWN",
+        "action_WDL": "UNKNOWN",
+        "cooperative_decisive_reachability": "UNKNOWN",
+        "feature_source": "onlyfrozenrule/fullinitialhistory/emptygraph,0Playercalls/0oracle/0policyfitness"
+      },
+      "structural_deadzone": {
+        "value": null,
+        "coverage": "UNKNOWN pendingindependentscopedtruth; not inferred fromemptygraph orpolicy draws"
+      },
+      "cooperative_decisive_reachability": {
+        "value": null,
+        "coverage": "UNKNOWN; actualfullpathpositivewitness may exist inpartialassessment but no negativeclosurelabel"
+      },
+      "minimax_WDL": {
+        "bounds": [
+          -1,
+          1
+        ],
+        "coverage": "UNKNOWN except literalterminalstatus above; no solverrun"
+      },
+      "action_WDL": {
+        "coverage": "UNKNOWN",
+        "rows": []
+      }
+    }
+  ],
+  "public_inventory": {
+    "source_commit": "c5e6d667a8f00f8e0c421e41cabae96752e54a13",
+    "foundation": "3x3H6completehistorycensus/288layouts; not current4x4H64 rule",
+    "canonical_history_triage": "reported10lowmaterialclosures112124component-summedvertices and56fouractorcomponents; history/clock/rankscoped. Notindependentlyrerunhere. Some foreignclocks128 anddeclaredKAB inventories differ fromcurrentK+AversusK/H64/newfingerprints.",
+    "components": "positionclosure/tabledoesnotaloneprovefullhistoryWDL; usepublishedrank/repetition/remaining-clockconditions ornewexplicitlyboundedAUXlabel, retainUNKNOWN."
+  },
+  "minimum_missing_contract": [
+    "Exactbinding fromforeignpublishedclosure tocurrentrulefingerprint/typeinventory/newhistory, includingactual64plyclock versus128 andpositionrepetitioncounts.",
+    "Distinct cooperative-possible/structuralno-decisive-path/minimax/action-WDL labels orcertifiedbounds, plus coverage denominator andactualcost/sourceSHA.",
+    "Keepmask-family split acrossalllayouts/prefixes; priorpublishedtruth exposure cannot become blindholdout. Existingclosedcaps andAUXownership preserved."
+  ],
+  "next_step": "AUXmayindependentlydecide applicablepublishedlabels/bounds throughnormalworkflow. PRIMARYdoesnotlaunchitsworker,requestnewsolver,crosswriteorwait. Do not restart1920policyplan."
+}

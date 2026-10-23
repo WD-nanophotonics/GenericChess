@@ -6793,3 +6793,45 @@ At this Git snapshot one combined post-publication report/question is planned,
 not preclaimed sent: compare a smaller prospective horizon/price utility panel
 against merely repeating selected-root mechanisms. Next original probe follows
 new replies and execution effects. No Dot/livewait,extra probe,worker or AUX report.
+
+## 2026-10-23 PRIMARY — E0 forecasts, negative transfer and truth handoff
+
+Incoming1792751845/1792752568 and complete reply1792756416.551059 were saved
+privately before assessment. Adopted/executed the24history single-reference
+four-cell192slot test and a real baseline. E0's weak-baseline improvement did
+not survive as useful added information: calibration-fitted E1 versus a constant
+fitted on the SAME23histories gives meanBrier gain0.002060657, below frozen0.02,
+on96new-seed contexts/768complete deployments. No test refit or default adoption.
+One old terminal-history overlap is retained, not filtered away. Same first
+candidate actions conceal five nonzero-interaction E0role histories; reject a
+universal first-action gate without claiming an AUX learner was independently
+rerun or evaluated here.
+
+A distinct small three-piece E0 panel exposed an actual planning error: the
+1600second empirical override lacked comparable full-game evidence while the
+sampled-max forecast was38995seconds. It was interrupted after16complete/1partial,
+leaving1903unattempted and1904outcomeUNKNOWN. Exact originals, known last-saved
+10actions versus11query receipts, costs and all missing slots survive; no refill.
+The manual now requires a measured comparable basis before any new override.
+
+PRIMARY delivers976complete ordinary deployments plus1partial,29446gameplay
+Player returns including partial, and691newcost/root returns separately. One-
+ply rule-feature controls are separate:24setups,19admitted,167legalchildren,
+5positive paths and5setupfailures,0Player/solvercalls. A single-parity mating
+obstruction is a new scoped analytic E0proposal, not certified globalWDL. Role,
+quantity, royal safety, fullhistory, clock and other-terminal assumptions remain.
+
+Only pinned public AUX reports were read for the truth inventory; its checkout,
+state, solver and unpublished work were untouched.48full input/history/clock/
+split bindings and unknown label/coverage fields are prepared for the normal
+handoff. Published closure/Position counts cannot automatically label a new
+fingerprint or64ply history. The next real question is the minimum valid binding
+and whether the scoped parity argument omits an exception.
+
+Actual effective work is conservatively61m51.213669s; a mixed61.242690second
+preexecution interval is excluded with old/new ledger evidence. Concurrent
+scientific execution, analysis and qualification count once. Publication,
+documentation and transport add no research credit. At this Git snapshot the
+single combined progress/question message is planned AFTER push/fullSHA readback;
+delivery is not preclaimed. Next original probe records replies and actual
+adopt/defer/reject effects; no live wait, Dot, extra worker or peer approval gate.

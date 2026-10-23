@@ -514,3 +514,15 @@ source capsules. Keep the original registration; record new serialization SHA,
 actual preparation time and provenance, not an old hash for different bytes.
 The execute stage still requires recorded library source and frozen cost/cap
 checks. Current scientific selections remain in LOCAL_MAINLINE.md.
+
+## Empirical cost override qualification — E0 observation2026-10-23
+
+The stopped1920slot small-rule E0 panel accepted an unsupported1600second
+aggregate over a38995second sampled-maximum forecast. Neither a frozen guessed
+number nor a generic entry accepting it makes that empirical gate scientifically
+valid. Preserve that cost-feasibility failure, all partial/missing slots and the
+original cap; never resume/refill it. For any NEW empirical override bind actual
+comparable full-game records, executed source, controller/history/clock conditions,
+scaling/reserve and total preparation/preflight/validation/analysis cost. If that
+basis is absent, stop at cost feasibility or redesign a smaller genuinely new
+question before fitness. Do not split the old scope or bypass the120minute rule.

@@ -12,42 +12,46 @@ Old dated next actions are evidence, not a backlog or a competing live policy.
 
 ## Current selection and reason —2026-10-23
 
-[LEAPER_BUDGET_CALIBRATION_AND_COST_20261023.md](LEAPER_BUDGET_CALIBRATION_AND_COST_20261023.md)
-closes724new physicaldeployments/23410gameplayreturns0UNKNOWN;48terminal starts
-and475literal records not IID remain explicit.430newpreflight/4newdiagnostic
-returns are separate. Actual public copies pass66116PV/23410history turns,
-44originalfilebindings,1112costPV and14diagnosticPV. SharedCore is not independent WDL.
+[LEAPER_E0_PREDICTIONS_AND_TRUTH_HANDOFF_20261023.md](LEAPER_E0_PREDICTIONS_AND_TRUTH_HANDOFF_20261023.md)
+implements the incoming rule-explorer direction and Chat1792756416's24prefix/
+single-reference design, preserving all four price/depth cells and both roles.
+E0:192complete deployments,5TP6FP2FN11TN, weak-baseline Brier gain0.01302.
+E1:96new-seed prefixes/768complete deployments, scoregain0.002060657 versus a
+calibration-fitted constant, below frozen0.02. STOP this unchanged root-feature
+predictor; do not refit test labels or infer generic price/learning failure.
+17of192role histories have real nonzero price/horizon interactions,13of160outside
+the old positive rule. Same first actions still conceal later policy effects.
+A prior-history audit retains one already-terminal test overlap; no reselection.
 
-Reply1792749117 was read/adopted/executed: use36three-cellgames instead of48,
-separate raw seat baseline from ownbudgetgain, not an algebra-transfer hypothesis.
-On the exposed12root6rulecohort own0gain0/own1gain5/12, layout1own0=-1/3 fails
-the frozen robust-resource criterion. New96price/reference games giveUnit-Static
-1/24 under BOTHrefs, no ranking reversal. MatchedPV prediction17/19vs16/19
-is not utility; defer a new opponent-model framework without costed evidence.
+The small12mask/48history/3piece E0 panel has frozen forecasts but its1920slot
+cost plan was unsupported and was INTERRUPTED after16finished/1partial;
+1903unattempted remain,1904policyoutcomeUNKNOWN. Keep exact originals and the
+cost failure; NEVER resume/refill this plan. A guessed empirical override is not
+a cost basis. Existing role-budget and six-rule inverse/Pareto recipes also stay
+STOPPED, with their earlier negative results retained in
+[the prior report](LEAPER_BUDGET_CALIBRATION_AND_COST_20261023.md).
 
-A separately frozen192fresh-history/576game test rejects the role-budget heuristic:
-26.5percent node saving passes, but utility loss23/384 exceeds1/48. No threshold
-or cost-clock switch rescues it. Posthoc equal-expected-node mixture leaves only
-~0.00282role-specific advantage; it is derived, not a played policy or per-game
-equal resource claim. Same first action does not identify full-policy utility.
+Next actual step has BEGUN:48full inputs/fingerprints/clocks/splits are bound in
+[data/leaper_e0_20261023/truth-handoff.json](data/leaper_e0_20261023/truth-handoff.json).
+Published AUX truth is scoped to its actual fingerprints/history/clocks; PRIMARY
+read the fixed-source inventory, did not rerun its solver or transfer labels by
+mask string. Identify the minimum applicable existing label/history binding;
+leave missing coverage and structural/minimax/action labels UNKNOWN.
 
-The isolated price context mixes achievedD3/D4 at512nodes. Four new same-history
-root calls retain the price action difference at BOTH matched reported depths.
-Sixteen targeted full continuations then showUnit-Static balanced1 atD3,0atD4;
-all504non-immediate queries complete requests,14D0wins are proved. UnitD3win
-becomesD4loss atfixedStaticD3 despite the same firstaction. Preserve positive
-price evidence and horizon dependence, not a universal price/search/learning claim.
-The D3two-policy balanced reference identity is algebraic, not independent robustness.
+A DIFFERENT rule-derived E0 mating feature is also frozen: a single parity set
+of ordinary Leap offsets may obstruct scoring in K+AversusbareK under the
+explicit royal/draw-only-other-terminal conditions.24metadata control setups give
+19admitted roots/167legal children and5positive one-ply paths;5setup failures stay.
+This is a scoped analytic proposal for independent review, not certified global
+closure. Mixed-parity positives use constructed safe starts, not the48historymu.
+No newPlayer/solver calls. Assess the exact proof assumptions and current-history
+scope before considering its use; extra actors/goals/promotion/drop/aux can break
+this restriction. No more unchanged policygames merely to replenish a quota.
 
-Next actual step has BEGUN:24fresh fullhistories saved/replayed across all6rules,
-2layouts/2prefixes,1alreadyterminal,0oldhistory/state matches and0newPlayercalls.
-NOT_RUN_READY. FIRST choose smallest decision-changing12or24root prospective
-price/horizon protocol, freeze estimands/criteria and actual full-history cost.
-Candidate384slot planning estimate~1811seconds is not a gate or cap extension.
-No role-heuristic/default/learner adoption, no AUX duplication. The original
-six-rule Pareto recipe also remains STOPPED: guided3/16vsuniform1/4, as retained in
-[the prior report](LEAPER_INVERSE_SELECTION_TRANSFER_20261023.md).
-Long-term promotion/drop/auxiliary/history semantics remain; science is OPEN.
+Long-term full generated-rule semantics and rule-only prices/search remain OPEN.
+After closure of the current segment, use the original next probe for pending
+Chat/Claude replies and follow their actual adopt/defer/reject effects; no wait,
+extra probe/worker, AUX write, default switch or automatic model/label adoption.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
