@@ -1178,3 +1178,44 @@ Same research UUID finishes successfully with4021.487 confirmed seconds
 All68 relevant publication regressions pass in the project .venv. Curated report:
 docs/research/LEAPER_PROSPECTIVE_TD_AND_TRUTH_COST_20261023.md. Five compact packets
 and source-bound readers preserve the results,negative controls and actual errors.
+
+## 2026-10-23 — AUX tie/truth closure and actual free-prior pilot
+
+PRIMARY supplies committed sandbox1ac1f97a rules, complete strong-foe histories
+and unchanged shared Core/Session/search;it owns generation,quality/inverse
+screens and defaults. AUX imports its new async transport/tests with own paused-
+Dot guards,and runs only history truth,learner-target/prior mechanisms here.
+No PRIMARY state,worker,timer or default is changed. Both patrols remain60min.
+
+AUX executes the adopted neutral-control advice1792738734 and retains the
+finite-claim corrections in1792738156. The neutral action loses to a fixed tail,
+while an actual-Session parent certificate proves all6actions LOSS;both deeper
+D10 material critics expose mate. This qualifies the one TD/free residual as
+opponent-specific,without erasing its measured finite return. The18-root proof
+batch closes71/72 with4certificates;new-source32-root batch closes122/128 with2.
+Original30-minute limits,UNKNOWNs and all7not-started calls are preserved.
+No strict strategic action ranking is established. No unchanged proof expansion.
+
+AUX independently reconstructs96 source frames/62 divergences,checks7490 critic
+exports(201nonliteral),and recovers16/16literal targets in8fresh-root controls.
+Current learner already uses fresh/strictPV,so no speculative engine/default fix
+or acceleration claim. Then16 NEW learner-path Unit/Mobility games finish with
+0UNKNOWN:Unit0W1D7L,Mobility3W4D1L,finitepaired+9/8 andone negativeframe,0updates.
+This purematerial policy differs from PRIMARY dynamic512;results are not added.
+Positive/negative local crossscores both refine Unit ties but yield opposite
+conditional effects. No minimax/heldout/universalprice/TD-benefit inference.
+
+All actual pilot moves/PVs and nine complete-Session certificates replay through
+shared Core;83mailbox and75learner/runtime/certificate regressions pass. Research
+packet includes complete inputs,caps,missing slots,actual failures and inert
+executed sources. The old in-process trace attempt failed on a runtime view;
+its expired cap was not reset and no directTT observation is claimed.
+
+The same session46846807-891b-4184-b017-5e321c71440a retains its UTC origin and
+4006.495 confirmed seconds(66.775min);unconfirmed/admin/offline intervals are not
+backfilled. Normal safe-checkpoint session finish passed,with memo synchronized to ENDED.
+The one checked mailbox report will ask whether next cost should buy a tiny
+Mobility-initialized learner feasibility or wider natural-prefix prior transfer.
+Current view favors cheap prefix/initialization evidence before more proof or
+training. Report delivery,Chat reading,adoption and execution remain distinct;
+no live wait,Dot mention,old uncertain resend or other-role takeover.

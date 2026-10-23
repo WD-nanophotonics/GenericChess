@@ -540,3 +540,56 @@ def test_private_original_rejects_unsafe_destination_without_writing(capture_env
     with pytest.raises(LocalFlowError):
         s.save_plugin_original(target, payload)
     assert not target.exists()
+
+
+def test_async_chat_reply_preserves_identity_and_legacy_compatibility(env):
+    r = sent(env)
+    assert 'TYPE=CHAT_REPLY' in r['message']
+    assert 'Reply in this thread with TYPE=DOT_REPLY' not in r['message']
+    assert '<@' not in r['message']
+    payload = event(r, text=f'TYPE=CHAT_REPLY\nREQUEST_ID={r["request_id"]}\nNew evidence and one bounded decision.')
+    s.ingest(payload)
+    result = s.reconcile(r['request_id'])
+    assert result['state'] == 'COMPLETED'
+    assert result['response'] == payload['event']['text']
+    assert s.begin_send(r['request_id'])['automatic_retry_available'] is False
+
+
+def test_async_chat_reply_does_not_relax_bound_account(env):
+    r = sent(env)
+    s.ingest(event(r, user='Uwrong', text=f'TYPE=CHAT_REPLY\nREQUEST_ID={r["request_id"]}\nUnbound source'))
+    assert s.reconcile(r['request_id'])['state'] == 'PENDING'
+
+
+def test_async_new_progress_keeps_verified_unanswered_request(env):
+    c = s.config(); c['asynchronous_progress_enabled'] = True; write_json(s.CONFIG, c)
+    r = sent(env)
+    old = s.import_snapshot(r['request_id'], plugin_snapshot(env, r, []))
+    assert old['request_readback']['payload_verified']
+    env.write_text('A new substantive milestone and distinct decision question')
+    new = s.consult(env)
+    assert new['request_id'] != r['request_id']
+    assert s.status(r['request_id'])['state'] == 'PENDING'
+    assert s.status(r['request_id'])['message'] == r['message']
+    assert s.begin_send(r['request_id'])['action'] == 'slack-reconcile'
+    # Replying later still associates to the original question.
+    s.ingest(event(r))
+    assert s.reconcile(r['request_id'])['state'] == 'COMPLETED'
+
+
+@pytest.mark.parametrize('known', [False, True])
+def test_async_progress_does_not_skip_uncertain_or_unverified_send(env, known):
+    c = s.config(); c['asynchronous_progress_enabled'] = True; write_json(s.CONFIG, c)
+    r = sent(env) if known else s.consult(env)
+    if not known: s.begin_send(r['request_id'])
+    env.write_text('New content cannot evade unresolved delivery')
+    with pytest.raises(LocalFlowError, match='pending'):
+        s.consult(env)
+
+
+def test_async_import_preserves_own_numbered_payload_and_literal_code():
+    expected = '1) Evidence\n2) Decision\n```\n3) literal code\n```'
+    observed = '1. Evidence\n2. Decision\n```\n3) literal code\n```'
+    assert s._payload_matches(observed, expected)
+    assert not s._payload_matches(observed.replace('3) literal', '3. literal'), expected)
+    assert not s._payload_matches(observed.replace('Decision', 'Different'), expected)

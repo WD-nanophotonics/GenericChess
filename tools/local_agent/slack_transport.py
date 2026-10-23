@@ -128,7 +128,13 @@ def consult(question_file, daily=False, code_files=()):
             if r['content_sha256'] == key:
                 return {**r, 'duplicate': True}
             if r['state'] not in {'COMPLETED', 'FROZEN'}:
-                raise LocalFlowError('pending Slack request needs reconciliation: ' + r['request_id'])
+                # Asynchronous progress can advance after verified delivery;
+                # unanswered advice is retained, never silently completed.
+                delivered_pending = (c.get('asynchronous_progress_enabled') is True
+                    and r['state'] == 'PENDING' and r.get('thread_ts')
+                    and r.get('request_readback', {}).get('payload_verified') is True)
+                if not delivered_pending:
+                    raise LocalFlowError('pending Slack request needs reconciliation: ' + r['request_id'])
         if daily:
             if now().hour < 10:
                 return {'state': 'NOT_DUE'}
@@ -142,7 +148,7 @@ def consult(question_file, daily=False, code_files=()):
             if '```' in entry['text']:
                 raise LocalFlowError('code snapshot contains a Slack fence; use a reviewed attachment instead')
             message += f'\nLOCAL_CODE_SNAPSHOT={entry["path"]}\nSHA256={entry["sha256"]}\n```\n' + entry['text'] + ('' if entry['text'].endswith('\n') else '\n') + '```\n'
-        message += '\nReply in this thread with TYPE=DOT_REPLY and this REQUEST_ID. State conclusion, sources, objections, uncertainty and independently checked evidence. Do not delegate extra workers.'
+        message += '\nFor asynchronous Chat/Claude review, reply in this thread with TYPE=CHAT_REPLY and this REQUEST_ID. State conclusion, sources, objections, uncertainty and independently checked evidence. No live wait, Dot mention or extra worker.'
         # One tool call / one root. Larger content must be prepared as a reviewed attachment.
         if len(message) > 4800:
             raise LocalFlowError('Slack message exceeds 4800 characters; use a bounded excerpt or reviewed attachment')
@@ -196,7 +202,8 @@ def _canonical(text):
             local_code = True
         if line.startswith('```'):
             fenced = not fenced
-        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'):
+        if (line.startswith('Reply in this thread with TYPE=DOT_REPLY')
+                or line.startswith('For asynchronous Chat/Claude review, reply in this thread')):
             local_code = False
         # Observed plugin rendering drops one prose-leading space. Preserve
         # code indentation and Markdown list/quote structure; no text is dropped.
@@ -303,7 +310,8 @@ def _rendered_emphasis(text):
     for line in text.splitlines():
         if line.startswith('LOCAL_CODE_SNAPSHOT='):
             local_code = True
-        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'):
+        if (line.startswith('Reply in this thread with TYPE=DOT_REPLY')
+                or line.startswith('For asynchronous Chat/Claude review, reply in this thread')):
             local_code = False
         if line.startswith('```'):
             fenced = not fenced
@@ -337,7 +345,8 @@ def _rendered_bullets(text):
     for line in text.splitlines():
         if line.startswith('LOCAL_CODE_SNAPSHOT='):
             local_code = True
-        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'):
+        if (line.startswith('Reply in this thread with TYPE=DOT_REPLY')
+                or line.startswith('For asynchronous Chat/Claude review, reply in this thread')):
             local_code = False
         if line.startswith('```'):
             fenced = not fenced
@@ -489,7 +498,7 @@ def reconcile(rid):
                     r['thread_ts'] = msg['ts']; r['state'] = 'PENDING'
             if row['thread'] not in {r.get('thread_ts'), *r.get('supplement_threads', {})}:
                 continue
-            if typ != ['DOT_REPLY']:
+            if typ not in (['DOT_REPLY'], ['CHAT_REPLY']):
                 continue
             actor_ok = msg.get('user') == r['advisor_user_id']
             for k in ('bot_id', 'app_id'):
@@ -561,7 +570,7 @@ def _rendered_numbered_lists(text):
     result = []; fenced = False; local_code = False
     for line in text.splitlines():
         if line.startswith('LOCAL_CODE_SNAPSHOT='): local_code = True
-        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'): local_code = False
+        if (line.startswith('Reply in this thread with TYPE=DOT_REPLY') or line.startswith('For asynchronous Chat/Claude review, reply in this thread')): local_code = False
         if line.startswith('```'):
             fenced = not fenced
             result.append(line); continue

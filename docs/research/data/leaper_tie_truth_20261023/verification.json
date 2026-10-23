@@ -1,0 +1,1857 @@
+{
+  "status": "PASS",
+  "seconds": 39.619896100019105,
+  "counts": {
+    "source_frames": 96,
+    "source_first_divergences": 62,
+    "PV_edges": 2461,
+    "queries": 570,
+    "literal_terminal_PVs": 58,
+    "old_controls": 2,
+    "certificates": 9,
+    "certificate_nodes": 333,
+    "all_root_defenses": 6,
+    "proof_roots": 50,
+    "source_target_PV_edges": 21061,
+    "source_target_games": 192,
+    "source_target_returns": 7490,
+    "recovery_PV_edges": 40,
+    "fresh_recovery_queries": 16,
+    "pilot_actual_moves": 880,
+    "pilot_opponent_PV_edges": 1285
+  },
+  "tables": {
+    "TD_firstdiv": {
+      "planned": 72,
+      "attempted": 71,
+      "certified_children": 4,
+      "unknown_children": 32,
+      "comparisons": [
+        {
+          "root": "f4638bfe032f36fd670c6e62de8546b07537b8ef8ed77976dd2111d914ef22a8",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "ac5a9d17b11f6e7bd0d87fdc6a8537785be9a0f5d79a81a45edf6f3a582eed44",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            -1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            0
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "93f4f2d53e0881b433e021c20656c50945d332bb53a55272fb6b5349072256f8",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "a0cd4088e0f675567b42e7e6cef7b175da18520e3461b71f27b3d435feb364cb",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            -1
+          ],
+          "difference": [
+            0,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "47b22de96801ea0e45bfbcbaadabc57ae4fb530b02dfc2e9d465456f31c8be38",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            -1
+          ],
+          "base_bounds": [
+            -1,
+            -1
+          ],
+          "difference": [
+            0,
+            0
+          ],
+          "strict": false,
+          "equal_certified": true
+        },
+        {
+          "root": "49028b0102c4fe8d32f2e8056a427ad4133b0fa6a86c9c6b6a95e253ddb084b9",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "8abf4f7b8b2d5e0360dab19ae164fcd9abe5472f17fc45b5e5bab4aa4f0b6bc5",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "baeb7154fb93af0cc1e93aabf4eefbdf8a266b664f2b7681e9ce01d744a67b86",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "080e9811aa643bcdb24100e6b699a54d81a1b766c09b5e2dbb261d7fe50723a9",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "32958c1fafcbad689f9f9e1b95fe599fadc9757becf1b70a5dcb0b5833e1048d",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "f8d1de0b9a636d07420c1c1c035ee4cb4be38cb29651e901fc0be41f5346a3c4",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "252142b116fc274367ab890655128adb586e71895b6400492463d8176c070299",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "5803f85698957e2d7a36f1af827390a487f3190fd43ae8c44c6f7891e4f26ef8",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "bf7ccb06a47cb78443dd55294d76450f8ce7d3a372f7f219bfdf12db580411fb",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "672b4e5a008f1129d1ed595ed9e4a315ab68fd25310ce497611b10d712f1f065",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "1257c3657bee21a970dc99e0f6e16dc17e35072e73b487e275f937640a3d0302",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "4c33c8e2eb8cbc757a3edfb8172f7fb09363e9e29741341b59ecafbda6d0310a",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "16f6da1a8f26abf45848fecae5e0c829e907af12ecc79320f7f4cd204f444dea",
+          "arm": "unit_TD",
+          "base": "unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "f4638bfe032f36fd670c6e62de8546b07537b8ef8ed77976dd2111d914ef22a8",
+          "arm": "mobility_TD",
+          "base": "mobility",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "93f4f2d53e0881b433e021c20656c50945d332bb53a55272fb6b5349072256f8",
+          "arm": "mobility_TD",
+          "base": "mobility",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "47b22de96801ea0e45bfbcbaadabc57ae4fb530b02dfc2e9d465456f31c8be38",
+          "arm": "mobility_TD",
+          "base": "mobility",
+          "arm_bounds": [
+            -1,
+            -1
+          ],
+          "base_bounds": [
+            -1,
+            -1
+          ],
+          "difference": [
+            0,
+            0
+          ],
+          "strict": false,
+          "equal_certified": true
+        },
+        {
+          "root": "49028b0102c4fe8d32f2e8056a427ad4133b0fa6a86c9c6b6a95e253ddb084b9",
+          "arm": "mobility_TD",
+          "base": "mobility",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "5803f85698957e2d7a36f1af827390a487f3190fd43ae8c44c6f7891e4f26ef8",
+          "arm": "mobility_TD",
+          "base": "mobility",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "1257c3657bee21a970dc99e0f6e16dc17e35072e73b487e275f937640a3d0302",
+          "arm": "mobility_TD",
+          "base": "mobility",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "4c33c8e2eb8cbc757a3edfb8172f7fb09363e9e29741341b59ecafbda6d0310a",
+          "arm": "mobility_TD",
+          "base": "mobility",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        }
+      ]
+    },
+    "strongfoe": {
+      "planned": 128,
+      "attempted": 122,
+      "certified_children": 2,
+      "unknown_children": 62,
+      "comparisons": [
+        {
+          "root": "b15151eb3ea0f0e17a7572b61629b686aec29f41cec17dd0afb7af6ebb939066",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "317f60b6e25995bf8419d2220bd8343c06029134329d1164e9b76858abe08d2e",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "f9b6df88393e658f5181feedf559ead7709c5d3c9d4972b80bb07cc00465e494",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "1d5ace82b1996e42a1265cdc38104133d42ed861904866045d766bfc607ed5b4",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            -1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            0
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "bd2cb2c3a0e969124be6760e28c252ec2945519a6340efb780ed02dc5db6ab02",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "62263164aa794ce0166edd2f30cb565bec0fea7f83ed49c8a5f7d53411ba74d5",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "c234313e3a9bdd4feed1c646fd1cba75e2ce0dd34cf1712af5a1385a26832535",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "89b4b8906415712806a24e652b890702e1cc290a83032ca7074e44de7a1b5f77",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "6c8200e4e9d86b686395d34e15cf8d7214ad595a97a5fe92865c4c9612ccea2b",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "cee03ee20a47e50250b1ee9dff1b526c282bbd0590f4fe6bb80208e2936f114f",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "86824432146ccd8cc8eb7514541b6a376008a3f18a8e518e05eac4ebda77b6fa",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "33663f0f1244a2557a66af517e9499c8c187bf4eb22c9a25769d5f5b6aacef3b",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "0c41bef02a8d50a22940ceaddcb8d6650d7bc939d475b31eb306d1db9b0b5d78",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "79576aa20c71c1dd5e2ff1336de3f79e565abf079b9ca89d0a728137e502b952",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "d636be188439ad722b837f1888789b21488b86094c2c9f196856fdd6f0d1604d",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "09e86a6654fa7c0ddfd1f6a610752b5328a3ce03da2cc1a2f00c8380a4f69c6f",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "3d6b62d7e91693e7da3703cfcac539e83359b6a1dd5079bb83687fa0556fa9e2",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "bee34df3cd42256c7a23d9a5b9f85ac2113cd5c839b44eab1af43265f854a92c",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "67ecf86b380cd9e7ea9d46d0122b7bee77721ff10e0eee3bd0bb102b6ec75bf5",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "5ba5350461b36b8aab6eac38c7decd4b9a1138831e9999552960fee746908ea7",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "6005539c7a481226b1098996a7cd32a0033cc1032da95e9495915121528ed86c",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "1776f5d48dba20db84a8eac7e58732e220802bae994b3875ec1f1e56980eb6e1",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            -1
+          ],
+          "difference": [
+            0,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "07e5de6ac39d8bf2358f10786c6b47a74cdba0318516ac758f0e5a7e0ab308b1",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "918fa1036e8799f2aad00162b4b698a92924b87cdf9d63db123436f2e1ef4109",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "420749af95246b9634139f31cffe0cc937245519fe2e0c0671395739a2ac01d9",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "89b5f8d23da479a3c4243324647f42542e98c7907571780eb67683856fb47aa0",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "aa9c705d38d28a608f02f6390068d7396e8389399f6b4ad75175dd1baf8a0fac",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "83f1d224dfe45187e7aacdf2a8378bc596d76f650ca248a7bd07329172269a64",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "4392253ca6a510ae28b074a244c8c697ff3558721dddc92d48a2d59135de37ec",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "520bcd6d5fe0aff39c7c6bfc11261d948cda92bc884d323c4ef0b21376ff10d4",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "67f549d5d8550d059a060cb5d967ea829195de8e70a789efa8f7dacf610e43d2",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        },
+        {
+          "root": "a4724bd69f6cbae66560bf470ac7b16a6bb2c3c42152d7acab994b38d11fe29d",
+          "arm": "Static",
+          "base": "Unit",
+          "arm_bounds": [
+            -1,
+            1
+          ],
+          "base_bounds": [
+            -1,
+            1
+          ],
+          "difference": [
+            -2,
+            2
+          ],
+          "strict": false,
+          "equal_certified": false
+        }
+      ]
+    }
+  },
+  "depthcomparisons": [
+    {
+      "root": "f4638bfe032f36fd670c6e62de8546b07537b8ef8ed77976dd2111d914ef22a8",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.997295693228176,
+        1.0
+      ]
+    },
+    {
+      "root": "f4638bfe032f36fd670c6e62de8546b07537b8ef8ed77976dd2111d914ef22a8",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.9948009551496261,
+        1.0
+      ]
+    },
+    {
+      "root": "ac5a9d17b11f6e7bd0d87fdc6a8537785be9a0f5d79a81a45edf6f3a582eed44",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": false,
+      "values": [
+        1.9920966483778022,
+        2.0
+      ]
+    },
+    {
+      "root": "ac5a9d17b11f6e7bd0d87fdc6a8537785be9a0f5d79a81a45edf6f3a582eed44",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": false,
+      "values": [
+        1.9920966483778022,
+        2.0
+      ]
+    },
+    {
+      "root": "93f4f2d53e0881b433e021c20656c50945d332bb53a55272fb6b5349072256f8",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "93f4f2d53e0881b433e021c20656c50945d332bb53a55272fb6b5349072256f8",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "a0cd4088e0f675567b42e7e6cef7b175da18520e3461b71f27b3d435feb364cb",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "a0cd4088e0f675567b42e7e6cef7b175da18520e3461b71f27b3d435feb364cb",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "47b22de96801ea0e45bfbcbaadabc57ae4fb530b02dfc2e9d465456f31c8be38",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": false,
+      "values": [
+        3.0187404914849267,
+        3.0
+      ]
+    },
+    {
+      "root": "47b22de96801ea0e45bfbcbaadabc57ae4fb530b02dfc2e9d465456f31c8be38",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": true,
+      "values": [
+        1000000.0,
+        1000000.0
+      ]
+    },
+    {
+      "root": "49028b0102c4fe8d32f2e8056a427ad4133b0fa6a86c9c6b6a95e253ddb084b9",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.019155868616984817,
+        0.0
+      ]
+    },
+    {
+      "root": "49028b0102c4fe8d32f2e8056a427ad4133b0fa6a86c9c6b6a95e253ddb084b9",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.019155868616984817,
+        0.0
+      ]
+    },
+    {
+      "root": "8abf4f7b8b2d5e0360dab19ae164fcd9abe5472f17fc45b5e5bab4aa4f0b6bc5",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.019571245749042676,
+        0.0
+      ]
+    },
+    {
+      "root": "8abf4f7b8b2d5e0360dab19ae164fcd9abe5472f17fc45b5e5bab4aa4f0b6bc5",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.019571245749042676,
+        0.0
+      ]
+    },
+    {
+      "root": "baeb7154fb93af0cc1e93aabf4eefbdf8a266b664f2b7681e9ce01d744a67b86",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "root": "baeb7154fb93af0cc1e93aabf4eefbdf8a266b664f2b7681e9ce01d744a67b86",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "root": "080e9811aa643bcdb24100e6b699a54d81a1b766c09b5e2dbb261d7fe50723a9",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": false,
+      "values": [
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "root": "080e9811aa643bcdb24100e6b699a54d81a1b766c09b5e2dbb261d7fe50723a9",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": false,
+      "values": [
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "root": "32958c1fafcbad689f9f9e1b95fe599fadc9757becf1b70a5dcb0b5833e1048d",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.9957456574094665,
+        -1.0
+      ]
+    },
+    {
+      "root": "32958c1fafcbad689f9f9e1b95fe599fadc9757becf1b70a5dcb0b5833e1048d",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.9957456574094665,
+        -1.0
+      ]
+    },
+    {
+      "root": "f8d1de0b9a636d07420c1c1c035ee4cb4be38cb29651e901fc0be41f5346a3c4",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": false,
+      "values": [
+        -2.996855685682549,
+        -3.0
+      ]
+    },
+    {
+      "root": "f8d1de0b9a636d07420c1c1c035ee4cb4be38cb29651e901fc0be41f5346a3c4",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": true,
+      "values": [
+        -1000000.0,
+        -1000000.0
+      ]
+    },
+    {
+      "root": "252142b116fc274367ab890655128adb586e71895b6400492463d8176c070299",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        1.001598229693867,
+        1.0
+      ]
+    },
+    {
+      "root": "252142b116fc274367ab890655128adb586e71895b6400492463d8176c070299",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        1.001598229693867,
+        1.0
+      ]
+    },
+    {
+      "root": "5803f85698957e2d7a36f1af827390a487f3190fd43ae8c44c6f7891e4f26ef8",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.004655442759705197,
+        0.0
+      ]
+    },
+    {
+      "root": "5803f85698957e2d7a36f1af827390a487f3190fd43ae8c44c6f7891e4f26ef8",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.004655442759705197,
+        0.0
+      ]
+    },
+    {
+      "root": "bf7ccb06a47cb78443dd55294d76450f8ce7d3a372f7f219bfdf12db580411fb",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.004407822858641386,
+        0.0
+      ]
+    },
+    {
+      "root": "bf7ccb06a47cb78443dd55294d76450f8ce7d3a372f7f219bfdf12db580411fb",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.004407822858641386,
+        0.0
+      ]
+    },
+    {
+      "root": "672b4e5a008f1129d1ed595ed9e4a315ab68fd25310ce497611b10d712f1f065",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -1.9971793532564843,
+        -2.0
+      ]
+    },
+    {
+      "root": "672b4e5a008f1129d1ed595ed9e4a315ab68fd25310ce497611b10d712f1f065",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -1.9971793532564843,
+        -2.0
+      ]
+    },
+    {
+      "root": "1257c3657bee21a970dc99e0f6e16dc17e35072e73b487e275f937640a3d0302",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "1257c3657bee21a970dc99e0f6e16dc17e35072e73b487e275f937640a3d0302",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "4c33c8e2eb8cbc757a3edfb8172f7fb09363e9e29741341b59ecafbda6d0310a",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.0028206467435156757,
+        0.0
+      ]
+    },
+    {
+      "root": "4c33c8e2eb8cbc757a3edfb8172f7fb09363e9e29741341b59ecafbda6d0310a",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.0028206467435156757,
+        0.0
+      ]
+    },
+    {
+      "root": "16f6da1a8f26abf45848fecae5e0c829e907af12ecc79320f7f4cd204f444dea",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.004407822858641386,
+        0.0
+      ]
+    },
+    {
+      "root": "16f6da1a8f26abf45848fecae5e0c829e907af12ecc79320f7f4cd204f444dea",
+      "arm": "unit_TD",
+      "base": "unit",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.004407822858641386,
+        0.0
+      ]
+    },
+    {
+      "root": "f4638bfe032f36fd670c6e62de8546b07537b8ef8ed77976dd2111d914ef22a8",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.7487468673900743,
+        0.75
+      ]
+    },
+    {
+      "root": "f4638bfe032f36fd670c6e62de8546b07537b8ef8ed77976dd2111d914ef22a8",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.7487468673900743,
+        0.75
+      ]
+    },
+    {
+      "root": "93f4f2d53e0881b433e021c20656c50945d332bb53a55272fb6b5349072256f8",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "93f4f2d53e0881b433e021c20656c50945d332bb53a55272fb6b5349072256f8",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "47b22de96801ea0e45bfbcbaadabc57ae4fb530b02dfc2e9d465456f31c8be38",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": false,
+      "values": [
+        3.7667745140526283,
+        3.75
+      ]
+    },
+    {
+      "root": "47b22de96801ea0e45bfbcbaadabc57ae4fb530b02dfc2e9d465456f31c8be38",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": true,
+      "both_literal_terminal": true,
+      "values": [
+        1000000.0,
+        1000000.0
+      ]
+    },
+    {
+      "root": "49028b0102c4fe8d32f2e8056a427ad4133b0fa6a86c9c6b6a95e253ddb084b9",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.7670644911241018,
+        -0.75
+      ]
+    },
+    {
+      "root": "49028b0102c4fe8d32f2e8056a427ad4133b0fa6a86c9c6b6a95e253ddb084b9",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.7670644911241018,
+        -0.75
+      ]
+    },
+    {
+      "root": "5803f85698957e2d7a36f1af827390a487f3190fd43ae8c44c6f7891e4f26ef8",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.005658631689525517,
+        0.0
+      ]
+    },
+    {
+      "root": "5803f85698957e2d7a36f1af827390a487f3190fd43ae8c44c6f7891e4f26ef8",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.005658631689525517,
+        0.0
+      ]
+    },
+    {
+      "root": "1257c3657bee21a970dc99e0f6e16dc17e35072e73b487e275f937640a3d0302",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "1257c3657bee21a970dc99e0f6e16dc17e35072e73b487e275f937640a3d0302",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root": "4c33c8e2eb8cbc757a3edfb8172f7fb09363e9e29741341b59ecafbda6d0310a",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 6,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.003192793110101344,
+        0.0
+      ]
+    },
+    {
+      "root": "4c33c8e2eb8cbc757a3edfb8172f7fb09363e9e29741341b59ecafbda6d0310a",
+      "arm": "mobility_TD",
+      "base": "mobility",
+      "requested": 8,
+      "both_completed": true,
+      "same_action": false,
+      "both_literal_terminal": false,
+      "values": [
+        -0.003192793110101344,
+        0.0
+      ]
+    }
+  ],
+  "source_target_counts": {
+    "literal_nonterminal": 6724,
+    "no_literal_PV": 120,
+    "literal_terminal": 565,
+    "nonterminal_short_PV": 81
+  },
+  "pilot": {
+    "counts": {
+      "candidate_queries": 443,
+      "candidate_nodes": 451423,
+      "opponent_queries": 437,
+      "opponent_nodes": 232768,
+      "Unit:-1": 7,
+      "Mobility:1": 3,
+      "Mobility:0": 4,
+      "Unit:0": 1,
+      "Mobility:-1": 1
+    },
+    "paired_differences": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "mean_difference": [
+      "9/8",
+      "9/8"
+    ],
+    "scope": "Finite exposed-history conditional play through learner search,0updates. Same paired opponent/limits,not PRIMARY policyfamily,not independent holdout or minimax labels."
+  },
+  "crossscores": {
+    "prior_crossscores": {
+      "Unit": {
+        "Unit": 0.0,
+        "Mobility": 0.0
+      },
+      "Mobility": {
+        "Unit": -0.6307857911733046,
+        "Mobility": 0.0
+      }
+    },
+    "negative_crossscores": {
+      "Unit": {
+        "Unit": -1.0,
+        "Mobility": -1.0
+      },
+      "Mobility": {
+        "Unit": -0.48947626040137054,
+        "Mobility": -0.17033773861967694
+      }
+    }
+  },
+  "scope": "Independent literal public-Core/PV and actual-Session certificate replay,not independent engine or new search. UNKNOWN never draw;fixed-opponent utilities are not actionWDL. Embedded sources not executed. Horizon predicate rows are retained producer receipts,not independently rerun here."
+}

@@ -2,74 +2,73 @@
 
 ## Scope and shared basis
 
-PRIMARY owns rule/layout generation, forward screens and defaults. AUX owns
-actual-history truth, useful decision exposure, price/depth/tie mechanisms and
-learning controls on committed inputs. Only this checkout/sidemission changes.
-The latest direct user cadence is60 minutes for both existing patrols; their
-original chats and proactive two-way Slack requirements remain. Cadence is not
-effective research time or guaranteed delivery.
+PRIMARY owns generation/layouts,forward quality/inverse screens and defaults.
+AUX consumes committed rules/full histories for truth,depth/tie mechanisms and
+actual learner/prior controls. Only this checkout/sidemission changes.
+Latest checked sandbox:1ac1f97a74b26015ffb73dcb612333923a6d61d0.
+Core/rules/Session/public search unchanged;its async Slack transport/tests reused,
+with AUX paused-Dot and historical rendering guards retained. No speedup claim.
+Both existing patrols remain60minutes;cadence is not research credit.
 
-Latest checked sandbox source:7c0d3e55d6424945ab166b06351e16823cda9b70.
-Core/rules/Session/search and public helpers/tests are unchanged from the
-imported efac79080ba6eb2b8219e325e9779dcb1a47abbb. AUX keeps its learner/receipt
-adapter differences. No infrastructure speedup is claimed.
+## Evidence and current judgment
 
-## Evidence and decision
+Report:LEAPER_TIE_TRUTH_AND_FREE_PRIORS_20261023.md.
+Public full packets/reader:data/leaper_tie_truth_20261023/.
+Previous prospectiveTD report/384slots remain CLOSED,not a continuation queue.
 
-Report:LEAPER_PROSPECTIVE_TD_AND_TRUTH_COST_20261023.md.
-Public packets/readers:data/leaper_prospective_td_20261023/.
-Earlier caps remain closed;their old next actions are historical.
-
-- Frozen384 slots finish0UNKNOWN. Unit-TD beats Unit4/64 but free priors only
-  1/64,one LOSS-to-DRAW;B2C1 matches every outcome. Mobility-TD changes paths
-  without outcome changes. All9803 targets/16endpoints/source terminal outcomes
-  replay. No independent-rule holdout or expanded-training case is established.
-- Unit-TD floating leaf change<=0.0195713;twice that is below the Unit critic's
-  integer strict gap. It refines critic ties at complete fixed depth;critic ties
-  are not necessarily equal actual strategic value.
-- Larger parent attempts keep two UNKNOWNs. One short-clock root needs1220
-  descendant visits;building373072 positions was avoidable for that question.
-  A separate65760-entry capture-child certifies parent[0,1],not a closed parent
-  or experiential training start. Actual history/clocks remain authoritative.
-- New committed packet:960 OLD games/21306query references replayed. Fouractors
-  and two ordinarytypes give1852histories/39fingerprints. Two frozen new
-  components close33584/49928 entries.360 covered references/169 histories have
-  exact action bounds,21 forks. None of240 search references is inferior;two
-  FLOOR errors refer to one history.303 same-fingerprint references stay
-  uncovered. First root is already solved by immediate win;second is also safe.
-- All20 second-component forks have identical supports for four tested material
-  vectors. D1 includes inferior actions at12 roots;D2 at none. This is finite
-  horizon/tie evidence,not a reason for another TD batch or all-price ceiling.
-
-Both new components and the larger child independently rebuild through shared
-Core;this is not an independent engine or IID sample claim. No new forward
-play,PRIMARY campaign,production default or oracle TRAIN-start selection.
+- Old TD/free residual:neutral labelblind action loses;TD-first fixed-Mobility
+  tail draws. Parent actual-history certificate proves ALL6legalactions LOSS.
+  Uniform Unit tie-first utility[-3/4,-1/4];TD support retains2known conditional
+  losses.6switchqueries support local execution-tie explanation;failed directTT
+  wrapper retainedUNKNOWN,not retried after cap. ActualD10 TD/Mobility both
+  complete opponent-winning mate PVs. No default switch or strategic gain.
+- ALL18oldTDfirstdivroots:72proofcalls planned,71attempted/4certificates under
+  original1800s;lastslotnotstarted,4known/32UNKNOWNchildren.2equalcertified
+  comparisons,23unresolved,no strictWDLcontrast.100D6/D8queries allcomplete;
+  Unit/TD stilldifferent14/18 atbothdepths,Mobility/TD6/7. No universal ceiling.
+- Exact committed strongfoe source:96frames/62distinct firstdivhistories;
+  first32metadata-chosen,role16/16,but only a source-order prefix.128calls
+  planned,122attempted/2childLOSScertificates/544361nodes,original1800s;
+  last6notstarted.62otherchildvaluesUNKNOWN,no strictcontrast. WIN-only
+  proofUNKNOWN does not establish draw/hardness/no learning opportunity.
+- Source critic-target portability:7490returns checked;201nonliteral exports
+  (120empty/81short).16fresh paired calls on8export-failure roots ALLliteral;
+  fullPVfalse/true same actions/nodes. Current learner already usesfresh/strictPV,
+  qhard0;no engine/default patch or oldtarget imputation.
+- NEW prior pilot:8exposednaturalhistories,4perrole,16actualgames/0UNKNOWN,
+  0updates. Unit0W1D7L,Mobility3W4D1L;pairedmean+9/8,one negativeframe.
+  880moves/443actuallearnerqueries451423nodes;reference437/232768.
+  Candidate442D4+1D3,reference429D3+8immediateD0.171.477s,total900scap
+  unchanged. Purematerial learner policy differs from PRIMARY dynamic512.
+- Positive/negative firstdivcross-scores each complete4publicchildqueries:
+  Unit ties its two served actions;Mobility strictly prefers its own inBOTH
+  cases. Finitecritic refinement can help/hurt fixed-opponent utility;neither
+  is a minimaxWDL/learned gain. Preserve Mobility baseline before furtherTD.
 
 ## Next executable work
 
-Main: Does a neutral tie choice explain the finite TD/free residual?
-| Read mechanisms.json.gz/free_residual_support and its saved intervention root;
-  choose the lexicographically smallest physical action in Unit's saved D4
-  co-optimal set,without WDL labels;reuse the matching existing continuation
-| one neutral choice,actual terminal outcome and cost compared with the already
-  closed TD/mobility first-action controls,or honest UNKNOWN
-| reuse first;only if genuinely novel,freeze one180-second actual-history
-  continuation before launch;no oldcap refill or oracle TRAIN start.
+Main: Can the SAME learner buy incremental signal beyond freeMobility cheaply?
+| Read existing batchTD entry and this pilot's literal targets/costs;select
+  prospective TRAIN starts by source initial/uniform-prefix metadata ONLY,
+  never these posthoc WDL/firstdiv labels;freeze a tiny initialization/cost
+  feasibility using existing Model/Session/search before any training launch
+| actual calls/target validity/updates,cost and allfailures,not a new framework
+| no oldcap refill;>=120min expected run first gets existing Chat assessment;
+  a freeprior gain alone is not TD benefit or authorization for large training.
 
-Backup1: Can a new positive-history certificate answer a decision-changing gap?
-| Read structural_truth.json.gz/history_proofs;retain3originalUNKNOWNs and the
-  failed fourth wrapper;NEWrecovery verifies rank5rootWIN/rank4U4childWIN
-| S4 staysUNKNOWN;bothOLDphysicalgamesWIN,so no600-second expansion by default
-| use maintained actual-Session certificates only for a changed question;
-  no unchanged preflight rerun,blind graph or outcome-imputed draw.
+Backup1: Does zero-trained prior utility transfer to naturally exposed prefixes?
+| Check next committed PRIMARY histories,or same-source initial/uniform inputs,
+  and freeze one small paired AUX learner-path check without oracle selection
+| actual terminal/UNKNOWN plus context/role/cost,including negative examples
+| no PRIMARY generator/forwardquality/default takeover,unexposed-rule claim
+  or cost-heavy proof gate;keep all old cohorts closed.
 
-Backup2: Does new committed PRIMARY data expose errors cheap search misses?
-| Consume published rules/full trajectories without duplicating generation,
-  layout,forward-screen or quantity campaigns
-| admitted history-WDL/useful-decision/cost evidence
-| no blanket label census,full-family learning ceiling or waiting for a reply.
+Backup2: What remains unexplained in the six other pilot mechanisms?
+| Reuse saved complete histories/PVs;choose a concrete decision-changing
+  two-action/depth question before any NEW bounded public query
+| finite critic preference versus actual conditional return,or honestUNKNOWN
+| no full graph/unchanged positive-proof expansion or oldcontrol cap extension.
 
-Science OPEN. Preserve same segment UUID/confirmed work;admin and interrupted
-open intervals earn no credit. Review/push sidemission,verify fullremoteSHA,
-report and ask a real decision question through own mailbox,refill memo and
-pass session finish. No new Agent,Goal,worker or schedule change.
+Science OPEN. Preserve current session UUID/origin/confirmed work;finish at a
+safe checkpoint with executable memo,reviewed publication/fullremoteSHA and
+ONE combined asynchronous Chat report/question. No new worker/Goal/timer.
