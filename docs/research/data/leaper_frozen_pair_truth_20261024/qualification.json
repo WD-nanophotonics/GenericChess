@@ -1,0 +1,273 @@
+{
+  "runtime_source_sha": "b66566c3647918b4c2f40993869ff0c46fb75e9b",
+  "imported_paths": [
+    {
+      "path": "docs/research/LEAPER_STRATEGY_AND_FORWARD_WIDTH_20261024.md",
+      "sha256": "bd7739c34dfc5e98c1a10fa3402e1a36da7850704d767d463db00109ba0e5f0b"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/README.md",
+      "sha256": "9ddf756fe4573bf7175eb159b77f86b6d5b48d9747ec62d2181ddd3252ab9066"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/boundary-and-probability.json",
+      "sha256": "15baa390ef1d336e8aaf8ac4a6903dc39ed67b41c944554a90e6e25fb333a8cd"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/forward2-polynomial.json",
+      "sha256": "c28baf36512ea319145c9497945ae09a4dca8b4665ea5f2d81fb1f0c5cbf6afb"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/mate7-certificate.json",
+      "sha256": "26b86ba44411900e6f3b6cb5c36534b7aa10f9f353de8ba90e9ad5fd02577bf3"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/qualification.json",
+      "sha256": "85056a7c14cacd7a585acd5abbcb901823bcd6d0e4b6c5ca654e11c973c3cd23"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/screen-evidence.json.gz",
+      "sha256": "c0f942bbd2822261da81cd25f614d2a3d411cee73ec8c03d6b47d06209e706c9"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/screen-manifest.json",
+      "sha256": "bdb9a750e44e54f233325efffb65d4d130d308565ebed398e89488633ce9dc5b"
+    },
+    {
+      "path": "docs/research/data/leaper_forward_width_20261024/screen-summary.json",
+      "sha256": "eb10ddf98b6f83c96d4a9d8872155ec7f5906face1201559e2b0b135c6dc39d6"
+    },
+    {
+      "path": "scripts/leaper_rule_coordinates.py",
+      "sha256": "dfbaefbe18e214ab9c2f01fdffb8962463beca76e81c90bd40f0cc0739aab6b4"
+    },
+    {
+      "path": "scripts/replay_leaper_mate_strategy.py",
+      "sha256": "06103453c30994e1f7ad8253fdf3d6a9ac2c62610fc5dcd6e2712ca6a63aeaa1"
+    },
+    {
+      "path": "scripts/verify_leaper_rule_coordinates.py",
+      "sha256": "2fa028c42fc064005c064e8bc49a0857ed26f2c55d3dad232263a87d792c5e73"
+    },
+    {
+      "path": "tests/development/test_leaper_mate_strategy.py",
+      "sha256": "9daf5da1b2a3a4b79fd37b06c6cb1daa7451a22168e684d7b6782ea1c453b9e9"
+    },
+    {
+      "path": "tests/development/test_leaper_rule_coordinates.py",
+      "sha256": "66a821333b909b4c0c490046585ff09c568f01a2fc62f4f83c76f011430ff7cd"
+    }
+  ],
+  "imported_exact": true,
+  "library_hashes": {
+    "generic_chess/learning/incremental.py": "bd8d4047c1b5178ef7d6cd878e0d1a13f6d0965c5e6b801228b6d77b4eb078a9",
+    "generic_chess/learning/mainline_search.py": "02936acbd8bac01fda6d1a2a30cb32e3e83925e7907001f6f79a1f18cd7f7052"
+  },
+  "package_differences_from_source": [
+    "generic_chess/learning/incremental.py",
+    "generic_chess/learning/mainline_search.py"
+  ],
+  "graph_reader": {
+    "verified": true,
+    "seconds": 212.05426350003108,
+    "counts": {
+      "integer_vertices": 2129072,
+      "integer_edges": 15163102,
+      "Core_sampled_vertices": 4800,
+      "Core_sampled_edges": 29268,
+      "full_source_records": 600
+    }
+  },
+  "learning_reader": {
+    "verified": true,
+    "panel": {
+      "verified": true,
+      "counts": {
+        "new_queries": 2250,
+        "new_nodes": 13598,
+        "PV_Core_edges": 2256,
+        "retained_queries": 2256,
+        "reused": 6
+      },
+      "summaries": [
+        {
+          "family": 6,
+          "B": 1.0,
+          "depth": 1,
+          "contexts": 392,
+          "inferior": 144,
+          "fixed_incoming_bad_action_mass": "253/84672",
+          "retained_nodes": 1368
+        },
+        {
+          "family": 6,
+          "B": 2.0,
+          "depth": 1,
+          "contexts": 392,
+          "inferior": 0,
+          "fixed_incoming_bad_action_mass": "0",
+          "retained_nodes": 1368
+        },
+        {
+          "family": 6,
+          "B": 1.0,
+          "depth": 2,
+          "contexts": 392,
+          "inferior": 0,
+          "fixed_incoming_bad_action_mass": "0",
+          "retained_nodes": 4304
+        },
+        {
+          "family": 9,
+          "B": 1.0,
+          "depth": 1,
+          "contexts": 360,
+          "inferior": 128,
+          "fixed_incoming_bad_action_mass": "25/9408",
+          "retained_nodes": 1272
+        },
+        {
+          "family": 9,
+          "B": 2.0,
+          "depth": 1,
+          "contexts": 360,
+          "inferior": 0,
+          "fixed_incoming_bad_action_mass": "0",
+          "retained_nodes": 1272
+        },
+        {
+          "family": 9,
+          "B": 1.0,
+          "depth": 2,
+          "contexts": 360,
+          "inferior": 0,
+          "fixed_incoming_bad_action_mass": "0",
+          "retained_nodes": 4040
+        }
+      ],
+      "seconds": 2.50625850004144,
+      "scope": "All752actualoriginalmu historiesand2256retainedqueryPVsreplayed. Exactadmittedrepeat2historylabels;0newPlayer. Mechanism-selectedfinitecontexts,fixedUNIFORMincoming,not learneronpolicyutility/heldout/gainorwholetrace learning."
+    },
+    "epoch": {
+      "verified": true,
+      "counts": {
+        "PV_Core_edges": 637,
+        "queries": 637,
+        "nodes": 2209,
+        "trajectory_Core_edges": 1228,
+        "episodes": 256
+      },
+      "summaries": [
+        {
+          "family": 6,
+          "outcomes": {
+            "0": 103,
+            "-1": 25
+          },
+          "changed_episodes": 80,
+          "weights": [
+            1.0,
+            1.1283466345576476,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "family": 9,
+          "outcomes": {
+            "0": 116,
+            "-1": 12
+          },
+          "changed_episodes": 64,
+          "weights": [
+            1.0,
+            1.0570439032254186,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "seconds": 0.8065000999486074,
+      "scope": "Alloriginalstarts/opponentrandomchoices/actualrecords/searchPVs andexactTDarithmeticreproduced. NoPlayer,newtrainingexperiment,oracletrainingtargetsorheldoutclaim."
+    },
+    "control": {
+      "verified": true,
+      "summary": [
+        {
+          "family": 6,
+          "episodes": 128,
+          "different_complete_records": 0,
+          "different_terminal_outcomes": 0,
+          "terminal_U0_gain": 0.0
+        },
+        {
+          "family": 9,
+          "episodes": 128,
+          "different_complete_records": 0,
+          "different_terminal_outcomes": 0,
+          "terminal_U0_gain": 0.0
+        }
+      ],
+      "counts": {
+        "reused_trajectories": 2,
+        "PV_Core_edges": 631,
+        "new_queries": 631,
+        "new_nodes": 2192,
+        "trajectory_Core_edges": 1216
+      },
+      "seconds": 1.0652181000914425,
+      "scope": "254actualnewunitcontroltrajectories and2bytebound initial-unit trainingreuses. Matchedsource/opponentRNG/PVs/actualterminals checked. Finiteexposedoneepoch result,notindependentstrength."
+    },
+    "diagnostic_counts": {
+      "initial_PV_Core_edges": 12,
+      "learned_PV_Core_edges": 4
+    },
+    "safety": [
+      {
+        "verified": true,
+        "value_for0": 0,
+        "root_state_sha": "b37e8cc1ba4c3efd6532c56752c3a5de86ceaff17905c94cf9f76a82ac66622d",
+        "counts": {
+          "vertices": 261,
+          "Core_edges": 551
+        },
+        "seconds": 0.46185660001356155,
+        "scope": "Literal complete attacker frontier and one defender choice form a closed draw safety invariant, with actual count3 future-arrival barriers and mate precedence. Bare King cannot win; later draw repetitions and finite clock preserve safety. Constructed history only, no natural occupation or training label."
+      },
+      {
+        "verified": true,
+        "value_for0": 0,
+        "root_state_sha": "189399faf0585ca4cf37c4724386b317e6df12cf56c12a352be578bc54029d08",
+        "counts": {
+          "vertices": 261,
+          "Core_edges": 551,
+          "count3_draw_exits": 1
+        },
+        "seconds": 0.4659720999188721,
+        "scope": "Literal complete attacker frontier and one defender choice form a closed draw safety invariant, with actual count3 future-arrival barriers and mate precedence. Bare King cannot win; later draw repetitions and finite clock preserve safety. Constructed history only, no natural occupation or training label."
+      }
+    ],
+    "literal_clock_roots": 200,
+    "literal_clock_nodes": 4640,
+    "new_Player_queries": 0,
+    "new_experimental_training_episodes": 0,
+    "data_only_capsules": 15,
+    "seconds": 11.933604100020602,
+    "qualification": "Exposure/records/PVs/libraryupdates replayed, notindependentengine orheldoututility. Abstractbarriercensus andlocalterminalcredit remain producerdiagnosticswithhashes,notclaimed repeatedhere."
+  },
+  "distinct_related_tests": 103,
+  "actual_new_work": {
+    "Player_calls": 3534,
+    "search_nodes": 18083,
+    "newly_played_episodes": 510,
+    "retained_trajectories": 512,
+    "known_exact_reused_query_receipts": 6,
+    "known_exact_reused_whole_trajectories": 2
+  },
+  "old_packet": {
+    "payloads_byte_exact": true,
+    "exact_source_reader_on_current_helper": "EXPECTED_SOURCE_HASH_REFUSAL",
+    "historical_revision": "9aa280aa638a5b230ae56501bb19152af43aeba3"
+  },
+  "scope": "Postexecutionqualification,notblinding. Currentreaders use actualrecords/finitegeometry; no independentengine, learnedutilitygain, defaultpromotion oroldcaprefill. RawSlack/privatepaths excluded."
+}

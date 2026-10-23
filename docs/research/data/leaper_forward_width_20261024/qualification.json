@@ -1,0 +1,52 @@
+{
+  "Core_forward2_profiles": 154,
+  "Core_oneply_edges": 7560,
+  "Core_oneply_roots": 744,
+  "Core_second_edges": 3799,
+  "bundle_sha256": "c0f942bbd2822261da81cd25f614d2a3d411cee73ec8c03d6b47d06209e706c9",
+  "certificate_leaves": 5,
+  "certificate_nodes": 22,
+  "cost_batches": [
+    {
+      "budget": 32768,
+      "missing": 0,
+      "observed": 576,
+      "reason_histogram": {
+        "node_limit": 6,
+        "root_immediate_win": 65,
+        "time_limit": 505
+      },
+      "wall_seconds": 1809.3957789000124
+    },
+    {
+      "budget": 131072,
+      "missing": 0,
+      "observed": 576,
+      "reason_histogram": {
+        "root_immediate_win": 65,
+        "time_limit": 511
+      },
+      "wall_seconds": 1806.231422800105
+    }
+  ],
+  "cost_counts": {
+    "Core_PV_plies": 6818,
+    "budget_limit_returns": 6,
+    "legal_decisions": 1152,
+    "literal_root_immediate_wins": 130,
+    "native_legality_fallbacks": 0,
+    "provider_available": 1152,
+    "time_limit_returns": 1016
+  },
+  "data_only_source_capsules": 12,
+  "polynomial_profiles": 744,
+  "scope": "Copied exact scientific originals checked. SharedCore/code, not independentengine/WDL oracle; no newPlayer calls. Mean coefficient census remains producer evidence, not repeated here.",
+  "status": "PASS",
+  "two_actor_Core_second_edges": 839,
+  "two_actor_profiles": 31,
+  "qualified_current_source_sha256": {
+    "scripts/leaper_rule_coordinates.py": "dfbaefbe18e214ab9c2f01fdffb8962463beca76e81c90bd40f0cc0739aab6b4",
+    "scripts/verify_leaper_rule_coordinates.py": "2fa028c42fc064005c064e8bc49a0857ed26f2c55d3dad232263a87d792c5e73",
+    "scripts/replay_leaper_mate_strategy.py": "06103453c30994e1f7ad8253fdf3d6a9ac2c62610fc5dcd6e2712ca6a63aeaa1"
+  }
+}

@@ -246,7 +246,10 @@ def verify_history_draw_safety(certificate, raw, record, safety, *, seconds=30):
     rows={r['index']:r for r in safety['vertices']}
     if len(rows)!=len(safety['vertices'])or safety['root']not in rows:
         raise ValueError('duplicate or missing safety root')
-    if any(type(i)is not int or not 0<=i<len(positions)or i in barriers for i in rows):
+    # A root with actual count3 is still ongoing. Only a FUTURE arrival at
+    # it triggers repeat4; its current outgoing frontier must remain usable.
+    # Other barrier vertices are arrival-only draw exits, never safety rows.
+    if any(type(i)is not int or not 0<=i<len(positions)or(i in barriers and i!=safety['root'])for i in rows):
         raise ValueError('invalid or barrier safety vertex')
     verified=Counter();adjacency={}
     for i,row in rows.items():

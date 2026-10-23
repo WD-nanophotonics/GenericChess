@@ -90,3 +90,25 @@ def test_constructed_attack_pair_keeps_both_distinct_offsets():
     witness=constructive_corner({(2,0),(3,0)},4)
     p,q=witness['active_attack_pair']
     assert p!=q and abs(p[0]-q[0])+abs(p[1]-q[1])==1
+
+
+def test_forward2_polynomial_matches_complete_core_tree_and_negative_interactions():
+    from scripts.leaper_rule_coordinates import forward2_orbit_polynomial,evaluate_orbit_polynomial
+    spec=(0,2,13);coeff=forward2_orbit_polynomial(spec,4)
+    assert all(v<=0 for term,v in coeff.items() if ',' in term)
+    for mask in (1,3,5,7,17,31):
+        c=L.compile_rule(template(mask,4,spec));ss=L.GameSession(c)
+        width=sum(len(L.legal_successors(ch,c)) for a,ch in L.legal_successors(ss.state,c))
+        assert evaluate_orbit_polynomial(coeff,mask)==width
+    assert evaluate_orbit_polynomial(coeff,5)<evaluate_orbit_polynomial(coeff,1)
+
+
+def test_winning_action_set_and_uniform_action_probability_are_different():
+    from fractions import Fraction
+    wins=[];rates=[]
+    for mask in (5,7):
+        c=L.compile_rule(template(mask,4,(1,15,3)));ss=L.GameSession(c);children=L.legal_successors(ss.state,c)
+        actions={physical_action(L.record_value(a),4) for a,ch in children if ch.terminal_status.winner==0}
+        wins.append(actions);rates.append(Fraction(len(actions),len(children)))
+    assert wins[0]==wins[1]=={('A',15,11,None)}
+    assert rates==[Fraction(1,7),Fraction(1,8)]

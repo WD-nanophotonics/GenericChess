@@ -8,6 +8,27 @@ scripts/leaper_clock_rebinding.py text eol=lf
 scripts/leaper_h6_initial_truth.py text eol=lf
 scripts/leaper_h6_occupation.py text eol=lf
 scripts/verify_leaper_h6_pair_transfer.py text eol=lf
+docs/research/data/leaper_frozen_pair_truth_20261024/** -text whitespace=cr-at-eol
+docs/research/data/leaper_forward_width_20261024/** -text whitespace=cr-at-eol
+scripts/leaper_rule_coordinates.py text eol=lf
+scripts/verify_leaper_rule_coordinates.py text eol=lf
+scripts/replay_leaper_mate_strategy.py text eol=lf
+scripts/leaper_frozen_pair_truth.py text eol=lf
+scripts/leaper_frozen_truth_packet.py text eol=lf
+scripts/leaper_frozen_cost_truth.py text eol=lf
+scripts/verify_leaper_frozen_pair_truth.py text eol=lf
+scripts/leaper_h6_later_price_exposure.py text eol=lf
+scripts/leaper_h6_later_records.py text eol=lf
+scripts/verify_leaper_h6_later_exposure.py text eol=lf
+scripts/verify_leaper_one_epoch.py text eol=lf
+scripts/verify_leaper_epoch_control.py text eol=lf
+scripts/verify_leaper_frozen_learning.py text eol=lf
+tests/development/test_leaper_rule_coordinates.py text eol=lf
+tests/development/test_leaper_mate_strategy.py text eol=lf
+tests/development/test_leaper_frozen_truth_packet.py text eol=lf
+tests/development/test_leaper_current_root_barrier.py text eol=lf
+tests/development/test_leaper_learner_replay.py text eol=lf
+tests/development/test_leaper_frozen_cost_truth.py text eol=lf
 
 # Preserve new DEV_AUX scientific records exactly; their hashes bind raw bytes.
 results/dev_aux/task027/** -text

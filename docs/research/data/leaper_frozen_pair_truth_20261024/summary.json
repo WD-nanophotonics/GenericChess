@@ -1,0 +1,362 @@
+{
+  "boards": [
+    {
+      "n": 4,
+      "domains": 25,
+      "counts": {
+        "physical_vertices": 94054,
+        "Core_edges": 423008,
+        "full_source_roots": 200
+      },
+      "producer_graph_seconds": 140.04142249992583,
+      "per_graph_seconds_range": [
+        4.498033899930306,
+        6.542345199966803
+      ],
+      "maximum_root_forced_rank": 13,
+      "clock_categories": {
+        "6/no_reachable_mate": 88,
+        "64/no_reachable_mate": 88,
+        "6/clock_blocks_forced_WIN": 41,
+        "64/WIN": 112,
+        "6/WIN": 71
+      }
+    },
+    {
+      "n": 5,
+      "domains": 25,
+      "counts": {
+        "physical_vertices": 462592,
+        "Core_edges": 2886196,
+        "full_source_roots": 200
+      },
+      "producer_graph_seconds": 784.2024370002327,
+      "per_graph_seconds_range": [
+        20.18425990000833,
+        33.56635239999741
+      ],
+      "maximum_root_forced_rank": 19,
+      "clock_categories": {
+        "6/no_reachable_mate": 88,
+        "64/no_reachable_mate": 88,
+        "6/clock_blocks_forced_WIN": 80,
+        "64/WIN": 112,
+        "6/WIN": 32
+      }
+    },
+    {
+      "n": 6,
+      "domains": 25,
+      "counts": {
+        "physical_vertices": 1572426,
+        "Core_edges": 11853898,
+        "full_source_roots": 200
+      },
+      "producer_graph_seconds": 2869.19666900055,
+      "per_graph_seconds_range": [
+        77.66399480006658,
+        131.2793424000265
+      ],
+      "maximum_root_forced_rank": 29,
+      "clock_categories": {
+        "6/no_reachable_mate": 88,
+        "64/no_reachable_mate": 88,
+        "6/clock_blocks_forced_WIN": 88,
+        "64/WIN": 112,
+        "6/WIN": 24
+      }
+    }
+  ],
+  "tables": {
+    "4": [
+      {
+        "H": 6,
+        "table": {
+          "components": {
+            "WDL": {
+              "changed": 3,
+              "unchanged": 5
+            },
+            "fork": {
+              "changed": 3,
+              "unchanged": 5
+            },
+            "cooperative": {
+              "changed": 3,
+              "unchanged": 5
+            }
+          },
+          "parity_only": {
+            "WDL": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 7,
+              "unchanged": 1
+            }
+          },
+          "stable": {
+            "WDL": {
+              "changed": 4,
+              "unchanged": 4
+            },
+            "fork": {
+              "changed": 5,
+              "unchanged": 3
+            },
+            "cooperative": {
+              "changed": 4,
+              "unchanged": 4
+            }
+          }
+        }
+      },
+      {
+        "H": 64,
+        "table": {
+          "components": {
+            "WDL": {
+              "changed": 3,
+              "unchanged": 5
+            },
+            "fork": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "cooperative": {
+              "changed": 3,
+              "unchanged": 5
+            }
+          },
+          "parity_only": {
+            "WDL": {
+              "changed": 7,
+              "unchanged": 1
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 7,
+              "unchanged": 1
+            }
+          },
+          "stable": {
+            "WDL": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 2,
+              "unchanged": 6
+            }
+          }
+        }
+      }
+    ],
+    "5": [
+      {
+        "H": 6,
+        "table": {
+          "components": {
+            "WDL": {
+              "changed": 3,
+              "unchanged": 5
+            },
+            "fork": {
+              "changed": 3,
+              "unchanged": 5
+            },
+            "cooperative": {
+              "changed": 3,
+              "unchanged": 5
+            }
+          },
+          "parity_only": {
+            "WDL": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 7,
+              "unchanged": 1
+            }
+          },
+          "stable": {
+            "WDL": {
+              "changed": 5,
+              "unchanged": 3
+            },
+            "fork": {
+              "changed": 5,
+              "unchanged": 3
+            },
+            "cooperative": {
+              "changed": 6,
+              "unchanged": 2
+            }
+          }
+        }
+      },
+      {
+        "H": 64,
+        "table": {
+          "components": {
+            "WDL": {
+              "changed": 3,
+              "unchanged": 5
+            },
+            "fork": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "cooperative": {
+              "changed": 3,
+              "unchanged": 5
+            }
+          },
+          "parity_only": {
+            "WDL": {
+              "changed": 7,
+              "unchanged": 1
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 7,
+              "unchanged": 1
+            }
+          },
+          "stable": {
+            "WDL": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 2,
+              "unchanged": 6
+            }
+          }
+        }
+      }
+    ],
+    "6": [
+      {
+        "H": 6,
+        "table": {
+          "components": {
+            "WDL": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "fork": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "cooperative": {
+              "changed": 3,
+              "unchanged": 5
+            }
+          },
+          "parity_only": {
+            "WDL": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 7,
+              "unchanged": 1
+            }
+          },
+          "stable": {
+            "WDL": {
+              "changed": 4,
+              "unchanged": 4
+            },
+            "fork": {
+              "changed": 4,
+              "unchanged": 4
+            },
+            "cooperative": {
+              "changed": 6,
+              "unchanged": 2
+            }
+          }
+        }
+      },
+      {
+        "H": 64,
+        "table": {
+          "components": {
+            "WDL": {
+              "changed": 3,
+              "unchanged": 5
+            },
+            "fork": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "cooperative": {
+              "changed": 3,
+              "unchanged": 5
+            }
+          },
+          "parity_only": {
+            "WDL": {
+              "changed": 7,
+              "unchanged": 1
+            },
+            "fork": {
+              "changed": 6,
+              "unchanged": 2
+            },
+            "cooperative": {
+              "changed": 7,
+              "unchanged": 1
+            }
+          },
+          "stable": {
+            "WDL": {
+              "changed": 2,
+              "unchanged": 6
+            },
+            "fork": {
+              "changed": 5,
+              "unchanged": 3
+            },
+            "cooperative": {
+              "changed": 2,
+              "unchanged": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "packet_bytes": 5456672,
+  "pack_seconds": 47.6775384999346
+}

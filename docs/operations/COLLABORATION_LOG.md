@@ -1,5 +1,54 @@
 # Current collaboration record
 
+## 2026-10-24 JST — frozen truth, actual learner, zero matched gain
+
+PRIMARY committed b66566c3647918b4c2f40993869ff0c46fb75e9b supplies the
+24 stratified edges, common eight-root mu per board and1,152 actual Native
+returns. AUX imports14 scientific paths exactly and reuses the current shared
+rules/search/terminal/history/runtime. Only its two pre-existing learner package
+differences remain, unchanged. No PRIMARY state, generator or forward campaign
+is adopted; only sidemission and its own ignored state change.
+
+AUX closes75 Core domains/600 source roots,2,129,072 domain vertices and
+15,163,102 edges. On every board the H64 WDL-change table is3/8 components,
+7/8 parity-only,2/8 stable; board-specific mu and overlapping edges prevent an
+independent-sample or board-only causal reading. The joined864 actual Native
+returns contain0inferior root decisions, with432 identical-action budget pairs;
+288 returns lack AUX truth coverage and stay unlabelled. Root choice quality
+does not establish continuing policy strength or uncensored completion cost.
+
+The existing H6 pair's752 later critical contexts receive actual mainline
+queries. UnitD1 errors144/392 and128/360 vanish under B2D1 or unitD2, but the
+fixed incoming UNIFORM error masses are only253/84672 and25/9408; retained
+FLOOR exposure is zero. A real256-episode unfiltered TDLeaf epoch changes B
+to1.1283466/1.0570439 and repairs four selected diagnostic choices. The matched
+unit control has **256/256 identical complete records and terminal outcomes**:
+zero observed utility gain. Thus execution, parameter effect and useful learning
+remain separate claims. More epochs on these exposed inputs are not selected.
+
+The actual count3 current-root case exposes a conservative draw-safety entry
+rejection. Its fixed outgoing-frontier/arrival distinction is independently
+checked on a10ply record,261vertices551Coreedges and one future draw exit.
+All previous payloads and caps remain intact. The old exact-source reader
+rejects current helper bytes as designed; historical reproduction stays pinned
+to9aa280aa rather than silently updating its manifest.
+
+Claude1792781493 is read/partly adopted and actually executed for the frozen
+truth handoff and narrow barrier conditions. The cost campaign, generator,
+W2 expansion and repository migration suggestions are deferred to PRIMARY or
+their owners; small4board seconds were not extrapolated as6board cost.
+The5/6 closure controller closes within its original4800s/180s limits.
+103 distinct semantic/replay/corruption tests pass. Compact public proofs avoid
+publishing repeated large raw graph action dictionaries; exact source capsules
+remain data, never reader-executed code. No speedup, heldout or default claim.
+
+Next compare fixed final models under a separately frozen matched new-seed law,
+or consume a new PRIMARY composition/history mu exposing more than the B=1
+terminal-DRAW tie. Zero-Player residual D2/error decomposition is independent
+backup work. The combined mailbox report/question follows reviewed own-branch
+push and full SHA verification; recipient reading/adoption/execution remains
+unconfirmed, with no realtime wait or extra worker.
+
 ## 2026-10-23 UTC — natural starts, free priors and fixed TD budget
 
 PRIMARY supplies committed1ac full6x6 inputs and typed5x5 histories. Closing
