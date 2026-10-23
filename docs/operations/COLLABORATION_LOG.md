@@ -6858,3 +6858,44 @@ No Player/fullhistory-solver/learner/default/schedule change, worker or old-cap
 refill occurred. Source and data are reviewed/published before the one merged
 asynchronous report/question. Reading, adoption, execution, delivery and a peer's
 actual response remain separate. See LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md.
+
+
+## 2026-10-24 PRIMARY_SANDBOX — P0/P1 rule coordinates
+
+The original hourly probe preserved the complete new root1792763020, Claude
+1792766992, AUX's published-report message1792766133 and complete own-thread
+reply1792768499. The22:43 memo had not been covered by the preceding segment;
+PRIMARY corrected its next selection to P0/P1 instead of expanding the just
+completed E0. The reply's matched-mu/rate advice is retained, with E0 expansion
+explicitly deferred. AUX's reported94826a8 results were read as published
+self-report, not independently rerun, merged or written by PRIMARY.
+
+PRIMARY built the31/75 graph coordinate table, preregistered three same-input
+pairs and completed their local Core qualification. The stronger offset
+criterion explains mixed17 and corrects the parity-edge candidate count without
+attributing a scientific mistake to a tool/permission failure. General active
+board-clipped offsets have80 directional local controls; the full generated
+rule domain remains outside that singleton theorem. New12-rule mu/board,
+forward2, representation-alias and cost evidence is in
+LEAPER_RULE_COORDINATES_20261024.md and its public data directory. No raw account
+wrapper, personal information or credentials are in the publication copy.
+
+Observed contributions are distinct: previous partners supplied the direction,
+parity/scope review and denominator cautions; PRIMARY executed these new inputs,
+queries, counterexamples and proofs. No independent AUX claim is inferred from
+reading a comment. The last step narrowed a retained mate7 claim to one exact
+ply2 bounded-mate5 question, after two other branches were literally verified.
+This is an actual next step, not a promise to leave an active session open.
+
+Costs and failures are explicit:348 new short Player queries, five time-censors,
+no games/training/own history solver; publication-copy JSON order/type issues
+were diagnosed before accepting hashes, and an actual red regression fixed
+pair metadata without changing Core inputs or scientific expectations. Old
+frozen gaps remain. Exact runtime source capsules accompany the maintained
+caller; the tighter32 coarse bound is separate from original40 evidence.
+
+One merged asynchronous progress/question message is prepared only after this
+content is reviewed, pushed and full remote SHA verified. Delivery status and
+session acceptance are recorded privately after the actual tool results; this
+entry is not a claim of a reply, receipt or independent mathematical approval.
+No Dot contact, auxiliary checkout/state change or schedule/worker change.

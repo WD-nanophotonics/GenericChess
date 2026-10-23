@@ -10,36 +10,51 @@ This replaces the chronological daily entry, whose complete decisions/reasons
 remain at [897a110d](https://github.com/WD-nanophotonics/GenericChess/blob/897a110db22483c8fa99b8156a6d4547a655ca0d/docs/research/LOCAL_MAINLINE.md).
 Old dated next actions are evidence, not a backlog or a competing live policy.
 
-## Current selection and reason —2026-10-23
+## Current selection and reason —2026-10-24
 
-[LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md](LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md)
-executes the saved Chat scope review and returns to genuine initial-mu E0.
-The old root-policy E0/E1,1920slot cost failure, inverse and role-budget panels
-remain CLOSED; all1904missing old outcomes stay UNKNOWN/no refill. Full older
-results remain at LEAPER_E0_PREDICTIONS_AND_TRUTH_HANDOFF_20261023.md.
+[LEAPER_RULE_COORDINATES_20261024.md](LEAPER_RULE_COORDINATES_20261024.md)
+implements the newly read Chat1792763020 P0/P1 direction: explain separate
+coordinates of F(R;mu,policy/budget), then adjacent-rule counterfactuals. This
+supersedes spending the next segment on more labels for the preceding E0
+handoff. The prior report/source remain at
+[LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md](LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md).
+All old root-policy E0/E1,1920-slot/inverse/budget panels remain CLOSED;1904
+missing old outcomes stay UNKNOWN/no refill. Complete generated semantics remain
+the long-term target; this experiment explicitly scopes plain singleton Leaps.
 
-28old singleton histories plus3bareKing histories have separately bound proposed
-DRAW labels;1literal terminal and16mixed UNKNOWN remain. A stronger attack-offset
-independence condition also covers mixedmask17. A new singlephysicalentity
-hand/drop/promotion prototype has16560staticstates/85184qualifiedtransitions, but
-ZEROcoverage among7448production-resource queries. DEFERitsconsumer; no adjudicator
-or product/default/solver/learner/AUX change. Complete generated semantics remain.
+P0 now separates empty graphs, physical bounds, full fresh histories/clocks,
+branch/tree width, actual search work and partial value/proof facts. Fixed-mu
+root branching is orbit-additive, while static mating capacity is nonlinear.
+For the31-mask vocabulary,5 minimal positive sets and3 maximal negative sets
+classify static capacity; parity candidates miss mixed17. There are24 capacity
+boundary edges among75. For arbitrary fixed nonzero Leap sets in the stated
+singleton/King8 square scope, a constructive proof gives static capacity iff
+active board-clipped attack offsets contain a Manhattan-neighbour pair;
+80 directional minimal Core controls pass. This is NOT particular-history
+cooperation/WDL or a theorem for rays/effects/extra actors or promotion/drop reachability.
 
-The current E0handshake freezes12metadata-selected3x3/H6four-actor families.
-Eleven have3616complete admittedinitialrecords; pair13/31hasno safe start and is
-kept MU_UNAVAILABLE. Fortyinitialstalemate setuprefusals are not negativegames.
-Both exact support mu and fixed source/cost/probabilities matter. Keep conditional
-history Brier separate from family mean-rate error; colourv2is exposed development,
-affects calibrationonly and has unidentifiedrate improvement. V1andstronger
-sameboard/roster priors remain, with no testrefit or unseen-rule strength claim.
-480literaloneplypositivepaths and368proposedcolournegatives leave2768cooperation
-UNKNOWN; matchingindependentH6/forktruth is pending, not borrowed from oldAUXdata.
+P1's three preregistered pairs have4,636 common starts/9,272 rule-specific
+records/61,852 qualified one-ply edges. Connectivity can change with noMate;
+48 same-input starts gain immediate mate at1->5, including32 existing actions.
+The discovered3->7 same King action goes forcedWIN to immediateDRAW, without
+proving a root-WDL regression. A complete Core example has6->7 root actions
+but24->22 second histories with no terminal first children. Raw IR identifiers
+change on26,480 of27,216 shared physical actions; replay/mapping is rule-bound.
 
-Next step already BEGUN: retainedoneplyreturns give232forkTRUE/488FALSE/2896UNKNOWN
-in a separate literal fact index. Decide minimum useful truth/forecast target,
-not another indiscriminate graph. PRIMARYownsinputs/forwardfeatures/predictions;
-AUXownsindependenttruth/coverage/offlinescoring. No new role, probe, worker or livewait.
-Read replies at the next original probe; absentreply permits independent E0analysis.
+The12-mask mechanism casebook has63,696 complete initial records/521,388
+one-ply Core children, not independent-rule samples. Global common mu is empty
+on3x3,596 on4x4,4712 on5x5; same-coordinate embedding and own-board mu are
+separate. Proposed proof-bound negatives and literal positives retain26,052
+cooperation/26,212 fork UNKNOWN. No calibration, learner, sampler or default is
+selected.348 budgeted cost queries retain5 time-censors; all1776 PV plies qualify.
+
+Next step already BEGUN: retained rule7 mate7 PV yields three off-PV histories;
+actual one-ply checks close two, leaving ONE actual ply2 history needing a
+bounded mate<=5 certificate. Its full rule/record/clock is published. Failed
+short proof is not DRAW. Seek independent review at the next original probe;
+no own history solver, broad graph or extra worker. A rule-blind shared encoding
+also aliases two ongoing0/1 value inputs; rule-conditioned representations or
+per-rule adaptation remain candidates, with no NNUE training launched.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -558,18 +573,18 @@ contains full rules, profiles, histories, cost returns and actual source version
 closes the registered breadth, horizon, common-opponent, material and quantity
 continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled.
 
-## Current executable reserve —2026-10-23
+## Current executable reserve —2026-10-24
 
-Main: Does matchinginitial-muH6truth distinguish E0fromthe strongerprior?
-| Nextoriginalprobe read newreply/publishedAUXtruth; bindONLYexactnewfingerprints/fullrecords/supportmu and costs
-| Rate-error or conditional-history score bounds withactualcoverage andUNKNOWN
-| No oldPositionlabeltransfer, ownhistorysolver, unchangedrootfeature/oldcaprefill.
-Backup1: Can literaloneplyforkfacts supply a cheaper honest baseline?
-| The232TRUE/488FALSE/2896UNKNOWN index is alreadyprepared fromretainedreturns; check independentcoverage andfreeze anynewcandidate separately
-| Full action/terminal witnesses, source/cost, v1unchanged
-| No fitting exposedlabels andcallingitblind, no newphysicalgames merelyforcoverage.
-Backup2: Does the exposedcolour correction improve thechosenRATEtarget?
-| Family18/18threshold is152/720positive; actual328unresolved remain after24positive/368proposednegative
-| Minimumdecision-changingtruthscope, notindividual-querycounts masquerading asruntime
-| V2ratebound[-.00413,.00645],reservedgain0; no generic consumer at0/7448naturalcoverage.
+Main: Can the remaining exact rule7 off-PV history complete the proposed mate7 strategy?
+| Next original probe read independent mathematical/certificate review; match the one published full ply2 record, H64/repeat4 and required mate<=5
+| Complete all-defense certificate or retained UNKNOWN; root/cooperative/action claims kept distinct
+| No own solver/AUX checkout write; failed short certificate is not DRAW, no broad graph or old-cap refill.
+Backup1: Is the active-offset static iff proof missing a legal/capture boundary case?
+| Review the constructive corner/perpendicular escape argument against the80 actual directional controls and finite-board clipping
+| Exact counterexample or independently reviewed scope, full rule/state and cost
+| Do not generalize to rays, asymmetric move/capture permissions, extra actors or reachable promotion/drop histories.
+Backup2: Which next rule-space coordinate can be predicted without confusing representations or mus?
+| Use the existing coupled-graph/branch law, physical action alignment and same-coordinate board controls to freeze one new decision-changing test
+| New rule-level target/input/forecast/cost, not correlated-history calibration or a quality scalar
+| P2/inverse/NNUE remain downstream of valid labels; no label-selected holdout, extra worker or unassessed>=120-minute run.
 Science remains OPEN.
