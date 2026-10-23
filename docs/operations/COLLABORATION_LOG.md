@@ -1059,7 +1059,7 @@ at the scientific safe checkpoint. Delivery time is excluded;own sidemission
 publication,fullremoteSHA and session finish are checked before final reply.
 
 
-## DEV_AUX — 2026-10-23 natural price capacity and prospective ABC validation
+## DEV_AUX â€” 2026-10-23 natural price capacity and prospective ABC validation
 
 PRIMARY's committed ff72649685c21a37bdbe147c930e4b2070934f77 supplies the latest
 public forecast/staircase interface and newer frozen ABC inputs; these source/tests
