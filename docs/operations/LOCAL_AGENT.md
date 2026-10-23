@@ -6,33 +6,42 @@ LOCAL_MAINLINE.md owns revisable research choices. Do not reconstruct current
 policy from dated consultation history. Full pre-cleanup manuals remain at
 Git4f6858b128e38c3b93360d78b7f5de6ad61af695; they are evidence, not active tasks.
 
-## PRIMARY patrol, roles and communication —2026-10-20
+## PRIMARY patrol, roles and communication —2026-10-23
 
 PRIMARY_SANDBOX owns the mainline checkout, research clock, sandbox branch and
 publication. DEV_AUX owns its existing sidemission checkout and outputs; do not
 write its files, state, session, memo or unpublished work. This patrol covers
 only PRIMARY mainline research and the existing project Chat.
 
-The existing `genericchess` heartbeat recurs every120minutes by the explicit
-2026-10-23 user direction, superseding its60minute cadence while preserving
-its identity. DEV_AUX recurrence is outside this PRIMARY-only update.
+The existing `genericchess` heartbeat recurs every60minutes by the explicit
+latest2026-10-23 user direction, superseding its120minute cadence while preserving
+its identity. Both existing roles are hourly; only PRIMARY files are updated here.
 A one-time pause applies only to that inspection and never edits the
 recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
-At each 120-minute PRIMARY patrol, read incoming messages/comments in the existing
+At each 60-minute PRIMARY patrol, read incoming messages/comments in the existing
 GenericChess Chat and the relevant complete threads once. At every explicit
 manual work start/resume, check for new incoming messages/comments before Main
-unless this 120-minute patrol has already completed that read; never reread more than
-once in the same 120-minute patrol. Preserve the exact project-related read in
+unless this 60-minute patrol has already completed that read; never reread more than
+once in the same 60-minute patrol. Preserve the exact project-related read in
 ignored `.local_agent` before evaluating it. Treat Chat comments as suggestions
 unless the user directly confirms a decision. Do not @Dot,
 contact Dot in real time, wait/poll for Dot, or use a Dot-specific control path.
-All coordination is read-only: do not send consultation messages, @mention anyone
-or solicit a reply. A >=120-minute run still needs its necessity assessment; wait
-for an incoming user Chat message or direct user confirmation before starting it,
-and perform shorter independent work meanwhile. No new channel, sender, worker or
-timer.
+The2026-10-23 user direction restores asynchronous two-way Slack, superseding
+read-only coordination. At substantive segment end/critical milestone prepare at
+most one merged progress and genuine-question message per existing probe. Include
+new evidence/negative results/UNKNOWN/cost, judgment, next action and fixed source
+links plus FULL verified remote PRIMARY SHA. Evaluate whether an independent
+Chat/Claude answer can change methods, interpretation, budget, boundaries or next
+steps; state evidence, own view, options and exact decision. Do not fabricate a
+question. Next original probe follows up unanswered questions and new replies,
+recording adoption/defer/rejection and actual effects separately. Publish first.
+Use the existing mailbox; reconcile old uncertain sends without automatic retry,
+preserve original receipts and restore new legitimate exchanges rather than
+silently abandoning communication. No Dot, real-time waiting, chasing, self-reply,
+extra probe/worker or AUX reporting. >=120minute execution still waits for user
+necessity assessment/confirmation; continue independent short work otherwise.
 
 ## Start, recovery and memo
 
@@ -116,9 +125,9 @@ extend a frozen experiment or erase its failure by renaming seeds/phases.
 Use existing recorders/atomic writes; no new framework merely for receipts.
 Small training is authorized. Estimate the single experiment/run BEFORE starting:
 expected duration <120 minutes needs no prior assessment; >=120 minutes (including
-exactly two hours) requires the user's necessity assessment before starting. Do not
-send a request or follow-up; read only an incoming user Chat message or direct
-confirmation, and continue shorter independent work meanwhile. Do not split a run to evade this rule or confuse it
+exactly two hours) requires the user's necessity assessment before starting. A real necessity question may accompany the single authorized asynchronous
+report, but execute only after the user assessment/direct confirmation; continue
+shorter independent work meanwhile. Do not split a run to evade this rule or confuse it
 with segment duration. The user's 2026-10-20 direction replaces the former live-review route; the older >1hour threshold is superseded.
 
 Persist each newly returned decision or timing batch atomically BEFORE downstream
@@ -164,11 +173,13 @@ handling. Raw capture paths use the active session UUID plus a fresh read UUID;
 final opaque bytes MUST use slack_transport.save_plugin_original, which refuses
 a different existing original. Time-only names and direct replacing writes are
 not safe across days/resumes. Read new project Chat messages/comments and relevant complete threads
-once per 120-minute patrol; preserve the exact project-only output privately before
+once per 60-minute patrol; preserve the exact project-only output privately before
 reconcile or adoption. A suggestion does not override current user policy or
 become user authorization by itself. No @Dot, live exchange, response polling or
-routine acknowledgment. For a >=120-minute run, do not send a question. Wait for an incoming user Chat
-message or direct confirmation before starting; continue shorter independent work.
+routine acknowledgment. For a >=120-minute run, include a real necessity question
+only in the authorized single asynchronous progress message; execution still
+requires the user's incoming assessment/direct confirmation. Do not wait/poll or
+start before that confirmation; continue shorter independent work.
 
 Coordinate with the existing DEV_AUX only for concrete dependencies, blockers or
 useful findings. Do not edit its checkout/state or duplicate its solver/learning
@@ -230,8 +241,8 @@ Review diffs/history and relevant tests, commit only the intended delivery, then
 generic-chess-local.cmd publish --tests <relevant pytest targets>
 Before any separately authorized outbound project Chat message/comment, publish
 the referenced project changes first and verify the full remote SHA; if publish
-fails, do not send. This is sequencing only and does not override the current
-read-only communication rule or create send authorization.
+fails, do not send. Sending is separately authorized by the2026-10-23 asynchronous two-way rule;
+this publication sequencing remains mandatory.
 The tested entry fetches, checks ancestry, tests, pushes and verifies the full
 origin/sandbox SHA. Direct pushes are rejected by the existing hook; do not
 bypass it. Verify independently with git ls-remote origin refs/heads/sandbox.

@@ -9,7 +9,7 @@ write prohibition. It does not transfer research ownership or permit worker
 creation, active-file interference, merges, history rewriting or Slack deletion.
 The user then directed: do not message/pause either researcher; clean only files
 confirmed static and mark the remainder incomplete. Preserve active work,
-sessions/stops and the existing recurrence (now120minutes for PRIMARY by the later user
+sessions/stops and the existing recurrence (now60minutes for PRIMARY by the later user
 direction). General rules/search/learning remain the
 mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
 Closed experiment payloads may leave the current tree after checking dependencies;
@@ -39,27 +39,26 @@ workers may be created.
   full-domain long-term target, frozen caps, role boundaries or current schedule.
   Claude comments remain auxiliary advice; do not turn them into new gates.
 
-- User correction2026-10-23: PRIMARY recurs every120minutes, superseding its
-  2026-10-22 60-minute interval. Preserve the existing scheduler and heartbeat
-  identity; this does not change DEV_AUX cadence, role ownership or the
-  60–90minute effective research requirement. A one-time pause stops only
-  that inspection, not the recurrence.
-  Never edit stop flags unless the user explicitly resumes or stops the scoped
-  work; do not confuse a patrol pause with a research stop.
-- User correction2026-10-20: Dot is no longer an active contact. Do not @Dot,
-  initiate real-time conversations, wait/poll for Dot, or send direct Dot
-  consultations. Read the existing project Chat's incoming messages/comments
-  once per 120-minute heartbeat, privately save exact project-related reads before
-  assessment, and evaluate suggestions against current user decisions/evidence.
-  For a >=120-minute run requiring the existing necessity review, do not start
-  it until the user supplies the assessment in an incoming project Chat message
-  or confirms directly here. Do not solicit, send or chase a reply; continue
-  shorter independent work meanwhile. Chat comments are advice unless the user
-  directly confirms a decision.
-- User correction2026-10-20: current project communication uses asynchronous Chat
-  messages/comments only. No Dot @mention or real-time exchange. Authorized
-  project-content Git publication to the assigned branch remains distinct from
-  consultation messages.
+- User correction2026-10-23: both existing roles now recur every60minutes,
+  superseding the earlier120minute interval. PRIMARY updates only its own policy;
+  do not edit schedules or AUX state. The60–90minute effective research requirement
+  remains separate. One inspection pause does not pause recurring scheduling.
+- User correction2026-10-23: restore asynchronous two-way project Slack exchange,
+  superseding the2026-10-20 read-only restriction. At a substantive segment end or
+  critical milestone send at most ONE merged progress/question message per existing
+  probe: new positive/negative evidence, UNKNOWN/cost, judgment, next action and
+  fixed sources/full verified PRIMARY remote SHA. Explicitly assess real questions
+  for Chat/Claude about methods, interpretation, budgets, boundaries or direction;
+  include evidence, own judgment, alternatives and the exact decision sought.
+  Do not invent questions or empty reports. Next original patrol follow up pending
+  questions/new replies; record adopt/defer/reject, reasons and actual effects,
+  distinguishing read, adopted and executed. No waiting, chasing, self-replies,
+  Dot mentions, extra probes/workers or cross-role reporting. An ambiguous old send
+  requires existing-protocol reconciliation, never automatic resend; diagnose the
+  entry and preserve old records while restoring legitimate new communication.
+  All sends require reviewed content, commit/push and full remote SHA verification.
+  >=120minute runs still require the user's supplied necessity assessment or direct
+  confirmation before execution; no response means shorter independent work.
 - PRIMARY_SANDBOX independently researches, implements, tests and publishes its
   mainline work; DEV_AUX owns its own sidemission checkout. Each role owns its
   checkout, branch/index, memo, session clock, stop flags and outputs. Never write
@@ -262,24 +261,18 @@ conditions; distinguish ordering prices from leaf prices.
 
 ## Chat messages and delivery
 
-Use docs/operations/SLACK_WORKFLOW.md for the existing project's asynchronous
-Chat-message read path. Once per 120-minute patrol and at each explicit manual
-work start/resume unless that patrol already completed its read, read newly
-available project Chat messages/comments and relevant complete threads. Save the
-exact project-related read in Git-ignored .local_agent before evaluation. Adopt,
-defer or reject
-advice using current user direction and evidence; Chat comments alone are
-suggestions, not new user authorization. Do not @Dot, initiate real-time contact,
-wait/poll for a response, or send direct Dot consultations. For a >=120-minute
-run requiring prior necessity assessment, wait only for an incoming user Chat
-message or direct user confirmation; do not send consultation messages, @mention
-anyone or poll for a response.
+Use docs/operations/SLACK_WORKFLOW.md for the existing asynchronous mailbox.
+Read new project messages and complete relevant threads once per existing60minute
+patrol and on explicit manual starts unless already read. Privately preserve exact
+originals before assessment. Suggestions do not create user authorization. Follow
+up genuine unanswered questions at the next original probe, without extra polling.
+Publish one meaningful combined progress/question message under the current rule
+above; never @Dot, wait in real time or send routine acknowledgments.
 
 The user authorizes GenericChess project content without personal information,
 passwords or credentials for established project Git publication. Preserve exact
 private originals in ignored .local_agent; inspect outgoing Git/history/archive
-content and sanitize publication copies where needed. The consultation-message
-route is read/comment based and distinct from Git publication. No per-file or
+content and sanitize publication copies where needed. The asynchronous progress/question route is distinct from Git publication. No per-file or
 per-push consent. A real tool refusal must be reported accurately; do not bypass
 platform enforcement.
 
@@ -288,9 +281,8 @@ reviewed work to origin/sandbox using generic-chess-local.cmd publish --tests
 <relevant pytest targets>; inspect outgoing diffs/history/archives and verify the
 FULL remote SHA. Before any separately authorized outbound project Chat
 message/comment, publish its referenced project changes first and verify the full
-remote SHA; if that publish fails, do not send. This sequencing rule does not
-authorize outbound messages: communication remains read-only under the current
-user direction. Do not claim a local commit was published or force-push. Master
+remote SHA; if that publish fails, do not send. The2026-10-23 user direction separately authorizes bounded asynchronous
+progress/question messages; this sequencing rule remains mandatory. Do not claim a local commit was published or force-push. Master
 promotion is a tested fast-forward only. Preserve notification intent and report
 useful results, failures or required decisions without unchanged routine pings.
 Existing repository layers/recovery: docs/operations/REPOSITORY_LAYOUT.md and

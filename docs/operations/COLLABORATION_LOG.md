@@ -6678,3 +6678,62 @@ preserved privately as DATA, not installed in the active suite.32future slots
 remain0fitness/NOTRUNREADY; qualify explicit protocol/reader/source/cost first.
 Unresolved: small exposed codes, dependent streams,50UNKNOWN, no all-state or
 Native-leaf/WDL/TD proof and no variance guarantee. See the purpose report/data.
+
+
+## PRIMARY 2026-10-23 asynchronous restoration and quantity/geometry follow-up
+
+User heartbeat06:12UTC supersedes120minute/read-only notes: both roles hourly,
+with meaningful asynchronous progress and concrete questions. Only PRIMARY docs,
+owned mailbox routing and source are changed; no timer/AUX checkout/state change.
+Two new Chat roots1792729090.147729 and1792732714.048069 and their complete empty
+threads were saved exactly before assessment. They read efac79080ba6eb2b8219e325e9779dcb1a47abbb;
+the newer preceding PRIMARY results are7c0d3e55d6424945ab166b06351e16823cda9b70.
+Adopt preserving UNKNOWN/role/policy-family distinctions and correcting own stale
+frequency prose from direct user authority. Selected12-layout closure and rejection
+of an overbroad TD/no-space claim were already executed in the prior segment,
+not new work here. AUX TD suggestions remain its lane, not PRIMARY assignments.
+
+Full owned-mailbox review finds105old requests:102COMPLETED and3historically
+FROZEN, with no unresolved current dispatch. The three frozen records remain
+frozen, never reported as successful delivery or retried.
+Future templates still named DOT_REPLY; new CHAT_REPLY is supported with historical
+compatibility and unchanged exact account/thread/REQUEST_ID binding. A red regression
+also reproduces the old single-pending lock preventing new asynchronous progress
+once a verified-delivered question is unanswered. Explicit async mode allows only
+that verified PENDING case, preserves the old question/root/state/late replies,
+and still blocks PREPARED/SEND_UNCERTAIN/unverified sends and deduplicates content.
+64 mailbox tests pass after the fix. No automatic send/retry/poller was added.
+New outbound communication awaits this segment's reviewed publication/fullSHA;
+reading/adopting/executing advice and delivering a report are distinct events.
+
+Scientific evidence currently closes the frozen192 alternative-placement games
+and192 new6x6games, with zeroUNKNOWN. Exact profile-identity diagnosis preserves
+the failed analysis assertion; all coefficient equality remains strict. Fresh240
+root child censuses expose opportunity changes and near-saturated6x6FLOOR utility.
+Full public copies pass192+192records/20,450PV edges/1,402FLOOR checks. Fixed-depth
+and common-opponent/practical-budget questions remain separate forward coordinates,
+not stronger learning claims. No AUX computation was read as independent execution
+or rerun here. Final results, outbound receipt and limitations will be appended
+only after actual completion; current plans are not results.
+
+### Qualified segment result and prepared review question
+
+All1,248 NEW slots close with35,296returns,zeroUNKNOWN/36terminal starts and841
+literal-record identities, not IID. Actual public copies pass89,085PV edges and
+2,599FLOOR checks;61original files and114source instances/23unique hashes bind.
+96NEWcost returns/199costPV edges are retained;12placement costs stay OLD.
+The fixedD3common-opponent result changes the next choice: Unit-minus-Static
+-3/32 versus-1/96 againstFLOOR on the same96role frames,interaction-1/12;
+role1 reverses, so no universal price winner or learning claim. Budget128->512
+and requested-depth coordinates remain separate, including19 D4undercompletions.
+
+The next actual work is96 typed5x5inputs/newprefixes,not Player queries or paid
+fitness. A real independent-review question is inverse/Pareto pilot with fresh
+prefix validation versus additional6x6natural-prefix coverage first. Own judgment
+favors the bounded proposal/pilot with explicit prefix/role/cost axes. This is not
+a request for publication approval, new worker or generic WDL/learning gate.
+One combined evidence/question message is prepared for after reviewed publication
+and FULL remote SHA verification. At this Git snapshot actual send/readback is
+not preclaimed; its private/external receipt is recorded only after it happens.
+Next original probe must follow its unanswered decision and new replies, keeping
+read/adopted/executed effects distinct. No Dot, extra probe, wait or self-reply.

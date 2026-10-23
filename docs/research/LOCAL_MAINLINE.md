@@ -2,47 +2,71 @@
 
 AGENTS.md owns authority, PUBLIC, roles, stops and research integrity;
 LOCAL_AGENT.md owns operations. PRIMARY_SANDBOX owns sandbox here. DEV_AUX owns
-its separate learning/solver lane. The existing 120-minute patrol and read-only
-project Chat remain unchanged. No extra worker or outbound consultation.
+its separate learning/solver lane. The latest user direction restores the60-minute patrol and asynchronous two-way
+project Slack. No extra worker; one merged substantive progress/question message
+per existing probe, after publish/fullSHA verification. No real-time wait or Dot.
 
 This replaces the chronological daily entry, whose complete decisions/reasons
 remain at [897a110d](https://github.com/WD-nanophotonics/GenericChess/blob/897a110db22483c8fa99b8156a6d4547a655ca0d/docs/research/LOCAL_MAINLINE.md).
 Old dated next actions are evidence, not a backlog or a competing live policy.
 
-## Current selection and reason — 2026-10-23
+## Current selection and reason —2026-10-23
 
-Keep the user-confirmed canonical small pure-Leaper forward/inverse direction,
-cheap 512-node control and complete rules/history. The new 24 unordered distinct
-movement triples, two metadata layouts and initial/natural-eight contexts close
-all current controls in [LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md](LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md).
-All 2,124 current records finish: 1,832 continuations, 292 terminal starts,
-49,858 controller returns and zero UNKNOWN. The 1,015 distinct records are not IID.
+Begin a bounded multi-coordinate inverse proposal, preserving natural prefixes
+as a prospective validation axis. The complete new evidence and exact sources are
+[LEAPER_QUANTITY_GEOMETRY_AND_OPPONENTS_20261023.md](LEAPER_QUANTITY_GEOMETRY_AND_OPPONENTS_20261023.md).
+All1,248 NEW planned games execute,1,212 continuations/36terminal starts,
+35,296returns/zeroUNKNOWN;841distinct literal records are not IID. The preceding
+2,124-record study remains fixed in
+[LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md](LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md).
+No old cohort is refilled or selected benchmark rescued.
 
-Static/Unit is 1/64 at node512, 1/16 at fixedD2 and 5/192 at fixedD4, with role
-and prefix reversals/zeros. Against the SAME physical FLOOR, Unit minus Static
-is -1/32 over 192 paired frames. Static/M0 gives 59/192 at D2 and 5/48 at D4,
-but D4 role one is negative. Keep material presence, relative prices, actual
-horizon, opponent and total cost separate; no universal price/learning gate.
-The exploratory price-distance/outcome correlation .0556 does not justify a
-high-distance proposal or refit. The earlier `(5,12,8)` candidate's last depth
-link becomes zero on its 12 new layouts, so no benchmark promotion.
+Quantity placement changes cheap utility: same-count/profile alternative gives
+Static/Unit1/48 versus1/32 and Static/FLOOR43/96 versus55/96. Correct changed rule
+fingerprints differ while every coefficient remains equal; the failed identity
+assertion was diagnosed and corrected in analysis only. Fresh240-root censuses
+decompose the cheap-1/8 contrast into-3/32 root-class transitions and-1/32 within
+initial nontrivial-oneply roots; the paired nontrivial-prefix contrast is0.
+These descriptors do not define WDL hardness or an admission filter.
 
-Adding an A per side preserves all original coordinates and installed board
-prices but changes blocking, resources and new prefix histories. Its direct
-price contrast changes only +1/48 against matching ABC cells, while cheap
-Static/FLOOR changes -1/16 (prefix -7/48). Do not assume linear quantity utility
-or activate this generator operator. A fresh same-count alternative-placement
-control is now 0FITNESS_READY with 48 complete novel inputs and 12 actual cost
-returns; all 192 future games are NOT RUN. The selection uses ALL24 codes,
-not posthoc winner-only rescue. Current cost122 includes these12; old16 layout
-costs and eight parent cost reuses are not NEW.
+The all24-code/two-placement6x6initial envelope gives Static/Unit11/96 and
+Static/FLOOR85/96. All48 board-price vectors change with geometry. Five root
+immediate wins imply a fixed-FLOOR opportunity upper86/96, leaving only1/96
+headroom for Static on THIS distribution. Four-context price vectors have
+three sign reversals and11 all-zero codes; these are not learner/benchmark gates.
 
-All 2,124 actual public records, 135,949 PV edges and 5,041 FLOOR choices pass
-shared Core replay and exact original/value/source checks. This is not an
-independent engine/WDL claim. PRIMARY owns generation/forward work; AUX keeps
-truth/learning. PUBLIC/read-only Chat and the existing120-minute recurrence
-remain; no timer, product, evaluator, learner or default change. Full generated
-promotion/drop/auxiliary/history semantics remain the long-term target.
+Against SAME fixed StaticD3 on those48initial inputs, Static512=-5/12 and
+Unit512=-49/96; Unit-minus-Static=-3/32, but role1 is+1/12. The same-input price
+interaction versusFLOOR is-1/12. This supports retaining opponent-dependent price
+utility instead of inferring learning space from FLOOR saturation. It does not
+select Static universally or establish learned-value benefit. The reference's
+3,649 normal returns completeD3;118 valid immediate wins completeD0.
+
+The separate128-to512budget response is27/64:4x4=11/48,6x6=59/96;6x6both roles
+positive,4x4role1negative. Requested adjacentD1-D4 means on6x6 are2/3,15/32,23/96,
+with last-link role1zero. Nineteen requestedD4 calls completeD3 at8192nodes,
+retained in their actual policy outcomes. No transitive strength or2048forecast.
+
+Next actual step has BEGUN:96 typed5x5mid-density proposal inputs fromALL24codes,
+bothAplacements,initial and NEWuniform8contexts are saved and round-trip verified.
+ZeroPlayerqueries/fitness, zero generation failures. It is NOT run-ready: before
+any paid fitness freeze policy/slots/caps/cost on actual full histories. Target
+coordinates remain strong-opponent price utility,budget response,FLOOR opportunity,
+context/role stability and totalcost/UNKNOWN; no quality scalar or automatic sampler.
+The proposal is exposed-data-guided, never blind holdout or inverse success.
+The concrete independent-review choice is a small prospective inverse/Pareto pilot
+WITH prefix validation versus first buying6x6natural-prefix coverage. Current
+judgment favors starting the bounded proposal/pilot with an explicit prefix axis;
+new Chat/Claude evidence can revise this, but no reply is required for independent
+feasibility/cost work. No AUX truth/learning work is duplicated.
+
+All actual public copies pass89,085PV edges/2,599FLOOR choices plus raw-SHA/value/
+input/source binding and199PVedges from96NEWcost returns. Placement12costs areOLD.
+This uses sharedCore, not independent engine/WDL or binary attestation. PUBLIC,
+60minute recurrence and asynchronous two-way mailbox are current user directions;
+no timer,AUX,evaluator,learner or search default changes. Full generated
+promotion/drop/auxiliary/history semantics remain the long-term target beyond
+this scoped plain-Leap/remove probe. Science is OPEN.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -561,16 +585,19 @@ contains full rules, profiles, histories, cost returns and actual source version
 closes the registered breadth, horizon, common-opponent, material and quantity
 continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled.
 
-Main: Does quantity response transfer to another added-A position?
-| NEXT segment run `.local_agent/leaper-quantity-placement-20261023-d0a78766`
-| ALL24 codes, 48 same-count/price inputs, 192 planned games;12 new costs ready
-| forecast1010.463seconds/cap1800; no extension/refill, holdout or benchmark claim.
-Backup1: Which code/context/opponent changes reverse the observed price effect?
-| examine saved direct/common-FLOOR/full-history cells only with a changed premise
-| current complete utility/cost vectors and actual first differences
-| no unchanged fitness, learner gate, scalar or AUX truth/learning duplication.
-Backup2: Is an alternative generator worth its full implementation cost?
-| use new placement results before choosing another quantity/geometry operator
-| failures, trivial starts, total cost and nontrivial utility kept separately
-| no promotion based on depth, score or path changes alone.
+## Current executable reserve —2026-10-23
+
+Main: Can the mid-density inverse proposal retain opponent headroom and budget
+response on prospective full histories?
+| Use the96 saved typed worlds in `.local_agent/leaper-inverse-density-proposal-20261023-7b3cb4eb`; FIRST freeze explicit policy/slot/seed/cap and actual full-history cost screen before any fitness
+| Complete multi-coordinate/role/prefix/cost/UNKNOWN evidence, current input hashes and candidate provenance
+| Proposal is NOT_RUN_READY; no scalar, default, learner gate, blind-holdout or inverse-success claim; no old fitness refill.
+Backup1: Does the six-by-six initial portrait transfer to new natural prefixes?
+| Freeze a bounded ALL24-code/two-placement full-history control if it has greater decision value than immediate inverse fitness
+| Same complete rule/role/opponent protocol and all planned prefix outcomes including terminal/UNKNOWN
+| No reply is required for independent feasibility; adopt/defer/reject new Chat advice explicitly, without new authorization assumptions or AUX duplication.
+Backup2: Which fixed reference gives useful discrimination at affordable cost?
+| On new proposal histories, register a small complete cost/feasibility check for candidate512 and fixed-depth references before selecting a paid study
+| Actual source, full-input legality/PV/depth/cost and preserved failures; opponent calibration remains an explicit vector
+| No all-domain proof, WDL solver, routine infrastructure work or extrapolation to deferred2048nodes.
 Science is OPEN.

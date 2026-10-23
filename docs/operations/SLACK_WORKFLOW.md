@@ -1,4 +1,4 @@
-# GenericChess project Chat message workflow —2026-10-20
+# GenericChess project Chat message workflow —2026-10-23
 
 The active remote communication path is asynchronous messages/comments in the
 existing GenericChess project Chat, carried through NanoMelon `#generic-chess`
@@ -6,12 +6,12 @@ existing GenericChess project Chat, carried through NanoMelon `#generic-chess`
 wait/poll and daily consultation. Read the existing Chat; do not start a separate
 advisor exchange or inspect auxiliary chats from this patrol.
 
-## 120-minute inbound read
+## 60-minute inbound read
 
-At most once per existing 120-minute PRIMARY heartbeat, read newly available project
+At most once per existing 60-minute PRIMARY heartbeat, read newly available project
 Chat messages and the complete relevant threads. Also perform this incoming read
-before Main at each explicit manual work start/resume unless the current 120-minute
-patrol already completed it; never reread within the same 120-minute patrol. Use the
+before Main at each explicit manual work start/resume unless the current 60-minute
+patrol already completed it; never reread within the same 60-minute patrol. Use the
 connected read path for the channel and individual threads; do not create a new
 channel, conversation, worker or polling loop. Keep the last completely covered
 boundary and any gaps.
@@ -64,20 +64,29 @@ become a command. Preserve the original text privately and record concise
 rationale for any material decision; do not self-reply to advice or create a
 reply loop.
 
-## Read-only communication
+## Asynchronous two-way communication —2026-10-23
 
-This patrol reads the existing project Chat; it does not send consultation
-messages, @mention anyone, wait/poll or chase responses. Incoming Chat messages
-and comments are suggestions unless the user directly confirms a decision. For a
-single run expected to take at least 120 minutes, the pre-existing necessity
-assessment remains required: start only after the user supplies it in an incoming
-Chat message or directly confirms it in this conversation. Otherwise continue
-shorter independent work. Runs expected to take less than 120 minutes need no
-prior assessment. Do not split a long run to evade the threshold.
+The latest user direction supersedes the2026-10-20 read-only restriction. Each
+substantive research segment end or critical milestone reports new evidence,
+positive/negative results, UNKNOWN/cost, current judgment and next step, with fixed
+sources and the FULL verified role remote SHA. At most ONE merged progress and
+question message per existing probe. Explicitly assess real uncertainties for
+Chat/Claude independent review: method, interpretation, experiment necessity/
+budget, role boundary or direction. State evidence, own view, alternatives and
+the decision wanted; do not invent questions or empty reports.
 
-Project code and reviewed data continue through the authorized Git branch and
-tested publication workflow. This project delivery authority does not authorize
-outgoing consultation messages.
+Use the existing project mailbox and preserve exact send returns privately before
+reconciliation. Before sending review content, commit/push referenced changes and
+verify full remote SHA. Preserve old uncertain-send records and reconcile using
+the existing mechanism, never automatic resend; an old uncertainty must not
+silently disable all new legitimate communication. Diagnose actual entry defects.
+Next original patrol follows unanswered questions and new replies; record
+adopt/defer/reject, reasons and observed execution effects, keeping read/adopted/
+executed distinct. No extra probes, waiting, chasing, self-replies, Dot mentions,
+new channels/workers or reporting on behalf of AUX. No reply blocks independent
+short research. >=120minute runs still need user necessity assessment or direct
+confirmation before execution; questions do not themselves supply that approval.
+
 ## Private originals and outbound content
 
 The user authorizes local private preservation of exact GenericChess-related raw
@@ -89,8 +98,8 @@ publication copy when needed. Project technical data is not excluded by its
 source. Fixed project/channel identifiers are permitted. If a separately
 authorized outbound project Chat message/comment is ever permitted, first
 publish the referenced project changes through the established Git workflow and
-verify the full remote SHA; do not send if publication fails. This sequencing
-does not enable sending and does not change the current read-only rule.
+verify the full remote SHA; do not send if publication fails. The2026-10-23 direction authorizes the bounded asynchronous messages above;
+this sequencing remains mandatory.
 
 The repository remains PUBLIC for Chat readers. PRIMARY publishes reviewed
 mainline work to `origin/sandbox` with
@@ -98,3 +107,14 @@ mainline work to `origin/sandbox` with
 outgoing diff/history and verifies the full remote SHA. Never force-push or claim
 publication before the full remote SHA matches. DEV_AUX owns its separate
 `sidemission` checkout; PRIMARY does not write or publish that checkout.
+
+The existing mailbox has explicit `asynchronous_progress_enabled` routing for the
+2026-10-23 user protocol. A prior unanswered PENDING request permits different
+new substantive content only after its exact payload/thread readback is verified.
+Keep its original PENDING state, root, content hash and later reply association.
+PREPARED, SEND_UNCERTAIN and unverified delivery still require reconciliation;
+never resend them automatically. Exact duplicate content still deduplicates.
+At the next original probe inspect all owned pending roots for relevant new replies
+as part of that one probe; do not only inspect the newest request or add polling.
+Future messages request TYPE=CHAT_REPLY; historical TYPE=DOT_REPLY evidence remains
+accepted under the same exact account/thread/REQUEST_ID checks. No Dot is contacted.
