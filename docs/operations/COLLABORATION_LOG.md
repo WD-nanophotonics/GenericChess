@@ -1252,3 +1252,44 @@ Mobility-initialized learner feasibility or wider natural-prefix prior transfer.
 Current view favors cheap prefix/initialization evidence before more proof or
 training. Report delivery,Chat reading,adoption and execution remain distinct;
 no live wait,Dot mention,old uncertain resend or other-role takeover.
+
+## 2026-10-23 — AUX explorer truth/calibration handoff
+
+PRIMARY supplies the committed canonical rules/full trajectories and shared
+Core/Session/search through sandbox8f1f9e5(code unchanged from1ac). It retains
+rule sampling,forward play,E0features/predictions and inverse/defaults. AUX does
+not generate a competing explorer or run a new forward/training campaign.
+
+Following user-endorsed Chat1792751845.867269 after the preceding337-game segment
+closed,AUX inventories10exposed canonical families plus one existing3x3control.
+369records/34037histories retain31390scoped WDL labels and2647UNKNOWN. Existing
+mate suffixes certify2650cooperative positives,598without WDL. The all-initial
+fork denominator remains10/10UNKNOWN; the old endgame labels do not replace it.
+
+AUX supplies24literal cooperative paths and one clock-sensitive negative
+potential. Original900s full-graph audit22/25/3UNKNOWN is immutable; a separate
+same-input,certificate-first method completes25/25in32.090s. This measures AUX
+truth-validation cost;stop polling,caches and load prevent isolated timing
+attribution,and no learner/player speedup is claimed. One independent Session
+proof remains50knodes/UNKNOWN. No cap is refilled and no graph expanded.
+
+The existing H6homogeneous rule has200minimax-DRAW openings yet cooperation to
+mate from every one of288starts. Independent full-history leaf arithmetic
+verifies exact uniform-policy probabilities and occupation statistics. Fork
+rates97.22%,32.10%,63.05%under initial,uniform-history and policy-occupation mu
+show why a prediction needs its actual sampling law.109focused tests and the
+full portable reader pass; all bounds/failed attempts/source snapshots remain.
+
+The ordinary probe reads/saves41threads/42raw results and records8formal
+revision decisions. Adopt the latest truth-before-inverse direction and finite
+claim corrections;defer unrelated retired audits. No new AUX answer was present.
+One combined post-push report/question asks Chat/PRIMARY to choose the first
+E0target/mu/information set:recommend exposed matched-mu controls first,then a
+new rule-level holdout frozen before features/predictions/truth. No actual E0
+was supplied here,so no FP/FN or generalization claim. Delivery,reading,adoption
+and independent execution remain different states;no realtime wait or Dot wake.
+
+Same session b489e776-0281-49a3-a2f6-ebba215414b6 finishes successfully with
+3755.272583effective seconds(62.588min),excluding interrupted/admin intervals.
+Report:docs/research/LEAPER_EXPLORER_TRUTH_CALIBRATION_20261023.md. Own sidemission
+only;both existing hourly patrols and all other-role state remain unchanged.

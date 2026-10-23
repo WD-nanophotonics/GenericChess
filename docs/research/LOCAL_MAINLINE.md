@@ -1,67 +1,79 @@
 # DEV_AUX current research
 
-PRIMARY owns generation/layouts, forward/inverse screens and defaults. AUX
-consumes committed rules/full histories for truth, parameter/tie mechanisms
-and SAME-learner/prior controls. Only this checkout/sidemission changes.
-Both existing patrols stay60 minutes; cadence is not research credit.
+PRIMARY owns rule generation/layouts, cheap forward play, E0 features/predictions,
+inverse and defaults. AUX owns full-history truth, cooperative/critical-branch
+certificates, coverage/cost and offline E0 evaluation. Only this checkout and
+sidemission change. Both original patrols remain60min; no new worker or timer.
 
-Executed basis: sandbox1ac1f97a74b26015ffb73dcb612333923a6d61d0. Closing source
-8f1f9e5f977e1baba0e5a3cd14d74b7ea0351130 has25new docs/data paths, no shared
-rules/Core/search/history/runtime/test change. Its full trajectories are
-available to consume; its inverse/forward tasks are not an AUX queue.
+## Latest choice and shared source
 
-## Current evidence and choice
+Adopt ChatGPT1792751845.867269 under the user's standing latest-comment direction.
+Calibrate rule-property identification before further inverse/learner scale.
+Full source:LEAPER_EXPLORER_CALIBRATION_DIRECTION.md. Previous337-game TD/prior
+segment is CLOSED at c5e6d667; old5x5/TD escalation backups are not the queue.
 
-Report: LEAPER_NATURAL_PREFIX_TD_20261023.md.
-Packets/readers: data/leaper_natural_prefix_td_20261023 and ordinary scripts.
-All previous proof/prior/TD cohorts remain CLOSED with their original caps.
+Latest sandbox8f1f9e5f977e1baba0e5a3cd14d74b7ea0351130 was fetched this segment.
+Its25new docs/data paths versus1ac1f97a change no shared rules/Core/search/history/
+runtime/tests. No uncommitted PRIMARY work, state or research queue is imported.
 
-- Four metadata-selected6x6 worlds, INITIAL/uniform8, both roles, SAME pure
-  materialD4 learner/fixedStaticD3 foe.64/64pilot games terminal.
-  FreeMobility-Unit+1/4: INITIAL+1/2, uniform8zero. Four-episodeTD has16/16
-  identical free trajectories despite390targets/11actualupdates.
-- NEW64episode seed streams restart Mobility, no oldcap/model continuation.
-  256TRAIN+16EVAL allterminal;166updates. TD-free=-1/16 on SAME exposed16frames:
-  oneWINtoDRAW,14identicalpaths,onechangedWIN. Two frames finish before any
-  candidate query; all remain in denominator. Distinct TRAIN streams mean
-  TD4/TD64 is not pure episode-count causality.
-- One NEW forced-learned-first/free-tail control alsoDRAW. Four full childD3
-  scores all0,matching both parentD4best0: harmful first-action execution
-  within a cooptimal tie, not a strict learned preference or WDL claim.
-- 16preplanned directional queries complete/match saved coefficients; no
-  observed gradient counterexample or engine/default change. Full literal
-  paths/backward TD arithmetic PASS;88compatibility testsPASS.
-- 96committed5x5 inputs yield71literal nonterminal,25terminal,31trainable-feature
-  returns;92D4+4terminalD0.0games/updates. Target portability is not utility.
+## Current evidence and decision
 
-337NEWphysical games,allactualterminals,separate from reused controls.
-No intrinsic prices, independent-rule holdout, population/minimax strength,
-universal TD ceiling, measured acceleration or product change follows.
-Stop unchanged6x6 TD escalation. Keep free priors as required controls.
+Report:LEAPER_EXPLORER_TRUTH_CALIBRATION_20261023.md.
+Portable packet:data/leaper_explorer_truth_20261023; ordinary scripts/readers.
+
+-369complete canonical records/35648actions;34037distinct ongoing full histories.
+ 31390legacy scoped WDL labels,2647WDL UNKNOWN.146126legal-action bindings pass.
+ 540source references/53728visits are not independent games or the same mu.
+-2650actual mate suffixes prove cooperative existence, including598WDL-UNKNOWN
+ histories. After all evidence:4612cooperativeTRUE/24406FALSE/5019UNKNOWN.
+ WDL UNKNOWN is never turned into DRAW or a training label.
+-First900s full-graph-preaudit batch CLOSED22/25 with3UNKNOWN, retained intact.
+ Separate same-input certificate-first control25/25 in32.090s, no expansion.
+ 24literal paths/155Core edges and one negative34974Position/158836edge potential.
+ Shortest mate9 but only3ruleplies gives all-futureDRAW despite nondead Position.
+ This is measured AUX truth-validation cost only, not learner/player acceleration;
+ cache/load and stop-poll changes prevent isolated timing attribution.
+-10observed finite Position returns have legal cooperative exits.240guarantee
+ losses/229distinct histories;12structuralDRAWchildren+4terminalDRAWchildren.
+ 98actual outcomes exceed lowered guarantees. One new Session proof hits50000
+ nodes/UNKNOWN; no refill or claimed proof. Mechanisms are not exclusive classes.
+-Existing3x3/H6rule:all288layouts/91712full histories fully solved.200minimaxDRAW
+ roots but all288have cooperative mate paths. Exact uniform-policy mu-mean
+ LOSS/DRAW/WIN=.3909568/.3938682/.2151750.Independent Session leaf sums pass.
+ WDL-fork density is97.22%initialmu,32.10%uniformongoingmu,63.05%policyoccupation.
+ Same rule plus different mu is a different target, not an explorer error.
+-Source ten-rule initial-history fork truth remains10/10UNKNOWN;9initials have
+ actual mate suffixes,one cooperationUNKNOWN. Endgame labels cannot stand in.
+ Exposed6/4family partition is not a blind holdout. H6is one separate exposed
+ mechanism control. No actual matching frozen E0 exists; no measuredFP/FN.
+
+Decision: reuse free path consequences first; propose claim-sufficient path or
+negative potential before full Core audits. Do not repeat old broad graph,
+proof/training caps or invent E0 predictions to satisfy a requested error count.
 
 ## Executable next work
 
-Main: Does zero-trained prior utility transfer to committed5x5 histories?
-| Read next ordinary mailbox replies and latest committed PRIMARY full records;
-  freeze one small metadata-order,both-role Unit/Mobility SAME-learner check
-| actualterminal/UNKNOWN,fullhistory,cost and role/context differences
-| no generator/inverse/default takeover,oracle TRAIN sampler or large training;
-  expected>=120min first gets existing Chat scope/budget assessment.
+Main: Which target and mu will PRIMARY's actual E0 predict?
+| Next ordinary mailbox/latest committed PRIMARY E0;bind fullhistory/fingerprint,
+ mu and frozen information-set/probability/confidence/cost before offline score
+| real FP/FN/risk-coverage with explicit UNKNOWN and equal-rule bounds
+| PRIMARY selects new rules/holdout;no forecast fabrication or oracle TRAIN starts.
 
-Backup1: Which remaining free-prior gain depends on neutral tie execution?
-| Choose one decision-changing saved natural-history case before NEW public
-  child/neutral-tail queries,reuse existing search/full Session
-| cooptimal support versus fixed-foe utility,or UNKNOWN with actualcost
-| no oldproof-cap refill,unchanged rerun or general price conclusion.
+Backup1: Can a missing cooperative label be certified cheaply without fullgraph?
+| On existing frozen rules choose one metadata-ordered unresolved history only
+ after reusing source suffixes/nonzero-WDL implications;freeze a small path/proof
+ attempt and its actual-cost stop before launch
+| literal certificate or UNKNOWN,never a refilled old slot or implicit WDL label
+| no generator,cheap forward campaign,large graph or default takeover.
 
-Backup2: What changed signal could justify another learning budget?
-| Analyze saved PVs/updates with independent backward TD sum;contrast target
-  exposure and actualplay before any new proposal
-| explicit changed premise,finite uncertainty and smallest useful cost
-| no checkpoint/hyperparameter selection,exposed-label fitting or revived audit.
+Backup2: Which source-law mismatch changes the next calibration decision?
+| Compare saved sampling-laws/rule-targets and actual controller provenance;
+ distinguish initialmu,uniquehistories and reference-weighted visits
+| explicit same-target contract and smallest decision-changing query cost
+| no new games,statisticalIID guarantee or unmeasured acceleration claim.
 
-Claude1792745445 read/adopted for conditional interpretation/runnable scripts,
-implemented here;optional offline fit deferred. PRIMARY-thread Chat1792742950
-additionally raw-saved/read;qualifications adopted,Pareto left to PRIMARY.
-No new reply to preceding AUX question;no realtime wait. One concrete question
-in combined checked report after push/fullremoteSHA. Preserve uncertain sends.
+ProbeGC-MAIL-e9a70b960f834258915a20aa65721d43 READ_SAVED;41threads/42raw results,
+8formal revision decisions. New direction adopted;1792748210 finite-claim
+qualifications adopted; unrelated retired audits deferred. No new own reply.
+One combined checked report/question after commit/push/fullremoteSHA;no live
+wait,Dot mention,old uncertain resend or other-role reporting. All caps retained.
