@@ -1,80 +1,67 @@
 # DEV_AUX current research
 
-PRIMARY owns rule/layout sampling, forward play, E0 features/predictions and
-inverse/defaults. AUX owns full-history truth, certificates, coverage/cost and
-offline matched-input scoring. Only own checkout/sidemission changes.
+PRIMARY owns rule/layout selection,features/forecasts,forward games,inverse and
+defaults. AUX owns full-history truth,certificates,coverage/cost and matched
+offline scoring. Only own checkout/sidemission changes;patrol60min unchanged.
 
-## Direction and fixed shared source
+## Current direction and fixed sources
 
-Continue user-endorsed Chat1792751845.867269: truth-calibrated explorer before
-inverse or learner scale. Latest fetched committed sandbox is
-c7e7b84101ee286a4d3bc98a19a33463afd2809d (FETCH_HEAD). Rules/Core/search/history/
-Session/runtime exactly match; only existing AUX learning files differ.
-PRIMARY-specific calibration scripts are not adopted as an AUX campaign.
+Adopt Chat1792763020.416259:F(R;mu,policy/budget),small rule changes and strategic
+signatures before inverse/learning scale. The old initial10cooperation headline
+is superseded. Latest fetched committed sandbox is
+0815ac6cb8268266c215c0cd8a24bce12bf52a66;shared rules/Core/search/history/Session/
+runtime match exactly,only existing two AUX learner files differ. Relevant
+committed PRIMARY helpers/tests reused;no uncommitted research or role state.
+Actual forecast exporter:cffcd6d2975375d3a91dfce325c4bb48559c2516.
 
-## Latest results and limits
+## Latest actual results
 
-Report: LEAPER_SAVED_HISTORY_PATH_TRUTH_20261023.md.
-Separate packet:data/leaper_explorer_saved_paths_20261023;both parents intact.
-Same369records/34037histories and mus. ExactWDL31889;2148nonexact are1945[-1,1],
-189[0,1],14[-1,0]. Fork1932TRUE/29901FALSE/2204UNKNOWN. Cooperation5443TRUE/
-24780FALSE/3814UNKNOWN. Bounds/UNKNOWN are never scalar TRAIN labels or DRAW.
+Report:LEAPER_H6_MATCHED_RULE_TRUTH_20261024.md;packet:data/leaper_h6_initial_truth_20261023.
+All3616unchangedinitialhistories/11definedH6repeat2families exact. Family0mu
+unavailable,full12headlineundefined. Cooperation2256TRUE1360FALSE;fork1304TRUE/
+2312FALSE;664WIN360LOSS2592DRAW. No teacher-selected starts or new Player games.
+18340closedvertices40968Coreedges;compact20.582s. Existing FULLGameState
+ExactTree verifies allroots/actions/cooperation1098288contexts311.201s. Actual
+strict8methods match state/rule/mu/source/cost;oneplybeatsgeometry but reserved6
+cooperation loses to both actualbaselines. Forkgeometry loses to.5onreserved,
+thoughbeatsold35/36prior. Exposedcolourv2helpsonecalibrationfamily,reservedgain0.
+RootBrier/rateMSE aredistinct;no refit or headlinechoiceafterresults.
 
-One2271root/14407Coreedge pass joins2500exact saved child identities,adding
-81exactWDL,267narrowerintervals,14forkTRUE/2FALSE and346cooperationlabels.
-Independent all-edge check18.226sPASS. Saved suffixes at identical Positions
-are only proposals:165raw give160positives/5repetitionfailures;separate loop
-erasure on same165gives161/4UNKNOWN. Recombining only original recorded
-transitions yields474proposals/311positives/163UNKNOWN;no successor expansion
-or negative inference from an incomplete edgebook. All positives independently
-replayed from actual target full histories. Cooperation818newknown total.
+Only one metadata onebitpair exists among suppliedfamilies:(6,27)->(22,27).
+Common128legalfreshstarts;16LOSS->DRAW andnewforks,allcooperationunchanged.
+NewA diagonaljumpcapturesB into closedno-mate domain. All commonactionWDL
+unchanged;16oldLOSS literalcertificates80nodes verify. No newpair sampling.
+Exactuniformlaw on same3616:for4/15initialfork0,buteverfork2/3atply1,decision-
+weightedrate7707/43844.33fixed fullhistory probabilitychecks9170contextsPASS.
+Final complete reader54.594sPASS;46focusedtestsPASS. Source qualification
+explicitly distinguishes executed/precommit code and later reader fixes.
 
-Original initial cooperation9TRUE1FALSE;initial fork9UNKNOWN1FALSE. K3:8:16
-initial WDL now[0,1]via literal capture reaching a knownDRAWchild. One different
-saved-child WIN query atdepth3/2048nodes/30s returnsUNKNOWN154nodes0.662s;
-no extension. Closed observed subset has24terminal Positions/0ongoingsource
-histories;no newnegative. Two-way interval propagation/remainingORclauses and
-Core search-state identity add0labels. Capture-pruned keys are not adopted.
-
-Distinct-record fork events150TRUE/183UNKNOWN/36FALSE;guaranteeloss83TRUE/
-250UNKNOWN/36FALSE.243criticalrecordactions at232histories are correlated.
-The2new events are RNG missing actual one-ply mates,not deeper-than-FLOOR or
-learning/price evidence;actual paths draw by repetition/max128. First-event
-timing stillunknown dueearlierUNKNOWN. Initial exposed6/4split is5TRUE1FALSE
-vs4TRUE0FALSE;specificity on leaveout is undefined. Board/countbaseline has
-one inputclass on initial10(board4,actors6),fiveclasses on saved-historymu.
-
-All old100k/1m/900s/50kfailures/partials stayCLOSED. No newrules/layouts,games,
-Player queries,training,default or PRIMARY writes. Component costs include
-explicit extra source reconstruction;no controlled speedup claim.138related
-testsPASS39.006s;fullreaderPASS257.460s,bothparents andnegative diagnostics
-included. Additive metadata/minimalchecksPASS67.492s;critical cases separately
-verify literal Core children andsource references. Final proof/guard receipts
-and exact publication hashes are retained with this own-role segment.
+Earlier same-segment report:LEAPER_SINGLE_PARITY_AND_CLOCK_TRUTH_20261023.md.
+Frozen48H64targets38exact+10[0,1];coop9T31F8UNKNOWN,fork1T35F12UNKNOWN.
+128->64 reusebinds3748oldvertices/17564actualedges,notoldPositionlabels.
+Old natural1932forks:80immediatemate/1654WINwithoutmate/198DRAWavoidLOSS;
+243inferiorrecordactions split7/136/100. Correlated legacy diagnostics,not a
+new depth/price trial. All old100k/1m/900s/50k and1920slot failures stayCLOSED.
 
 ## Executable next work
 
-Main: Which actual E0target/mu/information set and frozen baseline are supplied?
-| Next ordinary mailbox/latest committed PRIMARY predictions; match initial10
-view or original saved-history mu exactly | real paired finite errors/UNKNOWN/
-cost, with rate versus binary-Brier loss explicit | no synthetic E0 or blind
-claim; PRIMARY selects new metadata-based holdout, not oracle-labelled starts.
+Main: Which exact nextRpair/commonhistorymu and actualforecast will PRIMARY freeze?
+| Nextordinarymailbox + latestcommittedsource;offer existing128startonebitresult
+and retain root/rate/occupation targets separately | sourcebound matchedtruth
+andcost without new sampling | no samePosition=>samehistory or scoretarget switch.
 
-Backup1: Do known natural forks contain a deeper-than-FLOOR signal?
-| Bounded retrospective classification of existing known fork histories by
-literal immediate-win availability/sourcepolicy/actual outcomes | distinct
-history/record/family counts and complete cost | no newgames,priceeffectclaim,
-oracleTRAINstarts or repeat of PRIMARY's forward/depth campaign.
+Backup1: Where do the existing80nodepaircertificate prefixes stop being comparable?
+| Bounded dualGameSession replay under both suppliedR,matching actualphysical
+actions and retaining changedlegality/repetition/clocks | firstdivergence and
+commonhistory coverage table | no newgame/Player/graph or implicit history reset.
 
-Backup2: What blocks the163failed observed paths?
-| Analyze saved failure observations and actual prehistory barriers only |
-repetition/clock counts with correlated-prefix grouping | no alternative-path
-retry,no missingpath=>absence,no graph or oldcaprefill.
+Backup2: What concentrates163oldfailed observedpath proposals?
+| Saved actual failure/prehistory observations only,group correlated prefixes
+and terminalhistories | repetition/clock/cost distribution | no alternativepath
+retry,missingpath-negative inference or oldcaprefill.
 
-ProbeGC-MAIL-ee5fdfa7fd084ba7912d1a89e329c651 READ_SAVED:46threads/47rawreturns,
-7exact revision decisions. Claude1792759763 qualified-adopted:initialmu/baseline
-requirements executed in truth contracts/metadataaudit. New3x3sampling deferred
-toPRIMARY;H6four-actor/repeat2 cost does not predict H128six-actor/repeat4 truth.
-No actual E0 or answer to the headline-target question. One checked progress/
-question follows ownpush/fullremoteSHA;partnerreading/adoption/execution remain
-unconfirmed. No realtimewait,Dotwake,newworker or schedulechange.
+ProbeGC-MAIL-ecd1e1df09a54defa2a8a39e6b69ed53:49threads/50rawreturns saved;
+7exactrevisiondecisions,latestF(R) adopted. Scoped mathematical reply1792762542
+read,notindependentCoreexecution. New0815Git forecast delivery consumed and
+actually scored here;partnerread/adoption/execution of OURnewresults unconfirmed.
+One combinedreport/question follows ownpush/fullremoteSHA;no wait/Dotwake/retry.

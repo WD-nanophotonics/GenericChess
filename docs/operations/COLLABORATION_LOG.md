@@ -1382,3 +1382,57 @@ finishaccepted. Own publication/fullremoteSHA precedes the single combined
 report/question. Partner read/adoption/execution of this new handoff stays
 unconfirmed until later evidence. Patrol60min remains unchanged. Report:
 LEAPER_SAVED_HISTORY_PATH_TRUTH_20261023.md;data below4MiB,rawSlack/JUnitprivate.
+
+
+## 2026-10-24 DEV_AUX matched H6 truth and one-bit mechanism
+
+Own sidemission only. Latest committed PRIMARY source
+0815ac6cb8268266c215c0cd8a24bce12bf52a66 supplies the actual frozen11defined
+H6families/3616fresh records and strict8method exports;execution SHA
+cffcd6d2975375d3a91dfce325c4bb48559c2516 stays distinct. PRIMARY owns sampling,
+features,forward play/defaults;AUX reuses its committed helpers/tests and exact
+Core/history interfaces,not its research campaign or state. Only existing two
+AUX learner files differ under generic_chess. No extra worker/timer/Goal/game.
+
+AUX closes matching truth:2256cooperative TRUE1360FALSE;1304forkTRUE2312FALSE;
+664WIN360LOSS2592DRAW. Family0mu unavailable/full12headlineundefined. Closed
+18340vertices40968Coreedges;compact20.582s. Existing full-GameState ExactTree
+ALL3616roots/actions/cooperation PASS1098288contexts311.201s. Final54.594s
+reader rechecks allCore/history/paths/actualscores/occupation and80literal
+paircertificate nodes.46focused final tests pass;new imported scope/helper
+regressions also pass. No old cap or missing policy deployment is refilled.
+
+The real one-ply enhancement improves geometry but loses to both cooperation
+baselines onreserved6families;forkgeometry loses to.5there thoughbeatsold35/36.
+Exposedcolourv2helpsonlyonecalibrationfamily,reservedgain0. Both conditional
+Brier andfamily-rateMSE retained;no after-label headline selection/refit.
+
+Only existingmetadataonebitadjacency is(6,27)->(22,27).128commonlegalfresh
+starts;16LOSS->DRAW bynewA captureofB into closedno-mate domain,not a changed
+commonactionvalue.16oldLOSS full-defense certificates verify80nodes. Exact
+uniformpolicy law on same3616inputs separatesrootmu/decisionoccupation/first
+event:4/15hasinitialfork0but2/3everforkatply1.33fixed fullhistory probability
+controls9170contextsPASS. These are local structural/cost findings,not measured
+search/learner acceleration,universal prices or newproduction defaults.
+
+Earlier same-segment independent H64 theorem/clock checks bind31DRAWstates;
+Primary's28parity+3bare versus AUX27parity+4bare differ only in whether an A-
+captured parity row is classified as bare;the31DRAWsets agree. Remaining10[0,1]
+are notWIN. Naturalcorpus1932forks/243inferioractions retain their differentmu
+andcorrelatedunits;not pooled withnew3616initialhistories.
+
+ProbeGC-MAIL-ecd1e1df09a54defa2a8a39e6b69ed53 preserves49threads/50rawreturns,
+7exactdecisions. Adopt1792763020F(R)direction andactualexecution consequences;
+scope-review1792762542wasreadasmathematics,notindependentCoreexecution. Earlier
+initial10headlineproposal superseded bythisadvice andactualmatchinghandoff.
+No secondSlackprobe/wait/Dotwake. One combinedreport/question follows reviewed
+ownpush/fullremoteSHA;partnerread/adoption/execution remainsunconfirmed.
+
+Session7cc5226e-5d5d-4961-abf9-591e972889ce preserves its2026-10-23T14:39:09UTC
+origin and ends safe_checkpoint with3963.383584confirmed seconds(66.056min),
+finishaccepted/memosynced. Administrative docs/publication/transport excluded.
+Patrol60min unchanged. Reports:LEAPER_H6_MATCHED_RULE_TRUTH_20261024.md and
+LEAPER_SINGLE_PARITY_AND_CLOCK_TRUTH_20261023.md. Recoverable final-reader
+missing-mu-field/name-shadow errors were fixed before acceptance;rawfailures
+and sensitive/hostname-bearing originals remain private. Science staysOPEN;
+nextAUXdualreplay existingpaircertificateprefixes,PRIMARYownsnextfreeze.
