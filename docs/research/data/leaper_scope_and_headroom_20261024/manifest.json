@@ -1,0 +1,36 @@
+{
+  "source_sha": "808a6d58e9fc6c3a5f5f2c861645255f00e09df2",
+  "prior_sha": "5b6a560d2d6de7bbb4e0696515fcf8a08d556c28",
+  "session_id": "e3d47e8f-a8b3-4bb3-a1bb-c0a8ba86bc99",
+  "files_sha256": {
+    "capacity-scope.json": "74f09a480e6cbbc8c16aa86023614b762f4e9f5ebeba8997b9dec4888c1caeef",
+    "full-Core-qualification.json": "3c4aac4251620dd7e33d8bd4301ef98a2eab09260fec9638438baccaa1fca5a1",
+    "h6-classes-qualification.json": "7307bb48bbc16cbda585749bc9823ad05603691fde6b36be2289b1ad2e4edb48",
+    "h6-headroom.json": "e380b9dbdcbfe55e3f545f26e4c0c1d4f6a91e317bb7a65493dd298cf8bd367a",
+    "h6-policy-bounds.json.gz": "2f181322c5e3944f8f1f610c05852f1969304b7302cb65033363589e2b4f5c31",
+    "imports.json": "e425731d0ee5e00e4d37562f3363c32b4c5c925e8fcda10811f639ce4548d4fd",
+    "material-trade-cells.json": "c77933868705df0e28cc98292dffd2dedb48779b161f839c24314c82c900015c",
+    "models.json": "ba3eb0dbff461a84ad19f7e74477e83ddd5214d453d0421e270a224f6aae6f9a",
+    "singletons.json.gz": "8603299ebbf2554e2784c5a76a74867e3b12c5f29df471b1c5fb0ea8bcf12e73",
+    "source-capsules.json.gz": "996d2469cdb1812b4fb578fbcbe059459720307bd71a28ec31c70a1f4711a0dd",
+    "stalemate-control.json": "0f3f3c755dc7aa3abe426aae956c6d9eb7f11f8043120c203cdc0d5f56e7df1e",
+    "twoa-actual-panel.json.gz": "42270477c6fea92766e0496c67f810ae9be10c546d67891605258234b94345b7",
+    "twoa-barrier-safety.json.gz": "543d60dc926fbb8b66b7cc2c2029533027fbb812106850ecad153e9d53872934",
+    "twoa-equalclock.json": "519cbeda055dbda3f4c25786bcd396c22b830a1e305a69ba27156435217ccc4d",
+    "twoa-execution.json": "4f6b0460de74858181a3d998badf160a985b777ee36c5d8ded83df70d639f159",
+    "twoa-exposure.json": "9679c245ddebf38faa9ec4244f4e0dbc00f3a5834ffa802d369935212d1a76a2",
+    "twoa-graph.json.gz": "206e8b5db56558b97023c53f145591570b13cf5754f00fe4b3d905fee3b013ef",
+    "twoa-safety.json.gz": "fbc1d90c2191ce14dd23a9a38692e24f03f41724890a5373b4b9cbeb3f9a3ec7"
+  },
+  "source_note": "FullCore reader imported old clock helper before its optional5/6singleton admission was added; only unchangedcompactprimitivewas used. Exactloadedsourcecapsule retained. CurrentCLIpolicy helpertakesexplicitmodels; earlierexecutedmodel-loadingwrapperretainedasdata. No executed-sourceblindingclaim. Initialintegratedreaderfailedon actionwire-vs-dataclassshape before nominalreproduction; correctedreader passesall144retainedPVs,no experimentalrerun. InitialH6classreceiptusestypedpublicreplay; finalreaderaddsexactJSONroundtrip. Bothdata-onlyversionsretained.",
+  "limits": "Allrules/roots/packets exposed. Nogenerator/forwardcampaign/default/UI/otherrolewrite. Fixedincoming/nominalpolicyandselectedactualdiagnosticsarenotlearneroccupationorpublishedstrengthgain. Oldcaps/missingunchanged. Capsulesarenotexecuted.",
+  "supplement_files_sha256": {
+    "barrier-cooperation.json": "80d544d0de099facdfc620fbca861814b1a3d312c4fee9af9d36eb144ed9279e",
+    "barrier-cooperation-source.json.gz": "52f649ec77f78f2fc31540c83fb3180b678cf2b68799c68b5430cc1c8c8a3355",
+    "supplement-qualification.json": "f980449f00d8efd875470b76a07baa395b033969aa2da975e822bfb528219427"
+  },
+  "qualification_sha256": "77bdc25c79d7de4a4abd25bd8c20495ff47e43a33ad9100c42912a6f8e59d05c",
+  "metadata_notes": {
+    "singletons.json.gz:source_graph_raw_sha256": "Retained producer field is digest(g): canonical decoded JSON graph, NOT compressed/raw-file SHA. Exact old packet/frontier and current data-file hashes are separate."
+  }
+}

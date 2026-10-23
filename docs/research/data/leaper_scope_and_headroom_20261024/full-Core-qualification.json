@@ -1,0 +1,2778 @@
+{
+  "verified": true,
+  "plan": {
+    "question": "Does full public Core reconstruction substantiate the NEW all-covered-placement capacity/WDL scope analysis, including union-safe negative cases outside the original600roots?",
+    "source_packet_sha256": "aa02eb7967ef9479f17f0710c3d795fc0680dec919adb50f26cf8faaccecf847",
+    "budget": {
+      "seconds": 2400,
+      "vertices": 2129072,
+      "graphs": 75
+    },
+    "expected_seconds": "1100-2000 from current125940Corevertices/66sec; <120min.",
+    "rationale": "Newclaimusesallcoveredlegalinitialplacements,notonlyold600mu roots. ReconstructeveryoldfrontierthroughcurrentcommittedpublicCoreandindependentintegerchecker; nopaidPlayer, newclosureexpansion, oldqueryrefill, testsamplingorretraining. Exactoldvaluesretained; a mismatchinvalidatesnewall-placementclaim.",
+    "producer_sha256": "5de04e12b5982bb604c5d8ce86dc234935d02815288ef9cf3d1e449476df1a71"
+  },
+  "rows": [
+    {
+      "mask": 1,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 4232,
+        "integer_edges": 18496,
+        "Core_sampled_vertices": 4232,
+        "Core_sampled_edges": 18496,
+        "full_source_records": 8
+      },
+      "seconds": 1.561796099995263,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 1,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 1140,
+          "particular_rule_only/DRAW64": 1140
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 10,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3944,
+        "integer_edges": 18256,
+        "Core_sampled_vertices": 3944,
+        "Core_sampled_edges": 18256,
+        "full_source_records": 8
+      },
+      "seconds": 1.9840231999987736,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 10,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 852,
+          "particular_rule_only/WIN64": 852
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 13,
+          "particular_rule_only/max_force_rank": 17
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 11,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3444,
+        "integer_edges": 15420,
+        "Core_sampled_vertices": 3444,
+        "Core_sampled_edges": 15420,
+        "full_source_records": 8
+      },
+      "seconds": 1.8379329999443144,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 11,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 420,
+          "particular_rule_only/WIN64": 420
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 7,
+          "particular_rule_only/max_force_rank": 7
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 12,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3984,
+        "integer_edges": 18672,
+        "Core_sampled_vertices": 3984,
+        "Core_sampled_edges": 18672,
+        "full_source_records": 8
+      },
+      "seconds": 1.9405103999888524,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 12,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 892,
+          "particular_rule_only/WIN64": 888,
+          "particular_rule_only/DRAW64": 4
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 13,
+          "particular_rule_only/max_force_rank": 19
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 13,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3536,
+        "integer_edges": 16440,
+        "Core_sampled_vertices": 3536,
+        "Core_sampled_edges": 16440,
+        "full_source_records": 8
+      },
+      "seconds": 1.8987674999516457,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 13,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 460,
+          "particular_rule_only/WIN64": 456,
+          "particular_rule_only/DRAW64": 4
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 9,
+          "particular_rule_only/max_force_rank": 11
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 16,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3354,
+        "integer_edges": 13020,
+        "Core_sampled_vertices": 3354,
+        "Core_sampled_edges": 13020,
+        "full_source_records": 8
+      },
+      "seconds": 1.322133900015615,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 16,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 435,
+          "union_safe/DRAW64": 435,
+          "particular_rule_only/vertices": 1074,
+          "particular_rule_only/DRAW64": 1074
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 435,
+        "unlabelled_union_safe": 161,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          161
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 17,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 4092,
+        "integer_edges": 18660,
+        "Core_sampled_vertices": 4092,
+        "Core_sampled_edges": 18660,
+        "full_source_records": 8
+      },
+      "seconds": 1.8886006000684574,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 17,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 1000,
+          "particular_rule_only/DRAW64": 1000
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 18,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 4136,
+        "integer_edges": 18152,
+        "Core_sampled_vertices": 4136,
+        "Core_sampled_edges": 18152,
+        "full_source_records": 8
+      },
+      "seconds": 1.7925977000268176,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 18,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 1112,
+          "particular_rule_only/DRAW64": 1112
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 19,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3728,
+        "integer_edges": 17400,
+        "Core_sampled_vertices": 3728,
+        "Core_sampled_edges": 17400,
+        "full_source_records": 8
+      },
+      "seconds": 1.7395089999772608,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 19,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 680,
+          "particular_rule_only/WIN64": 680
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 7,
+          "particular_rule_only/max_force_rank": 7
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 2,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 4284,
+        "integer_edges": 17868,
+        "Core_sampled_vertices": 4284,
+        "Core_sampled_edges": 17868,
+        "full_source_records": 8
+      },
+      "seconds": 1.8397150000091642,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 2,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 1244,
+          "particular_rule_only/DRAW64": 1244
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 20,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3752,
+        "integer_edges": 16496,
+        "Core_sampled_vertices": 3752,
+        "Core_sampled_edges": 16496,
+        "full_source_records": 8
+      },
+      "seconds": 1.641782799968496,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 20,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 564,
+          "union_safe/DRAW64": 564,
+          "particular_rule_only/vertices": 1112,
+          "particular_rule_only/DRAW64": 1112
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 564,
+        "unlabelled_union_safe": 32,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          32
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 21,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3804,
+        "integer_edges": 18052,
+        "Core_sampled_vertices": 3804,
+        "Core_sampled_edges": 18052,
+        "full_source_records": 8
+      },
+      "seconds": 1.9154113000258803,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 21,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 720,
+          "particular_rule_only/WIN64": 720
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 11,
+          "particular_rule_only/max_force_rank": 17
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 22,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3628,
+        "integer_edges": 17000,
+        "Core_sampled_vertices": 3628,
+        "Core_sampled_edges": 17000,
+        "full_source_records": 8
+      },
+      "seconds": 1.8218392999842763,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 22,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 580,
+          "union_safe/DRAW64": 580,
+          "particular_rule_only/vertices": 824,
+          "particular_rule_only/DRAW64": 824
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 580,
+        "unlabelled_union_safe": 16,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          16
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 25,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3668,
+        "integer_edges": 17364,
+        "Core_sampled_vertices": 3668,
+        "Core_sampled_edges": 17364,
+        "full_source_records": 8
+      },
+      "seconds": 1.9267128999345005,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 25,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 600,
+          "particular_rule_only/WIN64": 600
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 13,
+          "particular_rule_only/max_force_rank": 19
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 26,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3804,
+        "integer_edges": 17764,
+        "Core_sampled_vertices": 3804,
+        "Core_sampled_edges": 17764,
+        "full_source_records": 8
+      },
+      "seconds": 1.9285651000682265,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 26,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 712,
+          "particular_rule_only/WIN64": 712
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 11,
+          "particular_rule_only/max_force_rank": 15
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 27,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3288,
+        "integer_edges": 14096,
+        "Core_sampled_vertices": 3288,
+        "Core_sampled_edges": 14096,
+        "full_source_records": 8
+      },
+      "seconds": 1.7222918999614194,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 27,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 280,
+          "particular_rule_only/WIN64": 280
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 5,
+          "particular_rule_only/max_force_rank": 5
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 29,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3252,
+        "integer_edges": 14708,
+        "Core_sampled_vertices": 3252,
+        "Core_sampled_edges": 14708,
+        "full_source_records": 8
+      },
+      "seconds": 1.8292872000019997,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 29,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 580,
+          "union_safe/WIN64": 580,
+          "particular_rule_only/vertices": 320,
+          "particular_rule_only/WIN64": 316,
+          "particular_rule_only/DRAW64": 4
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 7,
+          "particular_rule_only/max_force_rank": 11
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 580,
+        "unlabelled_union_safe": 16,
+        "uniform_union_safe_WIN64_count_bounds": [
+          580,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 3,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3748,
+        "integer_edges": 17564,
+        "Core_sampled_vertices": 3748,
+        "Core_sampled_edges": 17564,
+        "full_source_records": 8
+      },
+      "seconds": 1.791856599971652,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 3,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 820,
+          "particular_rule_only/WIN64": 820
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 7,
+          "particular_rule_only/max_force_rank": 7
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 31,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 2452,
+        "integer_edges": 9872,
+        "Core_sampled_vertices": 2452,
+        "Core_sampled_edges": 9872,
+        "full_source_records": 8
+      },
+      "seconds": 1.4144415000919253,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 31,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 580,
+          "union_safe/WIN64": 580
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 1
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 580,
+        "unlabelled_union_safe": 16,
+        "uniform_union_safe_WIN64_count_bounds": [
+          580,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 4,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 4352,
+        "integer_edges": 17992,
+        "Core_sampled_vertices": 4352,
+        "Core_sampled_edges": 17992,
+        "full_source_records": 8
+      },
+      "seconds": 1.7934396000346169,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 4,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 1292,
+          "particular_rule_only/DRAW64": 1292
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 5,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3952,
+        "integer_edges": 18408,
+        "Core_sampled_vertices": 3952,
+        "Core_sampled_edges": 18408,
+        "full_source_records": 8
+      },
+      "seconds": 1.8623013999313116,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 5,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 860,
+          "particular_rule_only/WIN64": 840,
+          "particular_rule_only/DRAW64": 20
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 11,
+          "particular_rule_only/max_force_rank": 15
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 6,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3952,
+        "integer_edges": 17944,
+        "Core_sampled_vertices": 3952,
+        "Core_sampled_edges": 17944,
+        "full_source_records": 8
+      },
+      "seconds": 1.7985174999339506,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 6,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 972,
+          "particular_rule_only/DRAW64": 972
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 7,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3580,
+        "integer_edges": 16556,
+        "Core_sampled_vertices": 3580,
+        "Core_sampled_edges": 16556,
+        "full_source_records": 8
+      },
+      "seconds": 1.8378091000486165,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 7,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/WIN64": 596,
+          "particular_rule_only/vertices": 540,
+          "particular_rule_only/WIN64": 540
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 7,
+          "particular_rule_only/max_force_rank": 7
+        },
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          596,
+          596
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 8,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 4264,
+        "integer_edges": 18720,
+        "Core_sampled_vertices": 4264,
+        "Core_sampled_edges": 18720,
+        "full_source_records": 8
+      },
+      "seconds": 1.8766868999227881,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 8,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 1172,
+          "particular_rule_only/DRAW64": 1172
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 9,
+      "n": 4,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 3824,
+        "integer_edges": 18088,
+        "Core_sampled_vertices": 3824,
+        "Core_sampled_edges": 18088,
+        "full_source_records": 8
+      },
+      "seconds": 1.8051293999888003,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 4,
+        "mask": 9,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 596,
+          "union_safe/DRAW64": 596,
+          "particular_rule_only/vertices": 740,
+          "particular_rule_only/DRAW64": 740
+        },
+        "ranks": {},
+        "full_union_safe_support": 596,
+        "covered_union_safe": 596,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 1,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 20460,
+        "integer_edges": 116480,
+        "Core_sampled_vertices": 20460,
+        "Core_sampled_edges": 116480,
+        "full_source_records": 8
+      },
+      "seconds": 10.453554600011557,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 1,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 4348,
+          "particular_rule_only/DRAW64": 4348
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 10,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 19156,
+        "integer_edges": 121240,
+        "Core_sampled_vertices": 19156,
+        "Core_sampled_edges": 121240,
+        "full_source_records": 8
+      },
+      "seconds": 12.462922499980778,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 10,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 3044,
+          "particular_rule_only/WIN64": 3044
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 21,
+          "particular_rule_only/max_force_rank": 25
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 11,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 17640,
+        "integer_edges": 117548,
+        "Core_sampled_vertices": 17640,
+        "Core_sampled_edges": 117548,
+        "full_source_records": 8
+      },
+      "seconds": 11.622830500011332,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 11,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 1632,
+          "particular_rule_only/WIN64": 1632
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 9,
+          "particular_rule_only/max_force_rank": 11
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 12,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 19248,
+        "integer_edges": 122040,
+        "Core_sampled_vertices": 19248,
+        "Core_sampled_edges": 122040,
+        "full_source_records": 8
+      },
+      "seconds": 11.3458056000527,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 12,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 3136,
+          "particular_rule_only/WIN64": 3096,
+          "particular_rule_only/DRAW64": 40
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 23,
+          "particular_rule_only/max_force_rank": 33
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 13,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 17820,
+        "integer_edges": 119768,
+        "Core_sampled_vertices": 17820,
+        "Core_sampled_edges": 119768,
+        "full_source_records": 8
+      },
+      "seconds": 13.136153500061482,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 13,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 1724,
+          "particular_rule_only/WIN64": 1684,
+          "particular_rule_only/DRAW64": 40
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 15,
+          "particular_rule_only/max_force_rank": 17
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 16,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 11344,
+        "integer_edges": 57896,
+        "Core_sampled_vertices": 11344,
+        "Core_sampled_edges": 57896,
+        "full_source_records": 8
+      },
+      "seconds": 5.241295000072569,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 16,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 2564,
+          "union_safe/DRAW64": 2564,
+          "particular_rule_only/vertices": 2574,
+          "particular_rule_only/DRAW64": 2574
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 2564,
+        "unlabelled_union_safe": 2148,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          2148
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 17,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 19852,
+        "integer_edges": 120488,
+        "Core_sampled_vertices": 19852,
+        "Core_sampled_edges": 120488,
+        "full_source_records": 8
+      },
+      "seconds": 11.071387699921615,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 17,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 3740,
+          "particular_rule_only/DRAW64": 3740
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 18,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 20008,
+        "integer_edges": 117560,
+        "Core_sampled_vertices": 20008,
+        "Core_sampled_edges": 117560,
+        "full_source_records": 8
+      },
+      "seconds": 10.531172099988908,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 18,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 4036,
+          "particular_rule_only/DRAW64": 4036
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 19,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18656,
+        "integer_edges": 121552,
+        "Core_sampled_vertices": 18656,
+        "Core_sampled_edges": 121552,
+        "full_source_records": 8
+      },
+      "seconds": 11.166913300054148,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 19,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 2624,
+          "particular_rule_only/WIN64": 2624
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 11,
+          "particular_rule_only/max_force_rank": 13
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 2,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 20652,
+        "integer_edges": 113132,
+        "Core_sampled_vertices": 20652,
+        "Core_sampled_edges": 113132,
+        "full_source_records": 8
+      },
+      "seconds": 10.134087400045246,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 2,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 4636,
+          "particular_rule_only/DRAW64": 4636
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 20,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 19320,
+        "integer_edges": 112736,
+        "Core_sampled_vertices": 19320,
+        "Core_sampled_edges": 112736,
+        "full_source_records": 8
+      },
+      "seconds": 10.343042699969374,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 20,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4696,
+          "union_safe/DRAW64": 4696,
+          "particular_rule_only/vertices": 4112,
+          "particular_rule_only/DRAW64": 4112
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4696,
+        "unlabelled_union_safe": 16,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          16
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 21,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18820,
+        "integer_edges": 122824,
+        "Core_sampled_vertices": 18820,
+        "Core_sampled_edges": 122824,
+        "full_source_records": 8
+      },
+      "seconds": 11.518945300020278,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 21,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 2716,
+          "particular_rule_only/WIN64": 2640,
+          "particular_rule_only/DRAW64": 76
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 21,
+          "particular_rule_only/max_force_rank": 25
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 22,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18460,
+        "integer_edges": 118952,
+        "Core_sampled_vertices": 18460,
+        "Core_sampled_edges": 118952,
+        "full_source_records": 8
+      },
+      "seconds": 11.106152200023644,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 22,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 3004,
+          "particular_rule_only/DRAW64": 3004
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 25,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18192,
+        "integer_edges": 120836,
+        "Core_sampled_vertices": 18192,
+        "Core_sampled_edges": 120836,
+        "full_source_records": 8
+      },
+      "seconds": 11.687029300024733,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 25,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 2140,
+          "particular_rule_only/WIN64": 2104,
+          "particular_rule_only/DRAW64": 36
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 19,
+          "particular_rule_only/max_force_rank": 23
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 26,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18548,
+        "integer_edges": 120488,
+        "Core_sampled_vertices": 18548,
+        "Core_sampled_edges": 120488,
+        "full_source_records": 8
+      },
+      "seconds": 12.381083499989472,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 26,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 2436,
+          "particular_rule_only/WIN64": 2436
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 17,
+          "particular_rule_only/max_force_rank": 17
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 27,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 16980,
+        "integer_edges": 112768,
+        "Core_sampled_vertices": 16980,
+        "Core_sampled_edges": 112768,
+        "full_source_records": 8
+      },
+      "seconds": 12.4773250001017,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 27,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 1024,
+          "particular_rule_only/WIN64": 1024
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 9,
+          "particular_rule_only/max_force_rank": 9
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 29,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 16844,
+        "integer_edges": 114044,
+        "Core_sampled_vertices": 16844,
+        "Core_sampled_edges": 114044,
+        "full_source_records": 8
+      },
+      "seconds": 13.317210200009868,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 29,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 1116,
+          "particular_rule_only/WIN64": 1076,
+          "particular_rule_only/DRAW64": 40
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 11,
+          "particular_rule_only/max_force_rank": 15
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 3,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18936,
+        "integer_edges": 119816,
+        "Core_sampled_vertices": 18936,
+        "Core_sampled_edges": 119816,
+        "full_source_records": 8
+      },
+      "seconds": 10.71948969992809,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 3,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 3232,
+          "particular_rule_only/WIN64": 3232
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 13,
+          "particular_rule_only/max_force_rank": 15
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 31,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 14544,
+        "integer_edges": 99896,
+        "Core_sampled_vertices": 14544,
+        "Core_sampled_edges": 99896,
+        "full_source_records": 8
+      },
+      "seconds": 12.197635299991816,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 31,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 3
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 4,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 20816,
+        "integer_edges": 113264,
+        "Core_sampled_vertices": 20816,
+        "Core_sampled_edges": 113264,
+        "full_source_records": 8
+      },
+      "seconds": 10.472130300011486,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 4,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 4736,
+          "particular_rule_only/DRAW64": 4736
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 5,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 19436,
+        "integer_edges": 121976,
+        "Core_sampled_vertices": 19436,
+        "Core_sampled_edges": 121976,
+        "full_source_records": 8
+      },
+      "seconds": 11.106241000001319,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 5,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4704,
+          "particular_rule_only/vertices": 3324,
+          "particular_rule_only/WIN64": 3100,
+          "particular_rule_only/DRAW64": 224,
+          "union_safe/DRAW64": 8
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 19,
+          "particular_rule_only/max_force_rank": 21
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4704,
+          4704
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 6,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 19504,
+        "integer_edges": 119272,
+        "Core_sampled_vertices": 19504,
+        "Core_sampled_edges": 119272,
+        "full_source_records": 8
+      },
+      "seconds": 10.849502999917604,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 6,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 3620,
+          "particular_rule_only/DRAW64": 3620
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 7,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18232,
+        "integer_edges": 121060,
+        "Core_sampled_vertices": 18232,
+        "Core_sampled_edges": 121060,
+        "full_source_records": 8
+      },
+      "seconds": 11.675325399963185,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 7,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/WIN64": 4712,
+          "particular_rule_only/vertices": 2208,
+          "particular_rule_only/WIN64": 2208
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 13,
+          "particular_rule_only/max_force_rank": 13
+        },
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          4712,
+          4712
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 8,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 20272,
+        "integer_edges": 118160,
+        "Core_sampled_vertices": 20272,
+        "Core_sampled_edges": 118160,
+        "full_source_records": 8
+      },
+      "seconds": 10.452105300035328,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 8,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 4160,
+          "particular_rule_only/DRAW64": 4160
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 9,
+      "n": 5,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 18852,
+        "integer_edges": 122400,
+        "Core_sampled_vertices": 18852,
+        "Core_sampled_edges": 122400,
+        "full_source_records": 8
+      },
+      "seconds": 11.51815160003025,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 5,
+        "mask": 9,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 4712,
+          "union_safe/DRAW64": 4712,
+          "particular_rule_only/vertices": 2748,
+          "particular_rule_only/DRAW64": 2748
+        },
+        "ranks": {},
+        "full_union_safe_support": 4712,
+        "covered_union_safe": 4712,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 1,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 69376,
+        "integer_edges": 454672,
+        "Core_sampled_vertices": 69376,
+        "Core_sampled_edges": 454672,
+        "full_source_records": 8
+      },
+      "seconds": 37.09020530001726,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 1,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 11596,
+          "particular_rule_only/DRAW64": 11596
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 10,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 65600,
+        "integer_edges": 499320,
+        "Core_sampled_vertices": 65600,
+        "Core_sampled_edges": 499320,
+        "full_source_records": 8
+      },
+      "seconds": 44.17417839996051,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 10,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 7820,
+          "particular_rule_only/WIN64": 7820
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 29,
+          "particular_rule_only/max_force_rank": 29
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 11,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 62044,
+        "integer_edges": 516484,
+        "Core_sampled_vertices": 62044,
+        "Core_sampled_edges": 516484,
+        "full_source_records": 8
+      },
+      "seconds": 48.90634169999976,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 11,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 4412,
+          "particular_rule_only/WIN64": 4412
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 15,
+          "particular_rule_only/max_force_rank": 15
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 12,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 65760,
+        "integer_edges": 500048,
+        "Core_sampled_vertices": 65760,
+        "Core_sampled_edges": 500048,
+        "full_source_records": 8
+      },
+      "seconds": 44.43437909998465,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 12,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 7980,
+          "particular_rule_only/WIN64": 7896,
+          "particular_rule_only/DRAW64": 84
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 37,
+          "particular_rule_only/max_force_rank": 43
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 13,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 62336,
+        "integer_edges": 519800,
+        "Core_sampled_vertices": 62336,
+        "Core_sampled_edges": 519800,
+        "full_source_records": 8
+      },
+      "seconds": 50.15461980004329,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 13,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 4572,
+          "particular_rule_only/WIN64": 4488,
+          "particular_rule_only/DRAW64": 84
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 21,
+          "particular_rule_only/max_force_rank": 23
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 16,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 45819,
+        "integer_edges": 272684,
+        "Core_sampled_vertices": 45819,
+        "Core_sampled_edges": 272684,
+        "full_source_records": 8
+      },
+      "seconds": 24.304305400000885,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 16,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 13157,
+          "union_safe/DRAW64": 13157,
+          "particular_rule_only/vertices": 8322,
+          "particular_rule_only/DRAW64": 8322
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 13157,
+        "unlabelled_union_safe": 7183,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          7183
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 17,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 67620,
+        "integer_edges": 481152,
+        "Core_sampled_vertices": 67620,
+        "Core_sampled_edges": 481152,
+        "full_source_records": 8
+      },
+      "seconds": 41.864015899947844,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 17,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 9840,
+          "particular_rule_only/DRAW64": 9840
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 18,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 67984,
+        "integer_edges": 470064,
+        "Core_sampled_vertices": 67984,
+        "Core_sampled_edges": 470064,
+        "full_source_records": 8
+      },
+      "seconds": 41.01135099993553,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 18,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 10432,
+          "particular_rule_only/DRAW64": 10432
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 19,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 64680,
+        "integer_edges": 507316,
+        "Core_sampled_vertices": 64680,
+        "Core_sampled_edges": 507316,
+        "full_source_records": 8
+      },
+      "seconds": 44.68545730004553,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 19,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 7024,
+          "particular_rule_only/WIN64": 7024
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 17,
+          "particular_rule_only/max_force_rank": 17
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 2,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 69812,
+        "integer_edges": 442572,
+        "Core_sampled_vertices": 69812,
+        "Core_sampled_edges": 442572,
+        "full_source_records": 8
+      },
+      "seconds": 37.77592109993566,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 2,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 12180,
+          "particular_rule_only/DRAW64": 12180
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 20,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 50503,
+        "integer_edges": 347224,
+        "Core_sampled_vertices": 50503,
+        "Core_sampled_edges": 347224,
+        "full_source_records": 8
+      },
+      "seconds": 31.031708499998786,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 20,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 15255,
+          "union_safe/DRAW64": 15255,
+          "particular_rule_only/vertices": 7932,
+          "particular_rule_only/DRAW64": 7932
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 15255,
+        "unlabelled_union_safe": 5085,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          5085
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 21,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 64956,
+        "integer_edges": 508616,
+        "Core_sampled_vertices": 64956,
+        "Core_sampled_edges": 508616,
+        "full_source_records": 8
+      },
+      "seconds": 45.7408301999094,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 21,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 7184,
+          "particular_rule_only/WIN64": 6932,
+          "particular_rule_only/DRAW64": 252
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 31,
+          "particular_rule_only/max_force_rank": 31
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 22,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 64348,
+        "integer_edges": 495736,
+        "Core_sampled_vertices": 64348,
+        "Core_sampled_edges": 495736,
+        "full_source_records": 8
+      },
+      "seconds": 42.858459900016896,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 22,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 7768,
+          "particular_rule_only/DRAW64": 7768
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 25,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 63148,
+        "integer_edges": 514820,
+        "Core_sampled_vertices": 63148,
+        "Core_sampled_edges": 514820,
+        "full_source_records": 8
+      },
+      "seconds": 44.27430470008403,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 25,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 5472,
+          "particular_rule_only/WIN64": 5392,
+          "particular_rule_only/DRAW64": 80
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 27,
+          "particular_rule_only/max_force_rank": 27
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 26,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 63844,
+        "integer_edges": 509088,
+        "Core_sampled_vertices": 63844,
+        "Core_sampled_edges": 509088,
+        "full_source_records": 8
+      },
+      "seconds": 49.943641799967736,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 26,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 6064,
+          "particular_rule_only/WIN64": 6064
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 21,
+          "particular_rule_only/max_force_rank": 21
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 27,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 60192,
+        "integer_edges": 513936,
+        "Core_sampled_vertices": 60192,
+        "Core_sampled_edges": 513936,
+        "full_source_records": 8
+      },
+      "seconds": 52.414741300046444,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 27,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 2656,
+          "particular_rule_only/WIN64": 2656
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 11,
+          "particular_rule_only/max_force_rank": 11
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 29,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 59844,
+        "integer_edges": 515052,
+        "Core_sampled_vertices": 59844,
+        "Core_sampled_edges": 515052,
+        "full_source_records": 8
+      },
+      "seconds": 52.59891499998048,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 29,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 2816,
+          "particular_rule_only/WIN64": 2732,
+          "particular_rule_only/DRAW64": 84
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 17,
+          "particular_rule_only/max_force_rank": 19
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 3,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 65780,
+        "integer_edges": 489188,
+        "Core_sampled_vertices": 65780,
+        "Core_sampled_edges": 489188,
+        "full_source_records": 8
+      },
+      "seconds": 41.04715270001907,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 3,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 8780,
+          "particular_rule_only/WIN64": 8780
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 19,
+          "particular_rule_only/max_force_rank": 21
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 31,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 54836,
+        "integer_edges": 497464,
+        "Core_sampled_vertices": 54836,
+        "Core_sampled_edges": 497464,
+        "full_source_records": 8
+      },
+      "seconds": 54.798456299933605,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 31,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 5
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 4,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 53092,
+        "integer_edges": 334090,
+        "Core_sampled_vertices": 53092,
+        "Core_sampled_edges": 334090,
+        "full_source_records": 8
+      },
+      "seconds": 28.307942699990235,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 4,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 15255,
+          "union_safe/DRAW64": 15255,
+          "particular_rule_only/vertices": 9261,
+          "particular_rule_only/DRAW64": 9261
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 15255,
+        "unlabelled_union_safe": 5085,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          5085
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 5,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 66720,
+        "integer_edges": 492400,
+        "Core_sampled_vertices": 66720,
+        "Core_sampled_edges": 492400,
+        "full_source_records": 8
+      },
+      "seconds": 42.20219510002062,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 5,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20192,
+          "particular_rule_only/vertices": 8940,
+          "particular_rule_only/WIN64": 8088,
+          "particular_rule_only/DRAW64": 852,
+          "union_safe/DRAW64": 148
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 37,
+          "particular_rule_only/max_force_rank": 37
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20192,
+          20192
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 6,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 66944,
+        "integer_edges": 481904,
+        "Core_sampled_vertices": 66944,
+        "Core_sampled_edges": 481904,
+        "full_source_records": 8
+      },
+      "seconds": 41.46008840005379,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 6,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 9532,
+          "particular_rule_only/DRAW64": 9532
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 7,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 63772,
+        "integer_edges": 513988,
+        "Core_sampled_vertices": 63772,
+        "Core_sampled_edges": 513988,
+        "full_source_records": 8
+      },
+      "seconds": 46.43757980002556,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 7,
+        "static_capacity1": true,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/WIN64": 20340,
+          "particular_rule_only/vertices": 6124,
+          "particular_rule_only/WIN64": 6124
+        },
+        "ranks": {
+          "union_safe/max_force_rank": 17,
+          "particular_rule_only/max_force_rank": 17
+        },
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          20340,
+          20340
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 8
+      }
+    },
+    {
+      "mask": 8,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 68416,
+        "integer_edges": 469336,
+        "Core_sampled_vertices": 68416,
+        "Core_sampled_edges": 469336,
+        "full_source_records": 8
+      },
+      "seconds": 39.98538249998819,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 8,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 10636,
+          "particular_rule_only/DRAW64": 10636
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    },
+    {
+      "mask": 9,
+      "n": 6,
+      "verified": true,
+      "counts": {
+        "integer_vertices": 65000,
+        "integer_edges": 506944,
+        "Core_sampled_vertices": 65000,
+        "Core_sampled_edges": 506944,
+        "full_source_records": 8
+      },
+      "seconds": 44.45548280002549,
+      "scope": "Every physical vertex/frontier/terminal checked by separate finite integer model; selected full Core frontiers and all source full records checked. Same shared Core, no independent engine or exhaustive new Core replay.",
+      "capacity_scope": {
+        "n": 6,
+        "mask": 9,
+        "static_capacity1": false,
+        "counts": {
+          "union_safe/vertices": 20340,
+          "union_safe/DRAW64": 20340,
+          "particular_rule_only/vertices": 7228,
+          "particular_rule_only/DRAW64": 7228
+        },
+        "ranks": {},
+        "full_union_safe_support": 20340,
+        "covered_union_safe": 20340,
+        "unlabelled_union_safe": 0,
+        "uniform_union_safe_WIN64_count_bounds": [
+          0,
+          0
+        ],
+        "source_roots": 8,
+        "source_root_WIN64": 0
+      }
+    }
+  ],
+  "seconds": 1512.0143949999474
+}

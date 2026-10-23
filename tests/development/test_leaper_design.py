@@ -184,3 +184,10 @@ def test_run_preserves_frozen_nonempty_opening_history(tmp_path,monkeypatch):
     from scripts.leaper_portrait import analyze
     analyze(d)
     assert all(r['plies']==3 and r['queries']==1 for r in L.load(d/'portrait.json')['rows'])
+
+
+@pytest.mark.parametrize('changes',[{'check_only_qsearch':True},{'q':4},{'forced_check_depth':2}])
+def test_current_forward_controller_rejects_unimplemented_registered_q_policy(changes):
+    from scripts.leaper_design import policy_limits
+    with pytest.raises(ValueError,match='Q0|q policy'):
+        policy_limits({'nodes':512,**changes},'AB')

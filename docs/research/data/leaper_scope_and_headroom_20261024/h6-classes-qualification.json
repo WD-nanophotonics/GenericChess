@@ -1,0 +1,71 @@
+{
+  "verified": true,
+  "plan": {
+    "question": "Does each fixed-mu H6 history class preserve actual Session legality, terminals, features and nominal headroom?",
+    "inputs_digest": "98cfcb942f0616868e6fdc4060d35b3604808f29cb43d430cfd4b0e68ef80372",
+    "truth_digest": "5d9a98ab594846db32c15579a52e334affc89d2a5dabded71d1c21dbab6b732a",
+    "adjacency_digest": "4cdac0d053a75677d3e3f8132c00feda8698cf79981978090153b7239bcd2e8f",
+    "source_sha256": "4b9ffb4706ce987ad3076b43ff37bda64cae9694da21e178ad90353816b249d1",
+    "caps": {
+      "seconds": 900,
+      "classes": 200000,
+      "Core_edges": 1200000
+    },
+    "scope": "Oneactuallegalfullprefixperequivalenceclass, all128originalstarts/rule, alllegalchildren. Fixedtemplateadmissionprovesvisited-set/remaining/Positionissufficienthere; notothergeneratedsemantics. IndependentactualSessionterminal/submit/featurechecks,noPlayer/newrules/closureexpansion/training/oldcaprefill."
+  },
+  "rows": [
+    {
+      "family": 6,
+      "counts": {
+        "record_replays": 40264,
+        "classes": 40264,
+        "terminal_checkmate": 5128,
+        "terminal_stalemate": 4080,
+        "terminal_repetition": 1328,
+        "terminal_max_ply": 15104
+      },
+      "diagnostic": {
+        "seat0_ongoing_classes": 6080,
+        "D1_B1/2_any_bad_classes": 392,
+        "D1_B1_any_bad_classes": 392,
+        "D1_B2_any_bad_classes": 0,
+        "D2_B1/2_any_bad_classes": 0,
+        "D2_B1_any_bad_classes": 0,
+        "D2_B2_any_bad_classes": 0,
+        "D3_B1/2_any_bad_classes": 0,
+        "D3_B1_any_bad_classes": 0,
+        "D3_B2_any_bad_classes": 0
+      },
+      "actual_class_frontier_sha256": "378b17b7637e15204f0d03a0944c5bdafba7a0e429de42c815675d0a46d52c9e"
+    },
+    {
+      "family": 9,
+      "counts": {
+        "record_replays": 40704,
+        "classes": 40704,
+        "terminal_checkmate": 5128,
+        "terminal_stalemate": 4272,
+        "terminal_repetition": 1352,
+        "terminal_max_ply": 15160
+      },
+      "diagnostic": {
+        "seat0_ongoing_classes": 6128,
+        "D1_B1/2_any_bad_classes": 360,
+        "D1_B1_any_bad_classes": 360,
+        "D1_B2_any_bad_classes": 0,
+        "D2_B1/2_any_bad_classes": 0,
+        "D2_B1_any_bad_classes": 0,
+        "D2_B2_any_bad_classes": 0,
+        "D3_B1/2_any_bad_classes": 0,
+        "D3_B1_any_bad_classes": 0,
+        "D3_B2_any_bad_classes": 0
+      },
+      "actual_class_frontier_sha256": "39f9f46f355e676df834b0983ac5a22c0a83adf5cf60e4dc0876ea84d077fe42"
+    }
+  ],
+  "counts": {
+    "Core_edges": 80840,
+    "classes": 80968
+  },
+  "seconds": 143.81387499999255
+}

@@ -1,0 +1,678 @@
+{
+  "status": "PASS",
+  "plan": {
+    "question": "What nominal zero-training error remains outside the price-sensitive panel, and does depth remove it?",
+    "inputs_digest": "98cfcb942f0616868e6fdc4060d35b3604808f29cb43d430cfd4b0e68ef80372",
+    "truth_digest": "5d9a98ab594846db32c15579a52e334affc89d2a5dabded71d1c21dbab6b732a",
+    "pairs_digest": "4cdac0d053a75677d3e3f8132c00feda8698cf79981978090153b7239bcd2e8f",
+    "laws_digest": "6ecd3c20a66c2bdac76ffe40db294df7e097607ee3144a752d44b50e91bc4820",
+    "profiles": [
+      {
+        "depth": 1,
+        "B": "1/2"
+      },
+      {
+        "depth": 1,
+        "B": "1"
+      },
+      {
+        "depth": 1,
+        "B": "2"
+      },
+      {
+        "depth": 2,
+        "B": "1/2"
+      },
+      {
+        "depth": 2,
+        "B": "1"
+      },
+      {
+        "depth": 2,
+        "B": "2"
+      },
+      {
+        "depth": 3,
+        "B": "1/2"
+      },
+      {
+        "depth": 3,
+        "B": "1"
+      },
+      {
+        "depth": 3,
+        "B": "2"
+      }
+    ],
+    "seconds_cap": 180,
+    "source_sha256": "b7e848eab89c55688b41e90ed7c4c17beaecbb0752e901ea372bd5d1a947069a",
+    "support": "Every original128start/rule and every later complete repeat2 history class under seat0UNIFORM/seat1UNIFORM or FLOOR. No outcome filtering, newPlayer, training, old-slot refill or new initial distribution.",
+    "interpretation": "Nominal uniform-tie error under fixed incoming law. Not actual mainline action/tie choice, policy outcome, training occupation or strength."
+  },
+  "rows": [
+    {
+      "family": 6,
+      "masks": [
+        6,
+        27
+      ],
+      "foe": "UNIFORM",
+      "unique_counts": {
+        "seat0": 6080,
+        "D1_B1/2_bad_contexts": 392,
+        "D1_B1_bad_contexts": 392,
+        "D1_B2_bad_contexts": 0,
+        "D2_B1/2_bad_contexts": 0,
+        "D2_B1_bad_contexts": 0,
+        "D2_B2_bad_contexts": 0,
+        "D3_B1/2_bad_contexts": 0,
+        "D3_B1_bad_contexts": 0,
+        "D3_B2_bad_contexts": 0
+      },
+      "mass": {
+        "all_decisions": "125490299/30481920",
+        "seat0_decisions": "11059703/5080320",
+        "D1_price_set_sensitive_mass": "65297/2540160",
+        "D1_price_error_sensitive_mass": "65297/2540160",
+        "D1_unit_error_price_invariant_mass": "0",
+        "D2_price_set_sensitive_mass": "0",
+        "D2_price_error_sensitive_mass": "0",
+        "D2_unit_error_price_invariant_mass": "0",
+        "D3_price_set_sensitive_mass": "0",
+        "D3_price_error_sensitive_mass": "0",
+        "D3_unit_error_price_invariant_mass": "0"
+      },
+      "profiles": [
+        {
+          "depth": 1,
+          "B": "1/2",
+          "bad_mass": "65297/2540160",
+          "any_bad_mass": "65297/2540160",
+          "all_bad_mass": "65297/2540160",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "130594/11059703"
+        },
+        {
+          "depth": 1,
+          "B": "1",
+          "bad_mass": "206011/15240960",
+          "any_bad_mass": "65297/2540160",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "206011/33179109"
+        },
+        {
+          "depth": 1,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "712513/1270080",
+          "bad_per_seat0_decision": "0"
+        }
+      ],
+      "by_ply": [
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "1/64",
+          "D1_B1_bad_mass": "1/128",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "25607/2540160",
+          "D1_B1_bad_mass": "86941/15240960",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {}
+      ]
+    },
+    {
+      "family": 6,
+      "masks": [
+        6,
+        27
+      ],
+      "foe": "FLOOR",
+      "unique_counts": {
+        "seat0": 496,
+        "D1_B1/2_bad_contexts": 0,
+        "D1_B1_bad_contexts": 0,
+        "D1_B2_bad_contexts": 0,
+        "D2_B1/2_bad_contexts": 0,
+        "D2_B1_bad_contexts": 0,
+        "D2_B2_bad_contexts": 0,
+        "D3_B1/2_bad_contexts": 0,
+        "D3_B1_bad_contexts": 0,
+        "D3_B2_bad_contexts": 0
+      },
+      "mass": {
+        "all_decisions": "739/288",
+        "seat0_decisions": "31/24",
+        "D1_price_set_sensitive_mass": "0",
+        "D1_price_error_sensitive_mass": "0",
+        "D1_unit_error_price_invariant_mass": "0",
+        "D2_price_set_sensitive_mass": "0",
+        "D2_price_error_sensitive_mass": "0",
+        "D2_unit_error_price_invariant_mass": "0",
+        "D3_price_set_sensitive_mass": "0",
+        "D3_price_error_sensitive_mass": "0",
+        "D3_unit_error_price_invariant_mass": "0"
+      },
+      "profiles": [
+        {
+          "depth": 1,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 1,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 1,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "3/8",
+          "bad_per_seat0_decision": "0"
+        }
+      ],
+      "by_ply": [
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {}
+      ]
+    },
+    {
+      "family": 9,
+      "masks": [
+        22,
+        27
+      ],
+      "foe": "UNIFORM",
+      "unique_counts": {
+        "seat0": 6128,
+        "D1_B1/2_bad_contexts": 360,
+        "D1_B1_bad_contexts": 360,
+        "D1_B2_bad_contexts": 0,
+        "D2_B1/2_bad_contexts": 0,
+        "D2_B1_bad_contexts": 0,
+        "D2_B2_bad_contexts": 0,
+        "D3_B1/2_bad_contexts": 0,
+        "D3_B1_bad_contexts": 0,
+        "D3_B2_bad_contexts": 0
+      },
+      "mass": {
+        "all_decisions": "28248427/6773760",
+        "seat0_decisions": "11234233/5080320",
+        "D1_price_set_sensitive_mass": "63607/2540160",
+        "D1_price_error_sensitive_mass": "63607/2540160",
+        "D1_unit_error_price_invariant_mass": "0",
+        "D2_price_set_sensitive_mass": "0",
+        "D2_price_error_sensitive_mass": "0",
+        "D2_unit_error_price_invariant_mass": "0",
+        "D3_price_set_sensitive_mass": "0",
+        "D3_price_error_sensitive_mass": "0",
+        "D3_unit_error_price_invariant_mass": "0"
+      },
+      "profiles": [
+        {
+          "depth": 1,
+          "B": "1/2",
+          "bad_mass": "63607/2540160",
+          "any_bad_mass": "63607/2540160",
+          "all_bad_mass": "63607/2540160",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "127214/11234233"
+        },
+        {
+          "depth": 1,
+          "B": "1",
+          "bad_mass": "200941/15240960",
+          "any_bad_mass": "63607/2540160",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "200941/33702699"
+        },
+        {
+          "depth": 1,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1740031/2540160",
+          "bad_per_seat0_decision": "0"
+        }
+      ],
+      "by_ply": [
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "1/64",
+          "D1_B1_bad_mass": "1/128",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "23917/2540160",
+          "D1_B1_bad_mass": "81871/15240960",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {}
+      ]
+    },
+    {
+      "family": 9,
+      "masks": [
+        22,
+        27
+      ],
+      "foe": "FLOOR",
+      "unique_counts": {
+        "seat0": 576,
+        "D1_B1/2_bad_contexts": 0,
+        "D1_B1_bad_contexts": 0,
+        "D1_B2_bad_contexts": 0,
+        "D2_B1/2_bad_contexts": 0,
+        "D2_B1_bad_contexts": 0,
+        "D2_B2_bad_contexts": 0,
+        "D3_B1/2_bad_contexts": 0,
+        "D3_B1_bad_contexts": 0,
+        "D3_B2_bad_contexts": 0
+      },
+      "mass": {
+        "all_decisions": "2771/1024",
+        "seat0_decisions": "175/128",
+        "D1_price_set_sensitive_mass": "0",
+        "D1_price_error_sensitive_mass": "0",
+        "D1_unit_error_price_invariant_mass": "0",
+        "D2_price_set_sensitive_mass": "0",
+        "D2_price_error_sensitive_mass": "0",
+        "D2_unit_error_price_invariant_mass": "0",
+        "D3_price_set_sensitive_mass": "0",
+        "D3_price_error_sensitive_mass": "0",
+        "D3_unit_error_price_invariant_mass": "0"
+      },
+      "profiles": [
+        {
+          "depth": 1,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 1,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 1,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 2,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1/2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "1",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        },
+        {
+          "depth": 3,
+          "B": "2",
+          "bad_mass": "0",
+          "any_bad_mass": "0",
+          "all_bad_mass": "0",
+          "fork_mass": "1/2",
+          "bad_per_seat0_decision": "0"
+        }
+      ],
+      "by_ply": [
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {},
+        {
+          "D1_B1/2_bad_mass": "0",
+          "D1_B1_bad_mass": "0",
+          "D1_B2_bad_mass": "0",
+          "D2_B1/2_bad_mass": "0",
+          "D2_B1_bad_mass": "0",
+          "D2_B2_bad_mass": "0",
+          "D3_B1/2_bad_mass": "0",
+          "D3_B1_bad_mass": "0",
+          "D3_B2_bad_mass": "0"
+        },
+        {}
+      ]
+    }
+  ],
+  "examples": [],
+  "counts": {
+    "contexts": 44720,
+    "truth": 80712,
+    "nominal": 552360,
+    "nominal_cache_entries": 552360
+  },
+  "seconds": 3.20431900001131
+}

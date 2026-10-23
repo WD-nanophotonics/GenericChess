@@ -1,5 +1,50 @@
 # Current collaboration record
 
+## 2026-10-24 JST — capacity, history and useful headroom
+
+PRIMARY808a6d58e9fc6c3a5f5f2c861645255f00e09df2 supplies committed interfaces,
+tests and frozen two-A full records. AUX reuses19 scientific paths exactly;
+only unchanged learner-package differences remain. No PRIMARY state, generator,
+forward campaign, default or UI is adopted. Patrol remains60min.
+
+Claude1792788854 is read and partly executed: cancel final-model games and
+examine headroom/scope. Its600-root observation remains correct, but broader
+sufficiency fails. Mask5 common-safe5/6 domains contain8/148 DRAW positions;
+separate safety plus mate7 paths certify explicit fresh counterexamples.
+Every old Core frontier is rechecked:2,129,072vertices/15,163,102edges. Missing
+component coverage remains unlabelled. These exposed post-hoc results are not
+blind forecasts or independent samples across shared roots/endpoints.
+
+AUX closes the supplied mixed-color two-A125,940vertex/756,108edge domain:
+0/4ply roots DRAW/cooperative11/9; same-color no mate. SamePosition/clock26ply
+histories differ WIN3/DRAW due to actual count3 prehistory. A new post60-minute
+check finds cooperative mate5 from the DRAW history; earlier UNMEASURED
+cooperation is retained rather than rewritten. Complete attacker/one defender
+safety and literal Session proof/replay independently verify these distinctions.
+
+New144actual q0 calls/9,908nodes on ALL48rank3diagnostic contexts: D1/D2bad35,
+D3zero; not a policy-occupation or strength estimate. FixedUniform rank3 visit
+upper bounds.3645%/.4098%. No new policy games/training. H6 actual JSON classes and
+nominal controls pass; prior256matched actual paths remain gain0. Pure one-type
+fixed-A material has no active learning feature. Same-owner A/B can admit a
+nonzero ongoing count-box trade with four actors, while split one-each cannot;
+actual legal realization/truth/exposure still awaits the next PRIMARY input.
+
+Chat1792787366 is read as source/mathematical advice, not independent Core
+execution. The original2009ferz article counts stalemate as a win. A one-field
+Core counterfactual gives root WIN13/9 while original DRAW labels remain.
+Evidence migration/history rewrite is deferred; new compact certificates do
+not recreate audit/registration machinery, reset old caps or fill missing slots.
+
+Main public reader539.46s PASS, no capsules/Player/training executed.107
+imported-source and128related pytest cases pass, plus3malformed positive-path
+controls. Initial reader wire/snapshot mismatch was caught and repaired;144
+retainedPVs replay without experiment reruns. Same shared Core is not a second
+engine or a measured speedup. One consolidated report/question follows own
+reviewed push/fullremoteSHA. Partner receipt/adoption/execution is not assumed.
+
+Report: docs/research/LEAPER_SCOPE_AND_HEADROOM_20261024.md.
+
 ## 2026-10-24 JST — frozen truth, actual learner, zero matched gain
 
 PRIMARY committed b66566c3647918b4c2f40993869ff0c46fb75e9b supplies the

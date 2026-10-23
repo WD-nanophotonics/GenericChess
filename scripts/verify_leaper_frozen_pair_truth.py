@@ -40,13 +40,14 @@ def compact_spec(row,n):
     return side,(board.index('1'),board.index('2')if'2'in board else None,board.index('3'))
 
 
-def qualify_graph(g,*,core_samples=64):
+def qualify_graph(g,*,core_samples=64,cancel=lambda:None):
     tick=time.perf_counter();n=g.get('n',4);m=g['mask'];c=admit_frozen(g['rule'],m,n)
     states=[unpack_position(p,c.initial_position,n)for p in g['positions']]
     physicals=[compact_spec(p,n)for p in g['positions']];indices={p:i for i,p in enumerate(physicals)}
     if len(indices)!=len(states):raise ValueError('duplicate physical position')
     ee=[];terms={};counts=Counter();sampled={i*(len(states)-1)//max(1,core_samples-1)for i in range(core_samples)}
     for i,(side,spec)in enumerate(physicals):
+        if i%128==0:cancel()
         predicted=integer_actions(spec,m,side,n);terminal=integer_terminal(spec,m,side,n)
         if terminal['status']!='ongoing':
             if predicted:raise ValueError('terminal with legal integer successor')

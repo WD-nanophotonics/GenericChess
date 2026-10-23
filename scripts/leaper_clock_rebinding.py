@@ -217,7 +217,7 @@ def check_domain(certificate,worlds,*,seconds=180,annotate=False):
     return result
 
 
-def verify_history_draw_safety(certificate, raw, record, safety, *, seconds=30):
+def verify_history_draw_safety(certificate, raw, record, safety, *, seconds=30, frozen_singleton=None):
     """Verify a supplied finite draw invariant, without trusting rank labels.
 
     The admitted roster has at most one ordinary actor, owned by seat0.
@@ -226,11 +226,21 @@ def verify_history_draw_safety(certificate, raw, record, safety, *, seconds=30):
     Actual mate precedes that barrier. Later repeats and the fixed clock only
     add draw exits; no arbitrary GameState is synthesized or declared drawn.
     """
-    start=time.perf_counter();_,c,_=admit(raw,require_parity=False)
+    start=time.perf_counter()
+    if frozen_singleton is None:
+        _,c,_=admit(raw,require_parity=False)
+    else:
+        # Separate explicit admission for the already frozen singleton family.
+        # The historical plain4x4 entry retains its original rule contract.
+        from scripts.leaper_frozen_pair_truth import admit_frozen,admit_position
+        from scripts.verify_leaper_frozen_pair_truth import unpack_position
+        n=frozen_singleton['n'];mask=frozen_singleton['mask']
+        c=admit_frozen(raw,mask,n)
     if raw!=certificate['target_rule']:raise ValueError('draw safety rule differs')
     target=GameSession.replay(c,deserialize_game_record(json.dumps(record)))
     if target.result.status.value!='ongoing':raise ValueError('draw safety root must be ongoing')
-    positions=[expand(p,c.initial_position)for p in certificate['positions']]
+    positions=([expand(p,c.initial_position)for p in certificate['positions']]if frozen_singleton is None else
+        [unpack_position(p,c.initial_position,n)for p in certificate['positions']])
     indices={p:i for i,p in enumerate(positions)}
     if len(indices)!=len(positions):raise ValueError('duplicate safety domain position')
     if target.state.position not in indices or indices[target.state.position]!=safety['root']:
@@ -255,7 +265,11 @@ def verify_history_draw_safety(certificate, raw, record, safety, *, seconds=30):
     for i,row in rows.items():
         if role_stop_requested():raise RuntimeError('USER_STOP')
         if time.perf_counter()-start>=seconds:raise RuntimeError('DRAW_SAFETY_VERIFY_CAP_UNKNOWN')
-        position=positions[i];_,ordinary=domain(position)
+        position=positions[i]
+        if frozen_singleton is None:_,ordinary=domain(position)
+        else:
+            admit_position(position,n)
+            ordinary=[(p.owner,k)for k,p in enumerate(position.board)if p is not None and p.current_type_id=='A']
         if any(owner!=0 for owner,_ in ordinary):raise ValueError('bare opponent bound unavailable')
         state=fresh_state(position,c);verified['vertices']+=1
         if state.terminal_status.is_terminal:

@@ -1,0 +1,427 @@
+{
+  "source_checks": 18,
+  "source_capsules_executed": false,
+  "new_Player_calls": 0,
+  "new_experimental_training": 0,
+  "twoa_graph": {
+    "verified": true,
+    "counts": {
+      "Core_vertices": 125940,
+      "Core_edges": 756108,
+      "terminal_stalemate": 536,
+      "terminal_checkmate": 40
+    },
+    "rank_histogram": {
+      "0": 40,
+      "1": 88,
+      "2": 16,
+      "3": 48
+    },
+    "value_counts": {
+      "actor0/for0_0": 56028,
+      "actor1/for0_0": 69720,
+      "actor0/for0_1": 136,
+      "actor1/for0_1": 56
+    },
+    "seconds": 66.82739910006057,
+    "scope": "Every125940physicalvertexand756108edge rebuiltthroughactualpublicCore; sourcefullfrontierhashandrankstrataequal. Onlythisfrozenposition-localtwoAfinitegame; historylabelsrequireseparateincoming-record/clock/repetitionproof."
+  },
+  "twoa_roots": {
+    "verified": true,
+    "counts": {
+      "geometry_pairs": 456,
+      "vertices": 74164,
+      "analytic_exits": 5096,
+      "Core_frontier_edges": 374753,
+      "Core_edges": 237629,
+      "literal_exits": 464,
+      "cooperative_Core_edges": 20
+    },
+    "mixed_roots": [
+      {
+        "state_sha": "373827c99533016e1e5e8c6865549ad557b3b6937913aa5e676e9f7226f2620d",
+        "local_root": 22934,
+        "value": 0,
+        "cooperative": true,
+        "cooperative_length": 11,
+        "root_ply": 0,
+        "remaining": 64,
+        "basis": "complete attacker / one defender closed safety, analytic exits; bare opponent cannot score"
+      },
+      {
+        "state_sha": "5890ec5fc005f8d86e4bac8bff0894962bc9c58c15a5aa044e9c09dfaa50684a",
+        "local_root": 20035,
+        "value": 0,
+        "cooperative": true,
+        "cooperative_length": 9,
+        "root_ply": 4,
+        "remaining": 60,
+        "basis": "complete attacker / one defender closed safety, analytic exits; bare opponent cannot score"
+      }
+    ],
+    "same_colour_roots": [
+      {
+        "record": {
+          "actions": [],
+          "resigned_by": null,
+          "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+          "schema_version": 1
+        },
+        "state_sha": "87e4db0b06cde67db5ce0ff0edab8e18c9fe54a5ca8b732a028f2c9ace431466",
+        "value": 0,
+        "cooperative": false,
+        "basis": "single-colour closed obstruction"
+      },
+      {
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                0
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                4
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                3
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                4
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+          "schema_version": 1
+        },
+        "state_sha": "910af966a0046b50434a77028b69d608d75258e052e56f76bc068f47845ea0fd",
+        "value": 0,
+        "cooperative": false,
+        "basis": "single-colour closed obstruction"
+      }
+    ],
+    "seconds": 37.41586340009235,
+    "scope": "Exactfrozen5x5diag1twoApublicCore safety and actualfullhistorycooperativepaths. No solverranktrusted, newPlayer, genericPosition/historyquotient, trainingorpolicyutility. Futureclock/repetitionaddonlyDRAWexits; mateprecedencechecked."
+  },
+  "twoa_barrier": {
+    "verified": true,
+    "counts": {
+      "geometry_pairs": 456,
+      "vertices": 87659,
+      "Core_frontier_edges": 494172,
+      "Core_edges": 348874,
+      "analytic_exits": 3931,
+      "literal_exits": 416,
+      "count3_draw_exits": 13,
+      "barrier_goals": 2
+    },
+    "mixed_roots": [
+      {
+        "state_sha": "6f07dee1eae5714b39b9c90ff84547ba02f222e830983d103f65aa22e51495ba",
+        "local_root": 5260,
+        "value": 0,
+        "cooperative": "UNMEASURED",
+        "cooperative_length": null,
+        "root_ply": 26,
+        "remaining": 38,
+        "basis": "complete attacker / one defender closed safety, analytic exits; bare opponent cannot score"
+      }
+    ],
+    "same_colour_roots": [
+      {
+        "record": {
+          "actions": [],
+          "resigned_by": null,
+          "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+          "schema_version": 1
+        },
+        "state_sha": "87e4db0b06cde67db5ce0ff0edab8e18c9fe54a5ca8b732a028f2c9ace431466",
+        "value": 0,
+        "cooperative": false,
+        "basis": "single-colour closed obstruction"
+      },
+      {
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                0
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                4
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                3
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                4
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+          "schema_version": 1
+        },
+        "state_sha": "910af966a0046b50434a77028b69d608d75258e052e56f76bc068f47845ea0fd",
+        "value": 0,
+        "cooperative": false,
+        "basis": "single-colour closed obstruction"
+      }
+    ],
+    "seconds": 48.59025590005331,
+    "scope": "Exactfrozen5x5diag1twoApublicCore safety and actualfullhistorycooperativepaths. No solverranktrusted, newPlayer, genericPosition/historyquotient, trainingorpolicyutility. Futureclock/repetitionaddonlyDRAWexits; mateprecedencechecked."
+  },
+  "equalclock_win": {
+    "verified": true,
+    "reason": "verified",
+    "nodes": 4,
+    "seconds": 1.0393109999131411,
+    "terminal_leaves": {
+      "checkmate:None": 1
+    },
+    "session_transitions": 3
+  },
+  "actual_panel": {
+    "verified": true,
+    "counts": {
+      "PV_Core_edges": 288,
+      "Player_queries_retained": 144,
+      "nodes_retained": 9908,
+      "D1_inferior": 35,
+      "D2_inferior": 35,
+      "D3_inferior": 0
+    },
+    "scope": "144existingactualqueriesandPVsreplayed;0newPlayer. Rank3truth-selecteddiagnostics,notpopulationerror/occupation/trainingstartsorutility."
+  },
+  "stalemate_control": {
+    "verified": true,
+    "counts": {
+      "Core_vertices": 125940,
+      "Core_edges": 756108,
+      "terminal_stalemate:0": 536,
+      "terminal_checkmate:0": 40
+    },
+    "rows": [
+      {
+        "value": 1,
+        "rank": 13,
+        "remaining": 64,
+        "state_sha": "7bddd16b62264f04b3c890a1ffbd69425c9f4326fbb957bc8dc8131e83b253c3"
+      },
+      {
+        "value": 1,
+        "rank": 9,
+        "remaining": 60,
+        "state_sha": "5fdda5ae31eeaa00ed2fe7e02902111d27a00ae250184cbf24f22bc203d0d4d0"
+      }
+    ],
+    "seconds": 66.95894390007015,
+    "scope": "Explicitchangedterminalauthorityonly. Currentoriginalstalemate-DRAWrootsremainDRAW; counterfactualWINisnotactualpolicygainorprojectdefault. FullCorefrontiersandcompleteincomingrecordsreread; strictone-sidedrankpreconditionschecked."
+  },
+  "singletons": [
+    {
+      "verified": true,
+      "value_for0": 0,
+      "root_state_sha": "00aa44527d9109fff50bf37970d0d4e62d8ca79c7341fb2ea14b9d6fcea56981",
+      "counts": {
+        "vertices": 1776,
+        "Core_edges": 4357
+      },
+      "seconds": 4.329291000030935,
+      "scope": "Literal complete attacker frontier and one defender choice form a closed draw safety invariant, with actual count3 future-arrival barriers and mate precedence. Bare King cannot win; later draw repetitions and finite clock preserve safety. Constructed history only, no natural occupation or training label."
+    },
+    {
+      "verified": true,
+      "value_for0": 0,
+      "root_state_sha": "bd43bea171fdfd50ae88ed65ade1bac57bc9ffaff5f48eaf9737a86a227484fb",
+      "counts": {
+        "vertices": 7073,
+        "Core_edges": 19192
+      },
+      "seconds": 11.375273099984042,
+      "scope": "Literal complete attacker frontier and one defender choice form a closed draw safety invariant, with actual count3 future-arrival barriers and mate precedence. Bare King cannot win; later draw repetitions and finite clock preserve safety. Constructed history only, no natural occupation or training label."
+    }
+  ],
+  "h6_reproduced": {
+    "headroom_counts": {
+      "contexts": 44720,
+      "truth": 80712,
+      "nominal": 552360,
+      "nominal_cache_entries": 552360
+    },
+    "policy_rows": 16
+  },
+  "exposure_reproduced": {
+    "rows": 4
+  },
+  "capacity_scope_reproduced": {
+    "graphs": 75
+  },
+  "h6_actual_classes": {
+    "verified": true,
+    "plan": {
+      "question": "Does each fixed-mu H6 history class preserve actual Session legality, terminals, features and nominal headroom?",
+      "inputs_digest": "98cfcb942f0616868e6fdc4060d35b3604808f29cb43d430cfd4b0e68ef80372",
+      "truth_digest": "5d9a98ab594846db32c15579a52e334affc89d2a5dabded71d1c21dbab6b732a",
+      "adjacency_digest": "4cdac0d053a75677d3e3f8132c00feda8698cf79981978090153b7239bcd2e8f",
+      "source_sha256": "62a7767991752fe5c9698d7c3f37822a61b506d6b609e7384d34779c12c1b11e",
+      "caps": {
+        "seconds": 900,
+        "classes": 200000,
+        "Core_edges": 1200000
+      },
+      "scope": "Oneactuallegalfullprefixperequivalenceclass, all128originalstarts/rule, alllegalchildren. Fixedtemplateadmissionprovesvisited-set/remaining/Positionissufficienthere; notothergeneratedsemantics. IndependentactualSessionterminal/submit/featurechecks,noPlayer/newrules/closureexpansion/training/oldcaprefill."
+    },
+    "rows": [
+      {
+        "family": 6,
+        "counts": {
+          "record_replays": 40264,
+          "JSON_record_roundtrips": 40264,
+          "classes": 40264,
+          "terminal_checkmate": 5128,
+          "terminal_stalemate": 4080,
+          "terminal_repetition": 1328,
+          "terminal_max_ply": 15104
+        },
+        "diagnostic": {
+          "seat0_ongoing_classes": 6080,
+          "D1_B1/2_any_bad_classes": 392,
+          "D1_B1_any_bad_classes": 392,
+          "D1_B2_any_bad_classes": 0,
+          "D2_B1/2_any_bad_classes": 0,
+          "D2_B1_any_bad_classes": 0,
+          "D2_B2_any_bad_classes": 0,
+          "D3_B1/2_any_bad_classes": 0,
+          "D3_B1_any_bad_classes": 0,
+          "D3_B2_any_bad_classes": 0
+        },
+        "actual_class_frontier_sha256": "378b17b7637e15204f0d03a0944c5bdafba7a0e429de42c815675d0a46d52c9e"
+      },
+      {
+        "family": 9,
+        "counts": {
+          "record_replays": 40704,
+          "JSON_record_roundtrips": 40704,
+          "classes": 40704,
+          "terminal_checkmate": 5128,
+          "terminal_stalemate": 4272,
+          "terminal_repetition": 1352,
+          "terminal_max_ply": 15160
+        },
+        "diagnostic": {
+          "seat0_ongoing_classes": 6128,
+          "D1_B1/2_any_bad_classes": 360,
+          "D1_B1_any_bad_classes": 360,
+          "D1_B2_any_bad_classes": 0,
+          "D2_B1/2_any_bad_classes": 0,
+          "D2_B1_any_bad_classes": 0,
+          "D2_B2_any_bad_classes": 0,
+          "D3_B1/2_any_bad_classes": 0,
+          "D3_B1_any_bad_classes": 0,
+          "D3_B2_any_bad_classes": 0
+        },
+        "actual_class_frontier_sha256": "39f9f46f355e676df834b0983ac5a22c0a83adf5cf60e4dc0876ea84d077fe42"
+      }
+    ],
+    "counts": {
+      "Core_edges": 80840,
+      "classes": 80968
+    },
+    "seconds": 147.02861840010155
+  },
+  "verified": true,
+  "seconds": 539.455254200031
+}

@@ -944,6 +944,91 @@ def forward2_orbit_polynomial(spec,n):
     return {','.join(map(str,k)):v for k,v in sorted(coefficients.items()) if v}
 
 
+
+def multi_actor_forward2_polynomial(king0, ordinary, king1, n):
+    """Exact two-action path polynomial for identical plain A actors vs bare K.
+
+    All actors share the five disjoint offset bits; mover0, fresh H64/repeat4,
+    no other declarations/effects/drops/promotion. Common-safe/ongoing root is
+    required. Quantity k gives degree <=min(k+1,5), not singleton submodularity.
+    An A move supplies x_i and each remaining attacker forbids one orbit bit.
+    """
+    ordinary=tuple(sorted(ordinary));points=(king0,)+ordinary+(king1,)
+    if isinstance(n,bool) or not isinstance(n,int) or n<3 or not ordinary:
+        raise ValueError('square n>=3 and at least one ordinary actor required')
+    if len(set(points))!=len(points) or any(type(z) is not int or not 0<=z<n*n for z in points):
+        raise ValueError('distinct on-board physical actors required')
+    orbit={d:i for i in range(5) for d in L.offsets(1<<i)}
+    def displacement(a,b):
+        ax,ay=xy(a,n);bx,by=xy(b,n);return bx-ax,by-ay
+    if adjacent(xy(king0,n),xy(king1,n)) or any(displacement(a,king1) in orbit for a in ordinary):
+        raise ValueError('root must be safe under every mask')
+    outer=[];available_bits=set();kx,ky=xy(king0,n)
+    for dx,dy in L.offsets(3):
+        x,y=kx+dx,ky+dy;target=n*y+x
+        if 0<=x<n and 0<=y<n and target not in ordinary and not adjacent((x,y),xy(king1,n)):
+            outer.append(((),target,ordinary))
+    king_can_move=bool(outer)
+    for index,source in enumerate(ordinary):
+        ax,ay=xy(source,n)
+        for (dx,dy),bit in orbit.items():
+            x,y=ax+dx,ay+dy;target=n*y+x
+            if not(0<=x<n and 0<=y<n) or target in points:continue
+            child=list(ordinary);child[index]=target
+            outer.append(((bit,),king0,tuple(child)));available_bits.add(bit)
+    if not king_can_move and len(available_bits)!=5:
+        raise ValueError('root is not ongoing for every nonempty mask')
+    coefficients=Counter();vx,vy=xy(king1,n)
+    for gate,k,actors in outer:
+        for dx,dy in L.offsets(3):
+            x,y=vx+dx,vy+dy;target=n*y+x
+            if not(0<=x<n and 0<=y<n) or adjacent((x,y),xy(k,n)):continue
+            # Capturing one A removes just that actor's attack contribution.
+            forbidden={orbit[d] for a in actors if a!=target and (d:=displacement(a,target)) in orbit}
+            terms=Counter({gate:1})
+            for bit in sorted(forbidden):
+                updated=Counter(terms)
+                for monomial,value in terms.items():updated[tuple(sorted(set(monomial+(bit,))))]-=value
+                terms=updated
+            coefficients.update(terms)
+    return {','.join(map(str,k)):v for k,v in sorted(coefficients.items()) if v}
+
+
+def minimum_static_ordinary_count(mask,n):
+    """Minimum IDENTICAL A actors in a mating CONFIGURATION, never reachability.
+
+    Square n>=3, King8 vs bare King, the five fixed disjoint plain-Leap orbits,
+    unrestricted static placements. No inventory/initial-admission or WDL claim.
+    None means no number of these A actors can form mate on that board.
+    """
+    if type(mask) is not int or not 1<=mask<=31 or type(n) is not int or n<3:
+        raise ValueError('five-bit nonempty mask and square n>=3 required')
+    if constructive_corner(L.offsets(mask),n) is not None:return 1
+    # On3x3 diag2 attacks only the opposite corner. Every edge-centre has
+    # zero incoming A attacks. If a corner King is checked, one orthogonal
+    # edge-centre escape lies outside the nonadjacent friendly King's cover.
+    if n==3 and mask==16:return None
+    return 2
+
+
+def static_quantity_witness(mask,n):
+    """Construct a minimum-count static mate witness under the scope above."""
+    count=minimum_static_ordinary_count(mask,n)
+    if count is None:return None
+    if count==1:
+        w=constructive_corner(L.offsets(mask),n)
+        return {'king0':w['king0'],'ordinary':[w['ordinary0']],'king1':w['king1']}
+    # Each singleton orbit has this two-actor corner construction; any added
+    # ordinary attacks cannot restore a bare King's escape. No zero offset.
+    bits=[i for i in range(5) if mask&(1<<i)]
+    bit=next((i for i in bits if i!=4),4)
+    constructions={0:((2,0),((1,0),(0,2))),1:((2,0),((1,1),(1,2))),
+                   2:((2,0),((0,2),(2,1))),3:((2,0),((1,2),(2,2))),
+                   4:((0,2),((2,2),(3,2)))}
+    king,actors=constructions[bit]
+    assert all(0<=x<n and 0<=y<n for x,y in (king,)+actors)
+    return {'king0':list(king),'ordinary':[list(z) for z in actors],'king1':[0,0]}
+
 def evaluate_orbit_polynomial(coefficients,mask):
     return sum(value for term,value in coefficients.items() if all(mask&(1<<int(i)) for i in term.split(',') if i))
 

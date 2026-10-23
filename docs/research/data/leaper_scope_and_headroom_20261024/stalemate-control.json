@@ -1,0 +1,531 @@
+{
+  "status": "PASS",
+  "plan": {
+    "question": "Does counting stalemate as a loss explain why published two-ferz endgame wins cannot be imported into this draw-stalemate toy?",
+    "source_sha": "808a6d58e9fc6c3a5f5f2c861645255f00e09df2",
+    "source_graph_digest": "eee60b8c061f31c87573b6f53c575ef8840d0d37fad9f5789f90c9c568a2c9bc",
+    "changed_only_field": "stalemate_result:draw->loss",
+    "rule": {
+      "schema_version": 1,
+      "piece_types": [
+        {
+          "type_id": "K",
+          "name": "K",
+          "movement_atoms": [
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                0
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                0,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_anchor": true,
+          "is_promotable": false,
+          "promotion_target_ids": []
+        },
+        {
+          "type_id": "A",
+          "name": "A",
+          "movement_atoms": [
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_anchor": false,
+          "is_promotable": false,
+          "promotion_target_ids": []
+        }
+      ],
+      "initial_position": [
+        [
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "A",
+            "current_type_id": "A",
+            "promoted": false
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 0,
+            "base_type_id": "A",
+            "current_type_id": "A",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          }
+        ]
+      ],
+      "drop_allowed": {
+        "A": [
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        ]
+      },
+      "promotion_allowed": {},
+      "promotion_forced": {},
+      "repetition_limit": 4,
+      "max_ply": 64,
+      "stalemate_result": "loss",
+      "initial_setup_options": [
+        {
+          "setup_key": "opposite-colors",
+          "position": [
+            [
+              {
+                "owner": 0,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "A",
+                "current_type_id": "A",
+                "promoted": false
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "A",
+                "current_type_id": "A",
+                "promoted": false
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              }
+            ]
+          ]
+        }
+      ],
+      "board_size": 5,
+      "metadata": {},
+      "capture_disposition": "remove_from_game"
+    },
+    "budget": {
+      "seconds": 600,
+      "vertices": 125940,
+      "edges": 756108
+    },
+    "expected_seconds": 90,
+    "scope": "OneexplicitsemanticcounterfactualonSAMEsuppliedphysicalfrontiers/layouts/histories;0newPlayer/training/default/generatorcampaign/oldcaprefill. Originalactual4rootDRAWlabelsunchanged. NeedfullCoreterminal/frontierrebindingbeforecounterfactualtruth."
+  },
+  "counts": {
+    "Core_vertices": 125940,
+    "Core_edges": 756108,
+    "terminal_stalemate:0": 536,
+    "terminal_checkmate:0": 40
+  },
+  "rows": [
+    {
+      "original_record": {
+        "actions": [],
+        "initial_setup_key": "opposite-colors",
+        "resigned_by": null,
+        "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+        "schema_version": 3
+      },
+      "counterfactual_record": {
+        "actions": [],
+        "initial_setup_key": "opposite-colors",
+        "resigned_by": null,
+        "ruleset_fingerprint": "9786662f7c0ac49eb4ce09141b0d025c87a74fb9001e50f99ae8897da3d4072c",
+        "schema_version": 3
+      },
+      "counterfactual_state_sha": "7bddd16b62264f04b3c890a1ffbd69425c9f4326fbb957bc8dc8131e83b253c3",
+      "graph_value": 1,
+      "rank": 13,
+      "remaining": 64,
+      "value": 1,
+      "only_seat0_scores": true
+    },
+    {
+      "original_record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              4
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          }
+        ],
+        "initial_setup_key": "opposite-colors",
+        "resigned_by": null,
+        "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+        "schema_version": 3
+      },
+      "counterfactual_record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              4
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          }
+        ],
+        "initial_setup_key": "opposite-colors",
+        "resigned_by": null,
+        "ruleset_fingerprint": "9786662f7c0ac49eb4ce09141b0d025c87a74fb9001e50f99ae8897da3d4072c",
+        "schema_version": 3
+      },
+      "counterfactual_state_sha": "5fdda5ae31eeaa00ed2fe7e02902111d27a00ae250184cbf24f22bc203d0d4d0",
+      "graph_value": 1,
+      "rank": 9,
+      "remaining": 60,
+      "value": 1,
+      "only_seat0_scores": true
+    }
+  ],
+  "term_controls": [
+    {
+      "index": 185,
+      "position": [
+        1,
+        "0200000000010000200004000"
+      ],
+      "changed_result": {
+        "status": "stalemate",
+        "winner": 0
+      }
+    },
+    {
+      "index": 2145,
+      "position": [
+        1,
+        "0000020000010000200004000"
+      ],
+      "changed_result": {
+        "status": "stalemate",
+        "winner": 0
+      }
+    },
+    {
+      "index": 2308,
+      "position": [
+        1,
+        "0200000000000004210000000"
+      ],
+      "changed_result": {
+        "status": "stalemate",
+        "winner": 0
+      }
+    },
+    {
+      "index": 2690,
+      "position": [
+        1,
+        "0000000200010000200004000"
+      ],
+      "changed_result": {
+        "status": "stalemate",
+        "winner": 0
+      }
+    }
+  ],
+  "maximum_rank": 26,
+  "seconds": 65.2099871999817,
+  "interpretation": "Semanticterminalcounterfactual,notnewactualpolicyutility/currentruleWIN. Ifonlyseat0scores, strictdecreasingrank<=remainingandboundactualprecounts<=2liftstocounterfactualfullhistory. OriginalsourceRuleSetremainsstalemateDRAW."
+}
