@@ -48,13 +48,33 @@ separate. Proposed proof-bound negatives and literal positives retain26,052
 cooperation/26,212 fork UNKNOWN. No calibration, learner, sampler or default is
 selected.348 budgeted cost queries retain5 time-censors; all1776 PV plies qualify.
 
-Next step already BEGUN: retained rule7 mate7 PV yields three off-PV histories;
-actual one-ply checks close two, leaving ONE actual ply2 history needing a
-bounded mate<=5 certificate. Its full rule/record/clock is published. Failed
-short proof is not DRAW. Seek independent review at the next original probe;
-no own history solver, broad graph or extra worker. A rule-blind shared encoding
-also aliases two ongoing0/1 value inputs; rule-conditioned representations or
-per-rule adaptation remain candidates, with no NNUE training launched.
+[LEAPER_STRATEGY_AND_FORWARD_WIDTH_20261024.md](LEAPER_STRATEGY_AND_FORWARD_WIDTH_20261024.md)
+closes the actual rule7 gap by replaying Chat1792775120's supplied policy on ALL
+Core defenses:22nodes/5mate leaves, rootWIN<=7. The3->7Kingaction stillWIN->DRAW,
+but both rootsWIN; not rootregression. Static iff independently reviewed within
+its exact scope; old Dot budget wording rejected under current user policy.
+
+New24metadata-stratified edges/744Core roots/7560oneply edges yield90forward-width
+decreases, all checked through154Core depth2frontiers;44withoutfirst terminals.
+An existing immediate mate action is monotone in this singleton scope, but its
+uniform-action probability can fall1/7to1/8 at5->7. Exact singleton two-ply width
+is quadratic with nonpositive pair terms; full geometric mean supports596/4712/
+20340 on4/5/6 are separately declared. A real two-ordinary-actor5x5 input has
+third finite difference4, refuting unqualified quadratic/quantity transfer.
+
+The24cost-new masks/576contexts yield1152NEWNative queries at32768/131072:
+1016time limits/130root shortcuts/6node caps,0missing,6818PVCorepliesPASS.
+Width-work rulemean association is strong4x4 but not stably better than coarse
+components5/6; all targets and the signed/absolute criterion ambiguity remain.
+No scalar difficulty/default/learner is selected. The complete public-copy
+reader passes; source capsules are data only, not an independent engine.
+
+Next step actually BEGUN: saved-counter decomposition checks all1152rootshortcut
+flags against literaloneply facts, separates their tiny cost from511nonshortcut
+queries perbudget, and preserves legal/evaluation/key counts. Continue its
+interpretation before buying another query panel. No own historysolver/AUXwrite,
+oldcap refill or unassessed>=120min run. Existing rule-blind value alias remains;
+rule-conditioned encodings remain candidates without NNUE training.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -575,16 +595,16 @@ continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled
 
 ## Current executable reserve —2026-10-24
 
-Main: Can the remaining exact rule7 off-PV history complete the proposed mate7 strategy?
-| Next original probe read independent mathematical/certificate review; match the one published full ply2 record, H64/repeat4 and required mate<=5
-| Complete all-defense certificate or retained UNKNOWN; root/cooperative/action claims kept distinct
-| No own solver/AUX checkout write; failed short certificate is not DRAW, no broad graph or old-cap refill.
-Backup1: Is the active-offset static iff proof missing a legal/capture boundary case?
-| Review the constructive corner/perpendicular escape argument against the80 actual directional controls and finite-board clipping
-| Exact counterexample or independently reviewed scope, full rule/state and cost
-| Do not generalize to rays, asymmetric move/capture permissions, extra actors or reachable promotion/drop histories.
-Backup2: Which next rule-space coordinate can be predicted without confusing representations or mus?
-| Use the existing coupled-graph/branch law, physical action alignment and same-coordinate board controls to freeze one new decision-changing test
-| New rule-level target/input/forecast/cost, not correlated-history calibration or a quality scalar
-| P2/inverse/NNUE remain downstream of valid labels; no label-selected holdout, extra worker or unassessed>=120-minute run.
+Main: Which saved counters explain finite throughput after separating exact root shortcuts?
+| Continue the already started next-counter-decomposition.json on1152sealed returns; inspect legal/evaluation/key timer contracts before combining costs
+| Per-board/budget conditional explanation and a falsifiable smallest next test, keeping1016time-censors and every oldUNKNOWN
+| No new queries before a changed premise/cost case; no scalarquality/pricefit or latent-solver-cost claim.
+Backup1: Where exactly does the singleton quadratic width decomposition cease to apply?
+| Review the supplied root/escape algebra and actual two-actor third-difference4 input at next original Chat probe; derive one concrete scope correction if needed
+| Full fixed rules/history and literal frontier evidence, not assumed quantity conservation
+| No own full-history solver, extra worker, AUX checkout/state write or broad graph.
+Backup2: Can normalized research-record snapshots avoid observed conversion cost without losing originals?
+| Use the sealed32derivedprefix diagnostic and inspect all actual caller field contracts; keep the old raw writer and all frozen experiments unchanged initially
+| Exact current-byte comparison, unsupported/keycollision failure cases and whole-pipeline cost before any proposal
+| Not a new generic journal framework or default; no rerun/refill of old paid games/queries.
 Science remains OPEN.

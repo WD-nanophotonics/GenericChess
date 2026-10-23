@@ -850,4 +850,102 @@ def active_offset_catalog(output):
             'scope':'Mathematicalstaticconfigurationcriterion foronefixedordinaryLeapentityandtwoKing8royals, square n>=3. Asymmetricoffsets allowed. No claimforrays, conditionalcapture/moveasymmetry, extraentities, drops/promotionreachability/aux/effect/scoringvariants orparticularinitialhistory.80Coreminimalcontrols are sourceassistedvalidation, notindependentproof/all2^48enumeration.','Player_calls':0,'solver_calls':0}
     write_json(output,result);return result
 
+
+def qualify_cost_screen(directory,output):
+    """Replay retained cost returns; no Player calls or latent difficulty labels."""
+    import json,math,statistics
+    from collections import defaultdict
+    start=now();tick=time.perf_counter();plan=L.load(directory/'plan.json');execution=L.load(directory/'execution.json')
+    if execution['status'] not in ('CLOSED','FAILED'):raise ValueError('only inspect a closed producer report')
+    assert L.sha(directory/'inputs.json')==plan['input_sha256'] and L.sha(directory/'metadata.json')==plan['metadata_sha256']
+    worlds={w['seed']:w for w in L.load(directory/'inputs.json')['worlds']};metadata={r['seed']:r for r in L.load(directory/'metadata.json')['rows']}
+    assert len(worlds)==len(metadata)==plan['worlds']
+    counts=Counter();rows=[];compiled={};batch=[]
+    for budget in plan['budgets']:
+        path=directory/f'N{budget}.json'
+        if not path.exists():
+            batch.append({'budget':budget,'unattempted':True,'missing':len(worlds)});continue
+        data=L.load(path);protocol=data['protocol'];limits=protocol['query_limits']
+        assert protocol['source_sha256']==plan['runner_source_sha256'] and protocol['input_sha256']==plan['input_sha256']
+        assert protocol['evaluation_backend']=='unit' and protocol['variants']==['all']
+        assert limits['max_depth']==64 and limits['max_nodes']==budget and limits['max_time_seconds']==3 and limits['quiescence_max_depth']==0
+        assert protocol['planned_queries']==len(worlds) and len(data['rows'])+len(data['missing_slots'])==len(worlds)
+        assert not data['failures']
+        retained={w['seed']:w for w in data['worlds']};seen=set()
+        for row in data['rows']:
+            seed=row['seed'];assert seed not in seen;seen.add(seed);w=worlds[seed];meta=metadata[seed]
+            assert row['prefix']==row['rep']==0 and row['variant']=='all'
+            r=L.ruleset_from_dict(w['rule']);assert L.ruleset_to_dict(r,include_metadata=True)==L.ruleset_to_dict(template(meta['mask'],meta['n'],meta['placement']),include_metadata=True)
+            assert L.compute_fingerprint(r)==L.compute_fingerprint(L.ruleset_from_dict(retained[seed]['rule']))
+            assert retained[seed]['roots'][0]['record']==w['roots'][0]['record']
+            c=compiled.setdefault(seed,L.compile_rule(r));ss=L.GameSession.replay(c,L.deserialize_game_record(json.dumps(w['roots'][0]['record'])))
+            assert L.state_sha(ss.state)==meta['initial_state_sha256']
+            d=row['decision'];assert d['nodes']>=0 and d['qnodes']>=0 and row['query_seconds']>0
+            chosen=L.match_action(ss,d['action']);counts['legal_decisions']+=1
+            if d['termination_reason']=='root_immediate_win':
+                check=L.GameSession.replay(c,L.deserialize_game_record(json.dumps(w['roots'][0]['record'])));check.submit(chosen)
+                assert check.state.terminal_status.winner==0;counts['literal_root_immediate_wins']+=1
+            for a in d['principal_variation']:
+                ss.submit(L.match_action(ss,a));counts['Core_PV_plies']+=1
+            counts['provider_available']+=int(row['provider_available']);counts['native_legality_fallbacks']+=d['native_legality_fallbacks']
+            counts['time_limit_returns']+=int(d['termination_reason']=='time_limit');counts['budget_limit_returns']+=int(d['termination_reason']=='node_limit')
+            total=d['nodes']+d['qnodes'];rows.append(dict(meta,budget=budget,nodes=d['nodes'],qnodes=d['qnodes'],total_work=total,query_seconds=row['query_seconds'],setup_seconds=row['player_setup_seconds'],completed_depth=d['completed_depth'],reason=d['termination_reason'],work_per_query_second=total/row['query_seconds']))
+        batch.append({'budget':budget,'observed':len(seen),'missing':len(data['missing_slots']),'wall_seconds':data['wall_seconds'],'reason_histogram':dict(Counter(r['decision']['termination_reason'] for r in data['rows']))})
+    def ranks(values):
+        ordered=sorted(set(values));rank={};pos=1
+        for x in ordered:
+            n=values.count(x);rank[x]=pos+(n-1)/2;pos+=n
+        return [rank[x] for x in values]
+    def rho(x,y):
+        x=ranks(x);y=ranks(y);mx=statistics.mean(x);my=statistics.mean(y);den=math.sqrt(sum((a-mx)**2 for a in x)*sum((b-my)**2 for b in y))
+        return None if den==0 else sum((a-mx)*(b-my) for a,b in zip(x,y,strict=True))/den
+    groups=defaultdict(list)
+    for r in rows:groups[r['n'],r['budget']].append(r)
+    associations=[]
+    features=('graph_components','graph_mean_degree','root_branch','forward2_width','static_capacity')
+    targets=('total_work','completed_depth','query_seconds','work_per_query_second')
+    for (n,budget),rs in sorted(groups.items()):
+        rule_rows=[]
+        for m in sorted({r['mask'] for r in rs}):
+            sel=[r for r in rs if r['mask']==m]
+            rule_rows.append({f:statistics.mean(r[f] for r in sel) for f in features+targets}|{'mask':m,'observed_roots':len(sel)})
+        for target in targets:
+            associations.append({'n':n,'budget':budget,'target':target,'root_count':len(rs),'rule_count':len(rule_rows),'all_planned_roots_observed':len(rs)==plan['roots_per_board_mask']*len(plan['masks']),
+               'root_Spearman':{f:rho([r[f] for r in rs],[r[target] for r in rs]) for f in features},
+               'rule_mean_Spearman':{f:rho([r[f] for r in rule_rows],[r[target] for r in rule_rows]) for f in features}})
+    result={'status':'PASS','started_at':start,'ended_at':now(),'seconds':time.perf_counter()-tick,'counts':dict(counts),'batches':batch,'rows':rows,'associations':associations,
+      'scope':'Finite actually paid work and observed iterations under given cooperative clocks; time-limit returns are censored for requested-depth completion, not uncensored work-needed labels. Correlated roots/shared board distribution,24cost-new masks and new6x6domain. Spearman exploratory screen not fittedquality/WDL/causal claim. All actualPVs Core-replayed, not independentengine. No newPlayer calls.'}
+    write_json(output,result);return result
+
+
+
+def forward2_orbit_polynomial(spec,n):
+    """Exact scoped fresh K+A-v-K width: quadratic, nonpositive pair terms.
+
+    Each outer A action needs one orbit bit. Each bare-K defense is forbidden
+    by at most one disjoint attack orbit. Thus x_i*(1-x_j), with x_i^2=x_i.
+    This is not a general DSL/history/search-work polynomial.
+    """
+    orbit={d:i for i in range(5) for d in L.offsets(1<<i)}
+    coefficients=Counter()
+    for action,child in integer_actions(tuple(spec),31,0,n):
+        k,a,v=child;tid,source,target,_=action
+        if tid=='K':outer=()
+        else:
+            dx=xy(target,n)[0]-xy(source,n)[0];dy=xy(target,n)[1]-xy(source,n)[1];outer=(orbit[dx,dy],)
+        vx,vy=xy(v,n);kx,ky=xy(k,n);ax,ay=xy(a,n)
+        for dx,dy in L.offsets(3):
+            x,y=vx+dx,vy+dy
+            if not(0<=x<n and 0<=y<n) or adjacent((x,y),(kx,ky)):continue
+            coefficients[outer]+=1
+            if (x,y)==(ax,ay):continue # capture removes A's attacks
+            j=orbit.get((x-ax,y-ay))
+            if j is not None:coefficients[tuple(sorted(set(outer+(j,))))]-=1
+    return {','.join(map(str,k)):v for k,v in sorted(coefficients.items()) if v}
+
+
+def evaluate_orbit_polynomial(coefficients,mask):
+    return sum(value for term,value in coefficients.items() if all(mask&(1<<int(i)) for i in term.split(',') if i))
+
+
 if __name__=='__main__':main()

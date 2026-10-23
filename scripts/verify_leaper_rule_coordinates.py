@@ -155,5 +155,73 @@ def verify_runtime_sources(directory,expected):
         assert hashlib.sha256(record['utf8'].encode('utf-8')).hexdigest()==record['sha256']==expected[name]
     return len(expected)
 
+def verify_forward_screen(bundle,output):
+    """Verify exact exported cost inputs/PVs and finite forward facts only."""
+    from scripts.leaper_rule_coordinates import qualify_cost_screen,forward2_orbit_polynomial,evaluate_orbit_polynomial
+    from scripts.replay_leaper_mate_strategy import proposed_strategy,verify as verify_strategy
+    if output.exists():raise ValueError('fresh output required')
+    if not output.resolve().is_relative_to(Path.cwd().resolve()/'.local_agent'):raise ValueError('qualification output must be ignored local artifacts')
+    output.mkdir(parents=True);manifest=L.load(bundle.parent/'screen-manifest.json');compressed=bundle.read_bytes()
+    assert hashlib.sha256(compressed).hexdigest()==manifest['compressed_sha256'];body=gzip.decompress(compressed)
+    assert hashlib.sha256(body).hexdigest()==manifest['decoded_sha256'];data=json.loads(body)
+    assert data['schema']=='genericchess.forward_width_screen.v1'
+    raw=output/'originals'
+    for name,text in data['documents_utf8'].items():
+        if Path(name).name!=name:raise ValueError('flat scientific names required')
+        value=text.encode('utf-8');assert hashlib.sha256(value).hexdigest()==manifest['original_sha256'][name]
+        save_plugin_original(raw/name,value)
+    costs=qualify_cost_screen(raw,output/'costs-checked.json')
+    # Recheck all actual finite one-ply copied observations through Core.
+    inputs={(w['n'],w['mask'],w['rank']):w for w in L.load(raw/'edge-inputs.json')['worlds']};roots=edges=0
+    for line in (raw/'edge-Core-returns.jsonl').read_text(encoding='utf-8').splitlines():
+        observed=json.loads(line);w=inputs[observed['n'],observed['mask'],observed['rank']];c=L.compile_rule(L.ruleset_from_dict(w['rule']));ss=L.GameSession.replay(c,L.deserialize_game_record(json.dumps(w['record'])))
+        assert L.state_sha(ss.state)==observed['root_state_sha256']
+        actual={physical_action(L.record_value(a),observed['n']):(L.record_value(ch.terminal_status),L.state_sha(ch)) for a,ch in L.legal_successors(ss.state,c)}
+        expected={tuple(z['physical_action']):(z['terminal'],z['child_state_sha256']) for z in observed['children']}
+        assert actual==expected;roots+=1;edges+=len(actual)
+    width_profiles=width_edges=0
+    for line in (raw/'forward2-Core-returns.jsonl').read_text(encoding='utf-8').splitlines():
+        observed=json.loads(line);w=inputs[observed['n'],observed['mask'],observed['rank']];c=L.compile_rule(L.ruleset_from_dict(w['rule']));ss=L.GameSession.replay(c,L.deserialize_game_record(json.dumps(w['record'])));first=L.legal_successors(ss.state,c)
+        assert len(first)==len(observed['frontier'])
+        expected={json.dumps(z['action'],sort_keys=True):z for z in observed['frontier']}
+        total=0
+        for a,ch in first:
+            z=expected[json.dumps(L.record_value(a),sort_keys=True)];assert L.state_sha(ch)==z['first_state_sha256'] and L.record_value(ch.terminal_status)==z['terminal']
+            actual={json.dumps(L.record_value(b),sort_keys=True):(L.state_sha(cc),L.record_value(cc.terminal_status)) for b,cc in L.legal_successors(ch,c)}
+            saved={json.dumps(v['action'],sort_keys=True):(v['state_sha256'],v['terminal']) for v in z['responses']};assert actual==saved;total+=len(actual)
+        assert total==observed['width'];width_profiles+=1;width_edges+=total
+    profiles=L.load(raw/'edge-results.json')['root_profiles'];polynomials=L.load(raw/'forward2-polynomial.json')
+    for row in polynomials['rows']:
+        coeff=forward2_orbit_polynomial(row['placement'],row['n']);assert coeff==row['coefficients']
+        for mask in range(1,32):
+            expected=next(r['forward2_width'] for r in profiles if (r['n'],r['mask'],r['rank'])==(row['n'],mask,row['rank']))
+            assert evaluate_orbit_polynomial(coeff,mask)==expected
+    handoff=L.load(raw/'mate7-review-handoff.json');cert=verify_strategy(handoff,proposed_strategy(handoff));retained=L.load(raw/'mate7-final.json')
+    for field in ('root_WDL_for0','node_count','leaf_count','terminal_absolute_plies','nodes'):assert L.record_value(cert[field])==retained[field]
+    two_actor_widths={};two_actor_edges=0
+    for row in L.load(raw/'two-actor-boundary-returns.json')['rows']:
+        c=L.compile_rule(L.ruleset_from_dict(row['rule']));ss=L.GameSession.replay(c,L.deserialize_game_record(json.dumps(row['initial_record'])))
+        assert L.state_sha(ss.state)==row['state_sha256'];expected={json.dumps(z['action'],sort_keys=True):z for z in row['frontier']};first=L.legal_successors(ss.state,c);assert len(first)==len(expected);total=0
+        for ac,ch in first:
+            saved=expected[json.dumps(L.record_value(ac),sort_keys=True)];assert L.state_sha(ch)==saved['state_sha256']
+            actual={json.dumps(L.record_value(b),sort_keys=True):(L.state_sha(cc),L.record_value(cc.terminal_status)) for b,cc in L.legal_successors(ch,c)}
+            retained={json.dumps(z['action'],sort_keys=True):(z['state_sha256'],z['terminal']) for z in saved['responses']};assert actual==retained;total+=len(actual)
+        assert total==row['width'];two_actor_widths[row['mask']]=total;two_actor_edges+=total
+    for difference in L.load(raw/'two-actor-boundary-result.json')['nonzero_third_differences']:
+        base,bits=difference['base'],difference['bits'];assert base>0 and len(set(bits))==3 and all(not base&(1<<i) for i in bits)
+        terms={base|sum(1<<bits[i] for i in range(3) if t&(1<<i)):(-1)**(3-t.bit_count()) for t in range(8)}
+        assert terms=={z['mask']:z['sign'] for z in difference['terms']}
+        assert sum(sign*two_actor_widths[mask] for mask,sign in terms.items())==difference['third_difference']!=0
+    source_count=0
+    for name in ('executed-sources.json','executed-sources-additions.json'):
+        for key,entry in L.load(raw/name)['sources'].items():
+            assert hashlib.sha256(entry['utf8'].encode('utf-8')).hexdigest()==entry['sha256'];source_count+=1
+    result={'status':'PASS','cost_counts':costs['counts'],'cost_batches':costs['batches'],'Core_oneply_roots':roots,'Core_oneply_edges':edges,'Core_forward2_profiles':width_profiles,'Core_second_edges':width_edges,'polynomial_profiles':len(profiles),'certificate_nodes':cert['node_count'],'certificate_leaves':cert['leaf_count'],'two_actor_profiles':len(two_actor_widths),'two_actor_Core_second_edges':two_actor_edges,'data_only_source_capsules':source_count,'bundle_sha256':L.sha(bundle),'scope':'Copied exact scientific originals checked. SharedCore/code, not independentengine/WDL oracle; no newPlayer calls. Mean coefficient census remains producer evidence, not repeated here.'}
+    write_json(output/'qualification.json',result);return result
+
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bundle',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--reuse-pair-phase',type=Path);a=p.parse_args();verify(a.bundle,a.output,a.reuse_pair_phase)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bundle',type=Path);p.add_argument('--screen-bundle',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--reuse-pair-phase',type=Path);a=p.parse_args();
+    if bool(a.bundle)==bool(a.screen_bundle):p.error('exactly one bundle mode required')
+    if a.screen_bundle:print(verify_forward_screen(a.screen_bundle,a.output))
+    else:verify(a.bundle,a.output,a.reuse_pair_phase)

@@ -6899,3 +6899,31 @@ content is reviewed, pushed and full remote SHA verified. Delivery status and
 session acceptance are recorded privately after the actual tool results; this
 entry is not a claim of a reply, receipt or independent mathematical approval.
 No Dot contact, auxiliary checkout/state change or schedule/worker change.
+
+## PRIMARY_SANDBOX —2026-10-24 finite strategy/width/cost segment
+
+Read channel and complete relevant threads once, exact originals privately saved
+before assessment. Chat1792775120 independently supplied a mathematical mate5
+strategy and scoped proof review; PRIMARY actually replayed22Core nodes/all
+defenses, establishing rootWIN<=7. It was not an independent engine or a longer
+experiment approval. Its obsolete Dot budget-review route is rejected. Claude
+1792774112 metadata strata advice is adopted as24preselected edges, while its
+old0815-only gap description is partly superseded by the preceding P0/P1 report.
+AUX1e6728c is cited only as its published self-report, not rerun/merged/taken over.
+
+New evidence: immediate mate set versus uniform-action probability1/7->1/8;
+90literalCore width declines; singleton quadratic law and two-actor third-
+difference4 boundary;1152actualNative calls/6818CorePVplies/1016timecensors,
+130rootwins/6nodecaps/0missing. Width does not stably dominate coarse components
+across boards. Mean count, completion depth, latency and total work remain
+separate; no outcome WDL, universal quality or learner success inferred.
+
+The owned original cost caps/source/inputs are preserved. Both producers close
+with exit0; old1904missing outcomes remainUNKNOWN. A32derivedprefix record-cost
+diagnostic preserves exact current JSON bytes but no running serializer change
+or whole-pipeline speedup is claimed. Twelve source capsules are data only.
+Public-copy qualification passes all1152decisions/6818PVs,744oneply roots,
+154width-decline roots,31two-actor trees and22certificate nodes. Next saved-
+counter step is actually begun; both research roles remain independent. A single
+merged progress/review question is prepared only after tested publication and
+full PRIMARY remoteSHA verification; delivery receipt lives in the local mailbox.
