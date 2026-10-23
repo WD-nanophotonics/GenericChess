@@ -1,0 +1,1730 @@
+{
+  "source_sha": "b71e75b1e0c75960157d79f62e00f3dc872bb82f",
+  "source_path": "docs/research/data/leaper_rule_coordinates_20261024/mate7-review-handoff.json",
+  "source_digest": "609c01ba0212453c1600ce763883b0c6bba0b717e693b9fada83262f0de8c043",
+  "mathematical_reply": "1792775120.678069",
+  "rows": [
+    {
+      "name": "mathematical_remaining",
+      "rank": 5,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 10,
+        "seconds": 0.058427800075151026,
+        "terminal_leaves": {
+          "checkmate:None": 2
+        },
+        "session_transitions": 9
+      },
+      "certificate": {
+        "schema_version": 1,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "target": 0,
+        "root_record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g2",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g18",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+          "schema_version": 1
+        },
+        "root_state_repr_sha256": "3af4413f6818a94e8e3b9c8b065dc7c1dbbba71faccf11909c2e53f7931bda0a",
+        "tree": {
+          "rank": 5,
+          "terminal": null,
+          "edges": [
+            {
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "actor_type_id": "A",
+                  "from": [
+                    0,
+                    1
+                  ],
+                  "geometry_id": "g10",
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_004",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    2
+                  ]
+                }
+              },
+              "child": {
+                "rank": 4,
+                "terminal": null,
+                "edges": [
+                  {
+                    "choice": {
+                      "kind": "ACTION",
+                      "action": {
+                        "actor_type_id": "K",
+                        "from": [
+                          2,
+                          0
+                        ],
+                        "geometry_id": "g12",
+                        "kind": "semantic_board",
+                        "pattern_id": "legacy_008",
+                        "promotion_target_id": null,
+                        "to": [
+                          3,
+                          1
+                        ]
+                      }
+                    },
+                    "child": {
+                      "rank": 3,
+                      "terminal": null,
+                      "edges": [
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "actor_type_id": "K",
+                              "from": [
+                                0,
+                                0
+                              ],
+                              "geometry_id": "g19",
+                              "kind": "semantic_board",
+                              "pattern_id": "legacy_022",
+                              "promotion_target_id": null,
+                              "to": [
+                                1,
+                                1
+                              ]
+                            }
+                          },
+                          "child": {
+                            "rank": 2,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "actor_type_id": "K",
+                                    "from": [
+                                      3,
+                                      1
+                                    ],
+                                    "geometry_id": "g16",
+                                    "kind": "semantic_board",
+                                    "pattern_id": "legacy_016",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      3,
+                                      0
+                                    ]
+                                  }
+                                },
+                                "child": {
+                                  "rank": 1,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "actor_type_id": "A",
+                                          "from": [
+                                            1,
+                                            2
+                                          ],
+                                          "geometry_id": "g8",
+                                          "kind": "semantic_board",
+                                          "pattern_id": "legacy_036",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            2,
+                                            1
+                                          ]
+                                        }
+                                      },
+                                      "child": {
+                                        "rank": 0,
+                                        "terminal": {
+                                          "status": "checkmate",
+                                          "winner": 0,
+                                          "resigned_by": null,
+                                          "declaration_id": null,
+                                          "declared_by": null,
+                                          "declaration_outcome": null,
+                                          "declaration_score": null
+                                        },
+                                        "edges": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "choice": {
+                      "kind": "ACTION",
+                      "action": {
+                        "actor_type_id": "K",
+                        "from": [
+                          2,
+                          0
+                        ],
+                        "geometry_id": "g13",
+                        "kind": "semantic_board",
+                        "pattern_id": "legacy_010",
+                        "promotion_target_id": null,
+                        "to": [
+                          3,
+                          0
+                        ]
+                      }
+                    },
+                    "child": {
+                      "rank": 3,
+                      "terminal": null,
+                      "edges": [
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "actor_type_id": "K",
+                              "from": [
+                                0,
+                                0
+                              ],
+                              "geometry_id": "g19",
+                              "kind": "semantic_board",
+                              "pattern_id": "legacy_022",
+                              "promotion_target_id": null,
+                              "to": [
+                                1,
+                                1
+                              ]
+                            }
+                          },
+                          "child": {
+                            "rank": 2,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "actor_type_id": "K",
+                                    "from": [
+                                      3,
+                                      0
+                                    ],
+                                    "geometry_id": "g15",
+                                    "kind": "semantic_board",
+                                    "pattern_id": "legacy_014",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      3,
+                                      1
+                                    ]
+                                  }
+                                },
+                                "child": {
+                                  "rank": 1,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "actor_type_id": "A",
+                                          "from": [
+                                            1,
+                                            2
+                                          ],
+                                          "geometry_id": "g8",
+                                          "kind": "semantic_board",
+                                          "pattern_id": "legacy_036",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            2,
+                                            1
+                                          ]
+                                        }
+                                      },
+                                      "child": {
+                                        "rank": 0,
+                                        "terminal": {
+                                          "status": "checkmate",
+                                          "winner": 0,
+                                          "resigned_by": null,
+                                          "declaration_id": null,
+                                          "declared_by": null,
+                                          "declaration_outcome": null,
+                                          "declaration_score": null
+                                        },
+                                        "edges": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "complete_original_root",
+      "rank": 7,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 22,
+        "seconds": 0.12703779991716146,
+        "terminal_leaves": {
+          "checkmate:None": 5
+        },
+        "session_transitions": 21
+      },
+      "certificate": {
+        "schema_version": 1,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "target": 0,
+        "root_record": {
+          "actions": [],
+          "resigned_by": null,
+          "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+          "schema_version": 1
+        },
+        "root_state_repr_sha256": "9b730510dd90c3cdf1097b2293a3c4a7f058c485fb52e746048bf51c74bf90ab",
+        "tree": {
+          "rank": 7,
+          "terminal": null,
+          "edges": [
+            {
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "actor_type_id": "A",
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "geometry_id": "g2",
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_024",
+                  "promotion_target_id": null,
+                  "to": [
+                    0,
+                    1
+                  ]
+                }
+              },
+              "child": {
+                "rank": 6,
+                "terminal": null,
+                "edges": [
+                  {
+                    "choice": {
+                      "kind": "ACTION",
+                      "action": {
+                        "actor_type_id": "K",
+                        "from": [
+                          3,
+                          0
+                        ],
+                        "geometry_id": "g15",
+                        "kind": "semantic_board",
+                        "pattern_id": "legacy_014",
+                        "promotion_target_id": null,
+                        "to": [
+                          3,
+                          1
+                        ]
+                      }
+                    },
+                    "child": {
+                      "rank": 5,
+                      "terminal": null,
+                      "edges": [
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "actor_type_id": "K",
+                              "from": [
+                                0,
+                                0
+                              ],
+                              "geometry_id": "g19",
+                              "kind": "semantic_board",
+                              "pattern_id": "legacy_022",
+                              "promotion_target_id": null,
+                              "to": [
+                                1,
+                                1
+                              ]
+                            }
+                          },
+                          "child": {
+                            "rank": 4,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "actor_type_id": "K",
+                                    "from": [
+                                      3,
+                                      1
+                                    ],
+                                    "geometry_id": "g15",
+                                    "kind": "semantic_board",
+                                    "pattern_id": "legacy_014",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      3,
+                                      2
+                                    ]
+                                  }
+                                },
+                                "child": {
+                                  "rank": 3,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "actor_type_id": "A",
+                                          "from": [
+                                            0,
+                                            1
+                                          ],
+                                          "geometry_id": "g10",
+                                          "kind": "semantic_board",
+                                          "pattern_id": "legacy_004",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            1,
+                                            2
+                                          ]
+                                        }
+                                      },
+                                      "child": {
+                                        "rank": 2,
+                                        "terminal": null,
+                                        "edges": [
+                                          {
+                                            "choice": {
+                                              "kind": "ACTION",
+                                              "action": {
+                                                "actor_type_id": "K",
+                                                "from": [
+                                                  3,
+                                                  2
+                                                ],
+                                                "geometry_id": "g15",
+                                                "kind": "semantic_board",
+                                                "pattern_id": "legacy_014",
+                                                "promotion_target_id": null,
+                                                "to": [
+                                                  3,
+                                                  3
+                                                ]
+                                              }
+                                            },
+                                            "child": {
+                                              "rank": 1,
+                                              "terminal": null,
+                                              "edges": [
+                                                {
+                                                  "choice": {
+                                                    "kind": "ACTION",
+                                                    "action": {
+                                                      "actor_type_id": "A",
+                                                      "from": [
+                                                        1,
+                                                        2
+                                                      ],
+                                                      "geometry_id": "g9",
+                                                      "kind": "semantic_board",
+                                                      "pattern_id": "legacy_038",
+                                                      "promotion_target_id": null,
+                                                      "to": [
+                                                        2,
+                                                        2
+                                                      ]
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "rank": 0,
+                                                    "terminal": {
+                                                      "status": "checkmate",
+                                                      "winner": 0,
+                                                      "resigned_by": null,
+                                                      "declaration_id": null,
+                                                      "declared_by": null,
+                                                      "declaration_outcome": null,
+                                                      "declaration_score": null
+                                                    },
+                                                    "edges": []
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "choice": {
+                                              "kind": "ACTION",
+                                              "action": {
+                                                "actor_type_id": "K",
+                                                "from": [
+                                                  3,
+                                                  2
+                                                ],
+                                                "geometry_id": "g16",
+                                                "kind": "semantic_board",
+                                                "pattern_id": "legacy_016",
+                                                "promotion_target_id": null,
+                                                "to": [
+                                                  3,
+                                                  1
+                                                ]
+                                              }
+                                            },
+                                            "child": {
+                                              "rank": 1,
+                                              "terminal": null,
+                                              "edges": [
+                                                {
+                                                  "choice": {
+                                                    "kind": "ACTION",
+                                                    "action": {
+                                                      "actor_type_id": "A",
+                                                      "from": [
+                                                        1,
+                                                        2
+                                                      ],
+                                                      "geometry_id": "g8",
+                                                      "kind": "semantic_board",
+                                                      "pattern_id": "legacy_036",
+                                                      "promotion_target_id": null,
+                                                      "to": [
+                                                        2,
+                                                        1
+                                                      ]
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "rank": 0,
+                                                    "terminal": {
+                                                      "status": "checkmate",
+                                                      "winner": 0,
+                                                      "resigned_by": null,
+                                                      "declaration_id": null,
+                                                      "declared_by": null,
+                                                      "declaration_outcome": null,
+                                                      "declaration_score": null
+                                                    },
+                                                    "edges": []
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "actor_type_id": "K",
+                                    "from": [
+                                      3,
+                                      1
+                                    ],
+                                    "geometry_id": "g16",
+                                    "kind": "semantic_board",
+                                    "pattern_id": "legacy_016",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      3,
+                                      0
+                                    ]
+                                  }
+                                },
+                                "child": {
+                                  "rank": 1,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "actor_type_id": "A",
+                                          "from": [
+                                            0,
+                                            1
+                                          ],
+                                          "geometry_id": "g11",
+                                          "kind": "semantic_board",
+                                          "pattern_id": "legacy_006",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            2,
+                                            1
+                                          ]
+                                        }
+                                      },
+                                      "child": {
+                                        "rank": 0,
+                                        "terminal": {
+                                          "status": "checkmate",
+                                          "winner": 0,
+                                          "resigned_by": null,
+                                          "declaration_id": null,
+                                          "declared_by": null,
+                                          "declaration_outcome": null,
+                                          "declaration_score": null
+                                        },
+                                        "edges": []
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "choice": {
+                      "kind": "ACTION",
+                      "action": {
+                        "actor_type_id": "K",
+                        "from": [
+                          3,
+                          0
+                        ],
+                        "geometry_id": "g18",
+                        "kind": "semantic_board",
+                        "pattern_id": "legacy_020",
+                        "promotion_target_id": null,
+                        "to": [
+                          2,
+                          0
+                        ]
+                      }
+                    },
+                    "child": {
+                      "rank": 5,
+                      "terminal": null,
+                      "edges": [
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "actor_type_id": "A",
+                              "from": [
+                                0,
+                                1
+                              ],
+                              "geometry_id": "g10",
+                              "kind": "semantic_board",
+                              "pattern_id": "legacy_004",
+                              "promotion_target_id": null,
+                              "to": [
+                                1,
+                                2
+                              ]
+                            }
+                          },
+                          "child": {
+                            "rank": 4,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "actor_type_id": "K",
+                                    "from": [
+                                      2,
+                                      0
+                                    ],
+                                    "geometry_id": "g12",
+                                    "kind": "semantic_board",
+                                    "pattern_id": "legacy_008",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      3,
+                                      1
+                                    ]
+                                  }
+                                },
+                                "child": {
+                                  "rank": 3,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "actor_type_id": "K",
+                                          "from": [
+                                            0,
+                                            0
+                                          ],
+                                          "geometry_id": "g19",
+                                          "kind": "semantic_board",
+                                          "pattern_id": "legacy_022",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            1,
+                                            1
+                                          ]
+                                        }
+                                      },
+                                      "child": {
+                                        "rank": 2,
+                                        "terminal": null,
+                                        "edges": [
+                                          {
+                                            "choice": {
+                                              "kind": "ACTION",
+                                              "action": {
+                                                "actor_type_id": "K",
+                                                "from": [
+                                                  3,
+                                                  1
+                                                ],
+                                                "geometry_id": "g16",
+                                                "kind": "semantic_board",
+                                                "pattern_id": "legacy_016",
+                                                "promotion_target_id": null,
+                                                "to": [
+                                                  3,
+                                                  0
+                                                ]
+                                              }
+                                            },
+                                            "child": {
+                                              "rank": 1,
+                                              "terminal": null,
+                                              "edges": [
+                                                {
+                                                  "choice": {
+                                                    "kind": "ACTION",
+                                                    "action": {
+                                                      "actor_type_id": "A",
+                                                      "from": [
+                                                        1,
+                                                        2
+                                                      ],
+                                                      "geometry_id": "g8",
+                                                      "kind": "semantic_board",
+                                                      "pattern_id": "legacy_036",
+                                                      "promotion_target_id": null,
+                                                      "to": [
+                                                        2,
+                                                        1
+                                                      ]
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "rank": 0,
+                                                    "terminal": {
+                                                      "status": "checkmate",
+                                                      "winner": 0,
+                                                      "resigned_by": null,
+                                                      "declaration_id": null,
+                                                      "declared_by": null,
+                                                      "declaration_outcome": null,
+                                                      "declaration_score": null
+                                                    },
+                                                    "edges": []
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "actor_type_id": "K",
+                                    "from": [
+                                      2,
+                                      0
+                                    ],
+                                    "geometry_id": "g13",
+                                    "kind": "semantic_board",
+                                    "pattern_id": "legacy_010",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      3,
+                                      0
+                                    ]
+                                  }
+                                },
+                                "child": {
+                                  "rank": 3,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "actor_type_id": "K",
+                                          "from": [
+                                            0,
+                                            0
+                                          ],
+                                          "geometry_id": "g19",
+                                          "kind": "semantic_board",
+                                          "pattern_id": "legacy_022",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            1,
+                                            1
+                                          ]
+                                        }
+                                      },
+                                      "child": {
+                                        "rank": 2,
+                                        "terminal": null,
+                                        "edges": [
+                                          {
+                                            "choice": {
+                                              "kind": "ACTION",
+                                              "action": {
+                                                "actor_type_id": "K",
+                                                "from": [
+                                                  3,
+                                                  0
+                                                ],
+                                                "geometry_id": "g15",
+                                                "kind": "semantic_board",
+                                                "pattern_id": "legacy_014",
+                                                "promotion_target_id": null,
+                                                "to": [
+                                                  3,
+                                                  1
+                                                ]
+                                              }
+                                            },
+                                            "child": {
+                                              "rank": 1,
+                                              "terminal": null,
+                                              "edges": [
+                                                {
+                                                  "choice": {
+                                                    "kind": "ACTION",
+                                                    "action": {
+                                                      "actor_type_id": "A",
+                                                      "from": [
+                                                        1,
+                                                        2
+                                                      ],
+                                                      "geometry_id": "g8",
+                                                      "kind": "semantic_board",
+                                                      "pattern_id": "legacy_036",
+                                                      "promotion_target_id": null,
+                                                      "to": [
+                                                        2,
+                                                        1
+                                                      ]
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "rank": 0,
+                                                    "terminal": {
+                                                      "status": "checkmate",
+                                                      "winner": 0,
+                                                      "resigned_by": null,
+                                                      "declaration_id": null,
+                                                      "declared_by": null,
+                                                      "declaration_outcome": null,
+                                                      "declaration_score": null
+                                                    },
+                                                    "edges": []
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "counts": {
+    "nodes": 32,
+    "defender_frontiers": 9,
+    "transitions": 30
+  },
+  "terminal_paths": [
+    {
+      "ply": 7,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g18",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "schema_version": 1
+      },
+      "state_sha": "b0b340bd817950ae9089f32efe713a4944f7b85cddadfeb2e935fefbfd1a8cb8",
+      "terminal": "checkmate"
+    },
+    {
+      "ply": 7,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g18",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "schema_version": 1
+      },
+      "state_sha": "7a4c3ed56dd47e86ed031388b90c7ac50f9b9293589f45f1e888ee686daef353",
+      "terminal": "checkmate"
+    },
+    {
+      "ply": 7,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_038",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "schema_version": 1
+      },
+      "state_sha": "32d90dd38569e36a046d38f5277fbd4b5aa85109ea361a9777bcc1e6edd47071",
+      "terminal": "checkmate"
+    },
+    {
+      "ply": 7,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "schema_version": 1
+      },
+      "state_sha": "49fba709a4d50a677ddb14a4e8b0758af4ac4aca894c45957025a7f138568046",
+      "terminal": "checkmate"
+    },
+    {
+      "ply": 5,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "schema_version": 1
+      },
+      "state_sha": "e25878795fdcd14c32699b7467b8fe8165da18cda565977731996fbc5a98b76d",
+      "terminal": "checkmate"
+    },
+    {
+      "ply": 7,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g18",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "schema_version": 1
+      },
+      "state_sha": "b0b340bd817950ae9089f32efe713a4944f7b85cddadfeb2e935fefbfd1a8cb8",
+      "terminal": "checkmate"
+    },
+    {
+      "ply": 7,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g18",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "223e4c77c1f3aee7e63195f8014a51dc58fd966a06057e25ac1f790648d99691",
+        "schema_version": 1
+      },
+      "state_sha": "7a4c3ed56dd47e86ed031388b90c7ac50f9b9293589f45f1e888ee686daef353",
+      "terminal": "checkmate"
+    }
+  ],
+  "seconds": 0.22613329999148846,
+  "scope": "Two literal all-defense certificates for a supplied partial policy; no shortest-distance assertion, new graph, selected rules, labels for training or closed-cap refill. Generic search proof is separate from direct supplied-policy replay."
+}

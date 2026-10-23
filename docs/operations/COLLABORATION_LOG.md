@@ -1479,3 +1479,51 @@ Session5da3cbc0-425b-4dc5-92aa-586d05294cde confirms4335.523333s(72.259min);
 administrative docs/publication/transport are excluded. Safe finish is accepted and the executable memo is synchronized. Delivery target origin/sidemission; immutable final
 SHA and one combined progress/question message follow push verification.
 Partner read/adoption/execution of these new results remains unconfirmed.
+
+## DEV_AUX 2026-10-24: supplied proof, exposure and tie mechanism
+
+Segment60cf05b9-7b10-41a8-95aa-419dea1da964 confirms4086.464115effective seconds
+(68.108min); later docs/publication/transport are excluded. Current bounded
+questions close; long-term research remains open. See
+LEAPER_HISTORY_EXPOSURE_AND_TIES_20261024.md and its scientific packet.
+
+PRIMARY supplied committed b71e75b1e0c75960157d79f62e00f3dc872bb82f coordinates
+and the exact remaining mate7 branch. AUX reused11 paths byte-for-byte, with no
+new shared-package changes beyond its prior two learner files. Their hashes
+match previous actual-query sources. No other-role state or uncommitted work.
+Mathematical reply1792775120 was read/adopted as mathematical advice, then AUX
+actually executed its strategy: remainder10nodes9edges, fullroot22nodes21edges
+proveWIN<=5/7. This is not partner engine execution or a rewritten sourceUNKNOWN.
+
+AUX's repeat4 constructed controls match board/ply11/currentcount1/actions but
+differDRAW/WINrank12. Independent258vertex safety/547Coreedges and97nodeWINproof
+bind them. A common future3ply prefix draws only in one prehistory. No generic
+history quotient or unconditional Position scalar was adopted.
+
+Complete uniform prefixes expose firstfork withprobability11261/12960 byply4 on
+both supplied fresh inputs. Actual194-context D1/D2 support reuses32 receipts
+(14oldteacher18sparse) and executes356newkeys only. D1bad54/D2bad0; all54bad permit
+literal captureA into the bare-King draw domain. Full3952vertex/36816Coreedge
+rotation and210pairedfullprefixes isolate lexicalties: D1bad0/97vs54/97, D2both0.
+Two inputs are correlated symmetry controls. This is first-decision evidence,
+not complete policy strength. Late labels remain arbitrary; the pooled error
+contrast bound[.224219,.486411] does not fill or rerun the180s failed fullH64law.
+
+Positive B-price controls and all128H6root nominal cells give no current root
+action-quality price sensitivity. Free PV gradients are zero in the96direct
+escape calls;64otherD1gradient-capable roots allforcedLOSS. Later-history signal
+remains a legitimate separate question. No learning episode/model update.
+
+Probe55threads56rawreturns preserves historical ledgers. Claude1792774112 is
+partly adopted for clock/target/interface separation; new sampling and guessed
+wholecost are deferred to PRIMARY. Existing clock ranks decompose2592H6draws into
+184clock-blocked,672no-reachable-mate,1736strategic draws without a new H-grid.
+No new rules/layouts, forwardgames, defaults, workers, Goals or timers. Current
+newPlayerwork488queries13138nodes; old1904missing outcomes and MU_UNAVAILABLE stay.
+
+167focusedtests and new/parent/PRIMARY readers30.793/63.948/210.335s pass.
+No speedup or intrinsic piece-price claim. Actual CRLF/Git-filter incompatibility
+was fixed by preserving scientific data bytes and LF-pinning four reader sources.
+Code executed before closing commit; post-execution hashes are qualifications,
+not blinding. Own reviewed sidemission publication/fullSHA and one combined
+Slack progress/question follow. Partner read/adoption/execution remains unconfirmed.

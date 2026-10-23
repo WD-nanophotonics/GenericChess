@@ -1,0 +1,89 @@
+{
+  "plan": {
+    "question": "Existence of two legal constructed repeat4 histories from the same supplied fresh root, same current Position/clock/current-count1 but different WDL; no natural-occupation or training claim",
+    "source_digest": "3afc22bf8035ba168a943f31a9b78cb6c49183b6f693c399df748952f466a59b",
+    "root_index": 0,
+    "seconds": 900,
+    "selection": "BFS shortest prefix plus first disjoint physical4cycle repeated twice then one new endpoint. Deterministic index order. Stop at first validated candidate disagreement or exhaustion/cap."
+  },
+  "counts": {
+    "cycle_pivots": 44,
+    "attractors": 44,
+    "constructed_candidates": 136
+  },
+  "found": [
+    {
+      "sequence": [
+        0,
+        4,
+        35,
+        100,
+        327,
+        770,
+        35,
+        100,
+        327,
+        770,
+        35,
+        106
+      ],
+      "pivot": 35,
+      "endpoint": 106,
+      "ply": 11,
+      "current_count": 1,
+      "counts": {
+        "0": 1,
+        "4": 1,
+        "35": 3,
+        "100": 2,
+        "327": 2,
+        "770": 2,
+        "106": 1
+      },
+      "blocked": [
+        35
+      ],
+      "value": 0,
+      "unblocked_value": 1
+    },
+    {
+      "sequence": [
+        0,
+        9,
+        45,
+        101,
+        329,
+        780,
+        45,
+        101,
+        329,
+        780,
+        45,
+        106
+      ],
+      "pivot": 45,
+      "endpoint": 106,
+      "ply": 11,
+      "current_count": 1,
+      "counts": {
+        "0": 1,
+        "9": 1,
+        "45": 3,
+        "101": 2,
+        "329": 2,
+        "780": 2,
+        "106": 1
+      },
+      "blocked": [
+        45
+      ],
+      "value": 1,
+      "unblocked_value": 1
+    }
+  ],
+  "seconds": 1.7997183999978006,
+  "domain_vertices": 3952,
+  "domain_edges": 18408,
+  "domain_digest": "3afc22bf8035ba168a943f31a9b78cb6c49183b6f693c399df748952f466a59b",
+  "status": "CANDIDATE"
+}

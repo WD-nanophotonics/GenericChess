@@ -87,6 +87,123 @@ def compare_pair_policies(directory,adjacency,plan):
         scope='Same128admitted fullhistory starts perrule. Seat0uniform,seat1uniform orliteralimmediateWINotherwiseuniform(FLOOR). Exactanalytic law,no newPlayer orsampledpolicygames,training,rule/layout selection orstrengthgeneralization.')
 
 
+def summarize_pair_onsets(laws, adjacency):
+    """Zero-query descriptive first-event laws on the original paired mu.
+
+    Subgroups use the already exposed direct-root escape flag, never a new
+    rule/layout selection or a changed headline. Even/odd plies are actors0/1
+    because these admitted histories start with seat0 and strictly alternate.
+    """
+    results=[]
+    for pair in adjacency['pairs']:
+        roots=pair['rows'];n=len(roots)
+        if not n:raise ValueError('empty paired onset support')
+        for tag,side in [('left_family','left_id'),('right_family','right_id')]:
+            family=pair[tag]
+            for opponent in ('UNIFORM','FLOOR'):
+                source=[r for r in laws['rows']if r['family']==family and r['opponent']==opponent]
+                rows={r['id']:r for r in source}
+                if len(rows)!=len(source)or set(rows)!={r[side]for r in roots}:
+                    raise ValueError('onset laws do not match paired support')
+                for group in ('all','direct_escape','other'):
+                    chosen=[r for r in roots if group=='all'or bool(r['new_best_escapes'])==(group=='direct_escape')]
+                    if not chosen:continue
+                    selected=[rows[r[side]]for r in chosen];mass={}
+                    for row in selected:
+                        fork=list(map(F,row['first_fork_ply_mass']));lower=list(map(F,row['first_lowering_ply_mass']))
+                        if len(fork)!=6 or len(lower)!=6 or any(v<0 for v in fork+lower)or sum(fork)>1 or sum(lower)>1:
+                            raise ValueError('invalid first-event law')
+                        if any(sum(lower[:k])>sum(fork[:k])for k in range(1,7)):
+                            raise ValueError('lowering cannot precede a fork')
+                        if F(row['expected_fork_visits'])<sum(fork)or F(row['expected_guarantee_lowering_decisions'])<sum(lower):
+                            raise ValueError('first event exceeds expected visits')
+                    avg=lambda key,k:sum(F(r[key][k])for r in selected)/len(selected)
+                    for key in ('first_fork_ply_mass','first_lowering_ply_mass'):
+                        vv=[avg(key,k)for k in range(6)];ever=sum(vv)
+                        mass[key]=dict(by_ply=list(map(str,vv)),by_actor=[str(sum(vv[a::2]))for a in(0,1)],
+                            ever=str(ever),never=str(1-ever),conditional_mean_ply=str(sum(k*v for k,v in enumerate(vv))/ever)if ever else None)
+                    decisions=sum(F(r['expected_decisions'])for r in selected)/len(selected)
+                    visits=sum(F(r['expected_fork_visits'])for r in selected)/len(selected)
+                    lowering=sum(F(r['expected_guarantee_lowering_decisions'])for r in selected)/len(selected)
+                    results.append(dict(family=family,opponent=opponent,group=group,roots=len(selected),mu_weight=str(F(len(selected),n)),
+                        expected_decisions=str(decisions),expected_fork_visits=str(visits),decision_weighted_fork_rate=str(visits/decisions),
+                        expected_lowering=str(lowering),decision_weighted_lowering_rate=str(lowering/decisions),**mass))
+    return dict(format='leaper-saved-pair-first-onsets-v1',laws_digest=digest(laws),adjacency_digest=digest(adjacency),rows=results,
+        scope='Zero new solver,Player,Core orsampledgame calls. Original common128freshhistories,exposed16directescape versus112other subgroup. Firsteventprobability/time/actor and decisionweightedvisits are distinct; subgroups are descriptive, not selected newmu or independent validation.')
+
+
+def supplied_first_fork_prefix(certificate, worlds, *, last_ply=4, seconds=60, max_edges=50000):
+    """Complete literal shallow-prefix control; no whole-H64 cap refill.
+
+    At most five plies of this admitted roster cannot reach a third visit
+    (physical cycles require at least four plies). The caller verifies counts
+    anyway. Existing closed-domain ranks therefore supply prefix action WDL;
+    every path itself is carried by an actual full GameSession.
+    """
+    from copy import copy
+    from dataclasses import replace
+    from collections import deque
+    from scripts.leaper_clock_rebinding import expand
+    from scripts.leaper_single_parity_truth import admit as admit_single
+    from scripts.leaper_retrograde import fresh_state,attractor
+    from scripts.leaper_design import state_sha
+    from generic_chess.core.transition import legal_successors
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record,serialize_game_record
+    if type(last_ply)is not int or not 0<=last_ply<=4:raise ValueError('shallow control allows ply0..4 only')
+    tick=time.perf_counter();raw=certificate['target_rule'];_,c,_=admit_single(raw,require_parity=False)
+    positions=[expand(p,c.initial_position)for p in certificate['positions']];ix={p:i for i,p in enumerate(positions)}
+    edges=[];terms={};counts=Counter()
+    def guard():
+        if role_stop_requested():raise Cap('USER_STOP')
+        if time.perf_counter()-tick>=seconds or counts['Core_edges']>max_edges:raise Cap('SHALLOW_PREFIX_CAP_UNKNOWN')
+    for i,p in enumerate(positions):
+        guard();s=fresh_state(p,c)
+        if s.terminal_status.is_terminal:
+            w=s.terminal_status.winner;terms[i]=0 if w is None else 1 if w==p.side_to_move else-1;edges.append(())
+        else:
+            children=legal_successors(s,c);counts['Core_edges']+=len(children)
+            if any(ch.position not in ix for _,ch in children):raise ValueError('prefix source domain not closed')
+            edges.append(tuple(ix[ch.position]for _,ch in children))
+    values,ranks=attractor(edges,terms);rows=[]
+    for world in worlds:
+        if world['world']not in certificate['target_worlds']or world['initial_record']['actions']:continue
+        _,tc,_=admit_single(world['rule'],require_parity=False)
+        if {k:v for k,v in raw.items()if k!='initial_position'}!={k:v for k,v in world['rule'].items()if k!='initial_position'}:
+            raise ValueError('prefix world dynamics differ')
+        root=GameSession.replay(tc,deserialize_game_record(json.dumps(world['initial_record'])))
+        todo=deque([(root,F(1))]);mass=[F(0)]*(last_ply+1);terminal=F(0);survival=F(0);details=[]
+        while todo:
+            guard();s,prob=todo.popleft();ply=s.state.ply_count;counts['literal_contexts']+=1
+            if s.result.status.value!='ongoing':terminal+=prob;continue
+            if any(n>=3 for _,n in s.state.repetition_counts):raise ValueError('unexpected shallow count3 barrier')
+            branches=[]
+            for action,child in legal_successors(s.state,tc):
+                counts['Core_edges']+=1
+                if child.terminal_status.is_terminal:
+                    w=child.terminal_status.winner;value=0 if w is None else 1 if w==0 else-1
+                else:
+                    p=replace(child.position,ruleset_fingerprint=c.ruleset_fingerprint);j=ix[p]
+                    rel=values[j]if values[j]and ranks[j]<=tc.max_ply-child.ply_count else 0
+                    value=rel if p.side_to_move==0 else-rel
+                branches.append((action,value))
+            fork=len({v for _,v in branches})>1
+            details.append(dict(world=world['world'],id=state_sha(s.state),ply=ply,actor=s.state.position.side_to_move,
+                probability=str(prob),fork=fork,action_WDL=[v for _,v in branches],
+                record=json.loads(serialize_game_record(s.to_record()))))
+            if fork:mass[ply]+=prob;continue
+            if ply==last_ply:survival+=prob;continue
+            for action,_ in branches:
+                child=copy(s);child.submit(action);counts['public_session_transitions']+=1
+                todo.append((child,prob/len(branches)))
+        if sum(mass)+terminal+survival!=1:raise ValueError('prefix probability does not conserve mass')
+        rows.append(dict(world=world['world'],first_fork_by_ply=list(map(str,mass)),
+            terminal_before_fork=str(terminal),ongoing_no_fork_through_last_ply=str(survival),
+            eventual_first_fork_bounds=[str(sum(mass)),str(sum(mass)+survival)],details=details))
+    return dict(domain_digest=digest(certificate),last_ply=last_ply,rows=rows,counts=dict(counts),seconds=time.perf_counter()-tick,
+        scope='Complete literal uniform-policy prefix law throughfixedply4 on existingPRIMARYfreshroots; no naturalPlayer strength, training or fullH64law completion. Positiveforkmass is a rigorous lowerbound on eventualexposure; remainingongoingmass is retained, notdraw. The earlier180sDFS cap staysclosed.')
+
+
 def run(directory,plan,output=None):
     directory=Path(directory);inputs=load(directory/'inputs.json.gz');truth=load(directory/'truth.json.gz');start=time.perf_counter();rows=[];families=[];status='COMPLETE'
     source_by={r['state_sha256']:r for r in inputs['rows']};rby={r['id']:r for r in truth['roots']}

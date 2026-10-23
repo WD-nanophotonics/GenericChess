@@ -1,0 +1,66 @@
+{
+  "rows": [
+    {
+      "depth": 1,
+      "world": 24,
+      "contexts": 97,
+      "arrival_mass": "11261/12960",
+      "actual_error_mass": "0",
+      "conditional_error": "0"
+    },
+    {
+      "depth": 1,
+      "world": 26,
+      "contexts": 97,
+      "arrival_mass": "11261/12960",
+      "actual_error_mass": "38681/54432",
+      "conditional_error": "193405/236481"
+    },
+    {
+      "depth": 2,
+      "world": 24,
+      "contexts": 97,
+      "arrival_mass": "11261/12960",
+      "actual_error_mass": "0",
+      "conditional_error": "0"
+    },
+    {
+      "depth": 2,
+      "world": 26,
+      "contexts": 97,
+      "arrival_mass": "11261/12960",
+      "actual_error_mass": "0",
+      "conditional_error": "0"
+    }
+  ],
+  "bad_D1_controls": 54,
+  "bad_D1_with_immediate_capture_A": 54,
+  "counts_by_depth": [
+    {
+      "UNKNOWN": 0,
+      "depth": 1,
+      "inferior": 54,
+      "known_actions": 194,
+      "nodes": 1770,
+      "queries": 194,
+      "requested_complete": 194,
+      "seconds": 1.1226823995821178
+    },
+    {
+      "UNKNOWN": 0,
+      "depth": 2,
+      "inferior": 0,
+      "known_actions": 194,
+      "nodes": 5619,
+      "queries": 194,
+      "requested_complete": 194,
+      "seconds": 1.734483000007458
+    }
+  ],
+  "new_queries": 356,
+  "new_nodes": 6533,
+  "reused": {
+    "disjoint_sparse": 18,
+    "previous_teacher": 14
+  }
+}

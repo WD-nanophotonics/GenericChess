@@ -1,0 +1,45 @@
+{
+  "verified": true,
+  "transformation": "R(x,y)=(3-y,x)",
+  "source_world": 24,
+  "target_world": 26,
+  "counts": {
+    "physical_vertices": 3952,
+    "Core_edges": 36816,
+    "full_prefix_pairs": 210
+  },
+  "queries": [
+    {
+      "depth": 1,
+      "counts": {
+        "first_fork_pairs": 97,
+        "choices_not_rotated": 97,
+        "left_first_lexical_maximizer": 97,
+        "right_first_lexical_maximizer": 97,
+        "left_inferior": 0,
+        "right_inferior": 54,
+        "quality_differs": 54
+      },
+      "arrival_error_mass": [
+        "0",
+        "38681/54432"
+      ]
+    },
+    {
+      "depth": 2,
+      "counts": {
+        "first_fork_pairs": 97,
+        "choices_not_rotated": 95,
+        "left_inferior": 0,
+        "right_inferior": 0,
+        "quality_differs": 0
+      },
+      "arrival_error_mass": [
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "seconds": 8.05804040003568,
+  "scope": "All3952closedphysicalvertices and BOTHactualCorefrontiers bind the two frozen pureLeaper rules;210pairedfullprefixes preserve checks,clock,repetitionequality andprobability. Bothnominalmaximizersets rotate. Actuallexicaltiechoices neednotrotate; qualitydifference is algorithmrepresentationeffect underconditionaluniformarrival, not changedrules/values or end-to-end policystrength. No newPlayerquery or genericDSL-isomorphism claim."
+}

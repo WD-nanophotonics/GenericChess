@@ -1,6 +1,14 @@
 .githooks/* text eol=lf
 *.cmd text eol=crlf
 
+# Preserve the current source-bound Leaper evidence and portable reader bytes.
+docs/research/data/leaper_history_barriers_20261024/** -text whitespace=cr-at-eol
+docs/research/data/leaper_rule_coordinates_20261024/** -text whitespace=cr-at-eol
+scripts/leaper_clock_rebinding.py text eol=lf
+scripts/leaper_h6_initial_truth.py text eol=lf
+scripts/leaper_h6_occupation.py text eol=lf
+scripts/verify_leaper_h6_pair_transfer.py text eol=lf
+
 # Preserve new DEV_AUX scientific records exactly; their hashes bind raw bytes.
 results/dev_aux/task027/** -text
 results/dev_aux/task028/** -text

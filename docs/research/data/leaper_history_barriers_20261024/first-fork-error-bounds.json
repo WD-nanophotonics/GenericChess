@@ -1,0 +1,115 @@
+{
+  "rows": [
+    {
+      "world": 24,
+      "first_fork_observed_mass": "11261/12960",
+      "unobserved_late_mass": "1699/12960",
+      "policies": {
+        "FLOOR": {
+          "observed_error_mass": "237800711/943034400",
+          "conditional_early_error": "237800711/819406665",
+          "arbitrary_late_completion_bounds": [
+            "237800711/943034400",
+            "180714223/471517200"
+          ]
+        },
+        "nominal_uniform_tie_D1": {
+          "observed_error_mass": "937364999/3772137600",
+          "conditional_early_error": "937364999/3277626660",
+          "arbitrary_late_completion_bounds": [
+            "937364999/3772137600",
+            "1431875939/3772137600"
+          ]
+        },
+        "nominal_uniform_tie_D2": {
+          "observed_error_mass": "1217/453600",
+          "conditional_early_error": "1217/394135",
+          "arbitrary_late_completion_bounds": [
+            "1217/453600",
+            "30341/226800"
+          ]
+        },
+        "actual_D1": {
+          "observed_error_mass": "0",
+          "conditional_early_error": "0",
+          "arbitrary_late_completion_bounds": [
+            "0",
+            "1699/12960"
+          ]
+        },
+        "actual_D2": {
+          "observed_error_mass": "0",
+          "conditional_early_error": "0",
+          "arbitrary_late_completion_bounds": [
+            "0",
+            "1699/12960"
+          ]
+        }
+      },
+      "D1_minus_D2_arbitrary_completion_bounds": [
+        "-1699/12960",
+        "1699/12960"
+      ]
+    },
+    {
+      "world": 26,
+      "first_fork_observed_mass": "11261/12960",
+      "unobserved_late_mass": "1699/12960",
+      "policies": {
+        "FLOOR": {
+          "observed_error_mass": "237800711/943034400",
+          "conditional_early_error": "237800711/819406665",
+          "arbitrary_late_completion_bounds": [
+            "237800711/943034400",
+            "180714223/471517200"
+          ]
+        },
+        "nominal_uniform_tie_D1": {
+          "observed_error_mass": "937364999/3772137600",
+          "conditional_early_error": "937364999/3277626660",
+          "arbitrary_late_completion_bounds": [
+            "937364999/3772137600",
+            "1431875939/3772137600"
+          ]
+        },
+        "nominal_uniform_tie_D2": {
+          "observed_error_mass": "1217/453600",
+          "conditional_early_error": "1217/394135",
+          "arbitrary_late_completion_bounds": [
+            "1217/453600",
+            "30341/226800"
+          ]
+        },
+        "actual_D1": {
+          "observed_error_mass": "38681/54432",
+          "conditional_early_error": "193405/236481",
+          "arbitrary_late_completion_bounds": [
+            "38681/54432",
+            "57271/68040"
+          ]
+        },
+        "actual_D2": {
+          "observed_error_mass": "0",
+          "conditional_early_error": "0",
+          "arbitrary_late_completion_bounds": [
+            "0",
+            "1699/12960"
+          ]
+        }
+      },
+      "D1_minus_D2_arbitrary_completion_bounds": [
+        "78863/136080",
+        "57271/68040"
+      ]
+    }
+  ],
+  "uniform_two_root_mu": {
+    "observed_D1_minus_D2_error_mass": "38681/108864",
+    "unobserved_late_mass": "1699/12960",
+    "arbitrary_late_completion_contrast_bounds": [
+      "122047/544320",
+      "264763/544320"
+    ]
+  },
+  "scope": "Exactfirst-fork one-decision quality underuniformarrival, not completeD1/D2policy strength or score. Unobservedlate labels stay arbitrary[0,1], not DRAW or completedqueries. A positivecontrastlowerbound survivesalllate-labelcompletions, conditional ondefining onelegal decision there. Twofrozenrotatedroots are correlated controls, not IIDrules orholdout."
+}

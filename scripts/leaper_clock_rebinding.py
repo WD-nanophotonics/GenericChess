@@ -215,3 +215,79 @@ def check_domain(certificate,worlds,*,seconds=180,annotate=False):
         scope='Actual target Core closure reverified on supplied existing vertices, no expansion. Repeat4 incoming count3 sinks plus strictly decreasing decisive rank and actual remaining H64 clock. No arbitrary history quotient; no imported scalar oldWDL label.')
     if annotate:result['certificate_decisions']=list(decision_rows.values())
     return result
+
+
+def verify_history_draw_safety(certificate, raw, record, safety, *, seconds=30):
+    """Verify a supplied finite draw invariant, without trusting rank labels.
+
+    The admitted roster has at most one ordinary actor, owned by seat0.
+    The bare opposing King cannot score. All seat0 actions and one actual
+    seat1 action must stay in the invariant or enter a prior count3 barrier.
+    Actual mate precedes that barrier. Later repeats and the fixed clock only
+    add draw exits; no arbitrary GameState is synthesized or declared drawn.
+    """
+    start=time.perf_counter();_,c,_=admit(raw,require_parity=False)
+    if raw!=certificate['target_rule']:raise ValueError('draw safety rule differs')
+    target=GameSession.replay(c,deserialize_game_record(json.dumps(record)))
+    if target.result.status.value!='ongoing':raise ValueError('draw safety root must be ongoing')
+    positions=[expand(p,c.initial_position)for p in certificate['positions']]
+    indices={p:i for i,p in enumerate(positions)}
+    if len(indices)!=len(positions):raise ValueError('duplicate safety domain position')
+    if target.state.position not in indices or indices[target.state.position]!=safety['root']:
+        raise ValueError('draw safety root mismatch')
+    counts=dict(target.state.repetition_counts)
+    if any(n>=c.support.repetition_limit for n in counts.values()):raise ValueError('already repeated root')
+    if c.support.repetition_limit!=4:raise ValueError('draw safety requires repeat4')
+    barriers=set(safety['barriers'])
+    if any(type(i)is not int or not 0<=i<len(positions)for i in barriers):
+        raise ValueError('invalid draw barrier index')
+    if any(counts.get(repetition_identity_key(positions[i],c),0)<3 for i in barriers):
+        raise ValueError('barrier lacks actual count3 prehistory')
+    rows={r['index']:r for r in safety['vertices']}
+    if len(rows)!=len(safety['vertices'])or safety['root']not in rows:
+        raise ValueError('duplicate or missing safety root')
+    if any(type(i)is not int or not 0<=i<len(positions)or i in barriers for i in rows):
+        raise ValueError('invalid or barrier safety vertex')
+    verified=Counter();adjacency={}
+    for i,row in rows.items():
+        if role_stop_requested():raise RuntimeError('USER_STOP')
+        if time.perf_counter()-start>=seconds:raise RuntimeError('DRAW_SAFETY_VERIFY_CAP_UNKNOWN')
+        position=positions[i];_,ordinary=domain(position)
+        if any(owner!=0 for owner,_ in ordinary):raise ValueError('bare opponent bound unavailable')
+        state=fresh_state(position,c);verified['vertices']+=1
+        if state.terminal_status.is_terminal:
+            if state.terminal_status.winner is not None or row!={'index':i,'terminal':'draw'}:
+                raise ValueError('scoring terminal in draw invariant')
+            adjacency[i]=[];continue
+        choices=list(legal_successors(state,c));selected=row['selected_action_indices']
+        if row['actor']!=position.side_to_move or any(type(k)is not int for k in selected):
+            raise ValueError('safety actor or action index differs')
+        if position.side_to_move==0:
+            if selected!=list(range(len(choices))):raise ValueError('attacker frontier incomplete')
+        elif len(selected)!=1 or not 0<=selected[0]<len(choices):
+            raise ValueError('one legal defender action required')
+        children=[];adjacency[i]=[]
+        for k in selected:
+            _,child=choices[k];verified['Core_edges']+=1
+            j=indices.get(child.position)
+            if j is None:raise ValueError('safety child outside supplied domain')
+            if child.terminal_status.is_terminal:
+                if child.terminal_status.winner is not None:raise ValueError('mate precedes draw barrier')
+                children.append(j)
+            elif j in barriers:
+                # Every actual continuation reaching this position has at
+                # least the three occurrences already bound by root replay.
+                children.append(len(positions));verified['count3_draw_exits']+=1
+                continue
+            else:children.append(j)
+            if j not in rows:raise ValueError('safety invariant missing child')
+            adjacency[i].append(j)
+        if row['children']!=children:raise ValueError('actual safety transition differs')
+    reachable={safety['root']};pending=list(reachable)
+    while pending:
+        for j in adjacency[pending.pop()]:
+            if j not in reachable:reachable.add(j);pending.append(j)
+    if reachable!=set(rows):raise ValueError('unreachable safety annotations')
+    return dict(verified=True,value_for0=0,root_state_sha=state_sha(target.state),
+        counts=dict(verified),seconds=time.perf_counter()-start,
+        scope='Literal complete attacker frontier and one defender choice form a closed draw safety invariant, with actual count3 future-arrival barriers and mate precedence. Bare King cannot win; later draw repetitions and finite clock preserve safety. Constructed history only, no natural occupation or training label.')

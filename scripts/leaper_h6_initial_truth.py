@@ -29,6 +29,48 @@ from scripts.leaper_microgames import role_stop_requested
 class Cap(Exception):pass
 
 
+def decompose_existing_clock(directory):
+    """Explain unchanged H6 labels using already closed graph certificates.
+
+    No new horizon/rule is selected or executed. A decisive graph rank above
+    six is an unavailable strategy under the actual H6 clock, never an H6 WIN.
+    Residual game-theoretic draws can still admit cooperative mate paths.
+    """
+    directory=Path(directory);inputs=load(directory/'inputs.json.gz');truth=load(directory/'truth.json.gz')
+    by={r['id']:r for r in truth['roots']};families=[];total=Counter()
+    for family in inputs['families']:
+        if role_stop_requested():raise Cap('USER_STOP')
+        if family['status']=='MU_UNAVAILABLE':continue
+        source=[r for r in inputs['rows']if r['family']==family['family']]
+        c=admit(family,source[0]);d=load(directory/f"domain{family['family']}.json.gz")
+        from scripts.leaper_cooperative_certificate import decode_position
+        positions=[decode_position(p,c.initial_position)for p in d['positions']]
+        terminals={int(i):w for i,w in d['terminals'].items()}
+        relative={i:0 if w is None else 1 if w==positions[i].side_to_move else-1 for i,w in terminals.items()}
+        values,ranks=attractor(d['edges'],relative)
+        cooperative,_=cooperative_distances(d['edges'],[i for i,w in terminals.items()if w is not None])
+        counts=Counter();rows=[]
+        for sr in source:
+            row=by[sr['state_sha256']];i=row['root_index'];rank=ranks.get(i)
+            value=values[i]if positions[i].side_to_move==0 else-values[i]
+            actual=row['wdl_bounds']
+            if actual[0]!=actual[1]or actual[0]!=(value if value and rank<=6 else 0):
+                raise ValueError('clock/rank decomposition does not match actual H6 truth')
+            distance=cooperative.get(i)
+            if row['cooperative_decisive']!=(distance is not None and distance<=6):
+                raise ValueError('clock/cooperation decomposition differs')
+            category=('H6_decisive'if actual[0]else'clock_blocks_forced_decisive_rank'if value else
+                'no_reachable_decisive_terminal'if distance is None else
+                'strategic_draw_cooperation_clock_blocked'if distance>6 else'strategic_draw_with_H6_cooperation')
+            counts[category]+=1
+            rows.append(dict(id=row['id'],H6_WDL=actual[0],graph_value=value,forced_rank=rank,
+                cooperative_distance=distance,category=category))
+        total.update(counts)
+        families.append(dict(family=family['family'],domain_digest=digest(d),counts=dict(counts),rows=rows))
+    return dict(source_truth_digest=digest(truth),families=families,counts=dict(total),
+        scope='Zero newrules,Player,Core orhistory queries. Existing completephysicalgraph ranks decompose unchangedH6 labels; graphdecisive rankabove6 is a clockblockedstrategy, not an actualH6WIN or permission to alterH. Residualdraw and no reachabledecisive states are distinct. No H4/8/12 resampling orforecast refit.')
+
+
 def blocked_clock_attractor(edges,terminals,sides,blocked):
     """Scoped repeat2 history reduction; labels still need remaining clock.
 
