@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "verification_method": "Composed exact-export equality and originalfullreplays plusnewliteralFLOORexportsubset; NOT a second full512exportreplay.",
+  "original_full_game_replays": {
+    "boards": {
+      "action_checks": 16865,
+      "games": 256,
+      "history_plies": 16865,
+      "pv_edges": 54751,
+      "scope": "Shared production Core full-history replay, not an independent engine or game-WDL oracle.",
+      "seconds": 255.96058880002238,
+      "status": "PASS"
+    },
+    "coupled": {
+      "action_checks": 1242,
+      "games": 32,
+      "history_plies": 1242,
+      "pv_edges": 2403,
+      "scope": "Shared production Core full-history replay, not an independent engine or game-WDL oracle.",
+      "seconds": 9.71652679995168,
+      "status": "PASS"
+    },
+    "depth": {
+      "action_checks": 2821,
+      "games": 96,
+      "history_plies": 2821,
+      "pv_edges": 6263,
+      "scope": "Shared production Core full-history replay, not an independent engine or game-WDL oracle.",
+      "seconds": 30.077462399960496,
+      "status": "PASS"
+    },
+    "prices": {
+      "action_checks": 5894,
+      "games": 128,
+      "history_plies": 5894,
+      "pv_edges": 25700,
+      "scope": "Shared production Core full-history replay, not an independent engine or game-WDL oracle.",
+      "seconds": 70.20743239996955,
+      "status": "PASS"
+    }
+  },
+  "original_games_replayed": 512,
+  "original_history_steps": 26822,
+  "original_PV_edges": 89117,
+  "export_values_and_original_file_hashes_equal": true,
+  "export_review": "review.json",
+  "literal_exported_FLOOR_subset": {
+    "status": "PASS",
+    "games": 32,
+    "history_plies": 1242,
+    "controller_turn_receipts": 1242,
+    "AB_returns": 626,
+    "literal_PV_edges": 2403,
+    "RNG_stream_checks": 0,
+    "FLOOR_policy_checks": 616,
+    "compressed_sha256": "5def748ec6ea99565e7670d565469a2b6abf8c8cceebd3ebbd815146b1110070",
+    "seconds": 10.26240439992398,
+    "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+  },
+  "subset_of_compressed_sha256": "70680df2ed2da76aa0cf8b6a1de59413f0076bbc37dd6d8d6d746fa6c0367197",
+  "all_other480games_have_no_FLOOR": true,
+  "full512literal_export_reader_NOT_RUN": true,
+  "scope": "SharedproductionCore, not independentengine/WDL. No newfitness/AIqueries during qualification."
+}

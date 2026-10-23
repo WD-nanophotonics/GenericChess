@@ -1,0 +1,34 @@
+{
+  "status": "0FITNESS_READY",
+  "input_rows": [
+    {
+      "fingerprint": "6a8f792ef73a3b61c7348315708835059ba64e7504afd34f3c2d1ac7c4b0d227",
+      "layout_index": 2,
+      "code_world": 2,
+      "positions": [
+        8,
+        14,
+        4
+      ]
+    },
+    {
+      "fingerprint": "f40f636fe774a7e6e3bf53ab9d1126c7bcbac565269ce1cda2cc33eac440e231",
+      "layout_index": 3,
+      "code_world": 2,
+      "positions": [
+        12,
+        8,
+        14
+      ]
+    }
+  ],
+  "novel_against_current_input_instances": 120,
+  "full_inputs_and16cost_PVs_checked_in": "review.json",
+  "planned_future_games_NOT_RUN": 12,
+  "source_sha256": "852ac2b97197d86e8af92fa720cb2d47fca67d2d212dc8e7a0653de54e4f9d4d",
+  "expected_seconds": 30,
+  "sampled_forecast_seconds": 146.85680798545945,
+  "cap_seconds": 180,
+  "no_results_file": true,
+  "scope": "LimitedcurrentPRIMARYcohort novelty, oldmetadata/exposedselectedcode. Not globalnovelty, independent-ruleholdout, benchmark or learnergate."
+}

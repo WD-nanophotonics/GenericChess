@@ -1,3 +1,36 @@
+## Physical coupling and relative-price continuation —2026-10-23
+
+PRIMARY read one new Claude09:50 project Chat root and its complete empty-reply
+thread, saving exact originals before assessment. Adopt the relative-price and
+requested-depth comparisons as useful forward questions. Reject the proposed
+zero-containing-interval => no learning space inference and any automatic TD
+admission gate. AUX capacity/learning proposals remain its independent lane;
+this segment does not inspect/write its checkout or claim to rerun its results.
+No outbound messages, Dot contact, worker, role flag or recurrence changes.
+
+PRIMARY closes32 physical FLOOR-coupled games,96 requested-depth games and384
+relative-price games on4x4/5x5/6x6:512 executions and26,822 actual returns,0UNKNOWN.
+Default FLOOR behavior is preserved; mapped coupling leaves five first AB
+path differences but no outcome changes. The fixed-depth averages are positive
+but strongly seat-sensitive. Static/UNIT gains shrink7/64 ->1/16 ->1/32 and
+role1 reverses on larger boards; Static/MOBILITY is0 throughout. Keep these
+finite controls, not a generic price winner, learner gate or product default.
+Old prefix/capped UNKNOWN and failed recipes remain unchanged.
+
+All672 new cost returns include16 costs for the already-started next12-game
+layout design; those12 fitness games are NOT RUN. Cold Player/TT, process setup,
+whole-loop costs and full-history supplements remain separate. The current
+price loops take1,397.123 and3,004.319 seconds; full private replays take70.207
+and255.961 seconds. The changed reader also passes the old368-game public packet.
+Exact exported values/original hashes transfer completed replay evidence;
+new FLOOR streams are replayed on the32 exported coupling records rather than
+repeating all480 other exported games. This is an explicit verification chain,
+not an independent engine/WDL claim or a measured speedup benchmark.
+
+The full technical packet, actual source versions and readable report are at
+`docs/research/LEAPER_PHYSICAL_COUPLING_AND_PRICES_20261023.md`. No human labels,
+price fitting, frozen-cap extension or AUX truth/learning takeover is performed.
+
 ## Decision-equivalence and real baseline follow-up —2026-10-22
 
 PRIMARY read the one new forwarded project Chat root and its complete empty

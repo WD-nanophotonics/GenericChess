@@ -448,3 +448,36 @@ cohorts, disclose correlations/duplicate weights, and never call physical repeat
 iid. Old cost references are not new calls; a sampled maximum is not a later-call
 bound. Export review checks actual copied files, full inputs and literal policies;
 source capsules remain data and must not be executed or unpacked by the reader.
+
+
+## Explicit forward-control protocols —2026-10-23
+
+The probe-only `floor_coupling=physical_type_xy_v1` requires a complete frozen
+`world.floor_type_map`, full plain-Leap/remove rule validation and unique actual
+Core actions. Omission preserves old literal FLOOR behavior. Physical rank
+sorting preserves the uniform no-win law; sorting multiple immediate winners
+preserves their payoff, not the old deterministic winning action. Keep all rule
+and history identities; this is not a generic canonicalization or product API.
+Published games retain the explicit protocol/map, and the packet reader binds
+these to registration/inputs while independently replaying the chosen ranks.
+
+`search_variants[label].depth` explicitly requests a positive depth up to64;
+omission keeps64 and the old counted-node route. Record `requested_depth` beside
+actual `completed_depth`, termination reason and nodes. Root-immediate-win depth0
+is an early terminal witness, not an achieved fixed-depth search or missing game.
+A finite adjacent-depth mean is not automatically a transitive strength chain.
+
+UNIT/MOBILITY controls use the same leaf/order adapter as Static, keep Static
+ordering and other leaf terms, and freeze complete candidate profiles before
+queries. State the admitted no-promotion/drop/remove domain. Independent finite
+board destination counts and exact leaf material differences qualify inputs;
+no-op prices must preserve actual deterministic trajectories. Do not turn a
+zero-containing interval, root invariance or these utility panels into a learner
+gate. Keep OLD references distinct from NEW cost/fitness executions.
+
+A registered empirical whole-game cost screen is distinct from the caller's
+maximum-sampled-call forecast. Freeze the decision method before queries,
+preserve both original forecasts/results, and retain the cooperative cap and
+UNKNOWN. A pre-fitness full-history cost supplement preserves its own registration,
+root draws and original returns; charge its new costs against the same experiment
+budget. It never permits extending a cap, replacing fitness roots or filling slots.
