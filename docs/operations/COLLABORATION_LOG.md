@@ -6764,3 +6764,32 @@ probe, Dot contact, AUX state edit or routine acknowledgment. Read/adopt/execute
 are separate. Full protocol/source/qualifications are in the linked mainline
 report, including before-fitness scope/estimand corrections and partial-stdout
 exposure. No published-history rewriting or old UNKNOWN refill.
+
+## 2026-10-23 PRIMARY — three-cell advice, cost transfer and price/horizon mechanism
+
+Reply1792749117.426789 was privately saved with complete relevant threads,
+read/adopted and executed:36three-cellgames,not a default48gameidentity exercise;
+separate role baseline, fixed-reference gains and cost. Chat's fixed-report read
+is not local replay. Claude/Chat's reference-alignment suggestion was tested on
+all12current contexts:96games,Unit-Static1/24underbothrefs;prediction agreement
+is distinct from utility. No AUX learning/truth work, checkout or state was touched.
+
+PRIMARY adds724physicaldeployments/23410gameplayreturns0UNKNOWN,430newcostreturns
+and4rootdiagnostics;48terminal starts remain. A576game fresh-history serving
+policy saves26.5percent nodes yet fails declared utility tolerance. Keep both;
+posthoc cost-matched mixture advantage~0.00282is a finite derived curve,not an
+executed mix or promotion. Targeted matched-reported-depth16games preserve price
+benefit atD3and its disappearance atD4, including Unitwin→loss on deepening.
+Complete private/public provenance and actual Core/PV qualification are retained.
+
+Ordinary execution/analysis drivers and tested zero-query data materialization
+address the reproducibility concern. Reencoding changes bytes: original
+registration remains; new replication records a new input SHA/preparation time,
+not a fabricated old-byte identity. The node analysis uses documented main+q;
+actual qnodes here are0. Original source/contract corrections are preserved.
+
+24fresh next inputs have been generated/replayed at0Playercalls,NOT_RUN_READY.
+At this Git snapshot one combined post-publication report/question is planned,
+not preclaimed sent: compare a smaller prospective horizon/price utility panel
+against merely repeating selected-root mechanisms. Next original probe follows
+new replies and execution effects. No Dot/livewait,extra probe,worker or AUX report.

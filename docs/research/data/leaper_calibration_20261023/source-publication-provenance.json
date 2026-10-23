@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "current_sources": [
+    {
+      "path": "scripts/leaper_budget_calibration.py",
+      "before_normalization_sha256": "93ab7fb9cca14402a48ce4b0d462a3e577e8570cc7b961c130523db3a74e0b82",
+      "published_working_file_sha256": "93ab7fb9cca14402a48ce4b0d462a3e577e8570cc7b961c130523db3a74e0b82",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "scripts/leaper_opponent_alignment.py",
+      "before_normalization_sha256": "cc39454a869905503b7dca0d2a59389601dad1779ac140bd3d8d41bf05f96914",
+      "published_working_file_sha256": "cc39454a869905503b7dca0d2a59389601dad1779ac140bd3d8d41bf05f96914",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "scripts/leaper_role_budget_prospective.py",
+      "before_normalization_sha256": "c9b16b6d842c1fb45c05b8170de5af61bc73c594c5bc4cb28c71265b4e534bac",
+      "published_working_file_sha256": "42dea7754362a55a41af5f7ecc9f2fa82d0dcf60ebadf3bbeaa67dafc00aad50",
+      "normalization_AST_unchanged": true,
+      "additional_EOF_formatting": {
+        "before_sha256": "c9b16b6d842c1fb45c05b8170de5af61bc73c594c5bc4cb28c71265b4e534bac",
+        "after_sha256": "42dea7754362a55a41af5f7ecc9f2fa82d0dcf60ebadf3bbeaa67dafc00aad50",
+        "AST_unchanged": true
+      }
+    },
+    {
+      "path": "scripts/leaper_calibration_run.py",
+      "before_normalization_sha256": "e9d433e122b662951d24057d6471f59566d4670b1c6cafd4beed976673e8e539",
+      "published_working_file_sha256": "e9d433e122b662951d24057d6471f59566d4670b1c6cafd4beed976673e8e539",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "scripts/leaper_budget_cost_diagnostics.py",
+      "before_normalization_sha256": "379c930799c3752db976cd9c680036888ce567324dbf27501e7655186406ac62",
+      "published_working_file_sha256": "b33dec6613336ea9174738ba2640923e93ee9e70131fa8bfaa4baf0b2d22f781",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "scripts/leaper_first_root_diagnostics.py",
+      "before_normalization_sha256": "ed4c40f29aaf856173de4111c0623d5d9ee42d31b7f62dd76971824273e8275a",
+      "published_working_file_sha256": "00e68d0378a578cd8a51a1fb63c6375dc5d2991f686258cf2d0f5c0e12832c4f",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "scripts/leaper_expected_cost_mixture.py",
+      "before_normalization_sha256": "291a763992a284899713687b10f6a426135585f5412622d442b04b526c513c25",
+      "published_working_file_sha256": "d0f095edee0935ff47a94a1869c5fad31feca1f0c8d8ae4978ccac3e0d23e2d4",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "tests/development/test_leaper_budget_calibration.py",
+      "before_normalization_sha256": "6abc56150818a8d9f3ffca02541ccea9c496f8c09feba42e30d34e18870fe92e",
+      "published_working_file_sha256": "6abc56150818a8d9f3ffca02541ccea9c496f8c09feba42e30d34e18870fe92e",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "tests/development/test_leaper_role_budget_prospective.py",
+      "before_normalization_sha256": "f475d3f20cb01ab00c1db1ce98163815258f4988c5cec719229468f97bb0ecf0",
+      "published_working_file_sha256": "f475d3f20cb01ab00c1db1ce98163815258f4988c5cec719229468f97bb0ecf0",
+      "normalization_AST_unchanged": true
+    },
+    {
+      "path": "tests/development/test_leaper_replication_entry.py",
+      "before_normalization_sha256": "3e2b3c40522f822b44b2442e6835e8131896efd55936557ad2c44d3250ed0094",
+      "published_working_file_sha256": "9776014a519990bbd007ab1897c323bd70cde22670ca508dffde9af15d00225c",
+      "normalization_AST_unchanged": true
+    }
+  ],
+  "frozen_execution_sources": "Exact original source bytes remain keyed in each packet. Ordinary sources include the later tested zero-query replication preparation entry; execute AST is unchanged. LF normalization alone preserves AST.",
+  "replication_entry_validation": {
+    "execute_function_AST_unchanged": true,
+    "new_entry_Player_calls": 0,
+    "reason": "Observed JSON byte-order provenance mismatch; new materialization preserves original registration, does not edit original datasets or bypass source hash.",
+    "status": "PASS"
+  },
+  "observed_reencoding_contract": {
+    "cause": "Packet JSON sorts object keys; equal decoded values cannot reconstruct original byte order. Existing run correctly rejects a copied old SHA. Reproduction requires a NEW registration retaining the original provenance, not rewriting the frozen original.",
+    "decoded_data_reencoded_sha256": "9d25cb38974e757a160db3ecc3f42911ccd3de33617e47df49b59b4937c799e7",
+    "new_Player_calls": 0,
+    "original_registered_input_sha256": "b0dd3deeec0778d8a86155342d92a3125e17dc44052db5d0a80dc4721550bf8e"
+  }
+}

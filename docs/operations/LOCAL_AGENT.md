@@ -498,3 +498,19 @@ preserve both original forecasts/results, and retain the cooperative cap and
 UNKNOWN. A pre-fitness full-history cost supplement preserves its own registration,
 root draws and original returns; charge its new costs against the same experiment
 budget. It never permits extending a cap, replacing fitness roots or filling slots.
+
+
+## Total work and data-only replication —2026-10-23
+
+PlayerDecision.nodes and qnodes are separate fields; SearchLimits.max_nodes
+counts their SUM. Preserve reported search, outer query and complete recording
+clocks separately. A smaller budget may require more turns. Requested/completed
+iteration depth, forced-check extensions and selectiveTT reuse do not establish
+uniform leaf depth or WDL. A derived mixture/role reference is not a new execution.
+
+Use scripts.leaper_calibration_run --materialize-from-packet --group --output
+for explicit zero-query data preparation into a NEW directory. It never executes
+source capsules. Keep the original registration; record new serialization SHA,
+actual preparation time and provenance, not an old hash for different bytes.
+The execute stage still requires recorded library source and frozen cost/cap
+checks. Current scientific selections remain in LOCAL_MAINLINE.md.
