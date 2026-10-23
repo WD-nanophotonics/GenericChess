@@ -1293,3 +1293,48 @@ Same session b489e776-0281-49a3-a2f6-ebba215414b6 finishes successfully with
 3755.272583effective seconds(62.588min),excluding interrupted/admin intervals.
 Report:docs/research/LEAPER_EXPLORER_TRUTH_CALIBRATION_20261023.md. Own sidemission
 only;both existing hourly patrols and all other-role state remain unchanged.
+
+## 2026-10-23 — AUX initial truth and local certificates
+
+PRIMARY supplies the committed canonical records and Core/Session/search.
+Latest fetched source c7e7b84101ee286a4d3bc98a19a33463afd2809d changes no shared
+rules/history/runtime code relative to8f1f9e5. Its own calibration campaign
+remains PRIMARY-owned;AUX neither repeats that work nor writes its state.
+
+AUX follows the explorer-truth task with an initial colour-invariant no-mate
+proof,372new DRAW labels and a one-ply terminal/cardinality pass adding46WINs,
+29nonloss bounds,51fork-FALSE and4fork-TRUE labels. The same original ten initial
+histories now have cooperation9TRUE/1FALSE;initial forks retain9UNKNOWN. Current
+full-history exact WDL31808;2229not exact. An additional literal source event
+shows actual RNG selecting stalemate instead of immediate mate atply21;the
+241critical record-action occurrences are not independent games.
+
+184related tests and the full portable parent/new reader pass. The first test
+attempt had19temporary-fixture setup errors;using a fresh own-checkout temp
+directory resolves them without another-role write or ACL escalation. Failed
+100k/1m attempts and old900s/50k caps remain closed. Component cost receipts
+exclude some preprocessing and theorem/engineering work,so no isolated speed
+or generic learner acceleration is claimed.
+
+The ordinary probe saves44threads/45raw returns and7formal revision decisions.
+Claude1792752568 is adopted with qualifications:real frozen baseline,finite
+descriptive controls,no population calibration. Its5percent root-disagreement
+statement is not a strength impossibility theorem. Chat1792756416to PRIMARY
+also makes the whole-policy and descriptive-denominator correction;AUX adopts
+those qualifications and defers the192-slot PRIMARY study. No real E0 arrived.
+Reading,adoption and execution remain separate from the partner reading this
+handoff. No Dot wake,realtime wait,new worker or schedule change occurs.
+
+The exposed6/4initial split is5positive1negative versus4positive0negative,so
+leaveout specificity is unmeasurable. Propose initial-cooperation truth as the
+first opening headline plus separate late-history fork diagnostics;PRIMARY
+still chooses/freezes actual E0target,mu,information set,baseline and new holdout.
+One combined asynchronous post-push report/question asks that decision;it does
+not fabricate FP/FN or select holdout/TRAIN roots by oracle truth.
+
+Session2c2e1549-89e7-4be0-9594-64562b175fbe successfully finishes at safe_checkpoint
+with3754.337657confirmed effective seconds(62.572min),excluding publication,
+transport and packaging administration. Executable memo retains next actions.
+Report:LEAPER_EXPLORER_INITIAL_TRUTH_AND_BOUNDS_20261023.md. Only sidemission is
+published;full remote SHA is verified before the one report. Partner adoption
+of this new packet remains unconfirmed.

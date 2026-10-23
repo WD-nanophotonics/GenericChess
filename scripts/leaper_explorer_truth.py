@@ -166,8 +166,22 @@ def build(freeze, source=SOURCE):
                 scope='Existing labels are imported, not independently re-solved. Full records freshly replayed; public witnesses carry separate literal verification. No policy-attractor probability or blind test.')
 
 
+def validate_probability_forecast(q):
+    """Common provenance/cost/value checks, without inventing a prediction."""
+    if not isinstance(q.get('source_sha'),str) or re.fullmatch('[0-9a-f]{40}',q['source_sha']) is None:
+        raise ValueError('full prediction execution SHA required')
+    cost=q.get('cost')
+    if (not isinstance(cost,dict) or not cost or
+        any(type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in cost.values())):
+        raise ValueError('prediction execution source and cost required')
+    prob=q.get('probability')
+    if type(prob) not in (int,float) or not math.isfinite(prob) or not 0<=prob<=1:
+        raise ValueError('probability must be finite in [0,1]')
+    return prob
+
+
 def score(truth, predictions):
-    """Probability calibration with explicit abstention and missing-truth bounds.
+    """Finite forecast loss with explicit abstention and missing-truth bounds.
 
     A prediction is for one property at one exact full history under the named
     source mu. No fuzzy joins, default probability, duplicate vote or UNKNOWN=0.
@@ -186,19 +200,11 @@ def score(truth, predictions):
         r = roots[q['id']]
         if q['fingerprint'] != r['fingerprint'] or q['mu_id'] != r['mu_id']:
             raise ValueError('prediction rule/mu binding mismatch')
-        if not isinstance(q.get('source_sha'),str) or re.fullmatch('[0-9a-f]{40}',q['source_sha']) is None:
-            raise ValueError('full prediction execution SHA required')
-        cost=q.get('cost')
-        if (not isinstance(cost,dict) or not cost or
-            any(type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in cost.values())):
-            raise ValueError('prediction execution source and cost required')
+        prob=validate_probability_forecast(q)
         key = (q['id'], prop)
         if key in seen:
             raise ValueError('duplicate prediction')
         seen.add(key)
-        prob = q['probability']
-        if type(prob) not in (int, float) or not math.isfinite(prob) or not 0 <= prob <= 1:
-            raise ValueError('probability must be finite in [0,1]')
         accepted_predictions.append((r,prop,prob))
         g = groups[prop, r['split']]
         g['predicted'] += 1
@@ -251,7 +257,7 @@ def score(truth, predictions):
             macro.append(dict(property=prop,split=split,rules=len(per_rule),
                               equal_rule_whole_brier_bounds=[sum(x[j]for x in per_rule)/len(per_rule)for j in(0,1)]))
     return dict(format='leaper-explorer-score-v1', rows=output,selective=selective,macro=macro,
-                note='FP/FN only count actual frozen predictions against known truth; no E0 supplied means no measured error. Known-only Brier is conditional on coverage. Loss bounds retain unknown truth and missing predictions.')
+                note='FP/FN only count actual frozen predictions against known truth; no E0 supplied means no measured error. Known-only Brier is conditional on coverage. Loss bounds retain unknown truth and missing predictions. These are descriptive finite exposed-input diagnostics, not population calibration, IID confidence or unseen-rule generalization.')
 
 
 def rule_targets(truth):
