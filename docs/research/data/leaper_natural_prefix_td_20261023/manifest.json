@@ -5,40 +5,40 @@
   "closing_runtime_delta": [],
   "files": {
     "budget-comparison.json": {
-      "bytes": 13184,
-      "sha256": "5fdb7dc2745687857213b9eac7aee2996c92a5a0e8481c454a48da75ab33251c"
+      "bytes": 13183,
+      "sha256": "b633df2920682fec4f84cb2861c381959f5a1da0cbe3f254378b9e284f733c0c"
     },
     "budget-signals.json": {
-      "bytes": 79562,
-      "sha256": "81e199cfc3ec36ba79c10a7ec1b103e1763637ba0b35e88ef9d666de0406197f"
+      "bytes": 79561,
+      "sha256": "40f77100c7d805e12f72ab43d847254b4a4db9bb427644bb0ab81116b5b1bdee"
     },
     "budget-verification.json": {
-      "bytes": 501,
-      "sha256": "c4e589635f9ead3f2d6c56139a0948cbd02383f75c00484d9c5b8db69e1efbdf"
+      "bytes": 500,
+      "sha256": "8c34158f9bf80067cb8389fb81baeb1ac905345743b21647ec56747288660fc0"
     },
     "budget.json.gz": {
       "bytes": 2278470,
       "sha256": "a589369022f4ca9eccf9f5fd5cd962699e446a259923b7b1cc4848534d42712e"
     },
     "extras-verification.json": {
-      "bytes": 398,
-      "sha256": "2c1b45ca8ef3e000cbcd56d6dc5ac6468166420c709fe338f7ae53aece6fc354"
+      "bytes": 397,
+      "sha256": "c411af95df6f86c2f16f8afebf0f1ff3e3aa947b0b6bc5af89e17e234df12e69"
     },
     "extras.json.gz": {
       "bytes": 123573,
       "sha256": "bc80516a6dc79011deaee3db44eafd47a38b28ef32a6d4b311bf7ceb4f1731f0"
     },
     "pilot-analysis.json": {
-      "bytes": 20201,
-      "sha256": "8105aa3a308926e2e9a2eab936bf614a291e9291948a445775b27d6e999a665d"
+      "bytes": 20200,
+      "sha256": "4de8e9e2e86ecdbd66c45fdb204d24082180d18c856f1dc7c7c69ec3c28daf4b"
     },
     "pilot-signals.json": {
-      "bytes": 5392,
-      "sha256": "98fdcb279dca33563a50716f30bfd325495d553dae4f50952523d49d90794b68"
+      "bytes": 5391,
+      "sha256": "865312ef1fb43225c6da6a5f98aea5f132b77bc336f50f52ea54eb6aca67aa9a"
     },
     "pilot-verification.json": {
-      "bytes": 494,
-      "sha256": "b9ef6a6466bf7116fe6f38736df3f901a98f922e7c1874e479394911c6eea9d1"
+      "bytes": 493,
+      "sha256": "91c53345be1be906b0903704a6dc8e2e3c7f1cf9a3b0548995c14402fca7a7c0"
     },
     "pilot.json.gz": {
       "bytes": 524280,
@@ -49,8 +49,8 @@
       "sha256": "b2d4d2e9ed0790c8e50b97287e2e03c441a94333fb0a0306ee2a80733559767e"
     },
     "work-session.json": {
-      "bytes": 1652,
-      "sha256": "1450fb16dd44fe7cb52982bf5ee20aece97834b4fb7e2bf8fbef747460392af2"
+      "bytes": 1624,
+      "sha256": "17076a6bf85427d57fb0634846d43848fd3f5a12dc07d219e19b5b2bd448cf48"
     }
   },
   "new_games": 337,
@@ -61,5 +61,6 @@
     "negative_crossscore": 4,
     "typed5x5_targets": 96
   },
-  "core_is_not_independent_oracle": true
+  "core_is_not_independent_oracle": true,
+  "hash_basis": "Exact published Git blob bytes (text normalized by Git); .gz bytes unchanged."
 }
