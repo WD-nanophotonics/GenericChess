@@ -1,0 +1,65 @@
+{
+  "schema": "leaper_natural_prefix_td_v1",
+  "executed_primary_sha": "1ac1f97a74b26015ffb73dcb612333923a6d61d0",
+  "closing_checked_primary_sha": "8f1f9e5f977e1baba0e5a3cd14d74b7ea0351130",
+  "closing_runtime_delta": [],
+  "files": {
+    "budget-comparison.json": {
+      "bytes": 13184,
+      "sha256": "5fdb7dc2745687857213b9eac7aee2996c92a5a0e8481c454a48da75ab33251c"
+    },
+    "budget-signals.json": {
+      "bytes": 79562,
+      "sha256": "81e199cfc3ec36ba79c10a7ec1b103e1763637ba0b35e88ef9d666de0406197f"
+    },
+    "budget-verification.json": {
+      "bytes": 501,
+      "sha256": "c4e589635f9ead3f2d6c56139a0948cbd02383f75c00484d9c5b8db69e1efbdf"
+    },
+    "budget.json.gz": {
+      "bytes": 2278470,
+      "sha256": "a589369022f4ca9eccf9f5fd5cd962699e446a259923b7b1cc4848534d42712e"
+    },
+    "extras-verification.json": {
+      "bytes": 398,
+      "sha256": "2c1b45ca8ef3e000cbcd56d6dc5ac6468166420c709fe338f7ae53aece6fc354"
+    },
+    "extras.json.gz": {
+      "bytes": 123573,
+      "sha256": "bc80516a6dc79011deaee3db44eafd47a38b28ef32a6d4b311bf7ceb4f1731f0"
+    },
+    "pilot-analysis.json": {
+      "bytes": 20201,
+      "sha256": "8105aa3a308926e2e9a2eab936bf614a291e9291948a445775b27d6e999a665d"
+    },
+    "pilot-signals.json": {
+      "bytes": 5392,
+      "sha256": "98fdcb279dca33563a50716f30bfd325495d553dae4f50952523d49d90794b68"
+    },
+    "pilot-verification.json": {
+      "bytes": 494,
+      "sha256": "b9ef6a6466bf7116fe6f38736df3f901a98f922e7c1874e479394911c6eea9d1"
+    },
+    "pilot.json.gz": {
+      "bytes": 524280,
+      "sha256": "066076fb6e54fd1d9fd2c03a730f0b14492d7061db7896d84c5183fec3dfcd81"
+    },
+    "README.md": {
+      "bytes": 2052,
+      "sha256": "b2d4d2e9ed0790c8e50b97287e2e03c441a94333fb0a0306ee2a80733559767e"
+    },
+    "work-session.json": {
+      "bytes": 1652,
+      "sha256": "1450fb16dd44fe7cb52982bf5ee20aece97834b4fb7e2bf8fbef747460392af2"
+    }
+  },
+  "new_games": 337,
+  "reused_free_eval_controls": 32,
+  "reused_old_TD4_eval_controls": 16,
+  "extra_queries": {
+    "directional": 16,
+    "negative_crossscore": 4,
+    "typed5x5_targets": 96
+  },
+  "core_is_not_independent_oracle": true
+}
