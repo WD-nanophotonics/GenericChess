@@ -1491,3 +1491,27 @@ results/dev_aux/task2620/** -text whitespace=cr-at-eol
 results/dev_aux/task2621/** -text whitespace=cr-at-eol
 generic_chess/session/serialization.py text eol=crlf
 results/dev_aux/task2620/run-001/frozen-sources/** whitespace=cr-at-eol,-blank-at-eof
+
+# Preserve this DEV_AUX source-bound trajectory/chance evidence exactly.
+docs/research/data/leaper_trajectory_chance_20261024/** -text whitespace=cr-at-eol
+docs/research/data/leaper_component_policy_20261024/** -text whitespace=cr-at-eol
+scripts/leaper_chance_choice_certificates.py text eol=lf
+scripts/leaper_component_forward.py text eol=lf
+scripts/leaper_component_packet.py text eol=lf
+scripts/leaper_component_paths.py text eol=lf
+scripts/leaper_component_qualify.py text eol=lf
+scripts/leaper_h6_opponent_objective.py text eol=lf
+scripts/leaper_twoa_chance_choices.py text eol=lf
+scripts/leaper_twoa_gradient_support.py text eol=lf
+scripts/leaper_twoa_random_headroom.py text eol=lf
+scripts/leaper_twoa_trajectory_capacity.py text eol=lf
+scripts/leaper_twoa_trajectory_truth.py text eol=lf
+scripts/verify_leaper_chance_bindings.py text eol=lf
+scripts/verify_leaper_chance_histories.py text eol=lf
+scripts/verify_leaper_chance_upper.py text eol=lf
+scripts/verify_leaper_random_headroom.py text eol=lf
+scripts/verify_leaper_trajectory_chance.py text eol=lf
+tests/development/test_leaper_component_paths.py text eol=lf
+tests/development/test_leaper_twoa_random_headroom.py text eol=lf
+tests/development/test_leaper_twoa_trajectory_truth.py text eol=lf
+tests/development/test_verify_leaper_random_headroom.py text eol=lf

@@ -1621,3 +1621,42 @@ was fixed by preserving scientific data bytes and LF-pinning four reader sources
 Code executed before closing commit; post-execution hashes are qualifications,
 not blinding. Own reviewed sidemission publication/fullSHA and one combined
 Slack progress/question follow. Partner read/adoption/execution remains unconfirmed.
+
+## 2026-10-24 DEV_AUX: actual exposure and nominal chance controls
+
+PRIMARY supplied sandbox303cb4c6d6d5e706be04f9df20ec6746556d1fc2, the frozen
+120-game panel and its full rules/trajectories. AUX reused11committed paths,
+requalified the complete Core graph and consumed those records; no PRIMARY
+state, forward campaign, defaults or uncommitted work was adopted.
+
+AUX found all7605actual contexts/actions forcedDRAW, but5871prefixes retained
+cooperative mating capacity. A separate explicit IIDUniform/oracle-continuation
+criterion gives232strict alternatives on actual visited attacker prefixes.
+All234lower controllers pass49254separate full-history nodes and2909499Core
+replay plies; independent27582upper bounds pass. This is no measured learner
+gain. Current one-type free gradients are zero;3616oldA/Bzero-valued roots have
+active Bgradients. The former preference for a nonzero same-owner A/B crossing
+is therefore qualified: zero leaf value is not inactive learning support.
+
+OldH6 comparison found no stochastic/minimax optimum conflict in12208attacker
+history classes. Oracle history-dependent tie control at fixedB1 closes the
+seven-cell nominal uniform-tie gap; attributing that gap solely to material
+features would be wrong. No oracle tie policy was deployed, and prior256actual
+matched learner/unit trajectories still have gain0. No new experimental Player,
+training epoch or performance-sampling game was launched. Related28pytest cases
+and the248.267s integrated reader passed; regression fixtures remain separate.
+
+Read primary-directed reply1792793500.800669, partly adopted its semantic/
+objective/backend cautions and deferred its geometry/cost work to PRIMARY.
+Own earlier report1792793874.438339 had no reply at this probe. No partner
+reading or independent execution of this new work is claimed. The next combined
+mail asks about objective/tie interpretation and allows minimal opposed A/B
+inputs without a nonzero-crossing gate. Publication follows reviewed push and
+full own-branch remote SHA; the one-message probe limit remains.
+
+Sessionc24c03d8-d745-4416-8735-e4014ecf31b3 accumulated3675.954192confirmed
+research seconds (61.266min), preserving UUID/origin. The initial7.279041s
+administrative entry was moved to preserved uncredited evidence before finish;
+valid intervals were not reset. Other failed reader/probe versions remain
+private and repaired errors are not current blockers. Research is OPEN; next
+consume PRIMARY's frozen A/B input or one bounded natural-prefix tie diagnostic.

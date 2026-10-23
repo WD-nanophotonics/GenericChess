@@ -1,0 +1,105 @@
+{
+  "verified": true,
+  "counts": {
+    "actual_roots": 3616,
+    "zero_value_nonzero_free_gradient": 3616
+  },
+  "families": [
+    {
+      "family": 1,
+      "fingerprint": "95e7fc851b482ab46b13383a0ff78a305a07f574dcd3b02a0bd4693912f272d1",
+      "counts": {
+        "actual_roots": 720,
+        "zero_value_nonzero_free_gradient": 720
+      }
+    },
+    {
+      "family": 2,
+      "fingerprint": "16beb5339ba9b11b4bbc658b0fc43e8189ffe88c5a4e7c0bfe0b9138ca756b52",
+      "counts": {
+        "actual_roots": 624,
+        "zero_value_nonzero_free_gradient": 624
+      }
+    },
+    {
+      "family": 3,
+      "fingerprint": "88d8cb46bbd688bfd2f4a9ae4be61d46547e59e43dab3516c5b88ce9ee8c9804",
+      "counts": {
+        "actual_roots": 352,
+        "zero_value_nonzero_free_gradient": 352
+      }
+    },
+    {
+      "family": 4,
+      "fingerprint": "2ddf355ac07d0d8afb8a34f0012b8e17d1a0c4c0c0ccdd487b49beb694d0ffc1",
+      "counts": {
+        "actual_roots": 120,
+        "zero_value_nonzero_free_gradient": 120
+      }
+    },
+    {
+      "family": 5,
+      "fingerprint": "8cfd27c16ca68171dd03912f067b3f7e4103ea4a1dfd3e2deece2a4921fe113c",
+      "counts": {
+        "actual_roots": 176,
+        "zero_value_nonzero_free_gradient": 176
+      }
+    },
+    {
+      "family": 6,
+      "fingerprint": "9f511a82a2d9844e6fef25167973061926a24fe7fbbfe566e6f28bc26645937b",
+      "counts": {
+        "actual_roots": 136,
+        "zero_value_nonzero_free_gradient": 136
+      }
+    },
+    {
+      "family": 7,
+      "fingerprint": "cf4b84b4576e1348e2499943e7e664243bbbb6d008d9d67b9176c4cd2373f1f6",
+      "counts": {
+        "actual_roots": 72,
+        "zero_value_nonzero_free_gradient": 72
+      }
+    },
+    {
+      "family": 8,
+      "fingerprint": "160c40c8b5950078a28d53a567c3688595d4c84c9419cbb3f35208712e2794e5",
+      "counts": {
+        "actual_roots": 160,
+        "zero_value_nonzero_free_gradient": 160
+      }
+    },
+    {
+      "family": 9,
+      "fingerprint": "aaa191e5a8f57020742754b53e131993afebd46124669b5972ede33e42aa90da",
+      "counts": {
+        "actual_roots": 128,
+        "zero_value_nonzero_free_gradient": 128
+      }
+    },
+    {
+      "family": 10,
+      "fingerprint": "3c16c3cd04c03218631cde3b5c2cdee98ac66eaee95ba96dd9170978d1e41474",
+      "counts": {
+        "actual_roots": 768,
+        "zero_value_nonzero_free_gradient": 768
+      }
+    },
+    {
+      "family": 11,
+      "fingerprint": "237eae15a255b0ef0f094315ffb4127e7a1b4907f474dea79b5f4793d18adabb",
+      "counts": {
+        "actual_roots": 360,
+        "zero_value_nonzero_free_gradient": 360
+      }
+    }
+  ],
+  "algebra": {
+    "same_owner_AB": "Withphi=(1,1)andfixedA=1,theconditionV=0forcesB=-1 inthisno-biaslinear/tanhmodel; thisisoffsetcompensationforacomposition,notintrinsicnegativepiecevalue.",
+    "opposed_AB": "Withphi=(1,-1), B=1givesV=0butdV/dB=-1/scale,nonzero. A zero-valued leaf crossing is not an inactive parameter or a reason to require a fifth actor."
+  },
+  "Player_queries": 0,
+  "training_episodes": 0,
+  "model_updates": 0,
+  "scope": "OnlysavedcompleteA/Binitialrecords,allavailablefamilies/unfilteredroots;notnewmu/training,legalitysampling,benefitreplicationorapriceadoption. Thealgebradoesnotestablishlegalfrontierrealizationorpolicygain;neitherpositivegain noranonzerocrossingisrequiredtoallowaboundedlearningtest."
+}

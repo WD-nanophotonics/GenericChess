@@ -1,0 +1,116 @@
+{
+  "games": 120,
+  "paired": {
+    "UNIT512-FLOOR": {
+      "difference_histogram": {
+        "0": 40
+      },
+      "interpretation": "Finite seed panel; random streams match by seed but paths diverge. Not a forced-WDL or iid-rule effect.",
+      "mean_bounds": [
+        0.0,
+        0.0
+      ],
+      "observed_pairs": 40
+    },
+    "UNIT65536-FLOOR": {
+      "difference_histogram": {
+        "0": 40
+      },
+      "interpretation": "Finite seed panel; random streams match by seed but paths diverge. Not a forced-WDL or iid-rule effect.",
+      "mean_bounds": [
+        0.0,
+        0.0
+      ],
+      "observed_pairs": 40
+    },
+    "UNIT65536-UNIT512": {
+      "difference_histogram": {
+        "0": 40
+      },
+      "interpretation": "Finite seed panel; random streams match by seed but paths diverge. Not a forced-WDL or iid-rule effect.",
+      "mean_bounds": [
+        0.0,
+        0.0
+      ],
+      "observed_pairs": 40
+    }
+  },
+  "planned": 120,
+  "scope": "Zero new Player queries. Literal Core/RNG/FLOOR/PV replay, shared execution authority not independent engine. No source capsule execution or WDL inference.",
+  "seconds": 25.291929900064133,
+  "status": "PASS",
+  "summary": {
+    "FLOOR": {
+      "literal_outcomes": {
+        "max_ply": 37,
+        "stalemate": 3
+      },
+      "mean_bounds": [
+        0.0,
+        0.0
+      ],
+      "missing": 0,
+      "observed_values": {
+        "0": 40
+      },
+      "ordinary_lost_games": 29,
+      "planned": 40,
+      "total_game_seconds": 10.839868699782528,
+      "total_nodes": 0,
+      "total_plies": 2485,
+      "total_query_seconds": 1.52129590138793
+    },
+    "UNIT512": {
+      "literal_outcomes": {
+        "max_ply": 38,
+        "repetition": 2
+      },
+      "mean_bounds": [
+        0.0,
+        0.0
+      ],
+      "missing": 0,
+      "observed_values": {
+        "0": 40
+      },
+      "ordinary_lost_games": 1,
+      "planned": 40,
+      "total_game_seconds": 263.9378036999842,
+      "total_nodes": 655360,
+      "total_plies": 2560,
+      "total_query_seconds": 249.5236317999661
+    },
+    "UNIT65536": {
+      "literal_outcomes": {
+        "max_ply": 40
+      },
+      "mean_bounds": [
+        0.0,
+        0.0
+      ],
+      "missing": 0,
+      "observed_values": {
+        "0": 40
+      },
+      "ordinary_lost_games": 1,
+      "planned": 40,
+      "total_game_seconds": 3791.757618600386,
+      "total_nodes": 9304229,
+      "total_plies": 2560,
+      "total_query_seconds": 3775.9023065003566
+    }
+  },
+  "totals": {
+    "FLOOR_choices": 1244,
+    "PV_plies": 13073,
+    "Player_queries": 2560,
+    "RNG_choices": 3801,
+    "actions": 7605,
+    "native_legality_calls": 3317096,
+    "native_legality_fallbacks": 0,
+    "nodes": 9959589,
+    "qnodes": 0,
+    "runtime_pops": 9939893,
+    "runtime_pushes": 9939893
+  }
+}

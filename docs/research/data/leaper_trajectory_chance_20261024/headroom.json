@@ -1,0 +1,1468 @@
+{
+  "status": "PASS",
+  "source_sha": "303cb4c6d6d5e706be04f9df20ec6746556d1fc2",
+  "source_graph_sha256": "42043c34de7ce71ade8549d8ef8df3bd9546bc5809177616eb4e5958f62da847",
+  "rule_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+  "rows": [
+    {
+      "root": 0,
+      "lower": "223/2835",
+      "cooperative_distance": 11,
+      "success_support_vertices": 46,
+      "horizon": 64,
+      "optimal_upper": "7311453444582929/7312316880125952",
+      "uniform_upper": "190853375369701575338608653230275661601892958931402022141324668947352616980666248127413049776852126261349911196632572151300752235448867364335576145779572141137048088899802032609921713682974966996893569062959062458354833417395744108027827703681/1056792069106316056275641203894999656849653527885427093373477043800311798458999415054324042186442146041410444087678613291525615908943084621915244410454633280225947623025876992680815398748160000000000000000000000000000000000000000000000000000000000",
+      "lower_minus_uniform_upper": "82936000737754982921828230312760879004173322814772386980428474543563945815596712784364389915858632377172346396229233658540132174640850205188433208168641317273461301094440786809655275436525025033003106430937040937541645166582604255891972172296319/1056792069106316056275641203894999656849653527885427093373477043800311798458999415054324042186442146041410444087678613291525615908943084621915244410454633280225947623025876992680815398748160000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "root": 1,
+      "lower": "61/144",
+      "cooperative_distance": 9,
+      "success_support_vertices": 32,
+      "horizon": 60,
+      "optimal_upper": "913920968839463/914039610015744",
+      "uniform_upper": "4348227828478037684408983552319662953674721000843333550369887002853962569741796744980171427097635060368470921879215149010093509566727602139608006653366357547804465134837996445666114990252471601379308913879853116519083462465209923/21597687515158176400077619801589506351084170395235447611778575906876383026126443880334658726183494420758261901066600437621243360849462887603799368389273487703529988075715506995200000000000000000000000000000000000000000000000000000000",
+      "lower_minus_uniform_upper": "9144672177898249465126249404621012888547258571425283779772499073548947180442154569230118316747854862621950806613277914676655496850275190063358735547136097183530871039161314272354333885009747528398620691086120146883480916537534790077/21597687515158176400077619801589506351084170395235447611778575906876383026126443880334658726183494420758261901066600437621243360849462887603799368389273487703529988075715506995200000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "policies": [
+    {
+      "root": 0,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "opposite-colors",
+        "resigned_by": null,
+        "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+        "schema_version": 3
+      },
+      "root_state_sha": "373827c99533016e1e5e8c6865549ad557b3b6937913aa5e676e9f7226f2620d",
+      "remaining": 64,
+      "blocked": [],
+      "base": 840,
+      "lower": "223/2835",
+      "vertices": [
+        {
+          "vertex": 0,
+          "distance": 11,
+          "numerator": "11556436745129998417920000000000",
+          "denominator": "146917032163423970918400000000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 4,
+          "distance": 10,
+          "numerator": "13757662791821426688000000000",
+          "denominator": "174901228765980917760000000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "vertex": 27,
+          "distance": 9,
+          "numerator": "11644658528951992320000000",
+          "denominator": "208215748530929664000000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 111,
+          "distance": 8,
+          "numerator": "13862688724942848000000",
+          "denominator": "247875891108249600000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "positive_action_indices": [
+            0,
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "vertex": 473,
+          "distance": 7,
+          "numerator": "16393908142080000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 1514,
+          "distance": 6,
+          "numerator": "19516557312000000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 4339,
+          "distance": 5,
+          "numerator": "69701990400000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            3
+          ],
+          "positive_action_indices": [
+            3
+          ]
+        },
+        {
+          "vertex": 8003,
+          "distance": 4,
+          "numerator": "82978560000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 15513,
+          "distance": 3,
+          "numerator": "197568000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            5
+          ],
+          "positive_action_indices": [
+            5
+          ]
+        },
+        {
+          "vertex": 25221,
+          "distance": 2,
+          "numerator": "235200",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 40551,
+          "distance": 1,
+          "numerator": "840",
+          "denominator": "840",
+          "selected_action_indices": [
+            4
+          ],
+          "positive_action_indices": [
+            4
+          ]
+        },
+        {
+          "vertex": 54168,
+          "distance": 0,
+          "numerator": "1",
+          "denominator": "1",
+          "selected_action_indices": [],
+          "positive_action_indices": []
+        },
+        {
+          "vertex": 454,
+          "distance": 7,
+          "numerator": "16393908142080000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 1449,
+          "distance": 6,
+          "numerator": "19516557312000000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 4309,
+          "distance": 5,
+          "numerator": "46467993600000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            3
+          ],
+          "positive_action_indices": [
+            3
+          ]
+        },
+        {
+          "vertex": 7935,
+          "distance": 4,
+          "numerator": "55319040000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 474,
+          "distance": 7,
+          "numerator": "19672689770496000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            1
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 1519,
+          "distance": 6,
+          "numerator": "23419868774400000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 4342,
+          "distance": 5,
+          "numerator": "139403980800000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 8006,
+          "distance": 4,
+          "numerator": "165957120000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "vertex": 15589,
+          "distance": 3,
+          "numerator": "197568000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            6
+          ],
+          "positive_action_indices": [
+            6
+          ]
+        },
+        {
+          "vertex": 25380,
+          "distance": 2,
+          "numerator": "235200",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 456,
+          "distance": 7,
+          "numerator": "30055498260480000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 1462,
+          "distance": 6,
+          "numerator": "35780355072000000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "positive_action_indices": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "vertex": 4312,
+          "distance": 5,
+          "numerator": "46467993600000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 4341,
+          "distance": 5,
+          "numerator": "69701990400000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 26,
+          "distance": 9,
+          "numerator": "15974224093642752000000000",
+          "denominator": "208215748530929664000000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 107,
+          "distance": 8,
+          "numerator": "19016933444812800000000",
+          "denominator": "247875891108249600000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "positive_action_indices": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "vertex": 452,
+          "distance": 7,
+          "numerator": "32787816284160000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 1438,
+          "distance": 6,
+          "numerator": "39033114624000000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "vertex": 4308,
+          "distance": 5,
+          "numerator": "46467993600000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            0
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 7181,
+          "distance": 4,
+          "numerator": "55319040000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 14513,
+          "distance": 3,
+          "numerator": "197568000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            5
+          ],
+          "positive_action_indices": [
+            5
+          ]
+        },
+        {
+          "vertex": 22999,
+          "distance": 2,
+          "numerator": "235200",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 39327,
+          "distance": 1,
+          "numerator": "840",
+          "denominator": "840",
+          "selected_action_indices": [
+            1
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 52504,
+          "distance": 0,
+          "numerator": "1",
+          "denominator": "1",
+          "selected_action_indices": [],
+          "positive_action_indices": []
+        },
+        {
+          "vertex": 455,
+          "distance": 7,
+          "numerator": "60110996520960000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 1456,
+          "distance": 6,
+          "numerator": "71560710144000000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "vertex": 4340,
+          "distance": 5,
+          "numerator": "139403980800000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 453,
+          "distance": 7,
+          "numerator": "13115126513664000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 1444,
+          "distance": 6,
+          "numerator": "15613245849600000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "positive_action_indices": [
+            1,
+            4
+          ]
+        },
+        {
+          "vertex": 4310,
+          "distance": 5,
+          "numerator": "46467993600000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 7934,
+          "distance": 4,
+          "numerator": "55319040000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 15510,
+          "distance": 3,
+          "numerator": "197568000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 25,
+          "distance": 9,
+          "numerator": "21515627348196065280000000",
+          "denominator": "208215748530929664000000000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 103,
+          "distance": 8,
+          "numerator": "25613842081185792000000",
+          "denominator": "247875891108249600000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "positive_action_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "root": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              4
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          }
+        ],
+        "initial_setup_key": "opposite-colors",
+        "resigned_by": null,
+        "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+        "schema_version": 3
+      },
+      "root_state_sha": "5890ec5fc005f8d86e4bac8bff0894962bc9c58c15a5aa044e9c09dfaa50684a",
+      "remaining": 60,
+      "blocked": [],
+      "base": 840,
+      "lower": "61/144",
+      "vertices": [
+        {
+          "vertex": 1,
+          "distance": 9,
+          "numerator": "88202504586018816000000000",
+          "denominator": "208215748530929664000000000",
+          "selected_action_indices": [
+            9
+          ],
+          "positive_action_indices": [
+            9
+          ]
+        },
+        {
+          "vertex": 17,
+          "distance": 8,
+          "numerator": "105002981650022400000000",
+          "denominator": "247875891108249600000000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "vertex": 69,
+          "distance": 7,
+          "numerator": "139348219207680000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            4
+          ],
+          "positive_action_indices": [
+            4
+          ]
+        },
+        {
+          "vertex": 303,
+          "distance": 6,
+          "numerator": "165890737152000000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "vertex": 959,
+          "distance": 5,
+          "numerator": "278807961600000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            3
+          ],
+          "positive_action_indices": [
+            3
+          ]
+        },
+        {
+          "vertex": 3487,
+          "distance": 4,
+          "numerator": "331914240000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "vertex": 6524,
+          "distance": 3,
+          "numerator": "197568000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            8
+          ],
+          "positive_action_indices": [
+            8
+          ]
+        },
+        {
+          "vertex": 13540,
+          "distance": 2,
+          "numerator": "235200",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0,
+            1,
+            2
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 21423,
+          "distance": 1,
+          "numerator": "840",
+          "denominator": "840",
+          "selected_action_indices": [
+            6
+          ],
+          "positive_action_indices": [
+            6
+          ]
+        },
+        {
+          "vertex": 37353,
+          "distance": 0,
+          "numerator": "1",
+          "denominator": "1",
+          "selected_action_indices": [],
+          "positive_action_indices": []
+        },
+        {
+          "vertex": 6523,
+          "distance": 3,
+          "numerator": "592704000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            7
+          ],
+          "positive_action_indices": [
+            7
+          ]
+        },
+        {
+          "vertex": 13536,
+          "distance": 2,
+          "numerator": "705600",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 958,
+          "distance": 5,
+          "numerator": "209105971200000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            3
+          ],
+          "positive_action_indices": [
+            3
+          ]
+        },
+        {
+          "vertex": 3485,
+          "distance": 4,
+          "numerator": "248935680000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 6521,
+          "distance": 3,
+          "numerator": "296352000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            6
+          ],
+          "positive_action_indices": [
+            6
+          ]
+        },
+        {
+          "vertex": 13531,
+          "distance": 2,
+          "numerator": "352800",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 21418,
+          "distance": 1,
+          "numerator": "840",
+          "denominator": "840",
+          "selected_action_indices": [
+            5
+          ],
+          "positive_action_indices": [
+            5
+          ]
+        },
+        {
+          "vertex": 37344,
+          "distance": 0,
+          "numerator": "1",
+          "denominator": "1",
+          "selected_action_indices": [],
+          "positive_action_indices": []
+        },
+        {
+          "vertex": 942,
+          "distance": 5,
+          "numerator": "104552985600000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            5
+          ],
+          "positive_action_indices": [
+            5
+          ]
+        },
+        {
+          "vertex": 3359,
+          "distance": 4,
+          "numerator": "124467840000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 6366,
+          "distance": 3,
+          "numerator": "296352000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            3
+          ],
+          "positive_action_indices": [
+            3
+          ]
+        },
+        {
+          "vertex": 13146,
+          "distance": 2,
+          "numerator": "352800",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 21175,
+          "distance": 1,
+          "numerator": "840",
+          "denominator": "840",
+          "selected_action_indices": [
+            1
+          ],
+          "positive_action_indices": [
+            1
+          ]
+        },
+        {
+          "vertex": 36932,
+          "distance": 0,
+          "numerator": "1",
+          "denominator": "1",
+          "selected_action_indices": [],
+          "positive_action_indices": []
+        },
+        {
+          "vertex": 68,
+          "distance": 7,
+          "numerator": "110658879959040000000",
+          "denominator": "295090346557440000000",
+          "selected_action_indices": [
+            4
+          ],
+          "positive_action_indices": [
+            4
+          ]
+        },
+        {
+          "vertex": 295,
+          "distance": 6,
+          "numerator": "131736761856000000",
+          "denominator": "351298031616000000",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "vertex": 941,
+          "distance": 5,
+          "numerator": "209105971200000",
+          "denominator": "418211942400000",
+          "selected_action_indices": [
+            3
+          ],
+          "positive_action_indices": [
+            3
+          ]
+        },
+        {
+          "vertex": 3424,
+          "distance": 4,
+          "numerator": "248935680000",
+          "denominator": "497871360000",
+          "selected_action_indices": [
+            0
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 6451,
+          "distance": 3,
+          "numerator": "296352000",
+          "denominator": "592704000",
+          "selected_action_indices": [
+            2
+          ],
+          "positive_action_indices": [
+            2
+          ]
+        },
+        {
+          "vertex": 9977,
+          "distance": 2,
+          "numerator": "352800",
+          "denominator": "705600",
+          "selected_action_indices": [
+            0,
+            1
+          ],
+          "positive_action_indices": [
+            0
+          ]
+        },
+        {
+          "vertex": 17923,
+          "distance": 1,
+          "numerator": "840",
+          "denominator": "840",
+          "selected_action_indices": [
+            3
+          ],
+          "positive_action_indices": [
+            3
+          ]
+        },
+        {
+          "vertex": 30221,
+          "distance": 0,
+          "numerator": "1",
+          "denominator": "1",
+          "selected_action_indices": [],
+          "positive_action_indices": []
+        }
+      ]
+    }
+  ],
+  "upper": {
+    "rows": [
+      {
+        "root": 1,
+        "horizon": 60,
+        "optimal_upper": "913920968839463/914039610015744",
+        "uniform_upper": "4348227828478037684408983552319662953674721000843333550369887002853962569741796744980171427097635060368470921879215149010093509566727602139608006653366357547804465134837996445666114990252471601379308913879853116519083462465209923/21597687515158176400077619801589506351084170395235447611778575906876383026126443880334658726183494420758261901066600437621243360849462887603799368389273487703529988075715506995200000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "root": 0,
+        "horizon": 64,
+        "optimal_upper": "7311453444582929/7312316880125952",
+        "uniform_upper": "190853375369701575338608653230275661601892958931402022141324668947352616980666248127413049776852126261349911196632572151300752235448867364335576145779572141137048088899802032609921713682974966996893569062959062458354833417395744108027827703681/1056792069106316056275641203894999656849653527885427093373477043800311798458999415054324042186442146041410444087678613291525615908943084621915244410454633280225947623025876992680815398748160000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "base": 720720,
+    "arithmetic_edges": 48390912,
+    "scope": "Exact rational no-repeat-stop finite-clock Bellman DP; maximum over attacker policies versus fixedUniformdefender, and fixedUniformboth control. Upper bounds on actual repeat4 probability, not actual served-player utility."
+  },
+  "progress": [
+    {
+      "horizon": 1,
+      "denominator_bits": 20,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 2,
+      "denominator_bits": 39,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 3,
+      "denominator_bits": 59,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 4,
+      "denominator_bits": 78,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 5,
+      "denominator_bits": 98,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 6,
+      "denominator_bits": 117,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 7,
+      "denominator_bits": 137,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 8,
+      "denominator_bits": 156,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 9,
+      "denominator_bits": 176,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 10,
+      "denominator_bits": 195,
+      "root0_optimal_upper": "0"
+    },
+    {
+      "horizon": 11,
+      "denominator_bits": 215,
+      "root0_optimal_upper": "223/2835"
+    },
+    {
+      "horizon": 12,
+      "denominator_bits": 234,
+      "root0_optimal_upper": "223/2835"
+    },
+    {
+      "horizon": 13,
+      "denominator_bits": 253,
+      "root0_optimal_upper": "87853/194400"
+    },
+    {
+      "horizon": 14,
+      "denominator_bits": 273,
+      "root0_optimal_upper": "87853/194400"
+    },
+    {
+      "horizon": 15,
+      "denominator_bits": 292,
+      "root0_optimal_upper": "28391/51840"
+    },
+    {
+      "horizon": 16,
+      "denominator_bits": 312,
+      "root0_optimal_upper": "28391/51840"
+    },
+    {
+      "horizon": 17,
+      "denominator_bits": 331,
+      "root0_optimal_upper": "534491/777600"
+    },
+    {
+      "horizon": 18,
+      "denominator_bits": 351,
+      "root0_optimal_upper": "534491/777600"
+    },
+    {
+      "horizon": 19,
+      "denominator_bits": 370,
+      "root0_optimal_upper": "190087/248832"
+    },
+    {
+      "horizon": 20,
+      "denominator_bits": 390,
+      "root0_optimal_upper": "190087/248832"
+    },
+    {
+      "horizon": 21,
+      "denominator_bits": 409,
+      "root0_optimal_upper": "155041/186624"
+    },
+    {
+      "horizon": 22,
+      "denominator_bits": 429,
+      "root0_optimal_upper": "155041/186624"
+    },
+    {
+      "horizon": 23,
+      "denominator_bits": 448,
+      "root0_optimal_upper": "1314011/1492992"
+    },
+    {
+      "horizon": 24,
+      "denominator_bits": 468,
+      "root0_optimal_upper": "1314011/1492992"
+    },
+    {
+      "horizon": 25,
+      "denominator_bits": 487,
+      "root0_optimal_upper": "153432673/167961600"
+    },
+    {
+      "horizon": 26,
+      "denominator_bits": 506,
+      "root0_optimal_upper": "153432673/167961600"
+    },
+    {
+      "horizon": 27,
+      "denominator_bits": 526,
+      "root0_optimal_upper": "2104469/2239488"
+    },
+    {
+      "horizon": 28,
+      "denominator_bits": 545,
+      "root0_optimal_upper": "2104469/2239488"
+    },
+    {
+      "horizon": 29,
+      "denominator_bits": 565,
+      "root0_optimal_upper": "2891932057/3023308800"
+    },
+    {
+      "horizon": 30,
+      "denominator_bits": 584,
+      "root0_optimal_upper": "2891932057/3023308800"
+    },
+    {
+      "horizon": 31,
+      "denominator_bits": 604,
+      "root0_optimal_upper": "52124849/53747712"
+    },
+    {
+      "horizon": 32,
+      "denominator_bits": 623,
+      "root0_optimal_upper": "52124849/53747712"
+    },
+    {
+      "horizon": 33,
+      "denominator_bits": 643,
+      "root0_optimal_upper": "106469379781/108839116800"
+    },
+    {
+      "horizon": 34,
+      "denominator_bits": 662,
+      "root0_optimal_upper": "106469379781/108839116800"
+    },
+    {
+      "horizon": 35,
+      "denominator_bits": 682,
+      "root0_optimal_upper": "211742315/214990848"
+    },
+    {
+      "horizon": 36,
+      "denominator_bits": 701,
+      "root0_optimal_upper": "211742315/214990848"
+    },
+    {
+      "horizon": 37,
+      "denominator_bits": 720,
+      "root0_optimal_upper": "242220620443/244888012800"
+    },
+    {
+      "horizon": 38,
+      "denominator_bits": 740,
+      "root0_optimal_upper": "242220620443/244888012800"
+    },
+    {
+      "horizon": 39,
+      "denominator_bits": 759,
+      "root0_optimal_upper": "5760887669/5804752896"
+    },
+    {
+      "horizon": 40,
+      "denominator_bits": 779,
+      "root0_optimal_upper": "5760887669/5804752896"
+    },
+    {
+      "horizon": 41,
+      "denominator_bits": 798,
+      "root0_optimal_upper": "35071805939311/35263873843200"
+    },
+    {
+      "horizon": 42,
+      "denominator_bits": 818,
+      "root0_optimal_upper": "35071805939311/35263873843200"
+    },
+    {
+      "horizon": 43,
+      "denominator_bits": 837,
+      "root0_optimal_upper": "23131278323/23219011584"
+    },
+    {
+      "horizon": 44,
+      "denominator_bits": 857,
+      "root0_optimal_upper": "23131278323/23219011584"
+    },
+    {
+      "horizon": 45,
+      "denominator_bits": 876,
+      "root0_optimal_upper": "158255270487761/158687432294400"
+    },
+    {
+      "horizon": 46,
+      "denominator_bits": 896,
+      "root0_optimal_upper": "158255270487761/158687432294400"
+    },
+    {
+      "horizon": 47,
+      "denominator_bits": 915,
+      "root0_optimal_upper": "625728903713/626913312768"
+    },
+    {
+      "horizon": 48,
+      "denominator_bits": 935,
+      "root0_optimal_upper": "625728903713/626913312768"
+    },
+    {
+      "horizon": 49,
+      "denominator_bits": 954,
+      "root0_optimal_upper": "11409937250046241/11425495125196800"
+    },
+    {
+      "horizon": 50,
+      "denominator_bits": 973,
+      "root0_optimal_upper": "11409937250046241/11425495125196800"
+    },
+    {
+      "horizon": 51,
+      "denominator_bits": 993,
+      "root0_optimal_upper": "2505284430155/2507653251072"
+    },
+    {
+      "horizon": 52,
+      "denominator_bits": 1012,
+      "root0_optimal_upper": "2505284430155/2507653251072"
+    },
+    {
+      "horizon": 53,
+      "denominator_bits": 1032,
+      "root0_optimal_upper": "12844930703913419/12853682015846400"
+    },
+    {
+      "horizon": 54,
+      "denominator_bits": 1051,
+      "root0_optimal_upper": "12844930703913419/12853682015846400"
+    },
+    {
+      "horizon": 55,
+      "denominator_bits": 1071,
+      "root0_optimal_upper": "67674658686533/67706637778944"
+    },
+    {
+      "horizon": 56,
+      "denominator_bits": 1090,
+      "root0_optimal_upper": "67674658686533/67706637778944"
+    },
+    {
+      "horizon": 57,
+      "denominator_bits": 1110,
+      "root0_optimal_upper": "3700600231482483271/3701860420563763200"
+    },
+    {
+      "horizon": 58,
+      "denominator_bits": 1129,
+      "root0_optimal_upper": "3700600231482483271/3701860420563763200"
+    },
+    {
+      "horizon": 59,
+      "denominator_bits": 1149,
+      "root0_optimal_upper": "270762592928147/270826551115776"
+    },
+    {
+      "horizon": 60,
+      "denominator_bits": 1168,
+      "root0_optimal_upper": "270762592928147/270826551115776"
+    },
+    {
+      "horizon": 61,
+      "denominator_bits": 1188,
+      "root0_optimal_upper": "16655536467011827061/16658371892536934400"
+    },
+    {
+      "horizon": 62,
+      "denominator_bits": 1207,
+      "root0_optimal_upper": "16655536467011827061/16658371892536934400"
+    },
+    {
+      "horizon": 63,
+      "denominator_bits": 1226,
+      "root0_optimal_upper": "7311453444582929/7312316880125952"
+    },
+    {
+      "horizon": 64,
+      "denominator_bits": 1246,
+      "root0_optimal_upper": "7311453444582929/7312316880125952"
+    }
+  ],
+  "seconds": 11.714992200024426,
+  "Player_queries": 0,
+  "training_episodes": 0,
+  "scope": "Hypothetical explicitly oracle-controlled chance headroom on two previously frozen complete0/4histories. Not an experiential training start, new rollout, actual learner gain, learned material price, actual no-repeat policy utility, or PRIMARY campaign/default. Static forcedDRAW and positive utility against aUniformdefender are different estimands."
+}

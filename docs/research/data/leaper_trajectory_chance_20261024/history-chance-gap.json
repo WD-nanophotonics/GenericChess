@@ -1,0 +1,28 @@
+{
+  "verified": true,
+  "root_ply": 26,
+  "same_position": true,
+  "same_clock": true,
+  "WIN_history_optimal_uniform_value": "1",
+  "DRAW_history_optimal_uniform_bounds": [
+    "1/3",
+    "12301874999/12301875000"
+  ],
+  "defender_draw_probability_lower": "1/12301875000",
+  "same_position_value_gap_lower": "1/12301875000",
+  "any_position_only_value_max_error_lower": "1/24603750000",
+  "safety_vertices": 87659,
+  "literal_WIN_proof": {
+    "verified": true,
+    "reason": "verified",
+    "nodes": 4,
+    "seconds": 0.01873929996509105,
+    "terminal_leaves": {
+      "checkmate:None": 1
+    },
+    "session_transitions": 3
+  },
+  "seconds": 3.1563306000316516,
+  "Player_queries": 0,
+  "scope": "Exactfrozenfullhistoriesonly: sameRule/Position/clock butdifferentoptimalchancevalueunderUniformdefense. VerifiedsafetyandallattackerchoicesgivelowerdrawprobabilityagainstANYcontroller;extraactualrepetitiononlyhelpsdraw. Notintrinsicpieceprices, populationlearnergainorarequirementofperfectcalibrationbeforelearning."
+}

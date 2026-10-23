@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "names": [
+    [
+      "board",
+      "A"
+    ],
+    [
+      "hand",
+      "A"
+    ]
+  ],
+  "Core_qualified_position_features": {
+    "(2, 0)": 105288,
+    "(1, 0)": 19740,
+    "(0, 0)": 912
+  },
+  "actual_full_history_features": {
+    "(2, 0)": 6612,
+    "(1, 0)": 671,
+    "(0, 0)": 322
+  },
+  "model_gradient_checks": {
+    "(0.0, 0.0)": 755640
+  },
+  "models_checked": 6,
+  "Player_queries": 0,
+  "training_episodes": 0,
+  "model_updates": 0,
+  "claim": "Foranyfinitehandcoefficientandpositivescale, thefixedboardgradientis0byModelcontractandthehandgradientis0becauseitsfeatureisunreachable. EveryTDLeafeligibility/updateformedfromthesefrozenmaterialgradientsiszero, regardlessofnonzeroTDerror. Stochasticchanceheadroomdoesnotactivatearelativepriceaxis. Thisisnotauniversalclaimaboutotherlearners,geometryfeaturesorA/Binputs."
+}
