@@ -6737,3 +6737,30 @@ and FULL remote SHA verification. At this Git snapshot actual send/readback is
 not preclaimed; its private/external receipt is recorded only after it happens.
 Next original probe must follow its unanswered decision and new replies, keeping
 read/adopted/executed effects distinct. No Dot, extra probe, wait or self-reply.
+
+## 2026-10-23 PRIMARY — narrowed inverse choice and calibrated role/reference effects
+
+Chat reply1792742950.558489 was saved with complete threads, read and adopted:
+six-code equal-allotment uniform comparison, frozen future prefixes, roles and
+whole logical budget. It was actually executed and exposed guided-minus-uniform
+-1/16; original recipe STOP, no replacement/threshold rescue. Chat independently
+read the prior fixed report/README, not our local data or WDL engine; do not
+upgrade its review into independent execution. Claude's universal TD upper-bound
+interpretation remains rejected; no AUX truth/learning work was duplicated.
+
+PRIMARY contributes444new physical games/12241returns0UNKNOWN;48new mirror games
+complete the budget factorial using48OLDH2Hreferences, complementaryroles derived
+not extra executions. Own resource and opponent restriction are distinct. A
+fixed128 comparison additionally gives512to2048=-1/12. Six independent tuple-rule
+forward controls are finite, not learner/default or inverse success. 174newcosts,
+36oldcostrowreferences, full public replay/source binding and costs are explicit.
+The rawrole transfer guard is infeasible under the observed first-move opportunity
+upper bound; the primary mean failure is algebraicallyunchanged by calibration.
+
+A12-input factorial follow-up has begun at0newqueries, NOT_RUN_READY. The planned single
+post-publication asynchronous report will ask whether next-selection metrics should
+separate rawbias from fixed-reference conditional effects; no live wait, extra
+probe, Dot contact, AUX state edit or routine acknowledgment. Read/adopt/execute
+are separate. Full protocol/source/qualifications are in the linked mainline
+report, including before-fitness scope/estimand corrections and partial-stdout
+exposure. No published-history rewriting or old UNKNOWN refill.

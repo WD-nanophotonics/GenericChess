@@ -12,61 +12,41 @@ Old dated next actions are evidence, not a backlog or a competing live policy.
 
 ## Current selection and reason —2026-10-23
 
-Begin a bounded multi-coordinate inverse proposal, preserving natural prefixes
-as a prospective validation axis. The complete new evidence and exact sources are
-[LEAPER_QUANTITY_GEOMETRY_AND_OPPONENTS_20261023.md](LEAPER_QUANTITY_GEOMETRY_AND_OPPONENTS_20261023.md).
-All1,248 NEW planned games execute,1,212 continuations/36terminal starts,
-35,296returns/zeroUNKNOWN;841distinct literal records are not IID. The preceding
-2,124-record study remains fixed in
-[LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md](LEAPER_STRUCTURAL_HORIZON_QUANTITY_20261023.md).
-No old cohort is refilled or selected benchmark rescued.
+The frozen six-rule inverse recipe is STOPPED, not promoted. The actual narrowed-A
+suggestion was read, adopted and executed. Guided fresh-prefix resource response
+3/16 loses to the preselected uniform1/4; role1 raw transfer-9/8 also fails the
+original guard. Preserve this negative outcome rather than replacing codes or
+rescuing the criterion. Full evidence is
+[LEAPER_INVERSE_SELECTION_TRANSFER_20261023.md](LEAPER_INVERSE_SELECTION_TRANSFER_20261023.md).
 
-Quantity placement changes cheap utility: same-count/profile alternative gives
-Static/Unit1/48 versus1/32 and Static/FLOOR43/96 versus55/96. Correct changed rule
-fingerprints differ while every coefficient remains equal; the failed identity
-assertion was diagnosed and corrected in analysis only. Fresh240-root censuses
-decompose the cheap-1/8 contrast into-3/32 root-class transitions and-1/32 within
-initial nontrivial-oneply roots; the paired nontrivial-prefix contrast is0.
-These descriptors do not define WDL hardness or an admission filter.
+The role guard additionally confounds a changed opportunity distribution: five
+of16 guided future roots win immediately for the first actor, so rawrole1 upper
+3/8 cannot meet the required3/4. Complete128/128,512/128,128/512,512/512 matrices
+show positive guided own-budget effects1/8 and1/4 at a fixed128 foe despite raw
+role1=-1/8. Their balancedmean remains3/16; this does NOT repair primary failure.
+Keep raw seat bias and conditional resource benefit as separate future axes.
 
-The all24-code/two-placement6x6initial envelope gives Static/Unit11/96 and
-Static/FLOOR85/96. All48 board-price vectors change with geometry. Five root
-immediate wins imply a fixed-FLOOR opportunity upper86/96, leaving only1/96
-headroom for Static on THIS distribution. Four-context price vectors have
-three sign reversals and11 all-zero codes; these are not learner/benchmark gates.
+Adjacent same-root curves1/4,1/12,0 change references. At SAME128 foe, candidate
+512to2048 gain is-1/12; one explicit win becomes a draw. Another fixed512 case
+loses after own128to512. Both first divergences belong to the changed actor.
+No generic strength chain, WDL theorem, learner gate or default patch follows.
 
-Against SAME fixed StaticD3 on those48initial inputs, Static512=-5/12 and
-Unit512=-49/96; Unit-minus-Static=-3/32, but role1 is+1/12. The same-input price
-interaction versusFLOOR is-1/12. This supports retaining opponent-dependent price
-utility instead of inferring learning space from FLOOR saturation. It does not
-select Static universally or establish learned-value benefit. The reference's
-3,649 normal returns completeD3;118 valid immediate wins completeD0.
+The independently sampled six-tuple forward control closes72 games:2048/512=1/8,
+Static/Unit=1/12,D4/D3=1/24, with role/layout zeros and negatives retained. It is
+not an inverse success or population claim. In all444 NEW physical games there
+are12241 returns,0UNKNOWN,238 literal records not IID. Actual public copies pass
+39474PV/12241history turns plus69original-file bindings and532new-costPVedges;
+174NEWcost returns and36OLDrow references are separate. SharedCore is not an
+independent oracle. Policies/product/defaults/AUX/schedule remain unchanged.
 
-The separate128-to512budget response is27/64:4x4=11/48,6x6=59/96;6x6both roles
-positive,4x4role1negative. Requested adjacentD1-D4 means on6x6 are2/3,15/32,23/96,
-with last-link role1zero. Nineteen requestedD4 calls completeD3 at8192nodes,
-retained in their actual policy outcomes. No transitive strength or2048forecast.
-
-Next actual step has BEGUN:96 typed5x5mid-density proposal inputs fromALL24codes,
-bothAplacements,initial and NEWuniform8contexts are saved and round-trip verified.
-ZeroPlayerqueries/fitness, zero generation failures. It is NOT run-ready: before
-any paid fitness freeze policy/slots/caps/cost on actual full histories. Target
-coordinates remain strong-opponent price utility,budget response,FLOOR opportunity,
-context/role stability and totalcost/UNKNOWN; no quality scalar or automatic sampler.
-The proposal is exposed-data-guided, never blind holdout or inverse success.
-The concrete independent-review choice is a small prospective inverse/Pareto pilot
-WITH prefix validation versus first buying6x6natural-prefix coverage. Current
-judgment favors starting the bounded proposal/pilot with an explicit prefix axis;
-new Chat/Claude evidence can revise this, but no reply is required for independent
-feasibility/cost work. No AUX truth/learning work is duplicated.
-
-All actual public copies pass89,085PV edges/2,599FLOOR choices plus raw-SHA/value/
-input/source binding and199PVedges from96NEWcost returns. Placement12costs areOLD.
-This uses sharedCore, not independent engine/WDL or binary attestation. PUBLIC,
-60minute recurrence and asynchronous two-way mailbox are current user directions;
-no timer,AUX,evaluator,learner or search default changes. Full generated
-promotion/drop/auxiliary/history semantics remain the long-term target beyond
-this scoped plain-Leap/remove probe. Science is OPEN.
+Next actual step has BEGUN: twelve full inputs from the six-tuple cohort are saved
+and replay-qualified for a prospective48-physical-game factorial calibration.
+Zero new Player calls/fitness, NOT_RUN_READY. FIRST freeze target-aware criteria,
+explicit distribution/role estimands, complete-history cost and common cap.
+The rules/prefixes are now exposed, not blind holdout; no new selection feedback
+or revival of the old Pareto recipe. Follow the planned single new asynchronous question
+at the next original probe, without waiting, polling, Dot or AUX writes.
+Long-term generated promotion/drop/auxiliary/history semantics remain. Science is OPEN.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -587,17 +567,16 @@ continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled
 
 ## Current executable reserve —2026-10-23
 
-Main: Can the mid-density inverse proposal retain opponent headroom and budget
-response on prospective full histories?
-| Use the96 saved typed worlds in `.local_agent/leaper-inverse-density-proposal-20261023-7b3cb4eb`; FIRST freeze explicit policy/slot/seed/cap and actual full-history cost screen before any fitness
-| Complete multi-coordinate/role/prefix/cost/UNKNOWN evidence, current input hashes and candidate provenance
-| Proposal is NOT_RUN_READY; no scalar, default, learner gate, blind-holdout or inverse-success claim; no old fitness refill.
-Backup1: Does the six-by-six initial portrait transfer to new natural prefixes?
-| Freeze a bounded ALL24-code/two-placement full-history control if it has greater decision value than immediate inverse fitness
-| Same complete rule/role/opponent protocol and all planned prefix outcomes including terminal/UNKNOWN
-| No reply is required for independent feasibility; adopt/defer/reject new Chat advice explicitly, without new authorization assumptions or AUX duplication.
-Backup2: Which fixed reference gives useful discrimination at affordable cost?
-| On new proposal histories, register a small complete cost/feasibility check for candidate512 and fixed-depth references before selecting a paid study
-| Actual source, full-input legality/PV/depth/cost and preserved failures; opponent calibration remains an explicit vector
-| No all-domain proof, WDL solver, routine infrastructure work or extrapolation to deferred2048nodes.
+Main: Does conditional budget calibration transfer to the independent six-rule cohort?
+| Use12saved fullinputs in `.local_agent/leaper-next-factorial-proposal-20261023-714e40f6`; FIRST freeze exact estimands/opportunity-aware criteria/slots/source/cost/common cap beforequeries
+| Complete2x2budget matrices, rawrolebias and conditionalown/foeeffects with cost/UNKNOWN
+| NOT_RUN_READY/0Player/0fitness; no learner/default gate, scalar or rescue of old selection.
+Backup1: Does reference choice change price/resource interpretation?
+| Reuse published fixed-reference/factorial originals; choose a NEW controlled question only if it changes a decision and prospective cost fits
+| SAMEfullhistory/profile/role with independent reference/candidate factors and old/new distinction
+| No closedcohort refill, score-only success, WDL inference or automatic2048/8192 expansion.
+Backup2: Did Chat/Claude independent review change the next metric?
+| Next ORIGINALprobe follow current outbound question and new complete threads, saveexact originals then assess
+| Read/adopt/defer/reject plus actual effects; one merged progress/question afterpublish/fullSHA
+| No livewait/selfreply/Dot/AUXwrites or additional workers; no invented questions.
 Science is OPEN.

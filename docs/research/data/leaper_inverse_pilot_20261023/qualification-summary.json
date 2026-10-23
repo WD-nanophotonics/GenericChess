@@ -1,0 +1,224 @@
+{
+  "status": "PASS",
+  "totals": {
+    "original_file_bindings": 69,
+    "terminal_starts": 0,
+    "native_legality_calls": 2144304,
+    "native_legality_fallbacks": 0,
+    "native_legality_operational_failures": 0,
+    "games": 444,
+    "history_plies": 12241,
+    "controller_turn_receipts": 12241,
+    "literal_PV_edges": 39474,
+    "planned": 444,
+    "UNKNOWN": 0,
+    "new_cost_returns": 174,
+    "OLD_cost_references": 36,
+    "new_cost_PV_edges": 532,
+    "distinct_literal_final_records_NOT_IID": 238
+  },
+  "groups": [
+    {
+      "group": "screen",
+      "manifest": {
+        "status": "PASS",
+        "planned": 144,
+        "retained": 144,
+        "UNKNOWN": 0,
+        "returns": 4316,
+        "distinct_records_NOT_IID": 98,
+        "compressed_bytes": 1434276,
+        "compressed_sha256": "30247a94d442608415105b6c5e8017d07720e61fec2a0e739d8e2d55e5afa5a8",
+        "decoded_bytes": 16871751,
+        "decoded_sha256": "4dceb572f3ae6d4cb6692cfb619d5910d3a654ea44788a24dc4d1b2043f028d3",
+        "source_capsules": 12,
+        "actual_outgoing_privacy_check": true,
+        "new_cost_returns": 48
+      },
+      "actual_public_reader": {
+        "status": "PASS",
+        "games": 144,
+        "history_plies": 4316,
+        "controller_turn_receipts": 4316,
+        "AB_returns": 4316,
+        "literal_PV_edges": 12673,
+        "RNG_stream_checks": 0,
+        "FLOOR_policy_checks": 0,
+        "compressed_sha256": "30247a94d442608415105b6c5e8017d07720e61fec2a0e739d8e2d55e5afa5a8",
+        "seconds": 65.9875158999348,
+        "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+      }
+    },
+    {
+      "group": "validation",
+      "manifest": {
+        "status": "PASS",
+        "planned": 144,
+        "retained": 144,
+        "UNKNOWN": 0,
+        "returns": 3444,
+        "distinct_records_NOT_IID": 63,
+        "compressed_bytes": 1174418,
+        "compressed_sha256": "1df25fe970c1073eb6d291440dc1fa99bf2d83a82853e7dba670de316b35dee1",
+        "decoded_bytes": 14507117,
+        "decoded_sha256": "134c39bb78091dabfc4f75033e0a47cc2b07a1764f055f8b0a23176e96e72585",
+        "source_capsules": 13,
+        "actual_outgoing_privacy_check": true,
+        "new_cost_returns": 48
+      },
+      "actual_public_reader": {
+        "status": "PASS",
+        "games": 144,
+        "history_plies": 3444,
+        "controller_turn_receipts": 3444,
+        "AB_returns": 3444,
+        "literal_PV_edges": 10558,
+        "RNG_stream_checks": 0,
+        "FLOOR_policy_checks": 0,
+        "compressed_sha256": "1df25fe970c1073eb6d291440dc1fa99bf2d83a82853e7dba670de316b35dee1",
+        "seconds": 55.370897999964654,
+        "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+      }
+    },
+    {
+      "group": "ladder",
+      "manifest": {
+        "status": "PASS",
+        "planned": 24,
+        "retained": 24,
+        "UNKNOWN": 0,
+        "returns": 833,
+        "distinct_records_NOT_IID": 17,
+        "compressed_bytes": 326753,
+        "compressed_sha256": "eec857d8579f9137f1bed8d80d105375de8c3c97e2a928cf3c446a904204ba34",
+        "decoded_bytes": 3731304,
+        "decoded_sha256": "8b23d163cd048850c6f227ef977a4804c8a60485bb977ff21c0d9f93fccc492b",
+        "source_capsules": 13,
+        "actual_outgoing_privacy_check": true,
+        "new_cost_returns": 18
+      },
+      "actual_public_reader": {
+        "status": "PASS",
+        "games": 24,
+        "history_plies": 833,
+        "controller_turn_receipts": 833,
+        "AB_returns": 833,
+        "literal_PV_edges": 3746,
+        "RNG_stream_checks": 0,
+        "FLOOR_policy_checks": 0,
+        "compressed_sha256": "eec857d8579f9137f1bed8d80d105375de8c3c97e2a928cf3c446a904204ba34",
+        "seconds": 14.278934699948877,
+        "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+      }
+    },
+    {
+      "group": "control",
+      "manifest": {
+        "status": "PASS",
+        "planned": 72,
+        "retained": 72,
+        "UNKNOWN": 0,
+        "returns": 1900,
+        "distinct_records_NOT_IID": 41,
+        "compressed_bytes": 718502,
+        "compressed_sha256": "3f0a3f42d09cbbaf89fb8b5200f102b988435391de10d3389c9c42abb5ba2f37",
+        "decoded_bytes": 8930155,
+        "decoded_sha256": "31fd62f0f28a4ba752ee687bd567c5c31ee85856d53bcb4cf0a9fd830cd22724",
+        "source_capsules": 21,
+        "actual_outgoing_privacy_check": true,
+        "new_cost_returns": 60,
+        "OLD_reused_cost_returns": 0
+      },
+      "actual_public_reader": {
+        "status": "PASS",
+        "games": 72,
+        "history_plies": 1900,
+        "controller_turn_receipts": 1900,
+        "AB_returns": 1900,
+        "literal_PV_edges": 7063,
+        "RNG_stream_checks": 0,
+        "FLOOR_policy_checks": 0,
+        "compressed_sha256": "3f0a3f42d09cbbaf89fb8b5200f102b988435391de10d3389c9c42abb5ba2f37",
+        "seconds": 26.866987699992023,
+        "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+      }
+    },
+    {
+      "group": "mirror",
+      "manifest": {
+        "status": "PASS",
+        "planned": 48,
+        "retained": 48,
+        "UNKNOWN": 0,
+        "returns": 1305,
+        "distinct_records_NOT_IID": 38,
+        "compressed_bytes": 502769,
+        "compressed_sha256": "d31dcd2e4643a0a35a10fe1398598d8bc14c55609f9b92fe121e76eafe671d41",
+        "decoded_bytes": 6154624,
+        "decoded_sha256": "3f1032fe350cc3fabe4a647911cfc71148f6485c2964948bd7b4f1ae61426e44",
+        "source_capsules": 26,
+        "actual_outgoing_privacy_check": true,
+        "new_cost_returns": 0,
+        "OLD_reused_cost_returns": 24
+      },
+      "actual_public_reader": {
+        "status": "PASS",
+        "games": 48,
+        "history_plies": 1305,
+        "controller_turn_receipts": 1305,
+        "AB_returns": 1305,
+        "literal_PV_edges": 3892,
+        "RNG_stream_checks": 0,
+        "FLOOR_policy_checks": 0,
+        "compressed_sha256": "d31dcd2e4643a0a35a10fe1398598d8bc14c55609f9b92fe121e76eafe671d41",
+        "seconds": 22.15884259995073,
+        "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+      }
+    },
+    {
+      "group": "fixed",
+      "manifest": {
+        "status": "PASS",
+        "planned": 12,
+        "retained": 12,
+        "UNKNOWN": 0,
+        "returns": 443,
+        "distinct_records_NOT_IID": 12,
+        "compressed_bytes": 199486,
+        "compressed_sha256": "d55adb8921420255bd186815df963413e04b0de017e8ea7dc96a971dc07df6a7",
+        "decoded_bytes": 2078395,
+        "decoded_sha256": "02d16b62b93000900f5e0f98c18eab11fc43e7edcd1610605b991b0238f5df27",
+        "source_capsules": 26,
+        "actual_outgoing_privacy_check": true,
+        "new_cost_returns": 0,
+        "OLD_reused_cost_returns": 12
+      },
+      "actual_public_reader": {
+        "status": "PASS",
+        "games": 12,
+        "history_plies": 443,
+        "controller_turn_receipts": 443,
+        "AB_returns": 443,
+        "literal_PV_edges": 1542,
+        "RNG_stream_checks": 0,
+        "FLOOR_policy_checks": 0,
+        "compressed_sha256": "d55adb8921420255bd186815df963413e04b0de017e8ea7dc96a971dc07df6a7",
+        "seconds": 7.79473850002978,
+        "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+      }
+    }
+  ],
+  "supplement": {
+    "status": "PASS",
+    "compressed_bytes": 162665,
+    "compressed_sha256": "5872d438559330ad867b0662635245190a981e2f69044cc847d2c10a5e74669b",
+    "decoded_sha256": "4f69e4689b1860d47d7f60df80f6e6729936612d13e150a1fefa14ab13b22ff2",
+    "new_Player_calls": 0,
+    "next_proposal_roundtrips": 12,
+    "next_proposal_NOT_RUN_READY": true,
+    "privacy_matches": 0
+  },
+  "started_at": "2026-10-23T09:38:46.460087+00:00",
+  "ended_at": "2026-10-23T09:38:51.045475+00:00",
+  "scope": "Actualarchive/rawSHA/value/fullinput/sourcebinding andnewcostPVreplay combinedwithONEfullpublicCore/PVreaderperpacket; OLDcostreusequalified separately. Notindependentengine/WDL/binaryattestation/IID or universalgeneralization."
+}
