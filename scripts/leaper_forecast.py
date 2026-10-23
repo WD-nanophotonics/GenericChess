@@ -211,9 +211,124 @@ def paired_capacity(candidate, baselines):
     return {'status':'CLOSED','new_candidate_games':n,'reused_baseline_frames':n,'difference_bounds':[str(sum(Fraction(r['utility_difference_bounds'][i]) for r in rows)/n) for i in (0,1)],'per_world':perworld,'rows':rows,
         'scope':'Same complete rules/profile/source and actor seeds; only node budget differs. RNG consumption diverges after changed actions. Finite observed utility, not monotone optimal strength or independent sample CI.'}
 
+def staircase_analysis(cheap, resource, material):
+    """A finite three-axis portrait; preserve intervals and verify same games.
+
+    Axes have different opponents and cannot be combined into a strength score.
+    This is forward triage, not a learner gate or generic game-quality ranking.
+    """
+    from scripts.leaper_design import ruleset_from_dict, compute_fingerprint, search_spec
+    from dataclasses import replace
+    paths={'cheap':Path(cheap),'resource':Path(resource),'material':Path(material)}
+    arms={}
+    for name,d in paths.items():
+        reg=load(d/'registration.json'); inp=load(d/'inputs.json'); result=load(d/'results.json')
+        if result['status']!='CLOSED':raise ValueError('all axes must be closed')
+        if hashlib.sha256((d/'inputs.json').read_bytes()).hexdigest()!=reg['input_sha256']:
+            raise ValueError('frozen input hash mismatch')
+        if set(reg['roles'])!={0,1} or len(reg['roles'])!=2 or len(reg['pairs'])!=1:
+            raise ValueError('one pair and both roles required')
+        pair=next(iter(reg['pairs'])); policies=reg['pairs'][pair]
+        if name=='cheap' and policies!=['AB','FLOOR']:raise ValueError('cheap axis must be AB/FLOOR')
+        if name=='material' and policies!=['STATIC_ADAPTER','M0']:raise ValueError('material axis must be Static/M0')
+        if name=='resource':
+            if [search_spec(reg,p) for p in policies]!=[('AB',2048),('AB',512)]:
+                raise ValueError('resource axis must be AB2048/AB512')
+        elif reg['nodes']!=512:raise ValueError('cheap and material axes use512nodes')
+        worlds=inp['worlds']; expected={(i,pair,a,k) for i in range(len(worlds)) for a in reg['roles']
+            for k in range(reg.get('first_repeat',0),reg.get('first_repeat',0)+reg['repetitions'])}
+        keys=[(v['world'],v['pair'],v['role'],v['repeat']) for v in result['slots']]
+        if len(keys)!=len(set(keys)) or set(keys)!=expected or len(keys)!=reg['planned_games']:
+            raise ValueError('planned cell census mismatch')
+        if len({v['slot'] for v in result['slots']})!=len(keys):raise ValueError('duplicate slot identifier')
+        records={}
+        for v in result['slots']:
+            u=v['utility']
+            if len(u)!=2 or any(type(x) is not int or x not in (-1,0,1) for x in u) or u[0]>u[1]:
+                raise ValueError('invalid utility interval')
+            if v['status']!='finished' and u!=[-1,1]:raise ValueError('missing outcome was imputed')
+            path=d/v.get('receipt',f"game-{v['slot']:03d}.json")
+            if path.exists():
+                g=load(path)
+                if any(g[k]!=v[k] for k in ('slot','world','pair','role','repeat')):
+                    raise ValueError('receipt does not bind planned cell')
+                if v['status']=='finished' and (g.get('status')!='finished' or g['utility']!=u):
+                    raise ValueError('finished receipt outcome mismatch')
+                records[v['slot']]=g
+            elif v['status']=='finished':raise ValueError('finished receipt missing')
+        arms[name]={'d':d,'reg':reg,'worlds':worlds,'slots':result['slots'],'records':records}
+    common=('q','forced_check_depth','rule_max_ply','caller_plies','repetition_limit','disk_cache','TT','source_sha256')
+    if any(arm['reg'].get(k)!=arms['cheap']['reg'].get(k) for arm in arms.values() for k in common):
+        raise ValueError('shared search/history controls differ')
+    reference=arms['cheap']['worlds']; identities=[]
+    for i,w in enumerate(reference):
+        if w['world']!=i:raise ValueError('world index mismatch')
+        if compute_fingerprint(ruleset_from_dict(w['rule']))!=w['fingerprint']:
+            raise ValueError('full rule fingerprint mismatch')
+        identity=(w['code_world'],w['layout_index']);identities.append(identity)
+        for arm in arms.values():
+            if len(arm['worlds'])!=len(reference):raise ValueError('world count mismatch')
+            other=arm['worlds'][i]
+            if any(other[k]!=w[k] for k in ('world','code_world','layout_index','rule','fingerprint','initial_record')):
+                raise ValueError('axes do not share complete rules and initial histories')
+    if len(set(identities))!=len(identities):raise ValueError('duplicate code-layout input')
+    layouts={c:{l for code,l in identities if code==c} for c in {c for c,l in identities}}
+    if len({tuple(sorted(v)) for v in layouts.values()})!=1:raise ValueError('unequal planned layouts across codes')
+    for code in layouts:
+        members=[w for w in reference if w['code_world']==code]
+        first=ruleset_from_dict(members[0]['rule'])
+        for w in members[1:]:
+            candidate=ruleset_from_dict(w['rule'])
+            if compute_fingerprint(replace(candidate,initial_position=first.initial_position))!=members[0]['fingerprint']:
+                raise ValueError('code layouts change non-layout rule fields')
+            if any(w.get(k)!=members[0].get(k) for k in ('masks','C_mask','roster')):
+                raise ValueError('code layouts have inconsistent labels')
+    rows=[]
+    for code in sorted(layouts):
+        indices={i for i,w in enumerate(reference) if w['code_world']==code}
+        labels=next(w for w in reference if w['code_world']==code)
+        row={'code_world':code,'AB_masks':labels.get('masks'),'C_mask':labels.get('C_mask'),
+             'roster':labels.get('roster'),'axes':{}}
+        for name,arm in arms.items():
+            cells=[v for v in arm['slots'] if v['world'] in indices]
+            records=[arm['records'][v['slot']] for v in cells if v['slot'] in arm['records']]
+            qs=[q for g in records for q in g.get('queries',[])]
+            row['axes'][name]={'planned':len(cells),'bounds':[str(v) for v in means(cells)],
+                'outcomes':dict(Counter('UNKNOWN' if v['utility'][0]!=v['utility'][1] else str(v['utility'][0]) for v in cells)),
+                'per_role':{str(a):[str(v) for v in means([s for s in cells if s['role']==a])] for a in (0,1)},
+                'per_layout':{str(l):[str(v) for v in means([s for s in cells if reference[s['world']]['layout_index']==l])] for l in sorted(layouts[code])},
+                'retained_controller_turns':len(qs),'retained_search_nodes':sum(q.get('decision',{}).get('nodes',0) for q in qs),
+                'retained_search_qnodes':sum(q.get('decision',{}).get('qnodes',0) for q in qs),
+                'retained_native_legality_calls':sum(q.get('decision',{}).get('native_legality_calls',0) for q in qs),
+                'retained_native_fallbacks':sum(q.get('decision',{}).get('native_legality_fallbacks',0) for q in qs),
+                'retained_native_operational_failures':sum(q.get('decision',{}).get('native_legality_operational_failures',0) for q in qs),
+                'retained_policy_seconds':sum(q['seconds'] for q in qs),
+                'unique_retained_full_records':len({json.dumps(g['final_record'],sort_keys=True,separators=(',',':')) for g in records if 'final_record' in g}),
+                'cost_scope':'Retained paid costs only; unattempted/missing costs are not estimated as zero.'}
+        rows.append(row)
+    relations=[]
+    for a in rows:
+        for b in rows:
+            if a is b:continue
+            comparisons=[(Fraction(a['axes'][k]['bounds'][0]),Fraction(b['axes'][k]['bounds'][1])) for k in paths]
+            if all(x>=y for x,y in comparisons) and any(x>y for x,y in comparisons):
+                relations.append({'dominating_code':a['code_world'],'dominated_code':b['code_world']})
+    dominated={v['dominated_code'] for v in relations}
+    qualified=[r for r in rows if all(Fraction(v['bounds'][0])>0 for v in r['axes'].values())]
+    qualified.sort(key=lambda r:(tuple(r['AB_masks'] or []),r['C_mask'] or 0,r['code_world']))
+    return {'status':'CLOSED','per_code':rows,'robust_dominance':relations,
+        'possibly_nondominated_codes':[r['code_world'] for r in rows if r['code_world'] not in dominated],
+        'positive_lower_bound_all3_codes':[r['code_world'] for r in qualified],
+        'lexicographic_candidates_up_to2':[r['code_world'] for r in qualified[:2]],
+        'source_input_sha256':{k:v['reg']['input_sha256'] for k,v in arms.items()},
+        'scope':'All planned code/layout/role cells remain. Robust dominance compares lower to upper endpoints, not optimistic midpoints. These exposed finite three-opponent axes are not a transitive strength/Elo ranking, population CI, learned-price benefit or training gate. No universal quality scalar or default activation.'}
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser(__doc__);p.add_argument('--run',type=Path,action='append');p.add_argument('--predictions',type=Path);p.add_argument('--proposal',type=Path);p.add_argument('--budget',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
-    if a.budget:
+    p=argparse.ArgumentParser(__doc__);p.add_argument('--run',type=Path,action='append');p.add_argument('--predictions',type=Path);p.add_argument('--proposal',type=Path);p.add_argument('--budget',type=Path);p.add_argument('--staircase',type=Path,nargs=3,metavar=('CHEAP','RESOURCE','MATERIAL'));p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    if a.staircase:
+        if a.budget or a.run or a.predictions or a.proposal:p.error('--staircase is separate from other analyses')
+        result=staircase_analysis(*a.staircase)
+    elif a.budget:
         if a.run or a.predictions or a.proposal:p.error('--budget is separate from other analyses')
         result=budget_analysis(a.budget)
     elif a.proposal:
@@ -222,4 +337,4 @@ if __name__=='__main__':
     else:
         if not a.run or not a.predictions:p.error('forecast requires --run and --predictions')
         result=analyze(a.run,a.predictions)
-    write_record(a.output,result);print(json.dumps({k:v for k,v in result.items() if k not in ('rows','role_seed','per_world','groups','role_seed_direct')},indent=2))
+    write_record(a.output,result);print(json.dumps({k:v for k,v in result.items() if k not in ('rows','role_seed','per_world','groups','role_seed_direct','per_code')},indent=2))

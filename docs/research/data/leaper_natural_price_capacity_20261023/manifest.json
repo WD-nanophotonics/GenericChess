@@ -1,0 +1,33 @@
+{
+  "format": "AUX-curated-Leaper-price-evidence-v1",
+  "input_source_sha": "55abf3de22f20ac03eb07b5260284466173a3264",
+  "infrastructure_sha": "ff72649685c21a37bdbe147c930e4b2070934f77",
+  "files": {
+    "abc_grid.json.gz": {
+      "bytes": 170636,
+      "sha256": "1bd6096cdc88c0f434128b5802db359a6b514b43c4b3bbfb6afbe0cf804b77d5"
+    },
+    "abc_validation.json.gz": {
+      "bytes": 201812,
+      "sha256": "37e6926a91a7efaa84d88f80a86ee9d529df04279ec927382ffa2e68fe528054"
+    },
+    "mechanisms.json.gz": {
+      "bytes": 210043,
+      "sha256": "0d9cd0f15c72f7faed7bb555a338c3a3d3c5db989df2058239ecc304c5badad6"
+    },
+    "natural.json.gz": {
+      "bytes": 344118,
+      "sha256": "c069045beaf98a9d307ee48b619de74c6e9420e0c7b7edd04ee8b600e8e427a3"
+    },
+    "selection_and_mechanism.json.gz": {
+      "bytes": 25023,
+      "sha256": "9a265fcecba7c8949d4e050dd15d97ca14e054f732ee64ccbce1388962330751"
+    }
+  },
+  "total_compressed_bytes": 951632,
+  "scope": "No pickle/fullgraph/rawquery dump;curated completehistory andselectedPV projections. Public/private reader scopes distinct,asdocumented. Nextcontext costs do not imply traininggain.",
+  "reader_runtime": {
+    "python": "3.12.14",
+    "platform": "Windows"
+  }
+}

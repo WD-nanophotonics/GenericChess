@@ -1,0 +1,591 @@
+{
+  "status": "CLOSED",
+  "question": "First cost-only comparison on latest committed harderABC inputs,not newfitness or learning effect.",
+  "source_sha": "ff72649685c21a37bdbe147c930e4b2070934f77",
+  "planned": 16,
+  "rows": [
+    {
+      "world": 0,
+      "code_world": 12,
+      "layout": 2,
+      "fingerprint": "815549ef00c73cce754651a0fb3e2f36d948631aa095d9d46c0d621276536d11",
+      "price": "unit",
+      "weights": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 500,
+      "seconds": 0.0973746000090614,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_077",
+        "geometry_id": "g8",
+        "actor_type_id": "A",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.0
+    },
+    {
+      "world": 0,
+      "code_world": 12,
+      "layout": 2,
+      "fingerprint": "815549ef00c73cce754651a0fb3e2f36d948631aa095d9d46c0d621276536d11",
+      "price": "selected_B2C1",
+      "weights": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 466,
+      "seconds": 0.08128359995316714,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_077",
+        "geometry_id": "g8",
+        "actor_type_id": "A",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 1.0
+    },
+    {
+      "world": 0,
+      "code_world": 12,
+      "layout": 2,
+      "fingerprint": "815549ef00c73cce754651a0fb3e2f36d948631aa095d9d46c0d621276536d11",
+      "price": "mobility",
+      "weights": [
+        1,
+        1.0,
+        0.5,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 501,
+      "seconds": 0.08448980003595352,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_077",
+        "geometry_id": "g8",
+        "actor_type_id": "A",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.5
+    },
+    {
+      "world": 0,
+      "code_world": 12,
+      "layout": 2,
+      "fingerprint": "815549ef00c73cce754651a0fb3e2f36d948631aa095d9d46c0d621276536d11",
+      "price": "Static_material",
+      "weights": [
+        1,
+        1.0,
+        0.515,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 501,
+      "seconds": 0.0836028999183327,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_077",
+        "geometry_id": "g8",
+        "actor_type_id": "A",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.485
+    },
+    {
+      "world": 1,
+      "code_world": 12,
+      "layout": 3,
+      "fingerprint": "bfe9c64876d11273f82a6704fe8f96f326b62fed538f7d13dd674177067cf7e5",
+      "price": "unit",
+      "weights": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 532,
+      "seconds": 0.09443120006471872,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_043",
+        "geometry_id": "g28",
+        "actor_type_id": "C",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 1.0
+    },
+    {
+      "world": 1,
+      "code_world": 12,
+      "layout": 3,
+      "fingerprint": "bfe9c64876d11273f82a6704fe8f96f326b62fed538f7d13dd674177067cf7e5",
+      "price": "selected_B2C1",
+      "weights": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 419,
+      "seconds": 0.07584299996960908,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_043",
+        "geometry_id": "g28",
+        "actor_type_id": "C",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 1.0
+    },
+    {
+      "world": 1,
+      "code_world": 12,
+      "layout": 3,
+      "fingerprint": "bfe9c64876d11273f82a6704fe8f96f326b62fed538f7d13dd674177067cf7e5",
+      "price": "mobility",
+      "weights": [
+        1,
+        1.0,
+        0.5,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 405,
+      "seconds": 0.07456450001336634,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_043",
+        "geometry_id": "g28",
+        "actor_type_id": "C",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.5
+    },
+    {
+      "world": 1,
+      "code_world": 12,
+      "layout": 3,
+      "fingerprint": "bfe9c64876d11273f82a6704fe8f96f326b62fed538f7d13dd674177067cf7e5",
+      "price": "Static_material",
+      "weights": [
+        1,
+        1.0,
+        0.515,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 405,
+      "seconds": 0.07329990004654974,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_043",
+        "geometry_id": "g28",
+        "actor_type_id": "C",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.515
+    },
+    {
+      "world": 2,
+      "code_world": 8,
+      "layout": 2,
+      "fingerprint": "08043c3cf50269fdedb83328ab43f90c28a32e1e919f00f7e4707ad91ad59485",
+      "price": "unit",
+      "weights": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 327,
+      "seconds": 0.061079699895344675,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_072",
+        "geometry_id": "g6",
+        "actor_type_id": "A",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.0
+    },
+    {
+      "world": 2,
+      "code_world": 8,
+      "layout": 2,
+      "fingerprint": "08043c3cf50269fdedb83328ab43f90c28a32e1e919f00f7e4707ad91ad59485",
+      "price": "selected_B2C1",
+      "weights": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 342,
+      "seconds": 0.06285860005300492,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_072",
+        "geometry_id": "g6",
+        "actor_type_id": "A",
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.0
+    },
+    {
+      "world": 2,
+      "code_world": 8,
+      "layout": 2,
+      "fingerprint": "08043c3cf50269fdedb83328ab43f90c28a32e1e919f00f7e4707ad91ad59485",
+      "price": "mobility",
+      "weights": [
+        1,
+        1.1904761904761905,
+        0.5714285714285714,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 348,
+      "seconds": 0.06425709999166429,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_026",
+        "geometry_id": "g20",
+        "actor_type_id": "B",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": -0.19047619047619047
+    },
+    {
+      "world": 2,
+      "code_world": 8,
+      "layout": 2,
+      "fingerprint": "08043c3cf50269fdedb83328ab43f90c28a32e1e919f00f7e4707ad91ad59485",
+      "price": "Static_material",
+      "weights": [
+        1,
+        1.184,
+        0.586,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 348,
+      "seconds": 0.06559889996424317,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_026",
+        "geometry_id": "g20",
+        "actor_type_id": "B",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": -0.18399999999999994
+    },
+    {
+      "world": 3,
+      "code_world": 8,
+      "layout": 3,
+      "fingerprint": "5c637e5de183de4f9725634bc64ff14619c32dca0904558a4b3b6324ee962799",
+      "price": "unit",
+      "weights": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 520,
+      "seconds": 0.0926905000815168,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_017",
+        "geometry_id": "g16",
+        "actor_type_id": "B",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": 0.0
+    },
+    {
+      "world": 3,
+      "code_world": 8,
+      "layout": 3,
+      "fingerprint": "5c637e5de183de4f9725634bc64ff14619c32dca0904558a4b3b6324ee962799",
+      "price": "selected_B2C1",
+      "weights": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 531,
+      "seconds": 0.09207019989844412,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_006",
+        "geometry_id": "g11",
+        "actor_type_id": "A",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": -1.0
+    },
+    {
+      "world": 3,
+      "code_world": 8,
+      "layout": 3,
+      "fingerprint": "5c637e5de183de4f9725634bc64ff14619c32dca0904558a4b3b6324ee962799",
+      "price": "mobility",
+      "weights": [
+        1,
+        1.1904761904761905,
+        0.5714285714285714,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 794,
+      "seconds": 0.1264641999732703,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_014",
+        "geometry_id": "g15",
+        "actor_type_id": "B",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": -0.5714285714285714
+    },
+    {
+      "world": 3,
+      "code_world": 8,
+      "layout": 3,
+      "fingerprint": "5c637e5de183de4f9725634bc64ff14619c32dca0904558a4b3b6324ee962799",
+      "price": "Static_material",
+      "weights": [
+        1,
+        1.184,
+        0.586,
+        0,
+        0,
+        0
+      ],
+      "requested": 4,
+      "completed": 4,
+      "nodes": 794,
+      "seconds": 0.12768009991850704,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_014",
+        "geometry_id": "g15",
+        "actor_type_id": "B",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "reason": "completed_depth",
+      "value": -0.586
+    }
+  ],
+  "seconds": 1.4000702999765053,
+  "caps": {
+    "whole_seconds": 60,
+    "query_seconds": 2,
+    "nodes": 8192
+  },
+  "scope": "All4unchanged PRIMARY FIRST3/4 initialrecords for twoalreadyexposed codes. No rule/openingdesign/forwardgame/labelcycle/default changes,or futurecost guarantee. Individual coldroot costs are not fullgame/TD costs. Nextusefulstep begun;freeze bounded priorcomparison onlyafter actualnaturalprefix cost."
+}

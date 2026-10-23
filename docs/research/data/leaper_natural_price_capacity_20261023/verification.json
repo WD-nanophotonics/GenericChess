@@ -1,0 +1,301 @@
+{
+  "core_graphs": {
+    "status": "PASS",
+    "seconds": 1853.9507735000225,
+    "counts": {
+      "negative_controls": 2,
+      "full_histories": 2047,
+      "qualified_roots": 898,
+      "root_actions": 4946,
+      "cells": 4490,
+      "graphs": 24,
+      "positions": 959604,
+      "edges": 4649688
+    },
+    "details": [
+      {
+        "world": 0,
+        "seconds": 54.23423990001902,
+        "full_histories": 130,
+        "qualified_roots": 44,
+        "root_actions": 229,
+        "cells": 220
+      },
+      {
+        "world": 1,
+        "seconds": 100.12349379993975,
+        "qualified_roots": 67,
+        "root_actions": 391,
+        "cells": 335,
+        "full_histories": 72
+      },
+      {
+        "world": 2,
+        "seconds": 101.30301579996012,
+        "qualified_roots": 70,
+        "root_actions": 387,
+        "cells": 350,
+        "full_histories": 93
+      },
+      {
+        "world": 3,
+        "seconds": 54.196899299975485,
+        "full_histories": 78,
+        "qualified_roots": 30,
+        "root_actions": 155,
+        "cells": 150
+      },
+      {
+        "world": 4,
+        "seconds": 56.86657660000492,
+        "full_histories": 51,
+        "qualified_roots": 9,
+        "root_actions": 37,
+        "cells": 45
+      },
+      {
+        "world": 5,
+        "seconds": 55.331092300009914,
+        "qualified_roots": 13,
+        "root_actions": 69,
+        "cells": 65,
+        "full_histories": 55
+      },
+      {
+        "world": 6,
+        "seconds": 103.524366299971,
+        "full_histories": 37,
+        "qualified_roots": 9,
+        "root_actions": 52,
+        "cells": 45
+      },
+      {
+        "world": 7,
+        "seconds": 103.32445660000667,
+        "qualified_roots": 94,
+        "root_actions": 507,
+        "cells": 470,
+        "full_histories": 94
+      },
+      {
+        "world": 8,
+        "seconds": 104.34918809996452,
+        "qualified_roots": 123,
+        "root_actions": 705,
+        "cells": 615,
+        "full_histories": 127
+      },
+      {
+        "world": 9,
+        "seconds": 95.6515346999513,
+        "full_histories": 67,
+        "qualified_roots": 31,
+        "root_actions": 206,
+        "cells": 155
+      },
+      {
+        "world": 10,
+        "seconds": 101.94931799999904,
+        "full_histories": 88,
+        "qualified_roots": 14,
+        "root_actions": 80,
+        "cells": 70
+      },
+      {
+        "world": 11,
+        "seconds": 105.15160890005063,
+        "full_histories": 106,
+        "qualified_roots": 39,
+        "root_actions": 243,
+        "cells": 195
+      },
+      {
+        "world": 12,
+        "seconds": 28.403497499995865,
+        "qualified_roots": 21,
+        "root_actions": 108,
+        "cells": 105,
+        "full_histories": 29
+      },
+      {
+        "world": 13,
+        "seconds": 51.72834880009759,
+        "full_histories": 26,
+        "qualified_roots": 15,
+        "root_actions": 78,
+        "cells": 75
+      },
+      {
+        "world": 14,
+        "seconds": 30.53767509991303,
+        "full_histories": 35,
+        "qualified_roots": 22,
+        "root_actions": 111,
+        "cells": 110
+      },
+      {
+        "world": 15,
+        "seconds": 28.145577399991453,
+        "full_histories": 29,
+        "qualified_roots": 11,
+        "root_actions": 47,
+        "cells": 55
+      },
+      {
+        "world": 16,
+        "seconds": 56.21661350002978,
+        "full_histories": 48,
+        "qualified_roots": 9,
+        "root_actions": 49,
+        "cells": 45
+      },
+      {
+        "world": 17,
+        "seconds": 52.15254680009093,
+        "qualified_roots": 39,
+        "root_actions": 208,
+        "cells": 195,
+        "full_histories": 79
+      },
+      {
+        "world": 18,
+        "seconds": 100.86450950009748,
+        "qualified_roots": 64,
+        "root_actions": 340,
+        "cells": 320,
+        "full_histories": 167
+      },
+      {
+        "world": 19,
+        "seconds": 100.34123559994623,
+        "qualified_roots": 10,
+        "root_actions": 49,
+        "cells": 50,
+        "full_histories": 41
+      },
+      {
+        "world": 20,
+        "seconds": 100.87963730003685,
+        "full_histories": 69,
+        "qualified_roots": 36,
+        "root_actions": 202,
+        "cells": 180
+      },
+      {
+        "world": 21,
+        "seconds": 104.19127369998023,
+        "full_histories": 163,
+        "qualified_roots": 76,
+        "root_actions": 400,
+        "cells": 380
+      },
+      {
+        "world": 22,
+        "seconds": 107.89217989996541,
+        "qualified_roots": 34,
+        "root_actions": 193,
+        "cells": 170,
+        "full_histories": 244
+      },
+      {
+        "world": 23,
+        "seconds": 56.37713180005085,
+        "full_histories": 119,
+        "qualified_roots": 18,
+        "root_actions": 100,
+        "cells": 90
+      }
+    ]
+  },
+  "natural_mechanisms": {
+    "status": "PASS",
+    "seconds": 69.32561289996374,
+    "counts": {
+      "PV_edges": 15834,
+      "queries": 5388,
+      "literal_visits": 802971,
+      "literal_supports": 1796,
+      "roots": 898
+    }
+  },
+  "residual_literal": {
+    "status": "PASS",
+    "seconds": 27.94009950000327,
+    "counts": {
+      "literal_visits": 381863,
+      "residual_literal_supports": 2
+    },
+    "residual_only": true
+  },
+  "scope_guards": "PASS24 exact published-reader RuleSet guards,executed separately after the graph rebuild;numeric loop unchanged.",
+  "runtime_tests": "87passed in4.19s",
+  "source_census": {
+    "status": "PASS",
+    "seconds": 5.098901099991053,
+    "counts": {
+      "source_references": 2060,
+      "source_histories": 2047
+    },
+    "scope": "Original fixed55ab compressed Gitblob hash and all source query histories/origins independently re-enumerated;no graphrebuild or new scientific slots."
+  },
+  "grid_compact": {
+    "status": "PASS",
+    "seconds": 4.13599650003016,
+    "counts": {
+      "prefixes": 32,
+      "unique_records": 101,
+      "controller_actions": 39987,
+      "reported_queries": 39987,
+      "reported_nodes": 7748852,
+      "terminal_prefix_views": 18,
+      "slots": 576,
+      "example_PV_edges": 3617,
+      "published_queries": 929
+    },
+    "scope": "All compact GameRecords,prefixlaw,slotoutcomes andfinitecontrasts rechecked;only metadata-selected publishedPVexamples. Full privatequeryreader receipt is distinct;allcosts here are reconciled reportedmetadata. Shared Core,not independentrules engine orallleaf search proof."
+  },
+  "validation_compact": {
+    "status": "PASS",
+    "seconds": 4.402331099961884,
+    "counts": {
+      "prefixes": 64,
+      "unique_records": 116,
+      "controller_actions": 19408,
+      "reported_queries": 19408,
+      "reported_nodes": 3638258,
+      "terminal_prefix_views": 8,
+      "slots": 256,
+      "example_PV_edges": 4496,
+      "published_queries": 1151
+    },
+    "scope": "All compact GameRecords,prefixlaw,slotoutcomes andfinitecontrasts rechecked;only metadata-selected publishedPVexamples. Full privatequeryreader receipt is distinct;allcosts here are reconciled reportedmetadata. Shared Core,not independentrules engine orallleaf search proof."
+  },
+  "validation_private_full": {
+    "status": "PASS",
+    "seconds": 36.15614540001843,
+    "counts": {
+      "openings": 64,
+      "queries": 19408,
+      "nodes": 3638258,
+      "full_D4": 19408,
+      "PV_edges": 75934,
+      "actual_actions": 19408,
+      "games": 256
+    },
+    "scope": "Full prefix/actual history/PV/value/terminal replay through shared Core;not independent engine or all-leaf optimal-support proof. UNKNOWN and original caps remain."
+  },
+  "grid_private_full": {
+    "status": "PASS",
+    "seconds": 75.20857229991816,
+    "counts": {
+      "openings": 32,
+      "queries": 39987,
+      "nodes": 7748852,
+      "full_D4": 39987,
+      "PV_edges": 156329,
+      "actual_actions": 39987,
+      "games": 576
+    },
+    "scope": "Full prefix/actual history/PV/value/terminal replay through shared Core;not independent engine or all-leaf optimal-support proof. UNKNOWN and original caps remain."
+  }
+}

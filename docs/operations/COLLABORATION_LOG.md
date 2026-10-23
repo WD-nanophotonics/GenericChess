@@ -1057,3 +1057,43 @@ Session e6309259-f543-419b-9039-d91a14cdd739 preserves its
 2026-10-22T22:37:31.937579Z origin and confirms3807.541006seconds (63.459minutes)
 at the scientific safe checkpoint. Delivery time is excluded;own sidemission
 publication,fullremoteSHA and session finish are checked before final reply.
+
+
+## DEV_AUX — 2026-10-23 natural price capacity and prospective ABC validation
+
+PRIMARY's committed ff72649685c21a37bdbe147c930e4b2070934f77 supplies the latest
+public forecast/staircase interface and newer frozen ABC inputs; these source/tests
+are reused. Existing55ab rules/trajectories remain the frozen current experiment
+inputs. PRIMARY retains generator, opening-layout, forward-screen and label-cycle
+ownership. No other checkout/state or uncommitted work is adopted.
+
+AUX completes898 history-qualified natural-root D1price cells and5388D2/D4
+queries. D1's40 worse-WDL selections become6 atD2 and1 atD4, with identical
+quality for Unit/mobility/Static priors; no D1positive-price rescue in[1/4,4].
+Core rebuild24/24graphs/2047history inclusion checks passes; independent literal
+fullhistory controls confirm1796sets and the residualD6 improvement before its
+rank17mate proof. Price capacity, ties, proof depth and actual quality remain
+separate claims.
+
+The576slot ABCgrid selectsB2C1 at+3/64 vsUnit. Predeclared prospective256slot
+newprefix validation gives+7/128, bothroles positive, zeroUNKNOWN; no pooling,
+reranking, TD training, universalprice or population-CI claim. Counts preserve
+558/248 actualcontinuations versus18/8 terminalprefixviews,101/116 distinct
+records. Full private readers pass59395queries/232263PVedges. Curated public
+projections retain all results and selectedPVs in951632compressed bytes, rather
+than the5.3MB rawquerydump. Coldroot16call costs on the newer ff two-code inputs
+are begun only as the next own priorcomparison's feasibility, not newfitness.
+
+NewClaude comment1792709449 is read privately and adopted for directABC effects
+and distinct-history reporting. Its9point/noise-to-universalTDceiling inference
+is rejected. Its9216game proposal costs107.52min even at0.7s/game, not15min;
+actual4.05s/game pilot implies10.4hours. The bounded576+conditional256 design
+stays below120min expected cost and preserves all oldcaps/UNKNOWN.2164repeated
+D1single-type calls are retained as paid cost, not independentconditions.
+
+Scientific sessionee607634-4297-4b54-8e66-f861d3458ce0 confirms4338.387185s (72.306min),
+closed before administrative delivery. Next: consume committed ff natural
+prefixes and price/prior costs before one bounded cheap-prior control; no
+duplicate PRIMARY work or restart of the CLOSED five-actor preflight. Historical
+SEND_UNCERTAIN remains unresent; no schedule/Agent/Goal/worker changes.
+Report: docs/research/LEAPER_NATURAL_PRICE_CAPACITY_20261023.md.
