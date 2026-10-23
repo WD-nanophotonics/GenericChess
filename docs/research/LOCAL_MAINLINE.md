@@ -1,67 +1,72 @@
 # DEV_AUX current research
 
-PRIMARY owns rule/layout selection,features/forecasts,forward games,inverse and
-defaults. AUX owns full-history truth,certificates,coverage/cost and matched
-offline scoring. Only own checkout/sidemission changes;patrol60min unchanged.
+PRIMARY owns rule/layout selection, forecasts, forward campaigns and defaults.
+AUX owns history truth, certificates, offline occupation and bounded learner/
+depth mechanisms. Only this checkout/sidemission changes; patrol remains60min.
 
-## Current direction and fixed sources
+## Latest checked result
 
-Adopt Chat1792763020.416259:F(R;mu,policy/budget),small rule changes and strategic
-signatures before inverse/learning scale. The old initial10cooperation headline
-is superseded. Latest fetched committed sandbox is
-0815ac6cb8268266c215c0cd8a24bce12bf52a66;shared rules/Core/search/history/Session/
-runtime match exactly,only existing two AUX learner files differ. Relevant
-committed PRIMARY helpers/tests reused;no uncommitted research or role state.
-Actual forecast exporter:cffcd6d2975375d3a91dfce325c4bb48559c2516.
+See LEAPER_PAIRED_HISTORY_MECHANISMS_20261024.md and
+data/leaper_pair_transfer_20261024/README.md. This closes the previous memo's
+dual-replay question and supplies two concrete existing one-bit mechanisms.
 
-## Latest actual results
+Runtime source:0815ac6cb8268266c215c0cd8a24bce12bf52a66. Package rules/Core/
+search/history/Session/runtime match it, except the two existing AUX learner
+files. H6 forecast execution:cffcd6d2975375d3a91dfce325c4bb48559c2516;
+H64 frozen inputs:3eb9998822c281834e37443456a36e664e0c1493. No foreign state.
 
-Report:LEAPER_H6_MATCHED_RULE_TRUTH_20261024.md;packet:data/leaper_h6_initial_truth_20261023.
-All3616unchangedinitialhistories/11definedH6repeat2families exact. Family0mu
-unavailable,full12headlineundefined. Cooperation2256TRUE1360FALSE;fork1304TRUE/
-2312FALSE;664WIN360LOSS2592DRAW. No teacher-selected starts or new Player games.
-18340closedvertices40968Coreedges;compact20.582s. Existing FULLGameState
-ExactTree verifies allroots/actions/cooperation1098288contexts311.201s. Actual
-strict8methods match state/rule/mu/source/cost;oneplybeatsgeometry but reserved6
-cooperation loses to both actualbaselines. Forkgeometry loses to.5onreserved,
-thoughbeatsold35/36prior. Exposedcolourv2helpsonecalibrationfamily,reservedgain0.
-RootBrier/rateMSE aredistinct;no refit or headlinechoiceafterresults.
+H6(6,27)->(22,27), same128 fresh histories:16LOSS->DRAW/new forks, cooperation
+unchanged.64proper proof subtrees transfer, all16root proofs fail for a missing
+new escape; all64edges need own-rule public action rebinding. Common-mu closure
+1132/2304vertices/edges ->1040/2104, while fullH6history contexts40328->40768.
+Storedold1164vertices include32outsidecommonmu and are separately labelled.
+All81096 literalcontexts80840actions agree with prefix-blocked finite-clock
+attractor. Actual samePosition/ply/currentcount1 can be LOSS or DRAW, with
+Kb1-a1 ongoing versus immediate repetition. Cold and warm-TT callers preserve it.
 
-Only one metadata onebitpair exists among suppliedfamilies:(6,27)->(22,27).
-Common128legalfreshstarts;16LOSS->DRAW andnewforks,allcooperationunchanged.
-NewA diagonaljumpcapturesB into closedno-mate domain. All commonactionWDL
-unchanged;16oldLOSS literalcertificates80nodes verify. No newpair sampling.
-Exactuniformlaw on same3616:for4/15initialfork0,buteverfork2/3atply1,decision-
-weightedrate7707/43844.33fixed fullhistory probabilitychecks9170contextsPASS.
-Final complete reader54.594sPASS;46focusedtestsPASS. Source qualification
-explicitly distinguishes executed/precommit code and later reader fixes.
+Uniform-policy pair gain2792159/128024064; path coupling .89644919 agrees to
+same terminal. Only addedA capture of lastB changes payoff. Under FLOOR opponent,
+gain1/24 survives but only16direct starts improve (uniform48);all512laws literal
+verified. Root density, policy occupation, minimax and different familymu remain
+separate. Actual fork forecasts all miss1/8common-mu change; no refit/headline flip.
 
-Earlier same-segment report:LEAPER_SINGLE_PARITY_AND_CLOCK_TRUTH_20261023.md.
-Frozen48H64targets38exact+10[0,1];coop9T31F8UNKNOWN,fork1T35F12UNKNOWN.
-128->64 reusebinds3748oldvertices/17564actualedges,notoldPositionlabels.
-Old natural1932forks:80immediatemate/1654WINwithoutmate/198DRAWavoidLOSS;
-243inferiorrecordactions split7/136/100. Correlated legacy diagnostics,not a
-new depth/price trial. All old100k/1m/900s/50k and1920slot failures stayCLOSED.
+Existing H64 onebit1->5:both movement graphs connected, two common fresh roots
+DRAW->WINrank9. Two other supplied prefixes WINrank5, not common old histories.
+3952closedvertices18408Coreedges,4literalcerts48nodes44edges. Proof-path support
+has12non-immediate criticalwinner contexts. Closed36unit-material mainlineD1/
+D2/D4calls:3/0/0inferior,allrequestedcomplete,4378nodes. Literal334-edge control
+shows shallowcapture mechanism. FixedA/zerohand means noactive free material
+parameter: do not launch material TD on this roster.42search calls total incl
+6historyintegrationcontrols;0sampledgames/training/newrules/layouts/defaults.
 
-## Executable next work
+Rank method13.840s on3616roots10936actions is not a demonstrated speedup over
+old5.530s history component. Full/fast reader receipts,61distincttests and all
+scope/failure/source-timing qualifications are retained. New code ran before
+this segment commit; final hashes are not blinding receipts. Old1920policycap/
+1904missing,unavailableH6family0 and old failed path allowances remain closed.
 
-Main: Which exact nextRpair/commonhistorymu and actualforecast will PRIMARY freeze?
-| Nextordinarymailbox + latestcommittedsource;offer existing128startonebitresult
-and retain root/rate/occupation targets separately | sourcebound matchedtruth
-andcost without new sampling | no samePosition=>samehistory or scoretarget switch.
+## Executable continuation
 
-Backup1: Where do the existing80nodepaircertificate prefixes stop being comparable?
-| Bounded dualGameSession replay under both suppliedR,matching actualphysical
-actions and retaining changedlegality/repetition/clocks | firstdivergence and
-commonhistory coverage table | no newgame/Player/graph or implicit history reset.
+Main: Read ordinary mailbox and latest committed PRIMARY handoff for its next
+independently frozen pair/common full-historymu/actual forecasts; bind source,
+rules,clock and coverage before matching truth. Do not select AUX rules/layouts.
 
-Backup2: What concentrates163oldfailed observedpath proposals?
-| Saved actual failure/prehistory observations only,group correlated prefixes
-and terminalhistories | repetition/clock/cost distribution | no alternativepath
-retry,missingpath-negative inference or oldcaprefill.
+Backup1: On existing mask5 closure, bounded actual-prefix controls can ask whether
+third-visit repetition barriers alter a supplied WIN. Use public full-record
+replay; label constructed controls, not natural occupation or training starts.
 
-ProbeGC-MAIL-ecd1e1df09a54defa2a8a39e6b69ed53:49threads/50rawreturns saved;
-7exactrevisiondecisions,latestF(R) adopted. Scoped mathematical reply1792762542
-read,notindependentCoreexecution. New0815Git forecast delivery consumed and
-actually scored here;partnerread/adoption/execution of OURnewresults unconfirmed.
-One combinedreport/question follows ownpush/fullremoteSHA;no wait/Dotwake/retry.
+Backup2: Zero-query analysis of saved512policy laws: aggregate first-fork/
+first-lowering timing by actor and direct-escape group at the same128mu.
+No closed-depth-batch rerun or generic old UNKNOWN reduction is queued.
+
+## Communication and ownership
+
+ProbeGC-MAIL-f1cf57b7e7114ae8b64a746946c958b5 reads the prior boundary and tracked
+threads once. Adopt Claude1792766992's P0/P1 priority and stop legacy-only label
+filling; no new31mask campaign (PRIMARY scope, fullcost unmeasured). Reject its
+unqualified52-edge invariance:75edges=11bothsingle+23boundary+41bothmixed; the
+single-parity theorem alone does not classify those41mixedmixed edges. Stronger
+independent obstructions may classify some; mixedness never guarantees mate.
+Earlier F(R) direction already adopted; no old initial10headline restoration.
+One combined report/question follows own reviewed push/fullremoteSHA. Reading,
+adoption and independent partner execution remain distinct; no reply is required.

@@ -1,11 +1,12 @@
 """Bind a supplied closed Position certificate to admitted full histories.
 
-No graph expansion: every actual successor must already be in the supplied
-finite domain or verification rejects. Reuses the existing scoped repeat4/rank
-lemma, public Core and attractor. Does not import any old scalar WDL label.
+The verifier never expands its supplied domain: a missing actual successor
+rejects it. A separate bounded producer can build one closure from explicitly
+supplied frozen histories. Both reuse public Core and the existing repeat4/rank
+lemma; neither samples rules or imports old scalar WDL labels.
 """
 from __future__ import annotations
-from collections import Counter
+from collections import Counter,deque
 from copy import copy
 from dataclasses import replace
 from pathlib import Path
@@ -22,6 +23,7 @@ from scripts.leaper_single_parity_truth import admit,domain
 from scripts.leaper_explorer_truth import digest,save
 from scripts.leaper_retrograde import fresh_state,attractor
 from scripts.leaper_design import state_sha
+from scripts.research_record import record_value
 from scripts.leaper_microgames import role_stop_requested
 from scripts.generic_session_win_proof import SessionChoice,SessionProofNode,SessionWinCertificate,verify_session_certificate
 from scripts.generic_session_certificate_json import export_session_certificate
@@ -41,7 +43,42 @@ def expand(row,template):
     result=replace(template,board=board,side_to_move=row[0]);domain(result);return result
 
 
-def check_domain(certificate,worlds,*,seconds=180):
+def build_supplied_domain(worlds,target_worlds,plan,source_packet_digest):
+    """Bounded closure of supplied frozen K+A-vs-K histories, no selection.
+
+    Different initial declarations require identical transition-affecting
+    fields. The result is checked by check_domain, not transplanted WDL.
+    """
+    start=time.perf_counter();targets=[w for w in worlds if w['world']in target_worlds]
+    if len(targets)!=len(target_worlds):raise ValueError('missing frozen input')
+    first=targets[0];_,c,_=admit(first['rule'],require_parity=False);template=c.initial_position
+    positions=[];indices={};queue=deque();counts=Counter()
+    def guard():
+        if role_stop_requested():raise RuntimeError('USER_STOP')
+        if time.perf_counter()-start>=plan['graph_cap_seconds']:raise RuntimeError('SUPPLIED_GRAPH_TIME_UNKNOWN')
+        if len(positions)>plan['physical_vertex_cap']or counts['Core_edges']>plan['Core_edge_cap']:raise RuntimeError('SUPPLIED_GRAPH_SIZE_UNKNOWN')
+    def add(position):
+        if position not in indices:
+            indices[position]=len(positions);positions.append(position);queue.append(position);guard()
+    dynamics=lambda raw:{k:v for k,v in raw.items()if k!='initial_position'}
+    for w in targets:
+        if dynamics(w['rule'])!=dynamics(first['rule']):raise ValueError('frozen input dynamics differ')
+        _,tc,_=admit(w['rule'],require_parity=False)
+        s=GameSession.replay(tc,deserialize_game_record(json.dumps(w['initial_record'])))
+        if state_sha(s.state)!=digest(w['initial_state']):raise ValueError('source full history not bound')
+        add(replace(s.state.position,ruleset_fingerprint=template.ruleset_fingerprint))
+    while queue:
+        guard();position=queue.popleft();domain(position);s=fresh_state(position,c);counts['Core_vertices']+=1
+        if s.terminal_status.is_terminal:
+            counts['terminal_'+s.terminal_status.status.value]+=1;continue
+        for action,child in legal_successors(s,c):counts['Core_edges']+=1;add(child.position)
+    return dict(format='leaper-existing-mask5-H64-closed-domain-v1',source_packet_digest=source_packet_digest,
+        source_sha=plan['source_sha'],target_rule=first['rule'],target_worlds=list(target_worlds),
+        positions=[compact(p)for p in positions],generation_counts=dict(counts),generation_seconds=time.perf_counter()-start,
+        plan=plan,scope='Onlycompleteclosureofalready frozen PRIMARY mask5histories; not newrule/layout sampling, generalgenerator orpolicycampaign.')
+
+
+def check_domain(certificate,worlds,*,seconds=180,annotate=False):
     """Reconstruct complete edges through actual target Core, no foreign ones."""
     start=time.perf_counter();raw=certificate['target_rule'];rule,c,parity=admit(raw,require_parity=False)
     template=GameSession(c).state.position
@@ -73,7 +110,7 @@ def check_domain(certificate,worlds,*,seconds=180):
     # Semantic rebinding does not reuse source rank vectors. The actual target
     # graph is now certified complete. History-specific repetition sinks are
     # computed separately for each full incoming state.
-    rows=[]
+    rows=[];decision_rows={};annotation_cache={}
     for w in targets:
         _,tc,_=admit(w['rule'],require_parity=False)
         if tc.ruleset_fingerprint!=w['fingerprint']:raise ValueError('target fingerprint mismatch')
@@ -86,6 +123,33 @@ def check_domain(certificate,worlds,*,seconds=180):
         # positions and regenerate keys with this target's compiled rule.
         target_keys={repetition_identity_key(replace(p,ruleset_fingerprint=tc.ruleset_fingerprint),tc):i
                      for i,p in enumerate(positions)}
+        def annotate_prefix(session):
+            """Conditional proof-path diagnostics, never a natural-policy mu."""
+            hid=state_sha(session.state)
+            if hid in decision_rows:return
+            remaining=tc.max_ply-session.state.ply_count
+            branches=[]
+            for action,ch in legal_successors(session.state,tc):
+                j=indices[replace(ch.position,ruleset_fingerprint=template.ruleset_fingerprint)]
+                if ch.terminal_status.is_terminal:
+                    winner=ch.terminal_status.winner
+                    bv=0 if winner is None else 1 if winner==session.state.position.side_to_move else-1
+                else:
+                    bs=frozenset(target_keys[k]for k,n in ch.repetition_counts if n==3 and k in target_keys)
+                    if bs not in annotation_cache:
+                        draw=len(positions)
+                        ee=[tuple(draw if k in bs and k not in terms else k for k in es)for es in edges]+[()]
+                        annotation_cache[bs]=attractor(ee,terms|{draw:0})
+                    vv,rr=annotation_cache[bs]
+                    bv=-vv[j]if vv[j]and rr[j]<=remaining-1 else 0
+                branches.append(dict(action=action_to_dict(action),wdl=bv,child_state_sha=state_sha(ch),
+                    terminal=ch.terminal_status.status.value,immediate_target_win=ch.terminal_status.is_terminal and ch.terminal_status.winner==session.state.position.side_to_move))
+            best=max(b['wdl']for b in branches)
+            decision_rows[hid]=dict(id=hid,world=w['world'],fingerprint=tc.ruleset_fingerprint,
+                record=record_value(session.to_record()),ply=session.state.ply_count,remaining=remaining,
+                actor=session.state.position.side_to_move,value=best,fork=len({b['wdl']for b in branches})>1,
+                immediate_win=any(b['immediate_target_win']for b in branches),actions=branches,
+                scope='Existing selected all-defense proof prefix; conditional mechanistic support, not uniform/natural occupation, independent samples or training starts.')
         blocked={target_keys[k]for k,n in target.state.repetition_counts if n==3 and k in target_keys}
         if any(n>=4 for k,n in target.state.repetition_counts):raise ValueError('target already repeats to terminal')
         sink=len(positions)
@@ -125,6 +189,7 @@ def check_domain(certificate,worlds,*,seconds=180):
                 if session.result.status.value!='ongoing':
                     if session.result.winner!=winner:raise ValueError('rank path ended without target win')
                     return SessionProofNode(0,terminal=session.result)
+                if annotate:annotate_prefix(session)
                 index=indices[replace(session.state.position,ruleset_fingerprint=template.ruleset_fingerprint)]
                 rank=ranks.get(index)
                 if rank is None or not 0<rank<=limit:raise ValueError('rank failed to decrease')
@@ -145,6 +210,8 @@ def check_domain(certificate,worlds,*,seconds=180):
             initial_record=w['initial_record'],root_index=i,blocked=sorted(blocked),remaining=remaining,
             value=v,rank=ranks.get(i),fork=len({b['wdl']for b in branches})>1,actions=branches,
             literal_win_certificate=certificate_json,literal_verification=proof_receipt))
-    return dict(verified=True,vertices=len(positions),counts=dict(counts),rows=rows,
+    result=dict(verified=True,vertices=len(positions),counts=dict(counts),rows=rows,
         certificate_digest=digest(certificate),seconds=time.perf_counter()-start,
         scope='Actual target Core closure reverified on supplied existing vertices, no expansion. Repeat4 incoming count3 sinks plus strictly decreasing decisive rank and actual remaining H64 clock. No arbitrary history quotient; no imported scalar oldWDL label.')
+    if annotate:result['certificate_decisions']=list(decision_rows.values())
+    return result

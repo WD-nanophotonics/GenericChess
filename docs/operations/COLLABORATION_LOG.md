@@ -1436,3 +1436,46 @@ LEAPER_SINGLE_PARITY_AND_CLOCK_TRUTH_20261023.md. Recoverable final-reader
 missing-mu-field/name-shadow errors were fixed before acceptance;rawfailures
 and sensitive/hostname-bearing originals remain private. Science staysOPEN;
 nextAUXdualreplay existingpaircertificateprefixes,PRIMARYownsnextfreeze.
+
+
+## 2026-10-24 JST — DEV_AUX paired-history mechanisms
+
+PRIMARY contribution consumed from committed0815ac6cb8268266c215c0cd8a24bce12bf52a66:
+unchanged H6 full inputs/actual forecasts and earlier H64 selected controls.
+Its current uncommitted work/state was not read or written. AUX supplies
+dual proof replay, exact same-mu policy laws, actual history counterexamples,
+four H64 all-defense proofs and a closed teacher-only depth diagnostic.
+
+The old H6 pair's16LOSS->DRAW roots are actual added captures to a closed draw
+region, not changed common-action WDL.80prefixes replay,64proper subtrees verify,
+16rootproofs fail missing defenderchoices. Common-mu physical closure1132->1040
+is separate from stored136start-oldclosure1164 and historytree40328->40768.
+Two actual ongoing histories at equalPosition/clock/currentcount1 have LOSS/DRAW
+truth;all81096literalcontexts80840actions verify. Persistent public TT and actual
+learner callers keep their different histories. No shared engine/default edit.
+
+The existing connected1->5H64 pair has two freshDRAW->WINrank9 transitions.
+Four proofs48nodes44edges bind the supplied histories.12non-immediate teacher
+contexts yield actualD1/D2/D4inferior3/0/0,4378nodes,not learning or policy strength.
+Oneordinarytype/fixedA/nohands leaves noactivefree material parameter.42new search
+calls comprise36closeddiagnostics and6historyintegrationcontrols;0forwardgames,
+training,rule/layoutsamples,newworker/Goal/timer. Exact same128mu gain remains
+positive under FLOOR opponent(1/24);512laws independently literalverified.
+
+Probe preserved52threads/53raw returns. Latest Claude
+1792766992 partially adopted: P0/P1 priority, no legacy-only UNKNOWN discharge.
+Its proposed31mask/cost expansion is deferred to PRIMARY selection/measurement.
+Its52-edge unchanged inference is rejected: single-parity alone proves only
+11bothsingle edges;23boundary and41mixedmixed need appropriately scoped evidence.
+The earlier direct-user F(R) priority remains active; no cadence mutation.
+
+All source-timing/failures and comparison limits are public.61distinct focused
+tests pass; full reader207.365s before final policy addition and complete policy
+control26.096s pass. Final combined reader passes after canonical tuple/list
+transport correction. Ordinary concurrent work is an interpretation limit, not
+a request for a quiet window. No speedup or universal material value is inferred.
+
+Session5da3cbc0-425b-4dc5-92aa-586d05294cde confirms4335.523333s(72.259min);
+administrative docs/publication/transport are excluded. Safe finish is accepted and the executable memo is synchronized. Delivery target origin/sidemission; immutable final
+SHA and one combined progress/question message follow push verification.
+Partner read/adoption/execution of these new results remains unconfirmed.

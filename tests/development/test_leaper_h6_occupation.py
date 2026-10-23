@@ -24,3 +24,14 @@ def test_ever_event_is_not_expected_number_of_event_visits():
     visit,_=occupation_solver([(1,2),(3,4),(),(),()],{2:None,3:0,4:None},[0,0,1,1,1],lambda n:None)
     p,d,f,l,ff,fl=visit(0,6,())
     assert f==F(3,2)and sum(ff)==1
+def test_floor_uses_actual_immediate_win_but_preserves_all_action_fork_truth():
+    from fractions import Fraction as F
+    from scripts.leaper_h6_occupation import occupation_solver
+    edges=[[1,2],[],[]];terms={1:1,2:None};sides=[1,0,0]
+    uniform,_=occupation_solver(edges,terms,sides,lambda n:None)
+    floor,_=occupation_solver(edges,terms,sides,lambda n:None,policy_by_side=('UNIFORM','FLOOR'))
+    a,b=uniform(0,6,()),floor(0,6,())
+    assert a[0]==(F(1,2),F(1,2),F(0))
+    assert b[0]==(F(1),F(0),F(0))
+    assert a[2]==b[2]==1
+    assert a[3]==F(1,2)and b[3]==0

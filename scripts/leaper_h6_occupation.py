@@ -12,7 +12,8 @@ from scripts.leaper_cooperative_certificate import decode_position
 ZERO=(F(0),)*6
 
 
-def occupation_solver(edges,terms,sides,guard,*,cache_entries=50000,max_calls=2000000):
+def occupation_solver(edges,terms,sides,guard,*,cache_entries=50000,max_calls=2000000,policy_by_side=('UNIFORM','UNIFORM')):
+    if len(policy_by_side)!=2 or any(p not in('UNIFORM','FLOOR')for p in policy_by_side):raise ValueError('unsupported analytical policy')
     solve,wdl_calls=history_solver(edges,terms,sides,guard,max_calls=max_calls)
     calls=0
     @lru_cache(maxsize=cache_entries)
@@ -28,8 +29,13 @@ def occupation_solver(edges,terms,sides,guard,*,cache_entries=50000,max_calls=20
         seen=tuple(sorted((*prior,i)));children=[];vs=[]
         for j in edges[i]:
             children.append(visit(j,remaining-1,seen));vs.append(solve(j,remaining-1,seen)[0])
-        n=len(children);mean=lambda xs:sum(xs,F(0))/n
         value=(max if sides[i]==0 else min)(vs);bad=[v!=value for v in vs];fork=len(set(vs))>1
+        immediate=[k for k,j in enumerate(edges[i])if j in terms and terms[j]==sides[i]]
+        if policy_by_side[sides[i]]=='FLOOR'and immediate:
+            # Any selected immediate win has the same terminal outcome and
+            # zero future occupation; tie identity cannot change these laws.
+            selected=immediate[:1];children=[children[k]for k in selected];bad=[bad[k]for k in selected]
+        n=len(children);mean=lambda xs:sum(xs,F(0))/n
         probs=tuple(mean(ch[0][k]for ch in children)for k in range(3))
         decisions=1+mean(ch[1]for ch in children)
         forks=int(fork)+mean(ch[2]for ch in children)
@@ -38,6 +44,47 @@ def occupation_solver(edges,terms,sides,guard,*,cache_entries=50000,max_calls=20
         first_loss=(F(sum(bad),n),*(sum((ch[5][k]for b,ch in zip(bad,children)if not b),F(0))/n for k in range(5)))
         return probs,decisions,forks,losses,tuple(first_fork),tuple(first_loss)
     return visit,lambda:(calls,wdl_calls())
+
+
+def compare_pair_policies(directory,adjacency,plan):
+    """Same common mu, uniform seat0 and either uniform or FLOOR seat1."""
+    directory=Path(directory);inputs=load(directory/'inputs.json.gz');truth=load(directory/'truth.json.gz')
+    by={r['id']:r for r in truth['roots']};start=time.perf_counter();rows=[];summary=[]
+    for pair in adjacency['pairs']:
+        for family,key in[(pair['left_family'],'left_id'),(pair['right_family'],'right_id')]:
+            f=next(f for f in inputs['families']if f['family']==family);source=next(r for r in inputs['rows']if r['family']==family);c=admit(f,source)
+            d=load(directory/f'domain{family}.json.gz');positions=[decode_position(p,c.initial_position)for p in d['positions']]
+            terms={int(i):w for i,w in d['terminals'].items()}
+            def guard(calls=0):
+                if role_stop_requested():raise Cap('USER_STOP')
+                if time.perf_counter()-start>=plan['whole_cap_seconds']:raise Cap('PAIR_POLICY_CAP_UNKNOWN')
+            for opponent in('UNIFORM','FLOOR'):
+                visit,calls=occupation_solver(d['edges'],terms,[p.side_to_move for p in positions],guard,
+                    max_calls=plan['history_calls_per_mode'],policy_by_side=('UNIFORM',opponent))
+                selected=[]
+                for root in pair['rows']:
+                    guard();v=visit(by[root[key]]['root_index'],6,())
+                    item=dict(id=root[key],family=family,opponent=opponent,uniform_terminal_LDW=list(map(str,v[0])),
+                        expected_decisions=str(v[1]),expected_fork_visits=str(v[2]),expected_guarantee_lowering_decisions=str(v[3]),
+                        first_fork_ply_mass=list(map(str,v[4])),first_lowering_ply_mass=list(map(str,v[5])))
+                    rows.append(item);selected.append(item)
+                n=len(selected);mean=lambda name:sum(F(r[name])for r in selected)/n
+                summary.append(dict(family=family,opponent=opponent,roots=n,
+                    uniform_terminal_LDW=[str(sum(F(r['uniform_terminal_LDW'][k])for r in selected)/n)for k in range(3)],
+                    expected_decisions=str(mean('expected_decisions')),expected_fork_visits=str(mean('expected_fork_visits')),
+                    expected_guarantee_lowering_decisions=str(mean('expected_guarantee_lowering_decisions')),history_calls=calls()))
+    paired=[]
+    for pair in adjacency['pairs']:
+        for opponent in('UNIFORM','FLOOR'):
+            by={r['id']:r for r in rows if r['opponent']==opponent};gains=[]
+            for root in pair['rows']:
+                utility=lambda r:F(r['uniform_terminal_LDW'][2])-F(r['uniform_terminal_LDW'][0])
+                gains.append(dict(left_id=root['left_id'],right_id=root['right_id'],gain=str(utility(by[root['right_id']])-utility(by[root['left_id']]))))
+            paired.append(dict(opponent=opponent,mean_U0_gain=str(sum(F(r['gain'])for r in gains)/len(gains)),
+                gain_signs=dict(Counter('positive'if F(r['gain'])>0 else'negative'if F(r['gain'])<0 else'zero'for r in gains)),rows=gains))
+    return dict(format='leaper-H6-pair-analytical-opponent-policy-v1',adjacency_digest=digest(adjacency),truth_digest=digest(truth),
+        plan=plan,rows=rows,summary=summary,paired_gain_by_opponent=paired,seconds=time.perf_counter()-start,
+        scope='Same128admitted fullhistory starts perrule. Seat0uniform,seat1uniform orliteralimmediateWINotherwiseuniform(FLOOR). Exactanalytic law,no newPlayer orsampledpolicygames,training,rule/layout selection orstrengthgeneralization.')
 
 
 def run(directory,plan,output=None):

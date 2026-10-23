@@ -21,11 +21,39 @@ from scripts.leaper_design import compile_rule,ruleset_from_dict,ruleset_to_dict
 from scripts.leaper_cooperative_truth import cooperative_distances
 from scripts.leaper_cooperative_certificate import encode_position
 from scripts.leaper_retrograde import fresh_state
+from scripts.leaper_retrograde import attractor
 from scripts.leaper_explorer_truth import load,save,digest
 from scripts.leaper_microgames import role_stop_requested
 
 
 class Cap(Exception):pass
+
+
+def blocked_clock_attractor(edges,terminals,sides,blocked):
+    """Scoped repeat2 history reduction; labels still need remaining clock.
+
+    Only caller-admitted position-local moves, alternating turns, decisive
+    static terminals and otherwise draw clocks/repetition are supported.
+    `blocked` is the actual previous-position set INCLUDING the current root.
+    Incoming nonterminal returns to it become draw; root outgoing edges remain.
+    A mate arrival keeps Core precedence. This is never a GameState TT key.
+    """
+    if len(edges)!=len(sides)or any(s not in(0,1)for s in sides):raise ValueError('invalid turn domain')
+    if any(not 0<=i<len(edges)for i in blocked):raise ValueError('blocked index outside domain')
+    draw=len(edges);modified=[]
+    for i,children in enumerate(edges):
+        if any(not 0<=j<len(edges)or sides[j]!=1-sides[i]for j in children):raise ValueError('nonalternating/out-of-domain edge')
+        modified.append(tuple(draw if j in blocked and j not in terminals else j for j in children))
+    modified.append(())
+    relative={i:0 if winner is None else 1 if winner==sides[i]else-1 for i,winner in terminals.items()}
+    values,ranks=attractor(modified,relative|{draw:0})
+    def value(i,remaining,*,arriving=False):
+        if type(remaining)is not int or remaining<0:raise ValueError('invalid remaining clock')
+        if arriving and i in blocked and i not in terminals:return 0
+        v=values[i]
+        relative=v if v and ranks[i]<=remaining else 0
+        return relative if sides[i]==0 else-relative
+    return value,values,ranks,modified
 
 
 def admit(family,row):
