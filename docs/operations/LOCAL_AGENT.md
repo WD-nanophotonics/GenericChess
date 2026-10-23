@@ -556,3 +556,30 @@ Native success counts are not all attempts, so their difference is not an exact
 cache-hit count. Keep nested/root/profiler cumulative times separate, and call
 unassigned outer time a residual until measured. Current evidence and scoped
 source interpretation live in LEAPER_POLICY_COST_AND_QUANTITY_20261024.md.
+
+
+## Direct Player versus cost-probe service flags —2026-10-24
+
+Do not copy semantic_probe_cost variantall prose into a direct AlphaBetaPlayer
+registration. Direct Player defaults enable Native legality, but Native
+availability/check default FALSE. The caller must explicitly select those
+services to claim them. Record executed constructor/source and actual success/
+fallback counters; default profile/evaluator admission is a separate contract.
+The observed component portrait mislabeled allNative; both arms and their real
+complete cost pilots used the same legality-only source. Keep the original
+registration/results and publish a separate causal correction; never silently
+edit an executing source/cap or rerun frozen games to repair wording.
+
+Keep point forecasts, reserves and hard/cooperative caps distinct. The observed
+4096.86s point fits4800s with17.16percent reserve; a20percent forecast4916.23s
+does not fit that loop cap. Preserve that mismatch and all UNKNOWN, rather than
+increasing the frozen cap or promising coverage. Existing user>=120minute
+necessity assessment remains required for such long single runs.
+
+A generic CLOSED producer marker is not scientific acceptance: check failures,
+missing slots and literal terminal/record qualification. Some append snapshots
+retain RUNNING after a separate result closes; bind exact row counts, source,
+process exit and complete replay instead of inferring activity from that word.
+Source capsules are data only. Published presentation text may be LF-normalized;
+byte hashes of exact originals refer to decoded UTF8 capsule strings, read with
+read_bytes().decode so Windows universal-newline conversion cannot alter them.

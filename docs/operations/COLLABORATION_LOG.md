@@ -6976,3 +6976,42 @@ One merged progress/genuine-question message will be sent only after reviewed
 publication and full PRIMARY remoteSHA verification; actual delivery and final
 session acceptance are recorded privately, not presumed here. No Dot, extra
 worker/Goal/schedule, AUX write or backend identity weakening.
+
+
+## 2026-10-24 PRIMARY component reachability and finite policy closure
+
+Chat1792787366 independently reviewed mathematics/JSON, not Core execution.
+Adopted and executed its narrow reachable-path direction: exact original mixed
+setup has11ply cooperative mate; retained same-color proof negative and mixed
+forcedWIN UNKNOWN. Corrected the initial12ply misstatement from the sealed record.
+Stopped expanding the old576cost/W2 panel. Claude1792781493 cost-closure advice is
+adopted; its proposed new AUX truth queue and release/LFS migration are deferred
+under ownership and total-information/cost constraints, not treated as new consent.
+AUX9aa280aa was read only as its published self-report; no source execution,
+learner/solver takeover, checkout/state writes or duplicate experiments.
+
+PRIMARY paid21.18s candidate-path search and literal complete Core validation;
+new role-quantity boundaries use32rules/3632secondedges, cubic-3/quartic-8 with
+explicit physical-path factors. A real complete-game cost basis preceded the
+new120slot portrait, closed0missing/allliteral draws in4068.80s. Highunit search
+spends14.197timesactualnodes/14.366timesgametime, without measured finite win gain.
+7605actions/13073PVplies and random/FLOOR choices replay.40distinct fullrecords
+per arm do not establish independent-rule/population or forcedWDL conclusions.
+
+Own errors are explicit: zero-query compiled-context/Player-keyword API failures
+were repaired; one test wrongly removed a required schema3 field, so the input
+was corrected to the actual valid default record, not an expectation weakened.
+One test-only Windowsatomicreplace denial passed in a fresh supported temp path;
+rawpartial/error kept, no ACL/security change. Frozen allNative wording was wrong:
+actual Player enabled Nativelegality only; original plans/source remain, with
+separate correction. The20percent reserve exceeds4800sloopcap by116.23s; cap kept.
+No producer marker/active session substitutes for actual scientific acceptance.
+
+Next step actually executed2defaultcoldN512queries withOLDunitreference reuse;
+bothchoices differ, no utility/argmax claim. DefaultA1000matchesunit andgeometry
+termsdiffer. Complete defaultlegality-only cost input/profile round-tripped,
+0newcostgamequeries. Ask independent review of the scoped role-degree bound and
+whether that changed evaluator premise is the next useful finite control;
+no realtime wait, Dot, extra workers or oldscope refill. Technical source/data/
+causal corrections are in LEAPER_COMPONENT_REACHABILITY_AND_POLICY_20261024.md;
+full publication SHA is verified in the role's Git/mailbox delivery receipts.

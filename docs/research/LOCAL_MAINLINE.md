@@ -97,13 +97,39 @@ at any quantity.123positive/32maximal-negativeCore configurations pass. These ar
 not fresh-admission, reachability, forced-WDL or averaged-price claims. The public
 packet reader/source-byte checks pass; all current scientific producers are CLOSED.
 
-Next step actually BEGUN: ONE5x5/mask2/two-A RuleSet has two complete setups with
-A colors[1,1]vs[1,0], fixedK0=0/K1=24. Both exactGameRecords and8legal prefix
-moves round-trip, yielding4initial/4ply cost contexts. Same-color ordinary actors
-have a scoped checkerboard obstruction; mixed-color reachability remainsUNKNOWN.
-Use a fresh4-query cost preflight before a NEW full-game cost case; do not pay
-known-negative games merely to fill a panel or restart oldE0. No learner/default/
-sampler/AUX state changes or old1904 outcome fills are selected.
+[LEAPER_COMPONENT_REACHABILITY_AND_POLICY_20261024.md](LEAPER_COMPONENT_REACHABILITY_AND_POLICY_20261024.md)
+closes that actual-input continuation. Chat1792787366 was read/adopted/executed:
+mixed setup now has a literal11ply cooperative mate from its original full
+named record; every path frontier replays. Same-color remains scoped proof
+negative, forced mixed-WIN UNKNOWN. The setups change positions/branching as
+well as colors, not one causal variable. No further W2/cost panel was opened.
+
+Three complete cost games support a NEW40seed/3policy/120game portrait. All120
+finish as draws/0missing: UNIT51238clock+2repeat; UNIT6553640clock; FLOOR37clock+
+3stalemate. High spends9304229nodes/3791.76s versuslow655360/263.94s:14.197times
+actualnodes/14.366timesgamecost, no finite mating-rate gain. No unchanged bigger
+unitbudget panel is selected.7605actualactions/13073PVplies andeveryRNG/FLOOR
+choice pass Core/fullhistory qualification. Raw frozen “allNative” prose is
+corrected separately: actual directPlayer route is NativelegalityONLY, not
+availability/check; cost pilots used the identical actualroute. Originalsource,
+plans,20percentforecast/4800scap mismatch andresults stay preserved.
+
+Quantity coordinates need BOTHroles. One ordinaryper side gives cubic-3;
+three defenders withoneattacker give quartic-8, fromeight explicit King/ordinary
+paths.32NEWfullrule frontiers/3632secondedges verifythese scoped boundaries.
+Fresh plain-Leap degree<=min(bits,max(a+b,a+2,b+1)) follows the role/mover case
+split; it is not a generic price/WDL law. No fifthdegree hunt/census, solver,
+learner, defaultactivation, AUXstate orold1904refill is selected.
+
+Current next step actually BEGUN:2NEWdefaultN512coldqueries versus2OLDunit
+references changebothchoices; initialmain4/4, prefix4main3/4, no utility/argmax
+inference. DefaultboardA1000matchesunit; geometrytermsdiffer. A complete default
+Nativelegality-only full-gamecost input/profile is materialized/round-tripped,
+0newgamequeries. Executeone separatelyregistered short completecostcase before
+anyNEWdefault-vsunitutility arm; coldall-servicequeries are not that gate. One
+A type hasno free relative-priceaxis; do not auto-start training or infer that
+this toy refutes generic learning. Tool-recording optimization is closed as a
+reserve; use an explicit changed evaluator premise and retain actualhistory/cost.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
