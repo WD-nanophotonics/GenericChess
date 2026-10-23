@@ -1,0 +1,865 @@
+{
+  "full_new": {
+    "status": "PASS",
+    "seconds": 46.45274269999936,
+    "counts": {
+      "openings": 64,
+      "terminal_prefix_views": 80,
+      "slots": 512,
+      "reported_queries": 21700,
+      "reported_nodes": 4462768,
+      "served_actions": 21700,
+      "checked_queries": 21700,
+      "PV_edges": 84325
+    },
+    "unique_records": 80,
+    "analysis": [
+      {
+        "price": "unit",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      },
+      {
+        "price": "B2C1",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      },
+      {
+        "price": "mobility",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      },
+      {
+        "price": "Static",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      }
+    ],
+    "scope": "Shared-Core legality/full outcomes/all prefix draws and supplied PVs only;no independent CPU certification or exact WDL tree proof. Full private and selected public PV scopes differ."
+  },
+  "full_positive": {
+    "status": "PASS",
+    "seconds": 39.392158000031486,
+    "counts": {
+      "openings": 64,
+      "terminal_prefix_views": 8,
+      "slots": 256,
+      "reported_queries": 19796,
+      "reported_nodes": 3791630,
+      "served_actions": 19796,
+      "checked_queries": 19796,
+      "PV_edges": 77700
+    },
+    "unique_records": 64,
+    "analysis": [
+      {
+        "price": "mobility",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/16",
+            "-1/16"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 104,
+          "[1, 1]": 12,
+          "[-1, -1]": 12
+        }
+      },
+      {
+        "price": "Static",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/16",
+            "-1/16"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 104,
+          "[1, 1]": 12,
+          "[-1, -1]": 12
+        }
+      }
+    ],
+    "scope": "Shared-Core legality/full outcomes/all prefix draws and supplied PVs only;no independent CPU certification or exact WDL tree proof. Full private and selected public PV scopes differ."
+  },
+  "public_new": {
+    "status": "PASS",
+    "seconds": 3.0809706000145525,
+    "counts": {
+      "openings": 64,
+      "terminal_prefix_views": 80,
+      "slots": 512,
+      "reported_queries": 21700,
+      "reported_nodes": 4462768,
+      "served_actions": 21700,
+      "checked_queries": 653,
+      "PV_edges": 2533
+    },
+    "unique_records": 80,
+    "analysis": [
+      {
+        "price": "unit",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      },
+      {
+        "price": "B2C1",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      },
+      {
+        "price": "mobility",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      },
+      {
+        "price": "Static",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "-7/64",
+            "-7/64"
+          ],
+          "1": [
+            "7/64",
+            "7/64"
+          ]
+        },
+        "world_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "0",
+            "0"
+          ],
+          "2": [
+            "0",
+            "0"
+          ],
+          "3": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[-1, -1]": 39,
+          "[1, 1]": 39,
+          "[0, 0]": 50
+        }
+      }
+    ],
+    "scope": "Shared-Core legality/full outcomes/all prefix draws and supplied PVs only;no independent CPU certification or exact WDL tree proof. Full private and selected public PV scopes differ."
+  },
+  "public_positive_and_reused": {
+    "status": "PASS",
+    "seconds": 7.7279493000824,
+    "counts": {
+      "openings": 64,
+      "terminal_prefix_views": 8,
+      "slots": 256,
+      "reported_queries": 19796,
+      "reported_nodes": 3791630,
+      "served_actions": 19796,
+      "checked_queries": 1067,
+      "PV_edges": 4172,
+      "reused_baseline_slots": 256
+    },
+    "unique_records": 64,
+    "analysis": [
+      {
+        "price": "mobility",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/16",
+            "-1/16"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 104,
+          "[1, 1]": 12,
+          "[-1, -1]": 12
+        }
+      },
+      {
+        "price": "Static",
+        "denominator": 128,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/16",
+            "-1/16"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 104,
+          "[1, 1]": 12,
+          "[-1, -1]": 12
+        }
+      }
+    ],
+    "scope": "Shared-Core legality/full outcomes/all prefix draws and supplied PVs only;no independent CPU certification or exact WDL tree proof. Full private and selected public PV scopes differ."
+  },
+  "public_mechanisms": {
+    "status": "PASS",
+    "seconds": 19.259598099975847,
+    "counts": {
+      "tree_visits": 32061,
+      "roots": 16,
+      "integer_cone_points": 1024,
+      "probe_PV_edges": 256,
+      "probe_queries": 64,
+      "base_PV_edges": 4,
+      "reused_base_queries": 2,
+      "residual_visits": 183270,
+      "residual_trees": 4,
+      "reused_intervention_views": 4,
+      "intervention_PV_edges": 1032,
+      "intervention_queries": 264,
+      "new_interventions": 4,
+      "shadow_PV_edges": 128,
+      "shadow_new_or_reused_queries": 32
+    },
+    "scope": "All16fullhistoryD4trees independently recomputed and1024integer cone-points checked;fourresidualD4/D6trees,66originalprobe/basePVreceipts,fourNEWinterventions and32next-stepnew/reusedPVreceipts checked. ShadowmeanTD arithmetic is reportedpreparation,not fullytarget-boundbythisreader. Finitecritic/conditionalpolicymechanisms,not improved learning."
+  },
+  "public_truth": {
+    "status": "PASS",
+    "seconds": 546.4874146999791,
+    "counts": {
+      "source_references": 171,
+      "source_histories": 133,
+      "graph_entries": 243588,
+      "graph_edges": 1235112,
+      "graphs": 5,
+      "source_bounds_checked": 133,
+      "query_bounds_checked": 3367,
+      "counter_actions": 8,
+      "negative_controls": 1
+    },
+    "scope": "FiveNEWcompleteCoregraphrebuilds,133sourcehistories,3367queryhistories andall512slot decisionreferences checked. Sum entries includes overlapping/isomorphic components,notindependentstates. No oldgraphs/runs refilled;nonzero saturated bounds retain uncertainty."
+  },
+  "compatibility": {
+    "status": "PASS",
+    "tests": 87,
+    "seconds": 3.52,
+    "source_sha": "bf725532ea38deb5242538575c4065a63615b8c2",
+    "paths": [
+      "tests/development/test_leaper_design.py",
+      "tests/development/test_leaper_forecast.py",
+      "tests/development/test_leaper_staircase.py",
+      "tests/development/test_mainline_learner_search.py"
+    ]
+  }
+}

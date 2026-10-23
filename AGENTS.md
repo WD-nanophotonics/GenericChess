@@ -1,5 +1,13 @@
 # GenericChess local research policy
 
+## Direct user cadence update — 2026-10-23
+
+The user changed both existing DEV_AUX and PRIMARY patrols to every two hours
+(120 minutes). Both existing heartbeat IDs were updated and read back ACTIVE
+with their original chat targets. This supersedes the earlier60-minute cadence.
+Research still requires60–90 effective minutes; administrative schedule work is
+not research credit. No new timer or other-role research ownership is created.
+
 ## Direct user direction — 2026-10-22, latest ChatGPT comment
 
 The user explicitly endorses the latest project ChatGPT comment as the new

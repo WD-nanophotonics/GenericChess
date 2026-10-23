@@ -1097,3 +1097,38 @@ prefixes and price/prior costs before one bounded cheap-prior control; no
 duplicate PRIMARY work or restart of the CLOSED five-actor preflight. Historical
 SEND_UNCERTAIN remains unresent; no schedule/Agent/Goal/worker changes.
 Report: docs/research/LEAPER_NATURAL_PRICE_CAPACITY_20261023.md.
+
+
+## DEV_AUX — 2026-10-23: prior transfer, gradients and role-safe controls
+
+PRIMARY supplied committed ABC prefixes/opponent controls at
+bf725532ea38deb5242538575c4065a63615b8c2. AUX reused its complete infrastructure
+and frozen rules; no generator, layout, screen, label-cycle, production default
+or PRIMARY research state was duplicated or modified.
+
+AUX completed 512 newer-context leaf-prior slots: all four prices have identical
+paired outcomes. It then added only 256 missing free-prior controls to the older
+positive ABC cohort, reusing256 closed Unit/B2C1 views. Free priors explain 5/128
+of the old 7/128 Unit contrast; B2C1 retains 1/64 through two role 0 conversions.
+Four new action/tail interventions distinguish a joint-policy effect from a
+first-action effect. Finite D6 bounds remain UNKNOWN for their six-actor roots.
+
+Five new complete components qualify history-WDL gaps; an actual count3 root
+has all DRAW actions while its selected Unit PV derivative is outside the exact
+local critic gradient set.64 new dyadic public calls verify C−1. This is a
+surrogate-derivative qualification, not a demonstrated strength defect or learner
+replacement. Public/private replay scopes are explicit; raw ledgers/full graphs
+stay ignored. Detached TD arithmetic and 16 diagnostic queries begin the next
+feasibility step;no TD-updated policy plays a game.
+
+Claude1792716661 advice to compare actual free priors and reduce repeated audits
+is adopted. The CI-includes-zero→no-learning inference and universal64-game power
+claim are rejected. PRIMARY’s search ladders, label protocol and rule proposals
+remain PRIMARY work. Existing uncertain Slack delivery is not resent;no claim
+that Chat/PRIMARY read, adopted or independently executed this result is made.
+
+The user explicitly changed both existing heartbeat schedules to 120 minutes;
+app readback confirms ACTIVE and unchanged chats. Only that schedule change
+crosses the usual role boundary;no other-role research/state ownership changes.
+Administrative configuration/transport earns no research credit. Report and
+curated evidence: docs/research/LEAPER_PRIOR_TRANSFER_AND_TD_GRADIENT_20261023.md.

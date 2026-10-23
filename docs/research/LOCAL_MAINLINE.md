@@ -1,92 +1,76 @@
 # DEV_AUX current research
 
-## Authority and boundary
+## Scope and shared basis
 
-The latest direct user direction is LEAPER_INVERSE_DESIGN_DIRECTION.md.
-PRIMARY owns rule generation/canonicalization, opening-layout design, forward
-screening and inverse proposals. AUX consumes committed frozen rules/records
-for history truth, useful decision exposure, price/depth/tie mechanisms and
-later learning controls. No duplicate generator/screen/label-cycle work.
-Normal research uses one role-bound session accumulating60–90effective minutes.
-Only this checkout/sidemission is writable; old caps, UNKNOWN and stops remain.
+The user direction is LEAPER_INVERSE_DESIGN_DIRECTION.md. PRIMARY owns rule and
+opening design, forward screening and label cycles. AUX owns history truth,
+price/depth/tie mechanisms and useful learning controls on committed inputs.
+Only this checkout/sidemission is writable; old caps and stops remain.
+Both existing patrols now run every 120 minutes, read back ACTIVE with unchanged
+chats. Research segments still require60–90 effective minutes.
+
+Recovery infrastructure: sandbox bf725532ea38deb5242538575c4065a63615b8c2.
+Only research payloads changed since ff726496. Core/rules/Session/search/public
+Leaper helpers match mainline; the maintained AUX learner/adapter are the only
+package differences. No infrastructure acceleration claim.
 
 ## Current delivery
 
-Report: LEAPER_NATURAL_PRICE_CAPACITY_20261023.md.
-Selected evidence: data/leaper_natural_price_capacity_20261023/.
-Earlier LEAPER_NATURAL_WDL_AND_TIED_PV_20261023.md remains historical evidence.
-The old five-actor90s/100k cost preflight stays CLOSED, without continuation.
+Report: LEAPER_PRIOR_TRANSFER_AND_TD_GRADIENT_20261023.md.
+Curated evidence: data/leaper_prior_controls_20261023/.
+Previous natural-price/WDL reports remain closed historical evidence.
 
-## Committed shared basis
-
-Recovery AND closing fetch: ff72649685c21a37bdbe147c930e4b2070934f77.
-Its public leaper_forecast.py and staircase test are reused exactly.
-Rules/Core/Session/AI and public Leaper interfaces match that committed basis.
-Only the maintained AUX learner and receipt adapter differ in the package.
-No uncommitted PRIMARY work or role state is adopted; no acceleration claimed.
-The frozen current experiment inputs remain55abf3de22f20ac03eb07b5260284466173a3264.
-Newer committed two-code inputs are read only for the next own cost assessment.
-
-## What the completed bounded studies establish
-
-- Source census2060references/2047fullhistories;1107covered,898protected with
-  clock margin,357qualifiedtwo-type roots.209coveredcount3 and940uncovered
-  remain visible. No fresh-state WDL is substituted for saturated histories.
-- D1:4490physicalcalls/2326distinctroot-weight conditions,29220nodes81.934s.
-  124roots have mixed actionWDL,90unsafe ties,40servederrors;no positive-price
-  cell in[1/4,4] improves quality.2164duplicate single-type calls are paid cost.
-- All5388actual D2/D4 queries complete:587314nodes172.126s. Unit/mobility/Static
-  D2errors6,D4errors1;34/39roots improve overUnitD1,none worsen. Exact Unit
-  supports have16/3unsafe ties and0strictbad-only sets. These are finite saved
-  decisions, not whole-policy population strength or a universal depth law.
-- The last D4 error is a rank17WIN root. D6 excludes the DRAW action and leaves
-  fiveWIN moves;D6–8chooseWIN with score2. Positive prices cannot fix its D4tie.
-  Literal fullhistoryCore D6/D8 confirms;twootherD8PVreplaycaps remainUNKNOWN.
-- All24Coregraphs independently rebuilt:959604summed entries/4649688edges,
-  2047inclusionchecks/898qualified roots/4946actions4490cells,1853.951s.
-  Literal reader checks1796Unit supports and5388PVs;87interface tests pass.
-- ABCfit:576slots=558controller continuations+18terminalprefixviews;101distinct
-  complete records;39987fullD4calls/7748852nodes2343.648s,zeroUNKNOWN.
-  Nine prices vsfixedmobility D4:globalB2C1selected by predeclared rule,+3/64
-  finite utility vsUnit. This exposed grid is not a CI or a TD/price ceiling.
-- Prospective newprefix validation:256slots=248continuations+8terminalviews,
-  64distinctopenings/zero fitopeningoverlap,116finalrecords.19408fullD4calls,
-  3638258nodes1115.322s,zeroUNKNOWN. SelectedB2C1vsUnit+7/128;role contrasts
-  +1/16,+3/64;not every world improves. No pooling/reranking/TD experiment.
-- Exact first-divergence control:45Coretrees/128paired divergences,384same
-  records;116fullsupport changes,12equal sets,21served pairs co-optimal under
-  both prices. Action changes and complete-game effects are different quantities.
-- Full private readers pass all832slots/59395queries/232263PVedges. Curated
-  public projections retain all slot outcomes/deduplicated records and2080
-  metadata-selected queries,not the5.3MB rawquery dump. Fivegz total951632bytes.
+- Newer ABC:512 known slots,64 prefixes,80 final records. All four priors have
+  39W/50D/39L and every paired outcome is equal.21,700 completed D4 calls.
+  The 16 first-divergence roots explain 31 changed frames and 353 identical ones;
+  27 controls change supports and four keep both served actions co-optimal.
+- One selected Unit PV gradient is outside the local critic Clarke set.
+  Public dyadic queries confirm the C−1 critic, but all eight actual actions
+  are DRAW at this count3 root. No strength benefit from a derivative fix.
+- Five new complete components are paid entries, not independent state counts.
+  Query intersection retains 1068 exact,338 bounded and 1961 uncovered histories.
+  All five graphs and published history qualifications independently rechecked
+  through Core. No unknown label is turned into a draw.
+- Older positive ABC:256 NEW free-prior controls reuse256 CLOSED Unit/B2C1
+  views. Both free priors have12W/104D/12L and identical paths. They explain
+  5/128 of the old 7/128 contrast. B2C1 retains 1/64 through two role 0 conversions.
+  New controls pay19,796 D4 calls/3,791,630 nodes/1169.204 seconds.
+- Both residual six-actor roots retain WDL[-1,1] through literal D6. Four new
+  first-action/tail interventions show joint dependence at world 4 and first-
+  action sufficiency at world 10 under this fixed opponent. No global price law.
+- Next-step detached arithmetic reuses 256 frozen-policy episodes/9803 targets;
+  178 episode deltas are nonzero. All 16 new endpoint queries complete D4 and
+  two change actions. No game uses updated weights; this is not strength evidence.
 
 ## Next executable work
 
-Main: Do free rule-derived priors already match the selected fixed price on
-latest committed ABC cases? | Read artifacts/next-committed-ABC-context-20261023.json
-and next-committed-ABC-preflight-20261023.json;consume ff726496 FIRST3/4 records
-for codes(9,9,8),(10,19,8),then measure cold natural-prefix D4cost before freezing
-one bounded Unit/selectedB2C1/mobility/Static comparison | actual price response,
-finite paired WDL/cost/UNKNOWN with complete replay | finish that new frozen
-comparison or its cap;no PRIMARY forward/label-cycle duplication,oldcap refill
-or claim that constant-price validation proves a TD gain.
+Main: Can one frozen-policy TD batch improve prospective actual play?
+First read artifacts/abc-next-played-comparison-inputs-20261023.json and the
+shadow feasibility/query files. Adapt the existing own positive-control consumer
+to its 32 exact prefixes and six frozen models; freeze source/limits before play.
+Expected evidence:384 slots with role/world/UNKNOWN/cost/full-record checks.
+Done: all slots or2400-second cap; estimated 1753.806 seconds. The producer is
+NOT LAUNCHED. Do not refill old caps, select a new winner or use oracle starts.
 
-The16initial-root calls already complete D4 in1.400s,327–794nodes/call.
-These are cost observations,not a whole-game/TD forecast or semantic novelty proof.
-Keep the published eight-ply uniform-legal experience law,fullprefixes,all
-terminal/duplicate draws and roles;no oracle-selected training starts.
+All eight old ABC rules remain exposed. The 32 new prefixes have zero initial-
+history overlap with the 64 fit prefixes; one already-terminal prefix is retained.
+This is not independent-rule holdout. Detached mean episode TDLeaf updates use
+eta 0.05/lambda 0.95/scale 10 and actual terminal targets. No clairvoyant derivative
+replacement. Compare both TD endpoints with their own initializations, Static
+and B2C1. Check latest committed infrastructure first; changed policies can
+change cost, so the projection is not a guarantee. This is under 120 minutes.
 
-Backup1: Do newer natural capture-reduced histories admit affordable truth? |
-metadata-only inventory of committed ff trajectories before anynewclosure |
-complete Core graph/rank-qualified WDL or preservedUNKNOWN with realisticwhole
-cost | no continuation/reset of the CLOSED old five-actor experiment.
+Backup1: Is the residual effect specific to a same-role tie choice?
+Reuse the two intervention histories/current literal supports; report conditional
+first-action/tail attribution or UNKNOWN. No all-rule price census, PRIMARY
+campaign or blind six-actor exact launch.
 
-Backup2: Does a genuinely changed served action need a count3 qualification? |
-reuse full records and maintained actualSession certificate verifier | positive
-certificate or one-sidedUNKNOWN | no blind PN expansion or fresh-label shortcut.
+Backup2: Can a full-history proof resolve a decision-changing gap?
+Reuse maintained actual-Session certificates on one concrete gap; retain a
+positive proof or one-sided bound. Never resume the CLOSED five-actor90s/100k
+preflight or replace it with a DRAW label.
 
-Science remains OPEN. Current bounded studies close at a safe checkpoint;
-session.json owns UUID/origin/confirmedtime. Publish onlyreviewed sidemission
-and verifyfullremoteSHA,refill executable memo and pass sessionfinish.
-NewClaude comment1792709449 is adopted with finite-grid/cost corrections.
-Historical SEND_UNCERTAIN is not resent;no worker/Agent/Goal/timer/PRIMARYwrite.
+Science OPEN. Publish reviewed sidemission/full remote SHA, refill the executable
+memo and pass sessionfinish. Claude1792716661 is adopted with CI/ceiling
+corrections. Old SEND_UNCERTAIN is not resent. No Agent, Goal, worker, new timer
+or PRIMARY research/state write is created.
