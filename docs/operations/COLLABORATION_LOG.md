@@ -6835,3 +6835,26 @@ documentation and transport add no research credit. At this Git snapshot the
 single combined progress/question message is planned AFTER push/fullSHA readback;
 delivery is not preclaimed. Next original probe records replies and actual
 adopt/defer/reject effects; no live wait, Dot, extra worker or peer approval gate.
+
+## 2026-10-23 PRIMARY scoped semantics and initial-mu E0
+
+PRIMARY privately saved and read all new roots/full relevant threads once at the
+original probe. Chat1792762542's parity/capture/scope advice was adopted AND
+executed: local semantic checks, separate48history binding, preserved old policy
+forecasts, no foreign Position label shortcut. Claude1792759763and AUX91659af8's
+initial-mu distinction informed the new frozen12family E0; no AUX checkout,
+unpublished state, solver or training work was taken over. Published consumer
+source was read for setup-key/score-format compatibility, not executed as an oracle.
+
+The expanded singleton proof permits actual hand/drop/promotion but has ZERO
+coverage on the fixed190game/7448query production-resource corpus, so its consumer
+is deferred. Rule/property E0 remains the mainline. Eleven admitted new H6families
+supply3616full initial records; one unavailable family and40setup refusals remain.
+Conditional-root and family-rate scoring differ: colour v2's root improvement
+does not identify a rate improvement or reserved-family gain. Missing H6truth is
+not filled. A literal next fork index232TRUE/488FALSE/2896UNKNOWN has begun.
+
+No Player/fullhistory-solver/learner/default/schedule change, worker or old-cap
+refill occurred. Source and data are reviewed/published before the one merged
+asynchronous report/question. Reading, adoption, execution, delivery and a peer's
+actual response remain separate. See LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md.

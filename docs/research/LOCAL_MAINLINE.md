@@ -12,46 +12,34 @@ Old dated next actions are evidence, not a backlog or a competing live policy.
 
 ## Current selection and reason —2026-10-23
 
-[LEAPER_E0_PREDICTIONS_AND_TRUTH_HANDOFF_20261023.md](LEAPER_E0_PREDICTIONS_AND_TRUTH_HANDOFF_20261023.md)
-implements the incoming rule-explorer direction and Chat1792756416's24prefix/
-single-reference design, preserving all four price/depth cells and both roles.
-E0:192complete deployments,5TP6FP2FN11TN, weak-baseline Brier gain0.01302.
-E1:96new-seed prefixes/768complete deployments, scoregain0.002060657 versus a
-calibration-fitted constant, below frozen0.02. STOP this unchanged root-feature
-predictor; do not refit test labels or infer generic price/learning failure.
-17of192role histories have real nonzero price/horizon interactions,13of160outside
-the old positive rule. Same first actions still conceal later policy effects.
-A prior-history audit retains one already-terminal test overlap; no reselection.
+[LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md](LEAPER_SCOPE_AND_INITIAL_MU_E0_20261023.md)
+executes the saved Chat scope review and returns to genuine initial-mu E0.
+The old root-policy E0/E1,1920slot cost failure, inverse and role-budget panels
+remain CLOSED; all1904missing old outcomes stay UNKNOWN/no refill. Full older
+results remain at LEAPER_E0_PREDICTIONS_AND_TRUTH_HANDOFF_20261023.md.
 
-The small12mask/48history/3piece E0 panel has frozen forecasts but its1920slot
-cost plan was unsupported and was INTERRUPTED after16finished/1partial;
-1903unattempted remain,1904policyoutcomeUNKNOWN. Keep exact originals and the
-cost failure; NEVER resume/refill this plan. A guessed empirical override is not
-a cost basis. Existing role-budget and six-rule inverse/Pareto recipes also stay
-STOPPED, with their earlier negative results retained in
-[the prior report](LEAPER_BUDGET_CALIBRATION_AND_COST_20261023.md).
+28old singleton histories plus3bareKing histories have separately bound proposed
+DRAW labels;1literal terminal and16mixed UNKNOWN remain. A stronger attack-offset
+independence condition also covers mixedmask17. A new singlephysicalentity
+hand/drop/promotion prototype has16560staticstates/85184qualifiedtransitions, but
+ZEROcoverage among7448production-resource queries. DEFERitsconsumer; no adjudicator
+or product/default/solver/learner/AUX change. Complete generated semantics remain.
 
-Next actual step has BEGUN:48full inputs/fingerprints/clocks/splits are bound in
-[data/leaper_e0_20261023/truth-handoff.json](data/leaper_e0_20261023/truth-handoff.json).
-Published AUX truth is scoped to its actual fingerprints/history/clocks; PRIMARY
-read the fixed-source inventory, did not rerun its solver or transfer labels by
-mask string. Identify the minimum applicable existing label/history binding;
-leave missing coverage and structural/minimax/action labels UNKNOWN.
+The current E0handshake freezes12metadata-selected3x3/H6four-actor families.
+Eleven have3616complete admittedinitialrecords; pair13/31hasno safe start and is
+kept MU_UNAVAILABLE. Fortyinitialstalemate setuprefusals are not negativegames.
+Both exact support mu and fixed source/cost/probabilities matter. Keep conditional
+history Brier separate from family mean-rate error; colourv2is exposed development,
+affects calibrationonly and has unidentifiedrate improvement. V1andstronger
+sameboard/roster priors remain, with no testrefit or unseen-rule strength claim.
+480literaloneplypositivepaths and368proposedcolournegatives leave2768cooperation
+UNKNOWN; matchingindependentH6/forktruth is pending, not borrowed from oldAUXdata.
 
-A DIFFERENT rule-derived E0 mating feature is also frozen: a single parity set
-of ordinary Leap offsets may obstruct scoring in K+AversusbareK under the
-explicit royal/draw-only-other-terminal conditions.24metadata control setups give
-19admitted roots/167legal children and5positive one-ply paths;5setup failures stay.
-This is a scoped analytic proposal for independent review, not certified global
-closure. Mixed-parity positives use constructed safe starts, not the48historymu.
-No newPlayer/solver calls. Assess the exact proof assumptions and current-history
-scope before considering its use; extra actors/goals/promotion/drop/aux can break
-this restriction. No more unchanged policygames merely to replenish a quota.
-
-Long-term full generated-rule semantics and rule-only prices/search remain OPEN.
-After closure of the current segment, use the original next probe for pending
-Chat/Claude replies and follow their actual adopt/defer/reject effects; no wait,
-extra probe/worker, AUX write, default switch or automatic model/label adoption.
+Next step already BEGUN: retainedoneplyreturns give232forkTRUE/488FALSE/2896UNKNOWN
+in a separate literal fact index. Decide minimum useful truth/forecast target,
+not another indiscriminate graph. PRIMARYownsinputs/forwardfeatures/predictions;
+AUXownsindependenttruth/coverage/offlinescoring. No new role, probe, worker or livewait.
+Read replies at the next original probe; absentreply permits independent E0analysis.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -572,16 +560,16 @@ continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled
 
 ## Current executable reserve —2026-10-23
 
-Main: Does the targeted price/horizon interaction extend beyond the observed root?
-| Use24fresh fullinputs in `.local_agent/leaper-next-price-horizon-proposal-20261023-f54f003e`;FIRST choose smallest12or24root costed protocol and freeze role/ref/horizon utility criteria beforequeries
-| Full conditional utility/cost/actual iteration depth and UNKNOWN with independent future histories
-| NOT_RUN_READY/0Player/0fitness;no oldPareto/roleheuristic/default or learner gate.
-Backup1: Is a cheaper mechanism sufficient to change the next decision?
-| Use published selected-root matched-depth/price and exact expected-node curves to assess necessity;no unchanged fitness refill
-| Distinguish finite utility from root choices, algebraic identities and cost units
-| No automatic broadening, uniform-leaf/WDL claim or AUX solver/learner takeover.
-Backup2: Did asynchronous independent review change the proposed follow-up?
-| Next ORIGINALprobe read new roots and full pending owned threads, save exact originals first
-| Adopt/defer/reject plus actual effects;one merged meaningful question/report afterpublish/fullSHA
-| No livewait/selfreply/Dot/AUXwrites/newworkers or invented questions.
-Science is OPEN.
+Main: Does matchinginitial-muH6truth distinguish E0fromthe strongerprior?
+| Nextoriginalprobe read newreply/publishedAUXtruth; bindONLYexactnewfingerprints/fullrecords/supportmu and costs
+| Rate-error or conditional-history score bounds withactualcoverage andUNKNOWN
+| No oldPositionlabeltransfer, ownhistorysolver, unchangedrootfeature/oldcaprefill.
+Backup1: Can literaloneplyforkfacts supply a cheaper honest baseline?
+| The232TRUE/488FALSE/2896UNKNOWN index is alreadyprepared fromretainedreturns; check independentcoverage andfreeze anynewcandidate separately
+| Full action/terminal witnesses, source/cost, v1unchanged
+| No fitting exposedlabels andcallingitblind, no newphysicalgames merelyforcoverage.
+Backup2: Does the exposedcolour correction improve thechosenRATEtarget?
+| Family18/18threshold is152/720positive; actual328unresolved remain after24positive/368proposednegative
+| Minimumdecision-changingtruthscope, notindividual-querycounts masquerading asruntime
+| V2ratebound[-.00413,.00645],reservedgain0; no generic consumer at0/7448naturalcoverage.
+Science remains OPEN.
