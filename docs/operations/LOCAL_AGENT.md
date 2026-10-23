@@ -583,3 +583,28 @@ process exit and complete replay instead of inferring activity from that word.
 Source capsules are data only. Published presentation text may be LF-normalized;
 byte hashes of exact originals refer to decoded UTF8 capsule strings, read with
 read_bytes().decode so Windows universal-newline conversion cannot alter them.
+
+
+## Finite price interventions and controller identity —2026-10-24
+
+For deterministic players, changed seed labels do not create independent games.
+Freeze unique complete-root/profile configurations; disclose repeats and actual
+random streams. A cost-only configuration may be distinct from formal slots,
+or explicitly reused with provenance; do not pay for identical deterministic
+replications and call them new independent outcomes.
+
+A legal pair of material leaves with a nonzero price intersection does not prove
+that a root argmax, searched PV or terminal payoff changes. Use complete records,
+explicit depth and full local response frontiers for that specific diagnostic;
+retain negative selected-path exposure and finite payoff results. Do not turn
+price sensitivity, PV signal or a bad-action threshold into a learning gate.
+Persist new returns before comparing them with predeclared expected boundaries.
+
+Bind declared complete profiles to the actual constructor, including fixed
+ordering versus leaf values and all active dynamic terms. Future writers must
+record the actual controller explicitly. The observed private component writer
+retained UNIT512 labels while its evaluator adapter supplied the default; its
+unchanged originals require separate actual-controller/source interpretation,
+not a claim that those were unit-evaluator games. New two-type writers use
+explicit price and dynamic-controller labels. Data capsules retain exact UTF8
+bytes; source presentation normalization must not change an executed-source hash.

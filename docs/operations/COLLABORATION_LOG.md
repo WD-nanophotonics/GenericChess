@@ -7015,3 +7015,26 @@ whether that changed evaluator premise is the next useful finite control;
 no realtime wait, Dot, extra workers or oldscope refill. Technical source/data/
 causal corrections are in LEAPER_COMPONENT_REACHABILITY_AND_POLICY_20261024.md;
 full publication SHA is verified in the role's Git/mailbox delivery receipts.
+
+
+## PRIMARY_SANDBOX — 2026-10-24 price exposure/contact segment
+
+Read and privately saved complete Chat1792793500 and new Claude/AUX roots before
+assessment. Adopt scoped proof/short mechanism advice; correct its specific old
+Nativecold-service mismatch (both wereALL), reject staleDot longrun approval.
+AUX126be201 was read as self-report, not independently rerun or taken over.
+PRIMARY executed36suffix calls, one actualdefaultcost+6tinyexploratory games,
+28unique quiet-home price/root slots,4geometry controls,24literal contactD1/D2
+queries, one distinct contactcost and12contact slots. Positive/negative evidence
+and all caps are preserved. The legalleaf-to-root exposure distinction changed
+mu selection; Knightpreparation was deferred with0queries. No training/WDL gate.
+One previous deterministiccost configuration was redundantly repeated under a
+newunusedseedlabel; samecomplete records/costs disclosed. ContactcostB750 avoids
+repeating the500/1000/2000formal configurations. Five new contract tests and
+35relatedtests pass. The data-only reader checks102exact technical documents,
+fullCorehistories/PVs/localfrontiers with0newPlayer/0capsuleexecutions.
+Publicexport initially failed automaticreview for exactpayloadauthorization;
+private member/hash/content review plus the actual continuing usergrant passed
+reassessment. No control was bypassed or visibility changed. Communication and
+publication administration are not researchtime. Actualledger/quality/session
+finish/finalcheck remain the ending authority; exact delivery recorded privately.

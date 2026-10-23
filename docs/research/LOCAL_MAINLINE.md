@@ -121,15 +121,30 @@ Fresh plain-Leap degree<=min(bits,max(a+b,a+2,b+1)) follows the role/mover case
 split; it is not a generic price/WDL law. No fifthdegree hunt/census, solver,
 learner, defaultactivation, AUXstate orold1904refill is selected.
 
-Current next step actually BEGUN:2NEWdefaultN512coldqueries versus2OLDunit
-references changebothchoices; initialmain4/4, prefix4main3/4, no utility/argmax
-inference. DefaultboardA1000matchesunit; geometrytermsdiffer. A complete default
-Nativelegality-only full-gamecost input/profile is materialized/round-tripped,
-0newgamequeries. Executeone separatelyregistered short completecostcase before
-anyNEWdefault-vsunitutility arm; coldall-servicequeries are not that gate. One
-A type hasno free relative-priceaxis; do not auto-start training or infer that
-this toy refutes generic learning. Tool-recording optimization is closed as a
-reserve; use an explicit changed evaluator premise and retain actualhistory/cost.
+[LEAPER_PRICE_EXPOSURE_AND_CONTACT_20261024.md](LEAPER_PRICE_EXPOSURE_AND_CONTACT_20261024.md)
+closes that continuation.36matched prefixcalls give13/18choicechanges; a distinct
+costcase mates, then3newRandomseeds yield3unitdraws/3defaultmates. Orderingvalues
+areequal in this K/A scope;134PVleafdynamicdecompositions pass, not isolatedterm
+utility. One two-type cost/control configuration was redundantly paid under an
+unusedseedlabel; samecomplete record disclosed, never independent evidence.
+
+Four prospective full King8/Ferz/Wazir setups x7relative leafprices give28repeat
+DRAWs/0missing,742queries3857PV,identicalwithinroot.4unit-material geometrycontrols
+reachH64DRAW. A legal nonzero leafcrossing nevertheless exists; chosenpaths had
+no materialexposure. Contactmu explicitly creates nonzero ROOTD1/D2captureboundary:
+24actual calls/allCorefrontiers agree; fourthlayout's ownBthreat changesD2.
+DistinctB750completecost165.706s then12newcontactcases give11clock+1repeatDRAW,
+0missing,768queries4361PV.3/8nonbaseline recordschange with no terminalgain.
+No learner/default/solver activation, price-sensitivity gate or frozenrefill.
+
+Current next step actually BEGUN:6NEW matchedcompletedD3/D4 default/unit/contact
+pricecalls andPVreplay. Defaultchangescapturechoice,1115/1090versusunit1000;
+actualcomplete defaultprofile/input prepared,0newcontactdefaultgames. Single
+factors' negative results do not prove fullprofile-by-geometry interactionzero.
+Nextregisterone distinct wholedefaultcost case with explicitcontrollerlabel and
+fullhistory before deciding a newfiniteutilityarm. Coldquerynotwholecost/utility.
+UnusedKnightinput staysdeferred/0queries: contactexposure was the more specific
+changedpremise. No tool-recording optimization or AUXsolver/learner takeover.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
