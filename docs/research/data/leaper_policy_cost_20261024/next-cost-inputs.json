@@ -1,0 +1,1194 @@
+{
+  "worlds": [
+    {
+      "actual_prefix_plies": 4,
+      "config": {},
+      "final_prefix_state_sha256": "910af966a0046b50434a77028b69d608d75258e052e56f76bc068f47845ea0fd",
+      "roots": [
+        {
+          "record": {
+            "actions": [],
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 1
+          },
+          "target": 0
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g8",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  3
+                ],
+                "geometry_id": "g7",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_018",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  4
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 1
+          },
+          "target": 4
+        }
+      ],
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "initial_setup_options": [
+          {
+            "position": [
+              [
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 0,
+                  "promoted": false
+                },
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 1,
+                  "promoted": false
+                }
+              ]
+            ],
+            "setup_key": "opposite-colors"
+          }
+        ],
+        "max_ply": 64,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "saved_prefixes": [
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 1
+          },
+          "state_sha256": "22a2728663af53d8bc9465733bd3296b84e73bcb3afc3be32bc4449855d9f301",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g8",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 1
+          },
+          "state_sha256": "98d190379e15f212ccd183ee148e598fa6f2dd5fd4208d2dcd1da7d0ba101907",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g8",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 1
+          },
+          "state_sha256": "45c3555dc12914729b6f6e82fe278a736021609b5e80448db25b4a08c50e2e56",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g8",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  3
+                ],
+                "geometry_id": "g7",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_018",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  4
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 1
+          },
+          "state_sha256": "910af966a0046b50434a77028b69d608d75258e052e56f76bc068f47845ea0fd",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        }
+      ],
+      "seed": 202610240501,
+      "terminal": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "walk_seed": 202610240502
+    },
+    {
+      "actual_prefix_plies": 4,
+      "config": {},
+      "final_prefix_state_sha256": "5890ec5fc005f8d86e4bac8bff0894962bc9c58c15a5aa044e9c09dfaa50684a",
+      "roots": [
+        {
+          "record": {
+            "actions": [],
+            "initial_setup_key": "opposite-colors",
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 3
+          },
+          "target": 0
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "geometry_id": "g11",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  4
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  4
+                ]
+              }
+            ],
+            "initial_setup_key": "opposite-colors",
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 3
+          },
+          "target": 4
+        }
+      ],
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "initial_setup_options": [
+          {
+            "position": [
+              [
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 0,
+                  "promoted": false
+                },
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 1,
+                  "promoted": false
+                }
+              ]
+            ],
+            "setup_key": "opposite-colors"
+          }
+        ],
+        "max_ply": 64,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "saved_prefixes": [
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "initial_setup_key": "opposite-colors",
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 3
+          },
+          "state_sha256": "67eb3486d4eeab0c2313e441785f1223e39ae0f9c2071ae09cc1fec252da48e3",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  4
+                ]
+              }
+            ],
+            "initial_setup_key": "opposite-colors",
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 3
+          },
+          "state_sha256": "2fb3a31bc18c7a7b66eeee441ae91e62b7564c6ff9027530531cf4cb37ad52bb",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "geometry_id": "g11",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "initial_setup_key": "opposite-colors",
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 3
+          },
+          "state_sha256": "c07b98a3020fdbac8bfe8a8ec14d3dc6780b8c3febfe3caafb28afed3e7735a2",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_010",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  4
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "geometry_id": "g11",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  4
+                ],
+                "geometry_id": "g10",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_004",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  4
+                ]
+              }
+            ],
+            "initial_setup_key": "opposite-colors",
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 3
+          },
+          "state_sha256": "5890ec5fc005f8d86e4bac8bff0894962bc9c58c15a5aa044e9c09dfaa50684a",
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        }
+      ],
+      "seed": 202610240502,
+      "terminal": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "walk_seed": 202610240503
+    }
+  ]
+}

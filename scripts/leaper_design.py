@@ -119,6 +119,10 @@ def search_spec(reg, policy):
 
 def policy_limits(reg, policy):
     """Probe-only requested depth; keep the default counted-node route intact."""
+    if (type(reg.get('q',0)) is not int or reg.get('q',0)!=0 or
+        reg.get('check_only_qsearch',False) is not False or
+        type(reg.get('forced_check_depth',8)) is not int or reg.get('forced_check_depth',8)!=8):
+        raise ValueError('current forward controller supports static Q0 only; q policy is not implemented by this caller')
     _,nodes=search_spec(reg,policy)
     depth=reg.get('search_variants',{}).get(policy,{}).get('depth',64)
     if isinstance(depth,bool) or not isinstance(depth,int) or not 1<=depth<=64:
@@ -161,7 +165,8 @@ def prepare(d, repetitions=1, first_repeat=0, nodes=512, material_ablation=False
         'selection':'Ten predeclared mask pairs, no outcome/oracle selection or replacement; fixed symmetric layout; isolated, connected, nested and disjoint motion controls.',
         'pairs':{'AB_RNG':['AB','RNG'],'FLOOR_RNG':['FLOOR','RNG'],'RNG_RNG':['RNG','RNG']},'roles':[0,1],
         'repetitions':repetitions,'first_repeat':first_repeat,'nodes':nodes,'rule_max_ply':128,'caller_plies':128,'repetition_limit':4,
-        'q':0,'forced_check_depth':8,'disk_cache':False,'TT':'fresh per actor per game, retained inside game',
+        'q':0,'check_only_qsearch':False,'forced_check_depth':8,
+        'forced_check_depth_semantics':'configured q hard limit only, not a check-extension enable switch','disk_cache':False,'TT':'fresh per actor per game, retained inside game',
         'seed':202610221209,'planned_games':len(PAIRS)*6*repetitions,'expected_seconds':600 if repetitions==1 else 2100,'whole_cap_seconds':1200 if repetitions==1 else 2400,
         'preparation_seconds':time.perf_counter()-tick,'input_sha256':sha(d/'inputs.json'),'source_sha256':sha(Path(__file__)),
         'interpretation':'AB is the existing Static default evaluator including dynamics, not a material-only policy. No win-time-only scalar, learning gate, solver, default change or AUX task.',

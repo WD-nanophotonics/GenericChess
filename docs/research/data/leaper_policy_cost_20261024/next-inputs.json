@@ -1,0 +1,927 @@
+{
+  "worlds": [
+    {
+      "component_allocation": [
+        1,
+        1
+      ],
+      "config": {},
+      "cooperative_label": "FALSE_SCOPED_SAME_COLOR_INVARIANT",
+      "initial_actions": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        }
+      ],
+      "initial_state": {
+        "history": [
+          {
+            "action_signature": "",
+            "actor": -1,
+            "gave_check": false,
+            "position_key": "e8639cff2e7bdd91b02f7b5266a55ff848881cbcf927f0da659b81e7db8ca57d"
+          }
+        ],
+        "ply_count": 0,
+        "position": {
+          "aux_state": [],
+          "board": [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          "board_height": null,
+          "board_width": null,
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+          "side_to_move": 0
+        },
+        "repetition_counts": [
+          [
+            "e8639cff2e7bdd91b02f7b5266a55ff848881cbcf927f0da659b81e7db8ca57d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      "initial_state_sha256": "87e4db0b06cde67db5ce0ff0edab8e18c9fe54a5ca8b732a028f2c9ace431466",
+      "roots": [
+        {
+          "record": {
+            "actions": [],
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 1
+          },
+          "target": 0
+        }
+      ],
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "initial_setup_options": [
+          {
+            "position": [
+              [
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 0,
+                  "promoted": false
+                },
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 1,
+                  "promoted": false
+                }
+              ]
+            ],
+            "setup_key": "opposite-colors"
+          }
+        ],
+        "max_ply": 64,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "seed": 202610240501
+    },
+    {
+      "component_allocation": [
+        1,
+        0
+      ],
+      "config": {},
+      "cooperative_label": "UNKNOWN_STATIC_CAPACITY_DOES_NOT_PROVE_REACHABILITY",
+      "initial_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        }
+      ],
+      "initial_state": {
+        "history": [
+          {
+            "action_signature": "",
+            "actor": -1,
+            "gave_check": false,
+            "position_key": "3fe9620653394e182ba51362f89986720d7f8708b2a58dae3dcee2e4ba5f40a7"
+          }
+        ],
+        "ply_count": 0,
+        "position": {
+          "aux_state": [],
+          "board": [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          "board_height": null,
+          "board_width": null,
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+          "side_to_move": 0
+        },
+        "repetition_counts": [
+          [
+            "3fe9620653394e182ba51362f89986720d7f8708b2a58dae3dcee2e4ba5f40a7",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      "initial_state_sha256": "373827c99533016e1e5e8c6865549ad557b3b6937913aa5e676e9f7226f2620d",
+      "roots": [
+        {
+          "record": {
+            "actions": [],
+            "initial_setup_key": "opposite-colors",
+            "resigned_by": null,
+            "ruleset_fingerprint": "1988f7df02e58e0d48855e44a576e23b32e90ae5a0353c105615a1f33e946df1",
+            "schema_version": 3
+          },
+          "target": 0
+        }
+      ],
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "initial_setup_options": [
+          {
+            "position": [
+              [
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 0,
+                  "promoted": false
+                },
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                {
+                  "base_type_id": "A",
+                  "current_type_id": "A",
+                  "owner": 0,
+                  "promoted": false
+                },
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                {
+                  "base_type_id": "K",
+                  "current_type_id": "K",
+                  "owner": 1,
+                  "promoted": false
+                }
+              ]
+            ],
+            "setup_key": "opposite-colors"
+          }
+        ],
+        "max_ply": 64,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "seed": 202610240502
+    }
+  ]
+}

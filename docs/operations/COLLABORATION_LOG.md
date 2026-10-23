@@ -6927,3 +6927,52 @@ Public-copy qualification passes all1152decisions/6818PVs,744oneply roots,
 counter step is actually begun; both research roles remain independent. A single
 merged progress/review question is prepared only after tested publication and
 full PRIMARY remoteSHA verification; delivery receipt lives in the local mailbox.
+
+
+## PRIMARY_SANDBOX —2026-10-24 policy-cost/quantity segment
+
+The original probe read new channel roots and complete relevant threads once,
+raw originals saved before assessment. Chat1792780376's exact two-action/mover/
+fixed-mu caveats and counter-first advice are adopted and executed. It reviewed
+fixed JSON/math but did not run Core/Player. PRIMARY adds the scoped source audit,
+6matched-event/4common-depth diagnostics, and independently selects the new leaf-
+policy comparison after discovering the actual Q0 premise; no claim of partner
+approval or a new authority/long-run grant. AUX43dae89's mailbox report is read
+as its published self-report only: no rerun, merge, checkout/state access, task
+handoff or competing solver. The roles and60minute recurrence stay independent.
+
+All1152 old Q0 counters and actual executed source show check-onlyOFF. Future
+forward registration no longer silently ignores unsupported q requests:3RED
+regressions precede the rejection fix. The separate maintained cost CLI exposes
+the explicit flag without changing defaults or any closed/current experiment.
+The old public report is corrected with its fixed erroneous version identified;
+original data/source/caps remain. An Action-versus-SemanticAction test adaptation
+and a cross-layer pytest helper-path failure are diagnosed without weakening
+physical expectations or dropping tests.135relevant selected tests pass before
+publication; mandatory publish validation follows the final content review.
+
+The NEW1152policy calls close0missing and retain996time/26node/130root shortcuts;
+6254PVplies Core-qualify. OLD576static calls are references, not new executions.
+Four pre-panel pilots repeat later planned input/policy conditions and are not
+independent samples. All signed root/rule-mean/stop matrices remain. A subsequent
+same-input time-intersection check weakens the6x6 headline from an overall sign
+reversal to rho .897/.806/.168 on169common roots; selection-on-stopping and load/
+cache caveats remain. Independent stdlib exact-rank arithmetic checks the derived
+correlations; optional SciPy was absent, with no installation or new prerequisite.
+
+Quantity work proves the scoped degree bound and noncancelling highest terms,
+with31newthree-A Coretrees/826second edges.123minimum static mates and32maximal
+negative3x3diag2 configurations distinguish inventory, admission, reachability
+and WDL. No price/learner/default conclusion follows.60packet originals/source
+entries pass byte verification; source capsules are data only. Two SAME-RuleSet
+setups plus8actual prefix moves create4complete next cost contexts/0fitness calls.
+Their mixed-color cooperation is UNKNOWN; no old1904 policy result is filled.
+
+All own scientific producers close with exit0 under frozen caps. The ledger
+records4796.940094effective seconds, including actual public-reader validation;
+documents, publication, Slack and subsequent small unmeasured arithmetic/CI are
+not additionally credited. Scientific counts exclude regression-test calls.
+One merged progress/genuine-question message will be sent only after reviewed
+publication and full PRIMARY remoteSHA verification; actual delivery and final
+session acceptance are recorded privately, not presumed here. No Dot, extra
+worker/Goal/schedule, AUX write or backend identity weakening.

@@ -69,12 +69,41 @@ components5/6; all targets and the signed/absolute criterion ambiguity remain.
 No scalar difficulty/default/learner is selected. The complete public-copy
 reader passes; source capsules are data only, not an independent engine.
 
-Next step actually BEGUN: saved-counter decomposition checks all1152rootshortcut
-flags against literaloneply facts, separates their tiny cost from511nonshortcut
-queries perbudget, and preserves legal/evaluation/key counts. Continue its
-interpretation before buying another query panel. No own historysolver/AUXwrite,
-oldcap refill or unassessed>=120min run. Existing rule-blind value alias remains;
-rule-conditioned encodings remain candidates without NNUE training.
+[LEAPER_POLICY_COST_AND_QUANTITY_20261024.md](LEAPER_POLICY_COST_AND_QUANTITY_20261024.md)
+closes that saved-counter continuation. All1152 old qnodes are zero: the actual
+cost caller used static Q0/check-onlyOFF, not forced-check8. Compatibility key
+counts equal main searched successors+TT probes, not SHA computations. Six
+matched8192-event calls separate action-output burden from recursive exact-history
+comparison costs; no runtime/history identity is weakened or AUX work taken over.
+
+Two NEW576-call arms (check-onlyQ0 and ordinaryQ4) complete at unchanged N32768/
+3s:996time/26node/130root shortcuts/0missing,6254literalCorePVpliesPASS. The old
+576 staticQ0 reference is reused, not executed again. W2-cost dependence remains
+policy/stratum specific. At6x6 overall rule-mean rho .324/.353/-.184 becomes
+.897/.806/.168 on169 SAME time-limit roots across static/check/Q4. The overall
+sign reversal is not a conditional causal reversal. Main/q budget events,
+transitions, actual depth, latency and latent completion cost stay distinct.
+Four additional common-main-depth controls explain one old action difference
+by D7vsD6, while another persists atD8 with equal score; neither establishes WDL
+or quality. The three policy-registration red tests now reject unimplemented q
+requests before execution; default/static behavior and raw old data stay intact.
+
+Quantity is a new explicit coordinate: identical-k ordinary actors against a
+bareKing give exact two-action path degree<=min(k+1,5). For k<5 top-degree signs
+are fixed, so positive-weight witnesses cannot cancel under fixed nonnegative
+averaging. Actual31three-actorCoretrees/826edges verify quartic-4. Static mating
+configuration minimum is1for20masks,2for11 on n>=4;3x3 purediag2 alone is impossible
+at any quantity.123positive/32maximal-negativeCore configurations pass. These are
+not fresh-admission, reachability, forced-WDL or averaged-price claims. The public
+packet reader/source-byte checks pass; all current scientific producers are CLOSED.
+
+Next step actually BEGUN: ONE5x5/mask2/two-A RuleSet has two complete setups with
+A colors[1,1]vs[1,0], fixedK0=0/K1=24. Both exactGameRecords and8legal prefix
+moves round-trip, yielding4initial/4ply cost contexts. Same-color ordinary actors
+have a scoped checkerboard obstruction; mixed-color reachability remainsUNKNOWN.
+Use a fresh4-query cost preflight before a NEW full-game cost case; do not pay
+known-negative games merely to fill a panel or restart oldE0. No learner/default/
+sampler/AUX state changes or old1904 outcome fills are selected.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -595,16 +624,16 @@ continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled
 
 ## Current executable reserve —2026-10-24
 
-Main: Which saved counters explain finite throughput after separating exact root shortcuts?
-| Continue the already started next-counter-decomposition.json on1152sealed returns; inspect legal/evaluation/key timer contracts before combining costs
-| Per-board/budget conditional explanation and a falsifiable smallest next test, keeping1016time-censors and every oldUNKNOWN
-| No new queries before a changed premise/cost case; no scalarquality/pricefit or latent-solver-cost claim.
-Backup1: Where exactly does the singleton quadratic width decomposition cease to apply?
-| Review the supplied root/escape algebra and actual two-actor third-difference4 input at next original Chat probe; derive one concrete scope correction if needed
-| Full fixed rules/history and literal frontier evidence, not assumed quantity conservation
-| No own full-history solver, extra worker, AUX checkout/state write or broad graph.
-Backup2: Can normalized research-record snapshots avoid observed conversion cost without losing originals?
-| Use the sealed32derivedprefix diagnostic and inspect all actual caller field contracts; keep the old raw writer and all frozen experiments unchanged initially
-| Exact current-byte comparison, unsupported/keycollision failure cases and whole-pipeline cost before any proposal
-| Not a new generic journal framework or default; no rerun/refill of old paid games/queries.
+Main: How do component allocation and quantity change interpretable forward behavior inside one exact rule?
+| Use data/leaper_policy_cost_20261024/next-cost-inputs.json (or its exact ignored original) for the prepared4query staticQ0/unit/Nativeall/N512/depth64/3s cost preflight; preserve setup identity and0/4ply histories
+| Complete actual caller costs/counters/stop reasons, then a separate comparable full-game cost case before ANY new fitness; mixed-color reachability remainsUNKNOWN
+| Prefer the exact ignored original; LF public views require recording their new serialization SHA. Fresh output only; no E0/oldcap refill, scalarquality/pricefit, ownhistorysolver orAUXwrite; cold4query timing alone is not whole-game feasibility.
+Backup1: Where does the bare-K quantity polynomial stop applying when both sides have ordinary actors?
+| Follow next original Chat replies and inspect one concrete full-rule counterfactual before an expanded proof/census
+| Actual common-history action frontiers and an explicit new bound or minimal counterexample
+| No redundant31mask rerun, broader truth solver or silent promotion/drop/aux/history exclusion.
+Backup2: Is the measured outer recording residual worth a caller change?
+| Use the sealed32derived-prefix diagnostic plus both new closed-batch clocks; inspect current caller contracts only if a decision-changing cost case emerges
+| Exact-byte/supported-type/collision evidence and actual whole-pipeline cost; residual stays unassigned until measured
+| No running-writer bypass, newjournal framework, genericdefault or frozenquery/game replay.
 Science remains OPEN.

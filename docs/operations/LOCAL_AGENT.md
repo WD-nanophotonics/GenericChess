@@ -526,3 +526,33 @@ comparable full-game records, executed source, controller/history/clock conditio
 scaling/reserve and total preparation/preflight/validation/analysis cost. If that
 basis is absent, stop at cost feasibility or redesign a smaller genuinely new
 question before fitness. Do not split the old scope or bypass the120minute rule.
+
+
+## Observed Q0 and counter contracts —2026-10-24
+
+A configured quiescence hard-depth of8 does not enable check extensions. In
+SearchTuning, use_check_only_qsearch defaults FALSE. At ordinary qdepth0 this is
+static leaf evaluation; checked leaves extend only with that explicit switch.
+The maintained semantic_probe_cost caller now exposes --check-only-qsearch;
+omission preserves its old behavior. Ordinary Q4 is another leaf policy, not
+an equivalent main depth. Preserve the original source/returns when correcting
+an inaccurate forced-check description; do not rerun a closed experiment to
+repair its wording.
+
+The current leaper_design forward caller supports static Q0 only. Its future
+registrations explicitly state check_only_qsearch=False; legacy
+forced_check_depth=8 means a configured hard limit. It now rejects a registration
+requesting another q policy/hard limit instead of silently running Q0. This does
+not change old actual policies or activate extensions in any existing game.
+Other historical callers require their own executed-source review.
+
+nodes+qnodes is the implemented budget-event sum. A main leaf entering qsearch
+can count the same physical position in both fields; these are not distinct
+states or equal-cost operations. The runtime's compatibility field
+position_keys_computed mixes searched-successor bookkeeping with TT key requests;
+it is not a count of SHA calculations. Explicit legal requests include cached
+lists and aborted attempts; action-output counts can repeat a cached frontier.
+Native success counts are not all attempts, so their difference is not an exact
+cache-hit count. Keep nested/root/profiler cumulative times separate, and call
+unassigned outer time a residual until measured. Current evidence and scoped
+source interpretation live in LEAPER_POLICY_COST_AND_QUANTITY_20261024.md.

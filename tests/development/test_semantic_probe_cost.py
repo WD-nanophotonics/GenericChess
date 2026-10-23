@@ -257,3 +257,24 @@ def test_unit_uses_metadata_anchor_future_current_and_real_base_hand_history():
                 quiescence_max_depth=0, quiescence_hard_max_depth=0))
     assert decision.completed_depth == 2 and decision.score == expected
     assert before == (session.state, session.to_record(), session._search_witnesses)
+
+
+@pytest.mark.parametrize('enabled', [False, True])
+def test_q0_check_extension_requires_explicit_caller_switch(tmp_path, monkeypatch, enabled):
+    from scripts.leaper_rule_coordinates import template
+    rules=template(9,5,(15,21,5)); compiled=compile_legacy_ruleset_for_semantic_execution(rules)
+    source=tmp_path/'input-check.json';output=tmp_path/'output-check.json'
+    write_record(source,{'worlds':[{'seed':1,'rule':ruleset_to_dict(rules),'roots':[{'target':0,'record':record_value(GameSession(compiled).to_record())}]}]})
+    actual=semantic_probe_cost.AlphaBetaPlayer;seen=[]
+    def factory(*args,**kwargs):
+        seen.append(kwargs['tuning'].use_check_only_qsearch)
+        return actual(*args,**kwargs)
+    monkeypatch.setattr(semantic_probe_cost,'AlphaBetaPlayer',factory)
+    argv=['cost','--input',str(source),'--output',str(output),'--seed-count','1','--prefixes','0','--variants','all','--evaluation-backend','unit','--depth','4','--qdepth','0','--nodes','8192','--seconds','3','--total-seconds','10']
+    if enabled:argv.append('--check-only-qsearch')
+    monkeypatch.setattr(sys,'argv',argv);semantic_probe_cost.main()
+    result=json.loads(output.read_bytes());d=result['rows'][0]['decision']
+    assert result['protocol']['check_only_qsearch'] is enabled and seen==[enabled]
+    if enabled:assert d['qnodes']>0 and d['in_check_qnodes']>0
+    else:assert d['qnodes']==d['in_check_qnodes']==0
+    assert not result['missing_slots']

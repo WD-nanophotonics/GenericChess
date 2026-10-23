@@ -70,6 +70,8 @@ def main():
                     nargs='+', default=['all', 'ordered'])
     ap.add_argument('--evaluation-backend', choices=['default', 'semantic_core', 'semantic_native', 'unit'],
                     default='default', help='Semantic attack backend retains default prices; unit is explicit material-only1000/900 for ALL types, no legacy metadata required')
+    ap.add_argument('--check-only-qsearch', action='store_true',
+                    help='At Q0 extend checked leaves only; omission retains static Q0. hard-depth8 is only a limit, not an enable switch')
     ap.add_argument('--capture-only-qsearch', action='store_true',
                     help='Existing selective q option: omit quiet checking continuations; can miss forced wins')
     ap.add_argument('--aspiration-delta', type=int,
@@ -191,7 +193,8 @@ def main():
                             use_native_semantic_legality=variant != 'core',
                             use_native_semantic_availability=variant in ('availability', 'all', 'ordered', 'ordered_evasions'),
                             use_native_semantic_check=variant in ('check', 'all', 'ordered', 'ordered_evasions'),
-                            tuning=SearchTuning(use_pvs=args.pvs,
+                            tuning=SearchTuning(use_check_only_qsearch=args.check_only_qsearch,
+                                use_pvs=args.pvs,
                                 use_countermove=args.countermove,
                                 use_staged_move_picker=args.staged_move_picker,
                                 use_aspiration=args.aspiration_delta is not None,

@@ -38,7 +38,7 @@ The mean widths for masks1/5/31 are respectively2466/149,2650/149,1738/149 on4x4
 
 ## Registered cost screen
 
-There are24 previously cost-unmeasured masks (the earlier7-mask cost casebook is excluded),3 boards and8 fixed roots:576 contexts. Each gets a fresh Player/TT under explicit unit A1000/King0 leaves with dynamic bonuses off, Q0/forced-check8, requested depth64, Native service variant all, and a3second cooperative clock. Node caps32768/131072 are an explicit curve. Each budget is one process, not a fresh process per query. Startup/provider caches and concurrent load remain limitations.
+There are24 previously cost-unmeasured masks (the earlier7-mask cost casebook is excluded),3 boards and8 fixed roots:576 contexts. Each gets a fresh Player/TT under explicit unit A1000/King0 leaves with dynamic bonuses off, static Q0 with check-only OFF (hard8 configured but inactive), requested depth64, Native service variant all, and a3second cooperative clock. Nominal node caps32768/131072 share the same clock and are mostly nonbinding. Each budget is one process, not a fresh process per query. Startup/provider caches and concurrent load remain limitations.
 
 The forecast allowed3456 cooperative query-seconds plus preparation/recording/analysis, expected90minutes total below120; batch caps1900seconds and total4000seconds are frozen. Missing slots are never refilled. The original primary comparison is Spearman with ties, reported at both root and rule-mean level and separately by board/budget. It compares graph components/degree, root branch and two-ply width with actually paid nodes+qnodes, observed completion depth and latency. It does not infer latent work needed to solve the game or requested-depth completion from a time-censored return.
 
@@ -73,3 +73,20 @@ The compact bundle preserves exact scientific JSON/text originals, complete rule
 The next independent check is whether the symbolic singleton decomposition misses any rule assumption; the two-actor failure is already a concrete boundary. Continue interpreting the saved cost counters and terminal-shortcut mixture before buying another query panel. Full generated promotion/drop/auxiliary/history semantics remain the long-term target. No root/depth/clock/representation coordinate alone selects quality, utility or a universal learner.
 
 Direct review: [finite mate7 certificate](data/leaper_forward_width_20261024/mate7-certificate.json), [quantity/probability boundary inputs](data/leaper_forward_width_20261024/boundary-and-probability.json), [full cost summary](data/leaper_forward_width_20261024/screen-summary.json), [exact evidence and reader](data/leaper_forward_width_20261024/README.md).
+
+
+Correction from the next source/counter audit (2026-10-24): the earlier fixed
+version b66566c3647918b4c2f40993869ff0c46fb75e9b incorrectly described the cost
+caller as Q0/forced-check8. Its actual tuning left check-only OFF, and all1152
+retained qnode counts are zero. Raw registrations, source capsules and returns
+remain unchanged. The two ceilings are predominantly nonbinding under the
+three-second clock; they do not establish a fourfold-resource treatment.
+See [the subsequent policy/quantity study](LEAPER_POLICY_COST_AND_QUANTITY_20261024.md)
+for the corrected contract and separately registered new policies.
+
+For clarity, W2 here counts paths of exactly two legal actions with the K+A
+side moving first. A first-action terminal contributes zero; a terminal reached
+by the second action still counts as one path. This is neither deduplicated
+Position count, nonterminal-only frontier size, average branching nor a policy
+sampling probability. Fixed nonnegative weights on a common fresh support
+preserve the polynomial statement; rule-dependent supports/weights do not.
