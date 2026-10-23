@@ -80,6 +80,8 @@ The rule7 mechanism's retained mate7 PV is a real cooperative path, not by itsel
 
 A separate rule-conditioning alias uses two **ongoing** rule1/5 starts with identical board/type IDs, hands, auxiliary state, side, empty physical history and clock: their scoped WDL values are0 and1. One shared deterministic function of only those rule-blind features cannot represent both (worst absolute error>=1/2; balanced two-point minimum MSE1/4). Rule-conditioned features, rule-specific weights/adaptation or movement-derived type encodings can avoid it. No NNUE training or activation is inferred.
 
+The exact remaining rule/history and the two closed branches are also available as a directly readable [plain JSON review handoff](data/leaper_rule_coordinates_20261024/mate7-review-handoff.json); no archive unpacking is needed to inspect the actual decision question.
+
 ## Integrity, costs and reproduction
 
 The pair producer took126.0419s; the12-mask scale producer173.6165s; actual cost batches15.4709/43.7160/165.1918s. These clocks include different setup/recording scopes and concurrent load; counts and wall time are separate. No expected>=120-minute run was started. No frozen old cap,1904 missing policy outcomes or old E0/E1 panel was refilled.
