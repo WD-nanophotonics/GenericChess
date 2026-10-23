@@ -31,3 +31,27 @@ support-ID mu aliases are bijective; the unavailable twelfth family has no
 fabricated row. V1predictions stay frozen; colour v2is exposed development.
 Cost dictionaries count actual feature returns/edges, with shared whole-producer
 wall time reported once. They are not per-query timing or a runtime speed claim.
+
+
+`forecasts.json.gz` is the actual strict export from committed source
+`cffcd6d2975375d3a91dfce325c4bb48559c2516`; its own manifest binds the bytes.
+Eight methods each have3616conditional-history rows and11family-rate rows.
+This commit contains the exporter; the earlier feature-run code hashes and Core
+baseline remain separate in the evidence. No feature query was rerun for export.
+
+For a NEW matching truth object supplied/verified by AUX, select a method object:
+
+```python
+import gzip, json
+from pathlib import Path
+packet = json.loads(gzip.decompress(Path(
+    'docs/research/data/leaper_scope_e0_20261023/forecasts.json.gz').read_bytes()))
+conditional = packet['history_forecasts']['oneply_augmented_cooperative']
+prevalence = packet['rule_prevalence_forecasts']['oneply_augmented_cooperative']
+```
+
+Use the corresponding existing history or prevalence scorer. Do not pass the
+entire outer packet as a single forecast and do not reuse old ten-rule truth by
+mask string. `mu_aliases` binds the old names to exact sorted complete State IDs.
+The two score targets differ; AUX's positive-improvement sign is opposite to this
+report's model-minus-baseline loss difference. No independent scoring is claimed.

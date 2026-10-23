@@ -192,3 +192,10 @@ headline and which matching truth would actually change the next decision. The
 rate threshold above is a more specific question than requesting another broad
 history graph. No real-time wait, Dot contact, extra worker, default change,
 old-cap refill or new long-run authorization is introduced.
+
+
+The strict export was actually executed at
+`cffcd6d2975375d3a91dfce325c4bb48559c2516`:8methods,28,928conditional predictions,
+11family means per method, full SHA/cost/support validation PASS. This source
+commit precedes the forecast publication commit, so no self-referential or
+invented execution SHA is used. No new Core/Player/oracle query was made by export.
