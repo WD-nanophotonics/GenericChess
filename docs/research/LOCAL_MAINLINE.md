@@ -11,16 +11,18 @@ Old dated next actions are evidence, not a backlog or a competing live policy.
 
 ## Current selection and reason — 2026-10-23
 
-The user-confirmed pure-Leaper direction now has separate quantity, ABC-layout,
-resource and material axes. Keep the cheap generated-Static forward control and
-full RuleSet/history identity. The connected KAB prior is fragile on new codes;
-do not retune serial8+8 batches. A small exposed ABC `(10,19,8)` case retains
-three directed-policy effects on fresh layouts and a separate5x5 envelope, while
-its `(9,9,8)` control loses resource/material effects. This is a finite benchmark
-candidate, not generic quality, learned-price utility or a default. PRIMARY owns
-rule generation/forward evaluation; DEV_AUX independently owns truth/learning.
-The complete generated-domain target, PUBLIC access, read-only Chat and60-minute
-patrol remain unchanged. The former optional Unit-order backup is deferred.
+The user-confirmed pure-Leaper direction retains cheap512-node forward controls
+and full RuleSet/history identity. Initial ABC `(10,19,8)` success is not a
+prefix-robust three-axis benchmark: the complete direct material axis is0 in
+both encodings, while the capped resource axis remains unresolved. Common-FLOOR
+material contrasts flip from+1/16 to-1/16 across labels. Do not turn this finite
+M0 ablation into a learner/all-price impossibility or fit a quality scalar.
+Keep both codes and all UNKNOWN; no serial8+8 rescue/refill/default is selected.
+The next small question isolates physical FLOOR index coupling from AB label
+response. A real full-history red fixture is saved; the optional protocol is
+not implemented and its32-game design remains0fitness/NOT RUN READY. PRIMARY
+owns generation/forward work; AUX truth/learning, PUBLIC/read-only Chat and the
+60-minute recurrence are unchanged. Full generated semantics remain the target.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -512,15 +514,34 @@ The public-copy reader checks640 records/72,066 PV/6,301 FLOOR choices. Full inp
 and policy-route guards prevent cross-code/history joins;61 related checks pass.
 No product/default/AUX/sampler change is selected.
 
-Main: Does the same finite ABC staircase survive a complete fixed type-label cycle?
-| run `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
-.local_agent/leaper-label-cycle-20261023-460268df/cheap`, then resource, then material
-|32 planned slots, full bounds/roles/history/cost |0fitness; expected600s and
-sum cooperative caps1200s. Forty actual cost returns already exist; preserve them.
-Backup1: Separate representation correctness from policy utility | inspect
-`type-cycle-qualification.json` and `cold-label-response.json` in that directory
-|157 mapped frontiers/8,615 history entries/153 old actions/0 canonical value
-differences; one of20 cold mapped actions differs |no all-state/Native/WDL/tie claim.
-Backup2: Diagnose actual source/input/record refusals against the frozen contract;
-keep originals and partial returns, no expected-value patch/reset/refill or old
-calls labelled new. Do not duplicate AUX truth/learning. Science OPEN.
+[LEAPER_PREFIX_LABEL_AND_OPPONENT_20261023.md](LEAPER_PREFIX_LABEL_AND_OPPONENT_20261023.md)
+closes416planned slots/368retained records, including326played continuations and
+42terminal-start receipts. All50UNKNOWN remain:48unattempted/two censored.
+Label32 qualifies1021frontiers/42150history/2042canonicalvalues with0differences;
+15cheap first differences are FLOOR, whose261mappeduniformkernels agree despite
+34legal-order changes. This is not generic policy/Native-leaf/WDL equivalence.
+
+Prefix cheap hits its600cap; resource its1800cap. Their candidate bounds remain
+positive on cheap, unresolved on resource. Material64 completes with0 in all4
+code/encoding cells:17of32policy-swap paths change but final winning side/draw
+does not. Common-FLOOR128 completes with candidate effects+1/16 and-1/16, no
+robust positive utility.52default/adapter complete paths match; one75query old
+censor matches its new120query prefix and stays OLD UNKNOWN. No expected patch.
+160cold calls are new;40label references are old;common-foe reuses64ofthose160.
+Do not start a bareKing adjudicator on a10.47%policy-cost opportunity. No product,
+evaluator, sampler, learner, role, stop or schedule change is selected.
+
+Main: How much cheap AB labelresponse remains after physically coupling FLOOR?
+| implement the explicit probe-only protocol and reader with the actual saved
+`.local_agent/next-floor-coupling-c5c7` red fixture, then freeze newsource/inputs
+and preflight before32games | all8oldworld/labelinputs,bothroles,FIRST2;first
+ABdivergence/outcomes/cost/UNKNOWN |0fitnessNOTRUNREADY;expected300/cap600;
+default and closed4esource unchanged until qualifications; no genericcanonicalAPI.
+Backup1: Qualify the registered physical action mapping on full histories and
+reader metadata | use `leaper-next-coupled-control-c5c7ebd7.json` plus fixture
+| old default testPASS/optinREDmissingargument,261every-indexchecks | no automatic
+variance-reduction/allstate/WDL claim or private candidate in active suite.
+Backup2: If that protocol fails its exact same-law/total-cost contract, preserve
+failure and choose a changed-premise cheap forward question | inspect source,
+full inputs and cost evidence | no old cap refill, repeated8+8retuning or AUX
+truth/learning duplication. Science OPEN.

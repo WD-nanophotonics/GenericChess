@@ -1,0 +1,43 @@
+{
+  "status": "CLOSED",
+  "dependency_revision": "ff72649685c21a37bdbe147c930e4b2070934f77",
+  "files": {
+    "observations.json.gz": {
+      "sha256": "6d758fc8f2b255f458585485e084c8327be5a0ad0e4bcf4c5a25f7bcd3e75d73",
+      "bytes": 4116000,
+      "decoded_sha256": "500c3b445d235dc33a8657d496e540d89f2a8cbef8aa08e27061284ac568acae"
+    }
+  },
+  "planned_slots": 416,
+  "retained_run_receipts": 368,
+  "new_played_slots": 326,
+  "terminal_start_zeroquery_receipts": 42,
+  "partial_failed_receipts": 0,
+  "unknown_planned_slots": 50,
+  "unattempted_slots": 48,
+  "controller_turns": 15383,
+  "AB_returns": 10574,
+  "unique_full_records": 213,
+  "new_cost_Player_calls": 160,
+  "OLD_label_cost_reference_calls": 40,
+  "commonfoe_reused_prefix_cost_references": 64,
+  "commonfoe_new_cost_calls": 0,
+  "baseline_views_not_new_executions": true,
+  "source_capsules_data_only": true,
+  "source_hashes": {
+    "leaper_design.py": "4e58e33bc144f836b55b23976de7663a07f0873c6cb898b0605f7c501a2d5175",
+    "leaper_forecast.py": "8d0e573f716117001d6edcd12bcf448d77c659b880c0adb794544e319111ef1d",
+    "leaper_portrait.py": "4ecbbf1c982973f1ee618301c3d41e96d60de8db1254b173728794bce6093653",
+    "leaper_abc_prefix_label_prepare_c5c7ebd7.py": "e211fa2c3e0870a1098c0793fbc7a3aedb2b581f6105e7ebba5d3e582f3ef071",
+    "leaper_label_assess_c5c7ebd7.py": "4bdb3814542c54d3db7dccf056a81c50348792cbcceafa03e9ce9e2418ced0cd",
+    "leaper_floor_kernel_c5c7ebd7.py": "3d6c999268baf8a7e16bf5b8d47bb2d7526991c2367e38902f5894b0d660cd85",
+    "leaper_floor_kernel_c5c7ebd7.before-rank-coupling.py": "bfabd2d9789435dccb70ed83195ee7f85977f24fa4ea1c47345865a064a4bf7b",
+    "leaper_prefix_inputs_qualify_c5c7ebd7.py": "2ae9f7e1c091a52727761aba2b7ec682da194d614de86654b33067017882d3d3",
+    "leaper_prefix_inputs_qualify_c5c7ebd7.initial-attribute-failure.py": "cc49a56ba8b57c8a0542219d64e388df08cd9a3a2871d45b0a34a2ac3554b571",
+    "leaper_prefix_commonfoe_prepare_c5c7ebd7.py": "5a8cd0de45ed1ae040869129bf26adf0b35db3611093200f932fcb8f9f88138c",
+    "leaper_prefix_assess_c5c7ebd7.py": "a8caf5c22edc7fdcf8be7760616aeedf7e55c5952e6dc6455379ad8503da29a7",
+    "test_leaper_floor_coupling.py": "c7c6554d151f759c9fc1f02af1112df0ad05d8edc78a677947cbfee909ec1f57"
+  },
+  "privacy_strings_scanned": 2637001,
+  "privacy_pattern_hits": 0
+}

@@ -6580,3 +6580,34 @@ one of20 cold mapped actions differs. Three arms32planned remain0fitness, with
 work; no AUX observer support for eight actors or actual learned-price gain is
 assumed. Exact source/full-rule/controller/history interfaces are published for
 readers to assess within their own role. See LEAPER_ABC_STAIRCASE_20261023.md.
+
+## PRIMARY — 2026-10-23 prefix, label and common-opponent closure
+
+Read once this patrol: new Claude07:50root1792709449.752449 and8complete relevant
+threads, exact originals privately saved before assessment; seven prior parsed
+threads unchanged. Preserve the user-confirmed ChatGPT pure-Leaper direction.
+Adopt the useful prefix-law/distinct-record questions. Reject a nine-point price
+grid or observed unique-record count as a universal constant-price TD ceiling or
+automatic IID effective sample size. No outbound contact, AUX writes/execution,
+extra worker or schedule change. AUX scientific work remains independent.
+
+PRIMARY closes32label,256prefix and128common-foe planned slots. The retained368
+records include326played continuations/42terminal starts; all50UNKNOWN remain.
+The initial ABC candidate fails strict prefix-positive material criterion, not
+all prices/learners. Common-opponent candidate effect+1/16 versus-1/16 across
+labels; no robust material preference/default. Decode the lone adapter/full-path
+inequality causally: oldwhole_cap75-query prefix equals new120-query path; old
+UNKNOWN is notfilled.52complete paths match;11oldframes unattempted.
+
+Efficiency:160new cold calls,40old label references;common-foe reuses64 exact
+prefixcost calls with0new cold queries.600/1800prefixcaps close109/35records,
+material64/common128complete; no capextension orrefill. Coldroot forecasts do
+not bound later6.99s calls. BareKing shortcuts offer10.47%retainedpolicycost at
+most, not a newsolver priority. Actual source4e and active expectations unchanged.
+
+Next question begun:261reachedphysical-rank couplings and an actual full-history
+fixture. Default mismatch testpasses; optionalcontrol is unimplemented/red and
+preserved privately as DATA, not installed in the active suite.32future slots
+remain0fitness/NOTRUNREADY; qualify explicit protocol/reader/source/cost first.
+Unresolved: small exposed codes, dependent streams,50UNKNOWN, no all-state or
+Native-leaf/WDL/TD proof and no variance guarantee. See the purpose report/data.
