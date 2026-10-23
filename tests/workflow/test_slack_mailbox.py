@@ -90,6 +90,49 @@ def test_uncertain_delivery_reconciles_on_next_read_without_resend(env):
     assert r["phase"]=="SENT"
     assert m.begin_send(r["probe_id"])["action"]=="reconcile_at_next_probe"
 
+
+def test_unresolved_send_after_complete_read_does_not_wedge_new_report(env):
+    first=m.start();first=m.ingest(first["probe_id"],snapshot(env))
+    first=review_and_prepare(env,first);m.begin_send(first["probe_id"])
+    # Before a later read, the original uncertain probe must still resume.
+    assert m.start()["probe_id"]==first["probe_id"]
+    m.ingest(first["probe_id"],snapshot(env))
+    original=m.location(first["probe_id"]).read_bytes()
+    second=m.start()
+    assert second["probe_id"]!=first["probe_id"]
+    assert m.start()["probe_id"]==second["probe_id"]
+    assert m.location(first["probe_id"]).read_bytes()==original
+    second=m.ingest(second["probe_id"],snapshot(env))
+    path=env/"new-report.txt"
+    path.write_text(first["message"].split("\n\n",1)[1],encoding="utf8")
+    with pytest.raises(LocalFlowError,match="do not resend"):
+        m.prepare(second["probe_id"],path)
+    path.write_text("New measured result and a concrete next-method question.",encoding="utf8")
+    m.prepare(second["probe_id"],path)
+    assert m.begin_send(second["probe_id"])["action"]=="slack_send_message"
+    assert m.begin_send(first["probe_id"])["action"]=="reconcile_at_next_probe"
+    assert m.location(first["probe_id"]).read_bytes()==original
+
+
+def test_old_uncertain_can_reconcile_during_later_distinct_probe(env):
+    first=m.start();first=m.ingest(first["probe_id"],snapshot(env))
+    first=review_and_prepare(env,first);m.begin_send(first["probe_id"])
+    m.ingest(first["probe_id"],snapshot(env))
+    second=m.start()
+    m.ingest(second["probe_id"],snapshot(env,[msg("12.1",first["message"],"U1")]))
+    recovered=m.load(first["probe_id"])
+    assert recovered["phase"]=="SENT" and recovered["message_ts"]=="12.1"
+    assert recovered["delivery_basis"]=="later_probe_readback"
+    assert m.load(second["probe_id"])["phase"]=="READ_SAVED"
+
+
+def test_incomplete_uncertain_read_cannot_release_another_probe(env):
+    first=m.start();first=m.ingest(first["probe_id"],snapshot(env))
+    review_and_prepare(env,first);m.begin_send(first["probe_id"])
+    with pytest.raises(LocalFlowError,match="previous boundary"):
+        m.ingest(first["probe_id"],snapshot(env,complete=False))
+    assert m.start()["probe_id"]==first["probe_id"]
+
 def test_paginated_relevant_threads_must_finish(env):
     r=m.start()
     state=json.loads((m.HOME/"state.json").read_text());state["required_threads"]=["9.1"]
@@ -118,6 +161,12 @@ def test_rendered_channel_and_thread_parser(env):
     thread={"messages":"=== THREAD PARENT MESSAGE ===\nFrom: Person (U2)\nTime: time\nMessage TS: 10.1\nroot\n=== THREAD REPLIES (1 total) ===\n\n--- Reply 1 of 1 ---\nFrom: Person (U2)\nTime: time\nMessage TS: 10.2\nTYPE=CHAT_REPLY\nlate"}
     assert m.messages(channel)[0]["ts"]=="10.1"
     assert len(m.messages(thread))==2
+
+
+def test_no_reply_tool_footer_is_not_a_new_comment_revision():
+    body="CHAT_Comments unchanged; No thread messsages inside prose stays."
+    page={"messages":"=== THREAD PARENT MESSAGE ===\nFrom: Person (U2)\nTime: time\nMessage TS: 10.1\n"+body+"\n\nNo thread messsages\n"}
+    assert m.messages(page)==[dict(user="U2",ts="10.1",text=body)]
 
 
 def test_chat_thread_plain_supplement_is_reviewed_but_agent_reply_is_not(env):

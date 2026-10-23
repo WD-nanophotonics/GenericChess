@@ -2,75 +2,74 @@
 
 ## Scope and shared basis
 
-The user direction is LEAPER_INVERSE_DESIGN_DIRECTION.md. PRIMARY owns rule and
-opening design, forward screening and label cycles. AUX owns history truth,
-price/depth/tie mechanisms and useful learning controls on committed inputs.
-Only this checkout/sidemission is writable; old caps and stops remain.
-Both existing patrols now run every 120 minutes, read back ACTIVE with unchanged
-chats. Research segments still require60–90 effective minutes.
+PRIMARY owns rule/layout generation, forward screens and defaults. AUX owns
+actual-history truth, useful decision exposure, price/depth/tie mechanisms and
+learning controls on committed inputs. Only this checkout/sidemission changes.
+The latest direct user cadence is60 minutes for both existing patrols; their
+original chats and proactive two-way Slack requirements remain. Cadence is not
+effective research time or guaranteed delivery.
 
-Recovery infrastructure: sandbox bf725532ea38deb5242538575c4065a63615b8c2.
-Only research payloads changed since ff726496. Core/rules/Session/search/public
-Leaper helpers match mainline; the maintained AUX learner/adapter are the only
-package differences. No infrastructure acceleration claim.
+Latest checked sandbox source:7c0d3e55d6424945ab166b06351e16823cda9b70.
+Core/rules/Session/search and public helpers/tests are unchanged from the
+imported efac79080ba6eb2b8219e325e9779dcb1a47abbb. AUX keeps its learner/receipt
+adapter differences. No infrastructure speedup is claimed.
 
-## Current delivery
+## Evidence and decision
 
-Report: LEAPER_PRIOR_TRANSFER_AND_TD_GRADIENT_20261023.md.
-Curated evidence: data/leaper_prior_controls_20261023/.
-Previous natural-price/WDL reports remain closed historical evidence.
+Report:LEAPER_PROSPECTIVE_TD_AND_TRUTH_COST_20261023.md.
+Public packets/readers:data/leaper_prospective_td_20261023/.
+Earlier caps remain closed;their old next actions are historical.
 
-- Newer ABC:512 known slots,64 prefixes,80 final records. All four priors have
-  39W/50D/39L and every paired outcome is equal.21,700 completed D4 calls.
-  The 16 first-divergence roots explain 31 changed frames and 353 identical ones;
-  27 controls change supports and four keep both served actions co-optimal.
-- One selected Unit PV gradient is outside the local critic Clarke set.
-  Public dyadic queries confirm the C−1 critic, but all eight actual actions
-  are DRAW at this count3 root. No strength benefit from a derivative fix.
-- Five new complete components are paid entries, not independent state counts.
-  Query intersection retains 1068 exact,338 bounded and 1961 uncovered histories.
-  All five graphs and published history qualifications independently rechecked
-  through Core. No unknown label is turned into a draw.
-- Older positive ABC:256 NEW free-prior controls reuse256 CLOSED Unit/B2C1
-  views. Both free priors have12W/104D/12L and identical paths. They explain
-  5/128 of the old 7/128 contrast. B2C1 retains 1/64 through two role 0 conversions.
-  New controls pay19,796 D4 calls/3,791,630 nodes/1169.204 seconds.
-- Both residual six-actor roots retain WDL[-1,1] through literal D6. Four new
-  first-action/tail interventions show joint dependence at world 4 and first-
-  action sufficiency at world 10 under this fixed opponent. No global price law.
-- Next-step detached arithmetic reuses 256 frozen-policy episodes/9803 targets;
-  178 episode deltas are nonzero. All 16 new endpoint queries complete D4 and
-  two change actions. No game uses updated weights; this is not strength evidence.
+- Frozen384 slots finish0UNKNOWN. Unit-TD beats Unit4/64 but free priors only
+  1/64,one LOSS-to-DRAW;B2C1 matches every outcome. Mobility-TD changes paths
+  without outcome changes. All9803 targets/16endpoints/source terminal outcomes
+  replay. No independent-rule holdout or expanded-training case is established.
+- Unit-TD floating leaf change<=0.0195713;twice that is below the Unit critic's
+  integer strict gap. It refines critic ties at complete fixed depth;critic ties
+  are not necessarily equal actual strategic value.
+- Larger parent attempts keep two UNKNOWNs. One short-clock root needs1220
+  descendant visits;building373072 positions was avoidable for that question.
+  A separate65760-entry capture-child certifies parent[0,1],not a closed parent
+  or experiential training start. Actual history/clocks remain authoritative.
+- New committed packet:960 OLD games/21306query references replayed. Fouractors
+  and two ordinarytypes give1852histories/39fingerprints. Two frozen new
+  components close33584/49928 entries.360 covered references/169 histories have
+  exact action bounds,21 forks. None of240 search references is inferior;two
+  FLOOR errors refer to one history.303 same-fingerprint references stay
+  uncovered. First root is already solved by immediate win;second is also safe.
+- All20 second-component forks have identical supports for four tested material
+  vectors. D1 includes inferior actions at12 roots;D2 at none. This is finite
+  horizon/tie evidence,not a reason for another TD batch or all-price ceiling.
+
+Both new components and the larger child independently rebuild through shared
+Core;this is not an independent engine or IID sample claim. No new forward
+play,PRIMARY campaign,production default or oracle TRAIN-start selection.
 
 ## Next executable work
 
-Main: Can one frozen-policy TD batch improve prospective actual play?
-First read artifacts/abc-next-played-comparison-inputs-20261023.json and the
-shadow feasibility/query files. Adapt the existing own positive-control consumer
-to its 32 exact prefixes and six frozen models; freeze source/limits before play.
-Expected evidence:384 slots with role/world/UNKNOWN/cost/full-record checks.
-Done: all slots or2400-second cap; estimated 1753.806 seconds. The producer is
-NOT LAUNCHED. Do not refill old caps, select a new winner or use oracle starts.
+Main: Does a neutral tie choice explain the finite TD/free residual?
+| Read mechanisms.json.gz/free_residual_support and its saved intervention root;
+  choose the lexicographically smallest physical action in Unit's saved D4
+  co-optimal set,without WDL labels;reuse the matching existing continuation
+| one neutral choice,actual terminal outcome and cost compared with the already
+  closed TD/mobility first-action controls,or honest UNKNOWN
+| reuse first;only if genuinely novel,freeze one180-second actual-history
+  continuation before launch;no oldcap refill or oracle TRAIN start.
 
-All eight old ABC rules remain exposed. The 32 new prefixes have zero initial-
-history overlap with the 64 fit prefixes; one already-terminal prefix is retained.
-This is not independent-rule holdout. Detached mean episode TDLeaf updates use
-eta 0.05/lambda 0.95/scale 10 and actual terminal targets. No clairvoyant derivative
-replacement. Compare both TD endpoints with their own initializations, Static
-and B2C1. Check latest committed infrastructure first; changed policies can
-change cost, so the projection is not a guarantee. This is under 120 minutes.
+Backup1: Can a new positive-history certificate answer a decision-changing gap?
+| Read structural_truth.json.gz/history_proofs;retain3originalUNKNOWNs and the
+  failed fourth wrapper;NEWrecovery verifies rank5rootWIN/rank4U4childWIN
+| S4 staysUNKNOWN;bothOLDphysicalgamesWIN,so no600-second expansion by default
+| use maintained actual-Session certificates only for a changed question;
+  no unchanged preflight rerun,blind graph or outcome-imputed draw.
 
-Backup1: Is the residual effect specific to a same-role tie choice?
-Reuse the two intervention histories/current literal supports; report conditional
-first-action/tail attribution or UNKNOWN. No all-rule price census, PRIMARY
-campaign or blind six-actor exact launch.
+Backup2: Does new committed PRIMARY data expose errors cheap search misses?
+| Consume published rules/full trajectories without duplicating generation,
+  layout,forward-screen or quantity campaigns
+| admitted history-WDL/useful-decision/cost evidence
+| no blanket label census,full-family learning ceiling or waiting for a reply.
 
-Backup2: Can a full-history proof resolve a decision-changing gap?
-Reuse maintained actual-Session certificates on one concrete gap; retain a
-positive proof or one-sided bound. Never resume the CLOSED five-actor90s/100k
-preflight or replace it with a DRAW label.
-
-Science OPEN. Publish reviewed sidemission/full remote SHA, refill the executable
-memo and pass sessionfinish. Claude1792716661 is adopted with CI/ceiling
-corrections. Old SEND_UNCERTAIN is not resent. No Agent, Goal, worker, new timer
-or PRIMARY research/state write is created.
+Science OPEN. Preserve same segment UUID/confirmed work;admin and interrupted
+open intervals earn no credit. Review/push sidemission,verify fullremoteSHA,
+report and ask a real decision question through own mailbox,refill memo and
+pass session finish. No new Agent,Goal,worker or schedule change.

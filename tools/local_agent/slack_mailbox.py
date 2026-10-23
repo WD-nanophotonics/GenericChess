@@ -75,7 +75,15 @@ def start():
     if state.get("active"):
         old = load(state["active"])
         if old["phase"] != "SENT":
-            return {**old, "resume": True, "automatic_retry_available": False}
+            # A completed later read may leave delivery genuinely unknown.
+            # Keep that immutable dispatch, but do not wedge every future report.
+            reconciled_read = (old["phase"] == "SEND_UNCERTAIN"
+                and old.get("uncertain_send_reconciled") is False
+                and old.get("raw_snapshot") and old.get("raw_sha256"))
+            if not reconciled_read:
+                return {**old, "resume": True, "automatic_retry_available": False}
+            state["uncertain_probes"] = sorted(set(state.get("uncertain_probes", []))
+                                               | {old["probe_id"]})
     rid = "GC-MAIL-" + uuid.uuid4().hex
     r = dict(probe_id=rid, phase="READ_REQUIRED", role=role["role"],
              team_id=c["team_id"], channel_id=c["channel_id"], sender_id=c["sender_id"],
@@ -120,6 +128,7 @@ def messages(raw):
     for i, m in enumerate(headers):
         body = text[m.end():headers[i+1].start() if i+1<len(headers) else len(text)]
         body = re.split(r"\n(?:--- Reply \d+ of \d+ ---|=== THREAD REPLIES)", body)[0]
+        body = re.sub(r"\nNo thread messsages\s*$", "", body)
         result.append(dict(user=m[1], ts=m[2], text=body.strip()))
     return result
 
@@ -197,6 +206,22 @@ def ingest(probe_id, snapshot_file):
             r["uncertain_send_reconciled"] = False
     else:
         r["phase"] = "READ_SAVED"
+    # Later ordinary captures can still establish an older dispatch. No resend,
+    # fabricated failure, or deletion of an unresolved historical record occurs.
+    unresolved = []
+    for rid in state.get("uncertain_probes", []):
+        historical = load(rid)
+        matches = {m["ts"] for m in all_messages
+                   if m.get("user") == historical["sender_id"]
+                   and rid in m.get("text", "")
+                   and canonical(historical["message"]) in canonical(m["text"])}
+        if historical["phase"] == "SEND_UNCERTAIN" and len(matches) == 1:
+            historical.update(phase="SENT", message_ts=next(iter(matches)),
+                              delivery_basis="later_probe_readback")
+            save(historical)
+        if historical["phase"] == "SEND_UNCERTAIN":
+            unresolved.append(rid)
+    state["uncertain_probes"] = unresolved
     write_json(HOME / "state.json", state)
     return save(r)
 
@@ -226,6 +251,11 @@ def prepare(probe_id, report_file):
     report = Path(report_file).read_text(encoding="utf-8-sig").strip()
     if not report or re.search(r"<@|@dot|RECIPIENT=DOT|TYPE=DOT_REPLY", report, re.I):
         raise LocalFlowError("mailbox report must be nonempty and contain no Dot mentions or requests")
+    for rid in read_json(HOME / "state.json").get("uncertain_probes", []):
+        historical = load(rid)
+        previous_body = historical["message"].split("\n\n", 1)[-1]
+        if canonical(report) == canonical(previous_body):
+            raise LocalFlowError("do not resend an uncertain historical report under a new probe")
     reviewed = "; ".join(k.split(":")[0] + "=" + d["decision"] for k,d in r["decisions"].items()) or "none"
     message = (f'TYPE=AGENT_MAILBOX_REPORT\nPROJECT=GenericChess\nAGENT_ID={r["role"]}\n'
                f'RECIPIENT=CHAT\nPROBE_ID={probe_id}\nCOMMITTED_BASE_SHA={git("rev-parse", "HEAD")}\n'

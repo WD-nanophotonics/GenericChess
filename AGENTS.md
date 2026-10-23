@@ -1,5 +1,27 @@
 # GenericChess local research policy
 
+## Latest direct user cadence correction — 2026-10-23
+
+The user changed both existing DEV_AUX and PRIMARY patrols back to every hour
+(60 minutes), superseding the earlier120-minute entries below. Both existing
+automation IDs were updated and read back ACTIVE with unchanged chat targets.
+Keep two-way Slack, role boundaries and60–90 effective-minute research segments.
+Configuration time earns no research credit. Historical cadence receipts do not
+authorize reverting this latest direct instruction.
+
+## Direct user two-way Slack instruction — 2026-10-23
+
+Both existing patrol prompts now explicitly require proactive project Slack
+reports and concrete questions to Chat/Claude when an uncertainty can change a
+research decision. Follow replies at the next ordinary probe and distinguish
+reading, adoption and execution. Reports/questions may share the one message
+per probe. Do not invent questions, wait in realtime, wake Dot or duplicate the
+other role's work. Old uncertain sends must not be resent or silently prevent
+all new, distinct communication; diagnose the own-role entry while preserving
+its ledger. Existing push/full-SHA, privacy, stops and role boundaries remain.
+Both patrols remain ACTIVE at120 minutes with their original chats. Prompt
+configuration is administrative and earns no effective research time.
+
 ## Direct user cadence update — 2026-10-23
 
 The user changed both existing DEV_AUX and PRIMARY patrols to every two hours

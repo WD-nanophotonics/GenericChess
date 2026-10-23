@@ -1,0 +1,1241 @@
+{
+  "origin": "Actualc5c7label cheapfirst-FLOOR-divergence code10/19/8; immutableprefix fixture, notWDL",
+  "parts": [
+    {
+      "rule": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "K",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "A",
+            "name": "A",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "B",
+            "name": "B",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "C",
+            "name": "C",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          }
+        ],
+        "initial_position": [
+          [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ]
+        ],
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "C": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "max_ply": 128,
+        "stalemate_result": "draw",
+        "board_size": 4,
+        "metadata": {},
+        "capture_disposition": "remove_from_game"
+      },
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "B",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g20",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_026",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_005",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              0,
+              3
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_073",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "C",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_042",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_007",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "08043c3cf50269fdedb83328ab43f90c28a32e1e919f00f7e4707ad91ad59485",
+        "schema_version": 1
+      }
+    },
+    {
+      "rule": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "K",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "A",
+            "name": "A",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "B",
+            "name": "B",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "C",
+            "name": "C",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          }
+        ],
+        "initial_position": [
+          [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "owner": 0,
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ]
+        ],
+        "drop_allowed": {
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "C": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "max_ply": 128,
+        "stalemate_result": "draw",
+        "board_size": 4,
+        "metadata": {},
+        "capture_disposition": "remove_from_game"
+      },
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "C",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_042",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g18",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              0,
+              3
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_068",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_023",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "68fee5503dc5c9abde018772afb4d09b3424455f3a9f4b3d30fa7bb64774da1a",
+        "schema_version": 1
+      }
+    }
+  ],
+  "type_maps": [
+    {
+      "K": "K",
+      "B": "B",
+      "C": "C",
+      "A": "A"
+    },
+    {
+      "K": "K",
+      "B": "A",
+      "C": "B",
+      "A": "C"
+    }
+  ],
+  "index": 1,
+  "expected_default_actions": [
+    {
+      "pattern_id": "legacy_044",
+      "geometry_id": "g29",
+      "actor_type_id": "C",
+      "from_square": {
+        "file": 2,
+        "rank": 3
+      },
+      "to_square": {
+        "file": 1,
+        "rank": 1
+      },
+      "promotion_target_id": null
+    },
+    {
+      "pattern_id": "legacy_061",
+      "geometry_id": "g36",
+      "actor_type_id": "K",
+      "from_square": {
+        "file": 3,
+        "rank": 3
+      },
+      "to_square": {
+        "file": 3,
+        "rank": 2
+      },
+      "promotion_target_id": null
+    }
+  ],
+  "root_ply": 5
+}

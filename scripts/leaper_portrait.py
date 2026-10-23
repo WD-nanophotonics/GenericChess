@@ -67,6 +67,16 @@ def verify_packet(packet):
     tick=time.perf_counter();blob=packet.read_bytes();data=json.loads(gzip.decompress(blob));games=plies=pvs=returns=rng_checks=floor_checks=0
     for item in data['games']:
         raw=item['game'];c=compile_rule(ruleset_from_dict(item['rule']));s=GameSession.replay(c,deserialize_game_record(json.dumps(raw['initial_record'])))
+        from scripts.leaper_design import floor_type_map
+        protocol=raw.get('floor_coupling');mapping=raw.get('floor_type_map')
+        floor_type_map({'floor_coupling':protocol},{'rule':item['rule'],'floor_type_map':mapping})
+        # New packets bind the game protocol to their retained registration/input.
+        if item.get('run') in data.get('runs',{}):
+            files=data['runs'][item['run']]['files'];reg=files['registration.json']
+            world=files['inputs.json']['worlds'][raw['world']]
+            expected_map=floor_type_map(reg,world)
+            assert world['rule']==item['rule']
+            assert (protocol,mapping)==(reg.get('floor_coupling'),expected_map), 'FLOOR protocol/input binding'
         streams={int(a):random.Random(v) for a,v in raw['rng_seeds'].items()}
         for q in raw['queries']:
             returns+=1;assert q['state_sha256']==state_sha(s.state)
@@ -77,6 +87,17 @@ def verify_packet(packet):
                 assert a==legal[streams[actor].randrange(len(legal))];rng_checks+=1
             if q['policy']=='FLOOR':
                 children=list(legal_successors(s.state,c));wins=[v for v,ch in children if ch.terminal_status.is_terminal and ch.terminal_status.winner==actor]
+                if protocol is not None:
+                    # Reconstruct independently from actual legal Core actions,
+                    # without calling the producer floor/sort helper.
+                    def key(move):
+                        assert move.promotion_target_id is None
+                        return (mapping[move.actor_type_id],move.from_square.file,
+                                move.from_square.rank,move.to_square.file,move.to_square.rank)
+                    children.sort(key=lambda x:key(x[0]))
+                    assert len({key(v) for v,_ in children})==len(children)
+                    wins=[v for v,ch in children if ch.terminal_status.is_terminal and ch.terminal_status.winner==actor]
+                    assert q['floor']=={'immediate_win':bool(wins),'children_scanned':len(children),'coupling':protocol}
                 expected=wins[0] if wins else children[streams[actor].randrange(len(children))][0]
                 assert a==expected;floor_checks+=1
             if 'decision' in q:

@@ -1132,3 +1132,49 @@ app readback confirms ACTIVE and unchanged chats. Only that schedule change
 crosses the usual role boundary;no other-role research/state ownership changes.
 Administrative configuration/transport earns no research credit. Report and
 curated evidence: docs/research/LEAPER_PRIOR_TRANSFER_AND_TD_GRADIENT_20261023.md.
+
+## DEV_AUX — 2026-10-23: prospective TD, useful forks and history certificates
+
+PRIMARY supplied the committed structural/horizon/quantity packet at
+7c0d3e55d6424945ab166b06351e16823cda9b70. AUX checked that shared rules,Core,
+Session/search and imported public helpers remained unchanged from efac7908;
+only own learner/research differences remain. No generator,layout,forward-screen,
+quantity campaign,default or PRIMARY state was adopted.
+
+The frozen384-slot TD comparison closes with no UNKNOWN. Unit-TD exceeds free
+priors1/64 through one LOSS-to-DRAW;B2C1 matches it. The integer-gap bound qualifies
+this small Unit update as critic-tie refinement,not a universal strategic result.
+AUX retained larger-board failed caps and documented the avoidable global graph
+cost at a root that a1220-descendant actual-history tree resolves cheaply.
+
+AUX newly replays960 OLD committed games and solves two fouractor components:
+83512 paid entries/410744 edges.360 covered query references/169 histories include
+21 forks;240 search references are optimal and two FLOOR errors are one history.
+All20 second-component forks keep identical four-price supports;D1 retains
+inferior co-optimal actions at12 roots,D2 at none. Policy visitation is not IID.
+The graph rebuilds and literal mechanisms pass independent shared-Core readers.
+
+Four fixed higher-material Session-proof preflights leave three UNKNOWNs and
+one wrapper failure:the verifier returns a dict,not v.valid. Preserve the lost
+fourth payload/cost limitation. One separately costed corrected recovery proves
+rank5rootWIN,then a new child check proves U4rank4WIN. Public Session replay
+verifies both complete-defense trees;S4 staysUNKNOWN. Both reused physical games
+already end player0WIN;no new price/learning superiority or600s expansion follows.
+
+Read/review includes current Chat1792732714 and historical Claude/Chat advice.
+Adopt actual utility,free priors,depth-specific useful exposure and cadence-doc
+consistency. Do not adopt universal unlearnability,retroactive power gates,
+closed-cap reruns or another role's campaigns. The pending probe had already
+saved its read;the supplementary recovery capture/revision decisions are private,
+and its rejected re-ingest did not silently advance coverage. Old uncertain sends
+remain preserved,not resent. One NEW checked report asks whether a neutral tie
+control or more proof precision is the better next cost;reply/adoption/execution
+remain distinct and ordinary work does not wait for an answer.
+
+Latest direct user cadence is ACTIVE60minutes for both original chats. This
+supersedes historical120-minute receipts;no scheduler mutation occurs here.
+Same research UUID finishes successfully with4021.487 confirmed seconds
+(67.025minutes);interrupted intervals and administrative transport earn no credit.
+All68 relevant publication regressions pass in the project .venv. Curated report:
+docs/research/LEAPER_PROSPECTIVE_TD_AND_TRUTH_COST_20261023.md. Five compact packets
+and source-bound readers preserve the results,negative controls and actual errors.

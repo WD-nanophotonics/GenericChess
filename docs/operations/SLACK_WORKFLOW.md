@@ -1,5 +1,16 @@
 # GenericChess periodic Chat mailbox
 
+User update2026-10-23: exchange is explicitly two-way. Proactively report
+meaningful new evidence and ask Chat/Claude a concrete decision-changing question
+when warranted, with current interpretation, alternatives and the requested
+judgment. Follow the answer at the next existing probe and report actual adoption
+effects. Combine progress and questions within the one-message maximum; no
+fabricated questions, realtime waiting, reminders or other-role ownership.
+Preserve uncertain old sends without retrying them, but diagnose an entry that
+otherwise prevents every new distinct report. Publication and full-SHA checks
+remain mandatory. The latest direct user cadence correction sets both existing
+patrols ACTIVE at60 minutes with unchanged chats, superseding the earlier120.
+
 User decision 2026-10-20 applies to PRIMARY_SANDBOX, DEV_AUX and DEEPSEEK_AUX.
 Dot is paused. Replace realtime consultation with asynchronous Chat comments
 and one progress report per existing periodic Slack probe. No Dot mention,

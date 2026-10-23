@@ -1,0 +1,663 @@
+{
+  "prospective-public-games-recovery-20261023.json": {
+    "status": "PASS",
+    "seconds": 7.792424499988556,
+    "counts": {
+      "openings": 32,
+      "terminal_prefix_views": 12,
+      "slots": 384,
+      "reported_queries": 25926,
+      "reported_nodes": 5274368,
+      "served_actions": 25926,
+      "checked_queries": 3482,
+      "PV_edges": 13623
+    },
+    "unique_records": 62,
+    "analysis": [
+      {
+        "price": "unit",
+        "denominator": 64,
+        "mean": [
+          "-3/64",
+          "-3/64"
+        ],
+        "difference": {
+          "unit": [
+            "0",
+            "0"
+          ],
+          "mobility": [
+            "-3/64",
+            "-3/64"
+          ],
+          "Static": [
+            "-3/64",
+            "-3/64"
+          ],
+          "B2C1": [
+            "-1/16",
+            "-1/16"
+          ],
+          "unit_TD": [
+            "-1/16",
+            "-1/16"
+          ],
+          "mobility_TD": [
+            "-3/64",
+            "-3/64"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "0",
+            "0"
+          ],
+          "1": [
+            "-3/32",
+            "-3/32"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "-1/8",
+            "-1/8"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "-1/4",
+            "-1/4"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 45,
+          "[-1, -1]": 11,
+          "[1, 1]": 8
+        }
+      },
+      {
+        "price": "mobility",
+        "denominator": 64,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "3/64",
+            "3/64"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "-1/64",
+            "-1/64"
+          ],
+          "unit_TD": [
+            "-1/64",
+            "-1/64"
+          ],
+          "mobility_TD": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/16",
+            "-1/16"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 44,
+          "[1, 1]": 10,
+          "[-1, -1]": 10
+        }
+      },
+      {
+        "price": "Static",
+        "denominator": 64,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "3/64",
+            "3/64"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "-1/64",
+            "-1/64"
+          ],
+          "unit_TD": [
+            "-1/64",
+            "-1/64"
+          ],
+          "mobility_TD": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/16",
+            "-1/16"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 44,
+          "[1, 1]": 10,
+          "[-1, -1]": 10
+        }
+      },
+      {
+        "price": "B2C1",
+        "denominator": 64,
+        "mean": [
+          "1/64",
+          "1/64"
+        ],
+        "difference": {
+          "unit": [
+            "1/16",
+            "1/16"
+          ],
+          "mobility": [
+            "1/64",
+            "1/64"
+          ],
+          "Static": [
+            "1/64",
+            "1/64"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "unit_TD": [
+            "0",
+            "0"
+          ],
+          "mobility_TD": [
+            "1/64",
+            "1/64"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/32",
+            "-1/32"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "1/8",
+            "1/8"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 45,
+          "[1, 1]": 10,
+          "[-1, -1]": 9
+        }
+      },
+      {
+        "price": "unit_TD",
+        "denominator": 64,
+        "mean": [
+          "1/64",
+          "1/64"
+        ],
+        "difference": {
+          "unit": [
+            "1/16",
+            "1/16"
+          ],
+          "mobility": [
+            "1/64",
+            "1/64"
+          ],
+          "Static": [
+            "1/64",
+            "1/64"
+          ],
+          "B2C1": [
+            "0",
+            "0"
+          ],
+          "unit_TD": [
+            "0",
+            "0"
+          ],
+          "mobility_TD": [
+            "1/64",
+            "1/64"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/32",
+            "-1/32"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "1/8",
+            "1/8"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 45,
+          "[1, 1]": 10,
+          "[-1, -1]": 9
+        }
+      },
+      {
+        "price": "mobility_TD",
+        "denominator": 64,
+        "mean": [
+          "0",
+          "0"
+        ],
+        "difference": {
+          "unit": [
+            "3/64",
+            "3/64"
+          ],
+          "mobility": [
+            "0",
+            "0"
+          ],
+          "Static": [
+            "0",
+            "0"
+          ],
+          "B2C1": [
+            "-1/64",
+            "-1/64"
+          ],
+          "unit_TD": [
+            "-1/64",
+            "-1/64"
+          ],
+          "mobility_TD": [
+            "0",
+            "0"
+          ]
+        },
+        "role_means": {
+          "0": [
+            "1/16",
+            "1/16"
+          ],
+          "1": [
+            "-1/16",
+            "-1/16"
+          ]
+        },
+        "world_means": {
+          "4": [
+            "0",
+            "0"
+          ],
+          "5": [
+            "0",
+            "0"
+          ],
+          "10": [
+            "0",
+            "0"
+          ],
+          "11": [
+            "0",
+            "0"
+          ],
+          "16": [
+            "0",
+            "0"
+          ],
+          "17": [
+            "0",
+            "0"
+          ],
+          "22": [
+            "0",
+            "0"
+          ],
+          "23": [
+            "0",
+            "0"
+          ]
+        },
+        "outcomes": {
+          "[0, 0]": 44,
+          "[1, 1]": 10,
+          "[-1, -1]": 10
+        }
+      }
+    ],
+    "scope": "Shared-Core legality/full outcomes/all prefix draws and supplied PVs only;no independent CPU certification or exact WDL tree proof. Full private and selected public PV scopes differ."
+  },
+  "prospective-targets-recovery-20261023.json": {
+    "status": "PASS",
+    "seconds": 1.6984876000788063,
+    "counts": {
+      "targets": 9803,
+      "episodes": 256,
+      "endpoints": 16
+    },
+    "distinct_final_records": 97,
+    "scope": "Every published target arithmetic and actual source terminal replay;not omitted PV re-execution,online learning,independent engine or CPU certification."
+  },
+  "prospective-mechanisms-recovery-20261023.json": {
+    "status": "PASS",
+    "seconds": 4.736618299968541,
+    "counts": {
+      "tree_visits": 49562,
+      "literal_roots": 19,
+      "support_controls": 26,
+      "integer_leaf_vectors": 216,
+      "intervention_PV_edges": 488,
+      "new_intervention_queries": 125,
+      "new_interventions": 2,
+      "history_roots_replayed": 12
+    },
+    "scope": "Literal shared-Core D4 support trees and all125 new intervention PVs/actual terminals. Cached old history graph labels are reused annotations,not independently rebuilt by this reader;critical retained records are replayed. No independent engine or global learning claim."
+  },
+  "prospective-larger-reader-recovery-20261023.json": {
+    "status": "PASS",
+    "seconds": 103.19958560005762,
+    "actual_history_visits": 1220,
+    "positions": 65760,
+    "edges": 500048,
+    "structural_deadzone": 2208,
+    "child_action_bounds": [
+      [
+        -1,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    "parent_bounds": [
+      0,
+      1
+    ],
+    "scope": "Shared-Core complete child graph and direct clock tree rebuilt; partial parents remain UNKNOWN. No new fitness or independent engine."
+  },
+  "prospective-structural-rebuild-20261023.json": {
+    "status": "PASS",
+    "seconds": 122.31156719999854,
+    "counts": {
+      "covered_references": 360,
+      "certified_inferior_references": 2,
+      "distinct_histories": 169,
+      "components": 2,
+      "positions": 83512,
+      "edges": 410744
+    },
+    "scope": "Both components rebuilt through shared Core; all supplied natural-history labels and action regrets checked. Source forward returns are OLD. No independent engine, new fitness or training."
+  },
+  "prospective-structural-mechanisms-verified-20261023.json": {
+    "literal_visits": 3851,
+    "literal_trees": 46
+  },
+  "packets": {
+    "games.json.gz": {
+      "bytes": 507688,
+      "sha256": "a84cce87bb3dc876c073e5dc0e9299b8c3a0dbde9f9e07c4c8277fce089b6d2b"
+    },
+    "larger_truth.json.gz": {
+      "bytes": 16326,
+      "sha256": "8a9d9a0cf0bf4b1a134969376e4f4795445a9aaa9728cae1712efc9b133ed63e"
+    },
+    "mechanisms.json.gz": {
+      "bytes": 46787,
+      "sha256": "f07414a7eca6eb96a3f814edabd24156576adaa0cf337689db31648c9c1cc146"
+    },
+    "structural_truth.json.gz": {
+      "bytes": 67184,
+      "sha256": "4ade9439471f41f6956b38a90a83f2e3529ae906cf7df7b2cd9be96eb249fd96"
+    },
+    "targets.json.gz": {
+      "bytes": 74140,
+      "sha256": "f638a80eb7a26531551aae1363b80ec2769c152ed8b43663b2dec13cbfadfc8e"
+    }
+  },
+  "source": "7c0d3e55d6424945ab166b06351e16823cda9b70",
+  "scope": "Separate graph rebuild and newly added literal-mechanism checks;not repeated CPU measurement or independent engine.",
+  "history_certificates": {
+    "status": "PASS",
+    "seconds": 0.09332620003260672,
+    "certificates": [
+      {
+        "id": "cffc78eb02d919f27eb869e39377e56c5575d8b8e7d705ece318588c0b89957c",
+        "target": 0,
+        "rank": 5,
+        "receipt": {
+          "verified": true,
+          "reason": "verified",
+          "nodes": 8,
+          "seconds": 0.04714499996043742,
+          "terminal_leaves": {
+            "checkmate:None": 2
+          },
+          "session_transitions": 7
+        }
+      },
+      {
+        "id": "fb35030cfc42f618ddb42cbdaf1a87b542403767e6d1671403b955c80cd7e5cd",
+        "target": 0,
+        "rank": 4,
+        "receipt": {
+          "verified": true,
+          "reason": "verified",
+          "nodes": 7,
+          "seconds": 0.044696300057694316,
+          "terminal_leaves": {
+            "checkmate:None": 2
+          },
+          "session_transitions": 6
+        }
+      }
+    ],
+    "scope": "Actual public Session root/complete-defender/terminal/rank replay only;no proof-search rerun. Failed original fourth transport remains failed;Static action stays UNKNOWN."
+  },
+  "focused_regression": {
+    "status": "PASS",
+    "tests": 68,
+    "command": ".venv/Scripts/python.exe -m pytest tests/workflow/test_slack_mailbox.py tests/development/test_leaper_floor_coupling.py tests/development/test_leaper_prices.py tests/development/test_generic_session_win_proof.py tests/development/test_generic_session_proof_cost.py tests/development/test_generic_session_certificate_json.py --basetemp .local_agent/pytest-publication-20261023-0644 -q",
+    "note": "Bundled base interpreter lacked pytest;project .venv completed the same focused suite. No experiment was rerun."
+  },
+  "session": {
+    "id": "f7dcd1d9-2114-4d8d-ad4f-72bc1bed34c7",
+    "state": "ended",
+    "started_at": "2026-10-23T03:38:35.160094+00:00",
+    "effective_work_seconds": 4021.48679,
+    "reason": "safe_checkpoint",
+    "memo_synced": true
+  }
+}

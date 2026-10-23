@@ -71,12 +71,22 @@ def material_profiles(c):
 
 def make_player(c,policy,world=None):
     if policy=='AB':return AlphaBetaPlayer(c,use_disk_cache=False)
-    assert policy in ('STATIC_ADAPTER','M0')
+    assert policy in ('STATIC_ADAPTER','M0','UNIT','MOBILITY')
     base,zero=material_profiles(c)
     if world is not None:
         assert world['material_profiles']=={'Static':record_value(base),'M0':record_value(zero)}
+    profile=base if policy=='STATIC_ADAPTER' else zero
+    if policy in ('UNIT','MOBILITY'):
+        if world is None:raise ValueError('relative leaf prices require complete frozen world')
+        from scripts.leaper_prices import relative_profiles
+        rule=ruleset_from_dict(world['rule'])
+        floor_type_map({'floor_coupling':FLOOR_COUPLING},
+            {**world,'floor_type_map':{t.type_id:t.type_id for t in rule.piece_types}})
+        candidates,_=relative_profiles(rule,base)
+        assert world['price_profiles']=={k:record_value(v) for k,v in candidates.items()}
+        profile=candidates[policy]
     ordering=Evaluator(c,base,EvaluationConfig())
-    leaf=Evaluator(c,base if policy=='STATIC_ADAPTER' else zero,EvaluationConfig())
+    leaf=Evaluator(c,profile,EvaluationConfig())
     return AlphaBetaPlayer(c,evaluator_override=LeafOrderAdapter(leaf,ordering),use_disk_cache=False)
 
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -102,9 +112,18 @@ def search_spec(reg, policy):
     spec=reg.get('search_variants',{}).get(policy)
     base=policy if spec is None else spec['base']
     nodes=reg['nodes'] if spec is None else spec['nodes']
-    if base not in ('AB','STATIC_ADAPTER','M0'):raise ValueError('unknown search base')
+    if base not in ('AB','STATIC_ADAPTER','M0','UNIT','MOBILITY'):raise ValueError('unknown search base')
     if isinstance(nodes,bool) or not isinstance(nodes,int) or nodes<=0:raise ValueError('positive integer node budget required')
     return base,nodes
+
+
+def policy_limits(reg, policy):
+    """Probe-only requested depth; keep the default counted-node route intact."""
+    _,nodes=search_spec(reg,policy)
+    depth=reg.get('search_variants',{}).get(policy,{}).get('depth',64)
+    if isinstance(depth,bool) or not isinstance(depth,int) or not 1<=depth<=64:
+        raise ValueError('requested search depth must be an integer in 1..64')
+    return replace(limits(nodes),max_depth=depth)
 
 def forecast_search_turns(reg):
     """Conservative maximum search turns/game, including BOTH search actors."""
@@ -158,18 +177,85 @@ def prepare(d, repetitions=1, first_repeat=0, nodes=512, material_ablation=False
         write_record(d/'registration.json',reg)
     print('PREPARED',len(rows),Counter(x['status'] for x in rows),flush=True)
 
-def floor(s,rng):
-    legal=[];actor=s.state.position.side_to_move
-    for action,child in legal_successors(s.state,s.compiled):
-        legal.append(action)
-        if child.terminal_status.is_terminal and child.terminal_status.winner==actor:
-            return action,{'immediate_win':True,'children_scanned':len(legal)}
-    return legal[rng.randrange(len(legal))],{'immediate_win':False,'children_scanned':len(legal)}
+FLOOR_COUPLING = 'physical_type_xy_v1'
+
+
+def floor_type_map(reg, world):
+    """Validate the complete input for the explicit, probe-only coupling protocol.
+
+    This is a narrow plain-Leap/remove domain, not a generic RuleSet isomorphism.
+    Histories and original rule identities remain intact; no implicit opt-in.
+    """
+    protocol = reg.get('floor_coupling')
+    mapping = world.get('floor_type_map')
+    if protocol is None:
+        if mapping is not None:
+            raise ValueError('floor_type_map requires an explicit coupling protocol')
+        return None
+    if protocol != FLOOR_COUPLING or not isinstance(mapping, dict):
+        raise ValueError('unknown FLOOR coupling protocol or missing type map')
+    rule = ruleset_from_dict(world['rule'])
+    ids = {t.type_id for t in rule.piece_types}
+    if (set(mapping) != ids or set(mapping.values()) != ids
+            or any(not isinstance(v, str) for v in mapping.values())
+            or any(mapping[t.type_id] != t.type_id for t in rule.piece_types if t.is_anchor)):
+        raise ValueError('FLOOR coupling requires a total anchor-fixed type bijection')
+    if (rule.capture_disposition != 'remove_from_game'
+            or any(t.is_promotable or t.promotion_target_ids or not t.movement_atoms
+                   or any(not isinstance(a, LeapAtom) for a in t.movement_atoms)
+                   for t in rule.piece_types)
+            or any(any(any(owner) for owner in mask) for mask in rule.drop_allowed.values())
+            or any(any(owner for owner in mask) for mask in rule.promotion_allowed.values())
+            or any(any(owner for owner in mask) for mask in rule.promotion_forced.values())
+            or any(p and (p.promoted or p.base_type_id != p.current_type_id)
+                   for row in rule.initial_position for p in row)):
+        raise ValueError('FLOOR coupling supports only plain Leap/remove rules')
+    # Reject every additional semantic option, including future dataclass fields
+    # with nondefault values, rather than silently projecting away semantics.
+    stripped = replace(rule, piece_types=(), initial_position=(), drop_allowed={},
+        promotion_allowed={}, promotion_forced={}, metadata={}, board_size=8,
+        board_width=None, board_height=None, capture_disposition='capture_to_hand',
+        max_ply=512, repetition_limit=4)
+    if stripped != RuleSet():
+        raise ValueError('FLOOR coupling does not support additional rule semantics')
+    return dict(mapping)
+
+
+def physical_action_key(action, mapping):
+    from generic_chess.core.actions import SemanticBoardMove
+    if not isinstance(action, SemanticBoardMove) or action.promotion_target_id is not None:
+        raise ValueError('FLOOR coupling requires plain semantic board actions')
+    return (mapping[action.actor_type_id], action.from_square.file,
+            action.from_square.rank, action.to_square.file, action.to_square.rank)
+
+
+def floor(s, rng, *, physical_type_map=None):
+    # Absence preserves the historical literal action order and early-win scan.
+    actor=s.state.position.side_to_move
+    if physical_type_map is None:
+        legal=[]
+        for action,child in legal_successors(s.state,s.compiled):
+            legal.append(action)
+            if child.terminal_status.is_terminal and child.terminal_status.winner==actor:
+                return action,{'immediate_win':True,'children_scanned':len(legal)}
+        return legal[rng.randrange(len(legal))],{'immediate_win':False,'children_scanned':len(legal)}
+    # Registered callers validate full rules/maps once before any query. Sorting
+    # retains actual unique Core actions. Uniform ranks preserve the no-win law.
+    children=list(legal_successors(s.state,s.compiled))
+    children.sort(key=lambda x:physical_action_key(x[0],physical_type_map))
+    keys=[physical_action_key(a,physical_type_map) for a,_ in children]
+    if len(keys)!=len(set(keys)):
+        raise ValueError('FLOOR physical action key is not unique')
+    wins=[a for a,ch in children if ch.terminal_status.is_terminal and ch.terminal_status.winner==actor]
+    chosen=wins[0] if wins else children[rng.randrange(len(children))][0]
+    return chosen,{'immediate_win':bool(wins),'children_scanned':len(children),
+                   'coupling':FLOOR_COUPLING}
 
 def preflight(d):
     assert not(d/'preflight.json').exists()
     reg=load(d/'registration.json');inputs=load(d/'inputs.json')
     assert sha(d/'inputs.json')==reg['input_sha256'];assert sha(Path(__file__))==reg['source_sha256']
+    for world in inputs['worlds']:floor_type_map(reg,world)
     material=reg.get('material_ablation',False)
     if material:
         if not(d/'preflight-inputs.json').exists():
@@ -200,8 +286,8 @@ def preflight(d):
         for policy in (policies if ix%2==0 else list(reversed(policies))):
             if time.perf_counter()-tick>=120:break
             base,nodes=search_spec(reg,policy)
-            player=make_player(c,base,w);t=time.perf_counter();dec=player.choose_action(s,limits(nodes))
-            row={'input':ix,'world':root['world'],'phase':root.get('phase','recorded'),'policy':policy,'base_policy':base,'node_budget':nodes,'record':root['record'],'decision':record_value(dec),'seconds':time.perf_counter()-t}
+            player=make_player(c,base,w);t=time.perf_counter();dec=player.choose_action(s,policy_limits(reg,policy))
+            row={'input':ix,'world':root['world'],'phase':root.get('phase','recorded'),'policy':policy,'base_policy':base,'node_budget':nodes,'requested_depth':policy_limits(reg,policy).max_depth,'record':root['record'],'decision':record_value(dec),'seconds':time.perf_counter()-t}
             out['rows'].append(row);write_record(d/'preflight.json',out)
             assert dec.action in s.legal_actions();pv=GameSession.replay(c,s.to_record())
             for raw in row['decision']['principal_variation']:pv.submit(match_action(pv,raw))
@@ -220,6 +306,7 @@ def run(d):
     # Cost screen is a bound/forecast only, never a guarantee of full coverage.
     assert max(r['seconds'] for r in pf['rows'])<5
     worlds=load(d/'inputs.json')['worlds']
+    floor_maps={w['world']:floor_type_map(reg,w) for w in worlds}
     slots=[{'slot':i,'world':w,'pair':pair,'role':role,'repeat':rep,'status':'not_started','utility':[-1,1]}
            for i,(w,pair,role,rep) in enumerate((w,pair,role,rep) for w in range(len(worlds)) for pair in reg['pairs'] for role in reg['roles'] for rep in range(reg.get('first_repeat',0),reg.get('first_repeat',0)+reg['repetitions']))]
     assert len(slots)==reg['planned_games'], 'frozen planned game count does not match inputs/controllers/roles/repeats'
@@ -235,15 +322,18 @@ def run(d):
             # Same role/rep streams across controller pairs; prefix divergence changes their use.
             seeds=actor_seeds(reg,w,slot);rng={a:random.Random(seeds[a]) for a in (0,1)}
             players={a:make_player(c,search_spec(reg,pols[a])[0],w) for a in (0,1) if pols[a] not in ('RNG','FLOOR')}
-            row.update(initial_record=record_value(s.to_record()),policy_by_actor=pols,rng_seeds=seeds);write_record(path,row)
+            row.update(initial_record=record_value(s.to_record()),policy_by_actor=pols,rng_seeds=seeds)
+            if floor_maps[w['world']] is not None:
+                row.update(floor_coupling=reg['floor_coupling'],floor_type_map=floor_maps[w['world']])
+            write_record(path,row)
             while not s.state.terminal_status.is_terminal and s.state.ply_count<reg['caller_plies']:
                 if time.perf_counter()-tick>=cap:row['censor']='whole_cap';break
                 a=s.state.position.side_to_move;policy=pols[a];qt=time.perf_counter();legal=s.legal_actions();q={'actor':a,'policy':policy,'root_ply':s.state.ply_count,'legal_count':len(legal),'state_sha256':state_sha(s.state)}
                 if policy=='RNG':action=legal[rng[a].randrange(len(legal))]
-                elif policy=='FLOOR':action,detail=floor(s,rng[a]);q['floor']=detail
+                elif policy=='FLOOR':action,detail=floor(s,rng[a],physical_type_map=floor_maps[w['world']]);q['floor']=detail
                 else:
                     base,nodes=search_spec(reg,policy)
-                    dec=players[a].choose_action(s,limits(nodes));action=dec.action;q.update(decision=record_value(dec),base_policy=base,node_budget=nodes)
+                    dec=players[a].choose_action(s,policy_limits(reg,policy));action=dec.action;q.update(decision=record_value(dec),base_policy=base,node_budget=nodes,requested_depth=policy_limits(reg,policy).max_depth)
                 q.update(action=record_value(action),seconds=time.perf_counter()-qt);row['queries'].append(q);out['queries']+=1;row['current_record']=record_value(s.to_record());write_record(path,row)
                 if action is None:row['censor']='no_action';break
                 s.submit(action)
