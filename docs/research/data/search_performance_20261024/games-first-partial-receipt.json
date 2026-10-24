@@ -1,0 +1,14 @@
+{
+  "cause": "GameRecord.actions is tuple[Action,...], not ActionRecord; firstrootemptyopening hid caller mistake",
+  "completed_games": [
+    "six4_0-candidate0",
+    "six4_0-candidate1"
+  ],
+  "frozen_inputs_budgets_labels_deadline_unchanged": true,
+  "gap_not_credited": true,
+  "missing_games": 6,
+  "no_failed_case_search_queries": true,
+  "reported_error": "AttributeError: 'SemanticBoardMove' object has no attribute 'action'",
+  "source_sha256": "6df66315588acb1ef89d0260c17e82db513a5213a10acf4eea2c2f6543d87228",
+  "state": "FAILED_AFTER_2_COMPLETE_GAMES"
+}

@@ -1,0 +1,6 @@
+{
+  "corrected_source_sha256": "d06214cdca646f64557f6bfa378f100d061c23846279023924012c0749f7b11f",
+  "original_source_sha256": "31e9558a655299531b1cc1abf4ee1af1dc2be9d3eebd3e3cb48126a19ba5523d",
+  "queries": 0,
+  "reason": "Actual GameRecord field is initial_setup_key, not initial_setup_id; prior observed defaultsetup error makes this guard necessary. Retain actual final record via same session reference for direct terminal audit. No frozen case,clock,budget or expected result changed."
+}

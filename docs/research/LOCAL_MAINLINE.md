@@ -1,180 +1,90 @@
 # Current GenericChess mainline
 
-AGENTS.md owns authority, PUBLIC, roles/stops and integrity. LOCAL_AGENT.md owns
-operations. This file is the ONLY mutable scientific work order. PRIMARY owns
-sandbox rule/input/forward research; DEV_AUX owns its separate truth/learning lane.
-No role transfer, new worker, default/schedule change or historical cap refill.
+AGENTS.md owns authority/boundaries; LOCAL_AGENT.md operations. This is the sole
+mutable scientific work order. PRIMARY alone writes sandbox here. No AUX control,
+new worker/default/schedule or history-key weakening.
 
-## Current decision and reason —2026-10-24 direction review
+## Decision and reason —2026-10-24 search focus
 
-The user's explicit latest direction review adopts the structural priority in
-[Chat1792806445](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792806445724489)
-and the smaller diagnostic in
-[Chat1792808411](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792808411759659).
-The latter is a reply in the existing project thread; its legacy TYPE=DOT_REPLY
-label does not restore Dot contact. Exact private originals and complete relevant
-threads were saved before assessment. The user separately reaffirmed continuing
-bounded two-way Slack; this does not make comments new execution authorization.
+Adopt [Chat1792834286](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792834286090719)
+within standing project scope and the user's earlier designation of latest Chat
+comments as direction. Scientific proposals remain assessed; their claim of new
+user/AUX administrative state is not independently verified or acted upon.
+[Claude1792838901](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792838901674919)
+withdraws old Position-only TT comparison and proposes fixed-depth value-preserving
+L1 versus later strength L2. Preserve all exact history/clock/PV guards.
 
-**PRIMARY first priority is P0/P1: how a complete rule change alters structure,
-strategic regions and key choices, with explicit input/history/clock conditions.**
-Pure-Leaper small domains remain a scoped laboratory, not the definition of
-GenericChess's complete generated rule domain. Promotion/drop/auxiliary/history
-semantics remain part of the long-term target.
+The product target is a useful affordable generic player, ultimately supported
+by actual human/credible-opponent evidence. Current first priority is ABP
+performance/depth/decision quality. NPS and depth alone do not establish strength;
+random victories do not establish amateur-human strength. Older external-engine
+figures are remote engineering motivation, not locally verified causal evidence.
 
-**Secondary work is bounded evaluator/search/learning-mechanism diagnosis that
-answers a specific question raised by the structural work.** A numeric price,
-changed action, deeper result, training update and realized payoff are distinct.
-Inverse design, larger neural/teacher/NNUE transfer and production activation are
-downstream reserves, not the automatic next stage after a portrait or null result.
-Small authorized learning is not prohibited; PRIMARY does not duplicate AUX.
+## Execute in this order
 
-This supersedes the old three-stage automatic sequence and the recent reserve
-that promoted another A/B whole-game cost/price panel to Main. Those experiments
-remain evidence. Prepared A1/B8 inputs do not authorize their automatic launch.
-See [the direction review](DIRECTION_REVIEW_20261024.md) for source/adoption,
-obsolete instructions, actual unfinished work and reasons.
+1. Close prior short producer (already CLOSED), keep UNKNOWN and full evidence.
+2. Reuse benchmark runner/suite/core_profiling/SearchStatistics: fixed complete
+   small solved Leaper, larger6actor Leaper and existing promo/drop/history
+   fixture if executable. Freeze RuleSet, full GameRecord, role, evaluator and
+   TT cold/warm policy. Measure depth/nodes+qnodes, TT/cutoffs/fallback, actual
+   timing and correctness/UNKNOWN. Separate fixed-depth, node and time controls.
+3. Choose ONE existing switch/hot-path change from measured profile. Retain old
+   source and full counters. Fixed-depth ordering-only root values must agree
+   when both complete with same semantics; equal bestmove is not required.
+   Aborted/fallback/partial scores are not minimax equality evidence. Same-wall
+   quality and real completed-game outcomes remain separate strength questions.
+4. Correctness spans legal/terminal/repetition/clock/TT-PV and complex semantics.
+   Normal runtime is incremental hash+persistent counters+exact guards. Never
+   replace it with Position-only score reuse for hit rate. Costs include setup,
+   inference/profile/feature time and validation, not only search nodes.
+5. Only after cheap actual baseline, consider tiny ordering models. No NNUE/
+   learned pruning/LMR/MCTS/default activation follows automatically. Research
+   runs expected>=120min still need user assessment; no split/cap refill.
 
-## Priority and execution order
+## Current measured result and next step
 
-1. **P0 coordinate/model audit, then P1 matched structural counterfactual.**
-   Reuse existing explicit rule-pair/common-safe-root data and published AUX labels.
-   First produce a finite counterfactual table: rule/orbit distance, empty-board
-   graph change, static mate capacity, admitted initial distribution, complete
-   history/clock, root WDL/fork, and observed work/proof cost. Do not collapse
-   branching, graph connectivity, runtime and strategic difficulty into one scalar.
-   Existing labels are reused, not regenerated by a competing solver. Missing
-   fields are UNKNOWN with source/meaning, not fabricated matches.
-2. Identify at least one interpretable positive AND negative contrast, or one
-   failed prediction that changes the next method. If the proposed table merely
-   repackages old descriptions, stop that table instead of opening a large panel.
-   Any necessary new run needs a distinct falsifiable question, honest total-cost
-   forecast, frozen scope and the existing >=120minute user assessment rule.
-3. Only when an actual uncertainty remains, select ONE smaller secondary probe:
-   fixed complete-history value classes/support sets; a price/dynamic matched
-   comparison with fixed ordering/tie/TT/Q; or a specific reached-history/roster
-   interpretation. Prefer saved records and offline analysis. A cost case never
-   automatically expands to roots x prices x budgets or full-game factorials.
-4. Learning/truth questions are coordinated asynchronously with AUX using its
-   published evidence. No prerequisite of nonzero initial value, a positive gain,
-   oracle-selected bad-action rate or forced-WIN labels is imposed on learning.
-   Deeper TD, exact policy-Markov closure or price-cell ceilings are proposals,
-   not a PRIMARY assignment. No new training/inverse/production stage follows
-   automatically from a failed cheap probe.
+[Search cost/exact map](SEARCH_PERFORMANCE_AND_EXACT_MAP_20261024.md) is the
+current result.714saveddecisions/3286legalPVactions qualify;8eligiblegames yield
+candidate2W2L4DRAW, no demonstrated strength gain. Staged pilot mixed. ONE Core
+function now reconstructs exact count maps iteratively, preserving every key/
+history/clock/digest/exact collision guard. Scoped map cost decreases, but legacy
+standard-suite paths remain q-heavy and near-unaccelerated. Native availability
+is a separate existing opt-in candidate (same-tree semantic cases), not deployed.
 
-## Evidence that changes these priorities
+Main: Can a supported existing Native physical-predicate/attack helper reduce the
+actual legacy benchmark cost without changing action/history representation?
+| next-legacy-probe.json preserves two full standard inputs; adapter entrypoint
+inventory begun. Read implementation/capabilities, choose ONE supported predicate
+or explicit Core decline, then register honest bounded cost/parity probe
+| Complete payload/import cost and exact legal/terminal/clock/history parity
+| Prepared0Core/Playerqueries; no silent semantic lowering, action deduplication,
+Position-onlykey, default activation or architecture rewrite; oldcapsstayclosed.
+Backup1: How far does opt-in semantic availability generalize safely? | Reuse
+existing full semantic fixtures and short-cutoff decline guards before a new
+bounded consumer experiment | One conditional activation/cost decision | Existing
+flag remainsFalse; no UI ownership or automatic legacy/native equivalence.
+Backup2: Which actual q classes cause the practical depth ceiling? | Read saved
+Q4profiles/noisy counters before any new run | A falsifiable quality/cost question
+| Liveq already on-demand; no blind q-hard cap increase, omitted actions, training
+or depth-as-strength claim. Tree changes require separate correctness/strength.
 
-- [Rule coordinates](LEAPER_RULE_COORDINATES_20261024.md) and
-  [strategy/width](LEAPER_STRATEGY_AND_FORWARD_WIDTH_20261024.md): scoped singleton
-  static-mate iff, minimal positive/maximal negative sets, common physical inputs,
-  complete histories and nonmonotone forward width are useful structural evidence.
-  Static possibility, cooperative reachability and forced WDL remain distinct.
-- Published AUX evidence at
-  [e71968ff](https://github.com/WD-nanophotonics/GenericChess/blob/e71968ff8ec5e3ab57cade9b965e44a23558780a/docs/research/LEAPER_H6_MATCHED_RULE_TRUTH_20261024.md)
-  contains matched-rule H6 WDL/fork evidence. Read the exact support/clock/mapping
-  before joining it to PRIMARY data. Finite coverage does not establish arbitrary
-  common-safe-root capacity sufficiency. No independent rerun is claimed.
-- [Default conversion](LEAPER_DEFAULT_CONVERSION_AND_FRESH_MU_20261024.md): local
-  same-first-action benefit follows the dynamic bundle; prospective12pairs yield
-  only one positive/eleven zero, with greater actual DEFAULT work. Preserve both.
-  Fixed-opponent utility is legitimate but is not minimax WDL or general strength.
-- [Minimal prices and role capacity](LEAPER_MINIMAL_PRICES_AND_ROLE_CAPACITY_20261024.md)
-  closes the frozen32+16game continuation: finite material effects0, dynamics+0.5
-  on A3/B10 and0on A1/B10;12cold queries find selected candidates tied. The complete
-  public132document packet qualifies1894queries/11439PV and scoped role capacity.
-  No further price panel is Main; A1/B8 remains prepared0queries only.
-- [Structural counterfactuals](LEAPER_STRUCTURAL_COUNTERFACTUAL_20261024.md)
-  binds600existing AUX roots/5861Core children and864old cost receipts. Among288
-  same-capacity H64paired roots,22contain25shared-action revaluations:11stalemate
-  to mate,14ongoingWIN to stalemate.24fork changes split10with shared revaluation
-  and14newdrawing alternatives (1stalemate,13capture-A replies). H6hides10of14
-  longer-clock regressions. Four new literal scoring children retain the board/
-  defender frontier but changing stalemate draw->loss changes two terminal payoffs.
-  Thus movement-only/rootWDL-only signatures miss action/absorption/scoring
-  structure. WDL is attributed to fixed published AUX labels, never re-solved here.
+All current producers CLOSED. The session records3819.541326effective seconds,
+14intervals; delivery/transport adds0research. Next source inventory is prepared,
+not compiled/executed. Package preserves unmet65536node conditions at60seconds,
+qhard D2 boundary, caller failure/corrected6remaininggames and raw originals.
 
-- [Legal entry and capture laws](LEAPER_ENTRY_AND_CAPTURE_LAWS_20261024.md) completes
-  the selected ordinary-defender diagnostic and changes the next coordinate:
-  both ongoing children can hide LOSS->DRAW through capture/remnant/history;
-  the proposed different-history LOSS fails (both DRAW). A6/A22 conditional
-  corner capacity has exact B-mask laws, yet n3 legal entry can be impossible.
-  A22/B5 immediate incidence is0/360,24/12500,64/130316 on n3/n4/n5, not total
-  WDL/difficulty. Adding odd Wazir admits noncorner mates. On two fixed A22/A23
-  rules plus explicit152key mu,112immediate WIN/24certified NOT-WIN/16UNKNOWN
-  bound totalWIN112..128;19D4orbits are deterministic, not IID replicates.
-  The new capture obstruction step was actually executed; two remaining exact
-  frontiers are prepared. Later proposed two-orbit strategies are NOT_EXECUTED,
-  not extra labels or a silently refillable phase. No Player/solver/learning.
+## Preserved reserves
 
-Earlier costs/width, E0, contact-price and learning reports remain evidence in
-Git and their purpose reports. CLOSED1904 old missing E0 outcomes remain UNKNOWN.
-Do not revive them from a dated manual, old memo, script name or unused fixture.
-The detailed pre-review mainline is retained at
-[56560fb3](https://github.com/WD-nanophotonics/GenericChess/blob/56560fb3e24102792f72a005c5c5bdb52526943f/docs/research/LOCAL_MAINLINE.md),
-with exact additional uncommitted originals saved privately; history is preserved.
+Previous complete evidence/work order remains at
+[86c3fa4b](https://github.com/WD-nanophotonics/GenericChess/blob/86c3fa4b1349943b1cc3752ac8922825569f7dee/docs/research/LOCAL_MAINLINE.md).
+B1 full rule prepared0queries remains unexecuted; Chat1792828903's two-sided DRAW
+candidate is manual only (new root has9not8actions), not a Core result. Geometry,
+colorbound/capture-range sweeps and P0/P1 tables are optional retained science.
+Capture/history proofs do not authorize finite heuristic TT reuse; shadow useful-
+probe evidence would be needed before a scoped key study. Keep production key.
+Chat1792815705/Oct16 compression/teacher/NNUE ideas remain conditional future
+ordering/resource allocation, not current training. Published AUX truth may be
+read at fixed SHA only; do not demand new labels, wake or control AUX.
 
-## Latest structural result and next execution —2026-10-24
-
-[Support/history/tempo](LEAPER_SUPPORT_HISTORY_AND_TEMPO_20261024.md) closes the
-common-support Main: n3 A23/A30 B5 intersection0; n4 common5124 is a NEW input
-law. The fixed152mu count is now113WIN/24NOT-WIN/15UNKNOWN (WIN113..128), one
-new delayed certificate only. Old unexecuted two-orbit closure stays CLOSED.
-A new n4 common singleton has forced-WIN classification [0,1,1,1] across
-A22/23/30/31; A22 exact WDL remains LOSS or DRAW. Its protected B5 Dabbaba tempo
-policy explains the negative case, while new entry/cover explains positive mates.
-Support-polynomial/quantity/radius laws concern admission, not strategic strength.
-Actual runtime-key control exposes extra history distinctions in plain scope,
-not a measured TT error/gain. Capture-epoch abstraction retains clock/current-
-inventory counters, never resets production histories.65hashed files/208unique
-full records/157planned target moves; replay/internal work not that counter.
-
-Main: Does deleting D from B5 remove the protected-tempo obstruction at the new
-n4 common root, or does another Black nonloss policy survive?
-| Read next-b-tempo.json full A22/B5 -> A22/B1, same [6,15,4,0], H6/repeat2;
-first derive ONE replacement Black policy or explicit White forcing candidate,
-then register a small inclusive-cost literal check before execution
-| Concrete policy/forcing certificate with all required choices; preserve UNKNOWN
-| Prepared input has0queries, not an automatic run; failed shuttle alone is not
-WhiteWIN. No blind wholegraph/price/depth sweep or AUX duplication.
-Backup1: Can a cheaper exact plain-history context be justified for a concrete
-reuse case? | First assess accumulated prior/code/validation/analysis cost and
-actual runtime source; no new history run before this accounting | One specific
-correctness/performance decision, retaining unsafe-domain fallback | Current key
-stays unchanged; >=120minute expected work needs user assessment, no split/refill.
-Backup2: Does a selected complete-rule change break the admission/entry mechanism?
-| Use a new concrete counterexample premise and existing packet before queries
-| Distinct support, legal-entry and forced-value claims | No filler reread,
-all-domain extrapolation or automatic learner/inverse activation.
-
-## Future ideas, conditional order and reconsideration
-
-This is the only future-ideas list, not a parallel task queue. P0/P1 structural
-questions stay first. A second stage may build a cheap truth-calibrated explorer
-only when it answers a concrete structural uncertainty. Thereafter consider
-minimal compressible rule knowledge for move ordering/resource allocation,
-following [Chat1792815705](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792815705985309).
-Initially keep true tree, terminals/history/clocks/pruning unchanged. Compare TT,
-killer/countermove/history/static cheap baselines and include feature/inference/
-training/engineering cost. Best move/PV/teacher score is not automatically the
-cheapest-cutoff/proof-order label. Learned extension/LMR/pruning is later and
-requires separate correctness assessment. No model/training/default is activated.
-
-[Claude1792817437](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792817437239919)
-suggested a TT baseline. Actual normal search uses RuntimeSearchKey, not only
-fallback identity.py; repetition_counts compatibility copies do not characterize
-incremental runtime cost. Defer implementation until a concrete PRIMARY case,
-scope/cost and AUX nonduplication are established. Position-only versus path-aware
-TT is a correctness comparison, not automatically an ordering-only baseline.
-
-Teacher/NNUE/architecture/transfer suggestions from historical
-[Oct16a](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689) and
-[Oct16b](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309)
-remain downstream reserves (historical references, not freshly reread this patrol).
-Inverse design/large training follow only changed evidence and explicit scope,
-not completion of a portrait. Remote comments are evidence/suggestions under
-current user authority. No AUX ownership transfer or new worker follows.
-
-All scientific producers are CLOSED. next-b-tempo is prepared, not executed.
-Session ledger/final-check owns segment completion; the overall objective OPEN.
-Both existing schedules now recur every180minutes; effective research60–90minutes and the
->=120minute individual-run assessment threshold are separate requirements.
+Both existing local recurrences were last directly set180minutes. No schedule
+change here; research60–90effective minutes remains separate from recurrence.

@@ -1,0 +1,29 @@
+{
+  "Q": 4,
+  "at": "2026-10-24T12:10:03.589236+00:00",
+  "cases": [
+    "solved3_0",
+    "six4_1",
+    "promo6_0",
+    "promo6_1"
+  ],
+  "changed_premise": "Q4profile measured semanticphysical-availability1.476/4.295s. Test existing bool Nativeavailability only; no new production change. Liveq already lazy/on-demand. Legacy API remains separately unaccelerated.",
+  "existing_flag_only": "use_native_semantic_availability",
+  "expected_minutes": [
+    5,
+    10
+  ],
+  "modes": {
+    "node_arm_safety_seconds": 60,
+    "nodes": 65536,
+    "wall_seconds": 8
+  },
+  "order": "ABBA percase/mode; repeated timing samples not independent games",
+  "other_conditions": "current iterative exactmap botharms; defaultnativelegality bothon; optionalcheck false; completefullrecords,TTcold,sameleaf; legacycompiler not silently converted",
+  "prediction": "Semanticpromo upper bound~1.52x if all measured has_legal_action cost vanished; actualpacking mayremovebenefit. Require same non-time score/PV/nodes/q/TT/runtimework andactualNativeboolqueries, else stop andretainmissing slots.",
+  "queries": 64,
+  "replicates": 4,
+  "same_original_deadline": "2026-10-24T12:41:29.628081+00:00",
+  "source_sha256": "d33529046f234dd3e86313d89c8c8712d869b1936028b4e4bb41d2d0d76e940b",
+  "stop": "First correctnessdifference or unsupported provider; no defaults,noNode/Clock/qcap refill,no newworker."
+}

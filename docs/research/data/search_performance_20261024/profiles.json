@@ -1,0 +1,1551 @@
+{
+  "note": "Instrumented/cProfile run is separate from timing controls; nested durations not additive. Root Core microbench is not whole-search share.",
+  "rows": [
+    {
+      "case": "solved3_0",
+      "core_micro": {
+        "functions": {
+          "drop_action_generation": {
+            "count": 3,
+            "max": 4.00003045797348e-07,
+            "median": 2.00001522898674e-07,
+            "min": 2.00001522898674e-07
+          },
+          "is_in_check": {
+            "count": 3,
+            "max": 3.7999125197529793e-06,
+            "median": 3.00002284348011e-06,
+            "min": 2.900022082030773e-06
+          },
+          "legal_successors": {
+            "count": 3,
+            "max": 0.0005706000374630094,
+            "median": 0.0005536000244319439,
+            "min": 0.0005428999429568648
+          },
+          "legality_filter_per_action": {
+            "count": 3,
+            "max": 3.6999117583036423e-06,
+            "median": 3.600027412176132e-06,
+            "min": 3.200024366378784e-06
+          },
+          "mechanical_transition": {
+            "count": 3,
+            "max": 1.700012944638729e-06,
+            "median": 1.400010660290718e-06,
+            "min": 1.200009137392044e-06
+          },
+          "move_generation_legal": {
+            "count": 3,
+            "max": 4.439998883754015e-05,
+            "median": 4.3199979700148106e-05,
+            "min": 4.2199972085654736e-05
+          },
+          "position_key": {
+            "count": 3,
+            "max": 7.3999399319291115e-06,
+            "median": 5.800044164061546e-06,
+            "min": 5.500041879713535e-06
+          },
+          "pseudo_action_expansion": {
+            "count": 3,
+            "max": 8.399947546422482e-06,
+            "median": 7.900060154497623e-06,
+            "min": 7.699942216277122e-06
+          },
+          "pseudo_action_generation": {
+            "count": 3,
+            "max": 7.200054824352264e-06,
+            "median": 6.4999330788850784e-06,
+            "min": 6.200047209858894e-06
+          },
+          "pseudo_attacks_owner0": {
+            "count": 3,
+            "max": 4.300032742321491e-06,
+            "median": 3.600027412176132e-06,
+            "min": 3.2999087125062943e-06
+          },
+          "pseudo_attacks_owner1": {
+            "count": 3,
+            "max": 3.00002284348011e-06,
+            "median": 2.800021320581436e-06,
+            "min": 2.800021320581436e-06
+          },
+          "repetition_update": {
+            "count": 3,
+            "max": 6.998889148235321e-07,
+            "median": 4.00003045797348e-07,
+            "min": 2.00001522898674e-07
+          },
+          "terminal_detection": {
+            "count": 3,
+            "max": 2.52000754699111e-05,
+            "median": 2.289994154125452e-05,
+            "min": 2.1200045011937618e-05
+          }
+        },
+        "legal_actions": 6,
+        "pseudo_actions": 9,
+        "pseudo_legal_ratio": 1.5
+      },
+      "cprofile_top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          4.36e-05,
+          0.34257750000000003
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          7.32e-05,
+          0.34249050000000003
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          9,
+          0.005024000000000001,
+          0.3361033
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          51,
+          0.0011639,
+          0.3350887
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          4368,
+          0.0012072,
+          0.1574577
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1482,
+          "pushed",
+          1006,
+          0.0006071000000000001,
+          0.1543363
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          1680,
+          0.0004978000000000001,
+          0.15150190000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1305,
+          "push",
+          503,
+          0.00040120000000000005,
+          0.1490111
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1354,
+          "_push_impl",
+          503,
+          0.0051856,
+          0.1485321
+        ],
+        [
+          "~",
+          0,
+          "<method 'get' of 'dict' objects>",
+          93304,
+          0.009341400000000001,
+          0.1432601
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          238,
+          "__eq__",
+          423,
+          0.000577,
+          0.1256149
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          215,
+          "items",
+          846,
+          0.005321500000000001,
+          0.1232887
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          503,
+          0.0026678,
+          0.1024762
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sorted>",
+          8374,
+          0.0036262000000000004,
+          0.1005355
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1881,
+          "has_legal_action",
+          503,
+          0.0004201,
+          0.0947235
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1732,
+          "iter_legal_actions",
+          906,
+          0.0006121000000000001,
+          0.0942389
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1647,
+          "iter_legal_action_bindings",
+          906,
+          0.010277600000000001,
+          0.09362680000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          226,
+          "<lambda>",
+          9886,
+          0.0019753,
+          0.0913249
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          134,
+          "_identity_sort_key",
+          9887,
+          0.003065,
+          0.0893724
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.repr>",
+          9887,
+          0.0019856,
+          0.0856066
+        ],
+        [
+          "<external>/dataclasses.py",
+          255,
+          "wrapper",
+          9887,
+          0.037136300000000004,
+          0.083621
+        ],
+        [
+          "generic_chess/ai/alphabeta/transposition.py",
+          80,
+          "probe",
+          280,
+          7.230000000000001e-05,
+          0.068011
+        ],
+        [
+          "generic_chess/ai/alphabeta/transposition.py",
+          88,
+          "store",
+          274,
+          0.0001755,
+          0.06597120000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1208,
+          "_iter_candidates",
+          20395,
+          0.0092989,
+          0.0496402
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1232,
+          "_iter_board_candidates",
+          20195,
+          0.0119593,
+          0.0312259
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.hash>",
+          17400,
+          0.0159894,
+          0.0277458
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          282,
+          0.00034040000000000003,
+          0.024984100000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          54,
+          "__hash__",
+          10501,
+          0.001734,
+          0.0248302
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1094,
+          "legal_actions",
+          785,
+          0.00046370000000000005,
+          0.024615400000000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1029,
+          "_legal_actions_from_provider",
+          272,
+          0.0022361,
+          0.023691100000000003
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1455,
+          "_trial_child_if_s3_legal",
+          1022,
+          0.0012293,
+          0.0222958
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          43,
+          "_checkpoint",
+          86625,
+          0.012528000000000001,
+          0.0203831
+        ],
+        [
+          "generic_chess/ai/alphabeta/native_legality.py",
+          290,
+          "__call__",
+          272,
+          0.0023609,
+          0.0181119
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1747,
+          "_transition",
+          1525,
+          0.0031921000000000002,
+          0.0169441
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          800,
+          "in_check",
+          1625,
+          0.0014992,
+          0.0158633
+        ]
+      ],
+      "decision": {
+        "action": {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_061",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 174,
+        "capture_qactions": 0,
+        "checking_drop_qactions": 0,
+        "checking_move_qactions": 0,
+        "choice_kind": "ACTION",
+        "completed_depth": 8,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 0.3425425000023097,
+        "evaluation_calls": 63,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 0.003994599566794932,
+        "in_check_qnodes": 0,
+        "legal_actions_generated": 850,
+        "legal_generation_calls": 282,
+        "legal_generation_seconds": 0.024864400387741625,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 0,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 272,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 512,
+        "nonchecking_drop_excluded": 0,
+        "ordered_moves": 838,
+        "ordering_calls": 280,
+        "ordering_seconds": 0.009002299513667822,
+        "position_key_cache_hits": 497,
+        "position_keys_computed": 777,
+        "principal_variation": [
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_061",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 1,
+              "rank": 2
+            },
+            "geometry_id": "g25",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g11",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 1
+            }
+          }
+        ],
+        "promotion_qactions": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 0,
+        "qnodes": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 0,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 6,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 503,
+        "runtime_pushes": 503,
+        "score": 999999997,
+        "selective_depth": 8,
+        "stand_pat_cutoffs": 0,
+        "successor_handles_created": 838,
+        "successors_materialized": 497,
+        "successors_searched": 497,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 497,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.008623200003057718,
+        "time_to_first_legal_action": 0.0037611000007018447,
+        "tt_cutoffs": 0,
+        "tt_hits": 222,
+        "tt_probes": 280
+      },
+      "instrumented": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 0.003690499230287969,
+          "MOVE_GEN": 0.02248400030657649,
+          "ORDERING": 0.007692899671383202,
+          "TT_PROBE_STORE": 0.1349751999368891
+        }
+      }
+    },
+    {
+      "case": "six4_0",
+      "core_micro": {
+        "functions": {
+          "drop_action_generation": {
+            "count": 3,
+            "max": 2.00001522898674e-07,
+            "median": 2.00001522898674e-07,
+            "min": 1.00000761449337e-07
+          },
+          "is_in_check": {
+            "count": 3,
+            "max": 4.199915565550327e-06,
+            "median": 3.700028173625469e-06,
+            "min": 3.500026650726795e-06
+          },
+          "legal_successors": {
+            "count": 3,
+            "max": 0.0004483999218791723,
+            "median": 0.00042799999937415123,
+            "min": 0.00042669998947530985
+          },
+          "legality_filter_per_action": {
+            "count": 3,
+            "max": 5.100038833916187e-06,
+            "median": 4.800036549568176e-06,
+            "min": 4.599918611347675e-06
+          },
+          "mechanical_transition": {
+            "count": 3,
+            "max": 1.600012183189392e-06,
+            "median": 1.300009898841381e-06,
+            "min": 1.0998919606208801e-06
+          },
+          "move_generation_legal": {
+            "count": 3,
+            "max": 4.3199979700148106e-05,
+            "median": 4.2500090785324574e-05,
+            "min": 4.1499966755509377e-05
+          },
+          "position_key": {
+            "count": 3,
+            "max": 8.199946023523808e-06,
+            "median": 6.800051778554916e-06,
+            "min": 6.299931555986404e-06
+          },
+          "pseudo_action_expansion": {
+            "count": 3,
+            "max": 7.500057108700275e-06,
+            "median": 7.2999391704797745e-06,
+            "min": 7.200054824352264e-06
+          },
+          "pseudo_action_generation": {
+            "count": 3,
+            "max": 6.200047209858894e-06,
+            "median": 5.899928510189056e-06,
+            "min": 5.700043402612209e-06
+          },
+          "pseudo_attacks_owner0": {
+            "count": 3,
+            "max": 4.500034265220165e-06,
+            "median": 3.900029696524143e-06,
+            "min": 3.5999109968543053e-06
+          },
+          "pseudo_attacks_owner1": {
+            "count": 3,
+            "max": 3.700028173625469e-06,
+            "median": 3.700028173625469e-06,
+            "min": 3.5999109968543053e-06
+          },
+          "repetition_update": {
+            "count": 3,
+            "max": 5.00003807246685e-07,
+            "median": 4.00003045797348e-07,
+            "min": 3.00002284348011e-07
+          },
+          "terminal_detection": {
+            "count": 3,
+            "max": 2.5300076231360435e-05,
+            "median": 2.519995905458927e-05,
+            "min": 2.2799940779805183e-05
+          }
+        },
+        "legal_actions": 6,
+        "pseudo_actions": 7,
+        "pseudo_legal_ratio": 1.167
+      },
+      "cprofile_top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          2.58e-05,
+          0.21240750000000003
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          3.66e-05,
+          0.21234560000000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          5,
+          0.0042259,
+          0.20989660000000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          27,
+          0.0011137,
+          0.2093526
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          4581,
+          0.0011936000000000002,
+          0.1103394
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1482,
+          "pushed",
+          1014,
+          0.0006134000000000001,
+          0.1073723
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          1544,
+          0.0004467,
+          0.10417380000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1305,
+          "push",
+          507,
+          0.00039190000000000004,
+          0.1019545
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1354,
+          "_push_impl",
+          507,
+          0.0050721,
+          0.1014825
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          507,
+          0.0029497,
+          0.056663200000000004
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1881,
+          "has_legal_action",
+          507,
+          0.00042510000000000003,
+          0.0489382
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1732,
+          "iter_legal_actions",
+          1007,
+          0.000674,
+          0.048508
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1647,
+          "iter_legal_action_bindings",
+          1007,
+          0.0044646,
+          0.047834
+        ],
+        [
+          "~",
+          0,
+          "<method 'get' of 'dict' objects>",
+          50198,
+          0.005629100000000001,
+          0.0391803
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sorted>",
+          4391,
+          0.0016288000000000001,
+          0.0320179
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          238,
+          "__eq__",
+          119,
+          0.00015910000000000002,
+          0.0288962
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          215,
+          "items",
+          238,
+          0.0011957,
+          0.0283615
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1208,
+          "_iter_candidates",
+          6159,
+          0.0030922000000000002,
+          0.0243359
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          181,
+          0.00022840000000000002,
+          0.023764700000000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1094,
+          "legal_actions",
+          688,
+          0.0003464,
+          0.0235467
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1029,
+          "_legal_actions_from_provider",
+          175,
+          0.0020543000000000002,
+          0.0229116
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          325,
+          0.0007057000000000001,
+          0.0222281
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          226,
+          "<lambda>",
+          1678,
+          0.00037610000000000003,
+          0.0212707
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          134,
+          "_identity_sort_key",
+          1679,
+          0.0005655,
+          0.0209212
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.repr>",
+          1679,
+          0.00037220000000000005,
+          0.020229300000000002
+        ],
+        [
+          "<external>/dataclasses.py",
+          255,
+          "wrapper",
+          1679,
+          0.0085283,
+          0.019857100000000003
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          325,
+          0.0016571000000000001,
+          0.019828600000000002
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1232,
+          "_iter_board_candidates",
+          6145,
+          0.006844500000000001,
+          0.018762400000000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/native_legality.py",
+          290,
+          "__call__",
+          175,
+          0.0022504,
+          0.017208
+        ],
+        [
+          "generic_chess/ai/alphabeta/transposition.py",
+          88,
+          "store",
+          175,
+          0.0001887,
+          0.0167955
+        ],
+        [
+          "generic_chess/ai/alphabeta/transposition.py",
+          80,
+          "probe",
+          179,
+          4.3400000000000005e-05,
+          0.016456500000000002
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1455,
+          "_trial_child_if_s3_legal",
+          642,
+          0.0008547,
+          0.013440200000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1747,
+          "_transition",
+          1149,
+          0.0024764,
+          0.013316600000000001
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          325,
+          0.0003123,
+          0.011862500000000002
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.hash>",
+          18331,
+          0.007189600000000001,
+          0.011842
+        ]
+      ],
+      "decision": {
+        "action": {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g7",
+          "pattern_id": "legacy_042",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 114,
+        "capture_qactions": 0,
+        "checking_drop_qactions": 0,
+        "checking_move_qactions": 0,
+        "choice_kind": "ACTION",
+        "completed_depth": 4,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 0.21238020004238933,
+        "evaluation_calls": 325,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 0.02208880113903433,
+        "in_check_qnodes": 0,
+        "legal_actions_generated": 1340,
+        "legal_generation_calls": 181,
+        "legal_generation_seconds": 0.023685699212364852,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 0,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 175,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 512,
+        "nonchecking_drop_excluded": 0,
+        "ordered_moves": 1328,
+        "ordering_calls": 179,
+        "ordering_seconds": 0.011516001191921532,
+        "position_key_cache_hits": 501,
+        "position_keys_computed": 680,
+        "principal_variation": [
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "geometry_id": "g7",
+            "pattern_id": "legacy_042",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g13",
+            "pattern_id": "legacy_011",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 2,
+              "rank": 3
+            },
+            "geometry_id": "g6",
+            "pattern_id": "legacy_041",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 3
+            }
+          }
+        ],
+        "promotion_qactions": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 0,
+        "qnodes": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 0,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 6,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 507,
+        "runtime_pushes": 507,
+        "score": 16,
+        "selective_depth": 4,
+        "stand_pat_cutoffs": 0,
+        "successor_handles_created": 1328,
+        "successors_materialized": 501,
+        "successors_searched": 501,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 501,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.0042993000242859125,
+        "time_to_first_legal_action": 0.0005309999687597156,
+        "tt_cutoffs": 0,
+        "tt_hits": 65,
+        "tt_probes": 179
+      },
+      "instrumented": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 0.02065840025898069,
+          "MOVE_GEN": 0.02414679992944002,
+          "ORDERING": 0.010632400284521282,
+          "TT_PROBE_STORE": 0.033882500138133764
+        }
+      }
+    },
+    {
+      "case": "promo6_0",
+      "core_micro": {
+        "functions": {
+          "drop_action_generation": {
+            "count": 3,
+            "max": 2.00001522898674e-07,
+            "median": 2.00001522898674e-07,
+            "min": 2.00001522898674e-07
+          },
+          "is_in_check": {
+            "count": 3,
+            "max": 9.800074622035027e-06,
+            "median": 4.09991480410099e-06,
+            "min": 2.900022082030773e-06
+          },
+          "legal_successors": {
+            "count": 3,
+            "max": 0.00036609999369829893,
+            "median": 0.0003470000810921192,
+            "min": 0.00033279997296631336
+          },
+          "legality_filter_per_action": {
+            "count": 3,
+            "max": 4.500034265220165e-06,
+            "median": 4.00003045797348e-06,
+            "min": 3.899913281202316e-06
+          },
+          "mechanical_transition": {
+            "count": 3,
+            "max": 1.500011421740055e-06,
+            "median": 1.200009137392044e-06,
+            "min": 1.200009137392044e-06
+          },
+          "move_generation_legal": {
+            "count": 3,
+            "max": 3.0499999411404133e-05,
+            "median": 2.929999027401209e-05,
+            "min": 2.8799986466765404e-05
+          },
+          "position_key": {
+            "count": 3,
+            "max": 8.800067007541656e-06,
+            "median": 6.7999353632330894e-06,
+            "min": 5.900044925510883e-06
+          },
+          "pseudo_action_expansion": {
+            "count": 3,
+            "max": 6.200047209858894e-06,
+            "median": 6.199930794537067e-06,
+            "min": 6.00004568696022e-06
+          },
+          "pseudo_action_generation": {
+            "count": 3,
+            "max": 4.299916326999664e-06,
+            "median": 4.200031980872154e-06,
+            "min": 3.8000289350748062e-06
+          },
+          "pseudo_attacks_owner0": {
+            "count": 3,
+            "max": 3.0999071896076202e-06,
+            "median": 2.300017513334751e-06,
+            "min": 1.9000144675374031e-06
+          },
+          "pseudo_attacks_owner1": {
+            "count": 3,
+            "max": 2.200016751885414e-06,
+            "median": 2.100015990436077e-06,
+            "min": 2.00001522898674e-06
+          },
+          "repetition_update": {
+            "count": 3,
+            "max": 5.00003807246685e-07,
+            "median": 3.00002284348011e-07,
+            "min": 3.00002284348011e-07
+          },
+          "terminal_detection": {
+            "count": 3,
+            "max": 1.9799917936325073e-05,
+            "median": 1.7700018361210823e-05,
+            "min": 1.750001683831215e-05
+          }
+        },
+        "legal_actions": 5,
+        "pseudo_actions": 5,
+        "pseudo_legal_ratio": 1.0
+      },
+      "cprofile_top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          1.9200000000000003e-05,
+          0.1873352
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          3e-05,
+          0.18729010000000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          5,
+          0.0037308000000000003,
+          0.18520230000000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          21,
+          0.0011244,
+          0.1847097
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          4253,
+          0.0011636,
+          0.11099500000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1482,
+          "pushed",
+          1014,
+          0.0006602,
+          0.1082642
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          1368,
+          0.00042980000000000004,
+          0.1046213
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1305,
+          "push",
+          507,
+          0.0004038,
+          0.10258120000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1354,
+          "_push_impl",
+          507,
+          0.0052413,
+          0.1020935
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          507,
+          0.0029217,
+          0.0537658
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1881,
+          "has_legal_action",
+          507,
+          0.0004309,
+          0.0459605
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1732,
+          "iter_legal_actions",
+          1014,
+          0.0006766000000000001,
+          0.0455296
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1647,
+          "iter_legal_action_bindings",
+          1014,
+          0.0036742000000000003,
+          0.044853000000000004
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          393,
+          0.0009309,
+          0.029738800000000003
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          393,
+          0.0021188,
+          0.026644
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1455,
+          "_trial_child_if_s3_legal",
+          764,
+          0.0010062,
+          0.0198457
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          120,
+          0.00015800000000000002,
+          0.0181458
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1094,
+          "legal_actions",
+          627,
+          0.0002478,
+          0.0180042
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1029,
+          "_legal_actions_from_provider",
+          114,
+          0.0014432000000000002,
+          0.0175468
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          800,
+          "in_check",
+          1271,
+          0.0011313,
+          0.0170929
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1208,
+          "_iter_candidates",
+          4017,
+          0.0020802,
+          0.0168524
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          393,
+          0.00038930000000000003,
+          0.014632500000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1747,
+          "_transition",
+          1271,
+          0.0028304000000000003,
+          0.014477700000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          644,
+          "is_square_attacked",
+          1271,
+          0.0059830000000000005,
+          0.0144113
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          119,
+          "<genexpr>",
+          1179,
+          0.0005387,
+          0.014243200000000001
+        ],
+        [
+          "~",
+          0,
+          "<method 'get' of 'dict' objects>",
+          32986,
+          0.0041803000000000005,
+          0.014166300000000001
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          34,
+          "pseudo_attacks",
+          786,
+          0.0060235,
+          0.013629800000000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/native_legality.py",
+          290,
+          "__call__",
+          114,
+          0.001629,
+          0.013548600000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1232,
+          "_iter_board_candidates",
+          4017,
+          0.004525400000000001,
+          0.013324500000000001
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sorted>",
+          4168,
+          0.0012272000000000001,
+          0.013067
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          544,
+          "_semantic_component_diff_hash",
+          507,
+          0.004392,
+          0.0124116
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          43,
+          "_checkpoint",
+          40697,
+          0.0061257,
+          0.010059
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1128,
+          "_gave_check",
+          507,
+          0.0002791,
+          0.007572100000000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/ordering.py",
+          70,
+          "order",
+          118,
+          0.0001661,
+          0.007344300000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          238,
+          "__eq__",
+          43,
+          5.64e-05,
+          0.0073356
+        ]
+      ],
+      "decision": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 4
+          },
+          "geometry_id": "g12",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": "Q",
+          "to_square": {
+            "file": 0,
+            "rank": 5
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 80,
+        "capture_qactions": 0,
+        "checking_drop_qactions": 0,
+        "checking_move_qactions": 0,
+        "choice_kind": "ACTION",
+        "completed_depth": 4,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 0.18731369997840375,
+        "evaluation_calls": 393,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 0.029561900068074465,
+        "in_check_qnodes": 0,
+        "legal_actions_generated": 989,
+        "legal_generation_calls": 120,
+        "legal_generation_seconds": 0.018091900157742202,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 0,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 114,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 512,
+        "nonchecking_drop_excluded": 0,
+        "ordered_moves": 979,
+        "ordering_calls": 118,
+        "ordering_seconds": 0.008183300378732383,
+        "position_key_cache_hits": 502,
+        "position_keys_computed": 620,
+        "principal_variation": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 4
+            },
+            "geometry_id": "g12",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": "Q",
+            "to_square": {
+              "file": 0,
+              "rank": 5
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 5,
+              "rank": 5
+            },
+            "geometry_id": "g11",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 0,
+              "rank": 5
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 4,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_038",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          }
+        ],
+        "promotion_qactions": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 0,
+        "qnodes": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 0,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 5,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 507,
+        "runtime_pushes": 507,
+        "score": 3489,
+        "selective_depth": 4,
+        "stand_pat_cutoffs": 0,
+        "successor_handles_created": 979,
+        "successors_materialized": 502,
+        "successors_searched": 502,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 502,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.0035251000663265586,
+        "time_to_first_legal_action": 0.0005595000693574548,
+        "tt_cutoffs": 0,
+        "tt_hits": 27,
+        "tt_probes": 118
+      },
+      "instrumented": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 0.027712199836969376,
+          "MOVE_GEN": 0.018362300470471382,
+          "ORDERING": 0.007583300699479878,
+          "TT_PROBE_STORE": 0.010335599537938833
+        }
+      }
+    }
+  ]
+}

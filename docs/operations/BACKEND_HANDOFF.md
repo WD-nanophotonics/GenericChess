@@ -1,3 +1,15 @@
+## 2026-10-24 exact runtime-count materialization
+
+Python Core only: RuntimeCountsSnapshot.items walks persistent updates once and
+retains the same canonical sort, map contents, digest and exact collision guard.
+No history/clock/auxiliary key component or search policy is dropped. API, Native
+kernel/build, evaluator, UI and default options stay unchanged. Existing opt-in
+Native availability timing is separately scoped, not production activation.
+The legacy standard benchmark compiler route and explicit semantic lowering
+remain distinct; do not copy legacy history keys or assume one-to-one actions.
+Evidence/negative practical transfer and same-wall games:
+../research/SEARCH_PERFORMANCE_AND_EXACT_MAP_20261024.md.
+
 ## 2026-10-22 decision-equivalence qualification
 
 No runtime/API/default/learner/UI change. Native provider code only corrects a

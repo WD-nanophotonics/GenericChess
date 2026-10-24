@@ -1,0 +1,46 @@
+{
+  "baseline_controls": {
+    "TT": "new player per cold query, explicit same-player warm query separate",
+    "evaluator": "same default rule-derived evaluator across arms, setup measured separately",
+    "fixed_depth_node_cap": 20000,
+    "fixed_depth_seconds_cap": 30,
+    "fixed_depths": [
+      2,
+      3
+    ],
+    "node_budgets": [
+      512,
+      4096
+    ],
+    "q_policy": "ordinary0, check hard8; keep exact full history",
+    "wall_seconds": [
+      0.5,
+      2.0
+    ]
+  },
+  "deadline": "2026-10-24T12:41:29.628081+00:00",
+  "expected_total_minutes": [
+    45,
+    95
+  ],
+  "hard_total_minutes": 100,
+  "include": [
+    "preparation",
+    "baseline",
+    "source/code",
+    "controlled comparison",
+    "validation",
+    "analysis"
+  ],
+  "question": "Which existing ABP hot path limits correct decisions, and does one profile-selected switch preserve completed values at lower total cost?",
+  "scope": "Three fixed rule families and two full records each; no new solved graph or training. Existing benchmark primitives and real player only. Native route observed, Python decline explicit. No AUX operations.",
+  "selection": "Use first profile measurement, choose ONE staged picker if meaningful ordering cost, else lazy successors if transition generation dominates, else PVS. Freeze candidate before A/B. Never enable combinations.",
+  "started_at": "2026-10-24T11:01:29.628081+00:00",
+  "stops": [
+    "original deadline",
+    "first correctness contradiction retained and diagnose",
+    "no cap extension",
+    "no fixed-time speed or strength claim from single sample"
+  ],
+  "validity": "Same-depth equality only both complete/no aborted q policy. Fallback/time/node/technical unknown separate. Frozen wallclock experiment no trial-count padding; paired seats/games deferred unless justified."
+}

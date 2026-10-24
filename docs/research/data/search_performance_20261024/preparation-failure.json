@@ -1,0 +1,7 @@
+{
+  "cause": "named common_026 setup is carried in full GameRecord; GameSession(c) alone selects default setup",
+  "correction": "Use published H6 root record via strict replay before selecting capture; rule/prediction unchanged",
+  "error": "StopIteration expected capture absent in default setup",
+  "queries": 0,
+  "secondary_error": "baseline inputs absent after prepare failed; no queries"
+}

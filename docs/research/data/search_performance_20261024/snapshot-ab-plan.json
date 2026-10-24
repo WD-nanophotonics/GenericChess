@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-24T11:09:33.561521+00:00",
+  "case_count": 6,
+  "forecast": "Typical unsolved query grows from4k<1s to64k5-30s;288boundedqueries inclfastsolvedroots expected20-45min; if safety time ends any query preserve partial, original100min totaldeadline still binds. No idlepadding.",
+  "modes": {
+    "depth": {
+      "depth": 6,
+      "nodes": 65536,
+      "seconds_safety": 60
+    },
+    "nodes": {
+      "depth_max": 64,
+      "nodes": 65536,
+      "seconds_safety": 60
+    },
+    "wall": {
+      "depth_max": 64,
+      "seconds": 8
+    }
+  },
+  "old_source_private_sha256": "1db2d8d3477c7cf3360a45399f436ab267087ba66c186ed9a3c21c06ab1edb4a",
+  "order": "AB,BA,BA,AB per case/q/mode; deterministic repeated timings are not independent game samples",
+  "original_deadline": "2026-10-24T12:41:29.628081+00:00",
+  "qdepths": [
+    0,
+    4
+  ],
+  "queries": 288,
+  "replicates": 4,
+  "runtime_source_sha256": "965107c426e0fa3b79c909162e6dada5b720a78ab0b281dcab7d0db3a5318739",
+  "same_node_assertions": "same score,completeddepth,main/qcounts,fullPV if neither time-limit; samecompleteimmutableinput andcoldTT each. Wall comparisons separate.",
+  "source_sha256": "a4e905fa6e303b692f4b43c767c8d5991e23f9b130d040d95c567c22380c6462"
+}

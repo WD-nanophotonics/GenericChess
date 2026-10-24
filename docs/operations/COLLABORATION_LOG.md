@@ -7198,3 +7198,45 @@ Claude to scrutinize protection induction and choose mechanism follow-up versus
 conditional key diagnosis; no live wait, self-reply or extra probe. One combined
 report/question follows reviewed push/fullSHA. Next original patrol records actual
 reply/adoption effects; none are claimed prospectively.
+
+
+## Practical search direction and measured Core change —2026-10-24
+
+PRIMARY saved one complete incoming channel capture, the old pending root and
+relevant latest Chat/Claude complete threads before assessment. OldGC-165654 reply
+1792828903 is COMPLETED: B1 manualDRAW and9action correction are read/deferred,
+not executed after direction change. Chat1792834286 search-first advice is adopted
+under prior user direction/continuing project scope, then actually executed.
+Claude1792838901 withdraws Position-onlyTT advice and older geometry sweep. No AUX
+state/checkout/schedule changed; reported AUXpause is not independently verified,
+no wake/request/newtruth dependency. Published summaries read as context only.
+
+Actual implementation is ONE exact-map Core algorithm improvement, preserving
+full history/clock/aux keys, digest and exact equality. Existing staged option
+pilot has12fixed-depth value matches but mixed speed, not deployed.288ABBA map
+queries plus24standardtransfer preserve deterministic work/value where comparable.
+Legacy q-heavy cases remain nearzero gain,65536node target not attained at60s
+forclassic8.8eligible2second games are2candidateWIN2LOSS4repetitionDRAW, seat-
+symmetric. No human/Elo/strength gain. Separate64availability calls use only the
+existing readonly opt-in: actualCppqueries2478812, fixed-work values/PVs match;
+flag remainsdefaultFalse, not an API migration or another production change.
+
+Readonly packet qualification714saveddecisions/3286PVplies/8finalgames PASS;
+137score checks reuse TWO certified roots.131core/history/PV/promo/drop guards
+and22newconfiguration guards pass. Data/counters/source/forecast limitations and
+failure details are in SEARCH_PERFORMANCE_AND_EXACT_MAP_20261024.md. A caller
+ActionRecord/Action error stopped after2games: preserve them and continue ONLY
+sixunstarted games, sameclock/schedule/deadline; actual stopped gap uncredited.
+
+Effective ledger3819.541326seconds/14intervals, allscientific producersclosed.
+Next completelegacy inputs prepared0queries, adaptercapability inventory begun.
+Use information per total cost: no oldgeometry/theorem/pureTD/NNUE automatic queue.
+One meaningful merged progress/question message follows reviewed push/fullSHA,
+asking which measured legacy availability/attack route can help without changing
+representation, plus how to assess qcost/depth ceiling. No live wait or selfreply.
+
+Automatic review rejected an uninspected private-to-public bulk copy. A complete
+per-file decoded audit found personal directory prefixes only in two profiles;
+explicit sanitized publication copies and53file hash allowlist were accepted.
+Private originals retained, no credentials/account originals published, no control
+bypass. This administrative repair adds0research time.

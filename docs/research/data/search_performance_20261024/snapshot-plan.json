@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-24T11:06:52.307009+00:00",
+  "correctness_controls": [
+    "multiupdate/zero deletion",
+    "branch persistent sibling independence",
+    "equal maps different update order",
+    "forced digest collision unequal maps",
+    "physical exact identity guard",
+    "long realistic snapshot chain",
+    "complete rule/history search scores/PV/node parity",
+    "complex promo/drop/repetition/clock guard"
+  ],
+  "do_not": "No new graph/history experiments, no semantic key flattening, no default tuning change; old history experiments remain closed.",
+  "one_production_change": "Replace recursive per-parent full-map reconstruction by iterative path walk, root copy, reverse updates, one final same sort. No key/digest/history/count/ply eligibility change, no cache fast collision bypass.",
+  "prediction": "Same exact items/equality under digest collisions and deletion/reinsertion; same deterministic fixed-node scores/PV/counts. Deeper snapshots reduce key-equality CPU; shallow/noTT use may show no benefit. Measure old/new counterbalanced matched data before any strength claim.",
+  "premise_change": "Staged first pilot preserved all12 fixed-depth root scores but no consistent speed gain. cProfile actual RuntimeCountsSnapshot.items recursively copies+sorts full map at EVERY parent during exact TT equality; solved case~0.123s/0.336s instrumented sample.",
+  "same_original_deadline": "2026-10-24T12:41:29.628081+00:00"
+}

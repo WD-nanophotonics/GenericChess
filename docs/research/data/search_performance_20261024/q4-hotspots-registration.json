@@ -1,0 +1,23 @@
+{
+  "Q": 4,
+  "arms": [
+    "old",
+    "new"
+  ],
+  "at": "2026-10-24T12:04:49.994860+00:00",
+  "cases": [
+    "promo6_0",
+    "classic6_ply16",
+    "classic8_ply24"
+  ],
+  "expected_minutes": [
+    1,
+    3
+  ],
+  "nodes": 8192,
+  "original_deadline": "2026-10-24T12:41:29.628081+00:00",
+  "queries": 6,
+  "seconds_safety": 60,
+  "source_sha256": "328c3d1cfe069c32aa7f4d973667b5f2e48b3669a1d84614b860695f47d6cd21",
+  "why": "Verify max3actual hotspots on representative defaultQ4 paths; instrumentedtimes never used as speed estimate; branchcounts not strength."
+}

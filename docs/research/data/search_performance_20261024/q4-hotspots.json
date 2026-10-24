@@ -1,0 +1,3434 @@
+{
+  "note": "Separate instrumented samples, nested cumulative times not additive; no strength or speed estimate from instrumented durations.",
+  "rows": [
+    {
+      "arm": "old",
+      "case": "promo6_0",
+      "decision": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 4
+          },
+          "geometry_id": "g12",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": "Q",
+          "to_square": {
+            "file": 0,
+            "rank": 5
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 23,
+        "capture_qactions": 246,
+        "checking_drop_qactions": 5,
+        "checking_move_qactions": 3269,
+        "choice_kind": "ACTION",
+        "completed_depth": 3,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 4.29473369999323,
+        "evaluation_calls": 4638,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 0.3563425991451368,
+        "in_check_qnodes": 3418,
+        "legal_actions_generated": 23623,
+        "legal_generation_calls": 4109,
+        "legal_generation_seconds": 0.47895659739151597,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 18,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 4104,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 140,
+        "nonchecking_drop_excluded": 160,
+        "ordered_moves": 213,
+        "ordering_calls": 39,
+        "ordering_seconds": 0.0020707002840936184,
+        "position_key_cache_hits": 131,
+        "position_keys_computed": 170,
+        "principal_variation": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 4
+            },
+            "geometry_id": "g12",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": "Q",
+            "to_square": {
+              "file": 0,
+              "rank": 5
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 5,
+              "rank": 5
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_038",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 5,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g11",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 1
+            }
+          }
+        ],
+        "promotion_qactions": 18,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 3243,
+        "qnodes": 8052,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 4,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 5,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 13614,
+        "runtime_pushes": 13614,
+        "score": 3529,
+        "selective_depth": 3,
+        "stand_pat_cutoffs": 740,
+        "successor_handles_created": 213,
+        "successors_materialized": 131,
+        "successors_searched": 131,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 131,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.007858099997974932,
+        "time_to_first_legal_action": 0.003859999938867986,
+        "tt_cutoffs": 0,
+        "tt_hits": 10,
+        "tt_probes": 39
+      },
+      "input_sha256": "4bbe0866d975893cc7c1766c2901dde7fb6270b8b133a902b509f72fdb995e2b",
+      "timing": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 0.33401909843087196,
+          "MOVE_GEN": 0.004342099535278976,
+          "ORDERING": 0.0018630997510626912,
+          "QUIESCENCE": 4.248468199861236,
+          "TT_PROBE_STORE": 0.0023759002797305584
+        }
+      },
+      "top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          1,
+          4.3e-05,
+          4.2947671000000005
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          1,
+          6.26e-05,
+          4.2946831
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          4,
+          135,
+          0.0013414000000000002,
+          4.2890568
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          16,
+          131,
+          0.0003356,
+          4.2886071
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          754,
+          "quiescence",
+          96,
+          96,
+          7.340000000000001e-05,
+          4.2482880000000005
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          673,
+          "_quiescence_runtime",
+          96,
+          8052,
+          0.0588653,
+          4.2482146
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          61553,
+          61553,
+          0.016902800000000003,
+          3.1497637000000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1489,
+          "pushed",
+          27228,
+          27228,
+          0.015830200000000003,
+          3.1220738000000003
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          18500,
+          18500,
+          0.0064713,
+          3.0082646000000004
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1312,
+          "push",
+          13614,
+          13614,
+          0.0103215,
+          2.9849140000000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1361,
+          "_push_impl",
+          13614,
+          13614,
+          0.1305369,
+          2.9724209000000004
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          13614,
+          13614,
+          0.07125870000000001,
+          1.675116
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1881,
+          "has_legal_action",
+          13614,
+          13614,
+          0.010329300000000001,
+          1.4764804
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1732,
+          "iter_legal_actions",
+          27228,
+          27228,
+          0.0166871,
+          1.4661511
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1647,
+          "iter_legal_action_bindings",
+          27228,
+          27228,
+          0.10073700000000001,
+          1.449464
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1455,
+          "_trial_child_if_s3_legal",
+          22812,
+          22812,
+          0.028299,
+          0.6529849000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          800,
+          "in_check",
+          36426,
+          36426,
+          0.030096200000000004,
+          0.5910666
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1208,
+          "_iter_candidates",
+          120373,
+          120373,
+          0.060267,
+          0.5486573
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          644,
+          "is_square_attacked",
+          36426,
+          36426,
+          0.1680345,
+          0.5201332000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          43,
+          "_checkpoint",
+          1192659,
+          1192659,
+          0.17705020000000002,
+          0.5006422
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          4109,
+          4109,
+          0.0051247,
+          0.48073340000000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1101,
+          "legal_actions",
+          17723,
+          17723,
+          0.0076806,
+          0.47588240000000004
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1036,
+          "_legal_actions_from_provider",
+          4104,
+          4104,
+          0.0420627,
+          0.4614261
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1232,
+          "_iter_board_candidates",
+          120373,
+          120373,
+          0.1304951,
+          0.42709450000000004
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1747,
+          "_transition",
+          36426,
+          36426,
+          0.0743616,
+          0.4037791
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          4638,
+          4638,
+          0.011028300000000001,
+          0.3581188
+        ],
+        [
+          "generic_chess/ai/alphabeta/native_legality.py",
+          290,
+          "__call__",
+          4104,
+          4104,
+          0.0440504,
+          0.3467141
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          177,
+          "checkpoint",
+          1238234,
+          1238234,
+          0.2348474,
+          0.3346177
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          551,
+          "_semantic_component_diff_hash",
+          13614,
+          13614,
+          0.1137384,
+          0.3275539
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          4638,
+          4638,
+          0.0252413,
+          0.320987
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1135,
+          "_gave_check",
+          13614,
+          13614,
+          0.0072559,
+          0.24005
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          4638,
+          4638,
+          0.0046883,
+          0.1792834
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          119,
+          "<genexpr>",
+          13914,
+          13914,
+          0.0066743,
+          0.1745951
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          34,
+          "pseudo_attacks",
+          9276,
+          9276,
+          0.0732964,
+          0.1670837
+        ],
+        [
+          "<external>/contextlib.py",
+          141,
+          "__exit__",
+          18500,
+          18500,
+          0.0074127,
+          0.1476652
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          387,
+          "to_position",
+          36426,
+          36426,
+          0.073201,
+          0.1438479
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          875,
+          "_make_binding_from_action",
+          23598,
+          23598,
+          0.0298303,
+          0.1216759
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1468,
+          "pop",
+          13614,
+          13614,
+          0.0263157,
+          0.12132960000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          252,
+          "updated",
+          13614,
+          13614,
+          0.0188466,
+          0.11048440000000001
+        ],
+        [
+          "~",
+          0,
+          "<method 'get' of 'dict' objects>",
+          928355,
+          928355,
+          0.10749750000000001,
+          0.10961670000000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          60,
+          "noisy_child",
+          9060,
+          9060,
+          0.018462000000000003,
+          0.1087694
+        ],
+        [
+          "~",
+          0,
+          "<built-in method time.perf_counter>",
+          1315532,
+          1315532,
+          0.1074485,
+          0.1074485
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          418,
+          "_apply_effect",
+          38197,
+          38197,
+          0.0585118,
+          0.1070141
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sum>",
+          35360,
+          35360,
+          0.037404400000000004,
+          0.10304070000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1284,
+          "_promotion_choices",
+          22413,
+          22413,
+          0.030272100000000003,
+          0.0989903
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          842,
+          "_make_binding",
+          59150,
+          59150,
+          0.0428933,
+          0.09772270000000001
+        ],
+        [
+          "<external>/__init__.py",
+          183,
+          "dumps",
+          16178,
+          16178,
+          0.020512500000000003,
+          0.09735780000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1167,
+          "_find_occurrence",
+          40842,
+          40842,
+          0.0230969,
+          0.0955774
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          489,
+          "_component_token",
+          83788,
+          83788,
+          0.0573697,
+          0.08537080000000001
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          93,
+          "index_to_square",
+          47880,
+          47880,
+          0.0350776,
+          0.0799932
+        ]
+      ]
+    },
+    {
+      "arm": "new",
+      "case": "promo6_0",
+      "decision": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 4
+          },
+          "geometry_id": "g12",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": "Q",
+          "to_square": {
+            "file": 0,
+            "rank": 5
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 23,
+        "capture_qactions": 246,
+        "checking_drop_qactions": 5,
+        "checking_move_qactions": 3269,
+        "choice_kind": "ACTION",
+        "completed_depth": 3,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 4.259500000043772,
+        "evaluation_calls": 4638,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 0.3552935937186703,
+        "in_check_qnodes": 3418,
+        "legal_actions_generated": 23623,
+        "legal_generation_calls": 4109,
+        "legal_generation_seconds": 0.4709307022858411,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 18,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 4104,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 140,
+        "nonchecking_drop_excluded": 160,
+        "ordered_moves": 213,
+        "ordering_calls": 39,
+        "ordering_seconds": 0.0020467002177610993,
+        "position_key_cache_hits": 131,
+        "position_keys_computed": 170,
+        "principal_variation": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 4
+            },
+            "geometry_id": "g12",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": "Q",
+            "to_square": {
+              "file": 0,
+              "rank": 5
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 5,
+              "rank": 5
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_038",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 5,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g11",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 1
+            }
+          }
+        ],
+        "promotion_qactions": 18,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 3243,
+        "qnodes": 8052,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 4,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 5,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 13614,
+        "runtime_pushes": 13614,
+        "score": 3529,
+        "selective_depth": 3,
+        "stand_pat_cutoffs": 740,
+        "successor_handles_created": 213,
+        "successors_materialized": 131,
+        "successors_searched": 131,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 131,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.004114700015634298,
+        "time_to_first_legal_action": 0.0004635000368580222,
+        "tt_cutoffs": 0,
+        "tt_hits": 10,
+        "tt_probes": 39
+      },
+      "input_sha256": "4bbe0866d975893cc7c1766c2901dde7fb6270b8b133a902b509f72fdb995e2b",
+      "timing": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 0.3334462000057101,
+          "MOVE_GEN": 0.004133600741624832,
+          "ORDERING": 0.0018521001329645514,
+          "QUIESCENCE": 4.217871599947102,
+          "TT_PROBE_STORE": 0.001904499949887395
+        }
+      },
+      "top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          1,
+          2.79e-05,
+          4.259528700000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          1,
+          3.4200000000000005e-05,
+          4.2594681
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          4,
+          135,
+          0.0012607,
+          4.2575089
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          16,
+          131,
+          0.0003124,
+          4.2570973
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          754,
+          "quiescence",
+          96,
+          96,
+          6.780000000000001e-05,
+          4.2177097
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          673,
+          "_quiescence_runtime",
+          96,
+          8052,
+          0.0573841,
+          4.2176419
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          61553,
+          61553,
+          0.016791900000000002,
+          3.1280613
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1489,
+          "pushed",
+          27228,
+          27228,
+          0.015674,
+          3.1006664
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          18500,
+          18500,
+          0.0064021,
+          2.9875749000000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1312,
+          "push",
+          13614,
+          13614,
+          0.0102837,
+          2.9645589
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1361,
+          "_push_impl",
+          13614,
+          13614,
+          0.129494,
+          2.9521143000000003
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          13614,
+          13614,
+          0.0697982,
+          1.6667479
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1881,
+          "has_legal_action",
+          13614,
+          13614,
+          0.0102085,
+          1.4700966000000002
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1732,
+          "iter_legal_actions",
+          27228,
+          27228,
+          0.0163179,
+          1.4598881000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1647,
+          "iter_legal_action_bindings",
+          27228,
+          27228,
+          0.10044040000000001,
+          1.4435702000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1455,
+          "_trial_child_if_s3_legal",
+          22812,
+          22812,
+          0.028306400000000002,
+          0.6513801
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          800,
+          "in_check",
+          36426,
+          36426,
+          0.0300153,
+          0.5892729
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1208,
+          "_iter_candidates",
+          120373,
+          120373,
+          0.060333700000000004,
+          0.5457975
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          644,
+          "is_square_attacked",
+          36426,
+          36426,
+          0.1686168,
+          0.5189121
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          43,
+          "_checkpoint",
+          1192659,
+          1192659,
+          0.17650980000000002,
+          0.49836980000000003
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          4109,
+          4109,
+          0.005120400000000001,
+          0.47271680000000005
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1101,
+          "legal_actions",
+          17723,
+          17723,
+          0.0076343,
+          0.46785940000000004
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1036,
+          "_legal_actions_from_provider",
+          4104,
+          4104,
+          0.0422801,
+          0.45348320000000003
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1232,
+          "_iter_board_candidates",
+          120373,
+          120373,
+          0.1296815,
+          0.4239639
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1747,
+          "_transition",
+          36426,
+          36426,
+          0.073801,
+          0.4019026
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          4638,
+          4638,
+          0.01084,
+          0.3570642
+        ],
+        [
+          "generic_chess/ai/alphabeta/native_legality.py",
+          290,
+          "__call__",
+          4104,
+          4104,
+          0.0435332,
+          0.3383253
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          177,
+          "checkpoint",
+          1238234,
+          1238234,
+          0.23343460000000002,
+          0.3327873
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          551,
+          "_semantic_component_diff_hash",
+          13614,
+          13614,
+          0.11363970000000001,
+          0.32487530000000003
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          4638,
+          4638,
+          0.0251239,
+          0.32060940000000004
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1135,
+          "_gave_check",
+          13614,
+          13614,
+          0.007320900000000001,
+          0.23939510000000003
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          4638,
+          4638,
+          0.0046776000000000005,
+          0.1789261
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          119,
+          "<genexpr>",
+          13914,
+          13914,
+          0.0066765,
+          0.1742485
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          34,
+          "pseudo_attacks",
+          9276,
+          9276,
+          0.0732233,
+          0.1667405
+        ],
+        [
+          "<external>/contextlib.py",
+          141,
+          "__exit__",
+          18500,
+          18500,
+          0.0072028000000000005,
+          0.1463356
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          387,
+          "to_position",
+          36426,
+          36426,
+          0.0726166,
+          0.14307430000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1468,
+          "pop",
+          13614,
+          13614,
+          0.026068800000000003,
+          0.12043350000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          875,
+          "_make_binding_from_action",
+          23598,
+          23598,
+          0.029484200000000002,
+          0.1199906
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          252,
+          "updated",
+          13614,
+          13614,
+          0.018591,
+          0.1078771
+        ],
+        [
+          "~",
+          0,
+          "<method 'get' of 'dict' objects>",
+          928343,
+          928343,
+          0.10613210000000001,
+          0.1078099
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          60,
+          "noisy_child",
+          9060,
+          9060,
+          0.018139500000000003,
+          0.107698
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          418,
+          "_apply_effect",
+          38197,
+          38197,
+          0.058190000000000006,
+          0.107314
+        ],
+        [
+          "~",
+          0,
+          "<built-in method time.perf_counter>",
+          1315532,
+          1315532,
+          0.10697970000000001,
+          0.10697970000000001
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sum>",
+          35360,
+          35360,
+          0.0373036,
+          0.10302570000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          1284,
+          "_promotion_choices",
+          22413,
+          22413,
+          0.0301504,
+          0.09829470000000001
+        ],
+        [
+          "generic_chess/core/semantic_executor.py",
+          842,
+          "_make_binding",
+          59150,
+          59150,
+          0.0426633,
+          0.096691
+        ],
+        [
+          "<external>/__init__.py",
+          183,
+          "dumps",
+          16012,
+          16012,
+          0.020067400000000003,
+          0.09530330000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1167,
+          "_find_occurrence",
+          40842,
+          40842,
+          0.0230255,
+          0.09515770000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          489,
+          "_component_token",
+          83788,
+          83788,
+          0.056436900000000005,
+          0.08305380000000001
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          93,
+          "index_to_square",
+          47880,
+          47880,
+          0.0347541,
+          0.0793817
+        ]
+      ]
+    },
+    {
+      "arm": "old",
+      "case": "classic6_ply16",
+      "decision": {
+        "action": {
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 1
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 0,
+        "capture_qactions": 974,
+        "checking_drop_qactions": 1663,
+        "checking_move_qactions": 264,
+        "choice_kind": "ACTION",
+        "completed_depth": 1,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 10.433371499995701,
+        "evaluation_calls": 5586,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 0.707830500905402,
+        "in_check_qnodes": 2466,
+        "legal_actions_generated": 39013,
+        "legal_generation_calls": 3050,
+        "legal_generation_seconds": 3.584663901710883,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 0,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 125,
+        "nonchecking_drop_excluded": 13773,
+        "ordered_moves": 173,
+        "ordering_calls": 5,
+        "ordering_seconds": 0.0008389001013711095,
+        "position_key_cache_hits": 118,
+        "position_keys_computed": 123,
+        "principal_variation": [
+          {
+            "from_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          }
+        ],
+        "promotion_qactions": 1349,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 3018,
+        "qnodes": 8067,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 0,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 5,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 24877,
+        "runtime_pushes": 24877,
+        "score": 747,
+        "selective_depth": 1,
+        "stand_pat_cutoffs": 1986,
+        "successor_handles_created": 0,
+        "successors_materialized": 118,
+        "successors_searched": 118,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 118,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.008022699970752,
+        "time_to_first_legal_action": 0.003968599950894713,
+        "tt_cutoffs": 0,
+        "tt_hits": 1,
+        "tt_probes": 5
+      },
+      "input_sha256": "a58bee150bba2fb6e0c320b24b13e39e48bd6ee27d32f1720678dc2fe618667f",
+      "timing": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 0.6803323007188737,
+          "MOVE_GEN": 0.005491799907758832,
+          "ORDERING": 0.0008085999870672822,
+          "QUIESCENCE": 10.391595699591562,
+          "TT_PROBE_STORE": 0.00015089998487383127
+        }
+      },
+      "top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          1,
+          2.3500000000000002e-05,
+          10.433395800000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          1,
+          3.1400000000000004e-05,
+          10.4333416
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          2,
+          120,
+          0.0007426,
+          10.427458900000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          8,
+          118,
+          0.0002566,
+          10.427226800000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          754,
+          "quiescence",
+          115,
+          115,
+          6.32e-05,
+          10.391421300000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          673,
+          "_quiescence_runtime",
+          115,
+          8067,
+          0.0885404,
+          10.391358100000001
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          243,
+          "iter_legal_actions_from_position",
+          91780,
+          91780,
+          0.19770770000000001,
+          6.212213
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          85689,
+          85689,
+          0.0238685,
+          5.6881073
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1489,
+          "pushed",
+          49754,
+          49754,
+          0.030894500000000002,
+          5.6511019000000005
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          30596,
+          30596,
+          0.010864,
+          5.446682200000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1312,
+          "push",
+          24877,
+          24877,
+          0.017522600000000003,
+          5.4095931
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1361,
+          "_push_impl",
+          24877,
+          24877,
+          0.2988672,
+          5.3880067
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          229,
+          "_is_legal",
+          217472,
+          217472,
+          0.15739150000000002,
+          3.6264078000000004
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          3050,
+          3050,
+          0.004074400000000001,
+          3.5861417
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1101,
+          "legal_actions",
+          27927,
+          27927,
+          0.012503400000000001,
+          3.5838592
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          24877,
+          24877,
+          0.1283907,
+          2.9882445
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          269,
+          "has_legal_action",
+          24877,
+          24877,
+          0.0353426,
+          2.6978492000000003
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          62,
+          "is_square_attacked",
+          242368,
+          242368,
+          1.4745789,
+          2.3801918
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          98,
+          "_expanded_pseudo_actions",
+          245396,
+          245396,
+          0.1083636,
+          2.0611581
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          26,
+          "_piece_actions",
+          27924,
+          27924,
+          0.6610739,
+          1.6122511000000002
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          93,
+          "index_to_square",
+          567640,
+          567640,
+          0.2676732,
+          1.1710274
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          142,
+          "_apply_action_unchecked",
+          242349,
+          242349,
+          0.4541933,
+          1.0590025
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          58,
+          "_shape",
+          567738,
+          567738,
+          0.18043140000000002,
+          0.7463405000000001
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.isinstance>",
+          12125045,
+          12125045,
+          0.7320632,
+          0.7320632
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          24,
+          "anchor_square",
+          253540,
+          253540,
+          0.19591530000000001,
+          0.7292804
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          5586,
+          5586,
+          0.014257100000000002,
+          0.7100817
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          5586,
+          5586,
+          0.04886,
+          0.6635549000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          512,
+          "_legacy_incremental_hash",
+          24877,
+          24877,
+          0.11371070000000001,
+          0.6264965
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1135,
+          "_gave_check",
+          24877,
+          24877,
+          0.0141819,
+          0.5612334
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          96,
+          "is_in_check",
+          24896,
+          24896,
+          0.0158859,
+          0.5364735
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          5586,
+          5586,
+          0.0057315000000000005,
+          0.4266113
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          119,
+          "<genexpr>",
+          16758,
+          16758,
+          0.009236300000000001,
+          0.4208798
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          34,
+          "pseudo_attacks",
+          11172,
+          11172,
+          0.1670637,
+          0.41059290000000004
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          489,
+          "_component_token",
+          156212,
+          156212,
+          0.10326030000000001,
+          0.3862398
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          42,
+          "__post_init__",
+          567645,
+          567645,
+          0.21212720000000002,
+          0.33714510000000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          470,
+          "_uncached_component_token",
+          38117,
+          38117,
+          0.0108366,
+          0.2704393
+        ],
+        [
+          "<external>/__init__.py",
+          183,
+          "dumps",
+          62995,
+          62995,
+          0.061109100000000006,
+          0.2608393
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          426,
+          "_token",
+          38117,
+          38117,
+          0.0697661,
+          0.2596027
+        ],
+        [
+          "<external>/contextlib.py",
+          141,
+          "__exit__",
+          30596,
+          30596,
+          0.012611800000000001,
+          0.2571945
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.hash>",
+          894112,
+          1357713,
+          0.16407860000000002,
+          0.2342814
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          84,
+          "_drop_actions",
+          3071,
+          3071,
+          0.0427536,
+          0.2239626
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          84,
+          "square_to_index",
+          1827682,
+          1827682,
+          0.21954780000000002,
+          0.21956730000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1468,
+          "pop",
+          24877,
+          24877,
+          0.0465647,
+          0.2106143
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          252,
+          "updated",
+          24877,
+          24877,
+          0.033954000000000005,
+          0.18953840000000002
+        ],
+        [
+          "<external>/encoder.py",
+          183,
+          "encode",
+          62995,
+          62995,
+          0.0509367,
+          0.183813
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          60,
+          "noisy_child",
+          21069,
+          21069,
+          0.0281251,
+          0.1744776
+        ],
+        [
+          "~",
+          0,
+          "<method 'add' of 'set' objects>",
+          282985,
+          282985,
+          0.0714168,
+          0.1737827
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1167,
+          "_find_occurrence",
+          74612,
+          74612,
+          0.042579700000000005,
+          0.17261970000000001
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sum>",
+          46831,
+          46831,
+          0.0649914,
+          0.16295500000000002
+        ],
+        [
+          "generic_chess/core/position.py",
+          43,
+          "remove",
+          99767,
+          99767,
+          0.09455590000000001,
+          0.1533977
+        ]
+      ]
+    },
+    {
+      "arm": "new",
+      "case": "classic6_ply16",
+      "decision": {
+        "action": {
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 1
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 0,
+        "capture_qactions": 974,
+        "checking_drop_qactions": 1663,
+        "checking_move_qactions": 264,
+        "choice_kind": "ACTION",
+        "completed_depth": 1,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 10.245701899984851,
+        "evaluation_calls": 5586,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 0.6950768051901832,
+        "in_check_qnodes": 2466,
+        "legal_actions_generated": 39013,
+        "legal_generation_calls": 3050,
+        "legal_generation_seconds": 3.5368463021004573,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 0,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 125,
+        "nonchecking_drop_excluded": 13773,
+        "ordered_moves": 173,
+        "ordering_calls": 5,
+        "ordering_seconds": 0.000820400076918304,
+        "position_key_cache_hits": 118,
+        "position_keys_computed": 123,
+        "principal_variation": [
+          {
+            "from_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          }
+        ],
+        "promotion_qactions": 1349,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 3018,
+        "qnodes": 8067,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 0,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 5,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 24877,
+        "runtime_pushes": 24877,
+        "score": 747,
+        "selective_depth": 1,
+        "stand_pat_cutoffs": 1986,
+        "successor_handles_created": 0,
+        "successors_materialized": 118,
+        "successors_searched": 118,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 118,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.007723900023847818,
+        "time_to_first_legal_action": 0.00382130010984838,
+        "tt_cutoffs": 0,
+        "tt_hits": 1,
+        "tt_probes": 5
+      },
+      "input_sha256": "a58bee150bba2fb6e0c320b24b13e39e48bd6ee27d32f1720678dc2fe618667f",
+      "timing": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 0.6688289948506281,
+          "MOVE_GEN": 0.005424699978902936,
+          "ORDERING": 0.000793800107203424,
+          "QUIESCENCE": 10.205020400113426,
+          "TT_PROBE_STORE": 0.00014809996355324984
+        }
+      },
+      "top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          1,
+          2.3400000000000003e-05,
+          10.2457276
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          1,
+          3.2200000000000003e-05,
+          10.2456712
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          2,
+          120,
+          0.0007256000000000001,
+          10.2399299
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          8,
+          118,
+          0.0002453,
+          10.2397097
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          754,
+          "quiescence",
+          115,
+          115,
+          6.0700000000000005e-05,
+          10.2048416
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          673,
+          "_quiescence_runtime",
+          115,
+          8067,
+          0.0845974,
+          10.204780900000001
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          243,
+          "iter_legal_actions_from_position",
+          91780,
+          91780,
+          0.1927383,
+          6.1240382
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          85689,
+          85689,
+          0.023231400000000003,
+          5.572085700000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1489,
+          "pushed",
+          49754,
+          49754,
+          0.029529100000000003,
+          5.5362929
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          30596,
+          30596,
+          0.010407900000000001,
+          5.3342283
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1312,
+          "push",
+          24877,
+          24877,
+          0.0170387,
+          5.298673900000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1361,
+          "_push_impl",
+          24877,
+          24877,
+          0.2889935,
+          5.277618
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          229,
+          "_is_legal",
+          217472,
+          217472,
+          0.154749,
+          3.5787164000000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          3050,
+          3050,
+          0.0038874,
+          3.5382787
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1101,
+          "legal_actions",
+          27927,
+          27927,
+          0.012139500000000001,
+          3.5362282
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          24877,
+          24877,
+          0.12238310000000001,
+          2.9364439
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          269,
+          "has_legal_action",
+          24877,
+          24877,
+          0.0337526,
+          2.6550749000000002
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          62,
+          "is_square_attacked",
+          242368,
+          242368,
+          1.4477438,
+          2.3498895
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          98,
+          "_expanded_pseudo_actions",
+          245396,
+          245396,
+          0.10439390000000001,
+          2.0315655
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          26,
+          "_piece_actions",
+          27924,
+          27924,
+          0.6495179000000001,
+          1.5926795
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          93,
+          "index_to_square",
+          567640,
+          567640,
+          0.26227700000000004,
+          1.1564982000000001
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          142,
+          "_apply_action_unchecked",
+          242349,
+          242349,
+          0.4468248,
+          1.039353
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          58,
+          "_shape",
+          567738,
+          567738,
+          0.1781982,
+          0.7378517
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.isinstance>",
+          12124569,
+          12124569,
+          0.7272485000000001,
+          0.7272485000000001
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          24,
+          "anchor_square",
+          253540,
+          253540,
+          0.1931021,
+          0.7193240000000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          5586,
+          5586,
+          0.013900000000000001,
+          0.6973069000000001
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          5586,
+          5586,
+          0.0477676,
+          0.6523829
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          512,
+          "_legacy_incremental_hash",
+          24877,
+          24877,
+          0.11385010000000001,
+          0.6103067000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1135,
+          "_gave_check",
+          24877,
+          24877,
+          0.0138166,
+          0.5510390000000001
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          96,
+          "is_in_check",
+          24896,
+          24896,
+          0.0157669,
+          0.5266685
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          5586,
+          5586,
+          0.005551400000000001,
+          0.4192639
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          119,
+          "<genexpr>",
+          16758,
+          16758,
+          0.0089425,
+          0.41371250000000004
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          34,
+          "pseudo_attacks",
+          11172,
+          11172,
+          0.1632134,
+          0.4037084
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          489,
+          "_component_token",
+          156212,
+          156212,
+          0.0993929,
+          0.3713736
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          42,
+          "__post_init__",
+          567645,
+          567645,
+          0.21044710000000003,
+          0.33487140000000004
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          470,
+          "_uncached_component_token",
+          37879,
+          37879,
+          0.010683900000000001,
+          0.2594925
+        ],
+        [
+          "<external>/contextlib.py",
+          141,
+          "__exit__",
+          30596,
+          30596,
+          0.0120221,
+          0.2527142
+        ],
+        [
+          "<external>/__init__.py",
+          183,
+          "dumps",
+          62757,
+          62757,
+          0.058481700000000005,
+          0.2496681
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          426,
+          "_token",
+          37879,
+          37879,
+          0.06688090000000001,
+          0.24880860000000002
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.hash>",
+          894112,
+          1357713,
+          0.1610433,
+          0.23014820000000002
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          84,
+          "_drop_actions",
+          3071,
+          3071,
+          0.0417369,
+          0.2208129
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          84,
+          "square_to_index",
+          1827682,
+          1827682,
+          0.21758170000000002,
+          0.21760110000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1468,
+          "pop",
+          24877,
+          24877,
+          0.0443756,
+          0.20808990000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          252,
+          "updated",
+          24877,
+          24877,
+          0.032610900000000005,
+          0.1843708
+        ],
+        [
+          "<external>/encoder.py",
+          183,
+          "encode",
+          62757,
+          62757,
+          0.049998900000000006,
+          0.1757757
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          60,
+          "noisy_child",
+          21069,
+          21069,
+          0.0272907,
+          0.1725557
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1167,
+          "_find_occurrence",
+          74612,
+          74612,
+          0.0420098,
+          0.17065180000000002
+        ],
+        [
+          "~",
+          0,
+          "<method 'add' of 'set' objects>",
+          282985,
+          282985,
+          0.06951510000000001,
+          0.1703523
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sum>",
+          46831,
+          46831,
+          0.06475500000000001,
+          0.16267630000000002
+        ],
+        [
+          "generic_chess/core/position.py",
+          43,
+          "remove",
+          99767,
+          99767,
+          0.0923089,
+          0.1498084
+        ]
+      ]
+    },
+    {
+      "arm": "old",
+      "case": "classic8_ply24",
+      "decision": {
+        "action": {
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 4
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 0,
+        "capture_qactions": 3400,
+        "checking_drop_qactions": 956,
+        "checking_move_qactions": 109,
+        "choice_kind": "ACTION",
+        "completed_depth": 1,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 25.799232499906793,
+        "evaluation_calls": 6839,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 1.0644467041129246,
+        "in_check_qnodes": 1287,
+        "legal_actions_generated": 103758,
+        "legal_generation_calls": 2767,
+        "legal_generation_seconds": 5.666861100587994,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 0,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 89,
+        "nonchecking_drop_excluded": 51805,
+        "ordered_moves": 115,
+        "ordering_calls": 4,
+        "ordering_seconds": 0.000745900091715157,
+        "position_key_cache_hits": 62,
+        "position_keys_computed": 66,
+        "principal_variation": [
+          {
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          }
+        ],
+        "promotion_qactions": 1123,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 2502,
+        "qnodes": 8103,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 0,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 25,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 71866,
+        "runtime_pushes": 71866,
+        "score": 1894,
+        "selective_depth": 1,
+        "stand_pat_cutoffs": 2838,
+        "successor_handles_created": 0,
+        "successors_materialized": 62,
+        "successors_searched": 62,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 62,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.03247239999473095,
+        "time_to_first_legal_action": 0.006320999935269356,
+        "tt_cutoffs": 0,
+        "tt_hits": 1,
+        "tt_probes": 4
+      },
+      "input_sha256": "bebacd9f723b4b2862fd9180421db79ea6424e04d6bd2b387cbe7a8d96b2e0e0",
+      "timing": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 1.030144801014103,
+          "MOVE_GEN": 0.0023375999880954623,
+          "ORDERING": 0.0007261999417096376,
+          "QUIESCENCE": 25.760633999248967,
+          "TT_PROBE_STORE": 0.00013609998859465122
+        }
+      },
+      "top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          1,
+          2.3400000000000003e-05,
+          25.799259600000003
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          1,
+          3.55e-05,
+          25.799203000000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          2,
+          64,
+          0.00042740000000000003,
+          25.7814616
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          27,
+          62,
+          0.00013470000000000002,
+          25.780958000000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          754,
+          "quiescence",
+          60,
+          60,
+          3.9500000000000005e-05,
+          25.7605322
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          673,
+          "_quiescence_runtime",
+          60,
+          8103,
+          0.1990752,
+          25.7604927
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          182049,
+          182049,
+          0.052011,
+          17.6523589
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1489,
+          "pushed",
+          143732,
+          143732,
+          0.09083100000000001,
+          17.5839681
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          78779,
+          78779,
+          0.0274858,
+          16.983418800000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1312,
+          "push",
+          71866,
+          71866,
+          0.048820300000000004,
+          16.896761100000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1361,
+          "_push_impl",
+          71866,
+          71866,
+          0.9704006000000001,
+          16.8361494
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          243,
+          "iter_legal_actions_from_position",
+          250178,
+          250178,
+          0.34318600000000005,
+          14.160899
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          71866,
+          71866,
+          0.3614043,
+          9.4938918
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          269,
+          "has_legal_action",
+          71866,
+          71866,
+          0.09703010000000001,
+          8.6722126
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          229,
+          "_is_legal",
+          285816,
+          285816,
+          0.22748100000000002,
+          6.8891241
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          98,
+          "_expanded_pseudo_actions",
+          360446,
+          360446,
+          0.20309590000000002,
+          6.389264300000001
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          62,
+          "is_square_attacked",
+          357683,
+          357683,
+          3.7961749,
+          5.930414900000001
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          26,
+          "_piece_actions",
+          74630,
+          74630,
+          2.1369873,
+          5.7348875
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1101,
+          "legal_actions",
+          74633,
+          74633,
+          0.026566600000000003,
+          5.6711634
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          2767,
+          2767,
+          0.0044625,
+          5.668326
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          93,
+          "index_to_square",
+          1570367,
+          1570367,
+          0.7330425,
+          3.1989752
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          58,
+          "_shape",
+          1570511,
+          1570511,
+          0.4946922,
+          2.0311101000000003
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.isinstance>",
+          30073647,
+          30073647,
+          1.8213554,
+          1.8213554
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1135,
+          "_gave_check",
+          71866,
+          71866,
+          0.0401914,
+          1.8019812000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          512,
+          "_legacy_incremental_hash",
+          71866,
+          71866,
+          0.3178865,
+          1.7749418000000001
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          96,
+          "is_in_check",
+          71867,
+          71867,
+          0.046213500000000005,
+          1.7306591
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          142,
+          "_apply_action_unchecked",
+          357682,
+          357682,
+          0.7688754000000001,
+          1.7272965
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          24,
+          "anchor_square",
+          371361,
+          371361,
+          0.39379610000000004,
+          1.1904767
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          489,
+          "_component_token",
+          441258,
+          441258,
+          0.2895413,
+          1.1080927
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          6839,
+          6839,
+          0.018113300000000002,
+          1.0672536000000001
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          6839,
+          6839,
+          0.0785692,
+          1.0087559000000001
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          42,
+          "__post_init__",
+          1570371,
+          1570371,
+          0.5714782,
+          0.9112137
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          60,
+          "noisy_child",
+          69325,
+          69325,
+          0.09380390000000001,
+          0.7929416
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          470,
+          "_uncached_component_token",
+          114802,
+          114802,
+          0.033022,
+          0.7838701
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          426,
+          "_token",
+          114802,
+          114802,
+          0.20369030000000002,
+          0.7508481
+        ],
+        [
+          "<external>/__init__.py",
+          183,
+          "dumps",
+          186669,
+          186669,
+          0.1718665,
+          0.7268412000000001
+        ],
+        [
+          "<external>/contextlib.py",
+          141,
+          "__exit__",
+          78779,
+          78779,
+          0.0335033,
+          0.7218876000000001
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sum>",
+          96286,
+          96286,
+          0.2795876,
+          0.6171685
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1468,
+          "pop",
+          71866,
+          71866,
+          0.1304866,
+          0.596376
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          6839,
+          6839,
+          0.007219400000000001,
+          0.5959230000000001
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          119,
+          "<genexpr>",
+          20517,
+          20517,
+          0.0122203,
+          0.5887036
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          34,
+          "pseudo_attacks",
+          13678,
+          13678,
+          0.2513387,
+          0.5751464000000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          19,
+          "enemy_board_count",
+          66276,
+          66276,
+          0.027133,
+          0.5750181000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          252,
+          "updated",
+          71866,
+          71866,
+          0.0911412,
+          0.5292706
+        ],
+        [
+          "<external>/encoder.py",
+          183,
+          "encode",
+          186669,
+          186669,
+          0.14931940000000002,
+          0.5091799
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1167,
+          "_find_occurrence",
+          215597,
+          215597,
+          0.12052320000000001,
+          0.49024910000000005
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          84,
+          "square_to_index",
+          3949957,
+          3949957,
+          0.47973930000000004,
+          0.4797672
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.hash>",
+          1496663,
+          2256620,
+          0.2816514,
+          0.39911070000000004
+        ],
+        [
+          "~",
+          0,
+          "<method 'add' of 'set' objects>",
+          615217,
+          615217,
+          0.14062570000000002,
+          0.371562
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          342,
+          "append",
+          71891,
+          71891,
+          0.07337650000000001,
+          0.32541020000000004
+        ]
+      ]
+    },
+    {
+      "arm": "new",
+      "case": "classic8_ply24",
+      "decision": {
+        "action": {
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 4
+          }
+        },
+        "aspiration_fail_high": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_researches": 0,
+        "beta_cutoffs": 0,
+        "capture_qactions": 3400,
+        "checking_drop_qactions": 956,
+        "checking_move_qactions": 109,
+        "choice_kind": "ACTION",
+        "completed_depth": 1,
+        "countermove_hits": 0,
+        "declaration": null,
+        "declaration_checks": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "declaration_win_options": 0,
+        "elapsed_seconds": 25.77434240002185,
+        "evaluation_calls": 6839,
+        "evaluation_profile_cache_hit": false,
+        "evaluation_seconds": 1.0682981997961178,
+        "in_check_qnodes": 1287,
+        "legal_actions_generated": 103758,
+        "legal_generation_calls": 2767,
+        "legal_generation_seconds": 5.662577100098133,
+        "mate_pruning_cutoffs": 0,
+        "material_change_qactions": 0,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "native_legality_calls": 0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "nodes": 89,
+        "nonchecking_drop_excluded": 51805,
+        "ordered_moves": 115,
+        "ordering_calls": 4,
+        "ordering_seconds": 0.0007597999647259712,
+        "position_key_cache_hits": 62,
+        "position_keys_computed": 66,
+        "principal_variation": [
+          {
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          }
+        ],
+        "promotion_qactions": 1123,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "qdepth_cutoffs": 2502,
+        "qnodes": 8103,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "result_check_hard_qdepth": 8,
+        "result_ordinary_qdepth": 0,
+        "result_source": "main_iteration",
+        "root_scan_nodes": 25,
+        "root_scan_used_fallback": false,
+        "runtime_depth_balanced": true,
+        "runtime_pops": 71866,
+        "runtime_pushes": 71866,
+        "score": 1894,
+        "selective_depth": 1,
+        "stand_pat_cutoffs": 2838,
+        "successor_handles_created": 0,
+        "successors_materialized": 62,
+        "successors_searched": 62,
+        "terminal_cache_hits": 0,
+        "terminal_results_computed": 62,
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.03323719999752939,
+        "time_to_first_legal_action": 0.006054600002244115,
+        "tt_cutoffs": 0,
+        "tt_hits": 1,
+        "tt_probes": 4
+      },
+      "input_sha256": "bebacd9f723b4b2862fd9180421db79ea6424e04d6bd2b387cbe7a8d96b2e0e0",
+      "timing": {
+        "counts": {},
+        "times": {
+          "EVALUATION": 1.0335288976784796,
+          "MOVE_GEN": 0.002324800007045269,
+          "ORDERING": 0.0007381000323221087,
+          "QUIESCENCE": 25.735472900094464,
+          "TT_PROBE_STORE": 0.0001368001103401184
+        }
+      },
+      "top_cumulative": [
+        [
+          "generic_chess/ai/alphabeta/player.py",
+          145,
+          "choose_action",
+          1,
+          1,
+          2.2800000000000002e-05,
+          25.7743675
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          1087,
+          "run_root_search",
+          1,
+          1,
+          3.9e-05,
+          25.774312700000003
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          325,
+          "negamax",
+          2,
+          64,
+          0.0004267,
+          25.756253100000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          550,
+          "child_search",
+          27,
+          62,
+          0.00013240000000000002,
+          25.7557185
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          754,
+          "quiescence",
+          60,
+          60,
+          3.8700000000000006e-05,
+          25.735370200000002
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          673,
+          "_quiescence_runtime",
+          60,
+          8103,
+          0.19977430000000002,
+          25.7353315
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.next>",
+          182049,
+          182049,
+          0.052174000000000005,
+          17.628945400000003
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1489,
+          "pushed",
+          143732,
+          143732,
+          0.0903594,
+          17.5602714
+        ],
+        [
+          "<external>/contextlib.py",
+          132,
+          "__enter__",
+          78779,
+          78779,
+          0.0278989,
+          16.9605457
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1312,
+          "push",
+          71866,
+          71866,
+          0.0487024,
+          16.8737344
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1361,
+          "_push_impl",
+          71866,
+          71866,
+          0.9704653000000001,
+          16.813186
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          243,
+          "iter_legal_actions_from_position",
+          250178,
+          250178,
+          0.3432336,
+          14.132792
+        ],
+        [
+          "generic_chess/core/terminal.py",
+          423,
+          "terminal_from_search_runtime",
+          71866,
+          71866,
+          0.3579233,
+          9.4695496
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          269,
+          "has_legal_action",
+          71866,
+          71866,
+          0.09799390000000001,
+          8.6495957
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          229,
+          "_is_legal",
+          285816,
+          285816,
+          0.2259699,
+          6.8752984
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          98,
+          "_expanded_pseudo_actions",
+          360446,
+          360446,
+          0.203631,
+          6.374404800000001
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          62,
+          "is_square_attacked",
+          357683,
+          357683,
+          3.7770782,
+          5.9160253
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          26,
+          "_piece_actions",
+          74630,
+          74630,
+          2.1158281000000003,
+          5.7194172000000005
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1101,
+          "legal_actions",
+          74633,
+          74633,
+          0.026540300000000003,
+          5.666945200000001
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          277,
+          "_runtime_legal_actions",
+          2767,
+          2767,
+          0.0043777,
+          5.6639927000000005
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          93,
+          "index_to_square",
+          1570367,
+          1570367,
+          0.7338684000000001,
+          3.1962582000000004
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          58,
+          "_shape",
+          1570511,
+          1570511,
+          0.4884701,
+          2.0265217
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.isinstance>",
+          30072989,
+          30072989,
+          1.8261647,
+          1.8261647
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1135,
+          "_gave_check",
+          71866,
+          71866,
+          0.040181800000000004,
+          1.7951237000000002
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          512,
+          "_legacy_incremental_hash",
+          71866,
+          71866,
+          0.3175542,
+          1.7728552000000002
+        ],
+        [
+          "generic_chess/core/movegen.py",
+          142,
+          "_apply_action_unchecked",
+          357682,
+          357682,
+          0.7657669,
+          1.7243157
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          96,
+          "is_in_check",
+          71867,
+          71867,
+          0.046455300000000005,
+          1.7237355
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          24,
+          "anchor_square",
+          371361,
+          371361,
+          0.393162,
+          1.1871396
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          489,
+          "_component_token",
+          441258,
+          441258,
+          0.28954840000000004,
+          1.105814
+        ],
+        [
+          "generic_chess/ai/alphabeta/search.py",
+          204,
+          "_evaluate",
+          6839,
+          6839,
+          0.0183139,
+          1.0711338000000001
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          84,
+          "evaluate",
+          6839,
+          6839,
+          0.0787004,
+          1.0121396
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          42,
+          "__post_init__",
+          1570371,
+          1570371,
+          0.5723376,
+          0.9118507
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          60,
+          "noisy_child",
+          69325,
+          69325,
+          0.09351630000000001,
+          0.7925663000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          470,
+          "_uncached_component_token",
+          114473,
+          114473,
+          0.0327369,
+          0.7816499
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          426,
+          "_token",
+          114473,
+          114473,
+          0.2044909,
+          0.748913
+        ],
+        [
+          "<external>/__init__.py",
+          183,
+          "dumps",
+          186340,
+          186340,
+          0.1752025,
+          0.7307258000000001
+        ],
+        [
+          "<external>/contextlib.py",
+          141,
+          "__exit__",
+          78779,
+          78779,
+          0.0336511,
+          0.7218915
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.sum>",
+          96286,
+          96286,
+          0.2799724,
+          0.6164773
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          118,
+          "_attack_maps",
+          6839,
+          6839,
+          0.0074795,
+          0.5970461
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1468,
+          "pop",
+          71866,
+          71866,
+          0.129188,
+          0.5961776000000001
+        ],
+        [
+          "generic_chess/ai/evaluation/evaluator.py",
+          119,
+          "<genexpr>",
+          20517,
+          20517,
+          0.012309400000000002,
+          0.5895666
+        ],
+        [
+          "generic_chess/core/attacks.py",
+          34,
+          "pseudo_attacks",
+          13678,
+          13678,
+          0.2513471,
+          0.5759063
+        ],
+        [
+          "generic_chess/ai/alphabeta/quiescence.py",
+          19,
+          "enemy_board_count",
+          66276,
+          66276,
+          0.0277814,
+          0.5751627
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          252,
+          "updated",
+          71866,
+          71866,
+          0.0913548,
+          0.5343921
+        ],
+        [
+          "<external>/encoder.py",
+          183,
+          "encode",
+          186340,
+          186340,
+          0.14874130000000002,
+          0.5099119000000001
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          1167,
+          "_find_occurrence",
+          215597,
+          215597,
+          0.1204443,
+          0.4917016
+        ],
+        [
+          "generic_chess/core/coordinates.py",
+          84,
+          "square_to_index",
+          3949957,
+          3949957,
+          0.48387460000000004,
+          0.48390310000000003
+        ],
+        [
+          "~",
+          0,
+          "<built-in method builtins.hash>",
+          1496663,
+          2256620,
+          0.2819452,
+          0.39939620000000003
+        ],
+        [
+          "~",
+          0,
+          "<method 'add' of 'set' objects>",
+          615217,
+          615217,
+          0.1407431,
+          0.37231440000000005
+        ],
+        [
+          "generic_chess/core/search_runtime.py",
+          342,
+          "append",
+          71891,
+          71891,
+          0.07430250000000001,
+          0.32565940000000004
+        ]
+      ]
+    }
+  ],
+  "status": "PASS"
+}

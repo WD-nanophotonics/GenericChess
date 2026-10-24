@@ -1,0 +1,3985 @@
+{
+  "cases": [
+    {
+      "execution_api": "compile_ruleset",
+      "expected_WDL": null,
+      "input_sha256": "a58bee150bba2fb6e0c320b24b13e39e48bd6ee27d32f1720678dc2fe618667f",
+      "key": "classic6_ply16",
+      "ply": 16,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              4
+            ]
+          },
+          {
+            "from": [
+              4,
+              5
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              4
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              4,
+              3
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": "X",
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              5
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": "B",
+            "to": [
+              4,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": "X",
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              5,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "82cd8ce54fcca777ba373b88511f1dd34cf724dd71d21d727fd3d456c7c6c168",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 6,
+        "drop_allowed": {
+          "A": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "B": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "P": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "X": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 512,
+        "metadata": {
+          "generator": "generic_chess.generation",
+          "movement_symmetry": "bilateral",
+          "seed": 7,
+          "setup_preset": "classic_like"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "King",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": true,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -3,
+                  3
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  3,
+                  3
+                ]
+              }
+            ],
+            "name": "Pawn",
+            "promotion_target_ids": [
+              "X",
+              "B"
+            ],
+            "type_id": "P"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  1,
+                  -2
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  -1,
+                  -2
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Companion",
+            "promotion_target_ids": [],
+            "type_id": "X"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": true,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -3,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "name": "Piece A",
+            "promotion_target_ids": [
+              "X",
+              "B"
+            ],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  -1,
+                  -2
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  1,
+                  -2
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  -1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Piece B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {
+          "A": [
+            [
+              [
+                0,
+                4,
+                2,
+                5
+              ],
+              [
+                0,
+                4,
+                3,
+                5
+              ],
+              [
+                1,
+                4,
+                3,
+                5
+              ],
+              [
+                1,
+                4,
+                4,
+                5
+              ],
+              [
+                2,
+                4,
+                0,
+                5
+              ],
+              [
+                2,
+                4,
+                4,
+                5
+              ],
+              [
+                2,
+                4,
+                5,
+                5
+              ],
+              [
+                3,
+                4,
+                0,
+                5
+              ],
+              [
+                3,
+                4,
+                1,
+                5
+              ],
+              [
+                3,
+                4,
+                5,
+                5
+              ],
+              [
+                4,
+                4,
+                1,
+                5
+              ],
+              [
+                4,
+                4,
+                2,
+                5
+              ],
+              [
+                5,
+                4,
+                2,
+                5
+              ],
+              [
+                5,
+                4,
+                3,
+                5
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                1,
+                3,
+                0
+              ],
+              [
+                1,
+                1,
+                3,
+                0
+              ],
+              [
+                1,
+                1,
+                4,
+                0
+              ],
+              [
+                2,
+                1,
+                0,
+                0
+              ],
+              [
+                2,
+                1,
+                4,
+                0
+              ],
+              [
+                2,
+                1,
+                5,
+                0
+              ],
+              [
+                3,
+                1,
+                0,
+                0
+              ],
+              [
+                3,
+                1,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                5,
+                0
+              ],
+              [
+                4,
+                1,
+                1,
+                0
+              ],
+              [
+                4,
+                1,
+                2,
+                0
+              ],
+              [
+                5,
+                1,
+                2,
+                0
+              ],
+              [
+                5,
+                1,
+                3,
+                0
+              ]
+            ]
+          ],
+          "P": [
+            [
+              [
+                0,
+                0,
+                3,
+                3
+              ],
+              [
+                0,
+                1,
+                3,
+                4
+              ],
+              [
+                0,
+                2,
+                3,
+                5
+              ],
+              [
+                0,
+                3,
+                1,
+                3
+              ],
+              [
+                0,
+                4,
+                1,
+                4
+              ],
+              [
+                0,
+                5,
+                1,
+                5
+              ],
+              [
+                1,
+                0,
+                4,
+                3
+              ],
+              [
+                1,
+                1,
+                4,
+                4
+              ],
+              [
+                1,
+                2,
+                4,
+                5
+              ],
+              [
+                1,
+                3,
+                0,
+                3
+              ],
+              [
+                1,
+                3,
+                2,
+                3
+              ],
+              [
+                1,
+                4,
+                0,
+                4
+              ],
+              [
+                1,
+                4,
+                2,
+                4
+              ],
+              [
+                1,
+                5,
+                0,
+                5
+              ],
+              [
+                1,
+                5,
+                2,
+                5
+              ],
+              [
+                2,
+                0,
+                5,
+                3
+              ],
+              [
+                2,
+                1,
+                5,
+                4
+              ],
+              [
+                2,
+                2,
+                5,
+                5
+              ],
+              [
+                2,
+                3,
+                1,
+                3
+              ],
+              [
+                2,
+                3,
+                3,
+                3
+              ],
+              [
+                2,
+                4,
+                1,
+                4
+              ],
+              [
+                2,
+                4,
+                3,
+                4
+              ],
+              [
+                2,
+                5,
+                1,
+                5
+              ],
+              [
+                2,
+                5,
+                3,
+                5
+              ],
+              [
+                3,
+                0,
+                0,
+                3
+              ],
+              [
+                3,
+                1,
+                0,
+                4
+              ],
+              [
+                3,
+                2,
+                0,
+                5
+              ],
+              [
+                3,
+                3,
+                2,
+                3
+              ],
+              [
+                3,
+                3,
+                4,
+                3
+              ],
+              [
+                3,
+                4,
+                2,
+                4
+              ],
+              [
+                3,
+                4,
+                4,
+                4
+              ],
+              [
+                3,
+                5,
+                2,
+                5
+              ],
+              [
+                3,
+                5,
+                4,
+                5
+              ],
+              [
+                4,
+                0,
+                1,
+                3
+              ],
+              [
+                4,
+                1,
+                1,
+                4
+              ],
+              [
+                4,
+                2,
+                1,
+                5
+              ],
+              [
+                4,
+                3,
+                3,
+                3
+              ],
+              [
+                4,
+                3,
+                5,
+                3
+              ],
+              [
+                4,
+                4,
+                3,
+                4
+              ],
+              [
+                4,
+                4,
+                5,
+                4
+              ],
+              [
+                4,
+                5,
+                3,
+                5
+              ],
+              [
+                4,
+                5,
+                5,
+                5
+              ],
+              [
+                5,
+                0,
+                2,
+                3
+              ],
+              [
+                5,
+                1,
+                2,
+                4
+              ],
+              [
+                5,
+                2,
+                2,
+                5
+              ],
+              [
+                5,
+                3,
+                4,
+                3
+              ],
+              [
+                5,
+                4,
+                4,
+                4
+              ],
+              [
+                5,
+                5,
+                4,
+                5
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                3,
+                3,
+                0
+              ],
+              [
+                0,
+                4,
+                3,
+                1
+              ],
+              [
+                0,
+                5,
+                3,
+                2
+              ],
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                2,
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                2,
+                1
+              ],
+              [
+                1,
+                2,
+                0,
+                2
+              ],
+              [
+                1,
+                2,
+                2,
+                2
+              ],
+              [
+                1,
+                3,
+                4,
+                0
+              ],
+              [
+                1,
+                4,
+                4,
+                1
+              ],
+              [
+                1,
+                5,
+                4,
+                2
+              ],
+              [
+                2,
+                0,
+                1,
+                0
+              ],
+              [
+                2,
+                0,
+                3,
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                1
+              ],
+              [
+                2,
+                1,
+                3,
+                1
+              ],
+              [
+                2,
+                2,
+                1,
+                2
+              ],
+              [
+                2,
+                2,
+                3,
+                2
+              ],
+              [
+                2,
+                3,
+                5,
+                0
+              ],
+              [
+                2,
+                4,
+                5,
+                1
+              ],
+              [
+                2,
+                5,
+                5,
+                2
+              ],
+              [
+                3,
+                0,
+                2,
+                0
+              ],
+              [
+                3,
+                0,
+                4,
+                0
+              ],
+              [
+                3,
+                1,
+                2,
+                1
+              ],
+              [
+                3,
+                1,
+                4,
+                1
+              ],
+              [
+                3,
+                2,
+                2,
+                2
+              ],
+              [
+                3,
+                2,
+                4,
+                2
+              ],
+              [
+                3,
+                3,
+                0,
+                0
+              ],
+              [
+                3,
+                4,
+                0,
+                1
+              ],
+              [
+                3,
+                5,
+                0,
+                2
+              ],
+              [
+                4,
+                0,
+                3,
+                0
+              ],
+              [
+                4,
+                0,
+                5,
+                0
+              ],
+              [
+                4,
+                1,
+                3,
+                1
+              ],
+              [
+                4,
+                1,
+                5,
+                1
+              ],
+              [
+                4,
+                2,
+                3,
+                2
+              ],
+              [
+                4,
+                2,
+                5,
+                2
+              ],
+              [
+                4,
+                3,
+                1,
+                0
+              ],
+              [
+                4,
+                4,
+                1,
+                1
+              ],
+              [
+                4,
+                5,
+                1,
+                2
+              ],
+              [
+                5,
+                0,
+                4,
+                0
+              ],
+              [
+                5,
+                1,
+                4,
+                1
+              ],
+              [
+                5,
+                2,
+                4,
+                2
+              ],
+              [
+                5,
+                3,
+                2,
+                0
+              ],
+              [
+                5,
+                4,
+                2,
+                1
+              ],
+              [
+                5,
+                5,
+                2,
+                2
+              ]
+            ]
+          ]
+        },
+        "promotion_forced": {
+          "A": [
+            [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                5
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                5,
+                0
+              ]
+            ]
+          ],
+          "P": [
+            [],
+            []
+          ]
+        },
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "side": 0,
+      "source": "existing DEFAULT_SUITE/classic6_ply16"
+    },
+    {
+      "execution_api": "compile_ruleset",
+      "expected_WDL": null,
+      "input_sha256": "bebacd9f723b4b2862fd9180421db79ea6424e04d6bd2b387cbe7a8d96b2e0e0",
+      "key": "classic8_ply24",
+      "ply": 24,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              6,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              7,
+              3
+            ]
+          },
+          {
+            "from": [
+              6,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              5
+            ]
+          },
+          {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              5
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              5
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              4
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          {
+            "from": [
+              5,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              7,
+              5
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              2
+            ]
+          },
+          {
+            "from": [
+              6,
+              7
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              7,
+              4
+            ]
+          },
+          {
+            "from": [
+              6,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          {
+            "from": [
+              7,
+              7
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              6
+            ]
+          },
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              4,
+              7
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              6
+            ]
+          },
+          {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          {
+            "from": [
+              2,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          {
+            "from": [
+              5,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              7
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "from": [
+              7,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              1
+            ]
+          },
+          {
+            "from": [
+              5,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d8acd4028054f76bc294779cc04ea72d6f2ca98c97db4d608cb8423dd363f9d2",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 8,
+        "drop_allowed": {
+          "A": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "B": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "C": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "P": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          "X": [
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "X",
+              "current_type_id": "X",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 512,
+        "metadata": {
+          "generator": "generic_chess.generation",
+          "movement_symmetry": "bilateral",
+          "seed": 42,
+          "setup_preset": "classic_like"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "King",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": true,
+            "movement_atoms": [
+              {
+                "direction": [
+                  2,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  -2,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Pawn",
+            "promotion_target_ids": [
+              "X",
+              "B",
+              "C"
+            ],
+            "type_id": "P"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  3
+                ]
+              }
+            ],
+            "name": "Companion",
+            "promotion_target_ids": [],
+            "type_id": "X"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": true,
+            "movement_atoms": [
+              {
+                "direction": [
+                  2,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  -2,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Piece A",
+            "promotion_target_ids": [
+              "X",
+              "B",
+              "C"
+            ],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  3
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  3,
+                  -3
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -3,
+                  -3
+                ]
+              }
+            ],
+            "name": "Piece B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  -1,
+                  -1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  1,
+                  -1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  -2,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "direction": [
+                  2,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Piece C",
+            "promotion_target_ids": [],
+            "type_id": "C"
+          }
+        ],
+        "promotion_allowed": {
+          "A": [
+            [
+              [
+                0,
+                4,
+                6,
+                7
+              ],
+              [
+                0,
+                5,
+                4,
+                7
+              ],
+              [
+                0,
+                6,
+                2,
+                7
+              ],
+              [
+                1,
+                4,
+                7,
+                7
+              ],
+              [
+                1,
+                5,
+                5,
+                7
+              ],
+              [
+                1,
+                6,
+                3,
+                7
+              ],
+              [
+                2,
+                5,
+                6,
+                7
+              ],
+              [
+                2,
+                6,
+                0,
+                7
+              ],
+              [
+                2,
+                6,
+                4,
+                7
+              ],
+              [
+                3,
+                5,
+                7,
+                7
+              ],
+              [
+                3,
+                6,
+                1,
+                7
+              ],
+              [
+                3,
+                6,
+                5,
+                7
+              ],
+              [
+                4,
+                5,
+                0,
+                7
+              ],
+              [
+                4,
+                6,
+                2,
+                7
+              ],
+              [
+                4,
+                6,
+                6,
+                7
+              ],
+              [
+                5,
+                5,
+                1,
+                7
+              ],
+              [
+                5,
+                6,
+                3,
+                7
+              ],
+              [
+                5,
+                6,
+                7,
+                7
+              ],
+              [
+                6,
+                4,
+                0,
+                7
+              ],
+              [
+                6,
+                5,
+                2,
+                7
+              ],
+              [
+                6,
+                6,
+                4,
+                7
+              ],
+              [
+                7,
+                4,
+                1,
+                7
+              ],
+              [
+                7,
+                5,
+                3,
+                7
+              ],
+              [
+                7,
+                6,
+                5,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                2,
+                4,
+                0
+              ],
+              [
+                0,
+                3,
+                6,
+                0
+              ],
+              [
+                1,
+                1,
+                3,
+                0
+              ],
+              [
+                1,
+                2,
+                5,
+                0
+              ],
+              [
+                1,
+                3,
+                7,
+                0
+              ],
+              [
+                2,
+                1,
+                0,
+                0
+              ],
+              [
+                2,
+                1,
+                4,
+                0
+              ],
+              [
+                2,
+                2,
+                6,
+                0
+              ],
+              [
+                3,
+                1,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                5,
+                0
+              ],
+              [
+                3,
+                2,
+                7,
+                0
+              ],
+              [
+                4,
+                1,
+                2,
+                0
+              ],
+              [
+                4,
+                1,
+                6,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                5,
+                1,
+                3,
+                0
+              ],
+              [
+                5,
+                1,
+                7,
+                0
+              ],
+              [
+                5,
+                2,
+                1,
+                0
+              ],
+              [
+                6,
+                1,
+                4,
+                0
+              ],
+              [
+                6,
+                2,
+                2,
+                0
+              ],
+              [
+                6,
+                3,
+                0,
+                0
+              ],
+              [
+                7,
+                1,
+                5,
+                0
+              ],
+              [
+                7,
+                2,
+                3,
+                0
+              ],
+              [
+                7,
+                3,
+                1,
+                0
+              ]
+            ]
+          ],
+          "P": [
+            [
+              [
+                0,
+                4,
+                6,
+                7
+              ],
+              [
+                0,
+                5,
+                4,
+                7
+              ],
+              [
+                0,
+                6,
+                2,
+                7
+              ],
+              [
+                1,
+                4,
+                7,
+                7
+              ],
+              [
+                1,
+                5,
+                5,
+                7
+              ],
+              [
+                1,
+                6,
+                3,
+                7
+              ],
+              [
+                2,
+                5,
+                6,
+                7
+              ],
+              [
+                2,
+                6,
+                0,
+                7
+              ],
+              [
+                2,
+                6,
+                4,
+                7
+              ],
+              [
+                3,
+                5,
+                7,
+                7
+              ],
+              [
+                3,
+                6,
+                1,
+                7
+              ],
+              [
+                3,
+                6,
+                5,
+                7
+              ],
+              [
+                4,
+                5,
+                0,
+                7
+              ],
+              [
+                4,
+                6,
+                2,
+                7
+              ],
+              [
+                4,
+                6,
+                6,
+                7
+              ],
+              [
+                5,
+                5,
+                1,
+                7
+              ],
+              [
+                5,
+                6,
+                3,
+                7
+              ],
+              [
+                5,
+                6,
+                7,
+                7
+              ],
+              [
+                6,
+                4,
+                0,
+                7
+              ],
+              [
+                6,
+                5,
+                2,
+                7
+              ],
+              [
+                6,
+                6,
+                4,
+                7
+              ],
+              [
+                7,
+                4,
+                1,
+                7
+              ],
+              [
+                7,
+                5,
+                3,
+                7
+              ],
+              [
+                7,
+                6,
+                5,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                2,
+                4,
+                0
+              ],
+              [
+                0,
+                3,
+                6,
+                0
+              ],
+              [
+                1,
+                1,
+                3,
+                0
+              ],
+              [
+                1,
+                2,
+                5,
+                0
+              ],
+              [
+                1,
+                3,
+                7,
+                0
+              ],
+              [
+                2,
+                1,
+                0,
+                0
+              ],
+              [
+                2,
+                1,
+                4,
+                0
+              ],
+              [
+                2,
+                2,
+                6,
+                0
+              ],
+              [
+                3,
+                1,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                5,
+                0
+              ],
+              [
+                3,
+                2,
+                7,
+                0
+              ],
+              [
+                4,
+                1,
+                2,
+                0
+              ],
+              [
+                4,
+                1,
+                6,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                5,
+                1,
+                3,
+                0
+              ],
+              [
+                5,
+                1,
+                7,
+                0
+              ],
+              [
+                5,
+                2,
+                1,
+                0
+              ],
+              [
+                6,
+                1,
+                4,
+                0
+              ],
+              [
+                6,
+                2,
+                2,
+                0
+              ],
+              [
+                6,
+                3,
+                0,
+                0
+              ],
+              [
+                7,
+                1,
+                5,
+                0
+              ],
+              [
+                7,
+                2,
+                3,
+                0
+              ],
+              [
+                7,
+                3,
+                1,
+                0
+              ]
+            ]
+          ]
+        },
+        "promotion_forced": {
+          "A": [
+            [
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                7
+              ],
+              [
+                3,
+                7
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                5,
+                7
+              ],
+              [
+                6,
+                7
+              ],
+              [
+                7,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                5,
+                0
+              ],
+              [
+                6,
+                0
+              ],
+              [
+                7,
+                0
+              ]
+            ]
+          ],
+          "P": [
+            [
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                7
+              ],
+              [
+                3,
+                7
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                5,
+                7
+              ],
+              [
+                6,
+                7
+              ],
+              [
+                7,
+                7
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                5,
+                0
+              ],
+              [
+                6,
+                0
+              ],
+              [
+                7,
+                0
+              ]
+            ]
+          ]
+        },
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "side": 0,
+      "source": "existing DEFAULT_SUITE/classic8_ply24"
+    }
+  ],
+  "immediate_action": "Read existing adapter/compiler signatures and support boundaries first; select ONE supported predicate or retain Core decline. No blind semantic lowering, action deduplication, Position-only key, Q-tree change or default activation.",
+  "new_Core_queries": 0,
+  "new_Player_queries": 0,
+  "prediction": "Cost matters only if complete payload/import+predicate cost beats measuredCore; require exact fullrule/record,legal/terminal/clock parity and stop any mismatch.",
+  "question": "Can existing supported Native physical availability/attack helpers reduce the actual Legacybenchmark cost without changing legacy action/history representation?",
+  "source_inputs_sha256": "538db06a78eb83a31190ef5658da87456aa7a366cbc670d4972efe5e40011bf4",
+  "stage": "Existing-source capability inventory only; no claimed Native API exists until checked. Newexperiment needs own honest inclusive forecast; oldcapsneverrefilled.",
+  "status": "PREPARED_NOT_COMPILED_OR_EXECUTED"
+}

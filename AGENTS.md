@@ -30,18 +30,18 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-24
 
-- User direction review2026-10-24: structural cross-rule P0/P1 research is
-  PRIMARY's current first priority: how complete rule changes affect analytic
-  structure, strategic regions, WDL/key choices and distinct complexity measures,
-  under explicit common inputs/history/clocks. Price/dynamic/tie/player-learning
-  diagnostics are secondary and bounded by a concrete structural question.
-  The2026-10-22 pure-Leaper -> forward portraits -> inverse sequence is superseded
-  as an automatic work order; pure Leapers remain the current scoped domain,
-  inverse design/large training are downstream reserves, not next-stage promises.
-  Current evidence, execution order and reconsideration conditions live only in
-  LOCAL_MAINLINE.md. This adopts Chat1792806445/1792808411 under the user's direct
-  request to review/unify the direction; it does not make remote comments new
-  authority, activate defaults, change caps or transfer AUX ownership.
+- Direction adoption2026-10-24: under the user's instruction to use latest Chat
+  direction and continuing GenericChess authorization, adopt Chat1792834286's
+  practical generic ABP search performance/depth/strength priority. First measure
+  fixed full-rule/history baselines, then ONE evidence-selected existing switch
+  or hot-path change with correctness and same-node/same-wall controls. Earlier
+  P0/P1 geometry, B1 tempo, inverse, material TD and NNUE are preserved conditional
+  reserves, not automatic tasks. Reason: recent certificates did not improve the
+  actual search hot path; useful decisions per total time are now the Main.
+  Claude1792838901 withdraws Position-only TT advice; keep exact history/clock
+  semantics. Remote reports AUX paused; this checkout does not verify/change its
+  state, schedule or tasks and does not depend on new AUX service. Only PRIMARY
+  works here; no replacement worker. Actual order/evidence stays in MAINLINE.
 
 - User correction2026-10-24: both existing roles now recur every180minutes,
   superseding the earlier120minute interval. The user explicitly requested both

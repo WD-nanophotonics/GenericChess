@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-24T11:18:05.350656+00:00",
+  "changed_premise": "Small scoped roots show exact-map CPU gains but defaultQ4 promotioncase little gain; test whether this observed implementation change transfers to existing larger benchmark roots, not another structural/price panel.",
+  "controls": "2counterbalanced repeats,defaultQ4,depth3/node65536(safety60s)/wall8s,coldTT with persistent provider action-conversion cache; exact old/newmethod only. Setup separately retained.",
+  "expected_minutes": [
+    5,
+    15
+  ],
+  "fixed_sources": [
+    "DEFAULT_SUITE classic6_ply16 seed7",
+    "DEFAULT_SUITE classic8_ply24 seed42"
+  ],
+  "maximum_queries": 24,
+  "same_original_deadline": "2026-10-24T12:41:29.628081+00:00",
+  "source_sha256": "2169e3395536ad5a9e0dcf5d3bcb457ceaf0f7e51b5f4f9f97771c9e98ab01d5",
+  "status": "PREPARED_NOT_EXECUTED",
+  "stop": "Any deterministic correctness difference preserve/diagnose; unsupported fixture stays failed; no budget change or default activation."
+}

@@ -156,8 +156,8 @@ class RuntimeCountsSnapshot:
     """Persistent repetition counts with an order-independent fast digest.
 
     Updates retain a parent pointer, so pop restores the parent in O(1).  The
-    exact map is materialized only for explicit inspection or a digest
-    collision; normal TT hashing/probing uses only ``digest``.
+    exact map is materialized for inspection or exact equality after matching
+    digests (including TT hits); hashing uses only ``digest``.
     """
 
     parent: "RuntimeCountsSnapshot | None"
@@ -213,16 +213,23 @@ class RuntimeCountsSnapshot:
         return cls(None, None, 0, 0, digest, raw)
 
     def items(self) -> tuple[tuple[object, int], ...]:
-        values: dict[object, int] = {}
-        if self.parent is None:
-            values.update(dict(self.root_items))
-        else:
-            values.update(dict(self.parent.items()))
-            if self.key is not None:
-                if self.count:
-                    values[self.key] = self.count
+        # A matching digest still needs the exact map (including real TT hits).
+        # Rebuilding/sorting every ancestor makes that check quadratic in path
+        # length and repeatedly formats full Position identities. Apply the
+        # same persistent updates once, oldest first, then keep the canonical
+        # sort and exact equality guard unchanged.
+        path = []
+        ancestor = self
+        while ancestor.parent is not None:
+            path.append(ancestor)
+            ancestor = ancestor.parent
+        values: dict[object, int] = dict(ancestor.root_items)
+        for update in reversed(path):
+            if update.key is not None:
+                if update.count:
+                    values[update.key] = update.count
                 else:
-                    values.pop(self.key, None)
+                    values.pop(update.key, None)
         return tuple(sorted(values.items(), key=lambda item: _identity_sort_key(item[0])))
 
     def count_for(self, key: object) -> int:

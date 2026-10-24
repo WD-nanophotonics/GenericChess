@@ -12,11 +12,11 @@ Read LOCAL_MAINLINE.md's priority/order before selecting any research command.
 This manual explains HOW to execute a chosen task; the dated caller/cost/price
 examples below are conditional contracts and historical defect lessons, NOT a
 queue to run, a requirement to refill panels or an authority to restore old data.
-PRIMARY now prioritizes cross-rule structural counterfactuals; bounded evaluator
-or learning diagnostics are secondary. Do not infer a next experiment from an
+PRIMARY now prioritizes measured ABP search performance/depth/decision quality;
+older structural counterfactuals and learning proposals are conditional reserves. Do not infer a next experiment from an
 available script, prepared input, an unfinished old report or a Backup entry.
 A closed experiment is evidence, not a compulsory next-stage training/inverse job.
-Use LOCAL_MAINLINE.md's single future-ideas section for conditional compression/
+Use LOCAL_MAINLINE.md's Preserved reserves section for conditional compression/
 ordering/teacher proposals; do not create a second live plan or activate training
 from a remote suggestion. A TT key change needs correctness review separately
 from an ordering-only comparison.

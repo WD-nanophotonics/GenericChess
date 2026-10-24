@@ -1,0 +1,30 @@
+{
+  "actual_source_sha256": "6df66315588acb1ef89d0260c17e82db513a5213a10acf4eea2c2f6543d87228",
+  "case_budgets_expectations_unchanged": true,
+  "frozen_plan": {
+    "TT": "persist perplayer within onegame, freshplayers eachgame",
+    "at": "2026-10-24T11:18:05.350656+00:00",
+    "caller_max_plies": 128,
+    "cases": [
+      "six4_0",
+      "six4_1",
+      "promo6_0",
+      "classic6_ply16"
+    ],
+    "classification": "Only real terminal rewarded; caller128/truncation remains unresolved, fallback/timinginvalid excluded. No random opponent.",
+    "expected_minutes": [
+      5,
+      30
+    ],
+    "games": 8,
+    "hard_stop": "Original totaldeadline, no replays/resume or sourcecapextension; unfinished slots UNKNOWN. Only launch after currentA/B andtransfer close andremainingcostfits.",
+    "q_policy": "actual public SearchLimits default Q4/hard8 via existing play_game",
+    "roles": "candidate bothseats per exposed fullinput; four input prefixes overlap families, no IIDstrength or humanlevel inference",
+    "same_original_deadline": "2026-10-24T12:41:29.628081+00:00",
+    "seconds_per_move": 2,
+    "source_sha256": "31e9558a655299531b1cc1abf4ee1af1dc2be9d3eebd3e3cb48126a19ba5523d",
+    "status": "PREPARED_NOT_EXECUTED"
+  },
+  "original_deadline": "2026-10-24T12:41:29.628081+00:00",
+  "stop_guard": "Existing role stop flags before every move; never cleared; no new monitor/worker."
+}

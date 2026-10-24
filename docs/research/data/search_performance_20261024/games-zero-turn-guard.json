@@ -1,0 +1,6 @@
+{
+  "after_sha256": "55d8e73083d945765b4341adb4253d9cf0c7b21b7166eeb0ca42729ad085eb08",
+  "before_sha256": "d06214cdca646f64557f6bfa378f100d061c23846279023924012c0749f7b11f",
+  "queries": 0,
+  "reason": "Existing play_game can finish before candidate first turn (opening already terminal or opponent mate). Keep actual shared final session from either wrapper, otherwise unchanged zero-turn opening record. Outcome classified separately; no inferred candidate work/strength."
+}
