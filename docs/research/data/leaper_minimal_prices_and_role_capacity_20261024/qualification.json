@@ -1,0 +1,2877 @@
+{
+  "adjacent": {
+    "counts": {
+      "PV_plies": 5860,
+      "Player_queries": 939,
+      "native_legality_calls": 2183262,
+      "native_legality_fallbacks": 0,
+      "nodes": 6497980,
+      "qnodes": 0,
+      "runtime_pops": 6488002,
+      "runtime_pushes": 6488002
+    },
+    "equalweight_mean_bounds": {
+      "dynamic_new": [
+        0.0,
+        0.0
+      ],
+      "dynamic_old": [
+        0.5,
+        0.5
+      ],
+      "geometry_DYNAMIC": [
+        -0.75,
+        -0.75
+      ],
+      "geometry_UNIT": [
+        -0.25,
+        -0.25
+      ],
+      "interaction": [
+        -0.5,
+        -0.5
+      ]
+    },
+    "games": 16,
+    "missing": [],
+    "new_Player_queries": 0,
+    "new_games": 15,
+    "paired": [
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 0,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 1,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 0,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 2,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 0,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 3,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 4,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 5,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 1
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 6,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 7,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 1
+        }
+      }
+    ],
+    "reused_games": 1,
+    "rows": [
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 383,
+          "Player_queries": 64,
+          "native_legality_calls": 131723,
+          "native_legality_fallbacks": 0,
+          "nodes": 434325,
+          "qnodes": 0,
+          "runtime_pops": 433630,
+          "runtime_pushes": 433630
+        },
+        "depths": {
+          "15": 1,
+          "18": 1,
+          "6": 17,
+          "64": 3,
+          "7": 29,
+          "8": 13
+        },
+        "final_record_sha256": "010a7254a5e303db57af2a7ab03b9c5a826507e9d54f1dc84a7adcc2bd49d9f8",
+        "index": 0,
+        "plies": 64,
+        "reused": false,
+        "root": 0,
+        "seconds": 160.9329506000504,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 34,
+          "time_limit": 27
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 416,
+          "Player_queries": 64,
+          "native_legality_calls": 161536,
+          "native_legality_fallbacks": 0,
+          "nodes": 454374,
+          "qnodes": 0,
+          "runtime_pops": 453649,
+          "runtime_pushes": 453649
+        },
+        "depths": {
+          "13": 1,
+          "18": 1,
+          "6": 1,
+          "64": 3,
+          "7": 29,
+          "8": 29
+        },
+        "final_record_sha256": "acdf593f7134838350b6dcddea46ae533f7083ed4a3bf75e61de59a6eeac0c28",
+        "index": 1,
+        "plies": 64,
+        "reused": true,
+        "root": 0,
+        "seconds": 163.46687590004876,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 31,
+          "time_limit": 30
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 7,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 129,
+          "Player_queries": 21,
+          "native_legality_calls": 66599,
+          "native_legality_fallbacks": 0,
+          "nodes": 167834,
+          "qnodes": 0,
+          "runtime_pops": 167656,
+          "runtime_pushes": 167656
+        },
+        "depths": {
+          "6": 4,
+          "7": 3,
+          "8": 14
+        },
+        "final_record_sha256": "7fb216958cc09f2222f87107bc1fd296752655a88ee7c504866b906e4b01a660",
+        "index": 2,
+        "plies": 21,
+        "reused": false,
+        "root": 1,
+        "seconds": 51.24584450002294,
+        "stops": {
+          "node_limit": 11,
+          "time_limit": 10
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 376,
+          "Player_queries": 64,
+          "native_legality_calls": 151620,
+          "native_legality_fallbacks": 0,
+          "nodes": 454948,
+          "qnodes": 0,
+          "runtime_pops": 454294,
+          "runtime_pushes": 454294
+        },
+        "depths": {
+          "24": 1,
+          "37": 1,
+          "6": 25,
+          "64": 2,
+          "7": 27,
+          "8": 8
+        },
+        "final_record_sha256": "4942ce7f2b09b13f7bee5edcd5ed5703f134943dcdb3395e38812fc96543871a",
+        "index": 3,
+        "plies": 64,
+        "reused": false,
+        "root": 1,
+        "seconds": 156.30126580002252,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 40,
+          "time_limit": 22
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 390,
+          "Player_queries": 64,
+          "native_legality_calls": 152282,
+          "native_legality_fallbacks": 0,
+          "nodes": 442735,
+          "qnodes": 0,
+          "runtime_pops": 442073,
+          "runtime_pushes": 442073
+        },
+        "depths": {
+          "24": 1,
+          "42": 1,
+          "6": 22,
+          "64": 2,
+          "7": 32,
+          "8": 4,
+          "9": 2
+        },
+        "final_record_sha256": "906975715e5d538b621a6200d9b8566c2393f18df8fdc1f8ca81cf99c6b2bafb",
+        "index": 4,
+        "plies": 64,
+        "reused": false,
+        "root": 2,
+        "seconds": 167.623719300027,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 26,
+          "time_limit": 36
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 387,
+          "Player_queries": 64,
+          "native_legality_calls": 130493,
+          "native_legality_fallbacks": 0,
+          "nodes": 444307,
+          "qnodes": 0,
+          "runtime_pops": 443646,
+          "runtime_pushes": 443646
+        },
+        "depths": {
+          "24": 1,
+          "49": 1,
+          "6": 26,
+          "64": 2,
+          "7": 31,
+          "8": 2,
+          "9": 1
+        },
+        "final_record_sha256": "72a2f41e0c5cface3c661e4e26e14b5582f4b1180539ea403b81cb2f048d0731",
+        "index": 5,
+        "plies": 64,
+        "reused": false,
+        "root": 2,
+        "seconds": 159.3343405999476,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 34,
+          "time_limit": 28
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 407,
+          "Player_queries": 64,
+          "native_legality_calls": 144923,
+          "native_legality_fallbacks": 0,
+          "nodes": 448923,
+          "qnodes": 0,
+          "runtime_pops": 448215,
+          "runtime_pushes": 448215
+        },
+        "depths": {
+          "14": 1,
+          "17": 1,
+          "6": 6,
+          "64": 3,
+          "7": 36,
+          "8": 17
+        },
+        "final_record_sha256": "a263244740bccba6f45349a1145d0f6808058bd2a225023c141dbaa5d0a95985",
+        "index": 6,
+        "plies": 64,
+        "reused": false,
+        "root": 3,
+        "seconds": 158.80672180000693,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 32,
+          "time_limit": 29
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 414,
+          "Player_queries": 64,
+          "native_legality_calls": 147099,
+          "native_legality_fallbacks": 0,
+          "nodes": 428774,
+          "qnodes": 0,
+          "runtime_pops": 428047,
+          "runtime_pushes": 428047
+        },
+        "depths": {
+          "15": 1,
+          "27": 1,
+          "64": 3,
+          "7": 39,
+          "8": 20
+        },
+        "final_record_sha256": "2cb0b62867e12c135efdb889fc9fdecfbbb3c483b2b73e3c8b17ab6c60a80876",
+        "index": 7,
+        "plies": 64,
+        "reused": false,
+        "root": 3,
+        "seconds": 168.528542199987,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 22,
+          "time_limit": 39
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 7,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 439,
+          "Player_queries": 59,
+          "native_legality_calls": 157789,
+          "native_legality_fallbacks": 0,
+          "nodes": 378177,
+          "qnodes": 0,
+          "runtime_pops": 377630,
+          "runtime_pushes": 377630
+        },
+        "depths": {
+          "24": 1,
+          "6": 5,
+          "7": 4,
+          "8": 35,
+          "9": 14
+        },
+        "final_record_sha256": "72b51bddb8cb8a3482e7dc4d8c62b33669a394f95c4faf252abe2bad95a84fd0",
+        "index": 8,
+        "plies": 59,
+        "reused": false,
+        "root": 4,
+        "seconds": 165.47991100000218,
+        "stops": {
+          "node_limit": 13,
+          "time_limit": 46
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 8,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 9,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 174,
+          "Player_queries": 27,
+          "native_legality_calls": 80123,
+          "native_legality_fallbacks": 0,
+          "nodes": 197498,
+          "qnodes": 0,
+          "runtime_pops": 197269,
+          "runtime_pushes": 197269
+        },
+        "depths": {
+          "6": 5,
+          "7": 4,
+          "8": 18
+        },
+        "final_record_sha256": "fc352fe99b6d66797030b691233900bce45cf398fbba4f067ce300e8b44fc52a",
+        "index": 9,
+        "plies": 27,
+        "reused": false,
+        "root": 4,
+        "seconds": 67.15372760000173,
+        "stops": {
+          "node_limit": 11,
+          "time_limit": 16
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 390,
+          "Player_queries": 64,
+          "native_legality_calls": 131271,
+          "native_legality_fallbacks": 0,
+          "nodes": 435729,
+          "qnodes": 0,
+          "runtime_pops": 435080,
+          "runtime_pushes": 435080
+        },
+        "depths": {
+          "26": 1,
+          "35": 1,
+          "6": 26,
+          "64": 2,
+          "7": 30,
+          "8": 4
+        },
+        "final_record_sha256": "3b86a3d210f5ef7dc7c62e5399a891281a946a7af9bb8e152634eb2ed89c570a",
+        "index": 10,
+        "plies": 64,
+        "reused": false,
+        "root": 5,
+        "seconds": 167.89562630001456,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 22,
+          "time_limit": 40
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 396,
+          "Player_queries": 64,
+          "native_legality_calls": 153259,
+          "native_legality_fallbacks": 0,
+          "nodes": 442423,
+          "qnodes": 0,
+          "runtime_pops": 441766,
+          "runtime_pushes": 441766
+        },
+        "depths": {
+          "27": 1,
+          "40": 1,
+          "6": 25,
+          "64": 2,
+          "7": 30,
+          "8": 5
+        },
+        "final_record_sha256": "f9a70562f8529db4edc3ebaa05a6f00bcf779a466dd0bbb8838a3e9f9918d27b",
+        "index": 11,
+        "plies": 64,
+        "reused": false,
+        "root": 5,
+        "seconds": 164.0055523000192,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 26,
+          "time_limit": 36
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 375,
+          "Player_queries": 64,
+          "native_legality_calls": 133556,
+          "native_legality_fallbacks": 0,
+          "nodes": 443427,
+          "qnodes": 0,
+          "runtime_pops": 442724,
+          "runtime_pushes": 442724
+        },
+        "depths": {
+          "16": 1,
+          "21": 1,
+          "6": 13,
+          "64": 3,
+          "7": 33,
+          "8": 13
+        },
+        "final_record_sha256": "d6607f8725f8803909710416eb880029ea817a331276c2be52f914ed6e78c4d6",
+        "index": 12,
+        "plies": 64,
+        "reused": false,
+        "root": 6,
+        "seconds": 159.66033719992265,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 34,
+          "time_limit": 27
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 398,
+          "Player_queries": 64,
+          "native_legality_calls": 153035,
+          "native_legality_fallbacks": 0,
+          "nodes": 438175,
+          "qnodes": 0,
+          "runtime_pops": 437436,
+          "runtime_pushes": 437436
+        },
+        "depths": {
+          "18": 1,
+          "37": 1,
+          "6": 3,
+          "64": 3,
+          "7": 34,
+          "8": 22
+        },
+        "final_record_sha256": "6549ea515592827c797078fb56a1c91b7e55c62f55cd6b38b2c03771dfeef700",
+        "index": 13,
+        "plies": 64,
+        "reused": false,
+        "root": 6,
+        "seconds": 167.2366624000715,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 23,
+          "time_limit": 38
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 405,
+          "Player_queries": 64,
+          "native_legality_calls": 150057,
+          "native_legality_fallbacks": 0,
+          "nodes": 433694,
+          "qnodes": 0,
+          "runtime_pops": 432950,
+          "runtime_pushes": 432950
+        },
+        "depths": {
+          "18": 1,
+          "36": 1,
+          "6": 1,
+          "64": 3,
+          "7": 33,
+          "8": 25
+        },
+        "final_record_sha256": "429695a8bd16cac8e025a47705348b8bdf43191472570d0c7918bd0af46c308a",
+        "index": 14,
+        "plies": 64,
+        "reused": false,
+        "root": 7,
+        "seconds": 168.35118120000698,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 22,
+          "time_limit": 39
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 381,
+          "Player_queries": 64,
+          "native_legality_calls": 137897,
+          "native_legality_fallbacks": 0,
+          "nodes": 452637,
+          "qnodes": 0,
+          "runtime_pops": 451937,
+          "runtime_pushes": 451937
+        },
+        "depths": {
+          "16": 1,
+          "20": 1,
+          "6": 14,
+          "64": 3,
+          "7": 33,
+          "8": 12
+        },
+        "final_record_sha256": "d48cc53516f0ee2baa928babce0e193e3a7fb3af6a3f92b6cd495230374f4f53",
+        "index": 15,
+        "plies": 64,
+        "reused": false,
+        "root": 7,
+        "seconds": 162.18577079998795,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 37,
+          "time_limit": 24
+        },
+        "terminal": "max_ply",
+        "value": 0
+      }
+    ],
+    "scope": "Same8physical unfiltered starts, separate fullrules and complete histories; unit leaf/order botharms, dynamic feature geometry intentionally follows changed rule. Two exposed rules, no IID holdout/learning/WDL claim; generic missing completion bounds[-1,1] retained separately from static no-P0-checkmate fact.",
+    "status": "PASS"
+  },
+  "cold": {
+    "PV_plies": 64,
+    "actual_requested_completed_depths": [
+      6,
+      5
+    ],
+    "new_Player_queries": 0,
+    "queries": 12,
+    "result_sources": [
+      "main_iteration"
+    ],
+    "scope": "Two candidates tie under all four actual cold fixed-depth evaluators. Not every root action evaluated, no strict argmax crossing or utility claim; shared Core replay, no search/source-capsule reexecution.",
+    "status": "PASS",
+    "two_candidate_values": {
+      "DYNAMIC_FIXED": [
+        -7,
+        -7
+      ],
+      "FULL_FIXED": [
+        -108,
+        -108
+      ],
+      "STATIC_FIXED": [
+        -102,
+        -102
+      ],
+      "UNIT": [
+        0,
+        0
+      ]
+    }
+  },
+  "contrast": {
+    "equalweight_mean_bounds": {
+      "dynamic_DEFAULT": [
+        0.5,
+        0.5
+      ],
+      "dynamic_UNIT": [
+        0.5,
+        0.5
+      ],
+      "interaction": [
+        0.0,
+        0.0
+      ],
+      "material_OFF": [
+        0.0,
+        0.0
+      ],
+      "material_ON": [
+        0.0,
+        0.0
+      ]
+    },
+    "roots": [
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "dynamic_UNIT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 0,
+        "values": {
+          "DYNAMIC_FIXED": 1,
+          "FULL_FIXED": 1,
+          "STATIC_FIXED": 0,
+          "UNIT": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 1,
+        "values": {
+          "DYNAMIC_FIXED": 0,
+          "FULL_FIXED": 0,
+          "STATIC_FIXED": 0,
+          "UNIT": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 2,
+        "values": {
+          "DYNAMIC_FIXED": 0,
+          "FULL_FIXED": 0,
+          "STATIC_FIXED": 0,
+          "UNIT": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "dynamic_UNIT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 3,
+        "values": {
+          "DYNAMIC_FIXED": 1,
+          "FULL_FIXED": 1,
+          "STATIC_FIXED": 0,
+          "UNIT": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "dynamic_UNIT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 4,
+        "values": {
+          "DYNAMIC_FIXED": 1,
+          "FULL_FIXED": 1,
+          "STATIC_FIXED": 0,
+          "UNIT": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 5,
+        "values": {
+          "DYNAMIC_FIXED": 1,
+          "FULL_FIXED": 1,
+          "STATIC_FIXED": 1,
+          "UNIT": 1
+        }
+      },
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "dynamic_UNIT": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 6,
+        "values": {
+          "DYNAMIC_FIXED": 1,
+          "FULL_FIXED": 1,
+          "STATIC_FIXED": 0,
+          "UNIT": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_DEFAULT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_OFF": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "material_ON": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 7,
+        "values": {
+          "DYNAMIC_FIXED": 1,
+          "FULL_FIXED": 1,
+          "STATIC_FIXED": 1,
+          "UNIT": 1
+        }
+      }
+    ],
+    "scope": "Finite equalweight8root distribution, correlated deterministic arms; no iid/population confidence claim. Missing terminal values remain[-1,1]."
+  },
+  "counts": {
+    "PV_plies": 5453,
+    "Player_queries": 930,
+    "native_legality_calls": 2103083,
+    "native_legality_fallbacks": 0,
+    "nodes": 6642316,
+    "qnodes": 0,
+    "runtime_pops": 6633358,
+    "runtime_pushes": 6633358
+  },
+  "games": 32,
+  "missing": [],
+  "natural_DEFAULT_pilot": {
+    "captures": [
+      {
+        "ply": 1,
+        "removed": [
+          [
+            1,
+            "B"
+          ]
+        ]
+      }
+    ],
+    "counts": {
+      "PV_plies": 62,
+      "Player_queries": 13,
+      "native_legality_calls": 33363,
+      "native_legality_fallbacks": 0,
+      "nodes": 98315,
+      "qnodes": 0,
+      "runtime_pops": 98225,
+      "runtime_pushes": 98225
+    },
+    "depths": {
+      "0": 1,
+      "6": 6,
+      "7": 6
+    },
+    "final_record_sha256": "c11c5ef80995f73c6748452a763372a96df58197285d037653ad293ddd4c9e26",
+    "plies": 13,
+    "seconds": 21.423284300020896,
+    "stops": {
+      "node_limit": 12,
+      "root_immediate_win": 1
+    },
+    "terminal": "checkmate",
+    "value": 1
+  },
+  "new_Player_queries": 0,
+  "new_formal_games": 30,
+  "next": {
+    "bare_remnant_checks": {
+      "A": {
+        "checked_frontiers": 1428,
+        "defenses": 5456
+      },
+      "B": {
+        "checked_frontiers": 1600,
+        "defenses": 7488
+      }
+    },
+    "full_rule_fingerprint": "b2f7417f518aab4ea1fbe7de999a91f036f4587af6c151d19ebe59567d466fd6",
+    "new_Player_queries": 0,
+    "prepared_roots": 8,
+    "scope": "Prepared complete next-rule input and static absence of checkmate after any ordinary capture. No actual Player, learning or original-root WDL; no source-capsule execution.",
+    "status": "PASS"
+  },
+  "nonterminal_selected_PV_leaves": 737,
+  "pooled_leaf_class_pairs": {
+    "dynamic:same_weak_order": 4107,
+    "dynamic:strict_reversal": 76,
+    "dynamic:unit_tie_split": 3,
+    "static:same_weak_order": 3931,
+    "static:unit_tie_split": 255
+  },
+  "reused_games": 2,
+  "role_mate": {
+    "bare_target_defenses": 5456,
+    "bare_target_frontiers": 1428,
+    "candidate_cases": 496,
+    "core_safe_frontiers": 248,
+    "geometry_counts": {
+      "A_checks_K1": 1428,
+      "at_least_two_unblocked_king_escapes": 1396,
+      "nonadjacent": 10488,
+      "only_possible_four_actor_mate_candidate": 16,
+      "single_escape_is_occupied_checker": 16,
+      "three_actor_raw": 13800
+    },
+    "negative_masks": [
+      2,
+      3,
+      6,
+      7,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      18,
+      19,
+      22,
+      23,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "new_Player_queries": 0,
+    "own_anchor_check_exclusions": 256,
+    "positive_masks": [
+      1,
+      4,
+      5,
+      8,
+      9,
+      16,
+      17,
+      20,
+      21,
+      24,
+      25
+    ],
+    "scope": "Static role-coupled cage geometry plus all candidate one-ply Core defenses and actual commonfresh witness. Not graph closure/WDL or actual8mu winning strategy. Source capsules are not executed.",
+    "status": "PASS",
+    "witness_Core_edges": 3
+  },
+  "rows": [
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 373,
+        "Player_queries": 64,
+        "native_legality_calls": 125502,
+        "native_legality_fallbacks": 0,
+        "nodes": 457208,
+        "qnodes": 0,
+        "runtime_pops": 456520,
+        "runtime_pushes": 456520
+      },
+      "depths": {
+        "14": 1,
+        "24": 1,
+        "6": 16,
+        "64": 3,
+        "7": 43
+      },
+      "final_record_sha256": "ab2bcd90d49e74b38bb5a38ad3b6983efff5b0b3522c7d4bfe5dafeadbfba6ce",
+      "index": 0,
+      "plies": 64,
+      "reused": false,
+      "root": 0,
+      "seconds": 156.90008370007854,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 34,
+        "time_limit": 27
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 372,
+        "Player_queries": 64,
+        "native_legality_calls": 127036,
+        "native_legality_fallbacks": 0,
+        "nodes": 464802,
+        "qnodes": 0,
+        "runtime_pops": 464116,
+        "runtime_pushes": 464116
+      },
+      "depths": {
+        "14": 1,
+        "23": 1,
+        "6": 17,
+        "64": 3,
+        "7": 42
+      },
+      "final_record_sha256": "ab2bcd90d49e74b38bb5a38ad3b6983efff5b0b3522c7d4bfe5dafeadbfba6ce",
+      "index": 1,
+      "plies": 64,
+      "reused": true,
+      "root": 0,
+      "seconds": 156.3036371000344,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 43,
+        "time_limit": 18
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 62,
+        "Player_queries": 13,
+        "native_legality_calls": 33363,
+        "native_legality_fallbacks": 0,
+        "nodes": 98315,
+        "qnodes": 0,
+        "runtime_pops": 98225,
+        "runtime_pushes": 98225
+      },
+      "depths": {
+        "0": 1,
+        "6": 6,
+        "7": 6
+      },
+      "final_record_sha256": "c11c5ef80995f73c6748452a763372a96df58197285d037653ad293ddd4c9e26",
+      "index": 2,
+      "plies": 13,
+      "reused": false,
+      "root": 0,
+      "seconds": 20.65015779994428,
+      "stops": {
+        "node_limit": 12,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 62,
+        "Player_queries": 13,
+        "native_legality_calls": 33363,
+        "native_legality_fallbacks": 0,
+        "nodes": 98315,
+        "qnodes": 0,
+        "runtime_pops": 98225,
+        "runtime_pushes": 98225
+      },
+      "depths": {
+        "0": 1,
+        "6": 6,
+        "7": 6
+      },
+      "final_record_sha256": "c11c5ef80995f73c6748452a763372a96df58197285d037653ad293ddd4c9e26",
+      "index": 3,
+      "plies": 13,
+      "reused": true,
+      "root": 0,
+      "seconds": 20.00378659996204,
+      "stops": {
+        "node_limit": 12,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 74,
+        "Player_queries": 13,
+        "native_legality_calls": 37091,
+        "native_legality_fallbacks": 0,
+        "nodes": 106496,
+        "qnodes": 0,
+        "runtime_pops": 106399,
+        "runtime_pushes": 106399
+      },
+      "depths": {
+        "6": 9,
+        "7": 3,
+        "9": 1
+      },
+      "final_record_sha256": "e8079c7ce6b18ac05b56fba324f612c0952227f081fd703b3036a3ab7cb39cbe",
+      "index": 4,
+      "plies": 13,
+      "reused": false,
+      "root": 1,
+      "seconds": 24.110702300095,
+      "stops": {
+        "node_limit": 13
+      },
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "captures": [],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 71,
+        "Player_queries": 13,
+        "native_legality_calls": 37009,
+        "native_legality_fallbacks": 0,
+        "nodes": 106496,
+        "qnodes": 0,
+        "runtime_pops": 106402,
+        "runtime_pushes": 106402
+      },
+      "depths": {
+        "6": 12,
+        "9": 1
+      },
+      "final_record_sha256": "e8079c7ce6b18ac05b56fba324f612c0952227f081fd703b3036a3ab7cb39cbe",
+      "index": 5,
+      "plies": 13,
+      "reused": false,
+      "root": 1,
+      "seconds": 23.22287330008112,
+      "stops": {
+        "node_limit": 13
+      },
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "captures": [],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 126,
+        "Player_queries": 21,
+        "native_legality_calls": 58333,
+        "native_legality_fallbacks": 0,
+        "nodes": 172032,
+        "qnodes": 0,
+        "runtime_pops": 171875,
+        "runtime_pushes": 171875
+      },
+      "depths": {
+        "6": 11,
+        "7": 10
+      },
+      "final_record_sha256": "22dbed84f1d745ef3493ce4b0da9dfc751b51cb67a6b5a6db6541a0f519a89ee",
+      "index": 6,
+      "plies": 21,
+      "reused": false,
+      "root": 1,
+      "seconds": 45.30036639992613,
+      "stops": {
+        "node_limit": 21
+      },
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "captures": [],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 130,
+        "Player_queries": 21,
+        "native_legality_calls": 63025,
+        "native_legality_fallbacks": 0,
+        "nodes": 172032,
+        "qnodes": 0,
+        "runtime_pops": 171876,
+        "runtime_pushes": 171876
+      },
+      "depths": {
+        "5": 1,
+        "6": 10,
+        "7": 10
+      },
+      "final_record_sha256": "a6e5440d4a317754e2df33b0177af845a4fd6b0a8b19bc2bd71f9fd7f5a4d32b",
+      "index": 7,
+      "plies": 21,
+      "reused": false,
+      "root": 1,
+      "seconds": 44.237027399940416,
+      "stops": {
+        "node_limit": 21
+      },
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 29,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        },
+        {
+          "ply": 30,
+          "removed": [
+            [
+              0,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 413,
+        "Player_queries": 64,
+        "native_legality_calls": 122361,
+        "native_legality_fallbacks": 0,
+        "nodes": 335010,
+        "qnodes": 0,
+        "runtime_pops": 334315,
+        "runtime_pushes": 334315
+      },
+      "depths": {
+        "12": 1,
+        "21": 1,
+        "6": 17,
+        "64": 3,
+        "7": 29,
+        "8": 11,
+        "9": 2
+      },
+      "final_record_sha256": "77136f2a446c3bfb0bf69969994944ef3d34b6194b544b3555e16a8c63669c57",
+      "index": 8,
+      "plies": 64,
+      "reused": false,
+      "root": 2,
+      "seconds": 169.98534920008387,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 19,
+        "time_limit": 42
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 155,
+        "Player_queries": 27,
+        "native_legality_calls": 70647,
+        "native_legality_fallbacks": 0,
+        "nodes": 219722,
+        "qnodes": 0,
+        "runtime_pops": 219528,
+        "runtime_pushes": 219528
+      },
+      "depths": {
+        "6": 22,
+        "7": 5
+      },
+      "final_record_sha256": "ccdc2cf573637c8ae1f56f9e7b19b4752faad0e3a91a0d33aec6a616bf30988e",
+      "index": 9,
+      "plies": 27,
+      "reused": false,
+      "root": 2,
+      "seconds": 64.89531689998694,
+      "stops": {
+        "node_limit": 22,
+        "time_limit": 5
+      },
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "captures": [],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 150,
+        "Player_queries": 27,
+        "native_legality_calls": 70665,
+        "native_legality_fallbacks": 0,
+        "nodes": 220565,
+        "qnodes": 0,
+        "runtime_pops": 220369,
+        "runtime_pushes": 220369
+      },
+      "depths": {
+        "6": 20,
+        "7": 7
+      },
+      "final_record_sha256": "ccdc2cf573637c8ae1f56f9e7b19b4752faad0e3a91a0d33aec6a616bf30988e",
+      "index": 10,
+      "plies": 27,
+      "reused": false,
+      "root": 2,
+      "seconds": 65.52065959991887,
+      "stops": {
+        "node_limit": 25,
+        "time_limit": 2
+      },
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 10,
+          "removed": [
+            [
+              0,
+              "A"
+            ]
+          ]
+        },
+        {
+          "ply": 11,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 439,
+        "Player_queries": 64,
+        "native_legality_calls": 136003,
+        "native_legality_fallbacks": 0,
+        "nodes": 331071,
+        "qnodes": 0,
+        "runtime_pops": 330239,
+        "runtime_pushes": 330239
+      },
+      "depths": {
+        "10": 1,
+        "13": 1,
+        "51": 1,
+        "6": 2,
+        "64": 4,
+        "7": 16,
+        "8": 33,
+        "9": 6
+      },
+      "final_record_sha256": "02a9622d5235c76822719983c58abdfc462812f8a4d0b17ea33a544140ae5122",
+      "index": 11,
+      "plies": 64,
+      "reused": false,
+      "root": 2,
+      "seconds": 175.86245789995883,
+      "stops": {
+        "completed_depth": 4,
+        "node_limit": 10,
+        "time_limit": 50
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 42,
+        "Player_queries": 9,
+        "native_legality_calls": 22480,
+        "native_legality_fallbacks": 0,
+        "nodes": 65548,
+        "qnodes": 0,
+        "runtime_pops": 65487,
+        "runtime_pushes": 65487
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 5
+      },
+      "final_record_sha256": "20751923a1e7597d223cb7356effde166491bd98febf41b247a1e3f14a9d4785",
+      "index": 12,
+      "plies": 9,
+      "reused": false,
+      "root": 3,
+      "seconds": 13.11474869993981,
+      "stops": {
+        "node_limit": 8,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 42,
+        "Player_queries": 9,
+        "native_legality_calls": 22480,
+        "native_legality_fallbacks": 0,
+        "nodes": 65548,
+        "qnodes": 0,
+        "runtime_pops": 65487,
+        "runtime_pushes": 65487
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 5
+      },
+      "final_record_sha256": "20751923a1e7597d223cb7356effde166491bd98febf41b247a1e3f14a9d4785",
+      "index": 13,
+      "plies": 9,
+      "reused": false,
+      "root": 3,
+      "seconds": 13.177390500088222,
+      "stops": {
+        "node_limit": 8,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 395,
+        "Player_queries": 64,
+        "native_legality_calls": 137196,
+        "native_legality_fallbacks": 0,
+        "nodes": 452328,
+        "qnodes": 0,
+        "runtime_pops": 451666,
+        "runtime_pushes": 451666
+      },
+      "depths": {
+        "11": 1,
+        "14": 1,
+        "6": 28,
+        "64": 3,
+        "7": 31
+      },
+      "final_record_sha256": "e4c9f3671a7e2392faa0276b553276396a2a94a8cea9dc672e6450a569a77e45",
+      "index": 14,
+      "plies": 64,
+      "reused": false,
+      "root": 3,
+      "seconds": 161.2671256000176,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 35,
+        "time_limit": 26
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 391,
+        "Player_queries": 64,
+        "native_legality_calls": 137572,
+        "native_legality_fallbacks": 0,
+        "nodes": 453641,
+        "qnodes": 0,
+        "runtime_pops": 452977,
+        "runtime_pushes": 452977
+      },
+      "depths": {
+        "11": 1,
+        "15": 1,
+        "6": 28,
+        "64": 3,
+        "7": 31
+      },
+      "final_record_sha256": "e4c9f3671a7e2392faa0276b553276396a2a94a8cea9dc672e6450a569a77e45",
+      "index": 15,
+      "plies": 64,
+      "reused": false,
+      "root": 3,
+      "seconds": 160.17258150002453,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 34,
+        "time_limit": 27
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 54,
+        "Player_queries": 11,
+        "native_legality_calls": 28942,
+        "native_legality_fallbacks": 0,
+        "nodes": 81931,
+        "qnodes": 0,
+        "runtime_pops": 81855,
+        "runtime_pushes": 81855
+      },
+      "depths": {
+        "0": 1,
+        "6": 4,
+        "7": 6
+      },
+      "final_record_sha256": "10341546c3fabdd27519bf76ef8ab977376d9d57f5fd9bba8c259c0bc3d580cf",
+      "index": 16,
+      "plies": 11,
+      "reused": false,
+      "root": 4,
+      "seconds": 16.837927200016566,
+      "stops": {
+        "node_limit": 10,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 393,
+        "Player_queries": 64,
+        "native_legality_calls": 136753,
+        "native_legality_fallbacks": 0,
+        "nodes": 466965,
+        "qnodes": 0,
+        "runtime_pops": 466300,
+        "runtime_pushes": 466300
+      },
+      "depths": {
+        "12": 1,
+        "16": 1,
+        "6": 29,
+        "64": 3,
+        "7": 30
+      },
+      "final_record_sha256": "fa2bc13777e1d207775998bb85ab3dbda130a5ca490067cae7825edbbc876e44",
+      "index": 17,
+      "plies": 64,
+      "reused": false,
+      "root": 4,
+      "seconds": 157.3469647000311,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 40,
+        "time_limit": 21
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 393,
+        "Player_queries": 64,
+        "native_legality_calls": 137408,
+        "native_legality_fallbacks": 0,
+        "nodes": 471348,
+        "qnodes": 0,
+        "runtime_pops": 470684,
+        "runtime_pushes": 470684
+      },
+      "depths": {
+        "11": 1,
+        "16": 1,
+        "6": 29,
+        "64": 3,
+        "7": 30
+      },
+      "final_record_sha256": "fa2bc13777e1d207775998bb85ab3dbda130a5ca490067cae7825edbbc876e44",
+      "index": 18,
+      "plies": 64,
+      "reused": false,
+      "root": 4,
+      "seconds": 155.76881829998456,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 46,
+        "time_limit": 15
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 54,
+        "Player_queries": 11,
+        "native_legality_calls": 28942,
+        "native_legality_fallbacks": 0,
+        "nodes": 81931,
+        "qnodes": 0,
+        "runtime_pops": 81855,
+        "runtime_pushes": 81855
+      },
+      "depths": {
+        "0": 1,
+        "6": 4,
+        "7": 6
+      },
+      "final_record_sha256": "10341546c3fabdd27519bf76ef8ab977376d9d57f5fd9bba8c259c0bc3d580cf",
+      "index": 19,
+      "plies": 11,
+      "reused": false,
+      "root": 4,
+      "seconds": 17.898623900022358,
+      "stops": {
+        "node_limit": 10,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 5,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 66,
+        "Player_queries": 13,
+        "native_legality_calls": 32977,
+        "native_legality_fallbacks": 0,
+        "nodes": 98316,
+        "qnodes": 0,
+        "runtime_pops": 98220,
+        "runtime_pushes": 98220
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 6,
+        "8": 3
+      },
+      "final_record_sha256": "0ecffeb1255fcac111c0defd7d0444de5d620c694cc787bd11287744a9909793",
+      "index": 20,
+      "plies": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 24.05459970002994,
+      "stops": {
+        "node_limit": 12,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 5,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 64,
+        "Player_queries": 13,
+        "native_legality_calls": 35081,
+        "native_legality_fallbacks": 0,
+        "nodes": 98314,
+        "qnodes": 0,
+        "runtime_pops": 98219,
+        "runtime_pushes": 98219
+      },
+      "depths": {
+        "0": 1,
+        "6": 4,
+        "7": 5,
+        "8": 3
+      },
+      "final_record_sha256": "75cba314a2de67e76798d3dfcc8990f749ec8c6c1943ded5be9021c8f3a7d040",
+      "index": 21,
+      "plies": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 23.614412000053562,
+      "stops": {
+        "node_limit": 12,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 5,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 66,
+        "Player_queries": 13,
+        "native_legality_calls": 32979,
+        "native_legality_fallbacks": 0,
+        "nodes": 98316,
+        "qnodes": 0,
+        "runtime_pops": 98220,
+        "runtime_pushes": 98220
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 6,
+        "8": 3
+      },
+      "final_record_sha256": "0ecffeb1255fcac111c0defd7d0444de5d620c694cc787bd11287744a9909793",
+      "index": 22,
+      "plies": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 20.175143099972047,
+      "stops": {
+        "node_limit": 12,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 5,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 64,
+        "Player_queries": 13,
+        "native_legality_calls": 35081,
+        "native_legality_fallbacks": 0,
+        "nodes": 98314,
+        "qnodes": 0,
+        "runtime_pops": 98219,
+        "runtime_pushes": 98219
+      },
+      "depths": {
+        "0": 1,
+        "6": 4,
+        "7": 5,
+        "8": 3
+      },
+      "final_record_sha256": "75cba314a2de67e76798d3dfcc8990f749ec8c6c1943ded5be9021c8f3a7d040",
+      "index": 23,
+      "plies": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 21.29247620003298,
+      "stops": {
+        "node_limit": 12,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 51,
+        "Player_queries": 11,
+        "native_legality_calls": 28914,
+        "native_legality_fallbacks": 0,
+        "nodes": 81931,
+        "qnodes": 0,
+        "runtime_pops": 81855,
+        "runtime_pushes": 81855
+      },
+      "depths": {
+        "0": 1,
+        "6": 4,
+        "7": 6
+      },
+      "final_record_sha256": "7ff85958ba7e19893f4f4d5d0036530a2d8b49fc9575adba7f6e030554072a00",
+      "index": 24,
+      "plies": 11,
+      "reused": false,
+      "root": 6,
+      "seconds": 14.85871170007158,
+      "stops": {
+        "node_limit": 10,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 51,
+        "Player_queries": 11,
+        "native_legality_calls": 28914,
+        "native_legality_fallbacks": 0,
+        "nodes": 81931,
+        "qnodes": 0,
+        "runtime_pops": 81855,
+        "runtime_pushes": 81855
+      },
+      "depths": {
+        "0": 1,
+        "6": 4,
+        "7": 6
+      },
+      "final_record_sha256": "7ff85958ba7e19893f4f4d5d0036530a2d8b49fc9575adba7f6e030554072a00",
+      "index": 25,
+      "plies": 11,
+      "reused": false,
+      "root": 6,
+      "seconds": 14.905790799995884,
+      "stops": {
+        "node_limit": 10,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 394,
+        "Player_queries": 64,
+        "native_legality_calls": 144629,
+        "native_legality_fallbacks": 0,
+        "nodes": 482910,
+        "qnodes": 0,
+        "runtime_pops": 482240,
+        "runtime_pushes": 482240
+      },
+      "depths": {
+        "14": 1,
+        "19": 1,
+        "6": 29,
+        "64": 3,
+        "7": 30
+      },
+      "final_record_sha256": "48d9d0947f4878e824308055bb1b944b60dc6f487b2d3157f462d649d6c00301",
+      "index": 26,
+      "plies": 64,
+      "reused": false,
+      "root": 6,
+      "seconds": 148.72485949995462,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 52,
+        "time_limit": 9
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 394,
+        "Player_queries": 64,
+        "native_legality_calls": 144873,
+        "native_legality_fallbacks": 0,
+        "nodes": 484360,
+        "qnodes": 0,
+        "runtime_pops": 483690,
+        "runtime_pushes": 483690
+      },
+      "depths": {
+        "14": 1,
+        "19": 1,
+        "6": 29,
+        "64": 3,
+        "7": 30
+      },
+      "final_record_sha256": "48d9d0947f4878e824308055bb1b944b60dc6f487b2d3157f462d649d6c00301",
+      "index": 27,
+      "plies": 64,
+      "reused": false,
+      "root": 6,
+      "seconds": 145.8168708999874,
+      "stops": {
+        "completed_depth": 3,
+        "node_limit": 51,
+        "time_limit": 10
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 28,
+        "Player_queries": 7,
+        "native_legality_calls": 13425,
+        "native_legality_fallbacks": 0,
+        "nodes": 49155,
+        "qnodes": 0,
+        "runtime_pops": 49110,
+        "runtime_pushes": 49110
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 3
+      },
+      "final_record_sha256": "ee1b1729d147cdce1b3ed97ce4a9ee8621eb621362abbd621a3c312fa0085482",
+      "index": 28,
+      "plies": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.28258740005549,
+      "stops": {
+        "node_limit": 6,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 28,
+        "Player_queries": 7,
+        "native_legality_calls": 13425,
+        "native_legality_fallbacks": 0,
+        "nodes": 49155,
+        "qnodes": 0,
+        "runtime_pops": 49110,
+        "runtime_pushes": 49110
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 3
+      },
+      "final_record_sha256": "ee1b1729d147cdce1b3ed97ce4a9ee8621eb621362abbd621a3c312fa0085482",
+      "index": 29,
+      "plies": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.176525500020944,
+      "stops": {
+        "node_limit": 6,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 28,
+        "Player_queries": 7,
+        "native_legality_calls": 13307,
+        "native_legality_fallbacks": 0,
+        "nodes": 49155,
+        "qnodes": 0,
+        "runtime_pops": 49110,
+        "runtime_pushes": 49110
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 3
+      },
+      "final_record_sha256": "ee1b1729d147cdce1b3ed97ce4a9ee8621eb621362abbd621a3c312fa0085482",
+      "index": 30,
+      "plies": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.614858699962497,
+      "stops": {
+        "node_limit": 6,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 28,
+        "Player_queries": 7,
+        "native_legality_calls": 13307,
+        "native_legality_fallbacks": 0,
+        "nodes": 49155,
+        "qnodes": 0,
+        "runtime_pops": 49110,
+        "runtime_pushes": 49110
+      },
+      "depths": {
+        "0": 1,
+        "6": 3,
+        "7": 3
+      },
+      "final_record_sha256": "ee1b1729d147cdce1b3ed97ce4a9ee8621eb621362abbd621a3c312fa0085482",
+      "index": 31,
+      "plies": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.553757400019094,
+      "stops": {
+        "node_limit": 6,
+        "root_immediate_win": 1
+      },
+      "terminal": "checkmate",
+      "value": 1
+    }
+  ],
+  "scope": "Literal shared Core/PV/history/profile/source qualification; not independent engine, search rerun or fullWDL. Static-band histogram arithmetic bound checked, physical census was not independently repeated.",
+  "seconds": 22.51155319996178,
+  "source_capsule_executions": 0,
+  "static_functional_placements": 28800,
+  "status": "PASS"
+}

@@ -1,0 +1,2426 @@
+{
+  "at": "2026-10-24T03:18:36.585664+00:00",
+  "batch_seconds": 2253.675050699967,
+  "by_controller": {
+    "DYNAMIC_FIXED": {
+      "game_loop_seconds": 1294.9962288000388,
+      "games": 8,
+      "nodes": 3497595,
+      "queries": 507,
+      "terminals": {
+        "max_ply": 6,
+        "repetition": 2
+      },
+      "values": {
+        "0": 8
+      }
+    },
+    "UNIT": {
+      "game_loop_seconds": 1113.212800700101,
+      "games": 8,
+      "nodes": 3000385,
+      "queries": 432,
+      "terminals": {
+        "max_ply": 6,
+        "repetition": 2
+      },
+      "values": {
+        "0": 8
+      }
+    }
+  },
+  "qualification": {
+    "counts": {
+      "PV_plies": 5860,
+      "Player_queries": 939,
+      "native_legality_calls": 2183262,
+      "native_legality_fallbacks": 0,
+      "nodes": 6497980,
+      "qnodes": 0,
+      "runtime_pops": 6488002,
+      "runtime_pushes": 6488002
+    },
+    "equalweight_mean_bounds": {
+      "dynamic_new": [
+        0.0,
+        0.0
+      ],
+      "dynamic_old": [
+        0.5,
+        0.5
+      ],
+      "geometry_DYNAMIC": [
+        -0.75,
+        -0.75
+      ],
+      "geometry_UNIT": [
+        -0.25,
+        -0.25
+      ],
+      "interaction": [
+        -0.5,
+        -0.5
+      ]
+    },
+    "games": 16,
+    "missing": [],
+    "new_Player_queries": 0,
+    "new_games": 15,
+    "paired": [
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 0,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 1,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 0,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 2,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 0,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 3,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 4,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 5,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 1
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 1,
+            "upper": 1,
+            "value": 1
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "interaction": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          }
+        },
+        "root": 6,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 0
+        }
+      },
+      {
+        "effects": {
+          "dynamic_new": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "dynamic_old": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          },
+          "geometry_DYNAMIC": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "geometry_UNIT": {
+            "lower": -1,
+            "upper": -1,
+            "value": -1
+          },
+          "interaction": {
+            "lower": 0,
+            "upper": 0,
+            "value": 0
+          }
+        },
+        "root": 7,
+        "values": {
+          "newD": 0,
+          "newU": 0,
+          "oldD": 1,
+          "oldU": 1
+        }
+      }
+    ],
+    "reused_games": 1,
+    "rows": [
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 383,
+          "Player_queries": 64,
+          "native_legality_calls": 131723,
+          "native_legality_fallbacks": 0,
+          "nodes": 434325,
+          "qnodes": 0,
+          "runtime_pops": 433630,
+          "runtime_pushes": 433630
+        },
+        "depths": {
+          "15": 1,
+          "18": 1,
+          "6": 17,
+          "64": 3,
+          "7": 29,
+          "8": 13
+        },
+        "final_record_sha256": "010a7254a5e303db57af2a7ab03b9c5a826507e9d54f1dc84a7adcc2bd49d9f8",
+        "index": 0,
+        "plies": 64,
+        "reused": false,
+        "root": 0,
+        "seconds": 160.9329506000504,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 34,
+          "time_limit": 27
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 416,
+          "Player_queries": 64,
+          "native_legality_calls": 161536,
+          "native_legality_fallbacks": 0,
+          "nodes": 454374,
+          "qnodes": 0,
+          "runtime_pops": 453649,
+          "runtime_pushes": 453649
+        },
+        "depths": {
+          "13": 1,
+          "18": 1,
+          "6": 1,
+          "64": 3,
+          "7": 29,
+          "8": 29
+        },
+        "final_record_sha256": "acdf593f7134838350b6dcddea46ae533f7083ed4a3bf75e61de59a6eeac0c28",
+        "index": 1,
+        "plies": 64,
+        "reused": true,
+        "root": 0,
+        "seconds": 163.46687590004876,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 31,
+          "time_limit": 30
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 7,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 129,
+          "Player_queries": 21,
+          "native_legality_calls": 66599,
+          "native_legality_fallbacks": 0,
+          "nodes": 167834,
+          "qnodes": 0,
+          "runtime_pops": 167656,
+          "runtime_pushes": 167656
+        },
+        "depths": {
+          "6": 4,
+          "7": 3,
+          "8": 14
+        },
+        "final_record_sha256": "7fb216958cc09f2222f87107bc1fd296752655a88ee7c504866b906e4b01a660",
+        "index": 2,
+        "plies": 21,
+        "reused": false,
+        "root": 1,
+        "seconds": 51.24584450002294,
+        "stops": {
+          "node_limit": 11,
+          "time_limit": 10
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 376,
+          "Player_queries": 64,
+          "native_legality_calls": 151620,
+          "native_legality_fallbacks": 0,
+          "nodes": 454948,
+          "qnodes": 0,
+          "runtime_pops": 454294,
+          "runtime_pushes": 454294
+        },
+        "depths": {
+          "24": 1,
+          "37": 1,
+          "6": 25,
+          "64": 2,
+          "7": 27,
+          "8": 8
+        },
+        "final_record_sha256": "4942ce7f2b09b13f7bee5edcd5ed5703f134943dcdb3395e38812fc96543871a",
+        "index": 3,
+        "plies": 64,
+        "reused": false,
+        "root": 1,
+        "seconds": 156.30126580002252,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 40,
+          "time_limit": 22
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 390,
+          "Player_queries": 64,
+          "native_legality_calls": 152282,
+          "native_legality_fallbacks": 0,
+          "nodes": 442735,
+          "qnodes": 0,
+          "runtime_pops": 442073,
+          "runtime_pushes": 442073
+        },
+        "depths": {
+          "24": 1,
+          "42": 1,
+          "6": 22,
+          "64": 2,
+          "7": 32,
+          "8": 4,
+          "9": 2
+        },
+        "final_record_sha256": "906975715e5d538b621a6200d9b8566c2393f18df8fdc1f8ca81cf99c6b2bafb",
+        "index": 4,
+        "plies": 64,
+        "reused": false,
+        "root": 2,
+        "seconds": 167.623719300027,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 26,
+          "time_limit": 36
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 387,
+          "Player_queries": 64,
+          "native_legality_calls": 130493,
+          "native_legality_fallbacks": 0,
+          "nodes": 444307,
+          "qnodes": 0,
+          "runtime_pops": 443646,
+          "runtime_pushes": 443646
+        },
+        "depths": {
+          "24": 1,
+          "49": 1,
+          "6": 26,
+          "64": 2,
+          "7": 31,
+          "8": 2,
+          "9": 1
+        },
+        "final_record_sha256": "72a2f41e0c5cface3c661e4e26e14b5582f4b1180539ea403b81cb2f048d0731",
+        "index": 5,
+        "plies": 64,
+        "reused": false,
+        "root": 2,
+        "seconds": 159.3343405999476,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 34,
+          "time_limit": 28
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 407,
+          "Player_queries": 64,
+          "native_legality_calls": 144923,
+          "native_legality_fallbacks": 0,
+          "nodes": 448923,
+          "qnodes": 0,
+          "runtime_pops": 448215,
+          "runtime_pushes": 448215
+        },
+        "depths": {
+          "14": 1,
+          "17": 1,
+          "6": 6,
+          "64": 3,
+          "7": 36,
+          "8": 17
+        },
+        "final_record_sha256": "a263244740bccba6f45349a1145d0f6808058bd2a225023c141dbaa5d0a95985",
+        "index": 6,
+        "plies": 64,
+        "reused": false,
+        "root": 3,
+        "seconds": 158.80672180000693,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 32,
+          "time_limit": 29
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 414,
+          "Player_queries": 64,
+          "native_legality_calls": 147099,
+          "native_legality_fallbacks": 0,
+          "nodes": 428774,
+          "qnodes": 0,
+          "runtime_pops": 428047,
+          "runtime_pushes": 428047
+        },
+        "depths": {
+          "15": 1,
+          "27": 1,
+          "64": 3,
+          "7": 39,
+          "8": 20
+        },
+        "final_record_sha256": "2cb0b62867e12c135efdb889fc9fdecfbbb3c483b2b73e3c8b17ab6c60a80876",
+        "index": 7,
+        "plies": 64,
+        "reused": false,
+        "root": 3,
+        "seconds": 168.528542199987,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 22,
+          "time_limit": 39
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 7,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 439,
+          "Player_queries": 59,
+          "native_legality_calls": 157789,
+          "native_legality_fallbacks": 0,
+          "nodes": 378177,
+          "qnodes": 0,
+          "runtime_pops": 377630,
+          "runtime_pushes": 377630
+        },
+        "depths": {
+          "24": 1,
+          "6": 5,
+          "7": 4,
+          "8": 35,
+          "9": 14
+        },
+        "final_record_sha256": "72b51bddb8cb8a3482e7dc4d8c62b33669a394f95c4faf252abe2bad95a84fd0",
+        "index": 8,
+        "plies": 59,
+        "reused": false,
+        "root": 4,
+        "seconds": 165.47991100000218,
+        "stops": {
+          "node_limit": 13,
+          "time_limit": 46
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 8,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 9,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 174,
+          "Player_queries": 27,
+          "native_legality_calls": 80123,
+          "native_legality_fallbacks": 0,
+          "nodes": 197498,
+          "qnodes": 0,
+          "runtime_pops": 197269,
+          "runtime_pushes": 197269
+        },
+        "depths": {
+          "6": 5,
+          "7": 4,
+          "8": 18
+        },
+        "final_record_sha256": "fc352fe99b6d66797030b691233900bce45cf398fbba4f067ce300e8b44fc52a",
+        "index": 9,
+        "plies": 27,
+        "reused": false,
+        "root": 4,
+        "seconds": 67.15372760000173,
+        "stops": {
+          "node_limit": 11,
+          "time_limit": 16
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 390,
+          "Player_queries": 64,
+          "native_legality_calls": 131271,
+          "native_legality_fallbacks": 0,
+          "nodes": 435729,
+          "qnodes": 0,
+          "runtime_pops": 435080,
+          "runtime_pushes": 435080
+        },
+        "depths": {
+          "26": 1,
+          "35": 1,
+          "6": 26,
+          "64": 2,
+          "7": 30,
+          "8": 4
+        },
+        "final_record_sha256": "3b86a3d210f5ef7dc7c62e5399a891281a946a7af9bb8e152634eb2ed89c570a",
+        "index": 10,
+        "plies": 64,
+        "reused": false,
+        "root": 5,
+        "seconds": 167.89562630001456,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 22,
+          "time_limit": 40
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 396,
+          "Player_queries": 64,
+          "native_legality_calls": 153259,
+          "native_legality_fallbacks": 0,
+          "nodes": 442423,
+          "qnodes": 0,
+          "runtime_pops": 441766,
+          "runtime_pushes": 441766
+        },
+        "depths": {
+          "27": 1,
+          "40": 1,
+          "6": 25,
+          "64": 2,
+          "7": 30,
+          "8": 5
+        },
+        "final_record_sha256": "f9a70562f8529db4edc3ebaa05a6f00bcf779a466dd0bbb8838a3e9f9918d27b",
+        "index": 11,
+        "plies": 64,
+        "reused": false,
+        "root": 5,
+        "seconds": 164.0055523000192,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 26,
+          "time_limit": 36
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 375,
+          "Player_queries": 64,
+          "native_legality_calls": 133556,
+          "native_legality_fallbacks": 0,
+          "nodes": 443427,
+          "qnodes": 0,
+          "runtime_pops": 442724,
+          "runtime_pushes": 442724
+        },
+        "depths": {
+          "16": 1,
+          "21": 1,
+          "6": 13,
+          "64": 3,
+          "7": 33,
+          "8": 13
+        },
+        "final_record_sha256": "d6607f8725f8803909710416eb880029ea817a331276c2be52f914ed6e78c4d6",
+        "index": 12,
+        "plies": 64,
+        "reused": false,
+        "root": 6,
+        "seconds": 159.66033719992265,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 34,
+          "time_limit": 27
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 398,
+          "Player_queries": 64,
+          "native_legality_calls": 153035,
+          "native_legality_fallbacks": 0,
+          "nodes": 438175,
+          "qnodes": 0,
+          "runtime_pops": 437436,
+          "runtime_pushes": 437436
+        },
+        "depths": {
+          "18": 1,
+          "37": 1,
+          "6": 3,
+          "64": 3,
+          "7": 34,
+          "8": 22
+        },
+        "final_record_sha256": "6549ea515592827c797078fb56a1c91b7e55c62f55cd6b38b2c03771dfeef700",
+        "index": 13,
+        "plies": 64,
+        "reused": false,
+        "root": 6,
+        "seconds": 167.2366624000715,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 23,
+          "time_limit": 38
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 405,
+          "Player_queries": 64,
+          "native_legality_calls": 150057,
+          "native_legality_fallbacks": 0,
+          "nodes": 433694,
+          "qnodes": 0,
+          "runtime_pops": 432950,
+          "runtime_pushes": 432950
+        },
+        "depths": {
+          "18": 1,
+          "36": 1,
+          "6": 1,
+          "64": 3,
+          "7": 33,
+          "8": 25
+        },
+        "final_record_sha256": "429695a8bd16cac8e025a47705348b8bdf43191472570d0c7918bd0af46c308a",
+        "index": 14,
+        "plies": 64,
+        "reused": false,
+        "root": 7,
+        "seconds": 168.35118120000698,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 22,
+          "time_limit": 39
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DYNAMIC_FIXED",
+        "counts": {
+          "PV_plies": 381,
+          "Player_queries": 64,
+          "native_legality_calls": 137897,
+          "native_legality_fallbacks": 0,
+          "nodes": 452637,
+          "qnodes": 0,
+          "runtime_pops": 451937,
+          "runtime_pushes": 451937
+        },
+        "depths": {
+          "16": 1,
+          "20": 1,
+          "6": 14,
+          "64": 3,
+          "7": 33,
+          "8": 12
+        },
+        "final_record_sha256": "d48cc53516f0ee2baa928babce0e193e3a7fb3af6a3f92b6cd495230374f4f53",
+        "index": 15,
+        "plies": 64,
+        "reused": false,
+        "root": 7,
+        "seconds": 162.18577079998795,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 37,
+          "time_limit": 24
+        },
+        "terminal": "max_ply",
+        "value": 0
+      }
+    ],
+    "scope": "Same8physical unfiltered starts, separate fullrules and complete histories; unit leaf/order botharms, dynamic feature geometry intentionally follows changed rule. Two exposed rules, no IID holdout/learning/WDL claim; generic missing completion bounds[-1,1] retained separately from static no-P0-checkmate fact.",
+    "status": "PASS"
+  },
+  "rows": [
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 1
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 0,
+      "seconds_game_loop": 160.9329506000504,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 1
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 0,
+      "seconds_game_loop": 163.46687590004876,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 5,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                3,
+                2
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_034",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_042",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_011",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal1",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 16,
+      "root": 1,
+      "seconds_game_loop": 51.24584450002294,
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 5,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                1
+              ],
+              "geometry_id": "g19",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_022",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g18",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                3,
+                2
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g18",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal1",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 59,
+      "root": 1,
+      "seconds_game_loop": 156.30126580002252,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 5,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                2,
+                4
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                4
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_034",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_044",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g18",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_005",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                4
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal2",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 59,
+      "root": 2,
+      "seconds_game_loop": 167.623719300027,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 5,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                2,
+                4
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                4
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_044",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_013",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                3
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal2",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 59,
+      "root": 2,
+      "seconds_game_loop": 159.3343405999476,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                3
+              ],
+              "geometry_id": "g19",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_023",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal3",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 3,
+      "seconds_game_loop": 158.80672180000693,
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                3
+              ],
+              "geometry_id": "g19",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_023",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal3",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 3,
+      "seconds_game_loop": 168.528542199987,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 5,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g0",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_000",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_040",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_034",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                1,
+                4
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g20",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_026",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                0,
+                3
+              ],
+              "geometry_id": "g9",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_047",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal4",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 54,
+      "root": 4,
+      "seconds_game_loop": 165.47991100000218,
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 7,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g0",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_000",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_040",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                1,
+                4
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g2",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                0,
+                3
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_044",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g18",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal4",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 20,
+      "root": 4,
+      "seconds_game_loop": 67.15372760000173,
+      "terminal": "repetition",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 5,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                4
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                4,
+                4
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                1,
+                0
+              ],
+              "geometry_id": "g0",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_000",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                3,
+                2
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g2",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g20",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_027",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal5",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 59,
+      "root": 5,
+      "seconds_game_loop": 167.89562630001456,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 1,
+        "lost": [
+          [
+            0,
+            "A"
+          ]
+        ],
+        "query": 5,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                4
+              ],
+              "geometry_id": "g22",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_030",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                4,
+                4
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                4
+              ],
+              "geometry_id": "g19",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_022",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                3,
+                2
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "B",
+              "from": [
+                2,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal5",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 59,
+      "root": 5,
+      "seconds_game_loop": 164.0055523000192,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                0,
+                3
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_035",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                3
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal6",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 6,
+      "seconds_game_loop": 159.66033719992265,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g20",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_027",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                3
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal6",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 6,
+      "seconds_game_loop": 167.2366624000715,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "UNIT",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                3,
+                2
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_035",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal7",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 7,
+      "seconds_game_loop": 168.35118120000698,
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "censor": null,
+      "controller": "DYNAMIC_FIXED",
+      "first_capture": {
+        "actor": 0,
+        "lost": [
+          [
+            1,
+            "B"
+          ]
+        ],
+        "query": 0,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "A",
+              "from": [
+                3,
+                2
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_035",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            }
+          ],
+          "initial_setup_key": "minimal7",
+          "resigned_by": null,
+          "ruleset_fingerprint": "711ca14035cb82e57ab82e658155437027c87a603a21cbd1f9a938c5910b57c1",
+          "schema_version": 3
+        }
+      },
+      "queries_from_capture_inclusive": 64,
+      "root": 7,
+      "seconds_game_loop": 162.18577079998795,
+      "terminal": "max_ply",
+      "value": 0
+    }
+  ],
+  "scope": "Finite same8mu paired geometry/dynamic contrast; no independent-rule or IID generalization. Actual terminal draws are observations under H64/repeat4, not original-root minimax DRAW. Old referenced cells are never rerun.",
+  "status": "PASS",
+  "unique_literal_records": 16
+}

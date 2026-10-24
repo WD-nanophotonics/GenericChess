@@ -661,3 +661,22 @@ Public derived JSON/text copies use LF presentation before staged diff checks.
 Preserve exact private originals and never normalize frozen source/input strings
 inside a capsule or change their registered hashes. Capture long diagnostics
 privately and show only the relevant summary, rather than dumping full logs.
+
+
+## Caller timing scopes and published structural joins —2026-10-24
+
+The old leaper_default_contact seconds starts after setup; it is game-loop time.
+Old per-case setup/import/finalserialization cost stays UNKNOWN. After all frozen
+producers closed, a zero-query controlled5second setup test drove a future-only
+fix: setup_seconds and caller_seconds_before_final_write; the driver also records
+new D.run calls including finalserialization. Module imports remain excluded.
+Reused historical rows have no fabricated caller0. Old measured source capsules
+remain exact; no frozen fitness rerun or cap change repairs measurement metadata.
+
+For cross-rule data joins use exact full RuleSet/record/state, physical action
+projection and explicit clock/support. H6 label counterfactuals are not H6 Player
+runs, singleton H64 and two-type H6 are different domains. Attribution to fixed
+published AUX labels is not independent solving. Shared Core root/child/defense
+replay qualifies semantic binding only. Never execute packet source capsules or
+rebuild another role's graph to make a summary. Presentation source hashes can
+explicitly normalize LF; original executed-source byte hashes cannot.

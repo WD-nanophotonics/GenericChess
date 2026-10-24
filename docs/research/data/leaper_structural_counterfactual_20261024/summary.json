@@ -1,0 +1,98 @@
+{
+  "Core_oneply_edges": 5861,
+  "Core_roots": 600,
+  "H6_vs_H64_revaluation": {
+    "((0, 1), (0, 1))": 11,
+    "((1, 0), (1, 0))": 4,
+    "((1, 0), None)": 10
+  },
+  "added_draw_immediate_stalemate": 1,
+  "added_draw_legal_capture_A_reply": 13,
+  "added_drawing_actions": 14,
+  "by_board_clock": {
+    "4/H6": {
+      "WDL_changed": 55,
+      "capacity_changed": 96,
+      "fork_changed": 56,
+      "paired_roots": 192,
+      "shared_revaluation": 72,
+      "shared_support_changed": 75,
+      "support_changed": 187,
+      "unchanged_capacity_fork_change": 8,
+      "unchanged_capacity_shared_revaluation": 27
+    },
+    "4/H64": {
+      "WDL_changed": 96,
+      "capacity_changed": 96,
+      "fork_changed": 75,
+      "paired_roots": 192,
+      "shared_revaluation": 109,
+      "shared_support_changed": 61,
+      "support_changed": 183,
+      "unchanged_capacity_fork_change": 9,
+      "unchanged_capacity_shared_revaluation": 13
+    },
+    "5/H6": {
+      "WDL_changed": 28,
+      "capacity_changed": 96,
+      "fork_changed": 26,
+      "paired_roots": 192,
+      "shared_revaluation": 31,
+      "shared_support_changed": 30,
+      "support_changed": 191,
+      "unchanged_capacity_fork_change": 10,
+      "unchanged_capacity_shared_revaluation": 16
+    },
+    "5/H64": {
+      "WDL_changed": 96,
+      "capacity_changed": 96,
+      "fork_changed": 65,
+      "paired_roots": 192,
+      "shared_revaluation": 102,
+      "shared_support_changed": 51,
+      "support_changed": 190,
+      "unchanged_capacity_fork_change": 9,
+      "unchanged_capacity_shared_revaluation": 6
+    },
+    "6/H6": {
+      "WDL_changed": 20,
+      "capacity_changed": 96,
+      "fork_changed": 21,
+      "paired_roots": 192,
+      "shared_revaluation": 23,
+      "shared_support_changed": 22,
+      "support_changed": 192,
+      "unchanged_capacity_fork_change": 12,
+      "unchanged_capacity_shared_revaluation": 14
+    },
+    "6/H64": {
+      "WDL_changed": 96,
+      "capacity_changed": 96,
+      "fork_changed": 39,
+      "paired_roots": 192,
+      "shared_revaluation": 99,
+      "shared_support_changed": 30,
+      "support_changed": 190,
+      "unchanged_capacity_fork_change": 6,
+      "unchanged_capacity_shared_revaluation": 3
+    }
+  },
+  "fork_change_with_shared_revaluation": 10,
+  "fork_change_without_shared_revaluation": 14,
+  "new_Player_queries": 0,
+  "new_solver_calls": 0,
+  "paired_rows": 1152,
+  "same_capacity_H64_rows": 288,
+  "same_capacity_H64_shared_revaluation_roots": 22,
+  "same_capacity_fork_change_roots": 24,
+  "scope": "Exact published AUX labels joined to PRIMARY rules/history/action frontiers; truth is attributed, not independently re-solved. H6 is an explicit clock counterfactual, H64 the original rule. Shared endpoints and roots, exposed strata, not IID or a population forecast. Missing cost cells remain null.",
+  "scoring_changed_children": 2,
+  "scoring_reference_and_new_children": 8,
+  "shared_action_occurrence_mechanisms": {
+    "((0, 1), ('stalemate', 'checkmate'))": 11,
+    "((1, 0), ('ongoing', 'stalemate'))": 14
+  },
+  "source_cost_rows": 864,
+  "source_unlabelled_cost_rows": 288,
+  "status": "PASS"
+}

@@ -1,0 +1,54 @@
+{
+  "files": {
+    "absorption.json.gz": {
+      "bytes": 37938,
+      "decoded_sha256": "6115577bbfda9cf8bebf4e2b219b7eb20a8fa0b03a62a54e88d4bfc51c14f97e",
+      "sha256": "2eeaeb1cd876a113090efe22c22ccace9f06f524639918f32ed0026154e3fccb"
+    },
+    "costs.json.gz": {
+      "bytes": 23433,
+      "decoded_sha256": "28f6ba3e7289b79d62c2ae93637d55e33040e0bfd5d0e9077bcbc6de9757850e",
+      "sha256": "38e3afcc2de93f4b8b2d97991f6ae109d063654fedcc6985068c1b143c15e285"
+    },
+    "next-H6.json.gz": {
+      "bytes": 22580,
+      "decoded_sha256": "80583aac258cc19b60e80ac969d216015392689368c6de78dc75b2da91496474",
+      "sha256": "4c9985a2b7ba6afaf1a968d6e2149e561e68e9af29092a7efb20aeb7c48bb185"
+    },
+    "paired.json.gz": {
+      "bytes": 256498,
+      "decoded_sha256": "a3de00f7f01318319ec08d3a3cae2f187d0d87f688e64d4da9e04395081cf0a8",
+      "sha256": "6fb0ae0aafc4711ccbd38121d3f998289e1cb2f5597c025b1a3990d01eb5dfa1"
+    },
+    "plan.json": {
+      "bytes": 1592,
+      "decoded_sha256": "63630d8e047833e070d4027f2994f7f44ec39f4207887d857f951f7e94fceec8",
+      "sha256": "63630d8e047833e070d4027f2994f7f44ec39f4207887d857f951f7e94fceec8"
+    },
+    "roots.json.gz": {
+      "bytes": 149898,
+      "decoded_sha256": "c861499e7568e03b3388a9c337a41d8941a6e5c931a664981e54fa6e760546d0",
+      "sha256": "47d46ed979bd83adc8cbadf6c42b1cb81d682a128a98f85e7515104ad3d63d47"
+    },
+    "scoring-plan.json": {
+      "bytes": 1047,
+      "decoded_sha256": "1223f57a3e2cb145dcc9e6a6be63c34046debb02132f1cb0c78bfeebc812313f",
+      "sha256": "1223f57a3e2cb145dcc9e6a6be63c34046debb02132f1cb0c78bfeebc812313f"
+    },
+    "summary.json": {
+      "bytes": 3140,
+      "decoded_sha256": "1f93725187fbc89f5a97cbe065ad04df02df94b93a3750aea0eee41f9bc182ea",
+      "sha256": "1f93725187fbc89f5a97cbe065ad04df02df94b93a3750aea0eee41f9bc182ea"
+    }
+  },
+  "maintained_source_LF_sha256": {
+    "scripts\\leaper_absorption_witness.py": "46361d0d21ca2026fe95cf562a31ca40fc229c0cc3457d15613e45acee5cb8b0",
+    "scripts\\leaper_structural_counterfactual.py": "843bfa4a37aea53548bcba3068aa4d82005ed02cb4abf3849a6ea52222d9b55a",
+    "scripts\\verify_leaper_structural_counterfactual.py": "3edebe2df0a8fe96a464fb9bb82981054f73871d6aeea85aad73a921946aade0"
+  },
+  "provider_commit": "e71968ff8ec5e3ab57cade9b965e44a23558780a",
+  "provider_packet_sha256": "aa02eb7967ef9479f17f0710c3d795fc0680dec919adb50f26cf8faaccecf847",
+  "scope": "Existing published truth attribution and literal Core action/terminal qualification. No new graph/Player/learner or source-capsule execution. Exact original sources/returns remain private; presentation LF normalization only.",
+  "source_hash_scope": "LF source presentation binding, not a prelaunch-blinded or raw-byte experimental-source claim. Original pre-field-name witness source and return are retained privately; rename-only amendment explicit.",
+  "status": "REVIEWED_TECHNICAL_DATA"
+}

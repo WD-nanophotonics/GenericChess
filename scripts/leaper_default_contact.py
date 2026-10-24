@@ -12,6 +12,7 @@ from tools.local_agent import session
 from tools.local_agent.common import write_json
 
 def run(inputs,registration,output):
+    caller_tick=time.perf_counter()
     assert not output.exists()
     reg=L.load(registration);world=L.load(inputs)
     assert L.sha(inputs)==reg['input_sha256'] and L.sha(Path(__file__))==reg['source_sha256']
@@ -52,6 +53,7 @@ def run(inputs,registration,output):
         s.submit(executed)
         print('PLY',s.state.ply_count,d.completed_depth,d.score,flush=True)
     row=dict(status='CLOSED',slot=dict(root=reg['root'],policy=reg['controller']),controller=reg['controller'],first_action_override=reg.get('first_action_override'),started_at=started,ended_at=now(),seconds=time.perf_counter()-tick,initial_record=root['record'],queries=queries,final_record=L.record_value(s.to_record()),final_state=L.record_value(s.state),terminal=L.record_value(s.result),censor=censor,value=L.outcome_value(s.result,0,censor),nodes_limit=reg['nodes'],generated_default_profile=reg['profile'],actual_leaf_profile=L.record_value(leaf_profile),actual_leaf_config=L.record_value(leaf_config),ordering_profile=L.record_value(order_profile),ordering_config=L.record_value(order_config))
+    row.update(setup_seconds=tick-caller_tick,caller_seconds_before_final_write=time.perf_counter()-caller_tick,cost_scope='seconds=game_loop; caller includes setup before final serialization; module imports excluded')
     write_json(output,row);print('CLOSED',row['terminal']['status'],row['value'],len(queries),row['seconds'],flush=True)
     return row
 if __name__=='__main__':

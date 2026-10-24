@@ -7107,3 +7107,30 @@ next actual research order are in LOCAL_MAINLINE and DIRECTION_REVIEW_20261024.
 The previously active fixed16slot producer closed naturally during the review:
 native exit0,16/16,0missing,2253.6750507s batch, unchanged cap. No new call was
 started by the review. Scientific packet/timing acceptance remains unfinished.
+
+
+## Structural Main resumed and frozen acceptance closed —2026-10-24
+
+Original session eaf4ecef resumed; review/offline gap credited0. Existing same-
+patrol Chat read was reused, no extra polling. Latest Chat1792806445/1792808411
+structural-first/small-diagnostic priority is now actually executed, not just read:
+no new Player/learner/graph. Frozen32+16games accepted with132doc reader; old
+measured sources retained and future-only setup/caller timing RED->GREEN. The
+post-review plan did not launch prepared A1/B8 or expand prices.
+
+Published AUX e71968ff root/action/clock labels are copied/attributed and joined
+to exact PRIMARY inputs;600Core roots/5861children and864actual old costs match.
+New structural mechanism analysis finds22samecapacity H64roots/25shared-action
+value changes, all immediate absorption changes.24samecapacity fork changes
+split10with shared revaluation/14with newdrawing actions;13have legal capture-A
+replies.8original/new scoring children isolate stalemate payoff with unchanged
+physical board/frontier. H6hides10of14H64action regressions; clocks remain distinct.
+No independent WDL proof, graph verification, learner improvement or default is
+claimed. The900s budget was not extended despite the600s forecast miss.
+
+Next structural input actually prepared from fixed AUX H6 source:128common
+physical four-actor roots,256fullR/history/legalfrontier checks, zero new labels/
+proof execution. Only the next missing mechanism is selected; not a repeated
+solver or AUX assignment. Claude's7cell universal-ceiling/Markov proposal stays
+deferred. Continuing two-way authorization is direct user authority; a new
+substantive merged progress/question message follows reviewed push/fullSHA.

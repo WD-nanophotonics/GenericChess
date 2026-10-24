@@ -78,14 +78,20 @@ obsolete instructions, actual unfinished work and reasons.
   same-first-action benefit follows the dynamic bundle; prospective12pairs yield
   only one positive/eleven zero, with greater actual DEFAULT work. Preserve both.
   Fixed-opponent utility is legitimate but is not minimax WDL or general strength.
-- Current interrupted segment's private evidence:32 closed fixed-order A3/B10
-  cells give material effects0, dynamic effects+0.5;12 cold calls find two selected
-  candidates tied, despite actual choice differences. Role-coupled static capacity
-  differs from single-piece bare-K capacity. These are not yet a completed public
-  delivery; original sources/results and pending RED timing test remain private.
-  The frozen16-slot A1/B10 run closed during this review (native exit0,16/16,
-  no missing,2253.6750507s batch); final scientific acceptance is pending. No refill,
-  new A1/B8 search, derived publication claim or scientific finish is implied.
+- [Minimal prices and role capacity](LEAPER_MINIMAL_PRICES_AND_ROLE_CAPACITY_20261024.md)
+  closes the frozen32+16game continuation: finite material effects0, dynamics+0.5
+  on A3/B10 and0on A1/B10;12cold queries find selected candidates tied. The complete
+  public132document packet qualifies1894queries/11439PV and scoped role capacity.
+  No further price panel is Main; A1/B8 remains prepared0queries only.
+- [Structural counterfactuals](LEAPER_STRUCTURAL_COUNTERFACTUAL_20261024.md)
+  binds600existing AUX roots/5861Core children and864old cost receipts. Among288
+  same-capacity H64paired roots,22contain25shared-action revaluations:11stalemate
+  to mate,14ongoingWIN to stalemate.24fork changes split10with shared revaluation
+  and14newdrawing alternatives (1stalemate,13capture-A replies). H6hides10of14
+  longer-clock regressions. Four new literal scoring children retain the board/
+  defender frontier but changing stalemate draw->loss changes two terminal payoffs.
+  Thus movement-only/rootWDL-only signatures miss action/absorption/scoring
+  structure. WDL is attributed to fixed published AUX labels, never re-solved here.
 
 Earlier costs/width, E0, contact-price and learning reports remain evidence in
 Git and their purpose reports. CLOSED1904 old missing E0 outcomes remain UNKNOWN.
@@ -96,19 +102,19 @@ with exact additional uncommitted originals saved privately; history is preserve
 
 ## Current executable reserve
 
-Main: Which matched rule changes alter strategic facts beyond static capability?
-| On the next actual research resume, inventory existing24edge singleton H64 inputs and the SEPARATE3x3 two-type H6 pair; declare compatible join keys/support/clock/history and one falsifiable coordinate prediction before computing a finite table
-| Provenance-bound rows, explicit UNKNOWN, at least one explanatory positive/negative counterfactual or a reason this repeats old evidence
-| Reuse first; stop if only descriptive rearrangement; no new all-graph/price/performance campaign or AUX solver duplication.
-Backup1: What price/dynamic conclusion is actually supported by saved histories?
-| Finish acceptance of existing frozen outputs, diagnose the pending cost-scope RED test, retain exact executed sources, then select at most one existing-history support-set question IF it changes structural interpretation
-| Actual rules/controllers/tie/depth, strict support versus selected ties versus payoff, unknown setup/import time; no fitness replay to repair metadata
-| Close the bounded diagnostic when uninformative; do not automatically enumerate more prices, seeds, roots or D6 targets.
-Backup2: Does the joint roster change which structural counterfactual is informative?
-| Inspect the already prepared zero-query A1/B8 input and role-capacity witness only if Main identifies a relevant gap; explain what competitor value class or terminal opportunity changes before registering any new cost case
-| Full-rule/history/capture semantics and honest total cost; static opportunity versus original-root WDL remain distinct
-| Prepared input is a reserve, not a scheduled run; no holdout/training gate, cap reset or sampler/default activation.
+Main: Does the shared-action/new-action/scoring signature transfer to an ordinary-defender roster?
+| Use prepared af-next-H6-prepared.json (public next-H6.json.gz):128common actual fullrule pairs/256strict initial replays; freeze predicted oneply absorption/capture/scoring transitions before missing literal comparisons, reuse source child evidence
+| Full-rule/history H6repeat2 rows, source-bound positive/negative mechanisms and explicit unknown continuation values; keep singleton H64 law separate
+| End if only re-labeling existing16LOSS-to-DRAW evidence; no solver/price/seed/budget campaign, training gate, default or AUX write.
+Backup1: Which absorption effects depend on terminal convention rather than geometry?
+| Reuse the completed8reference/new draw-versus-loss child observations and25shared-action defense witnesses; generalize only with a specific missing mechanism
+| Explicit changed scoring field, same physical board/frontier and separately attributed root/action values
+| No rootWDL transfer from immediate payoffs or new unchanged complete-game repeats.
+Backup2: Does the opposing roster alter the right structural prediction?
+| Reuse published role-capacity data and prepared A1/B8 fullinputs0Player only if Main reveals a different question; keep single-piece capacity distinct from joint-roster opportunity
+| Exact complete rule, history/clock and honest total cost, no source-selected training sample
+| Prepared input is a conditional reserve, not an automatic cost run or inverse/learner activation.
 
-The interrupted session remains INCOMPLETE; its recorded work is preserved,
-review/admin time adds zero research credit. Resume it through the existing
-session protocol only when research actually resumes. Science is OPEN.
+The original UUID was resumed after the direct review; its old effective work
+was preserved and the review/offline gap excluded. Scientific acceptance above
+is complete; the session ledger/final-check governs workflow closure. Science is OPEN.

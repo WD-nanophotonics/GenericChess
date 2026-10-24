@@ -1,0 +1,902 @@
+{
+  "at": "2026-10-24T02:30:40.804326+00:00",
+  "by_controller": {
+    "DYNAMIC_FIXED": {
+      "games": 8,
+      "nodes": 982236,
+      "plies": 149,
+      "seconds": 311.975834500161,
+      "values": {
+        "0": 2,
+        "1": 6
+      }
+    },
+    "FULL_FIXED": {
+      "games": 8,
+      "nodes": 978297,
+      "plies": 149,
+      "seconds": 316.9320078998571,
+      "values": {
+        "0": 2,
+        "1": 6
+      }
+    },
+    "STATIC_FIXED": {
+      "games": 8,
+      "nodes": 2340246,
+      "plies": 316,
+      "seconds": 735.1282132001361,
+      "values": {
+        "0": 6,
+        "1": 2
+      }
+    },
+    "UNIT": {
+      "games": 8,
+      "nodes": 2341537,
+      "plies": 316,
+      "seconds": 745.611135900137,
+      "values": {
+        "0": 6,
+        "1": 2
+      }
+    }
+  },
+  "formal_batch_seconds": 1942.9007009000052,
+  "naturalDEFAULT_pilot_game": 1,
+  "new_formal_games": 30,
+  "observed_source_counts": {
+    "completed_root_win": 12,
+    "main_iteration": 902,
+    "root_immediate_win": 16
+  },
+  "pairs": [
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 0,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 0,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 2,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "bbf4b095a6e66aecdaac633141dd5e1cf42d651f208d66a76d74cc32a899a5e9"
+      },
+      "root": 0,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 2,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "bbf4b095a6e66aecdaac633141dd5e1cf42d651f208d66a76d74cc32a899a5e9"
+      },
+      "root": 0,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 1,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 4,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "8745d10c7ac998658c0fe909054addb06aa7a50428c0d1c8c533a9aa205e0012"
+      },
+      "root": 1,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          7
+        ],
+        "query": 0,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "8b6979a5cce5a417c6ccc9631eceaaf6ae30a7992d176a73a7776c3ee115395e"
+      },
+      "root": 1,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          7
+        ],
+        "query": 0,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "8b6979a5cce5a417c6ccc9631eceaaf6ae30a7992d176a73a7776c3ee115395e"
+      },
+      "root": 1,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 2,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          7
+        ],
+        "query": 0,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "7a1c6e0da97c639cc97ead0a09de54e3e6562d8b50530b15f121066bddfe64f3"
+      },
+      "root": 2,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 6,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "d51daaaba278b625aa30a41627e1d95c1fa71619f8da223e90d6f7ae3ed24f47"
+      },
+      "root": 2,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          7,
+          7
+        ],
+        "query": 0,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "7a1c6e0da97c639cc97ead0a09de54e3e6562d8b50530b15f121066bddfe64f3"
+      },
+      "root": 2,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 3,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 3,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 2,
+        "result_sources": [
+          "main_iteration",
+          "completed_root_win"
+        ],
+        "state_sha256": "69635cd6f77a0e0338d284baa7ffb2e1604f5b5135cdc8bff01a336f0b830f1c"
+      },
+      "root": 3,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 2,
+        "result_sources": [
+          "main_iteration",
+          "completed_root_win"
+        ],
+        "state_sha256": "69635cd6f77a0e0338d284baa7ffb2e1604f5b5135cdc8bff01a336f0b830f1c"
+      },
+      "root": 3,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 4,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 4,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 2,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "b9964efa6bb2a2748cbcd93a3d264a131970554533a630cec52f2a370a00a995"
+      },
+      "root": 4,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 2,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "b9964efa6bb2a2748cbcd93a3d264a131970554533a630cec52f2a370a00a995"
+      },
+      "root": 4,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 5,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 5,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 6,
+        "result_sources": [
+          "completed_root_win",
+          "main_iteration"
+        ],
+        "state_sha256": "c5692c74a5f6d7a8a5aac9c16884a246217d347596790eb3a03a438e804dd3d3"
+      },
+      "root": 5,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          6,
+          6
+        ],
+        "query": 6,
+        "result_sources": [
+          "completed_root_win",
+          "main_iteration"
+        ],
+        "state_sha256": "c5692c74a5f6d7a8a5aac9c16884a246217d347596790eb3a03a438e804dd3d3"
+      },
+      "root": 5,
+      "same_complete_record": false,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 6,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 6,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          7,
+          7
+        ],
+        "query": 0,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "6fd41f7056ddb9537fe00b7e9318f6a039a08c136bd562027e6cdd5bd31e118c"
+      },
+      "root": 6,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": {
+        "actor": 0,
+        "completed_depths": [
+          7,
+          7
+        ],
+        "query": 0,
+        "result_sources": [
+          "main_iteration",
+          "main_iteration"
+        ],
+        "state_sha256": "6fd41f7056ddb9537fe00b7e9318f6a039a08c136bd562027e6cdd5bd31e118c"
+      },
+      "root": 6,
+      "same_complete_record": false,
+      "value_difference": 1
+    },
+    {
+      "a": "UNIT",
+      "b": "STATIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 7,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "DYNAMIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 7,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "UNIT",
+      "b": "DYNAMIC_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 7,
+      "same_complete_record": true,
+      "value_difference": 0
+    },
+    {
+      "a": "STATIC_FIXED",
+      "b": "FULL_FIXED",
+      "first_actual_shared_history_difference": null,
+      "root": 7,
+      "same_complete_record": true,
+      "value_difference": 0
+    }
+  ],
+  "physical_factorial_games": 32,
+  "reused_cost_references": 2,
+  "rows": [
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 457208,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 0,
+      "seconds": 156.90008370007854,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 464802,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": true,
+      "root": 0,
+      "seconds": 156.3036371000344,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 98315,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": false,
+      "root": 0,
+      "seconds": 20.65015779994428,
+      "selected_nonterminal_PV_leaves": 6,
+      "value": 1
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 98315,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": true,
+      "root": 0,
+      "seconds": 20.00378659996204,
+      "selected_nonterminal_PV_leaves": 6,
+      "value": 1
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 106496,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": false,
+      "root": 1,
+      "seconds": 24.110702300095,
+      "selected_nonterminal_PV_leaves": 10,
+      "value": 0
+    },
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 106496,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": false,
+      "root": 1,
+      "seconds": 23.22287330008112,
+      "selected_nonterminal_PV_leaves": 10,
+      "value": 0
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 172032,
+      "plies": 21,
+      "qnodes": 0,
+      "queries": 21,
+      "reused": false,
+      "root": 1,
+      "seconds": 45.30036639992613,
+      "selected_nonterminal_PV_leaves": 19,
+      "value": 0
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 172032,
+      "plies": 21,
+      "qnodes": 0,
+      "queries": 21,
+      "reused": false,
+      "root": 1,
+      "seconds": 44.237027399940416,
+      "selected_nonterminal_PV_leaves": 20,
+      "value": 0
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 335010,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 2,
+      "seconds": 169.98534920008387,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 219722,
+      "plies": 27,
+      "qnodes": 0,
+      "queries": 27,
+      "reused": false,
+      "root": 2,
+      "seconds": 64.89531689998694,
+      "selected_nonterminal_PV_leaves": 26,
+      "value": 0
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 220565,
+      "plies": 27,
+      "qnodes": 0,
+      "queries": 27,
+      "reused": false,
+      "root": 2,
+      "seconds": 65.52065959991887,
+      "selected_nonterminal_PV_leaves": 25,
+      "value": 0
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 331071,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 2,
+      "seconds": 175.86245789995883,
+      "selected_nonterminal_PV_leaves": 54,
+      "value": 0
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 65548,
+      "plies": 9,
+      "qnodes": 0,
+      "queries": 9,
+      "reused": false,
+      "root": 3,
+      "seconds": 13.11474869993981,
+      "selected_nonterminal_PV_leaves": 2,
+      "value": 1
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 65548,
+      "plies": 9,
+      "qnodes": 0,
+      "queries": 9,
+      "reused": false,
+      "root": 3,
+      "seconds": 13.177390500088222,
+      "selected_nonterminal_PV_leaves": 2,
+      "value": 1
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 452328,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 3,
+      "seconds": 161.2671256000176,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 453641,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 3,
+      "seconds": 160.17258150002453,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 81931,
+      "plies": 11,
+      "qnodes": 0,
+      "queries": 11,
+      "reused": false,
+      "root": 4,
+      "seconds": 16.837927200016566,
+      "selected_nonterminal_PV_leaves": 5,
+      "value": 1
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 466965,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 4,
+      "seconds": 157.3469647000311,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 471348,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 4,
+      "seconds": 155.76881829998456,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 81931,
+      "plies": 11,
+      "qnodes": 0,
+      "queries": 11,
+      "reused": false,
+      "root": 4,
+      "seconds": 17.898623900022358,
+      "selected_nonterminal_PV_leaves": 5,
+      "value": 1
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 98316,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 24.05459970002994,
+      "selected_nonterminal_PV_leaves": 6,
+      "value": 1
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 98314,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 23.614412000053562,
+      "selected_nonterminal_PV_leaves": 7,
+      "value": 1
+    },
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 98316,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 20.175143099972047,
+      "selected_nonterminal_PV_leaves": 6,
+      "value": 1
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 98314,
+      "plies": 13,
+      "qnodes": 0,
+      "queries": 13,
+      "reused": false,
+      "root": 5,
+      "seconds": 21.29247620003298,
+      "selected_nonterminal_PV_leaves": 7,
+      "value": 1
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 81931,
+      "plies": 11,
+      "qnodes": 0,
+      "queries": 11,
+      "reused": false,
+      "root": 6,
+      "seconds": 14.85871170007158,
+      "selected_nonterminal_PV_leaves": 4,
+      "value": 1
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 81931,
+      "plies": 11,
+      "qnodes": 0,
+      "queries": 11,
+      "reused": false,
+      "root": 6,
+      "seconds": 14.905790799995884,
+      "selected_nonterminal_PV_leaves": 4,
+      "value": 1
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 482910,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 6,
+      "seconds": 148.72485949995462,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 484360,
+      "plies": 64,
+      "qnodes": 0,
+      "queries": 64,
+      "reused": false,
+      "root": 6,
+      "seconds": 145.8168708999874,
+      "selected_nonterminal_PV_leaves": 57,
+      "value": 0
+    },
+    {
+      "controller": "UNIT",
+      "nodes": 49155,
+      "plies": 7,
+      "qnodes": 0,
+      "queries": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.28258740005549,
+      "selected_nonterminal_PV_leaves": 0,
+      "value": 1
+    },
+    {
+      "controller": "STATIC_FIXED",
+      "nodes": 49155,
+      "plies": 7,
+      "qnodes": 0,
+      "queries": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.176525500020944,
+      "selected_nonterminal_PV_leaves": 0,
+      "value": 1
+    },
+    {
+      "controller": "DYNAMIC_FIXED",
+      "nodes": 49155,
+      "plies": 7,
+      "qnodes": 0,
+      "queries": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.614858699962497,
+      "selected_nonterminal_PV_leaves": 0,
+      "value": 1
+    },
+    {
+      "controller": "FULL_FIXED",
+      "nodes": 49155,
+      "plies": 7,
+      "qnodes": 0,
+      "queries": 7,
+      "reused": false,
+      "root": 7,
+      "seconds": 8.553757400019094,
+      "selected_nonterminal_PV_leaves": 0,
+      "value": 1
+    }
+  ],
+  "scope": "Finite8mu four-actor fullrule; intended scientific configurations differ, repeated identical records are not independent performance samples. Completed uniform depth and retained completed_root_win result provenance remain distinct. No actual search rerun.",
+  "selected_PV_feature_counts": {
+    "(0, 0)": 81,
+    "(1, -1)": 144,
+    "(1, 0)": 512
+  },
+  "selected_PV_quantity_identity_checks": 737,
+  "status": "PASS",
+  "sum_game_seconds": 2109.6471915002912,
+  "total_physical_main_games": 33,
+  "unique_literal_complete_records": 17
+}
