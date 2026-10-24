@@ -16,9 +16,16 @@ from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action
 
 
-def verify(path,output,*,target_group='contact',swap_owners=False,source_group='contact'):
+def verify(path,output,*,target_group='contact',swap_owners=False,source_group='contact',source_world=None,seconds=None):
     if source_group not in('contact','two-type'):raise ValueError('unsupported declared source input')
-    tick=time.perf_counter();g=json.loads(gzip.decompress(path.read_bytes()));docs=source_documents();source=json.loads(docs[source_group+'/inputs.json']);w=json.loads(docs[target_group+'/inputs.json'])
+    tick=time.perf_counter();g=json.loads(gzip.decompress(path.read_bytes()))
+    if source_world is None:
+        docs=source_documents();source=json.loads(docs[source_group+'/inputs.json']);w=json.loads(docs[target_group+'/inputs.json'])
+    else:
+        # An explicit complete input is qualified under its OWN compiled rule.
+        # Piece counts, similar geometry or an old group label never select it.
+        if swap_owners:raise ValueError('explicit world owner remapping is unsupported')
+        source=w=source_world
     if g['rule']!=source['rule']:raise ValueError('complete source rule differs')
     differences=[k for k in source['rule']if source['rule'][k]!=w['rule'][k]]
     if target_group not in('contact','two-type')or set(source['rule'])!=set(w['rule'])or set(differences)-{'initial_position','initial_setup_options'}:raise ValueError('unsupported source/target rule difference')
@@ -35,6 +42,7 @@ def verify(path,output,*,target_group='contact',swap_owners=False,source_group='
     if set(vs)!=set(range(len(ps))):raise ValueError('value table incomplete')
     for i,p in enumerate(ps):
         if i%256==0 and role_stop_requested():raise RuntimeError('USER_STOP')
+        if seconds is not None and time.perf_counter()-tick>=seconds:raise RuntimeError('DOMAIN_READER_CAP_UNKNOWN')
         s=fresh_state(p,c);ee=g['edges'][i];v=vs[i]
         if s.terminal_status.is_terminal:
             if ee or i not in ts or ts[i]!=s.terminal_status.winner:raise ValueError('actual static terminal differs')
@@ -60,7 +68,7 @@ def verify(path,output,*,target_group='contact',swap_owners=False,source_group='
         counts['vertices']+=1;counts['edges']+=len(ee)
         if i%10000==0:print(path.name,i,len(ps),round(time.perf_counter()-tick,2),flush=True)
     result=dict(verified=True,path=path.name,sha256=L.sha(path),counts=dict(counts),
-        target_group=target_group,target_fingerprint=c.ruleset_fingerprint,rule_differences=differences,owner_swap=swap_owners,
+        target_group=target_group if source_world is None else 'explicit-complete-world',target_fingerprint=c.ruleset_fingerprint,rule_differences=differences,owner_swap=swap_owners,
         universal_draw=not any(w is not None for w in ts.values()),
         seconds=time.perf_counter()-tick,scope='Every static Core frontier/terminal and graph WDL/rank checked; physical nonzero labels do not become actual-history truth. Complete draw invariants survive this source draw-only clock/repetition.')
     write(output,result);return result

@@ -1,0 +1,51 @@
+{
+  "source_cost_sha256": "1f4c0e62c7e6ea94bfa6d2356d7cb6e1efdd724523fa79865602a55510763a48",
+  "pair": [
+    {
+      "source_query_ply": 4,
+      "PV_ply": 8,
+      "rank": 11,
+      "remaining": 56,
+      "exact_history_WDL": 1,
+      "feature": [
+        1,
+        0,
+        0,
+        0,
+        0.12,
+        0.25,
+        0,
+        0.875,
+        0.25
+      ],
+      "after_raw": 0.9959551158814755
+    },
+    {
+      "source_query_ply": 50,
+      "PV_ply": 54,
+      "rank": 11,
+      "remaining": 10,
+      "exact_history_WDL": 0,
+      "feature": [
+        1,
+        0,
+        0,
+        0,
+        0.12,
+        0.25,
+        0,
+        0.15625,
+        0.75
+      ],
+      "after_raw": 0.9953198416736457
+    }
+  ],
+  "active_extra_channels": {
+    "4": 30,
+    "5": 19,
+    "6": 0,
+    "7": 30,
+    "8": 30
+  },
+  "scope": "POSTHOC samePosition/geometry, distinct actual history/clock and WDL. No oracle targets or feature selection. Offline raw separation is not calibration or a policy gain."
+}

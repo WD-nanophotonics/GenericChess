@@ -1,41 +1,49 @@
 # DEV_AUX current research
 
-Research OPEN; finite depth-target cohort CLOSED. Own sidemission only; patrol60min.
-Source56560fb3e24102792f72a005c5c5bdb52526943f reused13paths exactly.
-Generic package retains only two unchanged existing AUX learner files.
-Latest: LEAPER_DEPTH_TARGETS_AND_HISTORY_BARRIER_20261024.md and compact packet.
+Research OPEN; bounded four-actor cost/truth/response-tree cases CLOSED.
+Own sidemission only; patrol60min. Latest checked source
+fcd2021cc751736ab0f7166ce24a74d95632863e changes docs only after56560fb3.
+Core/rules/search/history remain reused; two existing AUX learner files unchanged.
+Report: LEAPER_FOUR_ACTOR_SIGNAL_AND_HISTORY_20261024.md; data:
+data/leaper_four_actor_signal_20261024.
 
-112slots complete2855.333s:64TRAIN(oneWIN/63DRAW),48EVAL(allDRAW),0missing.
-32learned-versus-Unit gains0/28same records; D4/D6trained16/16same records.
-D6TRAIN pays8.42–8.59xnodes/10.78–11.31xtime. FinalBquiet.9108875/.9133586,
-contact.8489868/.8628655(D4/D6targets). All are in(.5,1), one material leaf-order
-cell: possible positive knots.5/1/2; finite exact q0 optimal sets unchanged within
-a cell. Numeric targets/gradients, timed work and actual utility remain separate.
+Complete physical closure376080vertices/2865872edges plus full Core qualifier
+and H0..34clockDP. Scoped incoming-count3 barrier/rank theorem, independent
+1296arena/5925312comparison check and actual histories give original8roots
+6WIN0/2DRAW. This WDL reduction is NOT a policy-probability quotient.
 
-One exposed first-training-WIN control: oldB.9717732093 WIN48 versus UnitD6
-DRAW64, SAMEroot3/role1/Uniformstream, first divergenceply41. Local parameter
-effect, not prospective gain/checkpoint adoption. Three finite child references
-retained; first receipt serialization failed, unretainedUNKNOWN/not rerun.
-Five-actor forcedWDL remainsUNKNOWN. Do not use chosenPVzeroJacobian as a gate.
+Two preselected original cost cases, each Unit-initialized/frozen per episode:
+root0/role0 DRAW64,2.412s,32D4/9394nodes,0activeB,0update; root1/role1 DRAW64,
+3.732s,32D4/15696nodes,29activeB,B1->.9937271405634751. No final-model EVAL yet.
+Natural history labels: first26WIN0/6DRAW,10forks/1error; second23WIN1/9DRAW,
+20forks/3errors. Counts are occurrences, not iid games/rules. All TRAIN mu
+remained unfiltered, including the known-DRAW next root.
 
-Old count3 barrier: compactWIN0 over359positions,rank25/remaining28; actual-tree
-20kcap staysUNKNOWN. D6stillmisses. Odd-Ferz closure222940vertices/1384352edges
-has24mates/64decisive/maxrank1, two owner Core passes and clockDP. Adds314actual
-quiet query occurrences as strategicDRAW, not zero Uniform expectation or a
-universal no-mate component. Actualsourceply63has6oneplychildrenDRAW.
-92tests+59.174s portable readerPASS167docs/31data-onlycapsules/114episodes;
-0newreaderPlayer/TRAIN/capsuleexecution. Initialmixed158.415870suncredited.
-Accepted final accounting in data directory; publication/transport are admin.
+First ply removes B; closed18936vertex future has no free material channels.
+One exposed p50root rank11/H14 loses by choosing rank14/H13; D12request only
+completesD9/161367nodes/81.028s and still errs. No retry. Explicit tail H8
+150kcapUNKNOWN;H6/H4/H2 completeDRAW. Offline zero-init dynamic/context TD has
+nonzero credit, not an executed learned policy. One feature query fails at
+RuntimeSearchState.repetition_counts, staysUNKNOWN; pinned read-bridge14push/pop
+test passes, no failed fitness refill or public/default interface change.
 
-Main: Can the newly committed4actor input support economical learning?
-| Next ordinary probe replies/latest source; bind complete inputs/trajectories,
-then one bounded original-mu library learner cost case without truth filtering
-| actual completeddepth/targets/updates/payoff/cost orUNKNOWN | all original roots
-eligible; no sampler/PRIMARYforward/default ownership; >=120min assessment.
-Backup1: Does the local price effect transfer beyond an outcome-selected trace?
-| Use NEW committed original-mu input/trajectories to predefine one matched
-diagnostic and measure cost first | prospective behavior/payoff orUNKNOWN | no selected checkpoint,
-oracleTRAIN, closed reference refill or price sweep.
-Backup2: Is fixed-policy Uniform expectation worth its cost?
-| Specify cold/warm caller/fullhistory/clock/TT/time model and a small cost bound
-| valid model/estimated queries orUNKNOWN | no125kPosition-only campaign/newworker.
+One exact-mass full-history Unit response-tree cost case closes20000newqueries/
+5481897nodes/132728prefixes/1487.829elapsed: WIN0bounds[0,1], allmassUNKNOWN.
+No price sweep or Position-only expectation. ReaderPASS461.573s,41docs/23data-only
+capsules, allprefix/PV/RNG/TD/clock/history/mass checked;0newreaderPlayer/episodes.
+81testsPASS. Effective3785.560s; administrative assembly/transport excluded.
+Old112/404cohorts and every old cap/failure remain unchanged.
+
+Main: Does the single final B update affect useful choices off its TRAIN trace?
+| Nextordinaryprobe replies/latestsource, then freeze ONE next-original root2/
+role0 pair (Unit vs finalB.99372714), SAMEseed/D4/resources, no truth filtering
+| literal records/PVs/payoff/actualcost orUNKNOWN | no furtherTRAIN, selected
+checkpoint, widerpanel, oldrefill or heldout/population claim.
+Backup1: Can zero-init observable state features reach the actual learner?
+| Pin complete-state/PV parity using the checked read-bridge, then ONE NEW
+original-mu cost case only if still selected | actual channels/targets/cost
+| old failed p50slot staysUNKNOWN; no defaults, oraclestarts or tuned basis.
+Backup2: Which history contrast matters beyond physical structure?
+| Bounded posthoc legal-cycle analysis on EXISTING source/graphs for one
+samePosition/sameclock history contrast | certificate orUNKNOWN
+| no PRIMARY generator/forward takeover or exact-policy census.

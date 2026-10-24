@@ -1740,3 +1740,51 @@ TRAIN/source execution. Failed/capped evidence remains explicit; early posthoc
 receipt absence failed closed. Initial mixed158.415870s is uncredited, original
 session evidence retained. Final accepted accounting is in the data directory;
 publication and transport are excluded. Research remainsOPEN at a safe checkpoint.
+
+## 2026-10-24 — four-actor signal, history barriers and expectation cost
+
+DEV_AUX consumed PRIMARY's fixed eight-root 5x5 A3/B10 law and checked latest
+committed sandboxfcd2021c; changes since56560fb3 are documentation only. Shared
+Core/search/history were reused, the two existing AUX learner files unchanged.
+PRIMARY owns its structural/generator/forward work; AUX neither writes it nor
+claims a new PRIMARY adoption. Its source direction review was read, not rerun.
+
+AUX closes two original-order cost cases (different root/role/Uniformstream,
+not a paired strength study): both DRAW64, first zero freeB gradient after
+immediate capture; next known-DRAW input deliberately remains eligible and
+gives29activeB PVs/B1->.99372714. No final-model policy EVAL yet. A new376080vertex
+complete Core closure and full frontier/rank/clock qualification support a
+scoped incoming-barrier theorem: six originalWIN0/twoDRAW. All64actual query
+frontiers expose four errors across30forks. One D12request only completesD9 and
+still errs; explicit H8tail remainsUNKNOWN while three shorter tails complete.
+No old cap/reference/112- or404cohort is refilled.
+
+Chat1792806445 cost/target-first and PRIMARY structural-priority qualifications
+are adopted; no larger deeper-training or automatic input/controller campaign.
+Claude1792810119's fixed-tree cell qualification is retained, but a seven-point
+timed-controller sweep is not ANY-learner ceiling proof. One full-history
+exact-mass policy-tree feasibility case spends20000newqueries/5481897nodes,
+1487.829elapsed, with boundsstill[0,1]; it is not20000games or evidence of zero
+Uniform expectation. A same-clock legal-history mathematical countermodel
+has identical forcedDRAW/barriers but exactPWIN7/8versus3/4, showing why the WDL
+reduction cannot be reused as a policy-probability quotient.
+
+Offline zero-initialized existing dynamic/context feature credit is nonzero,
+with no oracle targets/newrollouts; actual feature-policy query fails because
+the public runtime view lacks the complete GameState count field. That slot
+staysUNKNOWN. A pinned read-only bridge is tested on14real pushes/balancedpops
+without another Player call; no production/default/public API change or gain.
+
+81tests and461.573s portable41doc/23data-onlycapsule readerPASS, including all
+132728response prefixes, literalPV/RNG/TD and exactmass. First reader JSON-key
+comparison failure was corrected as representation, not relabelled science.
+The original query-entry serialization repair kept its original deadline/caps
+and had0newPlayer calls before failure. Failures and partial limits are retained.
+AUX confirms3785.559684effective seconds (63.0927min); assembly/transport excluded.
+
+No reply to own1792811141 was available at the single new probe. New report asks
+whether the smallest next-original frozenB pair should precede state-encoder
+work, with the observed inactive-channel/context-alias limits and failed caller
+explicit. Partner reading/adoption/execution of this new packet is unconfirmed.
+One asynchronous combined report/question, no Dot wake, realtime wait, extra
+worker/timer or other-role summary/publication. Standing hourly schedule unchanged.

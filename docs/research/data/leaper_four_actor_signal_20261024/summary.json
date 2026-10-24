@@ -1,0 +1,78 @@
+{
+  "source": "fcd2021cc751736ab0f7166ce24a74d95632863e",
+  "frozen_input_source": "56560fb3e24102792f72a005c5c5bdb52526943f",
+  "research_open": true,
+  "session_id": "5f9f5d62-f482-4fdd-8e65-2e33bbab1158",
+  "effective_work_seconds": 3785.559684,
+  "accepted_finish": true,
+  "tests": 81,
+  "original_root_values": [
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "first_episode": {
+    "queries": 32,
+    "nodes": 9394,
+    "PV_plies": 126,
+    "own_queries": 32,
+    "own_active_B_PV": 0,
+    "committed_plies": 64,
+    "Uniform_selections": 32
+  },
+  "next_episode": {
+    "Uniform_selections": 32,
+    "committed_plies": 64,
+    "queries": 32,
+    "nodes": 15696,
+    "PV_plies": 124,
+    "own_queries": 32,
+    "own_active_B_PV": 29
+  },
+  "first_history": {
+    "complete_frontiers": 32,
+    "forks": 10,
+    "suboptimal": 1,
+    "queries": 32,
+    "root_1": 26,
+    "PV_1": 25,
+    "PV_0": 7,
+    "root_0": 6
+  },
+  "next_history": {
+    "complete_frontiers": 32,
+    "forks": 20,
+    "suboptimal": 3,
+    "queries": 32,
+    "root_0": 9,
+    "PV_0": 11,
+    "root_-1": 23,
+    "PV_-1": 21
+  },
+  "policy_return_bounds": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "reader_seconds": 461.5726488000946,
+  "reader_new_Player": 0,
+  "reader_new_experiential_episodes": 0,
+  "failures": [
+    "Explicit source tailH8/150k remainsUNKNOWN, not refilled.",
+    "One deeper request12 completed9 and did not repair error.",
+    "One feature Player attempt returned no usable decision because the runtime view lacks repetition_counts; remainsUNKNOWN, no rerun.",
+    "One query-entry serialization repair had0newPlayer and preserved originaldeadline/caps.",
+    "Initial reader compared integer Counter keys against JSON strings; normalization fixesrepresentation, valuesunchanged."
+  ],
+  "next": "At next ordinary probe/source check: smallest next-original root2/role0 Unit versus single finalB frozenpair, sameUniformstream/D4/resources, without oracle filtering or extraTRAIN. Alternative: opt-in complete-state feature consumer; no failedslot refill, tuned basis or automatic widerpanel."
+}

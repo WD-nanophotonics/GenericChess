@@ -1,0 +1,332 @@
+{
+  "tests": 81,
+  "errors": 0,
+  "failures": 0,
+  "seconds": 5.466,
+  "cases": [
+    {
+      "name": "test_current_root_is_playable_but_incoming_third_visit_is_a_draw_barrier",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_winning_terminal_precedes_repetition_and_clock_draw",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_both_winning_seats_and_draw_cycle_are_distinct",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_exact_wdl_reduction_is_not_a_uniform_probability_quotient",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_incomplete_non_sink_and_non_alternating_graphs_rejected[edges0-sides0-terminals0]",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_incomplete_non_sink_and_non_alternating_graphs_rejected[edges1-sides1-terminals1]",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_incomplete_non_sink_and_non_alternating_graphs_rejected[edges2-sides2-terminals2]",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_incomplete_non_sink_and_non_alternating_graphs_rejected[edges3-sides3-terminals3]",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_every_small_alternating_arena_against_explicit_history",
+      "classname": "tests.development.test_leaper_history_barrier_rank"
+    },
+    {
+      "name": "test_explicit_full_source_is_checked_under_its_own_rule",
+      "classname": "tests.development.test_leaper_explicit_domain"
+    },
+    {
+      "name": "test_same_positions_with_a_different_complete_source_are_not_silently_adopted",
+      "classname": "tests.development.test_leaper_explicit_domain"
+    },
+    {
+      "name": "test_omitted_actual_defender_choice_is_rejected",
+      "classname": "tests.development.test_leaper_explicit_domain"
+    },
+    {
+      "name": "test_exact_rational_mass_and_posthoc_no_mate_frontier",
+      "classname": "tests.development.test_leaper_explicit_domain"
+    },
+    {
+      "name": "test_uniform_omission_cannot_hide_in_probability_mass",
+      "classname": "tests.development.test_leaper_explicit_domain"
+    },
+    {
+      "name": "test_queued_unknown_mass_is_not_an_outcome_label",
+      "classname": "tests.development.test_leaper_explicit_domain"
+    },
+    {
+      "name": "test_iterative_retains_only_complete_shallow_target_and_pays_partial_work",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_iterative_node_boundary_and_completed_depth[1-False-0]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_iterative_node_boundary_and_completed_depth[21-True-1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_iterative_node_boundary_and_completed_depth[1000-True-2]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_iterative_stop_after_d1_discards_fallback_and_restores_history",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_iterative_does_not_hide_non_scoring_deeper_branch",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_iterative_time_allowance_is_shared_and_partial_cost_paid",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_keeps_opponent_search_fixed_across_candidate_modes[0]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_keeps_opponent_search_fixed_across_candidate_modes[1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_stop_after_receipt_before_commit_withholds_action_and_observation[False]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_stop_after_receipt_before_commit_withholds_action_and_observation[True]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.0--1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.0-0]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.0-1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.0-None]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.95--1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.95-0]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.95-1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[0.95-None]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[1.0--1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[1.0-0]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[1.0-1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_update_matches_independent_forward_lambda_return[1.0-None]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_chess_actual_mate_trajectory_learns_with_fixed_unit",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_all_owned_declarations_keep_their_actual_meaning[WIN-1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_all_owned_declarations_keep_their_actual_meaning[LOSS--1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_all_owned_declarations_keep_their_actual_meaning[RESTART-None]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_all_owned_declarations_keep_their_actual_meaning[NO_CONTEST-None]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_search_cancellation_restores_full_history_and_has_no_training_sample",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_generic_qsearch_is_rejected_before_touching_session",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_promotion_drop_auxiliary_and_history_survive_library_adapter",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_failed_push_is_atomic_and_invalid_numerics_are_rejected",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_episode_checks_real_terminal_after_last_allowed_move",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_stopped_episode_starts_no_query_and_censored_episode_has_no_draw_target",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_search_non_scoring_terminal_keeps_cost_but_never_creates_a_target",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_perpetual_loss_trains_actual_player0_return_with_full_history[0]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_perpetual_loss_trains_actual_player0_return_with_full_history[1]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_actual_no_progress_draw_is_distinct_from_external_horizon",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_alternate_initial_setup_survives_search_play_and_full_replay",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_real_pass_action_can_end_the_shared_episode_by_rule_draw",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_neutral_declaration_can_still_hide_a_real_win_without_inventing_utility[RESTART]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_neutral_declaration_can_still_hide_a_real_win_without_inventing_utility[NO_CONTEST]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_winning_declaration_belongs_to_actor_and_keeps_player0_outcome",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_winning_declaration_never_bypasses_stop_after_assessment",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_winning_declaration_never_bypasses_deadline_after_assessment",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_known_win_does_not_resume_an_exhausted_episode_node_budget",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_capture_then_known_win_trains_from_actual_outcome_without_neutral_label",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_runner_charges_opening_time_and_uses_training_deadline[0.25]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_runner_charges_opening_time_and_uses_training_deadline[0.75]",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_coupled_runner_shares_initial_and_seeds_but_not_profile_budgets",
+      "classname": "tests.development.test_incremental_learning"
+    },
+    {
+      "name": "test_actual_literal_edge_is_accepted_but_unknown_is_never_draw",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_literal_pv_corruptions_rejected[value-999]",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_literal_pv_corruptions_rejected[pv_phi-value1]",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_literal_pv_corruptions_rejected[pv_terminal-True]",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_complete_state_binding_rejected",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_nonzero_error_does_not_create_a_fixed_feature_gradient",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_censor_preserves_interior_targets_without_inventing_final_credit",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_completed_but_uncommitted_query_is_not_a_move_or_td_observation",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_uniform_stream_is_replayed_from_actual_legal_actions",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_json_roundtrip_pair_keys_have_the_same_scientific_representation",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_capsules_are_data_only_and_not_materialized_as_code",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_corrupt_packet_rejected_before_decoding",
+      "classname": "tests.development.test_leaper_ab_learning"
+    },
+    {
+      "name": "test_exact_positive_crossings_and_open_cell_order",
+      "classname": "tests.development.test_leaper_ab_material_cells"
+    },
+    {
+      "name": "test_unit_merges_the_actual_alternative_feature_values",
+      "classname": "tests.development.test_leaper_ab_material_cells"
+    },
+    {
+      "name": "test_clock_dp_counts_terminal_zero_then_one_step_win_and_fixed_point",
+      "classname": "tests.development.test_leaper_ab_odd_clock"
+    },
+    {
+      "name": "test_clock_dp_rejects_false_distance_and_other_winning_seat",
+      "classname": "tests.development.test_leaper_ab_odd_clock"
+    }
+  ]
+}
