@@ -38,4 +38,7 @@ Important distinctions:
 
 No production search/default, learner, worker, schedule or rule expansion.
 See [report](../../LEAPER_ORDERING_AND_GOAL_20261025.md) for source, costs and
-interpretation limits. Session ending/publication receipt is separately verified.
+interpretation limits. segment-accounting.json publishes the exact10work
+intervals, matching quality review and accepted session finish/final-check.
+Scientific commit and verified Dot delivery are bound there; later publication
+adds0research credit.

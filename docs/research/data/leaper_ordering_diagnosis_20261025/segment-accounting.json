@@ -1,0 +1,245 @@
+{
+  "Dot_delivery": {
+    "message_ts": "1792865123.222439",
+    "new_replies": 0,
+    "only_render_changes": "ordered list1)2)to1.2.; no resend",
+    "originals_private": true,
+    "state": "SENT_CONTENT_VERIFIED_RENDERED_LIST"
+  },
+  "anonymous_scientific_files_verified": 54,
+  "effective_seconds": 3897.7635349999996,
+  "ended_at": "2026-10-24T18:08:02.908276+00:00",
+  "final_check": {
+    "effective_minutes": 64.963,
+    "effective_seconds": 3897.7635349999996,
+    "mode": "research",
+    "recorded_work_intervals": 10,
+    "research_completed": true,
+    "session_id": "61593633-a900-48ee-bfd7-5cfee059c780",
+    "state": "ended",
+    "wall_minutes": 85.336
+  },
+  "publication_transport_credit": 0,
+  "quality_review": {
+    "effective_seconds": 3897.7635349999996,
+    "ending_reason": "safe_checkpoint",
+    "evidence": [
+      "docs/research/LEAPER_ORDERING_AND_GOAL_20261025.md",
+      ".local_agent/leaper-ordering-20261025/qualification.json",
+      ".local_agent/leaper-goal-check-20261025/qualification.json",
+      ".local_agent/leaper-default-panel-20261025/preparation.json",
+      ".local_agent/leaper-ordering-20261025/publication.json"
+    ],
+    "limitations": "One exposed RuleSet/three adjacent roots and two sourceTRAIN trajectories,not classwide/holdout strength. Roottruth is knowledge assistance,not deployable allnodeOracle. Higher requested depths censored. Unit error not currentdefault error; default q suffix not fully exported. Eight retained queries plus two entry failures with unretained nodes/actionsUNKNOWN. Exact public truth accepted from fixed AUXsource,not independently re-solved. Initial context display too broad,subsequent field-limited; no science effect. Publication/Slack/administration after17:52:21 have0researchcredit.",
+    "old_conclusions_excluded": true,
+    "research_questions": [
+      "Can existing truth bind a nontrivial complete-history pure-Leaper error?",
+      "Does root-only truth ordering remove the Unit clock error economically?",
+      "Does the Unit error apply to currentdefault and can anywin return an honest proved action sooner?"
+    ],
+    "reviewed_at": "2026-10-24T18:08:02.789438+00:00",
+    "reviewed_work_intervals": [
+      {
+        "activity": "analysis",
+        "ended_at": "2026-10-24T16:46:30.517428+00:00",
+        "evidence": ".local_agent/leaper-ordering-20261025/prepared.json",
+        "recorded_at": "2026-10-24T16:47:40.546496+00:00",
+        "seconds": 156.859011,
+        "started_at": "2026-10-24T16:43:53.658417+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T16:47:40.546496+00:00",
+        "evidence": "scripts/leaper_ordering_diagnosis.py",
+        "recorded_at": "2026-10-24T16:47:55.374407+00:00",
+        "seconds": 70.029068,
+        "started_at": "2026-10-24T16:46:30.517428+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T16:48:52.375165+00:00",
+        "evidence": ".local_agent/leaper-ordering-20261025/entry2-failed-ordering-receipt.json",
+        "recorded_at": "2026-10-24T16:50:45.185031+00:00",
+        "seconds": 56.873893,
+        "started_at": "2026-10-24T16:47:55.501272+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T16:56:37.642230+00:00",
+        "evidence": ".local_agent/leaper-ordering-20261025/ordering-iterations.jsonl; own producer33975 observed running; baseline ply48D11 proved win at340.973sec, no qevents",
+        "recorded_at": "2026-10-24T16:56:37.642230+00:00",
+        "seconds": 387.779288,
+        "started_at": "2026-10-24T16:50:09.862942+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T17:08:38.613958+00:00",
+        "evidence": ".local_agent/leaper-ordering-20261025/ordering-iterations.jsonl; producer33975 observed running after two480s completions and third ply50D10; closed receipt caps final interval later",
+        "recorded_at": "2026-10-24T17:08:38.623291+00:00",
+        "seconds": 720.971728,
+        "started_at": "2026-10-24T16:56:37.642230+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T17:23:23.916793+00:00",
+        "evidence": ".local_agent/leaper-ordering-20261025/ordering-iterations.jsonl; producer33975 observed running fourth closed and fifth active; new goal/scope caller prepared, not launched",
+        "recorded_at": "2026-10-24T17:23:23.918471+00:00",
+        "seconds": 885.302835,
+        "started_at": "2026-10-24T17:08:38.613958+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T17:37:11.685574+00:00",
+        "evidence": ".local_agent/leaper-ordering-20261025/ordering-receipt.json; producer33975 CLOSED6queries; end capped at actual receipt, not later poll",
+        "recorded_at": "2026-10-24T17:37:38.494255+00:00",
+        "seconds": 827.768781,
+        "started_at": "2026-10-24T17:23:23.916793+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T17:42:17.386235+00:00",
+        "evidence": ".local_agent/leaper-goal-check-20261025/queries.jsonl; unitanywin CLOSED266.921s, matching pre-goal depth/action/work prefix; complete winning child source, real terminal PV; currentdefault now running",
+        "recorded_at": "2026-10-24T17:43:53.081138+00:00",
+        "seconds": 266.916399,
+        "started_at": "2026-10-24T17:37:50.469836+00:00"
+      },
+      {
+        "activity": "research",
+        "ended_at": "2026-10-24T17:48:17.503892+00:00",
+        "evidence": ".local_agent/leaper-goal-check-20261025/queries.jsonl; currentdefault CLOSED360.014s/D10; end uses actual row receipt, excludes later poll gap",
+        "recorded_at": "2026-10-24T17:49:36.404088+00:00",
+        "seconds": 360.021386,
+        "started_at": "2026-10-24T17:42:17.482506+00:00"
+      },
+      {
+        "activity": "analysis",
+        "ended_at": "2026-10-24T17:52:21.645234+00:00",
+        "evidence": ".local_agent/leaper-default-panel-20261025/preparation.json; current-default result scope assessment plus64root/44position fullhistory panel preparation,23literal-terminal labels independently replayed; terminal schema diagnosis,0Player/solver",
+        "recorded_at": "2026-10-24T17:53:10.079798+00:00",
+        "seconds": 165.241146,
+        "started_at": "2026-10-24T17:49:36.404088+00:00"
+      }
+    ],
+    "session_id": "61593633-a900-48ee-bfd7-5cfee059c780",
+    "unresolved_issues": [
+      "Prepared64default quality panel has0queries; freeze controller/budget before future execution.",
+      "Dot specific method followup delivered and content verified after only two rendered numbered-list markers; no new reply at bounded readback.",
+      "No actualdefault broad failure or classwide strength gain established."
+    ]
+  },
+  "reason": "safe_checkpoint",
+  "research_checkpoints": [
+    {
+      "at": "2026-10-24T16:47:55.501272+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/truth-coverage.json",
+      "kind": "research",
+      "next_action": "Execute registered root-order diagnostic,retain proof/correct-action distinction and censoring",
+      "observation": "Current Core replay binds ply48/50/52 exact states and all8/8/6actions to fixed public WDL; ply50 seven wins one clock draw. Root-only truth not allnode oracle. Retained Qwork 37-70percent versus legacy97-99percent.",
+      "question": "Can existing truth bind a nontrivial complete-history pure-Leaper error?"
+    },
+    {
+      "at": "2026-10-24T17:37:49.714070+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/qualification.json",
+      "kind": "research",
+      "next_action": "Run frozen anywinUnit call using existing baseline plus currentdefault scope call,within same original deadline",
+      "observation": "Six frozen480s queries CLOSED,66PVactions qualified,same shared-depth scores. Ply50 baseline loses WIN throughD10 and proves WIN atD11/344.189s; roottruth chooses WIN fromD1 but proves onlyD11/311.085s. All targetdepths censored; ply52D11score1 is not WDLwin. Firstmove cutoffs99.77percent; deferredPV feature not justified by shallow TT hit count.",
+      "question": "Does root-only truth ordering remove the Unit clock error economically?"
+    },
+    {
+      "at": "2026-10-24T18:00:07.412560+00:00",
+      "evidence": ".local_agent/leaper-goal-check-20261025/qualification.json",
+      "kind": "research",
+      "next_action": "Read next relevant review; freeze currentdefault quality protocol on prepared64fullhistories before newqueries; no global default or Oracle solver",
+      "observation": "Two registered calls CLOSED and strict replay PASS. Anywin266.921s/1508443work returns real11ply mate,source completed_root_win,last fullD10; pregoal work/action/value prefix matches ordinary baseline480.081s/2872564work. Currentdefault chosen actions allD1-D10 preserveWIN, firstD1 .006s; finalQ4PV10nonterminal omits q suffix. New64input panel prepared only,44physicalpositions,23terminal labels verified;0newpolicyqueries.",
+      "question": "Does the Unit error apply to currentdefault and can anywin return an honest proved action sooner?"
+    }
+  ],
+  "science_ended_at": "2026-10-24T17:52:21.645234+00:00",
+  "scientific_commit": "c78c96b0464a3820adca763139a5a0396eaa7494",
+  "session_id": "61593633-a900-48ee-bfd7-5cfee059c780",
+  "started_at": "2026-10-24T16:42:42.756153+00:00",
+  "state": "ended",
+  "tests_passed": 52,
+  "work_intervals": [
+    {
+      "activity": "analysis",
+      "ended_at": "2026-10-24T16:46:30.517428+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/prepared.json",
+      "recorded_at": "2026-10-24T16:47:40.546496+00:00",
+      "seconds": 156.859011,
+      "started_at": "2026-10-24T16:43:53.658417+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T16:47:40.546496+00:00",
+      "evidence": "scripts/leaper_ordering_diagnosis.py",
+      "recorded_at": "2026-10-24T16:47:55.374407+00:00",
+      "seconds": 70.029068,
+      "started_at": "2026-10-24T16:46:30.517428+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T16:48:52.375165+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/entry2-failed-ordering-receipt.json",
+      "recorded_at": "2026-10-24T16:50:45.185031+00:00",
+      "seconds": 56.873893,
+      "started_at": "2026-10-24T16:47:55.501272+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T16:56:37.642230+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/ordering-iterations.jsonl; own producer33975 observed running; baseline ply48D11 proved win at340.973sec, no qevents",
+      "recorded_at": "2026-10-24T16:56:37.642230+00:00",
+      "seconds": 387.779288,
+      "started_at": "2026-10-24T16:50:09.862942+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T17:08:38.613958+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/ordering-iterations.jsonl; producer33975 observed running after two480s completions and third ply50D10; closed receipt caps final interval later",
+      "recorded_at": "2026-10-24T17:08:38.623291+00:00",
+      "seconds": 720.971728,
+      "started_at": "2026-10-24T16:56:37.642230+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T17:23:23.916793+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/ordering-iterations.jsonl; producer33975 observed running fourth closed and fifth active; new goal/scope caller prepared, not launched",
+      "recorded_at": "2026-10-24T17:23:23.918471+00:00",
+      "seconds": 885.302835,
+      "started_at": "2026-10-24T17:08:38.613958+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T17:37:11.685574+00:00",
+      "evidence": ".local_agent/leaper-ordering-20261025/ordering-receipt.json; producer33975 CLOSED6queries; end capped at actual receipt, not later poll",
+      "recorded_at": "2026-10-24T17:37:38.494255+00:00",
+      "seconds": 827.768781,
+      "started_at": "2026-10-24T17:23:23.916793+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T17:42:17.386235+00:00",
+      "evidence": ".local_agent/leaper-goal-check-20261025/queries.jsonl; unitanywin CLOSED266.921s, matching pre-goal depth/action/work prefix; complete winning child source, real terminal PV; currentdefault now running",
+      "recorded_at": "2026-10-24T17:43:53.081138+00:00",
+      "seconds": 266.916399,
+      "started_at": "2026-10-24T17:37:50.469836+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T17:48:17.503892+00:00",
+      "evidence": ".local_agent/leaper-goal-check-20261025/queries.jsonl; currentdefault CLOSED360.014s/D10; end uses actual row receipt, excludes later poll gap",
+      "recorded_at": "2026-10-24T17:49:36.404088+00:00",
+      "seconds": 360.021386,
+      "started_at": "2026-10-24T17:42:17.482506+00:00"
+    },
+    {
+      "activity": "analysis",
+      "ended_at": "2026-10-24T17:52:21.645234+00:00",
+      "evidence": ".local_agent/leaper-default-panel-20261025/preparation.json; current-default result scope assessment plus64root/44position fullhistory panel preparation,23literal-terminal labels independently replayed; terminal schema diagnosis,0Player/solver",
+      "recorded_at": "2026-10-24T17:53:10.079798+00:00",
+      "seconds": 165.241146,
+      "started_at": "2026-10-24T17:49:36.404088+00:00"
+    }
+  ]
+}

@@ -7342,3 +7342,10 @@ cost. All science CLOSED at64.963recorded effective minutes; transport/docs add0
 Current Main is actual-default quality and a justified mechanism, not a new solver,
 NNUE/default, mask sweep or rule expansion. New evidence and genuine next-step
 question go to Dot after reviewed push/full-SHA verification; no reply is a gate.
+
+Delivery: scientific commit c78c96b0464a3820adca763139a5a0396eaa7494 passed52tests
+and54anonymous file comparisons. Dot follow-up1792865123.222439 is delivered;
+readback differs only in two numbered-list Markdown markers, fully reconciled
+without resend. No new reply at that bounded read. Session61593633-a900-48ee-bfd7-
+5cfee059c780 ended with matching quality/final-check PASS at3897.763535seconds/
+10intervals. Exact public accounting follows; this delivery adds0research time.
