@@ -7363,5 +7363,9 @@ Dot's earlier root-panel advice was executed; direct work/quality evidence now
 limits it: deeper/faster is not monotone quality. User's pure-Leaper-first scope
 remains; no default/NNUE/legacy expansion. Prepared2critical child histories,
 0new queries, for next rootbranch/leafclock diagnosis.61m30.666s effective/13
-intervals; session ended with matching quality/final-check. Public source and
-remote SHA verification precede the planned substantive Dot follow-up.
+intervals; session ended with matching quality/final-check. Public source16fa861f1dbe4610657c171e0b0a6b383334e2c8/full remote SHA and46
+changed files were verified before direct Dot follow-up1792870426.396909 in
+thread1792850530.391389. Immutable payload/receipt/readback match; no new reply
+at bounded verification. Questions ask for a falsifier of clock-horizon versus
+contract failure and whether safe initial-q refinement outranks that diagnosis.
+Pending advice is not adopted/executed and does not gate independent work.
