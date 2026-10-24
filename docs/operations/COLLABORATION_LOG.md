@@ -7077,3 +7077,33 @@ Leaper/atomic and45session tests pass; publication uses the prescribed tested
 entry/full remote SHA checks. No failed assertion was changed to observed output.
 Scientific ledger holds4294.846954seconds/20actual intervals; later workflow,
 documentation and transport maintenance add no research credit. Science is OPEN.
+
+
+## User-requested direction/manual review —2026-10-24
+
+Exact latest channel and four complete threads were privately saved before
+assessment. Adopt Chat1792806445 structural-first priority and1792808411's
+value-class/support-set/fixed-tie diagnostic limits. Reconciled old request
+GC-SLACK-20261024-102235-374bd7e0 after reading its actual reply: COMPLETED,
+not just delivered. Legacy reply labels do not revive Dot contact.
+
+The current MAIN had drifted toward another price/cost panel. It now prioritizes
+matched structural counterfactuals, with explicit distinct H64singleton and
+H6two-type supports. Exact AUX H6 report e71968ff was read, not rerun: the
+one-bit pair's16LOSS->DRAW and112unchanged cases can serve a source-bound
+positive/negative block. No AUX task was reassigned. Claude1792810119's7cell
+ceiling/Markov proposals remain conditional AUX advice, not general ceilings or
+learning gates. README's stale read-only statement and AGENTS's automatic
+forward->inverse ordering were corrected; dated manual lessons stay historical.
+
+This was a direct bounded review redirect, not additional science. The same
+session is INTERRUPTED with3525.956006recordedseconds/10intervals, no60minute
+finish claim and no audit time credited. Existing frozen scientific outputs,
+active fixed producer, pending source/timing qualification and draft remain
+separate unfinished delivery. No new Player run, learner, worker, schedule,
+stop/default change, realtime wait or AUX write. Current decisions/reasons and
+next actual research order are in LOCAL_MAINLINE and DIRECTION_REVIEW_20261024.
+
+The previously active fixed16slot producer closed naturally during the review:
+native exit0,16/16,0missing,2253.6750507s batch, unchanged cap. No new call was
+started by the review. Scientific packet/timing acceptance remains unfinished.

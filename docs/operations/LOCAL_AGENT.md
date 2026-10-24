@@ -6,6 +6,25 @@ LOCAL_MAINLINE.md owns revisable research choices. Do not reconstruct current
 policy from dated consultation history. Full pre-cleanup manuals remain at
 Git4f6858b128e38c3b93360d78b7f5de6ad61af695; they are evidence, not active tasks.
 
+## Research selection versus operating instructions —2026-10-24
+
+Read LOCAL_MAINLINE.md's priority/order before selecting any research command.
+This manual explains HOW to execute a chosen task; the dated caller/cost/price
+examples below are conditional contracts and historical defect lessons, NOT a
+queue to run, a requirement to refill panels or an authority to restore old data.
+PRIMARY now prioritizes cross-rule structural counterfactuals; bounded evaluator
+or learning diagnostics are secondary. Do not infer a next experiment from an
+available script, prepared input, an unfinished old report or a Backup entry.
+A closed experiment is evidence, not a compulsory next-stage training/inverse job.
+
+An explicit user request to reread the latest remote direction is a bounded
+manual review, not a second unattended patrol. Preserve a fresh exact capture,
+read relevant complete threads and record what changes, stays or is deferred;
+this does not authorize high-frequency follow-up polling or create a schedule.
+User redirect interrupts the same research session without claiming completion.
+Unrecorded gaps and this review accrue no research time. Keep pending research
+repairs/results clearly separate from the reviewed direction documents.
+
 ## PRIMARY patrol, roles and communication —2026-10-23
 
 PRIMARY_SANDBOX owns the mainline checkout, research clock, sandbox branch and
@@ -23,8 +42,9 @@ heartbeat or role resume.
 At each 60-minute PRIMARY patrol, read incoming messages/comments in the existing
 GenericChess Chat and the relevant complete threads once. At every explicit
 manual work start/resume, check for new incoming messages/comments before Main
-unless this 60-minute patrol has already completed that read; never reread more than
-once in the same 60-minute patrol. Preserve the exact project-related read in
+unless this 60-minute patrol has already completed that read. The direct-user
+latest-message review exception above permits one fresh bounded manual capture;
+ordinary patrols do not reread. Preserve the exact project-related read in
 ignored `.local_agent` before evaluating it. Treat Chat comments as suggestions
 unless the user directly confirms a decision. Do not @Dot,
 contact Dot in real time, wait/poll for Dot, or use a Dot-specific control path.

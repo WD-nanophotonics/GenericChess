@@ -28,21 +28,29 @@ write its files/state or duplicate its assigned work. This PRIMARY patrol covers
 only its own mainline research and the existing project Chat. No additional
 workers may be created.
 
-## Current decisions and their reasons —2026-10-23
+## Current decisions and their reasons —2026-10-24
 
-- User confirmation2026-10-22: the latest ChatGPT project comment is the new
-  research direction after registered bounded work closes: canonical small pure-
-  Leaper rules, cheap Static-AlphaBeta/Random/FLOOR forward portraits, then gradual
-  inverse design. PRIMARY owns rule generation/forward evaluation; existing
-  DEV_AUX owns truth/learning diagnostics. Detailed selections live in
-  LOCAL_MAINLINE.md. This supersedes older optional backup priorities, not the
-  full-domain long-term target, frozen caps, role boundaries or current schedule.
-  Claude comments remain auxiliary advice; do not turn them into new gates.
+- User direction review2026-10-24: structural cross-rule P0/P1 research is
+  PRIMARY's current first priority: how complete rule changes affect analytic
+  structure, strategic regions, WDL/key choices and distinct complexity measures,
+  under explicit common inputs/history/clocks. Price/dynamic/tie/player-learning
+  diagnostics are secondary and bounded by a concrete structural question.
+  The2026-10-22 pure-Leaper -> forward portraits -> inverse sequence is superseded
+  as an automatic work order; pure Leapers remain the current scoped domain,
+  inverse design/large training are downstream reserves, not next-stage promises.
+  Current evidence, execution order and reconsideration conditions live only in
+  LOCAL_MAINLINE.md. This adopts Chat1792806445/1792808411 under the user's direct
+  request to review/unify the direction; it does not make remote comments new
+  authority, activate defaults, change caps or transfer AUX ownership.
 
 - User correction2026-10-23: both existing roles now recur every60minutes,
   superseding the earlier120minute interval. PRIMARY updates only its own policy;
   do not edit schedules or AUX state. The60–90minute effective research requirement
   remains separate. One inspection pause does not pause recurring scheduling.
+- User reaffirmation2026-10-24: direct reply explicitly allows the queued3073-
+  character report and reaffirms continuing bounded two-way authorization. The
+  old read-only restriction is superseded; no renewed per-message consent queue.
+  Actual platform refusals require grant/content review, never circumvention.
 - User correction2026-10-23: restore asynchronous two-way project Slack exchange,
   superseding the2026-10-20 read-only restriction. At a substantive segment end or
   critical milestone send at most ONE merged progress/question message per existing

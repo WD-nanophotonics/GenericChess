@@ -22,6 +22,10 @@ py -3 -m venv .venv
 
 This checkout owns PRIMARY_SANDBOX / sandbox. The existing hourly patrols keep their current
 recurrence. Git publication remains authorized to the assigned branch. Slack
-is read-only under the current user direction; there is no real-time Dot contact.
+uses bounded asynchronous two-way reports/questions after reviewed publication
+and full remote-SHA verification; there is no real-time Dot contact.
+The current science priority is structural cross-rule research; evaluator and
+learning diagnostics support specific questions. See the current research entry
+for order and scope; available experiment scripts are not an automatic backlog.
 Closed experiment payloads are recovered from pinned Git history rather than
 restored wholesale into the working tree. Current dependencies remain local.
