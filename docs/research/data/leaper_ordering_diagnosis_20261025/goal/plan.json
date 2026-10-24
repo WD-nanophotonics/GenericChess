@@ -1,0 +1,25 @@
+{
+  "changed_premise": "Original baseline now reproduces clock-losing action throughD10 and gets mateband WIN atD11/344.189s, then returns only at480s. This concrete observation motivates early-goal termination and checks controller applicability, not a mask/seed/flag sweep.",
+  "cost": "Reuse the already retained baseline; no rerun. Two new fixedroot calls <=480+360=840s, only after first producer CLOSED. Combined query ceiling6*480+840=3720s62min; with1260s21min preparation/analysis/validation allowance=4980s83min<85min original registration window. Original absolute deadline retained; any missing slotsUNKNOWN, no refill/extension; total logical experiment including initial inventory below120min.",
+  "deadline": "2026-10-24T18:12:40.437393+00:00",
+  "expected_outcomes": "Unitanywin shares old tree prefix and can save work after proof; it does not promise shortest mate or faster firstcorrect discovery. Currentdefault may already choose certifiedWIN shallowly, which would restrict this case to the Unit caller. If still wrong, it supplies an actual current-default difficult case. No labels enter either evaluator/order/pruning.",
+  "failure": "Illegal/history mutation/PV mismatch or anywin purportedWIN without literal terminal witness stops. No usable result/missing slot retains UNKNOWN. Existing graph labels accepted with provenance,no graph/Core wholecertificate solve or AUX work.",
+  "guard": "Current Core source remains unchanged. Both fresh Player/TT/nativecache; legalityON availability/checkOFF. Capturevalue0 in Unit. Rootresult observer common but firstbaseline also paid Ranked cutoff histogram overhead; wall ratio descriptive, matched pre-goal work/action/score prefix must agree. Currentdefault PV can omit q suffix; do not call a nonterminal exported PV a complete mate certificate.",
+  "new_default_or_worker": false,
+  "original_directory": ".local_agent/leaper-ordering-20261025",
+  "question": "Does the explicitly any-win caller return a fully qualified winning action earlier than the ordinary request, and does this exposed Unit-caller error also appear under the actual current default dynamic controller?",
+  "registered_at": "2026-10-24T17:25:13.953744+00:00",
+  "reused_baseline_sha256": "5c200e1ee0bf4c68fdb48154673b1635e668203071e1ba0d8e009d9262d3392c",
+  "scope": "Original complete 5x5Leap-only rule,maxply64,repeat4,actual50ply TRAINprefix,seat0,3remainingactors of original4. Exposed singlecase,not holdout or strength. Q0/hard0/unit/fullPV/root-tacticalOFF/anywinON versus currentdefault evaluator/Q4-hard8/root-tacticalON/fullPVOFF/anywinOFF. They answer different questions,not causal evaluator-only ablation.",
+  "slots": [
+    {
+      "controller": "unit_anywin",
+      "seconds": 480
+    },
+    {
+      "controller": "current_default",
+      "seconds": 360
+    }
+  ],
+  "source_sha256": "99ff759a745414721fcdc584525bd6be08d324660afe697fdd34c62e10dee67f"
+}

@@ -1,0 +1,80 @@
+{
+  "error": "KeyError remaining: terminal WDL labels have a separate literal-terminal schema; do not fabricate remaining or change WDL expectation",
+  "examples": [
+    {
+      "document": "graph/trace-truth.json",
+      "ply": 58,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    },
+    {
+      "document": "next-role/trace-truth.json",
+      "ply": 11,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    },
+    {
+      "document": "next-role/trace-truth.json",
+      "ply": 11,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    },
+    {
+      "document": "next-role/trace-truth.json",
+      "ply": 11,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    },
+    {
+      "document": "next-role/trace-truth.json",
+      "ply": 41,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    },
+    {
+      "document": "next-role/trace-truth.json",
+      "ply": 45,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    },
+    {
+      "document": "next-role/trace-truth.json",
+      "ply": 63,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    },
+    {
+      "document": "next-role/trace-truth.json",
+      "ply": 63,
+      "truth": {
+        "basis": "actual_terminal",
+        "rank": 0,
+        "value": 0
+      }
+    }
+  ],
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "output64inputs_not_written": true
+}

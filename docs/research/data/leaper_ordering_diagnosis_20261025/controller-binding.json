@@ -1,0 +1,11 @@
+{
+  "current_source_sha256": {
+    "ordering": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e",
+    "search": "417b5b84c2d88c84e578a0af5dd45676aa5309f0a3665c96f21960354de7f5d5"
+  },
+  "formal_objective": "Current complete-history minimax terminal win/draw under original maxply64/repeat4; learned/static unit material heuristic during incomplete finite-depth search. Public truth global seat0; all three roots seat0.",
+  "instrumentation": "Common wrapper observes negamax result only at ply0; returns unchanged. Common Ranked list records actual ordered child index at each residualdepth; histogram checked against beta_cutoffs. Both arms pay this observer overhead. Roottruth changes only full root order, overrides previous TT action at root but not internal-node ordering; rank ties keep prior order. No value injected into leaf or pruning.",
+  "offline_truth_cost": "Published AUX graph573.629521s, full Core qualification651.761505s plus independent clock/barrier evidence and overhead. These are old paid costs, not new querytime or free deployable oracle. New file transfer/preparation clocks separately retained.",
+  "scope": "One exposed source rule and actual train history. Adjacent roots correlated. Original root has4actors; B removed at first move so these late roots3actors. Not six-actor or newrule validation.",
+  "source_comparison": "Current Player uses same public search family as pinned AUX source but retired learner receipt wrapper is not present. New explicit unit A/B leaf verified against stored _material_features; captured search root result uses best_action. Native availabilityOFF as old directPlayer default; Native legalityON. No default/evaluator equivalence claim with prior dynamic default study."
+}

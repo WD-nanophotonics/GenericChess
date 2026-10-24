@@ -1,0 +1,603 @@
+{
+  "PV_actions": 66,
+  "entry_failed_attempts": 2,
+  "entry_failed_values_and_nodes": "UNKNOWN; no returned usable decisions",
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "original_truth_provenance": "Pinned AUX 26d414c; qualified published barrier-rank theorem, not independently re-solved. Current Core root/child/PV binding newly checked.",
+  "pairs": [
+    {
+      "matched_iteration_work": [
+        {
+          "baseline": 9,
+          "depth": 1,
+          "root_truth": 9
+        },
+        {
+          "baseline": 30,
+          "depth": 2,
+          "root_truth": 30
+        },
+        {
+          "baseline": 132,
+          "depth": 3,
+          "root_truth": 132
+        },
+        {
+          "baseline": 350,
+          "depth": 4,
+          "root_truth": 372
+        },
+        {
+          "baseline": 1331,
+          "depth": 5,
+          "root_truth": 1360
+        },
+        {
+          "baseline": 3303,
+          "depth": 6,
+          "root_truth": 3321
+        },
+        {
+          "baseline": 13342,
+          "depth": 7,
+          "root_truth": 13428
+        },
+        {
+          "baseline": 32529,
+          "depth": 8,
+          "root_truth": 32771
+        },
+        {
+          "baseline": 142170,
+          "depth": 9,
+          "root_truth": 143044
+        },
+        {
+          "baseline": 339185,
+          "depth": 10,
+          "root_truth": 341034
+        },
+        {
+          "baseline": 1912986,
+          "depth": 11,
+          "root_truth": 1644304
+        }
+      ],
+      "ply": 48,
+      "same_scores": true,
+      "shared_completed_depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "warning": "Cumulative cold-call iterative work; adjacent depth increments include TT/order learning. Time-only censoring not equal fixed-depth total cost."
+    },
+    {
+      "matched_iteration_work": [
+        {
+          "baseline": 9,
+          "depth": 1,
+          "root_truth": 9
+        },
+        {
+          "baseline": 30,
+          "depth": 2,
+          "root_truth": 30
+        },
+        {
+          "baseline": 129,
+          "depth": 3,
+          "root_truth": 129
+        },
+        {
+          "baseline": 350,
+          "depth": 4,
+          "root_truth": 352
+        },
+        {
+          "baseline": 1322,
+          "depth": 5,
+          "root_truth": 1325
+        },
+        {
+          "baseline": 3255,
+          "depth": 6,
+          "root_truth": 3222
+        },
+        {
+          "baseline": 12914,
+          "depth": 7,
+          "root_truth": 12863
+        },
+        {
+          "baseline": 31600,
+          "depth": 8,
+          "root_truth": 31586
+        },
+        {
+          "baseline": 147715,
+          "depth": 9,
+          "root_truth": 147524
+        },
+        {
+          "baseline": 337580,
+          "depth": 10,
+          "root_truth": 336621
+        },
+        {
+          "baseline": 1961653,
+          "depth": 11,
+          "root_truth": 1677484
+        }
+      ],
+      "ply": 50,
+      "same_scores": true,
+      "shared_completed_depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "warning": "Cumulative cold-call iterative work; adjacent depth increments include TT/order learning. Time-only censoring not equal fixed-depth total cost."
+    },
+    {
+      "matched_iteration_work": [
+        {
+          "baseline": 7,
+          "depth": 1,
+          "root_truth": 7
+        },
+        {
+          "baseline": 33,
+          "depth": 2,
+          "root_truth": 25
+        },
+        {
+          "baseline": 103,
+          "depth": 3,
+          "root_truth": 93
+        },
+        {
+          "baseline": 271,
+          "depth": 4,
+          "root_truth": 259
+        },
+        {
+          "baseline": 873,
+          "depth": 5,
+          "root_truth": 853
+        },
+        {
+          "baseline": 2242,
+          "depth": 6,
+          "root_truth": 2144
+        },
+        {
+          "baseline": 7924,
+          "depth": 7,
+          "root_truth": 7775
+        },
+        {
+          "baseline": 19395,
+          "depth": 8,
+          "root_truth": 19089
+        },
+        {
+          "baseline": 83582,
+          "depth": 9,
+          "root_truth": 83288
+        },
+        {
+          "baseline": 194728,
+          "depth": 10,
+          "root_truth": 193652
+        },
+        {
+          "baseline": 1339818,
+          "depth": 11,
+          "root_truth": 1378404
+        }
+      ],
+      "ply": 52,
+      "same_scores": true,
+      "shared_completed_depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "warning": "Cumulative cold-call iterative work; adjacent depth increments include TT/order learning. Time-only censoring not equal fixed-depth total cost."
+    }
+  ],
+  "retained_queries": 6,
+  "status": "PASS",
+  "summary": [
+    {
+      "CPU_seconds": 478.875,
+      "complete": false,
+      "completed_depth": 11,
+      "correct_at_every_completed_iteration": true,
+      "cutoffs": 712417,
+      "first_correct_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g23",
+          "pattern_id": "legacy_032",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 2
+          }
+        },
+        "depth": 1,
+        "elapsed": 0.011385799967683852,
+        "nodes": 9,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 1,
+        "score_proves_win": false
+      },
+      "first_cutoff_fraction": 0.9976909590871639,
+      "first_proved_win_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g26",
+          "pattern_id": "legacy_038",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 11,
+        "elapsed": 340.97294050001074,
+        "nodes": 1912986,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 999999989,
+        "score_proves_win": true
+      },
+      "last_action_WDL": 1,
+      "limits": "First correct action can be a tie selected by exposed labels. A mate-band score requires actual terminal PV; no all-node oracle, no strength or holdout claim.",
+      "nodes": 2835795,
+      "ordering_seconds": 12.006019121152349,
+      "outer_seconds": 480.0152846999699,
+      "qnodes": 0,
+      "reason": "time_limit",
+      "requested_depth": 16,
+      "root_WDL": 1,
+      "root_order_added_seconds": 5.899928510189056e-06,
+      "slot": {
+        "arm": "baseline",
+        "ply": 48
+      }
+    },
+    {
+      "CPU_seconds": 479.109375,
+      "complete": false,
+      "completed_depth": 11,
+      "correct_at_every_completed_iteration": true,
+      "cutoffs": 785514,
+      "first_correct_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g26",
+          "pattern_id": "legacy_038",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 1,
+        "elapsed": 0.06557080009952188,
+        "nodes": 9,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 1,
+        "score_proves_win": false
+      },
+      "first_cutoff_fraction": 0.9984532420809814,
+      "first_proved_win_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g26",
+          "pattern_id": "legacy_038",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 11,
+        "elapsed": 310.9585322000785,
+        "nodes": 1644304,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 999999989,
+        "score_proves_win": true
+      },
+      "last_action_WDL": 1,
+      "limits": "First correct action can be a tie selected by exposed labels. A mate-band score requires actual terminal PV; no all-node oracle, no strength or holdout claim.",
+      "nodes": 2764243,
+      "ordering_seconds": 12.578570150304586,
+      "outer_seconds": 480.0745993000455,
+      "qnodes": 0,
+      "reason": "time_limit",
+      "requested_depth": 16,
+      "root_WDL": 1,
+      "root_order_added_seconds": 0.00020429969299584627,
+      "slot": {
+        "arm": "root_truth",
+        "ply": 48
+      }
+    },
+    {
+      "CPU_seconds": 478.984375,
+      "complete": false,
+      "completed_depth": 11,
+      "correct_at_every_completed_iteration": true,
+      "cutoffs": 790159,
+      "first_correct_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g27",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 1,
+        "elapsed": 0.06334490003064275,
+        "nodes": 9,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 1,
+        "score_proves_win": false
+      },
+      "first_cutoff_fraction": 0.9983636204865097,
+      "first_proved_win_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g27",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 11,
+        "elapsed": 311.08540340000764,
+        "nodes": 1677484,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 999999989,
+        "score_proves_win": true
+      },
+      "last_action_WDL": 1,
+      "limits": "First correct action can be a tie selected by exposed labels. A mate-band score requires actual terminal PV; no all-node oracle, no strength or holdout claim.",
+      "nodes": 2806890,
+      "ordering_seconds": 13.366696127457544,
+      "outer_seconds": 480.0731445000274,
+      "qnodes": 0,
+      "reason": "time_limit",
+      "requested_depth": 14,
+      "root_WDL": 1,
+      "root_order_added_seconds": 0.00020209979265928268,
+      "slot": {
+        "arm": "root_truth",
+        "ply": 50
+      }
+    },
+    {
+      "CPU_seconds": 479.234375,
+      "complete": false,
+      "completed_depth": 11,
+      "correct_at_every_completed_iteration": false,
+      "cutoffs": 708940,
+      "first_correct_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g27",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 11,
+        "elapsed": 344.1886962999124,
+        "nodes": 1961653,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 999999989,
+        "score_proves_win": true
+      },
+      "first_cutoff_fraction": 0.9966908342031766,
+      "first_proved_win_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g27",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 11,
+        "elapsed": 344.1886962999124,
+        "nodes": 1961653,
+        "published_child_WDL": 1,
+        "qnodes": 0,
+        "score": 999999989,
+        "score_proves_win": true
+      },
+      "last_action_WDL": 1,
+      "limits": "First correct action can be a tie selected by exposed labels. A mate-band score requires actual terminal PV; no all-node oracle, no strength or holdout claim.",
+      "nodes": 2872564,
+      "ordering_seconds": 12.664719928521663,
+      "outer_seconds": 480.0814236999722,
+      "qnodes": 0,
+      "reason": "time_limit",
+      "requested_depth": 14,
+      "root_WDL": 1,
+      "root_order_added_seconds": 7.6000578701496124e-06,
+      "slot": {
+        "arm": "baseline",
+        "ply": 50
+      }
+    },
+    {
+      "CPU_seconds": 479.328125,
+      "complete": false,
+      "completed_depth": 11,
+      "correct_at_every_completed_iteration": true,
+      "cutoffs": 965558,
+      "first_correct_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g24",
+          "pattern_id": "legacy_034",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 2
+          }
+        },
+        "depth": 1,
+        "elapsed": 0.0670671999687329,
+        "nodes": 7,
+        "published_child_WDL": 0,
+        "qnodes": 0,
+        "score": 1,
+        "score_proves_win": false
+      },
+      "first_cutoff_fraction": 0.9977878076718333,
+      "first_proved_win_iteration": null,
+      "last_action_WDL": 0,
+      "limits": "First correct action can be a tie selected by exposed labels. A mate-band score requires actual terminal PV; no all-node oracle, no strength or holdout claim.",
+      "nodes": 2979212,
+      "ordering_seconds": 15.037456780439243,
+      "outer_seconds": 480.48827590001747,
+      "qnodes": 0,
+      "reason": "time_limit",
+      "requested_depth": 12,
+      "root_WDL": 0,
+      "root_order_added_seconds": 7.200054824352264e-06,
+      "slot": {
+        "arm": "baseline",
+        "ply": 52
+      }
+    },
+    {
+      "CPU_seconds": 478.75,
+      "complete": false,
+      "completed_depth": 11,
+      "correct_at_every_completed_iteration": true,
+      "cutoffs": 967842,
+      "first_correct_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g26",
+          "pattern_id": "legacy_038",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        "depth": 1,
+        "elapsed": 0.08028090000152588,
+        "nodes": 7,
+        "published_child_WDL": 0,
+        "qnodes": 0,
+        "score": 1,
+        "score_proves_win": false
+      },
+      "first_cutoff_fraction": 0.9976483764912042,
+      "first_proved_win_iteration": null,
+      "last_action_WDL": 0,
+      "limits": "First correct action can be a tie selected by exposed labels. A mate-band score requires actual terminal PV; no all-node oracle, no strength or holdout claim.",
+      "nodes": 3005406,
+      "ordering_seconds": 14.94568635779433,
+      "outer_seconds": 480.0902689000359,
+      "qnodes": 0,
+      "reason": "time_limit",
+      "requested_depth": 12,
+      "root_WDL": 0,
+      "root_order_added_seconds": 0.00016150029841810465,
+      "slot": {
+        "arm": "root_truth",
+        "ply": 52
+      }
+    }
+  ]
+}

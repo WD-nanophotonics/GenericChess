@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T17:08:38.613958+00:00",
+  "decision": "DEFER implementation; do not add unmeasured production knob",
+  "next_concrete_hypothesis": "Existing any-root-win objective can stop after a fully completed winning child, rather than spending remaining budget searching deeper after a valid proof. Different objective from shortest mate; use only for callers explicitly requesting any proved winning action, preserve result_source/completed_depth/full terminal PV.",
+  "potential_outcomes": "Earlier returned qualified winning action => scoped caller resource saving,not strength/shortestmate or firstproof latency. Wrong/nonterminal PV or incompatiblehistory =>stop. No proof/cap =>UNKNOWN. Missing query never success.",
+  "proposed_one_call": "After original6slots CLOSED, one fixed ply50 anywin call with same unit/Q0/native/order/TT/cold/cap; reuse original registered baseline ply50 receipt, no duplicate baseline call or independent-sample claim. New cost <=480s; same original85min absolute deadline, combined max6*480+480+1320=4680s78min<85min. No feature sweep/default change/extra producer concurrently.",
+  "reason": "Source inspection shows RuntimeSearchKey also carries exact persistent ordered-history context when eligible. Earlier-depth TT hits can be insufficient-depth, so removing PV suppression alone does not establish useful transposition cuts. Existing first-cutoff fraction already99.77percent. Preserve history/collision guards. Need eligible same-depth-hit evidence before this algorithm claim."
+}

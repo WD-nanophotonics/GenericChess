@@ -1,0 +1,80 @@
+{
+  "old_shallow_qualification": {
+    "finite_strategy_WDL": [
+      {
+        "H": 6,
+        "White_WDL": 1
+      },
+      {
+        "H": 1,
+        "White_WDL": 0
+      },
+      {
+        "H": 2,
+        "White_WDL": 0
+      },
+      {
+        "H": 3,
+        "White_WDL": 1
+      }
+    ],
+    "new_Core_child_applications": 23,
+    "new_Player_queries": 0,
+    "new_graph_or_solver_calls": 0,
+    "newly_labeled_H6_roots": 1,
+    "placement": [
+      1,
+      0,
+      7,
+      3
+    ],
+    "population_WIN_count_lower_bound": 113,
+    "population_WIN_count_upper_bound": 128,
+    "record_occurrences": 37,
+    "root_has_immediate_win": false,
+    "scope": "One named exposed root, all Black defenses; no D4 label expansion, other15 UNKNOWN retained. All-H1/H2 first moves cannot mate; fixed capture forces draw by clock. H3/H6 mate wins at ply3, including terminal precedence.",
+    "selected_key": "common_026",
+    "source_capsule_executions": 0,
+    "status": "PASS",
+    "unique_full_records": 33
+  },
+  "old_source_git": "515872ce5efbdf270e8b44feeba30f0e9f8a96d0",
+  "old_source_hashes": {
+    "bench.jsonl.gz": "4d86ed13597f6b0a9352a165334f1edb941853cf95589096537b999e200928b2",
+    "pvs.jsonl.gz": "072ba56a85724cfae9d51c72b9d06c67288ac127e27ccd07f6a6bad04c8a32b7"
+  },
+  "rows": [
+    {
+      "evaluations": 1916740,
+      "first_cutoff_fraction": 0.9976909590871639,
+      "mean_cutoff_index": 0.0033140702706420536,
+      "ordering_fraction": 0.025011743383664593,
+      "runtime_pushes": 2835783,
+      "slot": {
+        "arm": "baseline",
+        "ply": 48
+      },
+      "source": "partial closed query rows only; ongoing slots excluded",
+      "tt_cutoffs": 0,
+      "tt_hits": 143095,
+      "tt_probes": 906496,
+      "work": 2835795
+    },
+    {
+      "evaluations": 1785928,
+      "first_cutoff_fraction": 0.9984532420809814,
+      "mean_cutoff_index": 0.0024302558579477897,
+      "ordering_fraction": 0.026201282402035623,
+      "runtime_pushes": 2764231,
+      "slot": {
+        "arm": "root_truth",
+        "ply": 48
+      },
+      "source": "partial closed query rows only; ongoing slots excluded",
+      "tt_cutoffs": 0,
+      "tt_hits": 149576,
+      "tt_probes": 967188,
+      "work": 2764243
+    }
+  ]
+}

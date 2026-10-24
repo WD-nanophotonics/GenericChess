@@ -705,6 +705,23 @@ Do not demand a new universal solver before a bounded useful prototype. Preserve
 exposure: current development rules/time repeats do not become independent heldout.
 Source/schema inventories alone are0queries and not executed Oracle experiments.
 
+Separate first correct complete-iteration action, first qualifying winning-child
+return, first mate-band score and final call return. An any-win completed child
+can have a longer literal PV than last completed_depth; preserve result_source
+and never promote that interrupted iteration to completed. A default Q4 main PV
+may omit its q suffix; do not claim a nonterminal exported prefix is a complete
+literal mate explanation. Bind actual evaluator/Q/PV/goal before generalizing a
+Unit-caller error to the current default. Global seat0 WDL reverses perspective
+at seat1; preserve the root game value, not a seat1 maximization of seat0 payoff.
+
+Observer code must use the actual SearchResult.best_action contract. Portable
+GameState search identities are not necessarily imported Runtime key objects;
+capture the actual root result or matching runtime identity without dropping
+history witnesses/guards. Terminal certificate labels may use actual_terminal
+without remaining; validate their literal Core outcome, not a fabricated field.
+Print only current stop/identity fields from rollout config, and compact metadata/
+new-message excerpts from saved Slack returns, not full historical wrappers.
+
 For multi-phase summaries, explicitly sum actual metrics by phase. The initial
 intermediate search reader counted Native availability only for pilot/panel;
 final reader also counts fresh-Player PVS totals and per-turn game deltas. Keep

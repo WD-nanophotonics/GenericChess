@@ -1,0 +1,7 @@
+{
+  "error": "Direct private-script invocation sets sys.path to .local_agent subdirectory; scripts package not found",
+  "fix": "Invoke same unchanged new preparation source through runpy from project root; do not execute archival source capsules",
+  "new_Core_actions": 0,
+  "new_Player_queries": 0,
+  "source": ".local_agent/leaper-ordering-20261025/prepare-next-panel.py"
+}

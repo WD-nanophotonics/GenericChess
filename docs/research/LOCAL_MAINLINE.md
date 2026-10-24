@@ -6,88 +6,90 @@ no AUX control, new worker/default/schedule or weakened history key.
 
 ## Current decision and reason —2026-10-25
 
-The user's pure-Leaper-first correction remains binding. The directly supplied
-ChatGPT review (exact project copy in the current packet) sharpens the objective:
-correct strategic decisions per total time, and fewer unnecessary search-work
-events, alongside efficient execution. NPS, displayed depth and a constant-cost
-speedup do not establish strength. This supersedes an automatic sequence of more
-availability flags/masks/constant-factor panels; it does not authorize immediate
-LMR/NNUE/proof-engine implementation or expansion to mixed rules.
+Keep the user's PURE LEAPER/time-to-correct/useful-decision objective. NPS, depth
+or constant-factor speed alone do not establish strength. Autonomous ChatGPT
+review1792857477 supplied an existing complete-history case and truth/work/caller
+checks. Its independent-review context outranks solicited Dot advice; direct user
+instructions remain highest. The earlier Dot follow-up has no new reply at this
+read, not a work/publication gate.
 
-Dot1792850744's solicited panel-first/reference caution was adopted. The later
-user-supplied ChatGPT review outranks that advice. Direct user instructions remain
-highest. Consult Dot about genuine next-step uncertainty through SLACK_WORKFLOW;
-no reply is a work/publication gate. Preserve origins and adoption/execution facts.
+[Ordering, goals and caller scope](LEAPER_ORDERING_AND_GOAL_20261025.md) establishes
+the key consequence: the exposed Unit error persists throughD10, but the current
+default dynamic caller preservesWIN at every completedD1–D10iteration on the same
+root. Do not turn a Unit/Q0 weakness into a current-default weakness. This replaces
+using that single Unit case or root-only WDL ordering as an automatic production
+optimization target.
 
-## Current measured evidence
+## Current evidence and limits
 
-[Pure-Leaper costs and search work](PURE_LEAPER_SEARCH_WORK_20261025.md) closes
-all registered producers:6rules/12full development roots;449decisions/3329legalPV
-replay checks. Existing Native availability yields14.8–22.5percent fixed-work
-elapsed reductions, but45/48same-time pairs choose the same action. The3differences
-are ONE repeated root; its two fixed references favor the new action by6and1
-same-evaluator points, not independent WDL or global regret.
+Six root-order queries on actualply48/50/52 close at480s each. Only the root uses
+WDL/rank assistance, no internal Oracle or leaf/pruning label. Shared-depth values
+agree. Both WIN roots first proveWIN atD11: baseline/assisted340.973/310.959s and
+344.189/311.085s; the DRAW control is slightly worse assisted. All requested
+D16/D14/D12targets remain censored. First-move cutoffs99.669–99.845percent do not
+motivate a blind ordering sweep.
 
-A separately frozen existing-PVS contrast uses six original5ply roots and two
-AB/BA repetitions. Ten complete same-depth pairs across five roots preserve
-root values. Work falls2.35–18.09percent; time ranges from0.6percent worse to
-21.1percent better. Another root's two pairs cannot completeD8at45seconds:UNKNOWN.
-Availability-only whole games retain TT across moves and give0W1L5D,all6eligible.
-PVS is NOT enabled in those games. No several-fold/strategic/strength improvement
-has been demonstrated. Keep the nearzero/negative/censored cases and defaultsFalse.
+One existing explicit any-win caller returns a literal11ply terminal mate in
+266.921s versus ordinary480.081s, with matched pre-goal work/action/score prefix.
+Last complete depth10/source completed_root_win means neither completedD11/D14
+nor shortestmate. This is scoped caller resource saving, not a new global
+algorithm/default or strength. Currentdefault returns certifiedWIN after360s,
+last completeD10; first correct iterationD1/about.006s. Its q suffix is absent
+from the exported mainPV, so that nonterminal prefix is not a literal mate proof.
 
-These scoped rules admit only LeapAtom movement, six actors, no promotion/drop/
-hand, maxply96/repetition4, complete records at0and lexical5ply. They are not IID
-or unexposed-rule holdouts. Other rule classes remain deferred; necessary shared
-Core compatibility regressions are retained. The previous exact-map implementation
-and earlier mixed-rule results remain evidence, not the next expansion task.
+Earlier [pure-Leaper work evidence](PURE_LEAPER_SEARCH_WORK_20261025.md) remains:
+six rules/twelve exposed roots, availability14.8–22.5percent fixed-work cost gain,
+45/48same timed actions, six games0W1L5D; existingPVS10complete value-matched pairs
+plus2censored pairs with modest heterogeneous benefit. New offline strata:
+twelve-root bench q-events36.46–75.40percent, PVS36.88–69.93percent, not legacy
+97–99percent or time fractions. New default late-root whole-call q-events47.35
+percent include incomplete work. No several-fold/strength gain established.
 
-## Execute next: algorithmic diagnosis with adequate truth
+Old shallow certificates cover one named physical layout under four clocks;
+legal-frontier lists do not imply all-action WDL. Late-root labels use fixed
+published AUX graph/barrier evidence, not a graph rerun or independent rules
+implementation. No all-node/ideal heuristic-score Oracle is provided. Full
+histories/clocks, exact TT guards and provenance remain.
 
-Main: Can available complete-history truth support a useful ordering/work-control
-comparison on a nontrivial pure-Leaper decision?
-| Inspect the already prepared next-truth-inventory, existing public certificates
-and their action/state coverage; bind exact goal/WDL versus heuristic-score
-objective and full clocks/history; freeze ONE supported diagnostic before queries
-| A coverage/gap table and small falsifiable current-order/reference-order cost
-comparison if supported, otherwise explicit UNKNOWN and bounded alternative
-| Root-only labels are not an all-node Oracle; a WDL ordering is not automatically
-ideal for a fixed-depth score objective. Include offline lookup preparation and
-runtime lookup cost. No AUX graph rebuild/competing solver or universal proof gate.
+## Execute next: actual-default quality and a justified mechanism
 
-Backup1: Why is PVS helpful on some roots but nearzero/incomplete on others?
-| Read retained24query null-window/re-search/q/TT/work/cost counters; select one
-concrete ordering/work-allocation hypothesis rather than cycling feature flags
-| A mechanism-based prediction and one prospective scope/cost test
-| Preserve complete-value contract and negatives; no NNUE/training/default change
-or automatic larger mask sweep; time-to-correct remains unmeasured here.
+Main: Which actual-default full-history errors exist in available fixed truth?
+| Read new comments/active Dot thread once; use prepared64natural histories;
+freeze ONE default budget/controller protocol BEFORE new queries, retaining all
+slots, fallback/UNKNOWN and actual per-case cost
+| Correct-action WDL, completed depth, main/q work, total cost and actual backend;
+handle both actors correctly from global seat0 labels
+| One exposed RuleSet/two TRAIN trajectories/44physical positions, not64IID games
+or holdout rules. No label fitting, source-capsule execution or AUX graph rebuild.
 
-Backup2: Which existing full-history pure-Leaper states distinguish shallow errors
-from useful search improvement?
-| Audit published scoped truth and actual shallow failures; prepare a small
-frozen decision-quality panel with independent rule split before future tuning
-| Explicit covered correct-action/goal claims and uncovered UNKNOWN
-| Shallow D3-solved roots are correctness controls only; no changed seed labels as
-independent games, no heuristic deep reference mislabeled independent truth.
+Backup1: When is explicit any-win stopping useful for an actual consumer?
+| Inspect any-win versus shortestmate/depth objective and Q/PV contract before
+one prospective scoped resource check, using the existing feature
+| Actual returned winning action, honest completed depth/source and total cost
+| No global default or claim that a nonterminal exported q prefix is a complete
+mate explanation; one Unit result is not all-domain evidence.
 
-LMR is conditional: selective depth changes need missed-critical-action quality
-checks, not merely PVS-style completed-value parity. Null Move's zugzwang risk
-must not be ignored. Goal proof modules need target/history/cycle/budget evidence
-and role ownership review; geometric reachability alone is not safe branch pruning.
-Leaper geometry precomputation first needs a current implementation audit. No
-new solver, worker, learned model or rule-specific winning policy follows.
+Backup2: Does ordering or qsearch justify ONE work-control change?
+| Examine depth-eligible TT reuse versus full-PV suppression and actual q/cutoff
+distribution on relevant default cases; state a falsifier before code
+| A mechanism prediction and bounded matched contract/quality/cost test
+| High TT hits do not prove useful cuts. Preserve exact history/collision guards;
+no cycling masks/flags, selective LMR/NullMove or NNUE by default.
 
-## Preserved reserves and boundaries
+The64input preparation is complete:64unique full records,64root frontiers,
+2016record actions and23literal-terminal labels replayed. It has0newPlayer/solver
+queries and is NOT an executed policy panel. Terminal-schema/observer failures
+are retained and diagnosed, not repaired by changing expected values. All
+scientific producers CLOSED.
 
-The old pure geometry/P0/P1/B1 tempo, inverse design, material learning and NNUE
-routes remain conditional reserves. Previous evidence stays in Git/reports; no
-frozen producer resumes to fill missing slots. next-legacy-probe remains prepared
-0queries and DEFERRED. Mixed legacy/promotion/drop optimization waits for an
-explicit scoped-success assessment before expansion. Do not make all-domain
-solving, a remote reply or an independent engine a gate for every useful prototype;
-claims must instead match the evidence actually obtained.
+## Reserves and boundaries
 
-All current scientific producers CLOSED. New truth-coverage source/schema
-inventory is already begun,0newPlayer/solver queries; it is not an executed Oracle
-experiment. Effective work and session state are authoritative in session.json;
-publication/docs add0research. Recurrence remains180minutes; no schedule change.
+Geometry, material/NNUE learning and mixed/promotion/drop optimization remain
+conditional/deferred. Necessary shared-Core compatibility regressions remain.
+An actual-default failure helps prioritize approximation work; it is not a
+universal proof gate for every exact-cost prototype. Broader success still needs
+prospective rule/history separation and suitable quality evidence. Frozen old
+slots/caps never resume to fill UNKNOWN. No competing solver, new worker or AUX
+state/control. Consult Dot about genuine uncertainty under current SLACK_WORKFLOW;
+no reply gates independent work. Session ledger is authoritative;180minute
+recurrence and zero publication research credit remain.

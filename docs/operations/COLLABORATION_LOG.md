@@ -7309,3 +7309,36 @@ source, positive/negative results and technical user review are in the new repor
 packet. Initial per-phase Native-count omission is corrected transparently in
 final reader; no data/result rewritten. New Main replaces an endless mask/flag
 sweep with truth-coverage/order/work diagnosis and meaningful error controls.
+
+## PRIMARY pure-Leaper caller qualification —2026-10-25
+
+Read new autonomous ChatGPT review1792857477 after exact private capture and the
+complete relevant Dot thread. Context supports independently initiated review;
+shared account/TYPE alone does not. Old solicited follow-up has no new answer.
+Adopted its fixed published four-actor history candidate, real coverage table and
+pure-Leaper work strata. No AUX checkout/state/compute/control or graph rerun.
+
+New six480s root-order calls reproduce Unit's ply50 DRAW choice throughD10 and
+prove WIN atD11/344.189s. Root-only labels change shallow action but proof latency
+only modestly (311.085s); the DRAW control is slightly worse. All requested higher
+depths remain censored. Currentdefault, checked separately, preservesWIN fromD1
+throughD10: do not treat the Unit/Q0 error as a default-policy error. Existing
+explicit any-win returns a real11ply terminal mate in266.921s, last completeD10,
+not completedD11/shortestmate. This is scoped resource saving, no global adoption.
+
+Eight retained decisions/87legal exportedPV steps qualify. First-cutoff rates
+near99.7–99.8percent and history-sensitive/shallow TT hits do not justify blindly
+adding deferredPV/ordering/selectivity. Old work strata correct legacy q-dominance
+assumptions: bench36.46–75.40percent, PVS36.88–69.93percent qevents, not time.
+The currentdefault exported PV omits a q continuation; complete literal mate
+explanation is not claimed. All source failures are preserved and causally fixed,
+without score/key expectation changes. Next64full-history inputs are Core-bound,
+0newPlayer queries, one exposed rule/two TRAIN paths/44physical positions.
+
+Operational limitation: initial context display expanded saved readback/rollout
+history; later operations used field-limited summaries. The raw private captures
+remain; this did not change data or grant scope. Avoid repeating that context
+cost. All science CLOSED at64.963recorded effective minutes; transport/docs add0.
+Current Main is actual-default quality and a justified mechanism, not a new solver,
+NNUE/default, mask sweep or rule expansion. New evidence and genuine next-step
+question go to Dot after reviewed push/full-SHA verification; no reply is a gate.

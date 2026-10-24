@@ -1,0 +1,107 @@
+{
+  "PV_actions": 21,
+  "anywin_comparison": {
+    "anywin_seconds": 266.9212558999425,
+    "anywin_work": 1508443,
+    "baseline_seconds": 480.0814236999722,
+    "baseline_work": 2872564,
+    "same_pre_goal_completed_iteration_work": true,
+    "scope": "One exposed fullhistory. Baseline also paid per-cutoff histogram recording overhead. Wall ratio descriptive, not replicated speedup or strength. The any-win caller intentionally changes stopping objective, never depth/evaluator/history equivalence."
+  },
+  "new_Player_queries_during_reader": 0,
+  "new_retained_queries": 2,
+  "new_solver_or_graph_calls": 0,
+  "status": "PASS",
+  "summary": [
+    {
+      "CPU_seconds": 266.515625,
+      "PV_plies": 11,
+      "all_completed_actions_correct": false,
+      "chosen_WDL": 1,
+      "completed_depth": 10,
+      "controller": "unit_anywin",
+      "exported_PV_terminal": true,
+      "first_correct_iteration": null,
+      "first_observed_correct_action_seconds": 266.9074477000395,
+      "incorrect_completed_depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "nodes": 1508443,
+      "outer_seconds": 266.9212558999425,
+      "qnodes": 0,
+      "query_seconds": 266.9074477000395,
+      "requested_depth": 14,
+      "result_source": "completed_root_win",
+      "score": 999999989,
+      "termination_reason": "root_win_found",
+      "warning": "Default qsearch may omit q suffix from exported PV. Graph-certified chosen-action WDL is separate from a complete literal mate explanation. Any-win stops at a completed winning child and does not claim completedD14/shortestmate."
+    },
+    {
+      "CPU_seconds": 359.328125,
+      "PV_plies": 10,
+      "all_completed_actions_correct": true,
+      "chosen_WDL": 1,
+      "completed_depth": 10,
+      "controller": "current_default",
+      "exported_PV_terminal": false,
+      "first_correct_iteration": {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g27",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        "depth": 1,
+        "elapsed": 0.005961399991065264,
+        "nodes": 17,
+        "principal_variation": [
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g27",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 3
+            }
+          }
+        ],
+        "published_child_WDL": 1,
+        "qnodes": 8,
+        "score": 976
+      },
+      "first_observed_correct_action_seconds": 0.005961399991065264,
+      "incorrect_completed_depths": [],
+      "nodes": 951443,
+      "outer_seconds": 360.01439999998547,
+      "qnodes": 855803,
+      "query_seconds": 360.00047460000496,
+      "requested_depth": 14,
+      "result_source": "main_iteration",
+      "score": 999999989,
+      "termination_reason": "time_limit",
+      "warning": "Default qsearch may omit q suffix from exported PV. Graph-certified chosen-action WDL is separate from a complete literal mate explanation. Any-win stops at a completed winning child and does not claim completedD14/shortestmate."
+    }
+  ]
+}

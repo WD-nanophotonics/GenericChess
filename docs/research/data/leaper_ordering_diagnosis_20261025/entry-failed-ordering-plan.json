@@ -1,0 +1,40 @@
+{
+  "controller": "Fresh current AlphaBetaPlayer+TT per call; equal unit A/B material, captures priority0, Q0/hard0, root tacticalOFF, require_full_pvTRUE; PVS/aspiration/selectivityOFF; native legalityON availability/checkOFF; exact fullhistory/clock. Old adapter absent here, new explicit scalar adapter reviewed against source; no source-capsule execution.",
+  "cost": "6x480=2880s query ceiling plus 1320s preparation/analysis/validation estimate=4200s<7200s; offline label creation cost already paid by AUX, new import/hash/replay charged separately; runtime lookup timed; no new graph/solver.",
+  "deadline": "2026-10-24T18:12:40.437393+00:00",
+  "expected_total_seconds": 4200,
+  "hard_scope": "6queries max10Mwork each, max480s each, preparation+analysis+validation within85min from registration; no cap refill; interrupted slots UNKNOWN. Under120min aggregate.",
+  "hypothesis": "Root tie retention can delay finding winning continuations; truth-first root order may improve action immediately but need not accelerate proof. Root-only assistance is not ideal internal ordering or deployable algorithm.",
+  "outcomes": "Separate first complete-iteration published-WDL-correct action, first mate-band score, and full last completed iteration. Clock DRAW control ply52 cannot prove WIN. Incomplete target depth remains censored; no strength or holdout claim.",
+  "qualification": "Published barrier labels accepted with provenance, current strict root+child replay; no independently rerun graph/theorem; stop on illegal/history/score-mate contradiction or source mismatch.",
+  "question": "Does knowledge only of the current root WDL/rank materially accelerate finding a proved winning score, or does internal work dominate on an exposed actual clock-error?",
+  "registered_at": "2026-10-24T16:47:40.437393+00:00",
+  "seconds_per_query": 480,
+  "slots": [
+    {
+      "arm": "baseline",
+      "ply": 48
+    },
+    {
+      "arm": "root_truth",
+      "ply": 48
+    },
+    {
+      "arm": "root_truth",
+      "ply": 50
+    },
+    {
+      "arm": "baseline",
+      "ply": 50
+    },
+    {
+      "arm": "baseline",
+      "ply": 52
+    },
+    {
+      "arm": "root_truth",
+      "ply": 52
+    }
+  ],
+  "source_sha256": "3a13cb55bb9130cf45ce3434b5649985f63ca4dd4c1ac8e1c73bdad7576a4388"
+}

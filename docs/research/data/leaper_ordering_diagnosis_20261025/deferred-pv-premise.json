@@ -1,0 +1,15 @@
+{
+  "TT_cutoffs": 0,
+  "TT_hits": 143095,
+  "at": "2026-10-24T17:00:55.995804+00:00",
+  "candidate": "Defer literal-PV reconstruction for later siblings: use existing normal alpha-beta window with pv_node=False, then full-PV re-search only for strictly in-window improvement alpha<score<beta. Not PVS/nullwindow or selective pruning. Preserve all exact history guards; no truncation accepted at root.",
+  "cost_and_scope": "Prepare patch/tests during current6slot run, apply only after producer CLOSED. Register a separate2query current-source featureoff/on contrast before calls under original overall85min deadline, max480s each. Full logical anticipated6*480+2*480+1320=5160s86min slightly exceeds85; therefore new2calls must fit remaining original absolute deadline and shared remaining-work budget. No extension or cap refill, missing slots UNKNOWN. Total expected under120min; no AUX solving/NNUE/default.",
+  "cutoffs": 712417,
+  "first_fraction": 0.9976909590871639,
+  "prediction": "On this existing Q0 fullPV caller, nonprincipal compatible TT bound cutoffs become available, reduce work/time with same completed-depth score/legal full terminal PV. First-correct and first-proved remain separate. If no meaningful bound-hit savings, reject rather than cycle order features.",
+  "source_mechanism": "PVS off propagates pv_node=True into every child; require_full_pv disables all non-principal TT cutoffs as if every visited node needs a literal principal line. Source guard line entry.depth and not(require_full_pv and pv_node) demonstrates causal opportunity.",
+  "source_slot": {
+    "arm": "baseline",
+    "ply": 48
+  }
+}

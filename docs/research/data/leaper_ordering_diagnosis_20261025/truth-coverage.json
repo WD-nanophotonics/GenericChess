@@ -1,0 +1,164 @@
+{
+  "four_actor_cases": [
+    {
+      "actions": 8,
+      "child_values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "ply": 48,
+      "root": {
+        "barrier_value": 1,
+        "basis": "barrier_rank_with_clock",
+        "proof": 4,
+        "rank": 11,
+        "remaining": 16,
+        "root_count": 1,
+        "value": 1,
+        "vertex": 9533
+      }
+    },
+    {
+      "actions": 8,
+      "child_values": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "ply": 50,
+      "root": {
+        "barrier_value": 1,
+        "basis": "barrier_rank_with_clock",
+        "proof": 4,
+        "rank": 11,
+        "remaining": 14,
+        "root_count": 1,
+        "value": 1,
+        "vertex": 9498
+      }
+    },
+    {
+      "actions": 6,
+      "child_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "ply": 52,
+      "root": {
+        "barrier_value": 1,
+        "basis": "clock_cutoff_DRAW",
+        "proof": 4,
+        "rank": 13,
+        "remaining": 12,
+        "root_count": 2,
+        "value": 0,
+        "vertex": 9542
+      }
+    }
+  ],
+  "four_actor_source": "26d414cce26d44e7d2cfae84a20195fa715f2906",
+  "own_shallow_controls": [
+    {
+      "H": 6,
+      "covered_finish_results": [
+        {
+          "declaration_id": null,
+          "declaration_outcome": null,
+          "declaration_score": null,
+          "declared_by": null,
+          "resigned_by": null,
+          "status": "checkmate",
+          "winner": 0
+        }
+      ],
+      "defenses": 1,
+      "legal_first": 6,
+      "listed_first": 6,
+      "origin": "EXACT_REUSED_PUBLISHED_NAMED_ROOT_AND_COMPLETE_ONEPLY_FRONTIER",
+      "record": {
+        "actions": [],
+        "initial_setup_key": "common_026",
+        "resigned_by": null,
+        "ruleset_fingerprint": "28afdde5bc9efd4f390a2ee1b6176a8820cee148c6c256e1327841bdd7f7f370",
+        "schema_version": 3
+      },
+      "state_sha256": "f8a1247ca8d6050ebfda5ee416faf4435e6733ae54ad96e646bafe7791ffadd1"
+    },
+    {
+      "H": 1,
+      "covered_finish_results": [],
+      "defenses": 0,
+      "legal_first": 6,
+      "listed_first": 6,
+      "origin": "NEW_COMPLETE_CLOCK_COUNTERFACTUAL",
+      "record": {
+        "actions": [],
+        "initial_setup_key": "common_026",
+        "resigned_by": null,
+        "ruleset_fingerprint": "25d557507be377e923f1bac29423c4f82436c5b044e4094fb03254a07fe31520",
+        "schema_version": 3
+      },
+      "state_sha256": "dfdfd90bd87aaccdcfacaa2fffeb016556527476cfdda59cb4b2d1eced53f20d"
+    },
+    {
+      "H": 2,
+      "covered_finish_results": [
+        null
+      ],
+      "defenses": 1,
+      "legal_first": 6,
+      "listed_first": 6,
+      "origin": "NEW_COMPLETE_CLOCK_COUNTERFACTUAL",
+      "record": {
+        "actions": [],
+        "initial_setup_key": "common_026",
+        "resigned_by": null,
+        "ruleset_fingerprint": "7ae2e74523af0d8ca89f9fb8b5e97fcd29add08b9ea11c51f00eb66c849d4fc9",
+        "schema_version": 3
+      },
+      "state_sha256": "198ee84d5ef928069dcf862678605305c45843da3a10c09313f9b69488fc062b"
+    },
+    {
+      "H": 3,
+      "covered_finish_results": [
+        {
+          "declaration_id": null,
+          "declaration_outcome": null,
+          "declaration_score": null,
+          "declared_by": null,
+          "resigned_by": null,
+          "status": "checkmate",
+          "winner": 0
+        }
+      ],
+      "defenses": 1,
+      "legal_first": 6,
+      "listed_first": 6,
+      "origin": "NEW_COMPLETE_CLOCK_COUNTERFACTUAL",
+      "record": {
+        "actions": [],
+        "initial_setup_key": "common_026",
+        "resigned_by": null,
+        "ruleset_fingerprint": "668d2c1257a555734ee2adfd3261dd0c7d352409c324d34b8fa7aa66ba58fd70",
+        "schema_version": 3
+      },
+      "state_sha256": "77d223d053d18ee2af91e341f28ccf97f965195b72af9ccb1f131e1b316eeaee"
+    }
+  ],
+  "unknown": "No complete internal-node labels and no ideal fixed-depth heuristic ordering. Seven winning actions at ply50 are published WDL evidence, not new proof or unexposed holdout."
+}
