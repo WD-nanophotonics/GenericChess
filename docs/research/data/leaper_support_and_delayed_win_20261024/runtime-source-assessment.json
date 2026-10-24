@@ -1,0 +1,20 @@
+{
+  "adoption": "Keep Claude proposed zero-training baseline as conditional reserve, not evidence for changing safe key or current Main. Position-only score reuse changes semantics unless independently justified; ordering-only key use and bound reuse are distinct.",
+  "findings": [
+    "Terminal tests occur before TTprobe. New terminal/ongoing counterexample alone does not show an operational TT error.",
+    "Production run_root_search builds SearchPathRuntime. RuntimeSearchKey retains ply, collision-aware repetition snapshot and eligible history context; fallback SearchStateIdentity is not the only production key.",
+    "RuntimeCountsSnapshot is order-independent exact-count snapshot with hash fast discriminator and exact items equality. RuntimeHistoryContext preserves exact ordered chain, added if runtime.tt_eligible.",
+    "Eligibility includes complete history/no opaque keys; future baselines must measure actual import/context mode instead of inferring TTweakness from identity.py alone.",
+    "Current full plain rules have no other adjudication; generic action/no-progress/continuous-check modes can depend on richer history and are outside capture-forgetting claim.",
+    "No TT implementation, runtime, cost benchmark, errors or learner measured/modified."
+  ],
+  "inspected": [
+    "core/identity.py",
+    "core/transition.py",
+    "core/repetition.py",
+    "core/semantic_executor.py:terminal_result",
+    "core/search_runtime.py:RuntimeSearchKey/RuntimeCountsSnapshot/RuntimeHistoryContext/search_key",
+    "ai/alphabeta/search.py:terminal-before-TT/run_root_search"
+  ],
+  "source_commit": "731709e69007713ac403d60e1218221d1950c8d9"
+}

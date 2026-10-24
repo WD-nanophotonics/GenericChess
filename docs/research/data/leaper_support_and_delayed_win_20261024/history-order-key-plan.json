@@ -1,0 +1,93 @@
+{
+  "changed_premise": "Claude inspectedfallbackidentity; current production uses RuntimeSearchKey. Need actual source-bound key observation before adopting a cache baseline; not performance orruntimeimplementation work.",
+  "cost": {
+    "basis": "Includes priorwhole04:49:30..05:51:08window, oldhistorycandidate, currentexistence/read windows, H8history phase and entire06:48:49..07:08:11capturephase evenwhereoverlappingunrelatedsupportwork. This single narrowkeyobservation staysbelow120min; no continuation beyondthiscap.",
+    "combined_hard_upper_seconds": 7071,
+    "new_forecast_seconds_including_code_validation_analysis_report": 480,
+    "new_inclusive_hard_cap_seconds": 900,
+    "prior_related_conservative_upper_seconds": 6171,
+    "threshold_seconds": 7200
+  },
+  "cycles": {
+    "A": [
+      [
+        "A",
+        0,
+        2,
+        null
+      ],
+      [
+        "B",
+        3,
+        5,
+        null
+      ],
+      [
+        "A",
+        2,
+        0,
+        null
+      ],
+      [
+        "B",
+        5,
+        3,
+        null
+      ]
+    ],
+    "K": [
+      [
+        "K",
+        1,
+        2,
+        null
+      ],
+      [
+        "B",
+        3,
+        5,
+        null
+      ],
+      [
+        "K",
+        2,
+        1,
+        null
+      ],
+      [
+        "B",
+        5,
+        3,
+        null
+      ]
+    ]
+  },
+  "method": "Actual GameSession prefixes and supplied actualPosition historywitnesses via public SearchPathRuntime.from_state, no TTprobe/search/Player, no AUXcheckout orruntimechange. Source induction: plain terminal/legality uses currentPosition,ply andcounts, so equalcontexts have samefuture semantic tree though keys may differ.",
+  "paths": [
+    [
+      "A",
+      "K"
+    ],
+    [
+      "K",
+      "A"
+    ]
+  ],
+  "predictions": {
+    "bothongoing_ply": 8,
+    "fallbackSearchStateIdentity_equal": true,
+    "runtime_SearchKey_equal": false,
+    "runtime_counts_snapshot_equal": true,
+    "runtime_eligible": [
+      true,
+      true
+    ],
+    "runtime_ordered_history_context_equal": false,
+    "samefullcounts": true,
+    "samefullposition": true
+  },
+  "question": "Can two actual plain-rule histories have identical position/ply/repetitioncounts yet different production RuntimeSearchKeys solely because ordered historycontext is retained?",
+  "source_rule": "Same fixednamedA23/B5n3source; onlyH12/repeat4. Both paths startcommon_026 and perform the same two4plycycles in opposite order; no stateinjection orcapture.",
+  "started_at": "2026-10-24T07:12:47+00:00",
+  "stop": "Illegalcycle, terminalprefix, unequalcounts orotherkeyfielddifference: preservefailure, do notpickotherpaths/higherH. No hypothesis of cachegain, generic correctness or removinghistory inproduction."
+}

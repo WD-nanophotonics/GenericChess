@@ -1,0 +1,15 @@
+{
+  "algebraic_mask_identity_checks": 3072,
+  "contingency_boards": [
+    3,
+    4,
+    5
+  ],
+  "exact_support_formula": "T-sum_i A_i*x_i-sum_j B_j*y_j+sum_ij C_ij*x_i*y_j for exactly one ordinary actor per role.",
+  "extra_A_counterexample": "n3 K0a1,A1c2,A2b1,K1c3,Bb2: A22 admitted; A23 and A30 each fail INITIAL_ANCHOR_ATTACKED by different actors. Single-A union law fails after actor splitting.",
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "scope": "Initial safe admission only; finite deterministic combinatorial identities, not independent samples or WDL/learning claims. Zero mask is algebraic no-attack reference, not an asserted compilable empty movement type.",
+  "single_A_lattice": "With Bfixed, support intersection maps to mask union and support union maps to mask intersection, because one A-to-K displacement has at mostone active orbit bit.",
+  "status": "PASS"
+}

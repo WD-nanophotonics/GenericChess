@@ -113,22 +113,68 @@ The detailed pre-review mainline is retained at
 [56560fb3](https://github.com/WD-nanophotonics/GenericChess/blob/56560fb3e24102792f72a005c5c5bdb52526943f/docs/research/LOCAL_MAINLINE.md),
 with exact additional uncommitted originals saved privately; history is preserved.
 
-## Current executable reserve
+## Latest structural result and next execution —2026-10-24
 
-Main: Does common-safe input support survive a proposed rule contrast?
-| Before any new matched outcome query, analytically audit A23 versus A30 with B5 on n3/n4; both add different odd orbits to A22. Enumerate only legal fresh support, preserve complete rules/history and reject empty support rather than changing the denominator after results
-| Explicit common/excluded initializer counts and geometric reason; n3 union-of-attacks empty-support is a hypothesis to check, no WDL labels or Player
-| End after this support audit; select another question only with changed premise, no wholegraph/cost/price/training panel.
-Backup1: Is closing the remaining16UNKNOWN strategically informative?
-| Read next-two-orbits.json.gz and the unexecuted manual strategy plan as hypotheses; assess value/cost and Chat's independent argument review before any separately registered finite certificate task
-| Exact all-White/all-Black choice coverage under original fixedRuleSet152mu; keep112..128bound until validated
-| Do not reopen the closed unexecuted phase or claim DRAW from NOT-WIN; no blind branch search/solver or AUX duplication.
-Backup2: Does the geometric law fail outside its stated scope?
-| Review the corner/no-entry proof for concrete counterexamples using existing odd-offset and capture-remnant controls
-| Distinct static-capacity, legal-entry and full-history claims, explicit exclusions
-| A real contradiction changes the law; no learner/default/inverse activation follows automatically.
+[Support/history/tempo](LEAPER_SUPPORT_HISTORY_AND_TEMPO_20261024.md) closes the
+common-support Main: n3 A23/A30 B5 intersection0; n4 common5124 is a NEW input
+law. The fixed152mu count is now113WIN/24NOT-WIN/15UNKNOWN (WIN113..128), one
+new delayed certificate only. Old unexecuted two-orbit closure stays CLOSED.
+A new n4 common singleton has forced-WIN classification [0,1,1,1] across
+A22/23/30/31; A22 exact WDL remains LOSS or DRAW. Its protected B5 Dabbaba tempo
+policy explains the negative case, while new entry/cover explains positive mates.
+Support-polynomial/quantity/radius laws concern admission, not strategic strength.
+Actual runtime-key control exposes extra history distinctions in plain scope,
+not a measured TT error/gain. Capture-epoch abstraction retains clock/current-
+inventory counters, never resets production histories.65hashed files/208unique
+full records/157planned target moves; replay/internal work not that counter.
 
-All current scientific producers are CLOSED. The session ledger/final-check owns
-workflow completion; the overall scientific objective remains OPEN. The latest
-user request changes both existing schedules to120minutes, not the60–90minute
-effective research requirement or the>=120minute individual-run review threshold.
+Main: Does deleting D from B5 remove the protected-tempo obstruction at the new
+n4 common root, or does another Black nonloss policy survive?
+| Read next-b-tempo.json full A22/B5 -> A22/B1, same [6,15,4,0], H6/repeat2;
+first derive ONE replacement Black policy or explicit White forcing candidate,
+then register a small inclusive-cost literal check before execution
+| Concrete policy/forcing certificate with all required choices; preserve UNKNOWN
+| Prepared input has0queries, not an automatic run; failed shuttle alone is not
+WhiteWIN. No blind wholegraph/price/depth sweep or AUX duplication.
+Backup1: Can a cheaper exact plain-history context be justified for a concrete
+reuse case? | First assess accumulated prior/code/validation/analysis cost and
+actual runtime source; no new history run before this accounting | One specific
+correctness/performance decision, retaining unsafe-domain fallback | Current key
+stays unchanged; >=120minute expected work needs user assessment, no split/refill.
+Backup2: Does a selected complete-rule change break the admission/entry mechanism?
+| Use a new concrete counterexample premise and existing packet before queries
+| Distinct support, legal-entry and forced-value claims | No filler reread,
+all-domain extrapolation or automatic learner/inverse activation.
+
+## Future ideas, conditional order and reconsideration
+
+This is the only future-ideas list, not a parallel task queue. P0/P1 structural
+questions stay first. A second stage may build a cheap truth-calibrated explorer
+only when it answers a concrete structural uncertainty. Thereafter consider
+minimal compressible rule knowledge for move ordering/resource allocation,
+following [Chat1792815705](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792815705985309).
+Initially keep true tree, terminals/history/clocks/pruning unchanged. Compare TT,
+killer/countermove/history/static cheap baselines and include feature/inference/
+training/engineering cost. Best move/PV/teacher score is not automatically the
+cheapest-cutoff/proof-order label. Learned extension/LMR/pruning is later and
+requires separate correctness assessment. No model/training/default is activated.
+
+[Claude1792817437](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792817437239919)
+suggested a TT baseline. Actual normal search uses RuntimeSearchKey, not only
+fallback identity.py; repetition_counts compatibility copies do not characterize
+incremental runtime cost. Defer implementation until a concrete PRIMARY case,
+scope/cost and AUX nonduplication are established. Position-only versus path-aware
+TT is a correctness comparison, not automatically an ordering-only baseline.
+
+Teacher/NNUE/architecture/transfer suggestions from historical
+[Oct16a](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689) and
+[Oct16b](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309)
+remain downstream reserves (historical references, not freshly reread this patrol).
+Inverse design/large training follow only changed evidence and explicit scope,
+not completion of a portrait. Remote comments are evidence/suggestions under
+current user authority. No AUX ownership transfer or new worker follows.
+
+All scientific producers are CLOSED. next-b-tempo is prepared, not executed.
+Session ledger/final-check owns segment completion; the overall objective OPEN.
+Both existing schedules remain120minutes; effective research60–90minutes and the
+>=120minute individual-run assessment threshold are separate requirements.

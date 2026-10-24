@@ -1,0 +1,437 @@
+{
+  "deadline": "2026-10-24T07:48:33.782932+00:00",
+  "parent_sha256": "b84913a953291a2e608bf00eb0053333e8fee161b6583d142e6977b94628e572",
+  "plan": {
+    "changed_premise": "P1oneplyrootA22 remains fullWDLUNKNOWN. New parity/royal-protection reasoning supplies a specificBlackpolicy ratherthan solve a wholegraph: WhiteAeven cannot touch protectedodd Btargets, and BlackKingodd isneverchecked byA22.",
+    "expected_literal_end": "repetitionDRAW atply6 before/withH6clock; cooperative trace only, notlowerboundWhitevalue",
+    "full_rule": "ExactsourceA22/B5n4H6/repeat2/draw/noadd/pass/promo/effects; no newR or μselection.",
+    "literal_control": [
+      [
+        "A",
+        15,
+        10,
+        null
+      ],
+      [
+        "B",
+        0,
+        1,
+        null
+      ],
+      [
+        "A",
+        10,
+        15,
+        null
+      ],
+      [
+        "B",
+        1,
+        9,
+        null
+      ],
+      [
+        "A",
+        15,
+        10,
+        null
+      ],
+      [
+        "B",
+        9,
+        1,
+        null
+      ]
+    ],
+    "policy": {
+      "B_shuttle_move": "Dabbaba b1-b3 andback",
+      "B_shuttle_squares": [
+        1,
+        9
+      ],
+      "BlackKing_and_shuttle_parity": 1,
+      "BlackKing_fixed_square": 4,
+      "White_A_checkerboard_parity": 0,
+      "entry_after_any_White_first_move": [
+        "B",
+        0,
+        1,
+        null
+      ]
+    },
+    "prediction": "All8Whitefirstbranches have legalB0-1. AtalllaterBlackturns, Bmaytoggle1<->9; WhiteA22preserves evencolour, WhiteKingcannotcapture/occupytheseBlackKing-protected targets, and BlackKingcannotbechecked. HenceWhitecannotforceWIN; do not inferDRAWvsLOSS.",
+    "question": "Can B supply a protected tempo shuttle that prevents every White mate in the otherwise static-capable A22/B5 n4root?",
+    "resources": {
+      "absolute_analysis_validation_cap_seconds": 600,
+      "combined_upper_bound_seconds": 1800,
+      "conservative_prior_P1_scope_seconds": 1200,
+      "forecast_inclusive_seconds": 300,
+      "new_target_moves_limit": 5,
+      "reused_first_child": true
+    },
+    "source": "The existing exactbase22entry-square all8Whitefirstchildren andtheircompleteBlacklegalfrontiers; no rerun ofthem.",
+    "started_at": "2026-10-24T07:38:33.782932+00:00",
+    "stop": "Any8entrymissing, illegalstep,colour/protectiondefect orunexpectedterminal: retainfailure,noalternatepolicy/trace. No solver, Player, graphclosure, AUXstate ornewworker."
+  },
+  "rule": {
+    "board_size": 4,
+    "capture_disposition": "remove_from_game",
+    "drop_allowed": {
+      "A": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "B": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ]
+    },
+    "initial_position": [
+      [
+        {
+          "base_type_id": "B",
+          "current_type_id": "B",
+          "owner": 1,
+          "promoted": false
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 1,
+          "promoted": false
+        },
+        null,
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 0,
+          "promoted": false
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "base_type_id": "A",
+          "current_type_id": "A",
+          "owner": 0,
+          "promoted": false
+        }
+      ]
+    ],
+    "max_ply": 6,
+    "metadata": {},
+    "piece_types": [
+      {
+        "is_anchor": true,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              1
+            ]
+          }
+        ],
+        "name": "K",
+        "promotion_target_ids": [],
+        "type_id": "K"
+      },
+      {
+        "is_anchor": false,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              -2,
+              -2
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -2,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -2,
+              2
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -2
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              2
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              2,
+              -2
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              2,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              2,
+              2
+            ]
+          }
+        ],
+        "name": "A",
+        "promotion_target_ids": [],
+        "type_id": "A"
+      },
+      {
+        "is_anchor": false,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              -2,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -2
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              2
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              2,
+              0
+            ]
+          }
+        ],
+        "name": "B",
+        "promotion_target_ids": [],
+        "type_id": "B"
+      }
+    ],
+    "promotion_allowed": {},
+    "promotion_forced": {},
+    "repetition_limit": 2,
+    "schema_version": 1,
+    "stalemate_result": "draw"
+  },
+  "source_sha256": "3aab05398b0f2778ee8213d5a9e3d7e47be75b64a2864c681aedbb01199d9776"
+}

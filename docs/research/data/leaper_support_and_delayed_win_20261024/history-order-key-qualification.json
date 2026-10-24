@@ -1,0 +1,35 @@
+{
+  "actual_observations": {
+    "Player_calls": 0,
+    "TT_probes_performed": 0,
+    "eligible": [
+      true,
+      true
+    ],
+    "exact_position_identity_equal": true,
+    "fallback_equal": true,
+    "fingerprint_equal": true,
+    "history_witness_misses": [
+      0,
+      0
+    ],
+    "ordered_history_context_equal": false,
+    "ordered_history_lengths": [
+      9,
+      9
+    ],
+    "ply_equal": true,
+    "repetition_snapshot_equal": true,
+    "runtime_keys_equal": false,
+    "runtime_position_hash_equal": true
+  },
+  "limit": "One exact structural key inequality. No TTmiss/hitrate/speed/WDLerror measurement, no production key change, no statement about otherhistoryadjudications or generic game equivalence. Source fallback and normal runtime must be distinguished.",
+  "new_Core_child_applications": 16,
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "record_occurrences": 18,
+  "same_Position_ply_and_repetition": true,
+  "same_named_start": true,
+  "semantic_argument": "In this full plain rule, no action/no-progress/continuous-check/other adjudication is active. Legal moves depend onPosition; terminal depends onPosition,ply andcounts. Equalthese fields imply equalfuturesemantic continuations byinduction. Orderedpast difference is extra information in the actualruntimekey here.",
+  "status": "PASS"
+}

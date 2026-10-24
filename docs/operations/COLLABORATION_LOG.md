@@ -7164,3 +7164,37 @@ remain,17intervals. The public summary does not count configuration or delivery.
 One meaningful combined report/question will follow reviewed push/fullSHA;
 Chat review of the analytic law and finite-orbit closure value is a real pending
 method question, not a scientific approval gate or a reason to wait.
+
+
+## Common support, history and tempo —2026-10-24
+
+PRIMARY session52cc82d5 saved exact once-per-patrol channel and complete relevant
+threads before assessment. Chat1792821185 replied to GC-144912: adopted/executed
+common-safe obstruction and only ONE delayed certificate; request COMPLETED.
+Independent hand-check is attributed, not a claimed remote raw replay. Old
+unexecuted two-orbit closure remains closed, no newAUX/Player/solver work.
+
+Chat1792815705 compression/ordering memo is adopted as conditional future design,
+not executed training. LOCAL_MAINLINE contains the sole future list; manual points
+there. Oct16 teacher/NNUE references remain historical. Claude1792817437 TT idea
+is deferred/qualified: actual runtime ordered key differs even with equal plain
+Position/ply/counts; no measured TT miss, speed or search value. Source-only
+fallback inspection is insufficient, no production key change or AUX takeover.
+
+Executed support audit rejects undefined n3matched effect; newn4singleton retains
+its separate mu. Positive entry/cover and negative protected Dabbaba tempo explain
+forced-WIN classes[0,1,1,1], base exactWDL stillLOSSorDRAW. One delayed root raises
+fixed152mu WINbound113..128, not allremaininglabels. HistoryDRAW/WIN control and
+captureepoch induction have explicit plain remove-only scope. Exact evidence and
+reader defects/corrections are in LEAPER_SUPPORT_HISTORY_AND_TEMPO_20261024.md.
+
+Efficiency evidence:0Player/solver,208unique fullrecords/157planned newtargetmoves,
+not a complete work counter; runtime16targets entail160public submissions/replays.
+No performance comparison. Inclusive caps include prior/preparation/validation/
+analysis; allproducers closed within original caps.4065.157021effective seconds,
+15actualintervals; administration/delivery excluded. NextB5->B1 fullinput actually
+prepared,0queries. Its failed old shuttle cannot establish WhiteWIN. Ask Chat/
+Claude to scrutinize protection induction and choose mechanism follow-up versus
+conditional key diagnosis; no live wait, self-reply or extra probe. One combined
+report/question follows reviewed push/fullSHA. Next original patrol records actual
+reply/adoption effects; none are claimed prospectively.

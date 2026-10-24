@@ -1,0 +1,105 @@
+{
+  "H": 8,
+  "alternate_actions": [
+    [
+      "A",
+      0,
+      2,
+      null
+    ],
+    [
+      "B",
+      8,
+      5,
+      null
+    ],
+    [
+      "A",
+      2,
+      0,
+      null
+    ],
+    [
+      "B",
+      5,
+      3,
+      null
+    ]
+  ],
+  "alternate_placement": [
+    1,
+    0,
+    7,
+    8
+  ],
+  "alternate_setup_key": "common_029",
+  "changed_premise": "Verified A23 delayed WIN capturesB beforemate, so its future cannot repeat any four-actor prefix. Construct two fourplyprefixes joining afterply2; this was not the earlier A22 draw/draw candidate. No search for substitute histories.",
+  "cost": {
+    "basis": "Prior A23support/identity/capture-related entire04:49:30..05:51:08.516549window3698.516549 plus earlierhistorycandidate323.265947, currentexistence337 and incoming/analysis300 conservativelyrounded4658; unrelated support-algebra task is distinct, not excluded overhead from this history question.",
+    "combined_upper_bound_seconds": 5560,
+    "new_inclusive_cap_seconds": 900,
+    "new_inclusive_forecast_seconds": 600,
+    "prior_related_upper_bound_seconds": 4660,
+    "user_threshold_seconds": 7200
+  },
+  "cycle_actions": [
+    [
+      "A",
+      0,
+      2,
+      null
+    ],
+    [
+      "B",
+      3,
+      5,
+      null
+    ],
+    [
+      "A",
+      2,
+      0,
+      null
+    ],
+    [
+      "B",
+      5,
+      3,
+      null
+    ]
+  ],
+  "cycle_placement": [
+    1,
+    0,
+    7,
+    3
+  ],
+  "cycle_setup_key": "common_026",
+  "full_rule": "The published fixed namedA23/B5n3 RuleSet with ONLYmax_ply changed6->8, same152initializers and repeat2/drawendings. Record newfingerprint/fullinput beforecompile.",
+  "limits": "No positionTT implementation/no GHI-error rate or playing strength. External repetition testing can detect the current terminal contrast; this alone does not demonstrate an operational TTbug. No AUXsolver/Player/newworker.",
+  "predictions": "Both targetPosition and ply4 identical under samefullR/H8. Cycle targetrepetitionDRAW;alternate targetongoing withonlyone occurrence and all-defenseWINply7. Terminalstatusdiff is expected, not a two-ongoing cache-error witness.",
+  "question": "Can actual legal histories in one fixedRuleSet yield DRAW vs WIN at identical Position,ply and clock, after the earlier A22 history-value prediction failed?",
+  "repetition_limit": 2,
+  "started_at": "2026-10-24T06:43:00+00:00",
+  "stop": "Illegalstep,additionalBlackreply,earlierterminal or mismatched board/clock: retain failure, no substitute branch/history or largerH.",
+  "winning_followup": [
+    [
+      "A",
+      0,
+      3,
+      null
+    ],
+    [
+      "K",
+      7,
+      8,
+      null
+    ],
+    [
+      "A",
+      3,
+      4,
+      null
+    ]
+  ]
+}

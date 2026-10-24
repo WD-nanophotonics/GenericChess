@@ -16,6 +16,10 @@ PRIMARY now prioritizes cross-rule structural counterfactuals; bounded evaluator
 or learning diagnostics are secondary. Do not infer a next experiment from an
 available script, prepared input, an unfinished old report or a Backup entry.
 A closed experiment is evidence, not a compulsory next-stage training/inverse job.
+Use LOCAL_MAINLINE.md's single future-ideas section for conditional compression/
+ordering/teacher proposals; do not create a second live plan or activate training
+from a remote suggestion. A TT key change needs correctness review separately
+from an ordering-only comparison.
 
 An explicit user request to reread the latest remote direction is a bounded
 manual review, not a second unattended patrol. Preserve a fresh exact capture,

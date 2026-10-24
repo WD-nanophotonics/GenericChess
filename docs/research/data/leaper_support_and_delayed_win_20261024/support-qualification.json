@@ -1,0 +1,208 @@
+{
+  "cases": [
+    {
+      "A": 23,
+      "B": 5,
+      "counts": [
+        {
+          "brute": 152,
+          "direct": 152,
+          "inclusion_exclusion": 152,
+          "n": 3,
+          "polynomial": 456
+        },
+        {
+          "brute": 8652,
+          "direct": 8652,
+          "inclusion_exclusion": 8652,
+          "n": 4,
+          "polynomial": 8732
+        },
+        {
+          "brute": null,
+          "direct": 106320,
+          "inclusion_exclusion": 106320,
+          "n": 5,
+          "polynomial": 106320
+        },
+        {
+          "brute": null,
+          "direct": 674988,
+          "inclusion_exclusion": 674988,
+          "n": 6,
+          "polynomial": 674988
+        },
+        {
+          "brute": null,
+          "direct": 2931368,
+          "inclusion_exclusion": 2931368,
+          "n": 7,
+          "polynomial": 2931368
+        },
+        {
+          "brute": null,
+          "direct": 9947916,
+          "inclusion_exclusion": 9947916,
+          "n": 8,
+          "polynomial": 9947916
+        },
+        {
+          "brute": null,
+          "direct": 338502588,
+          "inclusion_exclusion": 338502588,
+          "n": 12,
+          "polynomial": 338502588
+        }
+      ],
+      "polynomial": {
+        "0": -6420,
+        "1": 7188,
+        "2": -978,
+        "3": -1340,
+        "4": 455,
+        "5": 60,
+        "6": -38,
+        "8": 1
+      }
+    },
+    {
+      "A": 30,
+      "B": 5,
+      "counts": [
+        {
+          "brute": 208,
+          "direct": 208,
+          "inclusion_exclusion": 208,
+          "n": 3,
+          "polynomial": 708
+        },
+        {
+          "brute": 8972,
+          "direct": 8972,
+          "inclusion_exclusion": 8972,
+          "n": 4,
+          "polynomial": 9116
+        },
+        {
+          "brute": null,
+          "direct": 103124,
+          "inclusion_exclusion": 103124,
+          "n": 5,
+          "polynomial": 103124
+        },
+        {
+          "brute": null,
+          "direct": 648612,
+          "inclusion_exclusion": 648612,
+          "n": 6,
+          "polynomial": 648612
+        },
+        {
+          "brute": null,
+          "direct": 2823572,
+          "inclusion_exclusion": 2823572,
+          "n": 7,
+          "polynomial": 2823572
+        },
+        {
+          "brute": null,
+          "direct": 9625628,
+          "inclusion_exclusion": 9625628,
+          "n": 8,
+          "polynomial": 9625628
+        },
+        {
+          "brute": null,
+          "direct": 332233692,
+          "inclusion_exclusion": 332233692,
+          "n": 12,
+          "polynomial": 332233692
+        }
+      ],
+      "polynomial": {
+        "0": -9636,
+        "1": 9832,
+        "2": -886,
+        "3": -1824,
+        "4": 527,
+        "5": 80,
+        "6": -42,
+        "8": 1
+      }
+    },
+    {
+      "A": 31,
+      "B": 5,
+      "counts": [
+        {
+          "brute": 0,
+          "direct": 0,
+          "inclusion_exclusion": 0,
+          "n": 3,
+          "polynomial": 528
+        },
+        {
+          "brute": 5124,
+          "direct": 5124,
+          "inclusion_exclusion": 5124,
+          "n": 4,
+          "polynomial": 5268
+        },
+        {
+          "brute": null,
+          "direct": 79128,
+          "inclusion_exclusion": 79128,
+          "n": 5,
+          "polynomial": 79128
+        },
+        {
+          "brute": null,
+          "direct": 555204,
+          "inclusion_exclusion": 555204,
+          "n": 6,
+          "polynomial": 555204
+        },
+        {
+          "brute": null,
+          "direct": 2546544,
+          "inclusion_exclusion": 2546544,
+          "n": 7,
+          "polynomial": 2546544
+        },
+        {
+          "brute": null,
+          "direct": 8938308,
+          "inclusion_exclusion": 8938308,
+          "n": 8,
+          "polynomial": 8938308
+        },
+        {
+          "brute": null,
+          "direct": 322623924,
+          "inclusion_exclusion": 322623924,
+          "n": 12,
+          "polynomial": 322623924
+        }
+      ],
+      "polynomial": {
+        "0": -10332,
+        "1": 11012,
+        "2": -1234,
+        "3": -1988,
+        "4": 607,
+        "5": 84,
+        "6": -46,
+        "8": 1
+      }
+    }
+  ],
+  "maximal_proper_pairs": 25,
+  "n3_support_theorem": "For A/Bnonempty5orbit masks, safe fresh support nonempty iff both masks differfrom31. Any multiple-rulecommon support equals support of their orbitwise A/Bunions.",
+  "n4_and_larger": "All such rule intersections have a common fourcorner initializer; distances>=3 evade every allowed ordinary leap and Royal adjacency.",
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "proper_pair_min_count": 8,
+  "scope": "Fresh safe admission only, not root ongoing/WDL, full-history identity, Player/TT timing or learner equivalence. No safety relaxation or denominator substitution.",
+  "stable_polynomial_domain": "n>=5,degree8,n7=0,n6=-(14+|Aoffsets|+|Boffsets|); all-n finite positive-part formula retained.",
+  "status": "PASS"
+}

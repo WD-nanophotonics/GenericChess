@@ -1,0 +1,440 @@
+{
+  "hashed_files": 65,
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "planned_explicit_new_target_moves": 157,
+  "qualification_seconds": 1.5614974000491202,
+  "record_occurrences": 216,
+  "results": {
+    "capture_epoch": {
+      "complete_remaining_plies": 5,
+      "initial_full_history_tables_differ": true,
+      "new_Core_child_applications": 64,
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "pair_edges": 27,
+      "pair_nodes": 28,
+      "projected_current_inventory_tables_equal": true,
+      "record_occurrences": 68,
+      "scope": "Literal paired Core continuation conformance atH10/repeat3, no state injection/history reset, no outcome solver or TT change. All-history forgetting rests on the stated monotonic inventory and history-blind terminal argument, not this finite tree alone; remainingclock/currentinventory repetition are retained.",
+      "status": "PASS",
+      "terminal_pair_counts": {
+        "checkmate": 4,
+        "max_ply": 9,
+        "stalemate": 4
+      },
+      "unique_full_records": 66
+    },
+    "entry_square": {
+      "common_input": "NEW exposed n4 singletonmu, not a substitute value for undefined n3matched effect",
+      "full_root_WDL": [
+        "UNKNOWN",
+        "WIN",
+        "WIN",
+        "WIN"
+      ],
+      "immediate_mate_indicator_polynomial": "W+N-WN",
+      "immediate_mating_action_count_polynomial": "W+2N+2WN",
+      "immediate_mating_action_counts": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "independent_geometric_child_frontiers": 38,
+      "masks": [
+        22,
+        23,
+        30,
+        31
+      ],
+      "new_Core_child_applications": 38,
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "root_branch_polynomial": "8+2W+N",
+      "root_branches": [
+        8,
+        10,
+        9,
+        11
+      ],
+      "scope": "Finite exact two-orbit square/common freshroot/alloneplydefenses. Incomparable23/30bothWIN butsharedmatingactions differ; old/new ongoing continuationvalues UNKNOWN. One common board, no population strength or linearlearner impossibility. New-action absence is not an old legal record.",
+      "status": "PASS"
+    },
+    "existence": {
+      "finite_strategy_WDL": [
+        {
+          "H": 6,
+          "White_WDL": 1
+        },
+        {
+          "H": 1,
+          "White_WDL": 0
+        },
+        {
+          "H": 2,
+          "White_WDL": 0
+        },
+        {
+          "H": 3,
+          "White_WDL": 1
+        }
+      ],
+      "new_Core_child_applications": 23,
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "newly_labeled_H6_roots": 1,
+      "placement": [
+        1,
+        0,
+        7,
+        3
+      ],
+      "population_WIN_count_lower_bound": 113,
+      "population_WIN_count_upper_bound": 128,
+      "record_occurrences": 37,
+      "root_has_immediate_win": false,
+      "scope": "One named exposed root, all Black defenses; no D4 label expansion, other15 UNKNOWN retained. All-H1/H2 first moves cannot mate; fixed capture forces draw by clock. H3/H6 mate wins at ply3, including terminal precedence.",
+      "selected_key": "common_026",
+      "source_capsule_executions": 0,
+      "status": "PASS",
+      "unique_full_records": 33
+    },
+    "history": {
+      "H": 8,
+      "White_WDL": [
+        0,
+        1
+      ],
+      "mate_ply": 7,
+      "new_Core_child_applications": 11,
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "record_occurrences": 13,
+      "remaining_plies": 4,
+      "same_Position": true,
+      "same_complete_rule": true,
+      "same_ply": 4,
+      "scope": "Two literal histories in the same H8 fixednamedRuleSet and rootmu. Positive history-value witness, not two ongoing contexts, independent WDL engine, TT error or cache-performance benchmark. Current external repetition checks can recognize the terminal contrast.",
+      "status": "PASS",
+      "terminal_status": [
+        "repetition",
+        "ongoing"
+      ],
+      "unique_full_records": 13
+    },
+    "history_key": {
+      "actual_observations": {
+        "Player_calls": 0,
+        "TT_probes_performed": 0,
+        "eligible": [
+          true,
+          true
+        ],
+        "exact_position_identity_equal": true,
+        "fallback_equal": true,
+        "fingerprint_equal": true,
+        "history_witness_misses": [
+          0,
+          0
+        ],
+        "ordered_history_context_equal": false,
+        "ordered_history_lengths": [
+          9,
+          9
+        ],
+        "ply_equal": true,
+        "repetition_snapshot_equal": true,
+        "runtime_keys_equal": false,
+        "runtime_position_hash_equal": true
+      },
+      "limit": "One exact structural key inequality. No TTmiss/hitrate/speed/WDLerror measurement, no production key change, no statement about otherhistoryadjudications or generic game equivalence. Source fallback and normal runtime must be distinguished.",
+      "new_Core_child_applications": 16,
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "record_occurrences": 18,
+      "same_Position_ply_and_repetition": true,
+      "same_named_start": true,
+      "semantic_argument": "In this full plain rule, no action/no-progress/continuous-check/other adjudication is active. Legal moves depend onPosition; terminal depends onPosition,ply andcounts. Equalthese fields imply equalfuturesemantic continuations byinduction. Orderedpast difference is extra information in the actualruntimekey here.",
+      "status": "PASS"
+    },
+    "interaction": {
+      "algebraic_mask_identity_checks": 3072,
+      "contingency_boards": [
+        3,
+        4,
+        5
+      ],
+      "exact_support_formula": "T-sum_i A_i*x_i-sum_j B_j*y_j+sum_ij C_ij*x_i*y_j for exactly one ordinary actor per role.",
+      "extra_A_counterexample": "n3 K0a1,A1c2,A2b1,K1c3,Bb2: A22 admitted; A23 and A30 each fail INITIAL_ANCHOR_ATTACKED by different actors. Single-A union law fails after actor splitting.",
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "scope": "Initial safe admission only; finite deterministic combinatorial identities, not independent samples or WDL/learning claims. Zero mask is algebraic no-attack reference, not an asserted compilable empty movement type.",
+      "single_A_lattice": "With Bfixed, support intersection maps to mask union and support union maps to mask intersection, because one A-to-K displacement has at mostone active orbit bit.",
+      "status": "PASS"
+    },
+    "quantity_range": {
+      "boundary": "UnboundedKnight-ray orderedpair counts have distinct even/odd constituents, hence not one eventual polynomial. No claim the bounded-offset proof covers rays.",
+      "n5_ordered_safe_pairs": {
+        "Knight": 504,
+        "Nightrider": 480
+      },
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "quantity_degree": 2,
+      "quantity_mixed_W_N_labeled": 576,
+      "quantity_mixed_W_N_unlabeled": 288,
+      "quantity_third_and_higher_coefficients_zero": true,
+      "scope": "Fresh initializer-family admission only. Two-anchorKnight/Ray control is outside the currentK8fouractorlab and only tests the range boundary; no outcome, learner, graph or default change. Quantity labels dividedby2! foridenticalAs, not assumed additive value.",
+      "status": "PASS"
+    },
+    "radius": {
+      "admission_thresholds": [
+        4,
+        5
+      ],
+      "leading_n5": [
+        84,
+        192
+      ],
+      "leading_n6": [
+        -46,
+        -70
+      ],
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "planned_Core_initializations": 4,
+      "radii": [
+        2,
+        3
+      ],
+      "scope": "A new explicitlyradius-indexed initializer family, not executionofoneunchangedRuleSetacrossboards or recoveryofundefinedn3matched-effect. Finiteoffset only; rays/effects/history and search complexity not inferred.",
+      "status": "PASS",
+      "theorem": "For K8+oneA/B and fixed finite union-of-offsets maxnormr, n>=max(3,r+2)admits commonfourcornerinitializer. SaturatedA demonstrates sharpness forr>=2,B5. Positive-support monotonic undercoordinateboardembedding; not WDL monotonic."
+    },
+    "support": {
+      "cases": [
+        {
+          "A": 23,
+          "B": 5,
+          "counts": [
+            {
+              "brute": 152,
+              "direct": 152,
+              "inclusion_exclusion": 152,
+              "n": 3,
+              "polynomial": 456
+            },
+            {
+              "brute": 8652,
+              "direct": 8652,
+              "inclusion_exclusion": 8652,
+              "n": 4,
+              "polynomial": 8732
+            },
+            {
+              "brute": null,
+              "direct": 106320,
+              "inclusion_exclusion": 106320,
+              "n": 5,
+              "polynomial": 106320
+            },
+            {
+              "brute": null,
+              "direct": 674988,
+              "inclusion_exclusion": 674988,
+              "n": 6,
+              "polynomial": 674988
+            },
+            {
+              "brute": null,
+              "direct": 2931368,
+              "inclusion_exclusion": 2931368,
+              "n": 7,
+              "polynomial": 2931368
+            },
+            {
+              "brute": null,
+              "direct": 9947916,
+              "inclusion_exclusion": 9947916,
+              "n": 8,
+              "polynomial": 9947916
+            },
+            {
+              "brute": null,
+              "direct": 338502588,
+              "inclusion_exclusion": 338502588,
+              "n": 12,
+              "polynomial": 338502588
+            }
+          ],
+          "polynomial": {
+            "0": -6420,
+            "1": 7188,
+            "2": -978,
+            "3": -1340,
+            "4": 455,
+            "5": 60,
+            "6": -38,
+            "8": 1
+          }
+        },
+        {
+          "A": 30,
+          "B": 5,
+          "counts": [
+            {
+              "brute": 208,
+              "direct": 208,
+              "inclusion_exclusion": 208,
+              "n": 3,
+              "polynomial": 708
+            },
+            {
+              "brute": 8972,
+              "direct": 8972,
+              "inclusion_exclusion": 8972,
+              "n": 4,
+              "polynomial": 9116
+            },
+            {
+              "brute": null,
+              "direct": 103124,
+              "inclusion_exclusion": 103124,
+              "n": 5,
+              "polynomial": 103124
+            },
+            {
+              "brute": null,
+              "direct": 648612,
+              "inclusion_exclusion": 648612,
+              "n": 6,
+              "polynomial": 648612
+            },
+            {
+              "brute": null,
+              "direct": 2823572,
+              "inclusion_exclusion": 2823572,
+              "n": 7,
+              "polynomial": 2823572
+            },
+            {
+              "brute": null,
+              "direct": 9625628,
+              "inclusion_exclusion": 9625628,
+              "n": 8,
+              "polynomial": 9625628
+            },
+            {
+              "brute": null,
+              "direct": 332233692,
+              "inclusion_exclusion": 332233692,
+              "n": 12,
+              "polynomial": 332233692
+            }
+          ],
+          "polynomial": {
+            "0": -9636,
+            "1": 9832,
+            "2": -886,
+            "3": -1824,
+            "4": 527,
+            "5": 80,
+            "6": -42,
+            "8": 1
+          }
+        },
+        {
+          "A": 31,
+          "B": 5,
+          "counts": [
+            {
+              "brute": 0,
+              "direct": 0,
+              "inclusion_exclusion": 0,
+              "n": 3,
+              "polynomial": 528
+            },
+            {
+              "brute": 5124,
+              "direct": 5124,
+              "inclusion_exclusion": 5124,
+              "n": 4,
+              "polynomial": 5268
+            },
+            {
+              "brute": null,
+              "direct": 79128,
+              "inclusion_exclusion": 79128,
+              "n": 5,
+              "polynomial": 79128
+            },
+            {
+              "brute": null,
+              "direct": 555204,
+              "inclusion_exclusion": 555204,
+              "n": 6,
+              "polynomial": 555204
+            },
+            {
+              "brute": null,
+              "direct": 2546544,
+              "inclusion_exclusion": 2546544,
+              "n": 7,
+              "polynomial": 2546544
+            },
+            {
+              "brute": null,
+              "direct": 8938308,
+              "inclusion_exclusion": 8938308,
+              "n": 8,
+              "polynomial": 8938308
+            },
+            {
+              "brute": null,
+              "direct": 322623924,
+              "inclusion_exclusion": 322623924,
+              "n": 12,
+              "polynomial": 322623924
+            }
+          ],
+          "polynomial": {
+            "0": -10332,
+            "1": 11012,
+            "2": -1234,
+            "3": -1988,
+            "4": 607,
+            "5": 84,
+            "6": -46,
+            "8": 1
+          }
+        }
+      ],
+      "maximal_proper_pairs": 25,
+      "n3_support_theorem": "For A/Bnonempty5orbit masks, safe fresh support nonempty iff both masks differfrom31. Any multiple-rulecommon support equals support of their orbitwise A/Bunions.",
+      "n4_and_larger": "All such rule intersections have a common fourcorner initializer; distances>=3 evade every allowed ordinary leap and Royal adjacency.",
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "proper_pair_min_count": 8,
+      "scope": "Fresh safe admission only, not root ongoing/WDL, full-history identity, Player/TT timing or learner equivalence. No safety relaxation or denominator substitution.",
+      "stable_polynomial_domain": "n>=5,degree8,n7=0,n6=-(14+|Aoffsets|+|Boffsets|); all-n finite positive-part formula retained.",
+      "status": "PASS"
+    },
+    "tempo": {
+      "all_white_first_entries_checked": 8,
+      "certificate": "NOT_WHITE_WIN",
+      "exact_White_WDL": "UNKNOWN within {-1,0}; cooperative drawtrace does not prove White lowerbound",
+      "induction": "WhiteA remains even, BlackKing/shuttle targetsodd. WhiteA cannot attack them; WhiteKing cannot capture or occupy King-protectedb1/b3. Target empty, Dabbabashuttle always legal while BlackKing cannot be checked. Under exactdrawending/nootherwin rules White cannot forceWIN. FirstBentry is legal afterall8Whitechoices.",
+      "literal_trace_result": "repetitionDRAWply6",
+      "new_Core_child_applications": 5,
+      "new_Player_queries": 0,
+      "new_graph_or_solver_calls": 0,
+      "scope": "Current matchedA22/B5n4root anddeclaredplainparity/protection argument. Not allrootsDRAW, learnedpriceconservation or a competing wholegraph solver. Five explicit newtargetmoves plus retainedallfirstfrontiers; all replayvalidationcostseparate.",
+      "status": "PASS"
+    }
+  },
+  "scope": "Ten scoped finite/analytic components; same-Core record binding plus independent combinatorial/local geometry. Counts are explicit target materializations, not all replays/internal legality cost. No all-domain or TTperformance inference.",
+  "source_capsule_executions": 0,
+  "status": "PASS",
+  "unique_full_records": 208
+}

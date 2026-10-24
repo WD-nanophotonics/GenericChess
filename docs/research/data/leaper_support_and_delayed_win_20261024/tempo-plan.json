@@ -1,0 +1,72 @@
+{
+  "changed_premise": "P1oneplyrootA22 remains fullWDLUNKNOWN. New parity/royal-protection reasoning supplies a specificBlackpolicy ratherthan solve a wholegraph: WhiteAeven cannot touch protectedodd Btargets, and BlackKingodd isneverchecked byA22.",
+  "expected_literal_end": "repetitionDRAW atply6 before/withH6clock; cooperative trace only, notlowerboundWhitevalue",
+  "full_rule": "ExactsourceA22/B5n4H6/repeat2/draw/noadd/pass/promo/effects; no newR or μselection.",
+  "literal_control": [
+    [
+      "A",
+      15,
+      10,
+      null
+    ],
+    [
+      "B",
+      0,
+      1,
+      null
+    ],
+    [
+      "A",
+      10,
+      15,
+      null
+    ],
+    [
+      "B",
+      1,
+      9,
+      null
+    ],
+    [
+      "A",
+      15,
+      10,
+      null
+    ],
+    [
+      "B",
+      9,
+      1,
+      null
+    ]
+  ],
+  "policy": {
+    "B_shuttle_move": "Dabbaba b1-b3 andback",
+    "B_shuttle_squares": [
+      1,
+      9
+    ],
+    "BlackKing_and_shuttle_parity": 1,
+    "BlackKing_fixed_square": 4,
+    "White_A_checkerboard_parity": 0,
+    "entry_after_any_White_first_move": [
+      "B",
+      0,
+      1,
+      null
+    ]
+  },
+  "prediction": "All8Whitefirstbranches have legalB0-1. AtalllaterBlackturns, Bmaytoggle1<->9; WhiteA22preserves evencolour, WhiteKingcannotcapture/occupytheseBlackKing-protected targets, and BlackKingcannotbechecked. HenceWhitecannotforceWIN; do not inferDRAWvsLOSS.",
+  "question": "Can B supply a protected tempo shuttle that prevents every White mate in the otherwise static-capable A22/B5 n4root?",
+  "resources": {
+    "absolute_analysis_validation_cap_seconds": 600,
+    "combined_upper_bound_seconds": 1800,
+    "conservative_prior_P1_scope_seconds": 1200,
+    "forecast_inclusive_seconds": 300,
+    "new_target_moves_limit": 5,
+    "reused_first_child": true
+  },
+  "source": "The existing exactbase22entry-square all8Whitefirstchildren andtheircompleteBlacklegalfrontiers; no rerun ofthem.",
+  "started_at": "2026-10-24T07:38:33.782932+00:00",
+  "stop": "Any8entrymissing, illegalstep,colour/protectiondefect orunexpectedterminal: retainfailure,noalternatepolicy/trace. No solver, Player, graphclosure, AUXstate ornewworker."
+}
