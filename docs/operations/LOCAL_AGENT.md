@@ -608,3 +608,36 @@ unchanged originals require separate actual-controller/source interpretation,
 not a claim that those were unit-evaluator games. New two-type writers use
 explicit price and dynamic-controller labels. Data capsules retain exact UTF8
 bytes; source presentation normalization must not change an executed-source hash.
+
+
+## Observed controller provenance and atomic replacement —2026-10-24
+
+Freeze exact executed source bytes before extending a closed producer. If an old
+source was not snapshotted, a reconstruction must match its pre-query hash and
+be disclosed as reconstruction, not an independent original capture. A generated
+DEFAULT profile is not the actual override leaf/order profile. Future records
+separate generated_default_profile, actual_leaf_profile/config and ordering
+profile/config; slot.policy must equal the actual registered controller. Keep
+proposed query action/PV distinct from a registered executed first-action override.
+An archival compatibility exception is limited to the two identified frozen
+source hashes, matching registration/actual/perquery labels, and an explicit
+erratum; it never changes the normal contract or rewrites original results.
+At every cold diagnostic prefix derive the actor from the replayed complete
+GameRecord before queries. An odd-ply defender counterfactual is not attacker
+conversion evidence. Equal completed depth removes only that confound, not all
+TT, ordering or whole-policy effects.
+
+A real project-local fixture had complete old and temporary JSON but one
+os.replace WinError5; the same owned path later succeeded without permission
+changes. The specific OS holder remains unknown. common.write_json now retries
+only that same closed complete temp for Windows5/32/33, at most3 attempts with
+10/20ms backoff, matching the existing research-record pattern. Other/persistent
+errors still raise and preserve the prior authoritative state and stop flags.
+Preserve failed originals before a same-path diagnostic. This is bounded atomic
+persistence, not permission repair or authority to retry external sends. The new
+transient test first failed; atomic/permanent-stop/session regressions then pass.
+
+Public derived JSON/text copies use LF presentation before staged diff checks.
+Preserve exact private originals and never normalize frozen source/input strings
+inside a capsule or change their registered hashes. Capture long diagnostics
+privately and show only the relevant summary, rather than dumping full logs.

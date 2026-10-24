@@ -101,7 +101,10 @@ packet reader/source-byte checks pass; all current scientific producers are CLOS
 closes that actual-input continuation. Chat1792787366 was read/adopted/executed:
 mixed setup now has a literal11ply cooperative mate from its original full
 named record; every path frontier replays. Same-color remains scoped proof
-negative, forced mixed-WIN UNKNOWN. The setups change positions/branching as
+negative, forced mixed-WIN was PRIMARY-only UNKNOWN at that time. AUX703f0fc later
+reports Core-qualified DRAW for the original root/played histories; that fixed
+public report is now read and attributed, not independently rerun or transferred
+to the new six-actor rule. The setups change positions/branching as
 well as colors, not one causal variable. No further W2/cost panel was opened.
 
 Three complete cost games support a NEW40seed/3policy/120game portrait. All120
@@ -137,14 +140,41 @@ DistinctB750completecost165.706s then12newcontactcases give11clock+1repeatDRAW,
 0missing,768queries4361PV.3/8nonbaseline recordschange with no terminalgain.
 No learner/default/solver activation, price-sensitivity gate or frozenrefill.
 
-Current next step actually BEGUN:6NEW matchedcompletedD3/D4 default/unit/contact
-pricecalls andPVreplay. Defaultchangescapturechoice,1115/1090versusunit1000;
-actualcomplete defaultprofile/input prepared,0newcontactdefaultgames. Single
-factors' negative results do not prove fullprofile-by-geometry interactionzero.
-Nextregisterone distinct wholedefaultcost case with explicitcontrollerlabel and
-fullhistory before deciding a newfiniteutilityarm. Coldquerynotwholecost/utility.
-UnusedKnightinput staysdeferred/0queries: contactexposure was the more specific
-changedpremise. No tool-recording optimization or AUXsolver/learner takeover.
+[LEAPER_DEFAULT_CONVERSION_AND_FRESH_MU_20261024.md](LEAPER_DEFAULT_CONVERSION_AND_FRESH_MU_20261024.md)
+closes that continuation. One completeDEFAULT contactgame mates27 where retained
+UNIT draws. Two first-action swaps keep UNITdraw/DEFAULTmate27 after EITHER
+capture; the local gain is not first capture alone. Under fixedUNIT ordering,
+staticDEFAULT prices draw, dynamicUNIT and fullDEFAULT bothmate27. All three
+successful natural/fixed-order records match. This is local dynamic-bundle
+sufficiency and zero finite payoff interaction, not universal price irrelevance.
+251 selectedPVleaf decompositions pass.24new coldD3/D6 calls complete: captureA's
+dynamic/static choice difference survives common depth, captureB's coldD6 one
+disappears. The ply15 prefix is defender-side counterfactual, not attacker evidence.
+
+A NEW prospective12fresh-safe mu x2controllers finishes24/24,0missing:
+DEFAULT1W11D versusUNIT12D, finite pairedmean1/12 (onepositive/11zero).
+DEFAULT uses1952.128s/4161303nodes versusUNIT1755.871s/3942964nodes; more actual
+work, not equal work or a cost win. All8367freshPVplies pass. The complete87doc
+public-copy reader checks10169gamePV+108coldPV with0newPlayer/0capsule execution.
+Sixlocalnewgames+24freshgames+24coldcalls total1636NEWPlayerqueries;64oldUNIT
+queries are reference only. Wrong legacy slot labels from two exact source hashes
+are explicitly reported, not treated as actual controllers. Future writer fields
+are corrected after RED contracts, old originals retained. A real post-run atomic
+replace denial has bounded same-temp Windows retries; persistent failure still
+preserves old stops. Local45Leaper/atomic+45sessionchecks pass.
+
+Current choice: stop further six-actor price/seed/budget expansion, keep the
+finite whole-configuration positive candidate and all old negatives. A cheaper
+complete King8+A3 versus King8+B10 four-actor input is actually prepared:8fresh-safe
+roots, full records/profile A949/B1051,0Player/learner. Its576literalD1/D2edges
+show initial argmax invariance over all3positivepricecells even though unitvalue0
+has material coefficient-1. Do not turn that into a learner gate or resample.
+Next own step is ONE freshly registered full-controller whole-game cost case
+before any new panel, with reuse provenance rather than a duplicate paid cost.
+AUX's fixed703f0fc report was read and attributed, not independently rerun;
+its oldtwo-A DRAW/oracle results are not transplanted to the new rule/history.
+The existing Knight6actor preparation staysDEFERRED/0queries because reducing
+composition is the cleaner next cost question. No default/learner/solver/AUXwrite.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -665,16 +695,16 @@ continuation. All raw positive/negative cells remain; no old UNKNOWN is refilled
 
 ## Current executable reserve —2026-10-24
 
-Main: How do component allocation and quantity change interpretable forward behavior inside one exact rule?
-| Use data/leaper_policy_cost_20261024/next-cost-inputs.json (or its exact ignored original) for the prepared4query staticQ0/unit/Nativeall/N512/depth64/3s cost preflight; preserve setup identity and0/4ply histories
-| Complete actual caller costs/counters/stop reasons, then a separate comparable full-game cost case before ANY new fitness; mixed-color reachability remainsUNKNOWN
-| Prefer the exact ignored original; LF public views require recording their new serialization SHA. Fresh output only; no E0/oldcap refill, scalarquality/pricefit, ownhistorysolver orAUXwrite; cold4query timing alone is not whole-game feasibility.
-Backup1: Where does the bare-K quantity polynomial stop applying when both sides have ordinary actors?
-| Follow next original Chat replies and inspect one concrete full-rule counterfactual before an expanded proof/census
-| Actual common-history action frontiers and an explicit new bound or minimal counterexample
-| No redundant31mask rerun, broader truth solver or silent promotion/drop/aux/history exclusion.
-Backup2: Is the measured outer recording residual worth a caller change?
-| Use the sealed32derived-prefix diagnostic plus both new closed-batch clocks; inspect current caller contracts only if a decision-changing cost case emerges
-| Exact-byte/supported-type/collision evidence and actual whole-pipeline cost; residual stays unassigned until measured
-| No running-writer bypass, newjournal framework, genericdefault or frozenquery/game replay.
+Main: What is the actual cost/behavior of the smaller opposed-A/B complete input?
+| Use next/inputs.json from data/leaper_default_conversion_20261024 (or exact ignored ac-minimal-next-inputs.json), bind its actual source/hash/profile and full record, then register ONE distinct DEFAULT-vs-UNIT whole-game cost case with explicit controller and reuse provenance
+| Actual complete caller costs, decisions/PVs, terminal or UNKNOWN, full history and finite scope; current eight-root search/training count remains0
+| Do not start a panel from cold timings alone, duplicate a deterministic cost case, refill old caps, change defaults or use >=120minute runs without user assessment.
+Backup1: Do later reached histories create useful material choices beyond the invariant initial D1/D2 trees?
+| Inspect the preserved576Core frontiers plus the future paid cost trajectory, predeclare a bounded same-history diagnostic only on a changed premise
+| Specific full-history action/price comparison with actual depth and ordering, not initial gradient or score as utility
+| No resampling, mandatory bad-action/nonzero/WDL gate, blind depth sweep, AUX learner or own truth solver.
+Backup2: Does changing B movement offer a cleaner rule counterfactual if minimal-cost work is blocked?
+| Revisit the existing zero-query Knight full RuleSet and declare the exact common admissible input/history law before one bounded forward feasibility case
+| New literal legality/frontier and whole-cost evidence with all invalid/missing slots retained
+| Do not revive the closed28home/12contact/24fresh panels, duplicate AUX work, infer all-domain equivalence or make a sampler default.
 Science remains OPEN.

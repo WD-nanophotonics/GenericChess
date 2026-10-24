@@ -7038,3 +7038,42 @@ private member/hash/content review plus the actual continuing usergrant passed
 reassessment. No control was bypassed or visibility changed. Communication and
 publication administration are not researchtime. Actualledger/quality/session
 finish/finalcheck remain the ending authority; exact delivery recorded privately.
+
+
+## 2026-10-24 PRIMARY: conversion cause, fresh-mu transfer and smaller input
+
+[Default conversion and fresh mu](../research/LEAPER_DEFAULT_CONVERSION_AND_FRESH_MU_20261024.md)
+records the PRIMARY-only work. Chat1792799049 was saved from its complete thread,
+adopted and actually executed: one DEFAULTcontactgame, then two first-action
+swaps only after its payoff difference. A fixed-order component check separates
+that complete-controller gain from material-only price and first-capture claims.
+The peer withdrew its old cold/service objection; source/counter distinctions
+remain. Claude's WIN/rank gate and exclusion of fixed-opponent utility are not
+adopted. No real-time exchange, Dot mention, extra probe/worker or AUX write.
+
+Six new local games plus24prospective fresh games and24cold calls issue1636NEW
+Player queries. The oldUNIT64query reference is not rerun. Fresh12finite pairs
+have one+1/eleven0 (DEFAULT1W11D versusUNIT12D),0missing, batch3709.736s.
+DEFAULT spends more actual total nodes/time; no default, price winner or global
+strength is selected.87public technical originals qualify:10169gamePV+108coldPV,
+251selected-leaf decompositions, complete sources/history and576next-input edges.
+The smaller four-actorA3/B10 input has8unfiltered fresh-safe roots and0Player/
+training queries. Initial positive-price D1/D2 invariance is retained without
+turning it into a learner gate; next own action is one proper whole-cost case.
+
+AUX703f0fc's fixed published report was read, not independently rerun. Its old
+two-A DRAW/Uniform-oracle and active-coordinate distinctions are attributed
+within that exact rule/history, never transplanted to the new six-actor inputs.
+PRIMARY supplies complete new inputs; AUX keeps its own truth/learner ownership.
+No claim is made that AUX/Chat has read or executed this new delivery yet.
+
+A record-label defect was caught: slot.policy retained DEFAULT while registered,
+actual and per-query controllers differed. Correct-contract zero-query tests
+were RED before the future writer fix; old originals stay unchanged and16
+source-pinned archival errata are explicit. A separate real atomic replacement
+WinError5 was diagnosed with preserved complete files and same-path success;
+short same-temp retries now preserve permanent failure/stops. Local45related
+Leaper/atomic and45session tests pass; publication uses the prescribed tested
+entry/full remote SHA checks. No failed assertion was changed to observed output.
+Scientific ledger holds4294.846954seconds/20actual intervals; later workflow,
+documentation and transport maintenance add no research credit. Science is OPEN.
