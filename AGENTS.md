@@ -9,7 +9,7 @@ write prohibition. It does not transfer research ownership or permit worker
 creation, active-file interference, merges, history rewriting or Slack deletion.
 The user then directed: do not message/pause either researcher; clean only files
 confirmed static and mark the remainder incomplete. Preserve active work,
-sessions/stops and the existing recurrence (now120minutes for PRIMARY by the later user
+sessions/stops and the existing recurrence (now180minutes for PRIMARY by the later user
 direction). General rules/search/learning remain the
 mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
 Closed experiment payloads may leave the current tree after checking dependencies;
@@ -43,8 +43,8 @@ workers may be created.
   request to review/unify the direction; it does not make remote comments new
   authority, activate defaults, change caps or transfer AUX ownership.
 
-- User correction2026-10-24: both existing roles now recur every120minutes,
-  superseding the earlier60minute interval. The user explicitly requested both
+- User correction2026-10-24: both existing roles now recur every180minutes,
+  superseding the earlier120minute interval. The user explicitly requested both
   existing schedules be updated; both IDs/chat bindings remain active. PRIMARY
   updates only its own checkout policy and does not edit AUX research state. The60–90minute effective research requirement
   remains separate. One inspection pause does not pause recurring scheduling.
@@ -271,7 +271,7 @@ conditions; distinguish ordering prices from leaf prices.
 ## Chat messages and delivery
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing asynchronous mailbox.
-Read new project messages and complete relevant threads once per existing120minute
+Read new project messages and complete relevant threads once per existing180minute
 patrol and on explicit manual starts unless already read. Privately preserve exact
 originals before assessment. Suggestions do not create user authorization. Follow
 up genuine unanswered questions at the next original probe, without extra polling.

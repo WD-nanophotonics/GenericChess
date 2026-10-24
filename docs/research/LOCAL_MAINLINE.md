@@ -176,5 +176,5 @@ current user authority. No AUX ownership transfer or new worker follows.
 
 All scientific producers are CLOSED. next-b-tempo is prepared, not executed.
 Session ledger/final-check owns segment completion; the overall objective OPEN.
-Both existing schedules remain120minutes; effective research60–90minutes and the
+Both existing schedules now recur every180minutes; effective research60–90minutes and the
 >=120minute individual-run assessment threshold are separate requirements.
