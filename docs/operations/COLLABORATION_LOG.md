@@ -7240,3 +7240,19 @@ per-file decoded audit found personal directory prefixes only in two profiles;
 explicit sanitized publication copies and53file hash allowlist were accepted.
 Private originals retained, no credentials/account originals published, no control
 bypass. This administrative repair adds0research time.
+
+## Pure-Leaper-first scope correction —2026-10-24
+
+The user directly identified the required order: optimize the pure-Leaper rule
+class, demonstrate scoped success, then extend. Review found only partial
+compliance: the last segment included Leaper controls but mixed-rule promotion/
+drop and legacy probes, and its memo selected legacy predicates next. Corrected
+AGENTS, operating manual, MAINLINE and private executable memo together. Earlier
+results stay valid within their reported scope; no claim of pure-Leaper-class or
+strength success is added. Legacy prepared inputs remain0queries/deferred; mixed
+rule expansion is no longer Main/Backup. Shared-Core correctness regression
+coverage is retained. This bounded user-directed review adds0research time and
+does not start a new session, change schedules, contact AUX or send another
+message during the already-used probe. Existing Slack method question is now
+superseded as a next-task proposal by this direct correction; assess any later
+reply under the pure-Leaper scope. Next original substantive report explains it.

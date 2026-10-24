@@ -20,26 +20,35 @@ performance/depth/decision quality. NPS and depth alone do not establish strengt
 random victories do not establish amateur-human strength. Older external-engine
 figures are remote engineering motivation, not locally verified causal evidence.
 
-## Execute in this order
+## User scope correction and execution order —2026-10-24
 
-1. Close prior short producer (already CLOSED), keep UNKNOWN and full evidence.
-2. Reuse benchmark runner/suite/core_profiling/SearchStatistics: fixed complete
-   small solved Leaper, larger6actor Leaper and existing promo/drop/history
-   fixture if executable. Freeze RuleSet, full GameRecord, role, evaluator and
-   TT cold/warm policy. Measure depth/nodes+qnodes, TT/cutoffs/fallback, actual
-   timing and correctness/UNKNOWN. Separate fixed-depth, node and time controls.
-3. Choose ONE existing switch/hot-path change from measured profile. Retain old
-   source and full counters. Fixed-depth ordering-only root values must agree
-   when both complete with same semantics; equal bestmove is not required.
-   Aborted/fallback/partial scores are not minimax equality evidence. Same-wall
-   quality and real completed-game outcomes remain separate strength questions.
-4. Correctness spans legal/terminal/repetition/clock/TT-PV and complex semantics.
-   Normal runtime is incremental hash+persistent counters+exact guards. Never
-   replace it with Position-only score reuse for hit rate. Costs include setup,
-   inference/profile/feature time and validation, not only search nodes.
-5. Only after cheap actual baseline, consider tiny ordering models. No NNUE/
-   learned pruning/LMR/MCTS/default activation follows automatically. Research
-   runs expected>=120min still need user assessment; no split/cap refill.
+The user's direct clarification supersedes the broad mixed-rule benchmark work
+order: concentrate on PURE LEAPER search optimization first, then expand only
+following a documented scoped-success assessment. Earlier mixed-rule runs remain
+historical evidence; they do not establish pure-Leaper-class success or authorize
+making legacy mixed rules the next Main.
+
+1. Freeze the admitted pure-Leaper domain explicitly: complete movement/rule
+   definitions, boards, initial records, terminals, repetition and clocks. Pure
+   Leaper is the movement scope, not permission to drop history or invent a
+   universal no-promotion/drop definition; state admitted exclusions explicitly.
+   Use multiple pure-Leaper rules/mixtures and complete roots, not one solved case.
+2. Profile actual pure-Leaper costs, then test ONE supported hot-path change or
+   existing switch. Separate solved correctness controls, fixed-work cost and
+   same-wall decision quality; retain caps, failures, negative results and UNKNOWN.
+3. Review success within that declared scope: preserved semantics/legal PVs and
+   completed-depth values where applicable, repeatable total-cost benefit across
+   representative pure-Leaper rules/roots, and useful decision-quality evidence
+   under matched budgets. A local speedup, redundant reported depth or eight
+   correlated games does not alone establish strength or class-wide success.
+   State unresolved generalization honestly; do not invent a numeric gate or
+   require solving every rule before useful optimization.
+4. Only after that assessment consider a separately scoped expansion. Mixed-rule
+   legacy, promotion/drop and standard-suite performance probes are DEFERRED.
+   Existing shared-Core compatibility regressions remain required when relevant;
+   they are correctness protection, not expansion research. No automatic training,
+   NNUE, new worker, default change or key weakening. >=120min runs still require
+   the user's necessity assessment; never split to evade the threshold.
 
 ## Current measured result and next step
 
@@ -51,27 +60,29 @@ history/clock/digest/exact collision guard. Scoped map cost decreases, but legac
 standard-suite paths remain q-heavy and near-unaccelerated. Native availability
 is a separate existing opt-in candidate (same-tree semantic cases), not deployed.
 
-Main: Can a supported existing Native physical-predicate/attack helper reduce the
-actual legacy benchmark cost without changing action/history representation?
-| next-legacy-probe.json preserves two full standard inputs; adapter entrypoint
-inventory begun. Read implementation/capabilities, choose ONE supported predicate
-or explicit Core decline, then register honest bounded cost/parity probe
-| Complete payload/import cost and exact legal/terminal/clock/history parity
-| Prepared0Core/Playerqueries; no silent semantic lowering, action deduplication,
-Position-onlykey, default activation or architecture rewrite; oldcapsstayclosed.
-Backup1: How far does opt-in semantic availability generalize safely? | Reuse
-existing full semantic fixtures and short-cutoff decline guards before a new
-bounded consumer experiment | One conditional activation/cost decision | Existing
-flag remainsFalse; no UI ownership or automatic legacy/native equivalence.
-Backup2: Which actual q classes cause the practical depth ceiling? | Read saved
-Q4profiles/noisy counters before any new run | A falsifiable quality/cost question
-| Liveq already on-demand; no blind q-hard cap increase, omitted actions, training
-or depth-as-strength claim. Tree changes require separate correctness/strength.
+Main: Does the observed exact-map/availability benefit generalize across the
+admitted PURE LEAPER rule class at useful total cost?
+| Read the saved pure-Leaper roots/counters and existing availability guard;
+choose additional distinct pure-Leaper rule/root controls and freeze ONE bounded
+fixed-work/same-wall comparison before queries
+| Full rules/history/clock and constructor/backend/cost parity; exactness controls,
+positive/negative total-cost and decision-quality evidence
+| Document scoped success or its remaining limitations before any expansion;
+existing data are preliminary, not completed class-wide success.
+Backup1: Which pure-Leaper q/terminal/legal operation dominates total cost?
+| Inspect saved pure-Leaper source/profile, choose one measured bottleneck
+| A falsifiable same-scope intervention with complete cost accounting
+| No mixed-rule probe, eager-q rewrite already implemented, or blind q-cap increase.
+Backup2: Is a candidate's apparent gain only cache/order or a single root effect?
+| Check frozen pure-Leaper repeats, cold/warm contracts and distinct full roots
+| Confirm or reject the causal cost interpretation
+| Preserve negative results; do not infer strength from NPS/depth alone.
 
-All current producers CLOSED. The session records3819.541326effective seconds,
-14intervals; delivery/transport adds0research. Next source inventory is prepared,
-not compiled/executed. Package preserves unmet65536node conditions at60seconds,
-qhard D2 boundary, caller failure/corrected6remaininggames and raw originals.
+Previous producers CLOSED; prior ended session records3819.541326effective seconds
+in14intervals. This explicit direction review adds0research time. Prepared
+next-legacy-probe.json remains historical0queries and is DEFERRED, not Main.
+Mixed-rule opt-in generalization and legacy physical-predicate work are also
+DEFERRED until pure-Leaper scoped-success assessment warrants expansion.
 
 ## Preserved reserves
 

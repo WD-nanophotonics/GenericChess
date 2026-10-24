@@ -12,7 +12,10 @@ Read LOCAL_MAINLINE.md's priority/order before selecting any research command.
 This manual explains HOW to execute a chosen task; the dated caller/cost/price
 examples below are conditional contracts and historical defect lessons, NOT a
 queue to run, a requirement to refill panels or an authority to restore old data.
-PRIMARY now prioritizes measured ABP search performance/depth/decision quality;
+PRIMARY now prioritizes measured PURE LEAPER ABP search performance/depth/decision
+quality. Mixed-rule optimization is deferred until scoped pure-Leaper success;
+shared-Core compatibility regression tests remain appropriate. The earlier broad
+search-first scope is superseded by the direct2026-10-24 user correction;
 older structural counterfactuals and learning proposals are conditional reserves. Do not infer a next experiment from an
 available script, prepared input, an unfinished old report or a Backup entry.
 A closed experiment is evidence, not a compulsory next-stage training/inverse job.

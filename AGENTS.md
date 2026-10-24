@@ -30,18 +30,15 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-24
 
-- Direction adoption2026-10-24: under the user's instruction to use latest Chat
-  direction and continuing GenericChess authorization, adopt Chat1792834286's
-  practical generic ABP search performance/depth/strength priority. First measure
-  fixed full-rule/history baselines, then ONE evidence-selected existing switch
-  or hot-path change with correctness and same-node/same-wall controls. Earlier
-  P0/P1 geometry, B1 tempo, inverse, material TD and NNUE are preserved conditional
-  reserves, not automatic tasks. Reason: recent certificates did not improve the
-  actual search hot path; useful decisions per total time are now the Main.
-  Claude1792838901 withdraws Position-only TT advice; keep exact history/clock
-  semantics. Remote reports AUX paused; this checkout does not verify/change its
-  state, schedule or tasks and does not depend on new AUX service. Only PRIMARY
-  works here; no replacement worker. Actual order/evidence stays in MAINLINE.
+- User scope correction2026-10-24: concentrate search optimization on the PURE
+  LEAPER rule class first; extend to other rule classes only after scoped success
+  is demonstrated and assessed. This narrows the earlier broad search-first
+  interpretation: legacy mixed-rule, promotion/drop and standard-suite optimization
+  are deferred, not next tasks. Preserve their evidence and necessary shared-Core
+  compatibility regressions; do not turn them into an expansion experiment queue.
+  Within pure Leapers preserve complete admitted rules/history/clocks and exact
+  TT guards. Current controls, success evidence and next action live in MAINLINE.
+  Small solved examples or NPS alone do not establish class-wide/strength success.
 
 - User correction2026-10-24: both existing roles now recur every180minutes,
   superseding the earlier120minute interval. The user explicitly requested both
