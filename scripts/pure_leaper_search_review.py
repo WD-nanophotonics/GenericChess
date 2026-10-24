@@ -52,12 +52,20 @@ def qualify(d):
     games=[]
     for r in rows(d/'games.jsonl'):
         s=replay(compiled[r['case']],r['final_record']);assert r['outcome']['result']==_adjudicate(s,r['candidate_color']);assert s.state.ply_count==r['outcome']['plies']
+        trace=replay(compiled[r['case']],index[r['case']]['record'])
         for turn in rows(d/(r['game']+'-turns.jsonl')):
+            assert L.record_value(trace.to_record())==turn['before_record'], 'turn trace is not the actual complete game prefix'
             check({**index[r['case']],'record':turn['before_record']},turn['decision'])
+            trace.submit(L.match_action(trace,turn['decision']['action']))
             n=turn['availability_delta'].get('queries',0);queries+=n;query_counts['games']+=n
+        assert L.record_value(trace.to_record())==r['final_record'], 'selected decisions must reconstruct the final game'
         games.append(dict(game=r['game'],result=r['outcome']['result'],eligible=r['eligible'],plies=r['outcome']['plies'],terminal=s.result.status.value))
     refs=[]
     for r in rows(d/'reference.jsonl'):
+        forced=replay(compiled[r['case']],index[r['case']]['record'])
+        forced.submit(L.match_action(forced,r['action']))
+        assert L.record_value(forced.to_record())==r['after_forced_action_record']
+        assert r['root_score']==-r['decision']['score']
         check({**index[r['case']],'record':r['after_forced_action_record']},r['decision']);refs.append(dict(case=r['case'],arm=r['arm'],requested_depth=r['requested_depth'],completed=r['completed'],root_score=r['root_score'],depth=r['decision']['completed_depth']))
     pvs_groups=defaultdict(dict);pvs_table=[]
     for r in rows(d/'pvs.jsonl'):
