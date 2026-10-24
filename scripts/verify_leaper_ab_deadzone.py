@@ -16,8 +16,9 @@ from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action
 
 
-def verify(path,output,*,target_group='contact',swap_owners=False):
-    tick=time.perf_counter();g=json.loads(gzip.decompress(path.read_bytes()));docs=source_documents();source=json.loads(docs['contact/inputs.json']);w=json.loads(docs[target_group+'/inputs.json'])
+def verify(path,output,*,target_group='contact',swap_owners=False,source_group='contact'):
+    if source_group not in('contact','two-type'):raise ValueError('unsupported declared source input')
+    tick=time.perf_counter();g=json.loads(gzip.decompress(path.read_bytes()));docs=source_documents();source=json.loads(docs[source_group+'/inputs.json']);w=json.loads(docs[target_group+'/inputs.json'])
     if g['rule']!=source['rule']:raise ValueError('complete source rule differs')
     differences=[k for k in source['rule']if source['rule'][k]!=w['rule'][k]]
     if target_group not in('contact','two-type')or set(source['rule'])!=set(w['rule'])or set(differences)-{'initial_position','initial_setup_options'}:raise ValueError('unsupported source/target rule difference')
@@ -66,4 +67,4 @@ def verify(path,output,*,target_group='contact',swap_owners=False):
 
 
 if __name__=='__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('--graph',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--target-group',choices=('contact','two-type'),default='contact');ap.add_argument('--swap-owners',action='store_true');a=ap.parse_args();verify(a.graph,a.output,target_group=a.target_group,swap_owners=a.swap_owners)
+    ap=argparse.ArgumentParser();ap.add_argument('--graph',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--target-group',choices=('contact','two-type'),default='contact');ap.add_argument('--source-group',choices=('contact','two-type'),default='contact');ap.add_argument('--swap-owners',action='store_true');a=ap.parse_args();verify(a.graph,a.output,target_group=a.target_group,swap_owners=a.swap_owners,source_group=a.source_group)

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from pathlib import Path
 import subprocess
 
@@ -41,4 +42,13 @@ def write_json(path: Path, value: dict) -> None:
     temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
     temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False,
                                     sort_keys=True) + "\n", encoding="utf-8")
-    os.replace(temporary, path)
+    # A transient Windows reader can deny replacement after the temp closes.
+    # Retry only this same complete file; permanent failures preserve old state.
+    for attempt in range(3):
+        try:
+            os.replace(temporary, path)
+            break
+        except PermissionError as exc:
+            if getattr(exc, "winerror", None) not in (5, 32, 33) or attempt == 2:
+                raise
+            time.sleep(0.01 * (attempt + 1))

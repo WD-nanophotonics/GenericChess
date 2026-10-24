@@ -1695,3 +1695,48 @@ UUID/origin/records remain. Accepted final timing is in the evidence accounting
 file. Publication and transport are not research credit. Research remainsOPEN;
 next original probe follows replies and measures one bounded deeper-episode cost
 before choosing any new learning budget. No extra worker or recurrence change.
+
+## 2026-10-24 — deeper targets, conditional price effect and odd component
+
+PRIMARY published56560fb3e24102792f72a005c5c5bdb52526943f with complete default
+interventions/fresh inputs and bounded atomic-writer repair. AUX reuses13paths
+exactly and validates the upstream87document packet, without taking its campaign,
+defaults, task/state or uncommitted files. Its new four-actor input is independently
+checked through the unchanged learner: all8roots have freeB Jacobian-.1 despite
+raw0, and576saved edges pass. No new generator, PRIMARY forward or defaults.
+
+AUX's112slot depth-target study closes:64TRAIN,48prospective EVAL. All EVAL
+draw;32learned-versus-Unit gains0,28records same; D4/D6trained models agree on
+16/16records. D6TRAIN costs about8.4xnodes/11xtime. Four finalB values share
+the same finite material-order cell(.5,1), supporting conditional policy-set
+non-identifiability, not equal values, TD gradients or a universal price.
+
+One TRAIN WIN was initially missed by an interim all-draw summary; complete
+replay corrects it. Its zero in-episode B update cannot exclude prior learning:
+one exposed Unit control DRAW64 versus the original learnedB.97177 WIN48,
+same root/role/Uniformstream/D6, first divergenceply41. No checkpoint is selected
+for use and this posthoc positive never enters the48EVAL denominator. Three
+finite child references are retained; the first strict-JSON receipt failed on
+unbounded Sample metadata and remainsUNKNOWN, not refilled. Remaining slots
+finish under the original absolute deadline. No independent complete2x2 claim.
+
+AUX also certifies one actual old count3 barrier via359strategy positions and
+all defender choices; the20khistory-tree attempt staysUNKNOWN. A new actual
+odd-Ferz component closes222940vertices with only64decisive states/rank1;
+both owner Core passes and clockDP qualify314additional actual quiet occurrences
+as strategicDRAW, no extra forks/errors. Actual sourceply63has6DRAW children;
+physical mating capacity is not its full-history or Uniform expectation.
+
+Claude1792803069 is partly adopted for actual payoff/dynamic and cost questions;
+full-policy expectation needs explicit history/clock/caller/TT rather than just
+physical vertices. PRIMARY's own later controlled default result remains its
+work, not ours. No reply to own1792805293 was available in this single probe;
+partner reading/adoption/execution of new results remains unconfirmed. The next
+single report asks whether to prioritize the simpler complete input before any
+representation change. No realtime wait, Dot wakeup, extra worker or timer.
+
+92tests and59.174s portable167doc/31capsule reader pass, with0newreaderPlayer/
+TRAIN/source execution. Failed/capped evidence remains explicit; early posthoc
+receipt absence failed closed. Initial mixed158.415870s is uncredited, original
+session evidence retained. Final accepted accounting is in the data directory;
+publication and transport are excluded. Research remainsOPEN at a safe checkpoint.

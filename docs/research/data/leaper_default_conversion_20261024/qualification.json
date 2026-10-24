@@ -1,0 +1,1934 @@
+{
+  "cold_PV_plies": 108,
+  "cold_history_roles": [
+    0,
+    0,
+    1
+  ],
+  "cold_queries": 24,
+  "counts": {
+    "PV_plies": 10169,
+    "Player_queries": 1676,
+    "native_legality_calls": 3504021,
+    "native_legality_fallbacks": 0,
+    "nodes": 10181356,
+    "qnodes": 0,
+    "runtime_pops": 10164572,
+    "runtime_pushes": 10164572
+  },
+  "fresh": {
+    "mean_difference_bounds": [
+      0.08333333333333333,
+      0.08333333333333333
+    ],
+    "missing": [],
+    "paired": [
+      {
+        "DEFAULT": 1,
+        "UNIT": 0,
+        "difference": 1,
+        "lower": 1,
+        "root": 0,
+        "upper": 1
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 1,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 2,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 3,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 4,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 5,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 6,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 7,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 8,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 9,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 10,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 11,
+        "upper": 0
+      }
+    ],
+    "rows": [
+      {
+        "captures": [
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 367,
+          "Player_queries": 64,
+          "native_legality_calls": 135226,
+          "native_legality_fallbacks": 0,
+          "nodes": 396894,
+          "qnodes": 0,
+          "runtime_pops": 396283,
+          "runtime_pushes": 396283
+        },
+        "depths": {
+          "14": 1,
+          "32": 1,
+          "6": 47,
+          "64": 2,
+          "7": 12,
+          "9": 1
+        },
+        "final_record_sha256": "c144f8f386be2495bf7e429cf267142e53e6b027926c6064dfe68c440a599f82",
+        "index": 0,
+        "plies": 64,
+        "root": 5,
+        "seconds": 169.96981010003947,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 23,
+          "time_limit": 39
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 355,
+          "Player_queries": 64,
+          "native_legality_calls": 138470,
+          "native_legality_fallbacks": 0,
+          "nodes": 405319,
+          "qnodes": 0,
+          "runtime_pops": 404754,
+          "runtime_pushes": 404754
+        },
+        "depths": {
+          "33": 1,
+          "5": 19,
+          "51": 1,
+          "6": 35,
+          "64": 1,
+          "7": 7
+        },
+        "final_record_sha256": "636198e7a34ac3668ea852f0f4d9f3034d8d7bf9be3c45c4cb4922fb6b0d46e5",
+        "index": 1,
+        "plies": 64,
+        "root": 5,
+        "seconds": 170.68890299997292,
+        "stops": {
+          "completed_depth": 1,
+          "node_limit": 25,
+          "time_limit": 38
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 41,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 409,
+          "Player_queries": 64,
+          "native_legality_calls": 122112,
+          "native_legality_fallbacks": 0,
+          "nodes": 339401,
+          "qnodes": 0,
+          "runtime_pops": 338733,
+          "runtime_pushes": 338733
+        },
+        "depths": {
+          "10": 1,
+          "11": 1,
+          "57": 1,
+          "6": 19,
+          "64": 2,
+          "7": 34,
+          "8": 6
+        },
+        "final_record_sha256": "33836eeb83e175fa2fd93dfc2d6884d7a039593d40423e3c213fcd36e8385867",
+        "index": 2,
+        "plies": 64,
+        "root": 1,
+        "seconds": 172.8164589999942,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 18,
+          "time_limit": 44
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 374,
+          "Player_queries": 64,
+          "native_legality_calls": 138890,
+          "native_legality_fallbacks": 0,
+          "nodes": 402104,
+          "qnodes": 0,
+          "runtime_pops": 401497,
+          "runtime_pushes": 401497
+        },
+        "depths": {
+          "10": 1,
+          "35": 1,
+          "6": 48,
+          "64": 2,
+          "7": 12
+        },
+        "final_record_sha256": "28d856a955c3da0106e95f10e6704dea50be2007ee91b6abfae944e036e7440f",
+        "index": 3,
+        "plies": 64,
+        "root": 1,
+        "seconds": 173.75176590005867,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 15,
+          "time_limit": 47
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 3,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 397,
+          "Player_queries": 64,
+          "native_legality_calls": 147440,
+          "native_legality_fallbacks": 0,
+          "nodes": 428640,
+          "qnodes": 0,
+          "runtime_pops": 427990,
+          "runtime_pushes": 427990
+        },
+        "depths": {
+          "10": 1,
+          "11": 1,
+          "57": 1,
+          "6": 31,
+          "64": 2,
+          "7": 28
+        },
+        "final_record_sha256": "e1c59603291b37113d34daf5f2225c05106010d42116ac21812111faca9a7874",
+        "index": 4,
+        "plies": 64,
+        "root": 9,
+        "seconds": 168.69122319994494,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 27,
+          "time_limit": 35
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 3,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 386,
+          "Player_queries": 64,
+          "native_legality_calls": 128670,
+          "native_legality_fallbacks": 0,
+          "nodes": 385836,
+          "qnodes": 0,
+          "runtime_pops": 385202,
+          "runtime_pushes": 385202
+        },
+        "depths": {
+          "41": 1,
+          "6": 28,
+          "64": 2,
+          "7": 30,
+          "8": 2,
+          "9": 1
+        },
+        "final_record_sha256": "8658acf56f02c47f29d81b6482cb2ef09da3dbdf74905e9e17267dd5936e9b9c",
+        "index": 5,
+        "plies": 64,
+        "root": 9,
+        "seconds": 174.72479629993904,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 18,
+          "time_limit": 44
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 84,
+          "Player_queries": 16,
+          "native_legality_calls": 44705,
+          "native_legality_fallbacks": 0,
+          "nodes": 131072,
+          "qnodes": 0,
+          "runtime_pops": 130940,
+          "runtime_pushes": 130940
+        },
+        "depths": {
+          "7": 13,
+          "8": 2,
+          "9": 1
+        },
+        "final_record_sha256": "c03e40f3273e5746c757dc620c167979378eb414dc9063a70aea907060964d60",
+        "index": 6,
+        "plies": 16,
+        "root": 3,
+        "seconds": 35.60028890008107,
+        "stops": {
+          "node_limit": 16
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 14,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 15,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 435,
+          "Player_queries": 64,
+          "native_legality_calls": 114437,
+          "native_legality_fallbacks": 0,
+          "nodes": 289286,
+          "qnodes": 0,
+          "runtime_pops": 288554,
+          "runtime_pushes": 288554
+        },
+        "depths": {
+          "15": 1,
+          "22": 1,
+          "6": 3,
+          "64": 3,
+          "7": 27,
+          "8": 26,
+          "9": 3
+        },
+        "final_record_sha256": "3de244db8ceb062b11b420446123355775187ab65f3027b8118873c70dfafd24",
+        "index": 7,
+        "plies": 64,
+        "root": 3,
+        "seconds": 172.48873520002235,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 13,
+          "time_limit": 48
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 7,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 14,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 15,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 419,
+          "Player_queries": 64,
+          "native_legality_calls": 123938,
+          "native_legality_fallbacks": 0,
+          "nodes": 306928,
+          "qnodes": 0,
+          "runtime_pops": 306191,
+          "runtime_pushes": 306191
+        },
+        "depths": {
+          "16": 1,
+          "22": 1,
+          "6": 9,
+          "64": 3,
+          "7": 15,
+          "8": 28,
+          "9": 7
+        },
+        "final_record_sha256": "7871037610d265fd9049e4690789967cabe4ea4a902a1018bbe9c8bfa56d1ac7",
+        "index": 8,
+        "plies": 64,
+        "root": 4,
+        "seconds": 171.47109620005358,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 13,
+          "time_limit": 48
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 189,
+          "Player_queries": 34,
+          "native_legality_calls": 90958,
+          "native_legality_fallbacks": 0,
+          "nodes": 253370,
+          "qnodes": 0,
+          "runtime_pops": 253131,
+          "runtime_pushes": 253131
+        },
+        "depths": {
+          "6": 33,
+          "7": 1
+        },
+        "final_record_sha256": "92053ffe51025be9262543b9121783f597d2dfcea1a30aac6251d81ea52af70f",
+        "index": 9,
+        "plies": 34,
+        "root": 4,
+        "seconds": 86.57236150000244,
+        "stops": {
+          "node_limit": 16,
+          "time_limit": 18
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 16,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 425,
+          "Player_queries": 64,
+          "native_legality_calls": 120959,
+          "native_legality_fallbacks": 0,
+          "nodes": 371222,
+          "qnodes": 0,
+          "runtime_pops": 370518,
+          "runtime_pushes": 370518
+        },
+        "depths": {
+          "11": 1,
+          "23": 1,
+          "6": 1,
+          "64": 3,
+          "7": 53,
+          "8": 5
+        },
+        "final_record_sha256": "c32d848d702adf61fdb0ac7efce05a8fffaf32a5d1bc011c577e7054b0905ede",
+        "index": 10,
+        "plies": 64,
+        "root": 11,
+        "seconds": 175.6755634000292,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 11,
+          "time_limit": 50
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 396,
+          "Player_queries": 64,
+          "native_legality_calls": 134341,
+          "native_legality_fallbacks": 0,
+          "nodes": 409851,
+          "qnodes": 0,
+          "runtime_pops": 409160,
+          "runtime_pushes": 409160
+        },
+        "depths": {
+          "13": 1,
+          "14": 1,
+          "6": 13,
+          "64": 3,
+          "7": 34,
+          "8": 12
+        },
+        "final_record_sha256": "048810d3eea6534c92246f5c5e60430f9ce84032843f01a104123db3900dccb0",
+        "index": 11,
+        "plies": 64,
+        "root": 11,
+        "seconds": 172.81083930004388,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 19,
+          "time_limit": 42
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 143,
+          "Player_queries": 25,
+          "native_legality_calls": 59790,
+          "native_legality_fallbacks": 0,
+          "nodes": 194767,
+          "qnodes": 0,
+          "runtime_pops": 194586,
+          "runtime_pushes": 194586
+        },
+        "depths": {
+          "0": 1,
+          "6": 13,
+          "7": 9,
+          "8": 2
+        },
+        "final_record_sha256": "d4c53b45f1877ca57fb280c9f023461a0f9633fe9ac82937fe7a5fa2c2271e6a",
+        "index": 12,
+        "plies": 25,
+        "root": 0,
+        "seconds": 49.70416399999522,
+        "stops": {
+          "node_limit": 23,
+          "root_immediate_win": 1,
+          "time_limit": 1
+        },
+        "terminal": "checkmate",
+        "value": 1
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 363,
+          "Player_queries": 64,
+          "native_legality_calls": 119869,
+          "native_legality_fallbacks": 0,
+          "nodes": 343014,
+          "qnodes": 0,
+          "runtime_pops": 342408,
+          "runtime_pushes": 342408
+        },
+        "depths": {
+          "13": 1,
+          "30": 1,
+          "6": 47,
+          "64": 2,
+          "7": 13
+        },
+        "final_record_sha256": "e93a748e25efa394d7c6c378e136baaa734f825db43e73b5ac69d2b1f9cfbb62",
+        "index": 13,
+        "plies": 64,
+        "root": 0,
+        "seconds": 174.04562470002566,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 18,
+          "time_limit": 44
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 39,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 63,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 382,
+          "Player_queries": 64,
+          "native_legality_calls": 131661,
+          "native_legality_fallbacks": 0,
+          "nodes": 375032,
+          "qnodes": 0,
+          "runtime_pops": 374403,
+          "runtime_pushes": 374403
+        },
+        "depths": {
+          "11": 1,
+          "13": 1,
+          "42": 1,
+          "6": 40,
+          "64": 2,
+          "7": 19
+        },
+        "final_record_sha256": "a9f62849d648addd9c95545184cc77a85576aaccd55fd4539591c0bd1f9477d5",
+        "index": 14,
+        "plies": 64,
+        "root": 7,
+        "seconds": 173.95885129994713,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 19,
+          "time_limit": 43
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 369,
+          "Player_queries": 64,
+          "native_legality_calls": 145029,
+          "native_legality_fallbacks": 0,
+          "nodes": 405470,
+          "qnodes": 0,
+          "runtime_pops": 404871,
+          "runtime_pushes": 404871
+        },
+        "depths": {
+          "36": 1,
+          "6": 55,
+          "64": 2,
+          "7": 5,
+          "8": 1
+        },
+        "final_record_sha256": "1d1725a51c2fdd032bae81042c4aa62367f9c504731a91b1de2017078a4e082a",
+        "index": 15,
+        "plies": 64,
+        "root": 7,
+        "seconds": 174.88639630004764,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 17,
+          "time_limit": 45
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 9,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 10,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 385,
+          "Player_queries": 64,
+          "native_legality_calls": 130892,
+          "native_legality_fallbacks": 0,
+          "nodes": 362004,
+          "qnodes": 0,
+          "runtime_pops": 361298,
+          "runtime_pushes": 361298
+        },
+        "depths": {
+          "13": 1,
+          "18": 1,
+          "6": 4,
+          "64": 3,
+          "7": 43,
+          "8": 11,
+          "9": 1
+        },
+        "final_record_sha256": "2a047f5540a050265127f3b0dd4e00c168b0bf051f294e995df5b435656ce711",
+        "index": 16,
+        "plies": 64,
+        "root": 10,
+        "seconds": 176.70449319994077,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 8,
+          "time_limit": 53
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 18,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 19,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 380,
+          "Player_queries": 64,
+          "native_legality_calls": 115857,
+          "native_legality_fallbacks": 0,
+          "nodes": 349643,
+          "qnodes": 0,
+          "runtime_pops": 348966,
+          "runtime_pushes": 348966
+        },
+        "depths": {
+          "11": 1,
+          "13": 1,
+          "6": 20,
+          "64": 3,
+          "7": 32,
+          "8": 7
+        },
+        "final_record_sha256": "e5db7735c5e6bcc38dbb56196ce3eb56e46f72b6763e0df4243be7a049d829e0",
+        "index": 17,
+        "plies": 64,
+        "root": 10,
+        "seconds": 173.85348079993855,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 13,
+          "time_limit": 48
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 5,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 7,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 377,
+          "Player_queries": 64,
+          "native_legality_calls": 115039,
+          "native_legality_fallbacks": 0,
+          "nodes": 326574,
+          "qnodes": 0,
+          "runtime_pops": 325869,
+          "runtime_pushes": 325869
+        },
+        "depths": {
+          "13": 1,
+          "21": 1,
+          "6": 7,
+          "61": 1,
+          "64": 2,
+          "7": 38,
+          "8": 13,
+          "9": 1
+        },
+        "final_record_sha256": "d27de3ce0fea152d15490e68e26849846fb77c1b7dce920722c1fc577d7220e8",
+        "index": 18,
+        "plies": 64,
+        "root": 2,
+        "seconds": 181.83902600000147,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 11,
+          "time_limit": 51
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 5,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 6,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 7,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 408,
+          "Player_queries": 64,
+          "native_legality_calls": 128777,
+          "native_legality_fallbacks": 0,
+          "nodes": 390620,
+          "qnodes": 0,
+          "runtime_pops": 389936,
+          "runtime_pushes": 389936
+        },
+        "depths": {
+          "14": 1,
+          "17": 1,
+          "6": 22,
+          "64": 3,
+          "7": 28,
+          "8": 8,
+          "9": 1
+        },
+        "final_record_sha256": "ef067a76b735e4bf820e3e70546ec5320b1b552589ad920464648f5da80fc190",
+        "index": 19,
+        "plies": 64,
+        "root": 2,
+        "seconds": 179.822778700036,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 17,
+          "time_limit": 44
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 14,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 15,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 427,
+          "Player_queries": 64,
+          "native_legality_calls": 124743,
+          "native_legality_fallbacks": 0,
+          "nodes": 308004,
+          "qnodes": 0,
+          "runtime_pops": 307262,
+          "runtime_pushes": 307262
+        },
+        "depths": {
+          "15": 1,
+          "22": 1,
+          "6": 5,
+          "64": 3,
+          "7": 17,
+          "8": 30,
+          "9": 7
+        },
+        "final_record_sha256": "6e715c3f996f08c7d89b1af5af21a9c646dc5030d7f8ce301ead67b7e19ce47c",
+        "index": 20,
+        "plies": 64,
+        "root": 6,
+        "seconds": 173.3541469000047,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 13,
+          "time_limit": 48
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 2,
+            "removed": [
+              [
+                0,
+                "A"
+              ]
+            ]
+          },
+          {
+            "ply": 3,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 4,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 134,
+          "Player_queries": 21,
+          "native_legality_calls": 69633,
+          "native_legality_fallbacks": 0,
+          "nodes": 160277,
+          "qnodes": 0,
+          "runtime_pops": 160087,
+          "runtime_pushes": 160087
+        },
+        "depths": {
+          "7": 1,
+          "8": 18,
+          "9": 2
+        },
+        "final_record_sha256": "8b5c7a3b83e51ca1fac1ab6ea0acbc571092c35cd3dc8b8d64974e64b513451b",
+        "index": 21,
+        "plies": 21,
+        "root": 6,
+        "seconds": 56.376547700027004,
+        "stops": {
+          "node_limit": 10,
+          "time_limit": 11
+        },
+        "terminal": "repetition",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "UNIT",
+        "counts": {
+          "PV_plies": 367,
+          "Player_queries": 64,
+          "native_legality_calls": 130796,
+          "native_legality_fallbacks": 0,
+          "nodes": 405127,
+          "qnodes": 0,
+          "runtime_pops": 404481,
+          "runtime_pushes": 404481
+        },
+        "depths": {
+          "12": 1,
+          "6": 40,
+          "64": 3,
+          "7": 19,
+          "8": 1
+        },
+        "final_record_sha256": "ed6ed39377508cec27fb04e63664a781c7d158963f6d35363c26f90b0842bc4b",
+        "index": 22,
+        "plies": 64,
+        "root": 8,
+        "seconds": 175.72465370001737,
+        "stops": {
+          "completed_depth": 3,
+          "node_limit": 17,
+          "time_limit": 44
+        },
+        "terminal": "max_ply",
+        "value": 0
+      },
+      {
+        "captures": [
+          {
+            "ply": 1,
+            "removed": [
+              [
+                1,
+                "B"
+              ]
+            ]
+          },
+          {
+            "ply": 64,
+            "removed": [
+              [
+                0,
+                "B"
+              ]
+            ]
+          }
+        ],
+        "controller": "DEFAULT",
+        "counts": {
+          "PV_plies": 396,
+          "Player_queries": 64,
+          "native_legality_calls": 121498,
+          "native_legality_fallbacks": 0,
+          "nodes": 363812,
+          "qnodes": 0,
+          "runtime_pops": 363166,
+          "runtime_pushes": 363166
+        },
+        "depths": {
+          "10": 1,
+          "11": 1,
+          "51": 1,
+          "6": 29,
+          "64": 2,
+          "7": 30
+        },
+        "final_record_sha256": "9742147d2eb99951d82281e89a89e7e1033c82d49e473affd17615d6c6710238",
+        "index": 23,
+        "plies": 64,
+        "root": 8,
+        "seconds": 172.46714610001072,
+        "stops": {
+          "completed_depth": 2,
+          "node_limit": 18,
+          "time_limit": 44
+        },
+        "terminal": "max_ply",
+        "value": 0
+      }
+    ]
+  },
+  "legacy_slot_policy_mislabels": [
+    {
+      "actual_controller": "UNIT",
+      "case": "UNIT-firstB",
+      "executed_source_sha256": "02f8f8e4f009cc29dfe5978f4b87f3fe7592815ea46783f60f0da06b678d83cf",
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "contact"
+    },
+    {
+      "actual_controller": "STATIC_FIXED",
+      "case": "STATIC_FIXED",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "contact"
+    },
+    {
+      "actual_controller": "DYNAMIC_FIXED",
+      "case": "DYNAMIC_FIXED",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "contact"
+    },
+    {
+      "actual_controller": "FULL_FIXED",
+      "case": "FULL_FIXED",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "contact"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 0,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 3,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 5,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 6,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 9,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 10,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 13,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 15,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 16,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 18,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 21,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    },
+    {
+      "actual_controller": "UNIT",
+      "executed_source_sha256": "df7b67719cd01267d3e39a6c1f53d571b8dc1c012fc6ae2b2f891f5fe7201822",
+      "index": 22,
+      "recorded_slot_policy": "DEFAULT",
+      "scope": "Pinned historical constant-label defect only; actual registration/row/perquery/source match required, originals unchanged.",
+      "section": "fresh"
+    }
+  ],
+  "local": [
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT",
+      "counts": {
+        "PV_plies": 366,
+        "Player_queries": 64,
+        "native_legality_calls": 145481,
+        "native_legality_fallbacks": 0,
+        "nodes": 459273,
+        "qnodes": 0,
+        "runtime_pops": 458622,
+        "runtime_pushes": 458622
+      },
+      "depths": {
+        "10": 1,
+        "54": 1,
+        "6": 25,
+        "64": 2,
+        "7": 34,
+        "9": 1
+      },
+      "final_record_sha256": "3cd97b7d39cda3736b450abb42204157012891f1169b610a6bc47c1f9e251cb5",
+      "plies": 64,
+      "seconds": 161.94570570008364,
+      "stops": {
+        "completed_depth": 2,
+        "node_limit": 35,
+        "time_limit": 27
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        },
+        {
+          "ply": 15,
+          "removed": [
+            [
+              1,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "controller": "DEFAULT",
+      "counts": {
+        "PV_plies": 158,
+        "Player_queries": 27,
+        "native_legality_calls": 67939,
+        "native_legality_fallbacks": 0,
+        "nodes": 205886,
+        "qnodes": 0,
+        "runtime_pops": 205691,
+        "runtime_pushes": 205691
+      },
+      "depths": {
+        "0": 1,
+        "6": 13,
+        "7": 13
+      },
+      "final_record_sha256": "95c23a06e983f9ef98c4650d67701a2bb9158486df294b499859f6b89a82169e",
+      "plies": 27,
+      "seconds": 61.16319969994947,
+      "stops": {
+        "node_limit": 19,
+        "root_immediate_win": 1,
+        "time_limit": 7
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        },
+        {
+          "ply": 7,
+          "removed": [
+            [
+              1,
+              "A"
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "removed": [
+            [
+              0,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "controller": "UNIT-firstB",
+      "counts": {
+        "PV_plies": 401,
+        "Player_queries": 64,
+        "native_legality_calls": 125587,
+        "native_legality_fallbacks": 0,
+        "nodes": 396690,
+        "qnodes": 0,
+        "runtime_pops": 396003,
+        "runtime_pushes": 396003
+      },
+      "depths": {
+        "14": 1,
+        "18": 1,
+        "58": 1,
+        "6": 7,
+        "64": 2,
+        "7": 51,
+        "8": 1
+      },
+      "final_record_sha256": "6806034475e2fe53deb0a2125f71481928908db6f477ff699929d86f35b6def5",
+      "plies": 64,
+      "seconds": 176.1196637999965,
+      "stops": {
+        "completed_depth": 2,
+        "node_limit": 12,
+        "time_limit": 50
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "A"
+            ]
+          ]
+        },
+        {
+          "ply": 11,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        }
+      ],
+      "controller": "DEFAULT-firstA",
+      "counts": {
+        "PV_plies": 158,
+        "Player_queries": 27,
+        "native_legality_calls": 69703,
+        "native_legality_fallbacks": 0,
+        "nodes": 207769,
+        "qnodes": 0,
+        "runtime_pops": 207574,
+        "runtime_pushes": 207574
+      },
+      "depths": {
+        "0": 1,
+        "6": 13,
+        "7": 13
+      },
+      "final_record_sha256": "d7e8fe6ac94e8cbe1d67302a5f9bd9615cdc15063e72750503b9690fa1065c1a",
+      "plies": 27,
+      "seconds": 60.36831160006113,
+      "stops": {
+        "node_limit": 21,
+        "root_immediate_win": 1,
+        "time_limit": 5
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        },
+        {
+          "ply": 7,
+          "removed": [
+            [
+              1,
+              "A"
+            ]
+          ]
+        },
+        {
+          "ply": 8,
+          "removed": [
+            [
+              0,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "controller": "STATIC_FIXED",
+      "counts": {
+        "PV_plies": 403,
+        "Player_queries": 64,
+        "native_legality_calls": 125109,
+        "native_legality_fallbacks": 0,
+        "nodes": 394948,
+        "qnodes": 0,
+        "runtime_pops": 394263,
+        "runtime_pushes": 394263
+      },
+      "depths": {
+        "13": 1,
+        "19": 1,
+        "55": 1,
+        "6": 5,
+        "64": 2,
+        "7": 54
+      },
+      "final_record_sha256": "6806034475e2fe53deb0a2125f71481928908db6f477ff699929d86f35b6def5",
+      "plies": 64,
+      "seconds": 176.09529450000264,
+      "stops": {
+        "completed_depth": 2,
+        "node_limit": 13,
+        "time_limit": 49
+      },
+      "terminal": "max_ply",
+      "value": 0
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        },
+        {
+          "ply": 15,
+          "removed": [
+            [
+              1,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "controller": "DYNAMIC_FIXED",
+      "counts": {
+        "PV_plies": 158,
+        "Player_queries": 27,
+        "native_legality_calls": 68576,
+        "native_legality_fallbacks": 0,
+        "nodes": 206823,
+        "qnodes": 0,
+        "runtime_pops": 206628,
+        "runtime_pushes": 206628
+      },
+      "depths": {
+        "0": 1,
+        "6": 13,
+        "7": 13
+      },
+      "final_record_sha256": "95c23a06e983f9ef98c4650d67701a2bb9158486df294b499859f6b89a82169e",
+      "plies": 27,
+      "seconds": 60.57498679996934,
+      "stops": {
+        "node_limit": 20,
+        "root_immediate_win": 1,
+        "time_limit": 6
+      },
+      "terminal": "checkmate",
+      "value": 1
+    },
+    {
+      "captures": [
+        {
+          "ply": 1,
+          "removed": [
+            [
+              1,
+              "B"
+            ]
+          ]
+        },
+        {
+          "ply": 15,
+          "removed": [
+            [
+              1,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "controller": "FULL_FIXED",
+      "counts": {
+        "PV_plies": 158,
+        "Player_queries": 27,
+        "native_legality_calls": 67896,
+        "native_legality_fallbacks": 0,
+        "nodes": 205700,
+        "qnodes": 0,
+        "runtime_pops": 205505,
+        "runtime_pushes": 205505
+      },
+      "depths": {
+        "0": 1,
+        "6": 13,
+        "7": 13
+      },
+      "final_record_sha256": "95c23a06e983f9ef98c4650d67701a2bb9158486df294b499859f6b89a82169e",
+      "plies": 27,
+      "seconds": 60.79021419992205,
+      "stops": {
+        "node_limit": 20,
+        "root_immediate_win": 1,
+        "time_limit": 6
+      },
+      "terminal": "checkmate",
+      "value": 1
+    }
+  ],
+  "new_Player_queries": 0,
+  "next_Player_queries": 0,
+  "next_frontier_edges": 576,
+  "next_input_roots": 8,
+  "scope": "Data-only exact bytes and complete history/PV replay through shared Core. Finite12mu paired payoff bounds, not iid population inference or independently rerun search. row.profile is generated DEFAULT metadata, actual UNIT leaf/order follows explicit executed constructor.",
+  "seconds": 17.862715099938214,
+  "source_capsule_executions": 0,
+  "status": "PASS",
+  "verified_selected_PV_leaves": 251
+}

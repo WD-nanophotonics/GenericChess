@@ -1,0 +1,169 @@
+{
+  "cold_PV_plies": 108,
+  "cold_new_queries": 24,
+  "documents": 87,
+  "fresh": {
+    "batch_seconds": 3709.7357781999744,
+    "groups": {
+      "DEFAULT": {
+        "counts": {
+          "PV_plies": 4547,
+          "Player_queries": 729,
+          "native_legality_calls": 1463064,
+          "nodes": 4161303,
+          "runtime_pops": 4153701,
+          "runtime_pushes": 4153701
+        },
+        "games": 12,
+        "outcomes": {
+          "0": 11,
+          "1": 1
+        },
+        "plies": 729,
+        "seconds": 1952.1278236999642,
+        "terminal_status": {
+          "checkmate": 1,
+          "max_ply": 10,
+          "repetition": 1
+        }
+      },
+      "UNIT": {
+        "counts": {
+          "PV_plies": 3820,
+          "Player_queries": 647,
+          "native_legality_calls": 1370666,
+          "nodes": 3942964,
+          "runtime_pops": 3936585,
+          "runtime_pushes": 3936585
+        },
+        "games": 12,
+        "outcomes": {
+          "0": 12
+        },
+        "plies": 647,
+        "seconds": 1755.8713277002098,
+        "terminal_status": {
+          "max_ply": 7,
+          "repetition": 5
+        }
+      }
+    },
+    "mean_difference_bounds": [
+      0.08333333333333333,
+      0.08333333333333333
+    ],
+    "missing": [],
+    "paired": [
+      {
+        "DEFAULT": 1,
+        "UNIT": 0,
+        "difference": 1,
+        "lower": 1,
+        "root": 0,
+        "upper": 1
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 1,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 2,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 3,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 4,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 5,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 6,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 7,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 8,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 9,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 10,
+        "upper": 0
+      },
+      {
+        "DEFAULT": 0,
+        "UNIT": 0,
+        "difference": 0,
+        "lower": 0,
+        "root": 11,
+        "upper": 0
+      }
+    ]
+  },
+  "legacy_slot_policy_errata": 16,
+  "local_new_game_queries": 236,
+  "local_new_games": 6,
+  "new_experiment_Player_queries": 1636,
+  "next_input": {
+    "Core_D1_D2_edges": 576,
+    "Player_queries": 0,
+    "learner_updates": 0,
+    "roots": 8
+  },
+  "old_reference_queries": 64,
+  "packet_sha256": "fd42b8775902f79bdb44ca6a2dc21d2d42a3bb2a03df99391de1cea405395f9d",
+  "scope": "Finite12pairedlayouts vs fixedUNIT, not population CI, fullWDL, pureprice effect or default/learner activation. Per-game clocks sum distinct from segment work/batch time; oldUNIT reference not reexecuted.",
+  "status": "PASS"
+}

@@ -1,0 +1,243 @@
+{
+  "source": "56560fb3e24102792f72a005c5c5bdb52526943f",
+  "old_input_source": "aaa325e4286197ee731c7e61df5106251661f687",
+  "actual_new_episodes": 114,
+  "actual_TRAIN": 65,
+  "actual_EVAL": 49,
+  "panel": {
+    "slots": 112,
+    "TRAIN": 64,
+    "EVAL": 48,
+    "seconds": 2855.3325406999793,
+    "missing": 0,
+    "unknown": 0,
+    "TRAIN_WDL": [
+      1,
+      63,
+      0
+    ],
+    "EVAL_WDL": [
+      0,
+      48,
+      0
+    ],
+    "paired_differences": [
+      "0"
+    ],
+    "pairs": 32,
+    "identical_vs_Unit": 28,
+    "identical_D4trained_vs_D6trained": 16,
+    "counts": {
+      "queries": 3528,
+      "nodes": 7423942,
+      "PV_plies": 18486,
+      "own_queries": 3528,
+      "own_active_B_PV": 1581,
+      "committed_plies": 7058,
+      "Uniform_selections": 3530
+    },
+    "final_models": {
+      "two-type-Unit": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "two-type-D4": [
+        1.0,
+        0.9108875066651084,
+        0.0,
+        0.0
+      ],
+      "two-type-D6": [
+        1.0,
+        0.9133586083444689,
+        0.0,
+        0.0
+      ],
+      "contact-Unit": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "contact-D4": [
+        1.0,
+        0.8489868403794617,
+        0.0,
+        0.0
+      ],
+      "contact-D6": [
+        1.0,
+        0.862865490291189,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "resource_table": {
+    "two-type/train/D4": {
+      "games": 16,
+      "nodes": 165477,
+      "seconds": 51.935352300293744,
+      "queries": 488,
+      "wins": 0,
+      "draws": 16,
+      "losses": 0
+    },
+    "two-type/train/D6": {
+      "games": 16,
+      "nodes": 1422267,
+      "seconds": 587.1927689998411,
+      "queries": 480,
+      "wins": 1,
+      "draws": 15,
+      "losses": 0
+    },
+    "contact/train/D4": {
+      "games": 16,
+      "nodes": 163567,
+      "seconds": 50.7175762001425,
+      "queries": 512,
+      "wins": 0,
+      "draws": 16,
+      "losses": 0
+    },
+    "contact/train/D6": {
+      "games": 16,
+      "nodes": 1377141,
+      "seconds": 546.9690999002196,
+      "queries": 512,
+      "wins": 0,
+      "draws": 16,
+      "losses": 0
+    },
+    "two-type/eval/Unit": {
+      "games": 8,
+      "nodes": 746942,
+      "seconds": 301.2069656001404,
+      "queries": 256,
+      "wins": 0,
+      "draws": 8,
+      "losses": 0
+    },
+    "two-type/eval/D4": {
+      "games": 8,
+      "nodes": 751510,
+      "seconds": 312.2325316997012,
+      "queries": 256,
+      "wins": 0,
+      "draws": 8,
+      "losses": 0
+    },
+    "two-type/eval/D6": {
+      "games": 8,
+      "nodes": 751510,
+      "seconds": 303.8739010000136,
+      "queries": 256,
+      "wins": 0,
+      "draws": 8,
+      "losses": 0
+    },
+    "contact/eval/Unit": {
+      "games": 8,
+      "nodes": 688786,
+      "seconds": 232.40825420001056,
+      "queries": 256,
+      "wins": 0,
+      "draws": 8,
+      "losses": 0
+    },
+    "contact/eval/D4": {
+      "games": 8,
+      "nodes": 678371,
+      "seconds": 233.57530140003655,
+      "queries": 256,
+      "wins": 0,
+      "draws": 8,
+      "losses": 0
+    },
+    "contact/eval/D6": {
+      "games": 8,
+      "nodes": 678371,
+      "seconds": 232.84941710007843,
+      "queries": 256,
+      "wins": 0,
+      "draws": 8,
+      "losses": 0
+    }
+  },
+  "posthoc_control": {
+    "selection": "First observed TRAIN WIN, exposed/outcome-selected, excluded from prospective evaluation denominator",
+    "reference_B": 0.9717732092874724,
+    "reference_WIN_plies": 48,
+    "Unit_DRAW_plies": 64,
+    "first_divergence_ply": 41,
+    "reference_chosen_PV_free_B": 0,
+    "independent_references_retained": 3,
+    "independent_reference_unretained_UNKNOWN": 1,
+    "full_five_actor_WDL": "UNKNOWN"
+  },
+  "history_strategy": {
+    "positive_actual_histories": 1,
+    "positions": 359,
+    "rank": 25,
+    "remaining": 28,
+    "history_tree_cap": 20000,
+    "history_tree_status": "UNKNOWN"
+  },
+  "odd_component": {
+    "vertices": 222940,
+    "edges": 1384352,
+    "checkmate_vertices": 24,
+    "physical_decisive": 64,
+    "max_rank": 1,
+    "universal_no_mate": false,
+    "complete_actual_owner_passes": 2,
+    "additional_natural_root_occurrences": 314,
+    "additional_labels": "strategicDRAW",
+    "source_actual_oneply_DRAW_children": 6
+  },
+  "material_cells": {
+    "possible_positive_knots": [
+      "1/2",
+      "1",
+      "2"
+    ],
+    "all_final_learned_B_open_cell": "(1/2,1)",
+    "scope": "Finite exact material q0 optimal-action SETS, not numeric value/TD-gradient/timed-work/utility equivalence or intrinsic prices"
+  },
+  "tests": {
+    "passed": 92
+  },
+  "portable_reader": {
+    "verified": true,
+    "packet_sha256": "24fa10cb17c5b5d862c471401bf6ea117ffd7d43d4bed1c8a5a1021a5aff0811",
+    "documents": 167,
+    "data_only_capsules": 31,
+    "cost_episodes": 1,
+    "panel_episodes": 112,
+    "panel_counts": {
+      "queries": 3528,
+      "nodes": 7423942,
+      "PV_plies": 18486,
+      "own_queries": 3528,
+      "own_active_B_PV": 1581,
+      "committed_plies": 7058,
+      "Uniform_selections": 3530
+    },
+    "barrier_strategy_positions": 359,
+    "barrier_choice_queries": 4,
+    "seconds": 59.1739465999417,
+    "new_experimental_Player_queries": 0,
+    "new_training_episodes": 0,
+    "scope": "Actual histories/RNG/PVs/TD sequence; complete selected strategy frontier/identity/root clock; bounded diagnostic PVs; new odd clock DP/posthoc truth and prior hash-bound complete graph qualifications. Static full odd frontiers hash-bound by default; --full-odd reexecutes both actual owner passes. No independent rules engine, new Player or capsule execution. Capped20k historytree remains UNKNOWN.",
+    "full_odd_frontier_passes": 0,
+    "posthoc_win_control_episodes": 1,
+    "posthoc_win_control_same_record": false,
+    "retained_reference_queries": 3,
+    "unretained_reference_queries_UNKNOWN": 1,
+    "odd_newly_qualified_occurrences": 314
+  },
+  "limits": "Finite exposed source laws/roots. Actual seeded Uniform streams, not exact IID expected payoff. Prospective gain0 and one outcome-selected causal positive are distinct. Same Core, no independent engine. Unqualified roots/history barriers and one lost reference remainUNKNOWN. No learner speedup/default/prior adoption."
+}

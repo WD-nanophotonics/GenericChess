@@ -1,0 +1,74 @@
+{
+  "id": "67472a03-15aa-443e-a32c-2cb5cff0e030",
+  "started_at": "2026-10-24T01:29:06.181051+00:00",
+  "ended_at": "2026-10-24T02:58:38.513211+00:00",
+  "effective_work_seconds": 4692.701603,
+  "reason": "safe_checkpoint",
+  "state": "ended",
+  "duration_gate_passed": true,
+  "memo_synced": true,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-24T01:41:51.684426+00:00",
+      "evidence": ".local_agent/probe-67472a/barrier-strategy-verification.json",
+      "question": "Does deeper-target TDLeaf change useful free-coordinate exposure and actual frozen utility versus shallow-target training under equal fresh evaluation policies on all original A/B starts?",
+      "started_at": "2026-10-24T01:35:49.360201+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T01:48:07.536859+00:00",
+      "evidence": ".local_agent/probe-67472a/barrier-choice-verification.json",
+      "question": "Do actual deeper-target updates and frozen evaluation expose useful decisions, and does the compact barrier certificate remain sound under full identity/clock/source binding checks?",
+      "started_at": "2026-10-24T01:41:52.033066+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T01:57:14.472559+00:00",
+      "evidence": ".local_agent/probe-67472a/next-input-features.json",
+      "question": "Across the frozen depth-target panel, which actual gradients, completed depths, terminal outcomes and paid resource differences survive complete record/RNG/TD and posthoc truth validation?",
+      "started_at": "2026-10-24T01:48:07.889538+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T02:13:42.792904+00:00",
+      "evidence": ".local_agent/probe-67472a/quiet-eval-verification.json",
+      "question": "What do the frozen shallow/deep-target evaluation and source-bound odd-component truth add about useful learning signals and paid cost, without oracle-selected experience or default changes?",
+      "started_at": "2026-10-24T01:57:14.889102+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T02:22:38.764817+00:00",
+      "evidence": ".local_agent/probe-67472a/win-control-divergence.json",
+      "question": "Do final contact frozen pairs and the additional actual odd-Ferz component change the learning-versus-depth interpretation or UNKNOWN coverage?",
+      "started_at": "2026-10-24T02:13:43.151377+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T02:44:36.178710+00:00",
+      "evidence": ".local_agent/probe-67472a/odd-qualification.json",
+      "question": "After the exposed price-tie positive control, what remains true of prospective frozen evaluation, paid cost and additional odd-component truth coverage?",
+      "started_at": "2026-10-24T02:22:39.132599+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T02:51:57.766805+00:00",
+      "evidence": ".local_agent/probe-67472a/panel-odd-truth.json",
+      "question": "Does the complete portable evidence reproduce frozen learning/payoff, the local price effect, scoped history certificate and odd-component natural truth with every UNKNOWN retained?",
+      "started_at": "2026-10-24T02:44:36.559686+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T02:54:46.729467+00:00",
+      "evidence": "artifacts/leaper-ab-depth-public-reader-20261024/verification.json",
+      "question": "Does the assembled portable 167-document/31-data-only-capsule artifact independently replay actual episodes, legal RNG/PV/TD, complete scoped strategies and the new odd clock/history labels without any new Player or training?",
+      "started_at": "2026-10-24T02:52:40.209375+00:00"
+    }
+  ],
+  "uncredited_work": [
+    {
+      "ended_at": "2026-10-24T01:35:32.212362+00:00",
+      "evidence": ".local_agent/probe-67472a/cost-verification.json",
+      "question": "Can latest committed infrastructure and a bounded original-mu D6 episode isolate actual target exposure, completed depth and full-game cost before any new deeper learning budget?",
+      "reason": "Conservatively omit whole initial mixed committed-source import/workflow-compatibility/cost interval; administrative file transport and infrastructure tests were not separately timed. Exact original retained; real scientific work also undercredited, no invented subintervals.",
+      "started_at": "2026-10-24T01:32:53.796492+00:00"
+    }
+  ],
+  "format": "dev-aux-effective-work-accounting-v1",
+  "finish_accepted": true,
+  "effective_minutes": 78.21169338333334,
+  "administrative_publication_excluded": true,
+  "uncredited_seconds": 158.41587
+}

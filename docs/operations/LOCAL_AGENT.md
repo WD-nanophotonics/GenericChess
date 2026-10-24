@@ -136,3 +136,19 @@ q0 learner adapter; foes are the declared Unit model or recorded legal Uniform
 stream. Imported PRIMARY profile metadata does not replace this actual caller
 contract. This adopts methodological clarification only, not PRIMARY task/state,
 controller defaults or another role's publication/recurring configuration.
+
+## Latest committed source reused — 2026-10-24 depth study
+
+Source56560fb3e24102792f72a005c5c5bdb52526943f supplies13exact imported paths.
+The actual controller/slot-label erratum and generated-versus-served profile
+separation are retained rather than rewritten; only pinned historical faulty
+source hashes receive that reader exception. The workflow atomic writer retries
+only the same complete temporary for Windows5/32/33, bounded to3attempts,
+preserving old stops on permanent failure. Role-local session regressions pass.
+
+AUX's complete static graph reader now accepts an EXPLICIT source input group,
+defaulting to the old contact contract, to verify an actually constructed quiet
+odd component under its own full RuleSet. Matching piece counts never selects
+a graph or silently rewrites a root fingerprint. Actual owner qualifications,
+history admission, query/receipt/capsule bytes and finite-opponent payoff remain
+separate. This imports no other role's state, task, schedule or default.

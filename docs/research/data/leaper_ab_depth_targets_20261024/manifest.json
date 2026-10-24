@@ -1,0 +1,837 @@
+{
+  "format": "leaper-ab-depth-target-packet-v1",
+  "source_commit": "56560fb3e24102792f72a005c5c5bdb52526943f",
+  "starting_own_commit": "e71968ff8ec5e3ab57cade9b965e44a23558780a",
+  "packet_sha256": "24fa10cb17c5b5d862c471401bf6ea117ffd7d43d4bed1c8a5a1021a5aff0811",
+  "decoded_sha256": "2e1e87c2e26399a1957cb43547d7b83cd12ba62dacb735429efbc3d26d36b77c",
+  "previous_manifest_sha256": "e6c6dda5809ed8384ce5b9b8c44f2bd980f794c54c074c6a69972f9858a8e574",
+  "documents_utf8": {
+    "cost/execution.json": {
+      "bytes": 84,
+      "sha256": "e2dcc229c11a9bfb1fe8e0b5e61f6dd0ad98843484bbb2ff1c5b5fdcac9af82c"
+    },
+    "cost/frozen-models.json": {
+      "bytes": 26,
+      "sha256": "0e04972dc887aa99922491e82667d871bbecd7b31b1fcaf08f3a4ede35e476e6"
+    },
+    "cost/game-000.json": {
+      "bytes": 95213,
+      "sha256": "622f092aa8ab2f6a7ebcf0d4afcb446a2a49029b736fb265618b57be9e60d11b"
+    },
+    "cost/partial.json": {
+      "bytes": 502,
+      "sha256": "fec1fe3df0237ec35099fcb77a5c9c67dcc77bd96539fb3b2f44094a07fc6ecd"
+    },
+    "cost/plan.json": {
+      "bytes": 16896,
+      "sha256": "8de49781133e198ea9b5ba8553082b90096eca0545f410ffd7796dc54bdc9b1d"
+    },
+    "cost/result.json": {
+      "bytes": 535,
+      "sha256": "822c60a871fcfdf722520ad7df56bd70bac9ea582825cd7eef271445975b031f"
+    },
+    "panel/execution.json": {
+      "bytes": 85,
+      "sha256": "2e77d9ad302d65deb6771299922f6d2d739bfe8cd12d09af7bc55b5a4f20f714"
+    },
+    "panel/frozen-models.json": {
+      "bytes": 255,
+      "sha256": "602dfe8a209ef4be9e62165bd4d2f6b549304a1d23e08ac844e8fcaf8ea1b4bd"
+    },
+    "panel/game-000.json": {
+      "bytes": 76898,
+      "sha256": "974a59809d3411d509f9b12f9aa3ab5aba5b78c87f813c14c3d2c21c3bd3ac2e"
+    },
+    "panel/game-001.json": {
+      "bytes": 95202,
+      "sha256": "395561831ed04bf309db35489d983cf51c183f41a538ff261f700b85d4464922"
+    },
+    "panel/game-002.json": {
+      "bytes": 76919,
+      "sha256": "5a46b7b13784109ab82b8624336eda5bb1b7eaef6750651f5936fce284104977"
+    },
+    "panel/game-003.json": {
+      "bytes": 95254,
+      "sha256": "d0fb0f779b599f3defb710a34801e943fec36f67b787c4dbd481e597608f4296"
+    },
+    "panel/game-004.json": {
+      "bytes": 95192,
+      "sha256": "11653216ffb72bad494b61ab60088f3c52d25a4ce73158e21d415ea12bca9612"
+    },
+    "panel/game-005.json": {
+      "bytes": 76880,
+      "sha256": "a84063663f32ea81ad1743a5a1921b3b77428fb17c8734d0607ba29029f010df"
+    },
+    "panel/game-006.json": {
+      "bytes": 95658,
+      "sha256": "f00d87c9d2dc30b24b64b8683e73f8727f5a7cfd840b4dafcaf8ed490ec86054"
+    },
+    "panel/game-007.json": {
+      "bytes": 77336,
+      "sha256": "3db19fbc33be9ce96e3c7fb43f0f2e522dbafe1c0eb1b730ed3786ceec7f7306"
+    },
+    "panel/game-008.json": {
+      "bytes": 76978,
+      "sha256": "7cad31b71f2a28903d153e8fc64bbbbeda43a770d5da851da5e6a87006bd668c"
+    },
+    "panel/game-009.json": {
+      "bytes": 95326,
+      "sha256": "fb7ad590d523c7ead63e1d2cfbc421d9a7217a0a75c017023ac840a6f5f916d3"
+    },
+    "panel/game-010.json": {
+      "bytes": 77289,
+      "sha256": "0cc80a5c459f98b2f58dfe901ec73e70b86831fe2e121a7e34eb1e5667128c19"
+    },
+    "panel/game-011.json": {
+      "bytes": 95623,
+      "sha256": "1e692dd5cd88c6679aa6d6164ed5434f9848f9443e11ce2585d6141019edf1fd"
+    },
+    "panel/game-012.json": {
+      "bytes": 95302,
+      "sha256": "d3c3173f32c3b05f417559263aa958c6178f3b803c71e942427425564a9a12ab"
+    },
+    "panel/game-013.json": {
+      "bytes": 77008,
+      "sha256": "ebeb256884fe9e213df10c1318a488bc531b7105bbe860dc5396d861d04293a2"
+    },
+    "panel/game-014.json": {
+      "bytes": 95638,
+      "sha256": "46e7efd6e5dd1635b1be2e5173246ac0e78d7ed00fdece409e53655983ba8036"
+    },
+    "panel/game-015.json": {
+      "bytes": 77341,
+      "sha256": "4fbd34880653727ff9cadea300f98df7cdf53684aa73da857cdf888f457784d8"
+    },
+    "panel/game-016.json": {
+      "bytes": 76708,
+      "sha256": "ffb443dba873c7a85ddaeb3a420f9da0056e5734b9449ca2a2ab45aa0796eb24"
+    },
+    "panel/game-017.json": {
+      "bytes": 94821,
+      "sha256": "5651cf088644aa8f7914da31d210940531e7df6195a41168a45f7c79d6c99354"
+    },
+    "panel/game-018.json": {
+      "bytes": 76482,
+      "sha256": "bf9a18a90c02052c7b843b17cf8916d652ccc6d36c2b6cf610e72bd753870796"
+    },
+    "panel/game-019.json": {
+      "bytes": 94624,
+      "sha256": "ba9100cd3d06533fce0a38f04a6a13b7738de56cbbe0d4c1aeb4950b06a81184"
+    },
+    "panel/game-020.json": {
+      "bytes": 94699,
+      "sha256": "5c90e51a58ac75120f56138b865f3b19935d54ac530a057b273acfa8a73abd55"
+    },
+    "panel/game-021.json": {
+      "bytes": 76583,
+      "sha256": "1f70c2a5ee202c651ef30fa15dbf55b6b32a9d5d2fda4e55f4336134afdab5d3"
+    },
+    "panel/game-022.json": {
+      "bytes": 95097,
+      "sha256": "b79d2f48b77c6829997b4b5de2ba2495d9d1870988e02a1654205ac635ba73c3"
+    },
+    "panel/game-023.json": {
+      "bytes": 77023,
+      "sha256": "82ddecade3d07a7b7f7ca54fb7f96b41853aa3c75d41cc8844498c72eac160af"
+    },
+    "panel/game-024.json": {
+      "bytes": 76858,
+      "sha256": "3b83d2ac56323ffbda7a33a67e5099807d54d47be4d3728002f1875dd4030329"
+    },
+    "panel/game-025.json": {
+      "bytes": 94953,
+      "sha256": "dc8f629996d7094d9dd8d134a9eb13348b1315f7100952f62171c2e2ff5db100"
+    },
+    "panel/game-026.json": {
+      "bytes": 76648,
+      "sha256": "a4ade26c3eeedbf64782ddd136d7ca45d56f4f23e4f2722d0dc0f11d5e292626"
+    },
+    "panel/game-027.json": {
+      "bytes": 94772,
+      "sha256": "fd1c04ee1c4c6c40ba9b79af8b076974e492eac49d22f8c7964c43a892ede485"
+    },
+    "panel/game-028.json": {
+      "bytes": 71010,
+      "sha256": "30ac74afacb4872e50a78b9f6722599d873d334bf2396cf77831349600e72e92"
+    },
+    "panel/game-029.json": {
+      "bytes": 76726,
+      "sha256": "f5d7a857e6193d55b812550f43b68e0c6766011e9c5fa0b4fa7dd193013db351"
+    },
+    "panel/game-030.json": {
+      "bytes": 95071,
+      "sha256": "8386deb6d0d1d0467d59e850e615a12289d0e6d21cc0c5914e5e74d7153b4765"
+    },
+    "panel/game-031.json": {
+      "bytes": 76956,
+      "sha256": "f9116a8a9176c5b2a9ea4abb61be86054f33e7449041c5afc2b308cf56b2dfed"
+    },
+    "panel/game-032.json": {
+      "bytes": 77197,
+      "sha256": "e46e081a242ce09d0ba3359f9bd2a1d963ebb11219193d9c9618b8d5304b6d0b"
+    },
+    "panel/game-033.json": {
+      "bytes": 95497,
+      "sha256": "17d7f5b01bc9b5e080075483471158219ad5b8e442cbc3daa047aa49ed4688fb"
+    },
+    "panel/game-034.json": {
+      "bytes": 77037,
+      "sha256": "e1568dd886a58b4b52d72b3ffec829ae53d167605cf2554529beebf38cf3dc74"
+    },
+    "panel/game-035.json": {
+      "bytes": 95333,
+      "sha256": "517a590d89ad6ef5f741cf9f68407365000ebc7aa8b6785080eebf9a4273a248"
+    },
+    "panel/game-036.json": {
+      "bytes": 95433,
+      "sha256": "8ad1d632e64d6f91d9e33eb85c6eb59150b4c7cbd1cfcc7c69a73495ba61b240"
+    },
+    "panel/game-037.json": {
+      "bytes": 76924,
+      "sha256": "ddbff40884cf02683bfc291215428892889c5f4bd337877d16bbfa0bab7be8b6"
+    },
+    "panel/game-038.json": {
+      "bytes": 95561,
+      "sha256": "bd25a35f204d519be217896decb88e3c7a9f763e39e6c73b2738ba6141f45fe3"
+    },
+    "panel/game-039.json": {
+      "bytes": 77247,
+      "sha256": "1df665888ddf807f28a67405d94457c723377369cb9dea61fd2b67178f0f3009"
+    },
+    "panel/game-040.json": {
+      "bytes": 77398,
+      "sha256": "a249651c1cc112908dcd89289bf8a563584be1d315f16e7fda7ac58eb5971c51"
+    },
+    "panel/game-041.json": {
+      "bytes": 95726,
+      "sha256": "5fee2359a9f55ff7f6f4481b7fce8cdef4dbd532d0e29c7f7c2f6360ed9151e7"
+    },
+    "panel/game-042.json": {
+      "bytes": 77216,
+      "sha256": "80002cf83768f77c369378cc8448f409fc3c54419e434bc316378e3b7f512f22"
+    },
+    "panel/game-043.json": {
+      "bytes": 95320,
+      "sha256": "95a31c5fd224a0fd9daa154b6e637b40519b8bf2cf7d10ab2cfb2c57e6495fe3"
+    },
+    "panel/game-044.json": {
+      "bytes": 95437,
+      "sha256": "ebec7b541183c55fe3af3fe0d88b0821c22c953b62f4697c8059c3792fdd37f6"
+    },
+    "panel/game-045.json": {
+      "bytes": 77123,
+      "sha256": "9e2cc26cea1e555abe009c7fa46101f721f10e9c749031693ec0eadb1030d8c9"
+    },
+    "panel/game-046.json": {
+      "bytes": 95427,
+      "sha256": "75b579221ccca15ddb58fcbe7ddf0996d453bbb76f8d8be845f4d45ed4bdf72e"
+    },
+    "panel/game-047.json": {
+      "bytes": 77091,
+      "sha256": "e3e493fb8439e9159e4d391e0a8597e85f60ce81a027d4389a4aa0cd1688d3d2"
+    },
+    "panel/game-048.json": {
+      "bytes": 20525,
+      "sha256": "49588775a7340207f129c0f3ddf89542459ebb849ec7d60cc13b57c44f31c8da"
+    },
+    "panel/game-049.json": {
+      "bytes": 25322,
+      "sha256": "70bc5cd9c57a2a5e57ff14189699b5e6a6984bf6284d5a3173f964bba1fb0f38"
+    },
+    "panel/game-050.json": {
+      "bytes": 76941,
+      "sha256": "f8c0fb5fb4dd7834acb77cfca40f5a92ae43393e58e119ab888a80160938480b"
+    },
+    "panel/game-051.json": {
+      "bytes": 95047,
+      "sha256": "1b98403656aefa23bcc3e37190311ca9e7ccb40a050265cb726147bfe3956769"
+    },
+    "panel/game-052.json": {
+      "bytes": 94882,
+      "sha256": "8cb2db7b41aa75bf8238388b24dee4c132bc93ca74a6d4f4cb9de29fde64b7c6"
+    },
+    "panel/game-053.json": {
+      "bytes": 76785,
+      "sha256": "c975884644479f7ad483f385fcc10f199e1c9e4f9a6c9b393e09f3dabc62a5c3"
+    },
+    "panel/game-054.json": {
+      "bytes": 95044,
+      "sha256": "8647fb63014130cbb93b4d4f5352af62954b6dd7f069b7259e33a933ae5a8b6d"
+    },
+    "panel/game-055.json": {
+      "bytes": 76927,
+      "sha256": "30bb717f42d97920a166350a130ffcef11772de1cec2eb8753a282be22db3555"
+    },
+    "panel/game-056.json": {
+      "bytes": 77118,
+      "sha256": "684663ccfbe9258b4a749226a44b3042731629b965cba2a11da1d01d868a04c8"
+    },
+    "panel/game-057.json": {
+      "bytes": 95221,
+      "sha256": "8c6c737bbeda52bcb540a67fc5ca914e716edcbb52ef23cb8ac0ab73ecdef372"
+    },
+    "panel/game-058.json": {
+      "bytes": 77090,
+      "sha256": "f94a936da97727f8aeb019178e0650071cce8ff1b422363085b78aeebd7e301c"
+    },
+    "panel/game-059.json": {
+      "bytes": 95206,
+      "sha256": "a9356ed2916c38ad8ce6a617fa839bd9e0b445e499d87dcc016604630a8fadea"
+    },
+    "panel/game-060.json": {
+      "bytes": 95022,
+      "sha256": "8ba28da5b4899303f0efd7da1cd041c4c1aae022e34d01d622409d739ef90533"
+    },
+    "panel/game-061.json": {
+      "bytes": 76921,
+      "sha256": "d45d49ecbcffcb4c379cd173d7a0ad6a55b17f74c2031b3d3f10262740fbd9e0"
+    },
+    "panel/game-062.json": {
+      "bytes": 94782,
+      "sha256": "b06a89ccaa1d3e08654347a9c61c9088101fb06a29d44d4332f0d314906b7b10"
+    },
+    "panel/game-063.json": {
+      "bytes": 76657,
+      "sha256": "d5c07419ca42a1f36a8a05b66b6f5a00c17d2cbc7e02c18221403cc3cac51e40"
+    },
+    "panel/game-064.json": {
+      "bytes": 95058,
+      "sha256": "877ba15fa04ecd4af0afe1f940348c978837ded128bcea520d301bbcd102f71f"
+    },
+    "panel/game-065.json": {
+      "bytes": 95068,
+      "sha256": "1f13f1c474720559009a4c6bb393cbf2be6e20610ca17865cf1001f8059c42f9"
+    },
+    "panel/game-066.json": {
+      "bytes": 95081,
+      "sha256": "1a2ec17cdb33dbfed5f9b28dfc2a6240971e8617d258c1dfe02fddf97554d18b"
+    },
+    "panel/game-067.json": {
+      "bytes": 94823,
+      "sha256": "c3f61630ee159804f262b10945ce7867ff1d1cffb4de0bc2dee4d28ea2115afd"
+    },
+    "panel/game-068.json": {
+      "bytes": 94852,
+      "sha256": "c16a6ee2269c5de924e2f6fd7df64d1ef4093aef47681b711306998765214877"
+    },
+    "panel/game-069.json": {
+      "bytes": 94556,
+      "sha256": "5ba5e4f055e936e9b8dd40514f328fb9d569fe42fbd2615858579c5a2217ee56"
+    },
+    "panel/game-070.json": {
+      "bytes": 95523,
+      "sha256": "91897445ace0d6744e1c3ead0752136c9ea2796005423052a1243d489a44c230"
+    },
+    "panel/game-071.json": {
+      "bytes": 95545,
+      "sha256": "a1c153817070610e1b6263702e9fae602fc6793931cf476e9755c4c86e2fafc9"
+    },
+    "panel/game-072.json": {
+      "bytes": 95116,
+      "sha256": "3c550d7599ec8be7d5707c6d381b437dd173601e1f4198de9a8015a36e4b558d"
+    },
+    "panel/game-073.json": {
+      "bytes": 94580,
+      "sha256": "7a3c75be9c274c224dc6b756e9ef3015d426578d9f1ad68495621c8189fe97c6"
+    },
+    "panel/game-074.json": {
+      "bytes": 94895,
+      "sha256": "4e96113343d8efb6d98e0a1b8576fc4017418b4bd1fa35b31a3af63f5a4d8d23"
+    },
+    "panel/game-075.json": {
+      "bytes": 94883,
+      "sha256": "70a5c02310a9d35122957f5215b7803210232c98459f37f515ca04b923da6e9f"
+    },
+    "panel/game-076.json": {
+      "bytes": 95124,
+      "sha256": "d83b468fbd430105c99197f48a808e7cace9ba1762f68bed30631ae42500a6bb"
+    },
+    "panel/game-077.json": {
+      "bytes": 95546,
+      "sha256": "28914c00d00bdc0b2485424541f8a07677cef1a149a45460481171a36644cfb8"
+    },
+    "panel/game-078.json": {
+      "bytes": 95549,
+      "sha256": "855258d0cb68162a2296eac7c6193718a5ff78bc7aa701be1db6938204155721"
+    },
+    "panel/game-079.json": {
+      "bytes": 95037,
+      "sha256": "399108e54e0c67ee3a3b111af44529e38b298307f73b567b0dd6f31ca13b0ace"
+    },
+    "panel/game-080.json": {
+      "bytes": 95054,
+      "sha256": "52c141230bfd19eeba5bb8bb54695b89561dc38ffc6d68dd249a6bc9312d7915"
+    },
+    "panel/game-081.json": {
+      "bytes": 94618,
+      "sha256": "78f0680db8f842e159ec05cf8fb503c467e32c8096d0f3e4e041bb6038c5caee"
+    },
+    "panel/game-082.json": {
+      "bytes": 95363,
+      "sha256": "e074d3929dca962f9eeb52b9d1c9379a59102f0d027652fd9dcb2b9dacf51452"
+    },
+    "panel/game-083.json": {
+      "bytes": 95389,
+      "sha256": "246b1df5be2d8acfbbb0cee973b28daec092e79e5667d0f4cce120737cf01db7"
+    },
+    "panel/game-084.json": {
+      "bytes": 95120,
+      "sha256": "5d9abefffaa4e39c5a75c5e1ffed760f1c4bac62c47c300ce1f88f9d4bd6af3d"
+    },
+    "panel/game-085.json": {
+      "bytes": 94588,
+      "sha256": "e381da3f1d397835d38b4e12ad7114a9716a1e2ca53a3b08ca6264df61f6ee16"
+    },
+    "panel/game-086.json": {
+      "bytes": 94605,
+      "sha256": "325035eed261cec825f10db1fc66a2e202f5eafcb2fc532d826ff582c7d29392"
+    },
+    "panel/game-087.json": {
+      "bytes": 94616,
+      "sha256": "271f2307dcb8b7678eeaa01344447f44c99ad66ec6e91c886ecf77a07ca0b43a"
+    },
+    "panel/game-088.json": {
+      "bytes": 95121,
+      "sha256": "71f844278b2919485fe909ae9f2a00985479d8e768547c3b4d47a915fd72f1c4"
+    },
+    "panel/game-089.json": {
+      "bytes": 95540,
+      "sha256": "d166fce4e61848536e8ea1791ea55996bab4dcbd010fc5eafaed71e178309f71"
+    },
+    "panel/game-090.json": {
+      "bytes": 95514,
+      "sha256": "4cd7ad0e48096c039db2471684e0d42495fca839fa9b1e3c1f4b23afdfddca5e"
+    },
+    "panel/game-091.json": {
+      "bytes": 94560,
+      "sha256": "f8a69488289832bb95a01be954f623e2c46bde0dc7d6264eb7bdee90d720a1a8"
+    },
+    "panel/game-092.json": {
+      "bytes": 94562,
+      "sha256": "0899c419c8fdb3563e36bc24dc1b70d32169f4a8ac1cf39d28f07fe04eb8f6f6"
+    },
+    "panel/game-093.json": {
+      "bytes": 94556,
+      "sha256": "4d08bb47058af19fd8c54d3bd6ce5fbcfb28fab782f344a9b89a75bd05a1ba9c"
+    },
+    "panel/game-094.json": {
+      "bytes": 95521,
+      "sha256": "57944bca97c5f6d8578aa0e0e8ac3caca817c8c2d43032a4216e5043ef0e9fd6"
+    },
+    "panel/game-095.json": {
+      "bytes": 95539,
+      "sha256": "6d7f226d02155537f0f250da9f7a9263de8f97934dff8ef061db9b2386506517"
+    },
+    "panel/game-096.json": {
+      "bytes": 95199,
+      "sha256": "2f76bf6dcf526e5154b72b36af4d9cba925dc6535f8861ddfe985066389df811"
+    },
+    "panel/game-097.json": {
+      "bytes": 94656,
+      "sha256": "ac9f13fd851c06986f608ba10bd15986e5aaa9581021fb2e2d62058fc23bc5c7"
+    },
+    "panel/game-098.json": {
+      "bytes": 94631,
+      "sha256": "7fdd8b90d888e2c8ee7699d653b98c430efbbd638c50633c8e0b76ee4747b2c1"
+    },
+    "panel/game-099.json": {
+      "bytes": 94631,
+      "sha256": "f771fc9d279f1bb40e042314b0fd208b02d9c1c8a2efe3740d6eece9b59be3be"
+    },
+    "panel/game-100.json": {
+      "bytes": 95211,
+      "sha256": "d8bd214265f21d3657396d124611b56cadaee849765e30eb787e074cea6fb057"
+    },
+    "panel/game-101.json": {
+      "bytes": 95520,
+      "sha256": "eccd3a117d832030ef77c858a39d969539898f2e3d78f4dbc74b503b64b78995"
+    },
+    "panel/game-102.json": {
+      "bytes": 95499,
+      "sha256": "d965840ccd3a0fb8c1a27c6d9d198bfef21c5497a32cf192d4582ced0d9972e7"
+    },
+    "panel/game-103.json": {
+      "bytes": 94558,
+      "sha256": "4a7446b85d820b2af02ffde8f12c387df06a36f2d2c0409ed9decbd92e3de081"
+    },
+    "panel/game-104.json": {
+      "bytes": 94569,
+      "sha256": "89fe01190215ab9de83f08be37302e6a1156ffe80ba07b0ecdb5574726a7ee55"
+    },
+    "panel/game-105.json": {
+      "bytes": 94503,
+      "sha256": "fdfc464573fdc5fe23ce6917b771655363aa606e87648d98e51646529a28fca2"
+    },
+    "panel/game-106.json": {
+      "bytes": 95532,
+      "sha256": "05d1b81d99a9ecfdcbdf4d403ec2522608c9d58945d138f7c15513c1151dbcfa"
+    },
+    "panel/game-107.json": {
+      "bytes": 95559,
+      "sha256": "f977bd382d50ca0979370a43388ba186d3aae677752ad4e5713a9d359dd223f0"
+    },
+    "panel/game-108.json": {
+      "bytes": 95163,
+      "sha256": "5bdfc8eb67117af646f6a8fc36f0a90140607cdbdcbbdc622cb32298ac537a81"
+    },
+    "panel/game-109.json": {
+      "bytes": 94600,
+      "sha256": "60669869b4f146d3efcf76754f706e31bc5cfff68d7827c78cd1a8fb39c21d55"
+    },
+    "panel/game-110.json": {
+      "bytes": 94637,
+      "sha256": "bcf517e6ce1ae1fd4986b7d4e2a56a69abf30d60e4c63be8b4a5bc57dad686d2"
+    },
+    "panel/game-111.json": {
+      "bytes": 94636,
+      "sha256": "8007054369aa2c61008f664585287d61e11d4e7d3a154ac7c6afe00ac416b474"
+    },
+    "panel/partial.json": {
+      "bytes": 48804,
+      "sha256": "9a665927d092c7a4891acf44eae307feb3618c381e380501396d242680636d8a"
+    },
+    "panel/plan.json": {
+      "bytes": 48865,
+      "sha256": "8ca071f8dd29616d2cba06d4c02c6551fb81575a415810e437154d3acad75bdb"
+    },
+    "panel/result.json": {
+      "bytes": 48837,
+      "sha256": "5ab77cef50288cdc9b597027b3cf4447a729d56bc505798c02b80aab3134d51e"
+    },
+    "win-control/execution.json": {
+      "bytes": 85,
+      "sha256": "113519f4ba5ad67cc9dba26feae2ee0ebdcfb2a1b7e5b9b12627cbeb793ef543"
+    },
+    "win-control/frozen-models.json": {
+      "bytes": 28,
+      "sha256": "da96fe9cb1d09b9e5e88fb5972673631aa71a3de5d5dbdfface1ff1b3f72c0ed"
+    },
+    "win-control/game-000.json": {
+      "bytes": 94587,
+      "sha256": "c76ffecddd13312eb2e4bc58fa93d0b78e4682668b39f6b2655a26502dbeb666"
+    },
+    "win-control/partial.json": {
+      "bytes": 418,
+      "sha256": "acccd9973fd9fd63e59b7df79c4b1df2b7135565edfc98325b495b4fd3f2a29d"
+    },
+    "win-control/plan.json": {
+      "bytes": 32779,
+      "sha256": "05413194b45dde8f04d51f0bd1e47f05b5327e6f62754560cd3f96a6784ed036"
+    },
+    "win-control/result.json": {
+      "bytes": 451,
+      "sha256": "977bb1ee77f7f171af84e465f609f7292e3d95aeefc114573ec6baffcb074229"
+    },
+    "win-reference/plan.json": {
+      "bytes": 7215,
+      "sha256": "7f4176bf26d65bbca638b8d4d66449f51d7b0ecd5e809aca9f420f6ccb67d30f"
+    },
+    "win-reference/query-001.json": {
+      "bytes": 241,
+      "sha256": "70f50de74c702f192ab3ab5b1a0499bdf4d0af2e81ac5c800cd44a4686809e3c"
+    },
+    "win-reference/query-002.json": {
+      "bytes": 225,
+      "sha256": "0a0f55a7a9d1c7ab7f60b70e594bce520ba46f635829ff5f0520356f58cad653"
+    },
+    "win-reference/query-003.json": {
+      "bytes": 222,
+      "sha256": "363607ad653fae5ce62dc039a3e458933e2396adec86460f7e9efa4df6f2ffa5"
+    },
+    "win-reference/result.json": {
+      "bytes": 1303,
+      "sha256": "61c79fa16ad0c008ade3c07de3eac68a7b445df1e3919865220fd3a3738b6908"
+    },
+    "win-reference/resume-execution.json": {
+      "bytes": 344,
+      "sha256": "fac669c64241256e6ca4e3fb4cc3f567953ec953d4ee434f17664fb09100b23b"
+    },
+    "barrier/policy.json": {
+      "bytes": 6470,
+      "sha256": "98118b0aae97bf70905f6714be1ae44697b4afad8178ae485cb38d02b4ab9408"
+    },
+    "barrier/result.json": {
+      "bytes": 301,
+      "sha256": "acd4f51d1bc59546ee89f8888a1ca8856869d42aefded4f451e5ce817b915bcf"
+    },
+    "barrier/spec.json": {
+      "bytes": 6228,
+      "sha256": "2e699659acd80b8c37f5b349fb855b7951d44b33bd37040d09ada8f96f3e32aa"
+    },
+    "barrier-choice/plan.json": {
+      "bytes": 6168,
+      "sha256": "fd7139d7fb255b78e574782dda3cb4d99ccd274da52096c4f8ee3baa1536dd09"
+    },
+    "barrier-choice/query-000.json": {
+      "bytes": 2367,
+      "sha256": "d596abc071f882cee119a539dc7e8d0c225cc7a4baacaabd95a354788efc6329"
+    },
+    "barrier-choice/query-001.json": {
+      "bytes": 2383,
+      "sha256": "8d0bbf260e19c6e07bf26862e723163f448b45d6136bc05d208d995edc4a86d6"
+    },
+    "barrier-choice/query-002.json": {
+      "bytes": 1078,
+      "sha256": "1ba334fe59cbcef8b811f4664a81c11c52327e6a1c70a3e18eda16b76de5d621"
+    },
+    "barrier-choice/query-003.json": {
+      "bytes": 1079,
+      "sha256": "d855c27c1a325588daa7f582d049b7d2cb2870d692ffbde6e801988772641800"
+    },
+    "barrier-choice/result.json": {
+      "bytes": 6944,
+      "sha256": "d5b4c86d8f0a9a861dc996f57e89e09fb22852541c44fc3c9bc67b503cddd444"
+    },
+    "odd/execution.json": {
+      "bytes": 31,
+      "sha256": "2988c5ae037a25f8f317892b8af8d8dee67fa8b689f4a8746c0d8a639ab2ee03"
+    },
+    "odd/result.json": {
+      "bytes": 341,
+      "sha256": "2224b2f61d31869646e610edee090acda11195c6abb45e8d9f249caa0c6c05a9"
+    },
+    "odd/spec.json": {
+      "bytes": 33792,
+      "sha256": "a261ce5b27457e3de2bb5267ea265d96b88266f8563a4c08115012fccf8bcb62"
+    },
+    "checks/cost-verification.json": {
+      "bytes": 1164,
+      "sha256": "8bdb4a0602d77a98a8e3db440f6fdda141f79085c056cc152698e0a3831505b0"
+    },
+    "checks/panel-verification.json": {
+      "bytes": 70880,
+      "sha256": "22d64c2035427f58fb8f459b4bc1c79ce6c9d583bd70f8e8814da8596be954bd"
+    },
+    "checks/win-control-verification.json": {
+      "bytes": 1202,
+      "sha256": "3c86abce57e2f77a159079906a74a03f53dbbdc3a9ef759a89926a28372cb1b3"
+    },
+    "checks/win-control-divergence.json": {
+      "bytes": 22858,
+      "sha256": "f1c9f9a9f817ce4a57e43a9fb2a7e8990245278001e13a485f0a50421a115625"
+    },
+    "checks/barrier-strategy-verification.json": {
+      "bytes": 150887,
+      "sha256": "8657b95922ec51f7ae1f4054abb9656436fece7d0c916f8a186f0f9e1c0ee7de"
+    },
+    "checks/barrier-source-binding.json": {
+      "bytes": 4216,
+      "sha256": "664c59186fdd72b979085a4fa9fbdd402e3d1bbd083f4cdbd5da840aaa271f29"
+    },
+    "checks/barrier-choice-verification.json": {
+      "bytes": 926,
+      "sha256": "59a15afe4790b3ecf4132438cce5df11a51d86c6cebfa4a0c99ea351cbabb2e7"
+    },
+    "checks/panel-truth.json": {
+      "bytes": 276542,
+      "sha256": "b6bcac3403efb90349c5783213247395b313daab9d17731e8553c113b71f166d"
+    },
+    "checks/panel-odd-truth.json": {
+      "bytes": 26525,
+      "sha256": "f89f32a695c764e2fc8d5b9939b4adf954a6e4f60075c60e990e3ca891659138"
+    },
+    "checks/next-input-features.json": {
+      "bytes": 2444,
+      "sha256": "04b0360a674379d71f441a3a8d5132ec1b6aadf9ef499230da1e9949e7e3340e"
+    },
+    "checks/training-verification.json": {
+      "bytes": 2337,
+      "sha256": "a4b0ecc29ee3f20aa9419337e0a00393a2a6854729a47446e68cc21c22882213"
+    },
+    "checks/training-win-verification.json": {
+      "bytes": 1013,
+      "sha256": "c9bfa97af8f95caf87cd63f9ba4e3e24c955bf1bdbec033932d17162eb3867ae"
+    },
+    "checks/material-cells.json": {
+      "bytes": 1688,
+      "sha256": "1066344b8e689b03fa15c73b9a3076e21bf055ac90760f893d8603526225f6ed"
+    },
+    "checks/resource-summary.json": {
+      "bytes": 1779,
+      "sha256": "91af6873f8613edecb3d13469dd745e08db75035b332bf629916224bf2451d5b"
+    },
+    "checks/source-import.json": {
+      "bytes": 2269,
+      "sha256": "aeeef4c0013ce6c8db12ab81884df0d05b98fe466c7673f3be46a81b3ee693a5"
+    },
+    "checks/reader-failures.json": {
+      "bytes": 787,
+      "sha256": "fe460ec0376a83e41d49907cbc8b012b0e1794352deac646eef1cbc1491c0b2a"
+    },
+    "checks/barrier-negative-controls.json": {
+      "bytes": 85,
+      "sha256": "d64366e8f3ab4e9d61224c4df8b96b80b6956eb26e444a766e6335d037697bc3"
+    },
+    "odd/qualification.json": {
+      "bytes": 627,
+      "sha256": "7b367c7b2eb7b33abbc5f78192893a17778ca5f00f7fcdd650af9403a465b100"
+    },
+    "odd/swapped-qualification.json": {
+      "bytes": 627,
+      "sha256": "0755b5bf4f482a1f7e4a7f5a888017b0e31041d5886e4ced7bc18f0211f93a3f"
+    },
+    "odd/clock-proof.json": {
+      "bytes": 592,
+      "sha256": "0b2c872f79199a9613562cbba4ad4ecd8fa102b6822fa82d5fde2dd70417d412"
+    }
+  },
+  "source_capsules_utf8": {
+    "current/leaper_ab_deeper_targets.py": {
+      "bytes": 5512,
+      "sha256": "f18009bc4821a3994832ec329cc51f8005237b98526b2420898dd2a496b48ef5"
+    },
+    "current/leaper_ab_depth_support.py": {
+      "bytes": 3620,
+      "sha256": "eabb30dc9d00473643a089b9cc3f5b1834c91a1d5c25b99bd74e5e59b59e2a7f"
+    },
+    "current/leaper_ab_history_barrier.py": {
+      "bytes": 7459,
+      "sha256": "17e35ab4132e338f893e18bba159ed0db8f32f8dec7a62022c27c5a886a6d4a6"
+    },
+    "current/leaper_ab_initialization_control.py": {
+      "bytes": 5281,
+      "sha256": "2e03a56a713567241d1fbdeeda58905897f668781cf4dab64999055d5e11b288"
+    },
+    "current/leaper_ab_learner_exposure.py": {
+      "bytes": 9642,
+      "sha256": "32fd3dc3d8a28090f803593b1fe428e6031923b57cd03d8d2af0e8f134777bf8"
+    },
+    "current/leaper_ab_learning_truth.py": {
+      "bytes": 10082,
+      "sha256": "82681a42679a40ae68641b7d818ec81120e3fbf3c10e0734935e14cd46c15181"
+    },
+    "current/leaper_ab_material_cells.py": {
+      "bytes": 3328,
+      "sha256": "eae4c77ef8fc3d384d83f6d964e65adde003b77b929c9e7b70fd91992cc31485"
+    },
+    "current/leaper_ab_material_deadzone.py": {
+      "bytes": 5663,
+      "sha256": "fa9bab1658f47cdc5febe170e9fcb3e4d1fede34f0302b7f079964f1832a49ba"
+    },
+    "current/leaper_ab_next_input_features.py": {
+      "bytes": 3146,
+      "sha256": "e4d67ee16c526b783e5e2ad505ea66043966cc586eef2f30f91c7dc15d9fc86f"
+    },
+    "current/leaper_ab_odd_component.py": {
+      "bytes": 5903,
+      "sha256": "0e199f6b2fa7ca2853f9bb230a9b10caed45a4decd91116a4c360c0044d7351a"
+    },
+    "current/leaper_ab_odd_truth.py": {
+      "bytes": 5348,
+      "sha256": "c57dacf018e227f1d4ea641a4c3d8298be7b456661d10c398f415e777ddbaf7b"
+    },
+    "current/leaper_ab_rank_diagnostics.py": {
+      "bytes": 6720,
+      "sha256": "9a2e1e2dacfc56f32cd92a546cbb8594519394fd149839675ab9c650b475f7fd"
+    },
+    "current/leaper_ab_suffix_exposure.py": {
+      "bytes": 4480,
+      "sha256": "5f8b76f78438af1ec9051ac6ce37bb3f0470c41f2ea094e6449c6ffb0b22c967"
+    },
+    "current/leaper_ab_tie_reference.py": {
+      "bytes": 5374,
+      "sha256": "d3aa1b65ad86936d10cb2d82d7b82d65ae3bf906725721016dc8b14e3f8aa165"
+    },
+    "current/leaper_ab_uniform_learning.py": {
+      "bytes": 7049,
+      "sha256": "4b41a923200d9495610569786c4f5a52385c1347cb9d89c3247d0e01e604ef8a"
+    },
+    "current/verify_leaper_ab_barrier_choice.py": {
+      "bytes": 2700,
+      "sha256": "978069aebf12e8deef08a9e23f1bdb69de4406cbb1a5e4d8876f6659adfc3d36"
+    },
+    "current/verify_leaper_ab_barrier_strategy.py": {
+      "bytes": 5219,
+      "sha256": "9d128daef150e5d33f7ecf09030b7921be6c92981e4a803960abb84eb4fe9382"
+    },
+    "current/verify_leaper_ab_deadzone.py": {
+      "bytes": 5142,
+      "sha256": "c7aef5a036e7d84855cd51d972c7105cf8bbdad489250d8b27b1c93ab96663bf"
+    },
+    "current/verify_leaper_ab_deeper_targets.py": {
+      "bytes": 4119,
+      "sha256": "14ccae6b4c0af3448406a0c3aef67ff7265867525d538129698f970fca913868"
+    },
+    "current/verify_leaper_ab_depth_packet.py": {
+      "bytes": 8054,
+      "sha256": "49b4d2da59f692cc53aa605d5b9416ddc088ef7ad23089cf8935498829e289c0"
+    },
+    "current/verify_leaper_ab_learning.py": {
+      "bytes": 11360,
+      "sha256": "437d19162a446bb55ffa3c0c36d8ab697963fac45bbc7fde36c77434c9c919d9"
+    },
+    "current/verify_leaper_ab_learning_packet.py": {
+      "bytes": 10538,
+      "sha256": "8307b4b008517e1d4551b3eafb9f54036ac9dd21512339e608b36819e694bebf"
+    },
+    "current/verify_leaper_ab_rank_diagnostics.py": {
+      "bytes": 5828,
+      "sha256": "aa2a6848984b23796f8dac5b1800db97dedf627a0a9ac0bc330eb7bf86a39435"
+    },
+    "executed/executed-cost-driver.py": {
+      "bytes": 5490,
+      "sha256": "cc1d407cfed2b038c1dc3df504bc5468f451d05ba15599bfad4547abf60eb889"
+    },
+    "executed/executed-panel-driver.py": {
+      "bytes": 5512,
+      "sha256": "f18009bc4821a3994832ec329cc51f8005237b98526b2420898dd2a496b48ef5"
+    },
+    "executed/executed-barrier-driver.py": {
+      "bytes": 7513,
+      "sha256": "446ec0ef3e8e226c6e142fe14e0331753cd04ef4da6f130db0bbf28ab47a8168"
+    },
+    "executed/executed-barrier-choice.py": {
+      "bytes": 3222,
+      "sha256": "ab4a2c4b271ede6790ddb72e72dcf853230c42cd1f227e40f3e04139a7df31b3"
+    },
+    "executed/panel-preparation.py": {
+      "bytes": 3680,
+      "sha256": "1417c3dbdb7952c07772532d39288b9fcae6fbe124f201b7a53b55d86557f86b"
+    },
+    "executed/win-control-preparation.py": {
+      "bytes": 1850,
+      "sha256": "c493c47519dbf9e8bd90409e39ffeedc0fe6778fbdfe5ddd04fd82317bf7c72a"
+    },
+    "executed/win-reference-initial.py": {
+      "bytes": 2450,
+      "sha256": "f7a53e4783897d0c5755b447b2ef19d72de1b709dcfedb9710dd0bd6a3b68a9a"
+    },
+    "executed/win-reference-resume.py": {
+      "bytes": 2917,
+      "sha256": "de67762d767afff4ddc4577205e5b3acb532a5aaff13fcf3d372abcd8ad22cf6"
+    }
+  },
+  "external_files": {
+    "odd-domain.json.gz": {
+      "bytes": 4270890,
+      "sha256": "fdd66e520af30850b431dd961f4d858486ce7c581d1edceff9bc102cb01b9e69"
+    },
+    "capped-history-tree.json.gz": {
+      "bytes": 1010338,
+      "sha256": "725aafed338669a2f220bb3e0566d2653353225627b2a04d75d0ffea68861d80"
+    },
+    "README.md": {
+      "bytes": 2305,
+      "sha256": "e515e2891ee1995d343ed2d7e9826e4bfdbddfde8878652fb0e53e974b8b9190"
+    },
+    "summary.json": {
+      "bytes": 6231,
+      "sha256": "6513686cc139faf98a5c9d0355385256c290e27da7163e902efae2b81def1029"
+    },
+    "accounting.json": {
+      "bytes": 4453,
+      "sha256": "4f9f2595b5db3696c0389060eb920111cce11264affb65f64969df2a6b25056b"
+    },
+    "reader-verification.json": {
+      "bytes": 1108,
+      "sha256": "0914aa82a4cafbd9155bca1991a6e3c3b00746a01324d164445ef3be22e0c157"
+    }
+  },
+  "producer_bindings": {
+    "cost/plan.json": "executed/executed-cost-driver.py",
+    "panel/plan.json": "executed/executed-panel-driver.py",
+    "win-control/plan.json": "executed/executed-panel-driver.py",
+    "odd/spec.json": "current/leaper_ab_odd_component.py"
+  },
+  "scope": "Technical experiment/proof data only, no raw account/mailbox wrappers. Source capsules never execute. The20k historytree is a capped UNKNOWN attempt, not the complete compact strategy proof. Exact prior complete graph/clock/source packets are hash dependencies."
+}

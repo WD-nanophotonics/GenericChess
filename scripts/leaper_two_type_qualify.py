@@ -18,7 +18,11 @@ def qualify_game(world,row,reg):
   else:assert d['result_ordinary_qdepth']==0
   pv=L.GameSession.replay(c,s.to_record())
   for raw in d['principal_variation']:pv.submit(L.match_action(pv,raw));counts['PV_plies']+=1
-  before=[(p.owner,p.current_type_id)for p in s.state.position.board if p is not None];s.submit(a);after=[(p.owner,p.current_type_id)for p in s.state.position.board if p is not None]
+  override=reg.get('first_action_override') if counts['Player_queries']==0 else None
+  expected=override if override is not None else q['action']
+  actual=q.get('executed_action',q['action']);assert actual==expected,'unregistered executed-action intervention'
+  executed=L.match_action(s,actual)
+  before=[(p.owner,p.current_type_id)for p in s.state.position.board if p is not None];s.submit(executed);after=[(p.owner,p.current_type_id)for p in s.state.position.board if p is not None]
   if len(after)<len(before):captures.append(dict(ply=s.state.ply_count,removed=list((Counter(before)-Counter(after)).elements())))
   counts['Player_queries']+=1
   for k in ('nodes','qnodes','native_legality_calls','native_legality_fallbacks','runtime_pushes','runtime_pops'):counts[k]+=d[k]
