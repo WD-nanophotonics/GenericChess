@@ -1,3 +1,9 @@
+> Historical contribution/evidence log, not operating instructions. Dated no-Dot,
+> read-only, cadence and research-order statements below may be superseded.
+> Resolve current authority from AGENTS.md, current selection from LOCAL_MAINLINE.md
+> and current Slack procedure from SLACK_WORKFLOW.md. The2026-10-24 user restored
+> direct Dot dialogue; autonomous ChatGPT review outranks Dot advice.
+
 ## Structural, horizon and quantity continuation —2026-10-23
 
 PRIMARY read the new ChatGPT10:22 and Claude11:50 roots and both complete empty-
@@ -7256,3 +7262,19 @@ does not start a new session, change schedules, contact AUX or send another
 message during the already-used probe. Existing Slack method question is now
 superseded as a next-task proposal by this direct correction; assess any later
 reply under the pure-Leaper scope. Next original substantive report explains it.
+
+## Direct Dot dialogue restored; source priority unified —2026-10-24
+
+The user explicitly lifted the Dot-contact pause. Updated current policy,
+manual, Slack workflow, research-plan communication pointer, private routing
+configuration and future-request template together. Direct user > autonomous
+ChatGPT Slack review > Dot solicited reply/message > local proposal. Origin is
+not authenticated by shared account or TYPE alone; unknown origin is not promoted.
+Ordinary outbound work now addresses Dot directly, with bounded realtime thread
+follow-up permitted and a concrete next-step question considered at actual Slack
+reads/sends. Removed old live no-Dot/asynchronous-only/single-message restrictions;
+kept raw originals, exact readback, immutable requests, uncertain-send guards,
+publication-before-send, scope/budget/role/stops. No invented mention ID or extra
+worker. Existing pending requests remain untouched. Historical entries above
+record prior rules only; current SLACK_WORKFLOW is authoritative. Bounded workflow
+repair adds0research time and does not alter the180minute recurrence or AUX.

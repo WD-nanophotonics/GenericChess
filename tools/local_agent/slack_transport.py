@@ -146,7 +146,10 @@ def consult(question_file, daily=False, code_files=()):
             if '```' in entry['text']:
                 raise LocalFlowError('code snapshot contains a Slack fence; use a reviewed attachment instead')
             message += f'\nLOCAL_CODE_SNAPSHOT={entry["path"]}\nSHA256={entry["sha256"]}\n```\n' + entry['text'] + ('' if entry['text'].endswith('\n') else '\n') + '```\n'
-        message += '\nFor asynchronous Chat/Claude review, reply in this thread with TYPE=CHAT_REPLY and this REQUEST_ID. State conclusion, sources, objections, uncertainty and independently checked evidence. No live wait, Dot mention or extra worker.'
+        if c.get('direct_dot_enabled'):
+            message += '\nReply in this thread with TYPE=DOT_REPLY and this REQUEST_ID. Direct Dot consultation is restored; bounded real-time follow-up is allowed. State evidence, objections, uncertainty and the next decision. Autonomous ChatGPT reviews outrank this solicited advice. No extra worker or approval gate.'
+        else:
+            message += '\nFor asynchronous Chat/Claude review, reply in this thread with TYPE=CHAT_REPLY and this REQUEST_ID. State conclusion, sources, objections, uncertainty and independently checked evidence. No extra worker or approval gate.'
         # One tool call / one root. Larger content must be prepared as a reviewed attachment.
         if len(message) > 4800:
             raise LocalFlowError('Slack message exceeds 4800 characters; use a bounded excerpt or reviewed attachment')

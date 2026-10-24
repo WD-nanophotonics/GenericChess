@@ -97,5 +97,10 @@ Chat1792815705/Oct16 compression/teacher/NNUE ideas remain conditional future
 ordering/resource allocation, not current training. Published AUX truth may be
 read at fixed SHA only; do not demand new labels, wake or control AUX.
 
+Communication follows SLACK_WORKFLOW: direct Dot dialogue restored by the user;
+autonomous ChatGPT reviews outrank Dot advice, direct user instructions outrank
+both. Assess next-step uncertainty with Dot during actual Slack interactions.
+This does not reopen mixed-rule tasks or make Dot a publication/approval gate.
+
 Both existing local recurrences were last directly set180minutes. No schedule
 change here; research60–90effective minutes remains separate from recurrence.

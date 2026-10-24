@@ -46,29 +46,29 @@ A one-time pause applies only to that inspection and never edits the
 recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
-At each 180-minute PRIMARY patrol, read incoming messages/comments in the existing
-GenericChess Chat and the relevant complete threads once. At every explicit
-manual work start/resume, check for new incoming messages/comments before Main
-unless this 180-minute patrol has already completed that read. The direct-user
-latest-message review exception above permits one fresh bounded manual capture;
-ordinary patrols do not reread. Preserve the exact project-related read in
-ignored `.local_agent` before evaluating it. Treat Chat comments as suggestions
-unless the user directly confirms a decision. Do not @Dot,
-contact Dot in real time, wait/poll for Dot, or use a Dot-specific control path.
-The2026-10-23 user direction restores asynchronous two-way Slack, superseding
-read-only coordination. At substantive segment end/critical milestone prepare at
-most one merged progress and genuine-question message per existing probe. Include
-new evidence/negative results/UNKNOWN/cost, judgment, next action and fixed source
-links plus FULL verified remote PRIMARY SHA. Evaluate whether an independent
-Chat/Claude answer can change methods, interpretation, budget, boundaries or next
-steps; state evidence, own view, options and exact decision. Do not fabricate a
-question. Next original probe follows up unanswered questions and new replies,
-recording adoption/defer/rejection and actual effects separately. Publish first.
-Use the existing mailbox; reconcile old uncertain sends without automatic retry,
-preserve original receipts and restore new legitimate exchanges rather than
-silently abandoning communication. No Dot, real-time waiting, chasing, self-reply,
-extra probe/worker or AUX reporting. >=120minute execution still waits for user
-necessity assessment/confirmation; continue independent short work otherwise.
+At each existing180minute patrol/manual work start, read newly available
+independently initiated ChatGPT review comments and complete relevant threads.
+The2026-10-24 direct user correction restores direct Dot consultation, including
+bounded real-time thread exchanges; it supersedes the old pause, asynchronous-
+only route and one-message-per-probe cap for that dialogue. At every actual Slack
+read/send, consider a concrete next-step question to Dot, especially uncertainty
+about correctness; do not invent a question or require a response to proceed.
+Use the existing project channel/mailbox and verified identities. No new worker,
+channel, scheduler, empty polling/chasing or self-reply loops. No compulsory
+comment-style report replaces direct Dot dialogue. Ordinary incoming reviews are
+still read once per patrol; relevant active Dot thread follow-ups are permitted.
+
+Authority: latest direct user instructions > autonomous ChatGPT Slack review
+comments > Dot's solicited replies/messages > local proposals. Account identity
+or TYPE marker alone cannot distinguish autonomous ChatGPT review from Dot when
+shared. Record source/context/thread and mark uncertainty without promotion.
+Record adopt/defer/reject with evidence; neither remote source expands authority.
+For every send review content, commit/push first and verify full remote SHA.
+Preserve exact raw reads/receipts before evaluation. Reconcile uncertain old sends
+without automatic retry; keep old PENDING requests and later reply association.
+>=120minute runs still require user necessity assessment/direct confirmation;
+Dot's opinion alone is not that confirmation. Continue independent short work
+without a reply. Details: SLACK_WORKFLOW.md.
 
 ## Start, recovery and memo
 
@@ -200,13 +200,11 @@ handling. Raw capture paths use the active session UUID plus a fresh read UUID;
 final opaque bytes MUST use slack_transport.save_plugin_original, which refuses
 a different existing original. Time-only names and direct replacing writes are
 not safe across days/resumes. Read new project Chat messages/comments and relevant complete threads
-once per 180-minute patrol; preserve the exact project-only output privately before
-reconcile or adoption. A suggestion does not override current user policy or
-become user authorization by itself. No @Dot, live exchange, response polling or
-routine acknowledgment. For a >=120-minute run, include a real necessity question
-only in the authorized single asynchronous progress message; execution still
-requires the user's incoming assessment/direct confirmation. Do not wait/poll or
-start before that confirmation; continue shorter independent work.
+at existing180minute patrol/manual starts; preserve exact raw output before
+assessment. For active direct Dot dialogue, bounded relevant thread follow-ups
+are allowed. Apply the hierarchy and sender/provenance checks in SLACK_WORKFLOW.
+The old no-Dot/no-live/single-comment rule is superseded. A >=120minute run still
+needs the user's necessity assessment/direct confirmation; Dot cannot grant it.
 
 Coordinate with the existing DEV_AUX only for concrete dependencies, blockers or
 useful findings. Do not edit its checkout/state or duplicate its solver/learning

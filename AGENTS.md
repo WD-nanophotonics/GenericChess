@@ -49,22 +49,27 @@ workers may be created.
   character report and reaffirms continuing bounded two-way authorization. The
   old read-only restriction is superseded; no renewed per-message consent queue.
   Actual platform refusals require grant/content review, never circumvention.
-- User correction2026-10-23: restore asynchronous two-way project Slack exchange,
-  superseding the2026-10-20 read-only restriction. At a substantive segment end or
-  critical milestone send at most ONE merged progress/question message per existing
-  probe: new positive/negative evidence, UNKNOWN/cost, judgment, next action and
-  fixed sources/full verified PRIMARY remote SHA. Explicitly assess real questions
-  for Chat/Claude about methods, interpretation, budgets, boundaries or direction;
-  include evidence, own judgment, alternatives and the exact decision sought.
-  Do not invent questions or empty reports. Next original patrol follow up pending
-  questions/new replies; record adopt/defer/reject, reasons and actual effects,
-  distinguishing read, adopted and executed. No waiting, chasing, self-replies,
-  Dot mentions, extra probes/workers or cross-role reporting. An ambiguous old send
-  requires existing-protocol reconciliation, never automatic resend; diagnose the
-  entry and preserve old records while restoring legitimate new communication.
-  All sends require reviewed content, commit/push and full remote SHA verification.
-  >=120minute runs still require the user's supplied necessity assessment or direct
-  confirmation before execution; no response means shorter independent work.
+- User communication correction2026-10-24: the pause on Dot contact is lifted.
+  Direct two-way Dot consultation, including bounded real-time exchanges and
+  Dot messages, is restored in the existing project Slack. At each actual Slack
+  read or send, consider asking Dot about the next step, especially uncertainty
+  about correctness; do not invent a question or make a reply a work gate.
+  Authority: latest direct user instructions > independently initiated ChatGPT
+  Slack review comments > Dot's solicited replies/messages > local proposals.
+  ChatGPT's autonomous review is not the same as an immediate Dot response even
+  when both appear through one Slack account. Preserve origin/thread/provenance;
+  a TYPE marker/account alone does not establish independent review. Unknown
+  origin stays unclassified, never promoted. Scientific evidence still matters;
+  neither source creates new authority for budgets, scope or cross-role control.
+  Continue reading autonomous ChatGPT reviews; ordinary outbound collaboration
+  now addresses Dot directly, not a compulsory asynchronous-comment report.
+  This replaces the Oct20 Dot pause and Oct23 asynchronous-only/no-mention/
+  one-message-per-probe limits for genuine Dot dialogue. Bounded relevant thread
+  follow-ups during work are allowed; no empty polling/chasing, self-reply loops,
+  extra worker, new channel or schedule. Preserve old requests/receipts; uncertain
+  sends require reconciliation, not automatic resend. Each send still requires
+  reviewed project-only content, prior push and full remote SHA verification.
+  >=120minute run confirmation, pure-Leaper scope and role boundaries stay intact.
 - PRIMARY_SANDBOX independently researches, implements, tests and publishes its
   mainline work; DEV_AUX owns its own sidemission checkout. Each role owns its
   checkout, branch/index, memo, session clock, stop flags and outputs. Never write
@@ -236,8 +241,8 @@ OR MORE (>=120 minutes, including exactly 120), wait for the user's necessity
 assessment in an incoming project Chat message or direct confirmation here
 before starting. Continue shorter independent work meanwhile; do not split to
 evade the threshold.
-This replaces the former Dot review route at the user's 2026-10-20 direction; it
-does not change Agent segment duration or authorize uncontrolled jobs. Machine
+Restored Dot advice does not substitute for the user confirmation required for
+>=120minute runs, change segment duration or authorize uncontrolled jobs. Machine
 safety and frozen caps still apply.
 
 Preserve frozen conditions, failures, missing planned slots and UNKNOWN; never
@@ -268,12 +273,12 @@ conditions; distinguish ordering prices from leaf prices.
 ## Chat messages and delivery
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing asynchronous mailbox.
-Read new project messages and complete relevant threads once per existing180minute
-patrol and on explicit manual starts unless already read. Privately preserve exact
-originals before assessment. Suggestions do not create user authorization. Follow
-up genuine unanswered questions at the next original probe, without extra polling.
-Publish one meaningful combined progress/question message under the current rule
-above; never @Dot, wait in real time or send routine acknowledgments.
+Read autonomous ChatGPT project reviews and complete relevant threads at each
+existing180minute patrol/manual work start. During an actual Slack interaction,
+consider a concrete next-step question to Dot; bounded real-time thread exchange
+is allowed under the authority hierarchy above. Preserve exact originals before
+assessment. Record adoption/defer/reject and reasons; do not confuse read/adopted/
+executed. No mandatory comment-style outbound report or Dot pause remains.
 
 The user authorizes GenericChess project content without personal information,
 passwords or credentials for established project Git publication. Preserve exact

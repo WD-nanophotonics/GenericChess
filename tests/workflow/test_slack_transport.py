@@ -585,3 +585,28 @@ def test_async_progress_does_not_skip_uncertain_or_unverified_send(env, known):
     env.write_text('New content cannot evade unresolved delivery')
     with pytest.raises(LocalFlowError, match='pending'):
         s.consult(env)
+
+
+def test_restored_direct_dot_route_keeps_identity_and_reply_binding(env):
+    c = s.config(); c['direct_dot_enabled'] = True; write_json(s.CONFIG, c)
+    r = sent(env)
+    assert 'Reply in this thread with TYPE=DOT_REPLY' in r['message']
+    assert 'bounded real-time follow-up is allowed' in r['message']
+    assert 'Autonomous ChatGPT reviews outrank' in r['message']
+    assert 'No live wait, Dot mention' not in r['message']
+    assert '<@' not in r['message']  # never invent an unverified mention target
+    assert s._payload_matches(r['message'], r['message'])
+    s.ingest(event(r))
+    assert s.reconcile(r['request_id'])['state'] == 'COMPLETED'
+    assert s.begin_send(r['request_id'])['automatic_retry_available'] is False
+
+
+def test_switch_to_dot_preserves_prepared_payload_and_uncertain_send_guard(env):
+    r = s.consult(env)
+    c = s.config(); c['direct_dot_enabled'] = True; write_json(s.CONFIG, c)
+    assert s.consult(env)['message'] == r['message']
+    s.begin_send(r['request_id'])
+    env.write_text('A different real question after restoring Dot')
+    with pytest.raises(LocalFlowError, match='pending'):
+        s.consult(env)
+    assert s.status(r['request_id'])['message'] == r['message']
