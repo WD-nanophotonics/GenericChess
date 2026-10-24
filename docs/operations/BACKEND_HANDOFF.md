@@ -769,3 +769,16 @@ Semantic unused-type normalization sensitivity remains; arbitrary type effects
 still retain all declarations. The private scoped closure probe is research
 only. Do not promote it into a default or reuse a legacy table as though it were
 an unchanged semantic baseline. No new diagnostics API or consumer migration.
+
+
+## Optional pure-Leaper hard-clock ceiling —2026-10-25
+
+Backend callers may explicitly construct AlphaBetaPlayer with
+cap_pure_leaper_rule_clock=True. Defaultfalse; no UI activation. Conservative
+admission limits requested main depth to remaining authoritative rules clock;
+PENDING/extra policies, incompatible movement/state metadata retain the original
+request. SearchLimits node/time/q/cancel and full history/TT remain intact.
+last_rule_clock_cap is the effective requested ceiling, not proof of completion.
+See LEAPER_CLOCK_HORIZON_AND_EXACT_CAP_20261025 for8DRAW/2limited real cases and
+scoped costs. It does not fix the p53 selective-search error; q-frontier completion
+prototypes were rejected. No AUX branch/state or automatic merge is involved.

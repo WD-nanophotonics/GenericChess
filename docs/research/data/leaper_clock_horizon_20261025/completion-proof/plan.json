@@ -1,0 +1,31 @@
+{
+  "batch_seconds": 540,
+  "changed_premise": "Exact fullremaining4 endpoint result0 differs from static-1106. Last-ply1 activated10720times/148743children yet p53 D7 still wrong and slower. Need test the entire demonstrated4ply frontier, not another ordering or static weight.",
+  "cost": "2serial arms<=240s each/1Mmain+q, whole pair<10min; current separate experiments still<120min. Candidate first declared before outcomes, bothcoldTT/sameprocess source caches; no new graph/solver or old failedtrace refill.",
+  "decision": "Retain feasibility or record negative/lower-bound UNKNOWN; compare actual cost, first known-correct completed iteration and reported win-source separately. NOT default45s match or strength/class-wide success.",
+  "fairness": "Both arms stop_after_root_win=True, fresh Player/TT, default evaluator/Q4/hard8, diskfalse; only candidate completes alllegal terminal clock subtree when qdepth+remaining<=hard8 and no neutral outer declaration. Every underlying Core rule/history preserved, incomplete-terminal guard aborts.",
+  "inputs": ".local_agent\\leaper-default-panel-20261025\\inputs.json",
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "limits": {
+    "max_depth": 64,
+    "max_nodes": 1000000,
+    "max_time_seconds": 240.0
+  },
+  "original_q_sha256": "16bcb5dbd5f047d8373db0c57d30b373bc1d20092a2ac09279d499f242d37c5d",
+  "policy_sha256": "0b023ddf38e745cdc7084e6ce82396a63fb0fa7952a691aaf5947d81868fcf5f",
+  "prepared_at": "2026-10-24T22:11:36.600464+00:00",
+  "question": "Can terminal-only completion of eligible<=4 clock frontiers obtain a search-reported mate-band winning return cheaper than existing search under the SAME any-win objective and1Mwork/240s caps?",
+  "selection": "One exposed root p53; threshold4 comes from actual prior PV endpoint, not a parameter grid. No automatic threshold enlargement or cap refill after this pair.",
+  "slots": [
+    {
+      "completion": true,
+      "key": "next-role-p53"
+    },
+    {
+      "completion": false,
+      "key": "next-role-p53"
+    }
+  ],
+  "source_sha256": "2cfe2bda93050ec7523322204bf8758ae650444f4c2e4709375e19d0a142b88b",
+  "unknown": "No root reported positive mate band within cap => that goal UNKNOWN, even if a correct static action was earlier selected. Literal main PV can omit q suffix; fixed published action labels are separate verification."
+}

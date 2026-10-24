@@ -1,69 +1,70 @@
 # Current GenericChess mainline
 
-AGENTS.md owns authority/boundaries; LOCAL_AGENT.md operations. PRIMARY alone
-writes sandbox. PURE LEAPER first; other classes/NNUE deferred. No AUX control,
-new worker/default/schedule or weakened full-history/TT guard.
+AGENTS.md owns authority and role boundaries; LOCAL_AGENT.md operations. PRIMARY
+alone writes sandbox. PURE LEAPER first; other classes/NNUE remain deferred.
+No AUX control/new worker/default activation or weakened history/TT/clock guard.
 
 ## Current decision and reason —2026-10-25
 
-Optimize correct/useful decisions per total cost, not NPS/depth alone. Read new
-autonomous ChatGPT comments and relevant Dot thread under SLACK_WORKFLOW. Latest
-user > autonomous ChatGPT review > solicited Dot advice; no reply gates work.
+Optimize correct/useful decisions per actual total cost. Read autonomous ChatGPT
+reviews and relevant Dot dialogue under the restored SLACK_WORKFLOW. Latest
+user > autonomous review > solicited Dot advice; a reply is never a work gate.
 
-[Default quality and q ordering](LEAPER_DEFAULT_QUALITY_AND_QORDER_20261025.md)
-finds a real actual-default clock error:64finals63correct,29/30choice-sensitive;
-p53D6WIN regressesD7DRAW and remainsDRAW at45s. This is a different history from
-the earlier Unit counterexample where the default was correct. Do not generalize
-that earlier single-case absence into default correctness on the whole panel.
+[Clock horizon and exact cap](LEAPER_CLOCK_HORIZON_AND_EXACT_CAP_20261025.md)
+retains the actual p53 default mistake and adds a bounded backend latency option.
+Only the pure-Leaper hard-clock depth ceiling is implemented as an opt-in backend
+constructor flag, defaultfalse. Eight short-clock DRAW roots retain exact common
+search prefixes/value with87.906s→13.353s and307059→85520events;2larger controls
+stay limited. This is not class-wide success or a p53 repair. Do not activate UI
+or defaults, extend to mixed/legacy/promotion/drop, or choose oldD6 by its label.
 
-Existing q ordering preserves all common completed values and reduces work by
-4.3/44.6percent at two metadata roots and30.0percent at the actual failure, yet
-fails to repair that45s decision. It remains an opt-in candidate, not a default
-activation or rule-class/strength success. Faster search can reach a poorer
-iteration sooner. No retrospective depth6 stopping or exposed-label price fit.
+Last-ply q completion activated10720times/148743children but left p53D7 wrong
+and slower. Full<=4 q completion spent1Mwork without a reported win and regressed
+an equal20s/250k panel from16/16 to15/16, with no repairs. Both q prototypes are
+REJECTED for activation, not pending tuning sweeps. No larger threshold/budget
+refill. Their local terminal correctness does not guarantee useful root decisions.
 
-Same-D1 ordinaryQ4 corrects p7's initial reserve LOSS toDRAW with exact original
-control prefix; global latency safety is untested. Initial q reserve protection
-cannot simply be removed. TT hits in the measured pairs are all shallow;
-zero cutoff counter alone is insufficient because EXACT returns are separate.
-Profiler q215.219/240s and runtimepush178.513s overlap; evaluation13.468s is not
-an NNUE bottleneck demonstration. Preserve safety polls and complete semantics.
+Existing q ordering preserves all common completed scores across11nontrivial
+prospective pairs; median work/time ratios0.8348/0.8535.5one-ply wins have no deep
+comparison; nontrivial WDL quality staysUNKNOWN. Keep it opt-in, not a default or
+an invitation to keep changing masks/seeds/timeouts. All registered runs CLOSED.
 
-## Execute next: diagnose the actual finite-clock failure
+## Main: recover useful quiet-branch decisions at bounded total cost
 
-Main: Why does p53's correctD6 become wrongD7 under clock11?
-| Use the already prepared two full child histories/frontiers; freeze ONE45s
-readonly root-child score-window and leaf remaining-clock/qcutoff tracer before
-new queries. Verify actual source and runtime identities; label only after query
-| Work/score-bound/leaf-clock evidence separating heuristic horizon from contract
-fault on the winning K branch and wrong B branch
-| No Oracle-injected order, new solver, static-price patch, chosenD6 stop, bigger
-budget refill or blind feature matrix. This exposed RuleSet is not holdout.
+Question: What cheap policy-independent observation can distinguish missing
+quiet-threat support from bad root allocation at the actual p53 full-history root?
+| Use the already-started offline score-alias witness and existing three policy
+trajectories; compare exact actions/WDL/work/goal rather than scalar score. Ask
+Dot for ONE discriminating observation/hypothesis before another tree change;
+prepare its admission/stop evidence without waiting for an answer
+| New witness: SAME root score1103 meansWIN atD6 butDRAW atD8. Actual endclock4
+endpoint is0 vs static−1106; originalD7 root-child window/qreturn trace isUNKNOWN
+| No Oracle-order injection, fitted score/price threshold, retrospectiveD6 stop,
+new solver/graph, repeated old caps or globalq extension. A new proposal must
+explain changed premise, utility and total cost; other rules remain deferred.
 
-Backup1: Can initial q quality improve while preserving prompt first return?
-| Design a bounded same-D1 reserve/latency test with fallback and actual q-policy
-TT scope retained; use p7 only as exposed falsification, not global validation
-| Correct-action/cost curves and failed first-return cases
-| No production switch or assumption that fullQ4 is safe everywhere.
+Backup1: Does the conservative clock ceiling preserve useful exact termination
+across further predeclared PURE_LEAPER histories/policies?
+| First inventory actual hard-clock admission and already-published suitable
+references, without querying/rebuilding AUX or calling a requested cap a proof
+| Full history/scope, complete-clock evidence and actual caller cost
+| No new class/default expansion or claims from8DRAW examples; reject PENDING.
 
-Backup2: Does the q-order candidate generalize inside PURE LEAPER?
-| Select prospective rule/history strata and frozen quality/cost/UNKNOWN protocol
-before candidate outcomes, using published truth when available
-| Independent scope/exposure and actual policy behavior, not depth/NPS alone
-| No AUX duplication/graph rebuild; mixed/legacy/promo/drop and NNUE stay deferred.
+Backup2: Can first-return q reserve improve initial quality without losing prompt
+fallback/TT policy correctness?
+| Reuse p7's exposed same-D1 Q4 causal witness to design a bounded latency/stop
+falsifier; first establish a current caller rather than replaying that closed pair
+| First legal/first complete/first correct and final decision are distinct
+| No blind reserve removal or claim that fullQ4 is universally safe.
 
-## Evidence and closure
+## Evidence and handoff
 
-73successful calls/525legal exported PVsteps, not525complete proofs. One exact
-exposed RuleSet/two TRAIN trajectories/64histories/44physical positions;30roots
-allow WDL mistakes,34all actions share value. Fixed published AUX26d414c labels
-and shared Core replay, not a new independent solve. All four scientific phases
-plus targeted follow-up CLOSED; missing requested depths remainUNKNOWN.
-Two critical child records/frontiers prepared only,0new Player/solver queries.
-26tests pass. Effective3690.666205s/13intervals, quality/finish/final-checkPASS;
-admin/transport0credit.180minute recurrence unchanged.
-
-Earlier ordering/anywin, pure-Leaper availability and PVS reports remain scoped
-history. They do not override this new actual-default counterexample or silently
-activate flags. Continue truthful negative/UNKNOWN recording and fixed public
-source delivery; do not revive the retired Slack halt or legacy experiment queue.
+This segment:83successful Player returns,1failed observer attempt,551legal
+exported PVsteps; not551complete proofs. Fixed AUX26d414c labels/shared Core,
+no independent solving. New8rule cost strata are not WDLholdout;16late-history
+quality cases are post-pilot exposed. Default current p53 still incorrect at45s.
+The observer failed afterD5 due runtime-view serialization; repaired code has
+zero-query tests only. Do not refill it or silently restore lostD6/7 evidence.
+51unique relevant tests pass. Exact session acceptance/time ledger is in packet
+session-accounting; administrative/transport/idle time is excluded.180minute
+recurrence is unchanged. Dot actual delivery/source appears in COLLABORATION_LOG.

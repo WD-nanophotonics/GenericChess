@@ -1,0 +1,582 @@
+{
+  "pairs": [
+    {
+      "baseline": {
+        "chosen_global_WDL": 0,
+        "iteration_values": [
+          {
+            "chosen_global_WDL": 1,
+            "correct": false,
+            "depth": 1
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 2
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 3
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 4
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 5
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 6
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 7
+          }
+        ],
+        "preserves_root_value": true,
+        "root_global_WDL": 0
+      },
+      "common": [
+        {
+          "actions_equal": true,
+          "depth": 1,
+          "scores": [
+            124,
+            124
+          ],
+          "work": [
+            20,
+            20
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 2,
+          "scores": [
+            116,
+            116
+          ],
+          "work": [
+            428,
+            428
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 3,
+          "scores": [
+            132,
+            132
+          ],
+          "work": [
+            924,
+            924
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 4,
+          "scores": [
+            116,
+            116
+          ],
+          "work": [
+            3172,
+            3172
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 5,
+          "scores": [
+            132,
+            132
+          ],
+          "work": [
+            6685,
+            6685
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 6,
+          "scores": [
+            116,
+            116
+          ],
+          "work": [
+            20217,
+            20217
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 7,
+          "scores": [
+            130,
+            130
+          ],
+          "work": [
+            53010,
+            53010
+          ]
+        }
+      ],
+      "final_depth": [
+        7,
+        7
+      ],
+      "final_score": [
+        130,
+        130
+      ],
+      "key": "next-role-p7",
+      "policy_counts": {},
+      "seconds": [
+        12.67603530001361,
+        12.67081539996434
+      ],
+      "shield": {
+        "chosen_global_WDL": 0,
+        "iteration_values": [
+          {
+            "chosen_global_WDL": 1,
+            "correct": false,
+            "depth": 1
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 2
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 3
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 4
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 5
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 6
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": true,
+            "depth": 7
+          }
+        ],
+        "preserves_root_value": true,
+        "root_global_WDL": 0
+      },
+      "termination": [
+        "completed_depth",
+        "completed_depth"
+      ]
+    },
+    {
+      "baseline": {
+        "chosen_global_WDL": -1,
+        "iteration_values": [
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 1
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 2
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 3
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 4
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 5
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 6
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 7
+          }
+        ],
+        "preserves_root_value": true,
+        "root_global_WDL": -1
+      },
+      "common": [
+        {
+          "actions_equal": true,
+          "depth": 1,
+          "scores": [
+            1107,
+            1107
+          ],
+          "work": [
+            41,
+            41
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 2,
+          "scores": [
+            1091,
+            1091
+          ],
+          "work": [
+            451,
+            451
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 3,
+          "scores": [
+            1094,
+            1094
+          ],
+          "work": [
+            2248,
+            2248
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 4,
+          "scores": [
+            1103,
+            1103
+          ],
+          "work": [
+            4240,
+            4240
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 5,
+          "scores": [
+            1107,
+            1107
+          ],
+          "work": [
+            9487,
+            9487
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 6,
+          "scores": [
+            1098,
+            1098
+          ],
+          "work": [
+            48692,
+            48692
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 7,
+          "scores": [
+            1098,
+            1098
+          ],
+          "work": [
+            147545,
+            147545
+          ]
+        }
+      ],
+      "final_depth": [
+        7,
+        7
+      ],
+      "final_score": [
+        1098,
+        1098
+      ],
+      "key": "next-role-p49",
+      "policy_counts": {},
+      "seconds": [
+        41.7791000000434,
+        42.41017599997576
+      ],
+      "shield": {
+        "chosen_global_WDL": -1,
+        "iteration_values": [
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 1
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 2
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 3
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 4
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 5
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 6
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 7
+          }
+        ],
+        "preserves_root_value": true,
+        "root_global_WDL": -1
+      },
+      "termination": [
+        "completed_depth",
+        "completed_depth"
+      ]
+    },
+    {
+      "baseline": {
+        "chosen_global_WDL": 0,
+        "iteration_values": [
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 1
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 2
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 3
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 4
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 5
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 6
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 7
+          }
+        ],
+        "preserves_root_value": false,
+        "root_global_WDL": -1
+      },
+      "common": [
+        {
+          "actions_equal": true,
+          "depth": 1,
+          "scores": [
+            1094,
+            1094
+          ],
+          "work": [
+            28,
+            28
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 2,
+          "scores": [
+            1097,
+            1097
+          ],
+          "work": [
+            243,
+            243
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 3,
+          "scores": [
+            1106,
+            1106
+          ],
+          "work": [
+            770,
+            770
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 4,
+          "scores": [
+            1097,
+            1097
+          ],
+          "work": [
+            2111,
+            2111
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 5,
+          "scores": [
+            1106,
+            1106
+          ],
+          "work": [
+            7008,
+            14645
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 6,
+          "scores": [
+            1103,
+            1103
+          ],
+          "work": [
+            34050,
+            118991
+          ]
+        },
+        {
+          "actions_equal": true,
+          "depth": 7,
+          "scores": [
+            1106,
+            1106
+          ],
+          "work": [
+            150072,
+            228483
+          ]
+        }
+      ],
+      "final_depth": [
+        7,
+        7
+      ],
+      "final_score": [
+        1106,
+        1106
+      ],
+      "key": "next-role-p53",
+      "policy_counts": {
+        "beta_cutoffs": 4,
+        "children": 148743,
+        "entered": 10720
+      },
+      "seconds": [
+        29.414420799934305,
+        39.11142319999635
+      ],
+      "shield": {
+        "chosen_global_WDL": 0,
+        "iteration_values": [
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 1
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 2
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 3
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 4
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 5
+          },
+          {
+            "chosen_global_WDL": -1,
+            "correct": true,
+            "depth": 6
+          },
+          {
+            "chosen_global_WDL": 0,
+            "correct": false,
+            "depth": 7
+          }
+        ],
+        "preserves_root_value": false,
+        "root_global_WDL": -1
+      },
+      "termination": [
+        "completed_depth",
+        "completed_depth"
+      ]
+    }
+  ],
+  "pv_legal_steps": 42,
+  "queries": 6,
+  "scope": "3 exposed full histories,1rule. Fixed published AUX labels and shared Core, not an independent solve/holdout. New policy can change finite-depth values and abort; these are results, not qualification failures. Query budgets unchanged.",
+  "status": "DATA_QUALIFIED_NOT_DEFAULT_ACTIVATED"
+}

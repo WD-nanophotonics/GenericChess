@@ -1,0 +1,16 @@
+{
+  "concurrency": "Prepare during prospective qorder; execute only after its32slots close to avoid self-induced load.",
+  "cost": "One new endpoint10s max; no graph/solver, no artificial ply change, no new default.",
+  "decision": "If fullD4 completes with0new leaf evaluations, score is terminal-only endpoint evidence. Otherwise UNKNOWN. This can falsify static value as endpoint clock utility without redefining prices.",
+  "input_sha256": "f333fb053f2e0c1518dd2767433ce201d3e24bf1fdf9d551b783d05509db3c77",
+  "limits": {
+    "max_depth": 4,
+    "max_nodes": 1000000,
+    "max_time_seconds": 10,
+    "quiescence_max_depth": 0
+  },
+  "premise": "This is the actual exported PV endpoint, not the lost q-return state. The failed45s trace is not refilled; no root strength/causality claim follows.",
+  "prepared_at": "2026-10-24T21:33:37.612421+00:00",
+  "question": "Does the previously paid D7 main-PV endpoint static-1106 survive full remaining4 clock minimax using existing AlphaBeta?",
+  "source_sha256": "0aedbb7c40b314ab16678179c00e1a2f808f0f10518e059b7075c81657c21fea"
+}

@@ -1,0 +1,37 @@
+{
+  "action": "Do not synthesize timestamps or credit these intervals. Retain actual perf_counter time in scientific results. Earlier successfully recorded slow intervals remain authoritative.",
+  "calls": [
+    {
+      "ended_at": "2026-10-24T21:58:22.541936+00:00",
+      "index": 19,
+      "perf_seconds": 0.003895699977874756,
+      "started_at": "2026-10-24T21:58:22.541936+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T21:58:22.557869+00:00",
+      "index": 20,
+      "perf_seconds": 0.0019938000477850437,
+      "started_at": "2026-10-24T21:58:22.557869+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T21:58:22.557869+00:00",
+      "index": 21,
+      "perf_seconds": 0.002181599964387715,
+      "started_at": "2026-10-24T21:58:22.557869+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T21:58:22.580811+00:00",
+      "index": 22,
+      "perf_seconds": 0.00211709993891418,
+      "started_at": "2026-10-24T21:58:22.580811+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T21:58:22.604859+00:00",
+      "index": 23,
+      "perf_seconds": 0.0021503999596461654,
+      "started_at": "2026-10-24T21:58:22.604859+00:00"
+    }
+  ],
+  "error": "session.record_work rejects equal observed UTC timestamps. Fast actual calls have nonzero perf_counter time but identical UTC due clock resolution.",
+  "status": "UTC_ZERO_SPANS_UNCREDITED"
+}

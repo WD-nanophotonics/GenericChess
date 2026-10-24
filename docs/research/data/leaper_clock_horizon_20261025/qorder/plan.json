@@ -1,0 +1,148 @@
+{
+  "batch_seconds": 5100.0,
+  "decision": "Retain/reject current q-order cost rationale across these rules; do not activate default or infer strength from parity/depth.",
+  "estimate": "32 serial calls at120s, <=64min query cap plus replay/records <10min. Entire expected run <120min. No source query refills.",
+  "fairness": "Fresh Player/TT, diskfalse, default dynamic evaluator,Q4/hard8; sole difference existing use_ordered_qsearch. Root observer common both. Alternate arm order percase. Full history/maxply64/repetition4 retained.",
+  "hypothesis": "Does existing q-order reduce work/time across prospectively fixed pureLeaper rules while preserving common completed-depth root scores?",
+  "inputs_sha256": "af060b8f2fce5e38426237706ea64becdee6690f8d9a8a8a61813357402d28aa",
+  "limits": {
+    "max_depth": 64,
+    "max_nodes": 10000000,
+    "max_time_seconds": 120.0
+  },
+  "missing": "Incomplete depth UNKNOWN; no parity when no common completed depth. Actual final action/terminal source differs from value parity; no WDL truth labels.",
+  "prepared_at": "2026-10-24T21:22:07.841654+00:00",
+  "slots": [
+    {
+      "key": "r0-p0",
+      "ordered": false
+    },
+    {
+      "key": "r0-p0",
+      "ordered": true
+    },
+    {
+      "key": "r0-p5",
+      "ordered": true
+    },
+    {
+      "key": "r0-p5",
+      "ordered": false
+    },
+    {
+      "key": "r1-p0",
+      "ordered": false
+    },
+    {
+      "key": "r1-p0",
+      "ordered": true
+    },
+    {
+      "key": "r1-p5",
+      "ordered": true
+    },
+    {
+      "key": "r1-p5",
+      "ordered": false
+    },
+    {
+      "key": "r2-p0",
+      "ordered": false
+    },
+    {
+      "key": "r2-p0",
+      "ordered": true
+    },
+    {
+      "key": "r2-p5",
+      "ordered": true
+    },
+    {
+      "key": "r2-p5",
+      "ordered": false
+    },
+    {
+      "key": "r3-p0",
+      "ordered": false
+    },
+    {
+      "key": "r3-p0",
+      "ordered": true
+    },
+    {
+      "key": "r3-p5",
+      "ordered": true
+    },
+    {
+      "key": "r3-p5",
+      "ordered": false
+    },
+    {
+      "key": "r4-p0",
+      "ordered": false
+    },
+    {
+      "key": "r4-p0",
+      "ordered": true
+    },
+    {
+      "key": "r4-p5",
+      "ordered": true
+    },
+    {
+      "key": "r4-p5",
+      "ordered": false
+    },
+    {
+      "key": "r5-p0",
+      "ordered": false
+    },
+    {
+      "key": "r5-p0",
+      "ordered": true
+    },
+    {
+      "key": "r5-p5",
+      "ordered": true
+    },
+    {
+      "key": "r5-p5",
+      "ordered": false
+    },
+    {
+      "key": "r6-p0",
+      "ordered": false
+    },
+    {
+      "key": "r6-p0",
+      "ordered": true
+    },
+    {
+      "key": "r6-p5",
+      "ordered": true
+    },
+    {
+      "key": "r6-p5",
+      "ordered": false
+    },
+    {
+      "key": "r7-p0",
+      "ordered": false
+    },
+    {
+      "key": "r7-p0",
+      "ordered": true
+    },
+    {
+      "key": "r7-p5",
+      "ordered": true
+    },
+    {
+      "key": "r7-p5",
+      "ordered": false
+    }
+  ],
+  "source_scope": "8 prospective exact rules/16 histories/two actor seats; sampled costs, not rule-class-wide success.",
+  "source_sha256": "9ae4d5ddd19d3e09c5cea39be39b006aaf38866707a840c44a147e55dea3f081",
+  "stops": "Cooperative own stop cached250ms; batch5100s; no retry/refill/worker."
+}

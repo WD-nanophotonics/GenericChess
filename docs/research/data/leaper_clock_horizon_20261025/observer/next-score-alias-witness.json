@@ -1,0 +1,32 @@
+{
+  "interpretation": "The same root score1103 accompanies a known WIN action atD6 and DRAW action atD8. Scalar score/odd-even depth cannot select an earlier action safely. Do not use this exposure for fitted score thresholds or retrospective D6 stopping.",
+  "next_question": "Which policy-independent quiet-threat or per-branch allocation observation can reject a mechanism before another expensive root search? Missing originalD7 child bounds remain UNKNOWN.",
+  "root": "next-role-p53",
+  "source": "clock-completion any-win default control, complete RuleSet/history fixed",
+  "status": "OFFLINE_ANALYSIS_STARTED_0NEWQUERIES",
+  "witnesses": [
+    {
+      "iterations": [
+        {
+          "chosen_global_WDL": -1,
+          "correct": true,
+          "depth": 6,
+          "elapsed": 11.703860600013286,
+          "nodes": 6296,
+          "qnodes": 27754,
+          "score": 1103
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 8,
+          "elapsed": 82.19218559993897,
+          "nodes": 52589,
+          "qnodes": 393583,
+          "score": 1103
+        }
+      ],
+      "score": 1103
+    }
+  ]
+}

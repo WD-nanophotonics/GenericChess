@@ -1,0 +1,11 @@
+{
+  "changed": "Explicit runtime position/ply/result/full runtime history projection, not GameState serialization; save partial counters on future errors; attempted counts distinct from returns. Attempted count increments immediately before actual choose_action, not setup.",
+  "current_maintained_source_sha256": "a0473e8cd04007a6ad922edbf9ec0fe5bf4f0c9c72a5ae87b7bce36a797be553",
+  "executed_after_repair": false,
+  "failed_slot_refilled": false,
+  "original_executed_source_sha256": "416341c52ce25602d9f1c2f7aac624b43cfdfb2bb6e7d66645745834c02482b3",
+  "production_search_source_matches_plan": true,
+  "status": "ZERO_QUERY_TESTS_PASS",
+  "tests": 3,
+  "uncertainty": "Original failed query lost unpersisted child/return aggregates; D6,D7 clock causality remains UNKNOWN."
+}

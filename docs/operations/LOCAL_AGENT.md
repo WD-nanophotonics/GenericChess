@@ -19,7 +19,7 @@ search-first scope is superseded by the direct2026-10-24 user correction;
 older structural counterfactuals and learning proposals are conditional reserves. Do not infer a next experiment from an
 available script, prepared input, an unfinished old report or a Backup entry.
 A closed experiment is evidence, not a compulsory next-stage training/inverse job.
-Use LOCAL_MAINLINE.md's Preserved reserves section for conditional compression/
+Use LOCAL_MAINLINE.md's current Main/Backup entries for conditional compression/
 ordering/teacher proposals; do not create a second live plan or activate training
 from a remote suggestion. A TT key change needs correctness review separately
 from an ordering-only comparison.
@@ -728,3 +728,25 @@ final reader also counts fresh-Player PVS totals and per-turn game deltas. Keep
 intermediate files/original returns and state the corrected scope; no new query
 or changed experimental outcome is created by accounting. Source/JSONL gzip
 archives are lossless; LF display JSON has distinct publication/original hashes.
+
+
+## Observed clock research/recording boundaries —2026-10-25
+
+RuntimeSearchState is a view whose dataclass owner is SearchPathRuntime, not a
+portable GameState. Project runtime position/ply/result/history explicitly;
+keep full original root records and do not call that projection a portable state
+hash. Save partial observer returns/counters on exceptions; distinguish actual
+Player attempts from completed saved returns. A repaired recorder never refills
+a frozen failed query. The original p53D6/7 trace remainsUNKNOWN.
+
+For millisecond calls UTC can have identical start/end while perf_counter is
+nonzero. Retain cost but leave such work intervals uncredited; do not synthesize
+UTC endpoints. On an overlap refusal inspect authoritative intervals before
+retrying: successfully recorded prior entries are not rolled back or duplicated.
+
+The new backend cap_pure_leaper_rule_clock flag defaultsfalse. It only requests
+a smaller main-depth ceiling in its conservative hard-clock scope; last_rule_clock_cap
+is not an achieved depth or certificate. Preserve caller node/time/q/cancellation
+and TT contracts. Complete game-clock stopping is different from selecting an
+old depth with a favorable label. Current scientific selection/negative policies
+and exact source/version provenance remain in LOCAL_MAINLINE/report, not here.

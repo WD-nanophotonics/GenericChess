@@ -1,0 +1,15 @@
+{
+  "publication_gate": "Required same relevant targets run again during publish; repetition does not add unique tests.",
+  "record": "47related tests PASS;4public packet tests PASS after default Temp setup failure resolved via supported fresh project basetemp. No old static expectations changed.",
+  "targets": [
+    "tests/product/test_rule_clock_cap.py",
+    "tests/product/test_qsearch_correctness.py",
+    "tests/product/test_generic_ply_adjudication.py",
+    "tests/development/test_leaper_clock_observer.py",
+    "tests/development/test_leaper_qorder_prospective.py",
+    "tests/development/test_leaper_last_clock_shield.py",
+    "tests/development/test_leaper_clock_completion.py",
+    "tests/development/test_leaper_clock_packets.py"
+  ],
+  "unique_tests_passed": 51
+}

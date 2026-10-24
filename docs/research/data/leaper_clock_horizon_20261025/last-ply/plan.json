@@ -1,0 +1,45 @@
+{
+  "batch_seconds": 360,
+  "cost": "6calls at45s max plus small replay/tests <6min. One new policy question; execute serial after already registered32-slot cost study, whole current experiments <120min.",
+  "decision": "One falsifiable minimal tree change, not static-price fit. Preserve every negative result, lack of activation, budget abort and missingD7. No qhard/qnode/cancel weakening, no production switch.",
+  "inputs": ".local_agent\\leaper-default-panel-20261025\\inputs.json",
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "limits": {
+    "max_depth": 7,
+    "max_nodes": 1000000,
+    "max_time_seconds": 45.0
+  },
+  "original_q_sha256": "16bcb5dbd5f047d8373db0c57d30b373bc1d20092a2ac09279d499f242d37c5d",
+  "policy_sha256": "e3f5c9a549d3111bfc05b7d1c199fc43b40311539ada948ee01234f6cbd4e885",
+  "prediction": "p7 remaining57 cannot activate within D7/qhard8: exact common-depth action/score/work prefix must match. p49 early D<=5 cannot activate. p53 may activate late q; outcome/cost/possible hard abort unknown.",
+  "prepared_at": "2026-10-24T21:53:26.585049+00:00",
+  "question": "Can exact all-legal terminal evaluation ONLY at the last noncheck/no-neutral clock ply alter the actual exposed q/clock errors at identical D<=7 and wall caps?",
+  "scope": "3 intentionally exposed histories of one exact pureLeaper rule; fixed published labels after-query only; NOT holdout/classwide success. Fresh Player/TT per arm prevents mixed q-policy reuse. No graph/solver, Oracle injected order, old tracer refill or repeated seed selection.",
+  "slots": [
+    {
+      "key": "next-role-p7",
+      "shield": false
+    },
+    {
+      "key": "next-role-p7",
+      "shield": true
+    },
+    {
+      "key": "next-role-p49",
+      "shield": true
+    },
+    {
+      "key": "next-role-p49",
+      "shield": false
+    },
+    {
+      "key": "next-role-p53",
+      "shield": false
+    },
+    {
+      "key": "next-role-p53",
+      "shield": true
+    }
+  ],
+  "source_sha256": "5adffaab6c15c2c862e9b812ce870226cf9f46087dc948ce631aac7a16664fab"
+}

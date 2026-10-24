@@ -1,0 +1,640 @@
+{
+  "effective_minutes": 69.928,
+  "effective_seconds": 4195.6984059999995,
+  "ended_at": "2026-10-24T22:49:01.985689+00:00",
+  "final_check": {
+    "effective_minutes": 69.928,
+    "effective_seconds": 4195.6984059999995,
+    "mode": "research",
+    "recorded_work_intervals": 77,
+    "research_completed": true,
+    "session_id": "21399c2a-600c-46b3-9c1a-8bd936b434b3",
+    "state": "ended",
+    "wall_minutes": 94.908
+  },
+  "notes": "No old/offline/admin time. UTC-zero calls uncredited.42.824ms rejected overlap corrected conservatively, no prior intervals repeated. Publication/Slack after finish are administrative and add no research time.",
+  "quality_review_passed": true,
+  "reason": "safe_checkpoint",
+  "session_id": "21399c2a-600c-46b3-9c1a-8bd936b434b3",
+  "started_at": "2026-10-24T21:14:07.514031+00:00",
+  "state": "ended",
+  "work_interval_count": 77,
+  "work_intervals": [
+    {
+      "activity": "analysis",
+      "ended_at": "2026-10-24T21:20:14.527410+00:00",
+      "evidence": "Read search/q/clock contracts; implemented AST-return observer with reversible AST, froze and attempted one query, diagnosed RuntimeSearchState serializer failure, replayed existing p53 D7 PV: remaining4 ongoing/static-1106, no new query.",
+      "recorded_at": "2026-10-24T21:20:47.561513+00:00",
+      "seconds": 284.52741,
+      "started_at": "2026-10-24T21:15:30+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:24:21.514093+00:00",
+      "evidence": "prospective:0:r0-p0:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.796875; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:30:27.502746+00:00",
+      "seconds": 119.996955,
+      "started_at": "2026-10-24T21:22:21.517138+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:26:21.543029+00:00",
+      "evidence": "prospective:1:r0-p0:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.765625; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:30:27.513519+00:00",
+      "seconds": 120.002188,
+      "started_at": "2026-10-24T21:24:21.540841+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:28:21.580796+00:00",
+      "evidence": "prospective:2:r0-p5:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.75; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:30:27.525047+00:00",
+      "seconds": 119.998055,
+      "started_at": "2026-10-24T21:26:21.582741+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:30:21.610185+00:00",
+      "evidence": "prospective:3:r0-p5:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.796875; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:30:27.530614+00:00",
+      "seconds": 119.997571,
+      "started_at": "2026-10-24T21:28:21.612614+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:32:21.637431+00:00",
+      "evidence": "prospective:4:r1-p0:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.78125; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:35:17.631402+00:00",
+      "seconds": 120.002113,
+      "started_at": "2026-10-24T21:30:21.635318+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:34:21.678571+00:00",
+      "evidence": "prospective:5:r1-p0:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.796875; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:35:17.639476+00:00",
+      "seconds": 120.00435,
+      "started_at": "2026-10-24T21:32:21.674221+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:36:21.725532+00:00",
+      "evidence": "prospective:6:r1-p5:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.828125; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.602511+00:00",
+      "seconds": 120.000785,
+      "started_at": "2026-10-24T21:34:21.724747+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:38:21.780299+00:00",
+      "evidence": "prospective:7:r1-p5:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.828125; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.610262+00:00",
+      "seconds": 120.003473,
+      "started_at": "2026-10-24T21:36:21.776826+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:40:21.832442+00:00",
+      "evidence": "prospective:8:r2-p0:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.78125; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.616731+00:00",
+      "seconds": 119.998348,
+      "started_at": "2026-10-24T21:38:21.834094+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:42:22.033306+00:00",
+      "evidence": "prospective:9:r2-p0:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.6875; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.622217+00:00",
+      "seconds": 120.000524,
+      "started_at": "2026-10-24T21:40:22.032782+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:44:22.078317+00:00",
+      "evidence": "prospective:10:r2-p5:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.796875; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.632617+00:00",
+      "seconds": 119.999308,
+      "started_at": "2026-10-24T21:42:22.079009+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:46:22.114872+00:00",
+      "evidence": "prospective:11:r2-p5:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.6875; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.639117+00:00",
+      "seconds": 120.003004,
+      "started_at": "2026-10-24T21:44:22.111868+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:48:22.145735+00:00",
+      "evidence": "prospective:12:r3-p0:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.71875; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.643887+00:00",
+      "seconds": 119.999151,
+      "started_at": "2026-10-24T21:46:22.146584+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:50:22.167799+00:00",
+      "evidence": "prospective:13:r3-p0:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.859375; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.648729+00:00",
+      "seconds": 119.992236,
+      "started_at": "2026-10-24T21:48:22.175563+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:52:22.199767+00:00",
+      "evidence": "prospective:14:r3-p5:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.59375; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T21:53:46.648729+00:00",
+      "seconds": 120.000888,
+      "started_at": "2026-10-24T21:50:22.198879+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:54:22.240665+00:00",
+      "evidence": "prospective:15:r3-p5:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.765625; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:01:16.086076+00:00",
+      "seconds": 120.007716,
+      "started_at": "2026-10-24T21:52:22.232949+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:56:22.267538+00:00",
+      "evidence": "prospective:16:r4-p0:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.859375; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:01:16.088081+00:00",
+      "seconds": 119.99334,
+      "started_at": "2026-10-24T21:54:22.274198+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:58:22.480521+00:00",
+      "evidence": "prospective:17:r4-p0:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.765625; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:01:16.102860+00:00",
+      "seconds": 120.001183,
+      "started_at": "2026-10-24T21:56:22.479338+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T21:58:22.529635+00:00",
+      "evidence": "prospective:18:r4-p5:ordered=True | Frozen120s complete-history Player query; cpu_seconds=0.0; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:01:16.102860+00:00",
+      "seconds": 0.003343,
+      "started_at": "2026-10-24T21:58:22.526292+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:00:22.615693+00:00",
+      "evidence": "prospective:24:r6-p0:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.765625; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:02:23.605603+00:00",
+      "seconds": 120.010834,
+      "started_at": "2026-10-24T21:58:22.604859+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:02:22.654402+00:00",
+      "evidence": "prospective:25:r6-p0:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.765625; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:02:23.615410+00:00",
+      "seconds": 120.001429,
+      "started_at": "2026-10-24T22:00:22.652973+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:02:22.725721+00:00",
+      "evidence": "prospective:28:r7-p0:ordered=False | Frozen120s complete-history Player query; cpu_seconds=0.0; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:02:23.626602+00:00",
+      "seconds": 0.004338,
+      "started_at": "2026-10-24T22:02:22.721383+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:04:22.746178+00:00",
+      "evidence": "prospective:30:r7-p5:ordered=True | Frozen120s complete-history Player query; cpu_seconds=119.828125; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:07:15.941435+00:00",
+      "seconds": 120.004513,
+      "started_at": "2026-10-24T22:02:22.741665+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:06:22.764934+00:00",
+      "evidence": "prospective:31:r7-p5:ordered=False | Frozen120s complete-history Player query; cpu_seconds=119.859375; .local_agent/qorder-prospective-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:07:15.946929+00:00",
+      "seconds": 120.008969,
+      "started_at": "2026-10-24T22:04:22.755965+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:06:54.558361+00:00",
+      "evidence": "last-clock-ablation:0 | Frozen actual D7/45s paired query; {'key': 'next-role-p7', 'shield': False}; cpu=12.640625; queries.jsonl",
+      "recorded_at": "2026-10-24T22:13:20.855938+00:00",
+      "seconds": 12.676462,
+      "started_at": "2026-10-24T22:06:41.881899+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:07:07.242501+00:00",
+      "evidence": "last-clock-ablation:1 | Frozen actual D7/45s paired query; {'key': 'next-role-p7', 'shield': True}; cpu=12.65625; queries.jsonl",
+      "recorded_at": "2026-10-24T22:13:20.864577+00:00",
+      "seconds": 12.670869,
+      "started_at": "2026-10-24T22:06:54.571632+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:07:49.669321+00:00",
+      "evidence": "last-clock-ablation:2 | Frozen actual D7/45s paired query; {'key': 'next-role-p49', 'shield': True}; cpu=42.296875; queries.jsonl",
+      "recorded_at": "2026-10-24T22:13:20.872633+00:00",
+      "seconds": 42.407449,
+      "started_at": "2026-10-24T22:07:07.261872+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:08:31.472423+00:00",
+      "evidence": "last-clock-ablation:3 | Frozen actual D7/45s paired query; {'key': 'next-role-p49', 'shield': False}; cpu=41.71875; queries.jsonl",
+      "recorded_at": "2026-10-24T22:13:20.874555+00:00",
+      "seconds": 41.782189,
+      "started_at": "2026-10-24T22:07:49.690234+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:09:00.910035+00:00",
+      "evidence": "last-clock-ablation:4 | Frozen actual D7/45s paired query; {'key': 'next-role-p53', 'shield': False}; cpu=29.390625; queries.jsonl",
+      "recorded_at": "2026-10-24T22:13:20.882168+00:00",
+      "seconds": 29.417166,
+      "started_at": "2026-10-24T22:08:31.492869+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:09:40.042824+00:00",
+      "evidence": "last-clock-ablation:5 | Frozen actual D7/45s paired query; {'key': 'next-role-p53', 'shield': True}; cpu=39.015625; queries.jsonl",
+      "recorded_at": "2026-10-24T22:13:20.882168+00:00",
+      "seconds": 39.117486,
+      "started_at": "2026-10-24T22:09:00.925338+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:06:30.251234+00:00",
+      "evidence": "clock endpoint fullremaining4 Q0:204nodes,0 final-layer static evals,score0; .local_agent/clock-frontier-20261025/query.json",
+      "recorded_at": "2026-10-24T22:13:20.905338+00:00",
+      "seconds": 0.043118,
+      "started_at": "2026-10-24T22:06:30.208116+00:00"
+    },
+    {
+      "activity": "analysis",
+      "ended_at": "2026-10-24T22:11:20+00:00",
+      "evidence": "Post-ablation causal analysis: last-ply negative with actual activation; complete<=4 terminal frontier design/hard8 guard and neutral preservation; matched any-win goal vs first-correct-action distinction; source and feasibility registration. Conservative1s UTC boundary avoids prior query.",
+      "recorded_at": "2026-10-24T22:14:07.611503+00:00",
+      "seconds": 99.0,
+      "started_at": "2026-10-24T22:09:41+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:13:39.397547+00:00",
+      "evidence": "clock-proof-feasibility:0 | Actual same-any-win1M/240s query; {'completion': True, 'key': 'next-role-p53'}; cpu=120.171875; .local_agent/clock-completion-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:16:21.478724+00:00",
+      "seconds": 120.427423,
+      "started_at": "2026-10-24T22:11:38.970124+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:16:08.042010+00:00",
+      "evidence": "clock-proof-feasibility:1 | Actual same-any-win1M/240s query; {'completion': False, 'key': 'next-role-p53'}; cpu=148.375; .local_agent/clock-completion-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:16:21.494232+00:00",
+      "seconds": 148.623903,
+      "started_at": "2026-10-24T22:13:39.418107+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:16:59.109212+00:00",
+      "evidence": "completion-quality:0 | actual20s/250k move query; {'completion': False, 'key': 'cost-p48'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.314283+00:00",
+      "seconds": 20.002548,
+      "started_at": "2026-10-24T22:16:39.106664+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:17:19.148098+00:00",
+      "evidence": "completion-quality:1 | actual20s/250k move query; {'completion': True, 'key': 'cost-p48'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.328433+00:00",
+      "seconds": 19.999047,
+      "started_at": "2026-10-24T22:16:59.149051+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:17:39.175234+00:00",
+      "evidence": "completion-quality:2 | actual20s/250k move query; {'completion': True, 'key': 'cost-p50'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.328433+00:00",
+      "seconds": 20.007847,
+      "started_at": "2026-10-24T22:17:19.167387+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:17:59.194921+00:00",
+      "evidence": "completion-quality:3 | actual20s/250k move query; {'completion': False, 'key': 'cost-p50'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.340695+00:00",
+      "seconds": 19.998888,
+      "started_at": "2026-10-24T22:17:39.196033+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:18:19.220345+00:00",
+      "evidence": "completion-quality:4 | actual20s/250k move query; {'completion': False, 'key': 'cost-p52'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.347652+00:00",
+      "seconds": 20.003524,
+      "started_at": "2026-10-24T22:17:59.216821+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:18:39.247598+00:00",
+      "evidence": "completion-quality:5 | actual20s/250k move query; {'completion': True, 'key': 'cost-p52'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.362039+00:00",
+      "seconds": 20.004359,
+      "started_at": "2026-10-24T22:18:19.243239+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:18:59.278051+00:00",
+      "evidence": "completion-quality:6 | actual20s/250k move query; {'completion': True, 'key': 'cost-p54'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.368950+00:00",
+      "seconds": 20.004446,
+      "started_at": "2026-10-24T22:18:39.273605+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:19:19.296647+00:00",
+      "evidence": "completion-quality:7 | actual20s/250k move query; {'completion': False, 'key': 'cost-p54'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.375841+00:00",
+      "seconds": 20.003876,
+      "started_at": "2026-10-24T22:18:59.292771+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:19:39.347861+00:00",
+      "evidence": "completion-quality:8 | actual20s/250k move query; {'completion': False, 'key': 'cost-p56'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.381118+00:00",
+      "seconds": 20.000251,
+      "started_at": "2026-10-24T22:19:19.347610+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:19:59.373778+00:00",
+      "evidence": "completion-quality:9 | actual20s/250k move query; {'completion': True, 'key': 'cost-p56'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.381118+00:00",
+      "seconds": 20.003453,
+      "started_at": "2026-10-24T22:19:39.370325+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:20:19.401271+00:00",
+      "evidence": "completion-quality:10 | actual20s/250k move query; {'completion': True, 'key': 'cost-p58'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.395751+00:00",
+      "seconds": 20.008535,
+      "started_at": "2026-10-24T22:19:59.392736+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:20:39.416272+00:00",
+      "evidence": "completion-quality:11 | actual20s/250k move query; {'completion': False, 'key': 'cost-p58'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.395751+00:00",
+      "seconds": 19.997289,
+      "started_at": "2026-10-24T22:20:19.418983+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:20:45.243386+00:00",
+      "evidence": "completion-quality:12 | actual20s/250k move query; {'completion': False, 'key': 'cost-p60'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.411640+00:00",
+      "seconds": 5.798955,
+      "started_at": "2026-10-24T22:20:39.444431+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:20:51.578490+00:00",
+      "evidence": "completion-quality:13 | actual20s/250k move query; {'completion': True, 'key': 'cost-p60'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.414736+00:00",
+      "seconds": 6.311594,
+      "started_at": "2026-10-24T22:20:45.266896+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:20:52.053883+00:00",
+      "evidence": "completion-quality:14 | actual20s/250k move query; {'completion': True, 'key': 'cost-p62'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.426591+00:00",
+      "seconds": 0.444021,
+      "started_at": "2026-10-24T22:20:51.609862+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:20:52.499026+00:00",
+      "evidence": "completion-quality:15 | actual20s/250k move query; {'completion': False, 'key': 'cost-p62'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.429546+00:00",
+      "seconds": 0.42381,
+      "started_at": "2026-10-24T22:20:52.075216+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:21:12.516364+00:00",
+      "evidence": "completion-quality:16 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p49'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.441003+00:00",
+      "seconds": 19.99794,
+      "started_at": "2026-10-24T22:20:52.518424+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:21:32.544795+00:00",
+      "evidence": "completion-quality:17 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p49'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.448035+00:00",
+      "seconds": 20.008375,
+      "started_at": "2026-10-24T22:21:12.536420+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:21:52.565171+00:00",
+      "evidence": "completion-quality:18 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p51'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.450136+00:00",
+      "seconds": 19.999069,
+      "started_at": "2026-10-24T22:21:32.566102+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:22:12.587585+00:00",
+      "evidence": "completion-quality:19 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p51'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.459903+00:00",
+      "seconds": 19.996915,
+      "started_at": "2026-10-24T22:21:52.590670+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:22:32.610208+00:00",
+      "evidence": "completion-quality:20 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p53'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.467028+00:00",
+      "seconds": 19.99881,
+      "started_at": "2026-10-24T22:22:12.611398+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:22:52.636497+00:00",
+      "evidence": "completion-quality:21 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p53'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.476263+00:00",
+      "seconds": 20.00084,
+      "started_at": "2026-10-24T22:22:32.635657+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:23:12.665073+00:00",
+      "evidence": "completion-quality:22 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p55'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.481599+00:00",
+      "seconds": 20.002653,
+      "started_at": "2026-10-24T22:22:52.662420+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:23:32.687747+00:00",
+      "evidence": "completion-quality:23 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p55'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.481599+00:00",
+      "seconds": 20.000936,
+      "started_at": "2026-10-24T22:23:12.686811+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:23:52.710895+00:00",
+      "evidence": "completion-quality:24 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p57'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.496514+00:00",
+      "seconds": 20.000892,
+      "started_at": "2026-10-24T22:23:32.710003+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:24:12.736206+00:00",
+      "evidence": "completion-quality:25 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p57'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.496514+00:00",
+      "seconds": 20.008324,
+      "started_at": "2026-10-24T22:23:52.727882+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:24:32.770911+00:00",
+      "evidence": "completion-quality:26 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p59'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.508155+00:00",
+      "seconds": 20.003595,
+      "started_at": "2026-10-24T22:24:12.767316+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:24:52.793947+00:00",
+      "evidence": "completion-quality:27 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p59'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.514977+00:00",
+      "seconds": 19.999467,
+      "started_at": "2026-10-24T22:24:32.794480+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:24:54.347693+00:00",
+      "evidence": "completion-quality:28 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p61'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.527062+00:00",
+      "seconds": 1.531926,
+      "started_at": "2026-10-24T22:24:52.815767+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:24:56.169911+00:00",
+      "evidence": "completion-quality:29 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p61'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.530253+00:00",
+      "seconds": 1.790751,
+      "started_at": "2026-10-24T22:24:54.379160+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:24:56.336080+00:00",
+      "evidence": "completion-quality:30 | actual20s/250k move query; {'completion': True, 'key': 'next-role-p63'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.542460+00:00",
+      "seconds": 0.143403,
+      "started_at": "2026-10-24T22:24:56.192677+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:24:56.512855+00:00",
+      "evidence": "completion-quality:31 | actual20s/250k move query; {'completion': False, 'key': 'next-role-p63'}; .local_agent/clock-completion-panel-20261025/queries.jsonl",
+      "recorded_at": "2026-10-24T22:27:21.548720+00:00",
+      "seconds": 0.148335,
+      "started_at": "2026-10-24T22:24:56.364520+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:31:45.628018+00:00",
+      "evidence": "rule-clock-cap:0 | opt-in actual20s/250k query; cost-p54; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.882750+00:00",
+      "seconds": 20.014942,
+      "started_at": "2026-10-24T22:31:25.613076+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:31:50.483160+00:00",
+      "evidence": "rule-clock-cap:1 | opt-in actual20s/250k query; cost-p56; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.887800+00:00",
+      "seconds": 4.808184,
+      "started_at": "2026-10-24T22:31:45.674976+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:31:51.140901+00:00",
+      "evidence": "rule-clock-cap:2 | opt-in actual20s/250k query; cost-p58; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.898892+00:00",
+      "seconds": 0.637098,
+      "started_at": "2026-10-24T22:31:50.503803+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:31:51.252130+00:00",
+      "evidence": "rule-clock-cap:3 | opt-in actual20s/250k query; cost-p60; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.905922+00:00",
+      "seconds": 0.090535,
+      "started_at": "2026-10-24T22:31:51.161595+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:31:51.289274+00:00",
+      "evidence": "rule-clock-cap:4 | opt-in actual20s/250k query; cost-p62; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.912212+00:00",
+      "seconds": 0.007929,
+      "started_at": "2026-10-24T22:31:51.281345+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:32:11.306179+00:00",
+      "evidence": "rule-clock-cap:5 | opt-in actual20s/250k query; next-role-p55; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.914966+00:00",
+      "seconds": 19.997112,
+      "started_at": "2026-10-24T22:31:51.309067+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:32:18.082958+00:00",
+      "evidence": "rule-clock-cap:6 | opt-in actual20s/250k query; next-role-p57; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.926988+00:00",
+      "seconds": 6.752532,
+      "started_at": "2026-10-24T22:32:11.330426+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:32:19.108835+00:00",
+      "evidence": "rule-clock-cap:7 | opt-in actual20s/250k query; next-role-p59; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.931170+00:00",
+      "seconds": 0.984555,
+      "started_at": "2026-10-24T22:32:18.124280+00:00"
+    },
+    {
+      "activity": "research",
+      "ended_at": "2026-10-24T22:32:19.173956+00:00",
+      "evidence": "rule-clock-cap:8 | opt-in actual20s/250k query; next-role-p61; .local_agent\\rule-clock-cap-20261025\\queries.jsonl",
+      "recorded_at": "2026-10-24T22:39:34.936789+00:00",
+      "seconds": 0.032756,
+      "started_at": "2026-10-24T22:32:19.141200+00:00"
+    },
+    {
+      "activity": "analysis",
+      "ended_at": "2026-10-24T22:30:20+00:00",
+      "evidence": "Derived hard-clock main-depth completeness bound from observed repeated D>remaining; implemented conservative opt-in backend admission, retained limits/history/TT, verified two execution routes and diagnosed invalid Rider test mask without changing its expectation.",
+      "recorded_at": "2026-10-24T22:39:34.947307+00:00",
+      "seconds": 175.0,
+      "started_at": "2026-10-24T22:27:25+00:00"
+    }
+  ]
+}

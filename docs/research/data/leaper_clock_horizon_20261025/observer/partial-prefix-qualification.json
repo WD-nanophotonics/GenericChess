@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "depth": 1,
+      "matching_fields": [
+        "depth",
+        "score",
+        "action",
+        "nodes",
+        "qnodes"
+      ],
+      "same": true
+    },
+    {
+      "depth": 2,
+      "matching_fields": [
+        "depth",
+        "score",
+        "action",
+        "nodes",
+        "qnodes"
+      ],
+      "same": true
+    },
+    {
+      "depth": 3,
+      "matching_fields": [
+        "depth",
+        "score",
+        "action",
+        "nodes",
+        "qnodes"
+      ],
+      "same": true
+    },
+    {
+      "depth": 4,
+      "matching_fields": [
+        "depth",
+        "score",
+        "action",
+        "nodes",
+        "qnodes"
+      ],
+      "same": true
+    },
+    {
+      "depth": 5,
+      "matching_fields": [
+        "depth",
+        "score",
+        "action",
+        "nodes",
+        "qnodes"
+      ],
+      "same": true
+    }
+  ],
+  "failed_query_count": 1,
+  "reason": "Observer/AST/initialization overhead; D6/7 missing after serializer exception. No retry or new Player call.",
+  "status": "D1_TO_D5_PREFIX_MATCH_ONLY",
+  "successful_returns": 0,
+  "timings_comparable": false
+}

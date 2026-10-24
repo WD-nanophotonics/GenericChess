@@ -1,0 +1,17 @@
+{
+  "attempted_Player_calls": 1,
+  "cause": "record_value(RuntimeSearchState) recursively reaches SearchPathRuntime; not serializable GameState",
+  "completed_Player_returns": 0,
+  "completed_iterations": 5,
+  "missing": "D6,D7/rootchild/leaf samples not persisted before exception; UNKNOWN, no refill",
+  "original_receipt": {
+    "cpu_seconds": 1.890625,
+    "ended_at": "2026-10-24T21:17:20.001504+00:00",
+    "queries": 0,
+    "seconds": 1.901874199975282,
+    "source_sha256": "416341c52ce25602d9f1c2f7aac624b43cfdfb2bb6e7d66645745834c02482b3",
+    "started_at": "2026-10-24T21:17:18.098791+00:00",
+    "status": "FAILED"
+  },
+  "original_receipt_queries_field": "counts saved query.json returns, not attempted calls; clarified without replacing original"
+}

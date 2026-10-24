@@ -1,0 +1,22 @@
+{
+  "batch_seconds": 90,
+  "changed_premise": "Actual timed default D6 WIN to D7 DRAW; child histories prepared with no queries.",
+  "cost": "Engineering plus one45s query; no graph rebuild. Missing depth UNKNOWN. Source AST semantic identity tested.",
+  "decision": "Distinguish horizon versus concrete contract fault before selecting a correction. Observer adds overhead; not speed comparison.",
+  "inputs": ".local_agent\\leaper-default-panel-20261025\\inputs.json",
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "key": "next-role-p53",
+  "limits": {
+    "max_depth": 14,
+    "max_nodes": 10000000,
+    "max_time_seconds": 45.0
+  },
+  "max_samples": 120,
+  "prepared_at": "2026-10-24T21:17:12.144361+00:00",
+  "q_source_sha256": "16bcb5dbd5f047d8373db0c57d30b373bc1d20092a2ac09279d499f242d37c5d",
+  "question": "Does wrong p53 D7 prefer a heuristic cutoff before clock rather than an incorrect terminal score/window?",
+  "scope": "One exposed pureLeaper rule/history; labels evaluated only after search; no default activation, no old cap refill.",
+  "search_module_sha256": "417b5b84c2d88c84e578a0af5dd45676aa5309f0a3665c96f21960354de7f5d5",
+  "slots": 1,
+  "source_sha256": "416341c52ce25602d9f1c2f7aac624b43cfdfb2bb6e7d66645745834c02482b3"
+}

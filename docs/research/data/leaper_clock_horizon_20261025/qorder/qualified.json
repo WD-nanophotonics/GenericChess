@@ -1,0 +1,3245 @@
+{
+  "actual_seconds": 2640.036675899755,
+  "cpu_seconds": 2635.109375,
+  "histories": 16,
+  "native_legality_calls": 4812199,
+  "native_legality_failures": 0,
+  "no_common": [
+    "r4-p5",
+    "r5-p0",
+    "r5-p5",
+    "r6-p5",
+    "r7-p0"
+  ],
+  "pairs": [
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 0,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            18,
+            18
+          ],
+          "seconds": [
+            0.006611399934627116,
+            0.00419569993391633
+          ],
+          "time_ratio": 0.6346159626407427,
+          "work": [
+            31,
+            31
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            0,
+            0
+          ],
+          "seconds": [
+            0.08404470002278686,
+            0.07051460002548993
+          ],
+          "time_ratio": 0.8390130490842547,
+          "work": [
+            318,
+            280
+          ],
+          "work_ratio": 0.8805031446540881
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            0.3879297999665141,
+            0.3031072999583557
+          ],
+          "time_ratio": 0.7813457485981221,
+          "work": [
+            1725,
+            1402
+          ],
+          "work_ratio": 0.8127536231884058
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            7,
+            7
+          ],
+          "seconds": [
+            1.444093200028874,
+            1.1457932000048459
+          ],
+          "time_ratio": 0.7934343849703996,
+          "work": [
+            6536,
+            5290
+          ],
+          "work_ratio": 0.8093635250917993
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            15,
+            15
+          ],
+          "seconds": [
+            2.435715700034052,
+            1.9477260999847203
+          ],
+          "time_ratio": 0.7996524799497291,
+          "work": [
+            11756,
+            9620
+          ],
+          "work_ratio": 0.8183055461041171
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            4.945499200024642,
+            3.982637699926272
+          ],
+          "time_ratio": 0.8053054987667226,
+          "work": [
+            23334,
+            19036
+          ],
+          "work_ratio": 0.8158052627067798
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            12,
+            12
+          ],
+          "seconds": [
+            8.77909239998553,
+            7.051751899998635
+          ],
+          "time_ratio": 0.8032438410159869,
+          "work": [
+            44242,
+            36732
+          ],
+          "work_ratio": 0.8302517969350391
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            14,
+            14
+          ],
+          "seconds": [
+            15.483242599992082,
+            12.403629699954763
+          ],
+          "time_ratio": 0.8011002617734031,
+          "work": [
+            75419,
+            62023
+          ],
+          "work_ratio": 0.8223789761200758
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            15,
+            15
+          ],
+          "seconds": [
+            24.51283030002378,
+            19.29634180001449
+          ],
+          "time_ratio": 0.787193545740647,
+          "work": [
+            124562,
+            101839
+          ],
+          "work_ratio": 0.8175767890688974
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            10,
+            10
+          ],
+          "seconds": [
+            59.15009430004284,
+            48.410536099923775
+          ],
+          "time_ratio": 0.8184354847239645,
+          "work": [
+            280575,
+            231397
+          ],
+          "work_ratio": 0.8247242270337699
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        10,
+        11
+      ],
+      "final_scores": [
+        10,
+        12
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 10,
+        "score_equal": true,
+        "scores": [
+          10,
+          10
+        ],
+        "seconds": [
+          59.15009430004284,
+          48.410536099923775
+        ],
+        "time_ratio": 0.8184354847239645,
+        "work": [
+          280575,
+          231397
+        ],
+        "work_ratio": 0.8247242270337699
+      },
+      "key": "r0-p0",
+      "masks": [
+        5,
+        7
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 1,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            1191,
+            1191
+          ],
+          "seconds": [
+            0.0036683999933302402,
+            0.0036540000000968575
+          ],
+          "time_ratio": 0.9960745847618677,
+          "work": [
+            28,
+            28
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            1191,
+            1191
+          ],
+          "seconds": [
+            0.02095419995021075,
+            0.022122299997135997
+          ],
+          "time_ratio": 1.0557453899314109,
+          "work": [
+            107,
+            117
+          ],
+          "work_ratio": 1.0934579439252337
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            1193,
+            1193
+          ],
+          "seconds": [
+            0.05773189989849925,
+            0.059620600077323616
+          ],
+          "time_ratio": 1.0327150185970835,
+          "work": [
+            294,
+            317
+          ],
+          "work_ratio": 1.0782312925170068
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            1195,
+            1195
+          ],
+          "seconds": [
+            0.16637469991110265,
+            0.150770700071007
+          ],
+          "time_ratio": 0.9062117025699631,
+          "work": [
+            784,
+            728
+          ],
+          "work_ratio": 0.9285714285714286
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            2014,
+            2014
+          ],
+          "seconds": [
+            0.7583132999716327,
+            0.5609509000787511
+          ],
+          "time_ratio": 0.739735014669709,
+          "work": [
+            3570,
+            2801
+          ],
+          "work_ratio": 0.784593837535014
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            1195,
+            1195
+          ],
+          "seconds": [
+            1.8455709000118077,
+            1.4302556000184268
+          ],
+          "time_ratio": 0.7749664886942442,
+          "work": [
+            8275,
+            6793
+          ],
+          "work_ratio": 0.8209063444108762
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            1195,
+            1195
+          ],
+          "seconds": [
+            3.3341065999120474,
+            2.352830299991183
+          ],
+          "time_ratio": 0.7056853851203347,
+          "work": [
+            15508,
+            11641
+          ],
+          "work_ratio": 0.7506448284756255
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            1200,
+            1200
+          ],
+          "seconds": [
+            6.4837964999023825,
+            5.032421100069769
+          ],
+          "time_ratio": 0.7761534619640723,
+          "work": [
+            29060,
+            23237
+          ],
+          "work_ratio": 0.7996214728148658
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            2027,
+            2027
+          ],
+          "seconds": [
+            9.569184299907647,
+            7.450941500021145
+          ],
+          "time_ratio": 0.7786391469221733,
+          "work": [
+            45254,
+            36787
+          ],
+          "work_ratio": 0.812900517081363
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            2022,
+            2022
+          ],
+          "seconds": [
+            21.8179528999608,
+            18.479526999988593
+          ],
+          "time_ratio": 0.8469872074946956,
+          "work": [
+            96103,
+            82076
+          ],
+          "work_ratio": 0.854042017418811
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            2043,
+            2043
+          ],
+          "seconds": [
+            50.6998665999854,
+            37.989318900043145
+          ],
+          "time_ratio": 0.749298202296534,
+          "work": [
+            200536,
+            165862
+          ],
+          "work_ratio": 0.8270933897155623
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        11,
+        12
+      ],
+      "final_scores": [
+        2043,
+        999999987
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 11,
+        "score_equal": true,
+        "scores": [
+          2043,
+          2043
+        ],
+        "seconds": [
+          50.6998665999854,
+          37.989318900043145
+        ],
+        "time_ratio": 0.749298202296534,
+        "work": [
+          200536,
+          165862
+        ],
+        "work_ratio": 0.8270933897155623
+      },
+      "key": "r0-p5",
+      "masks": [
+        5,
+        7
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 0,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            7,
+            7
+          ],
+          "seconds": [
+            0.0036886000307276845,
+            0.0037828999338671565
+          ],
+          "time_ratio": 1.0255652286379418,
+          "work": [
+            25,
+            25
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            0,
+            0
+          ],
+          "seconds": [
+            0.05451379995793104,
+            0.06610169995110482
+          ],
+          "time_ratio": 1.2125681937805894,
+          "work": [
+            254,
+            310
+          ],
+          "work_ratio": 1.220472440944882
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            4,
+            4
+          ],
+          "seconds": [
+            0.17247270001098514,
+            0.13151129998732358
+          ],
+          "time_ratio": 0.7625050224119374,
+          "work": [
+            896,
+            665
+          ],
+          "work_ratio": 0.7421875
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            -2,
+            -2
+          ],
+          "seconds": [
+            0.7711299000075087,
+            0.5772512999828905
+          ],
+          "time_ratio": 0.7485785468534804,
+          "work": [
+            3844,
+            2839
+          ],
+          "work_ratio": 0.7385535900104059
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            -6,
+            -6
+          ],
+          "seconds": [
+            2.1288611999480054,
+            1.4651392999803647
+          ],
+          "time_ratio": 0.6882267852954194,
+          "work": [
+            10472,
+            7123
+          ],
+          "work_ratio": 0.6801948051948052
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            -6,
+            -6
+          ],
+          "seconds": [
+            4.154669499956071,
+            3.079567299922928
+          ],
+          "time_ratio": 0.7412303914801139,
+          "work": [
+            21389,
+            15705
+          ],
+          "work_ratio": 0.7342559259432418
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            0,
+            0
+          ],
+          "seconds": [
+            6.335117500042543,
+            4.680275399936363
+          ],
+          "time_ratio": 0.738782729744939,
+          "work": [
+            33268,
+            24369
+          ],
+          "work_ratio": 0.7325057111939401
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            -2,
+            -2
+          ],
+          "seconds": [
+            10.819772599963471,
+            8.101548500009812
+          ],
+          "time_ratio": 0.7487725296590027,
+          "work": [
+            57439,
+            42656
+          ],
+          "work_ratio": 0.7426313132192413
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            -2,
+            -2
+          ],
+          "seconds": [
+            23.156643699971028,
+            17.32682089996524
+          ],
+          "time_ratio": 0.7482440514463208,
+          "work": [
+            122305,
+            90478
+          ],
+          "work_ratio": 0.7397735170271044
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            -6,
+            -6
+          ],
+          "seconds": [
+            41.297361099976115,
+            31.95643509994261
+          ],
+          "time_ratio": 0.7738130052082455,
+          "work": [
+            217830,
+            165412
+          ],
+          "work_ratio": 0.759362805857779
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            0,
+            0
+          ],
+          "seconds": [
+            61.24484079994727,
+            44.25272429990582
+          ],
+          "time_ratio": 0.7225543200357853,
+          "work": [
+            289399,
+            218715
+          ],
+          "work_ratio": 0.7557558941115898
+        },
+        {
+          "action_equal": true,
+          "depth": 12,
+          "score_equal": true,
+          "scores": [
+            -2,
+            -2
+          ],
+          "seconds": [
+            98.0228193999501,
+            73.97324759990443
+          ],
+          "time_ratio": 0.7546533353430771,
+          "work": [
+            413427,
+            318525
+          ],
+          "work_ratio": 0.7704504059967056
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        12,
+        12
+      ],
+      "final_scores": [
+        -2,
+        -2
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 12,
+        "score_equal": true,
+        "scores": [
+          -2,
+          -2
+        ],
+        "seconds": [
+          98.0228193999501,
+          73.97324759990443
+        ],
+        "time_ratio": 0.7546533353430771,
+        "work": [
+          413427,
+          318525
+        ],
+        "work_ratio": 0.7704504059967056
+      },
+      "key": "r1-p0",
+      "masks": [
+        6,
+        9
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 1,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            12,
+            12
+          ],
+          "seconds": [
+            0.003926299978047609,
+            0.004280099994502962
+          ],
+          "time_ratio": 1.0901102866397088,
+          "work": [
+            22,
+            22
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            14,
+            14
+          ],
+          "seconds": [
+            0.015322300023399293,
+            0.01327820005826652
+          ],
+          "time_ratio": 0.8665931379746418,
+          "work": [
+            64,
+            58
+          ],
+          "work_ratio": 0.90625
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            21,
+            21
+          ],
+          "seconds": [
+            0.03656169993337244,
+            0.033711500000208616
+          ],
+          "time_ratio": 0.922044107950182,
+          "work": [
+            204,
+            191
+          ],
+          "work_ratio": 0.9362745098039216
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            0.08394629997201264,
+            0.08187590003944933
+          ],
+          "time_ratio": 0.9753366147971553,
+          "work": [
+            425,
+            412
+          ],
+          "work_ratio": 0.9694117647058823
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            0.15155219996813685,
+            0.1441876000026241
+          ],
+          "time_ratio": 0.9514055225390253,
+          "work": [
+            839,
+            822
+          ],
+          "work_ratio": 0.9797377830750894
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            0.33686329994816333,
+            0.318974900059402
+          ],
+          "time_ratio": 0.9468971541526963,
+          "work": [
+            1660,
+            1624
+          ],
+          "work_ratio": 0.9783132530120482
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            0.5906916999956593,
+            0.5719678000314161
+          ],
+          "time_ratio": 0.9683017385137107,
+          "work": [
+            3276,
+            3230
+          ],
+          "work_ratio": 0.985958485958486
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            1.0192569999489933,
+            0.9902189000276849
+          ],
+          "time_ratio": 0.971510521955933,
+          "work": [
+            5207,
+            5129
+          ],
+          "work_ratio": 0.9850201651622815
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            1.6936344999121502,
+            1.6693259000312537
+          ],
+          "time_ratio": 0.9856470803575639,
+          "work": [
+            9183,
+            9093
+          ],
+          "work_ratio": 0.9901992812806273
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            2.9868856999091804,
+            2.9794273000443354
+          ],
+          "time_ratio": 0.9975029510285339,
+          "work": [
+            14773,
+            14636
+          ],
+          "work_ratio": 0.9907263250524606
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            4.827140699955635,
+            4.8700693000573665
+          ],
+          "time_ratio": 1.008893173572116,
+          "work": [
+            25237,
+            25064
+          ],
+          "work_ratio": 0.9931449855371082
+        },
+        {
+          "action_equal": true,
+          "depth": 12,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            9.32120040000882,
+            9.370601500035264
+          ],
+          "time_ratio": 1.0052998645996707,
+          "work": [
+            41396,
+            41113
+          ],
+          "work_ratio": 0.9931635906850903
+        },
+        {
+          "action_equal": true,
+          "depth": 13,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            17.64297429996077,
+            17.830719100078568
+          ],
+          "time_ratio": 1.0106413350110823,
+          "work": [
+            75941,
+            75599
+          ],
+          "work_ratio": 0.9954965038648425
+        },
+        {
+          "action_equal": true,
+          "depth": 14,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            36.37716559995897,
+            36.84642120008357
+          ],
+          "time_ratio": 1.0128997296074416,
+          "work": [
+            125135,
+            124611
+          ],
+          "work_ratio": 0.9958125224757263
+        },
+        {
+          "action_equal": true,
+          "depth": 15,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            64.58206359995529,
+            65.18413740000688
+          ],
+          "time_ratio": 1.0093226163193088,
+          "work": [
+            226943,
+            225947
+          ],
+          "work_ratio": 0.9956112327765122
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        15,
+        15
+      ],
+      "final_scores": [
+        9,
+        9
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 15,
+        "score_equal": true,
+        "scores": [
+          9,
+          9
+        ],
+        "seconds": [
+          64.58206359995529,
+          65.18413740000688
+        ],
+        "time_ratio": 1.0093226163193088,
+        "work": [
+          226943,
+          225947
+        ],
+        "work_ratio": 0.9956112327765122
+      },
+      "key": "r1-p5",
+      "masks": [
+        6,
+        9
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 0,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            9,
+            9
+          ],
+          "seconds": [
+            0.005012699984945357,
+            0.0048180000158026814
+          ],
+          "time_ratio": 0.9611586630503685,
+          "work": [
+            33,
+            33
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            358,
+            358
+          ],
+          "seconds": [
+            0.11370650003664196,
+            0.05968009994830936
+          ],
+          "time_ratio": 0.5248609352066719,
+          "work": [
+            504,
+            280
+          ],
+          "work_ratio": 0.5555555555555556
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            370,
+            370
+          ],
+          "seconds": [
+            0.18098740000277758,
+            0.10363699996378273
+          ],
+          "time_ratio": 0.5726199722311732,
+          "work": [
+            858,
+            529
+          ],
+          "work_ratio": 0.6165501165501166
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            367,
+            367
+          ],
+          "seconds": [
+            0.328328900039196,
+            0.21415769995655864
+          ],
+          "time_ratio": 0.6522657613478205,
+          "work": [
+            1555,
+            1058
+          ],
+          "work_ratio": 0.6803858520900321
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            367,
+            367
+          ],
+          "seconds": [
+            0.4759819000028074,
+            0.3338009000290185
+          ],
+          "time_ratio": 0.7012890616787103,
+          "work": [
+            2375,
+            1765
+          ],
+          "work_ratio": 0.7431578947368421
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            370,
+            370
+          ],
+          "seconds": [
+            0.7800492000533268,
+            0.5967375999316573
+          ],
+          "time_ratio": 0.7649999511452128,
+          "work": [
+            3810,
+            2977
+          ],
+          "work_ratio": 0.7813648293963255
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            370,
+            370
+          ],
+          "seconds": [
+            1.304048200021498,
+            0.9888888000277802
+          ],
+          "time_ratio": 0.7583222767467321,
+          "work": [
+            6630,
+            5313
+          ],
+          "work_ratio": 0.8013574660633485
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            367,
+            367
+          ],
+          "seconds": [
+            2.264580700080842,
+            1.9596798999700695
+          ],
+          "time_ratio": 0.865361035665504,
+          "work": [
+            11005,
+            9557
+          ],
+          "work_ratio": 0.8684234438891413
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            367,
+            367
+          ],
+          "seconds": [
+            3.6380375999724492,
+            3.2272680000169203
+          ],
+          "time_ratio": 0.8870903368457105,
+          "work": [
+            19272,
+            17410
+          ],
+          "work_ratio": 0.9033831465338314
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            370,
+            370
+          ],
+          "seconds": [
+            7.57273850007914,
+            6.895032900036313
+          ],
+          "time_ratio": 0.9105071963021376,
+          "work": [
+            36777,
+            33609
+          ],
+          "work_ratio": 0.913859205481687
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            370,
+            370
+          ],
+          "seconds": [
+            15.096723600057885,
+            12.91654030000791
+          ],
+          "time_ratio": 0.8555856649556983,
+          "work": [
+            70194,
+            64178
+          ],
+          "work_ratio": 0.9142946690600336
+        },
+        {
+          "action_equal": true,
+          "depth": 12,
+          "score_equal": true,
+          "scores": [
+            367,
+            367
+          ],
+          "seconds": [
+            38.55032400006894,
+            36.86185069999192
+          ],
+          "time_ratio": 0.9562008013194908,
+          "work": [
+            138626,
+            132202
+          ],
+          "work_ratio": 0.953659486676381
+        },
+        {
+          "action_equal": true,
+          "depth": 13,
+          "score_equal": true,
+          "scores": [
+            367,
+            367
+          ],
+          "seconds": [
+            67.63244179997128,
+            65.3660063999705
+          ],
+          "time_ratio": 0.9664889313518511,
+          "work": [
+            264301,
+            258235
+          ],
+          "work_ratio": 0.9770488950098561
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        13,
+        13
+      ],
+      "final_scores": [
+        367,
+        367
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 13,
+        "score_equal": true,
+        "scores": [
+          367,
+          367
+        ],
+        "seconds": [
+          67.63244179997128,
+          65.3660063999705
+        ],
+        "time_ratio": 0.9664889313518511,
+        "work": [
+          264301,
+          258235
+        ],
+        "work_ratio": 0.9770488950098561
+      },
+      "key": "r2-p0",
+      "masks": [
+        7,
+        12
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 1,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            830,
+            830
+          ],
+          "seconds": [
+            0.0062290000496432185,
+            0.00660349999088794
+          ],
+          "time_ratio": 1.0601220000417517,
+          "work": [
+            44,
+            45
+          ],
+          "work_ratio": 1.0227272727272727
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            1189,
+            1189
+          ],
+          "seconds": [
+            0.13506000000052154,
+            0.10337919997982681
+          ],
+          "time_ratio": 0.7654316598506412,
+          "work": [
+            614,
+            480
+          ],
+          "work_ratio": 0.7817589576547231
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            1189,
+            1189
+          ],
+          "seconds": [
+            0.3182331999996677,
+            0.21101259998977184
+          ],
+          "time_ratio": 0.6630753799100539,
+          "work": [
+            1462,
+            1038
+          ],
+          "work_ratio": 0.7099863201094391
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            1189,
+            1189
+          ],
+          "seconds": [
+            0.7145558999618515,
+            0.5444834999507293
+          ],
+          "time_ratio": 0.761988670137351,
+          "work": [
+            3140,
+            2457
+          ],
+          "work_ratio": 0.782484076433121
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            1189,
+            1189
+          ],
+          "seconds": [
+            1.3349619000218809,
+            0.9795259999809787
+          ],
+          "time_ratio": 0.7337482814789873,
+          "work": [
+            6179,
+            4831
+          ],
+          "work_ratio": 0.7818417219614825
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            1193,
+            1193
+          ],
+          "seconds": [
+            2.4445784999988973,
+            1.9981054000090808
+          ],
+          "time_ratio": 0.8173619296782583,
+          "work": [
+            10927,
+            9117
+          ],
+          "work_ratio": 0.8343552667703853
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            1200,
+            1200
+          ],
+          "seconds": [
+            4.250432600034401,
+            3.4964684000005946
+          ],
+          "time_ratio": 0.8226147145521837,
+          "work": [
+            20584,
+            17438
+          ],
+          "work_ratio": 0.8471628449280995
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            999999989,
+            999999989
+          ],
+          "seconds": [
+            8.237258899956942,
+            7.163733499939553
+          ],
+          "time_ratio": 0.8696744374487246,
+          "work": [
+            36981,
+            32401
+          ],
+          "work_ratio": 0.8761526189124145
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            999999989,
+            999999989
+          ],
+          "seconds": [
+            14.612015899969265,
+            12.625238299951889
+          ],
+          "time_ratio": 0.8640312456803749,
+          "work": [
+            69716,
+            61733
+          ],
+          "work_ratio": 0.8854925698548396
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            999999989,
+            999999989
+          ],
+          "seconds": [
+            30.417379099992104,
+            27.914875800022855
+          ],
+          "time_ratio": 0.9177278459218106,
+          "work": [
+            129122,
+            117913
+          ],
+          "work_ratio": 0.9131906259196728
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            999999989,
+            999999989
+          ],
+          "seconds": [
+            63.85339029994793,
+            58.14412519999314
+          ],
+          "time_ratio": 0.9105879096922526,
+          "work": [
+            260481,
+            240888
+          ],
+          "work_ratio": 0.9247814619876306
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        11,
+        11
+      ],
+      "final_scores": [
+        999999989,
+        999999989
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 11,
+        "score_equal": true,
+        "scores": [
+          999999989,
+          999999989
+        ],
+        "seconds": [
+          63.85339029994793,
+          58.14412519999314
+        ],
+        "time_ratio": 0.9105879096922526,
+        "work": [
+          260481,
+          240888
+        ],
+        "work_ratio": 0.9247814619876306
+      },
+      "key": "r2-p5",
+      "masks": [
+        7,
+        12
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 0,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            383,
+            383
+          ],
+          "seconds": [
+            0.004372800001874566,
+            0.004342700005508959
+          ],
+          "time_ratio": 0.9931165394363558,
+          "work": [
+            27,
+            27
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            392,
+            392
+          ],
+          "seconds": [
+            0.052231800043955445,
+            0.05071069998666644
+          ],
+          "time_ratio": 0.9708778932372821,
+          "work": [
+            266,
+            250
+          ],
+          "work_ratio": 0.9398496240601504
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            392,
+            392
+          ],
+          "seconds": [
+            0.11721619998570532,
+            0.09332750004250556
+          ],
+          "time_ratio": 0.7961996725187046,
+          "work": [
+            616,
+            474
+          ],
+          "work_ratio": 0.7694805194805194
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            374,
+            374
+          ],
+          "seconds": [
+            0.29172530001960695,
+            0.22664650005754083
+          ],
+          "time_ratio": 0.7769175318092324,
+          "work": [
+            1567,
+            1114
+          ],
+          "work_ratio": 0.7109125717932355
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            383,
+            383
+          ],
+          "seconds": [
+            0.5425862000556663,
+            0.32749110006261617
+          ],
+          "time_ratio": 0.6035743261236969,
+          "work": [
+            2988,
+            1629
+          ],
+          "work_ratio": 0.5451807228915663
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            395,
+            395
+          ],
+          "seconds": [
+            0.8619717999827117,
+            0.611505200038664
+          ],
+          "time_ratio": 0.7094259928815871,
+          "work": [
+            4600,
+            2980
+          ],
+          "work_ratio": 0.6478260869565218
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            395,
+            395
+          ],
+          "seconds": [
+            1.7747366999974474,
+            1.247938400018029
+          ],
+          "time_ratio": 0.7031681939184691,
+          "work": [
+            9505,
+            6389
+          ],
+          "work_ratio": 0.6721725407680168
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            395,
+            395
+          ],
+          "seconds": [
+            2.8983998000621796,
+            2.205281800008379
+          ],
+          "time_ratio": 0.7608618383016272,
+          "work": [
+            15101,
+            10771
+          ],
+          "work_ratio": 0.7132640222501822
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            395,
+            395
+          ],
+          "seconds": [
+            5.722943800035864,
+            4.153602399979718
+          ],
+          "time_ratio": 0.7257807424133168,
+          "work": [
+            31306,
+            21540
+          ],
+          "work_ratio": 0.6880470197406248
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            395,
+            395
+          ],
+          "seconds": [
+            9.973683700081892,
+            7.892710200045258
+          ],
+          "time_ratio": 0.7913535697929194,
+          "work": [
+            51860,
+            38357
+          ],
+          "work_ratio": 0.7396259159274972
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            395,
+            395
+          ],
+          "seconds": [
+            33.59313870000187,
+            21.829121200018562
+          ],
+          "time_ratio": 0.6498089206537091,
+          "work": [
+            120896,
+            85343
+          ],
+          "work_ratio": 0.7059207914240339
+        },
+        {
+          "action_equal": true,
+          "depth": 12,
+          "score_equal": true,
+          "scores": [
+            395,
+            395
+          ],
+          "seconds": [
+            65.93972150003538,
+            48.74844940006733
+          ],
+          "time_ratio": 0.7392880693322488,
+          "work": [
+            213997,
+            161504
+          ],
+          "work_ratio": 0.7547021687219915
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        12,
+        13
+      ],
+      "final_scores": [
+        395,
+        395
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 12,
+        "score_equal": true,
+        "scores": [
+          395,
+          395
+        ],
+        "seconds": [
+          65.93972150003538,
+          48.74844940006733
+        ],
+        "time_ratio": 0.7392880693322488,
+        "work": [
+          213997,
+          161504
+        ],
+        "work_ratio": 0.7547021687219915
+      },
+      "key": "r3-p0",
+      "masks": [
+        9,
+        17
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 1,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            405,
+            405
+          ],
+          "seconds": [
+            0.00226540002040565,
+            0.002257399959489703
+          ],
+          "time_ratio": 0.996468587956261,
+          "work": [
+            7,
+            7
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            -804,
+            -804
+          ],
+          "seconds": [
+            0.004522599978372455,
+            0.004507499979808927
+          ],
+          "time_ratio": 0.9966612128784907,
+          "work": [
+            25,
+            25
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            -788,
+            -788
+          ],
+          "seconds": [
+            0.020338600035756826,
+            0.01587839995045215
+          ],
+          "time_ratio": 0.7807026994255601,
+          "work": [
+            107,
+            83
+          ],
+          "work_ratio": 0.7757009345794392
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            -800,
+            -800
+          ],
+          "seconds": [
+            0.05084409995470196,
+            0.02943039999809116
+          ],
+          "time_ratio": 0.5788360896212402,
+          "work": [
+            251,
+            177
+          ],
+          "work_ratio": 0.7051792828685259
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            -816,
+            -816
+          ],
+          "seconds": [
+            0.12975700001697987,
+            0.08679489989299327
+          ],
+          "time_ratio": 0.6689034108497837,
+          "work": [
+            617,
+            442
+          ],
+          "work_ratio": 0.7163695299837926
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            -830,
+            -830
+          ],
+          "seconds": [
+            0.21586629992816597,
+            0.15968259994406253
+          ],
+          "time_ratio": 0.7397291749439364,
+          "work": [
+            1116,
+            885
+          ],
+          "work_ratio": 0.793010752688172
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            -830,
+            -830
+          ],
+          "seconds": [
+            0.4664486999390647,
+            0.37616019998677075
+          ],
+          "time_ratio": 0.8064342338951981,
+          "work": [
+            2065,
+            1671
+          ],
+          "work_ratio": 0.8092009685230024
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            -839,
+            -839
+          ],
+          "seconds": [
+            0.8540793999563903,
+            0.6581589999841526
+          ],
+          "time_ratio": 0.7706063394313908,
+          "work": [
+            4342,
+            3595
+          ],
+          "work_ratio": 0.8279594656840166
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            -844,
+            -844
+          ],
+          "seconds": [
+            1.7745732000330463,
+            1.5413705999962986
+          ],
+          "time_ratio": 0.8685866550715378,
+          "work": [
+            7617,
+            6676
+          ],
+          "work_ratio": 0.8764605487724826
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            -839,
+            -839
+          ],
+          "seconds": [
+            3.4577861999860033,
+            2.9250197999645025
+          ],
+          "time_ratio": 0.8459226889089738,
+          "work": [
+            18586,
+            16649
+          ],
+          "work_ratio": 0.8957817712256537
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            -844,
+            -844
+          ],
+          "seconds": [
+            8.045059000025503,
+            7.3493675999343395
+          ],
+          "time_ratio": 0.9135256310626239,
+          "work": [
+            31993,
+            29038
+          ],
+          "work_ratio": 0.9076360453849279
+        },
+        {
+          "action_equal": true,
+          "depth": 12,
+          "score_equal": true,
+          "scores": [
+            -844,
+            -844
+          ],
+          "seconds": [
+            21.17342899995856,
+            17.534662999911234
+          ],
+          "time_ratio": 0.828144699658499,
+          "work": [
+            78078,
+            71108
+          ],
+          "work_ratio": 0.91073029534568
+        },
+        {
+          "action_equal": true,
+          "depth": 13,
+          "score_equal": true,
+          "scores": [
+            -844,
+            -844
+          ],
+          "seconds": [
+            58.89083159994334,
+            54.97695059992839
+          ],
+          "time_ratio": 0.9335400622867293,
+          "work": [
+            161733,
+            144850
+          ],
+          "work_ratio": 0.8956119035694633
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        13,
+        13
+      ],
+      "final_scores": [
+        -844,
+        -844
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 13,
+        "score_equal": true,
+        "scores": [
+          -844,
+          -844
+        ],
+        "seconds": [
+          58.89083159994334,
+          54.97695059992839
+        ],
+        "time_ratio": 0.9335400622867293,
+        "work": [
+          161733,
+          144850
+        ],
+        "work_ratio": 0.8956119035694633
+      },
+      "key": "r3-p5",
+      "masks": [
+        9,
+        17
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 0,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            7,
+            7
+          ],
+          "seconds": [
+            0.006248899968340993,
+            0.005387999932281673
+          ],
+          "time_ratio": 0.8622317463200041,
+          "work": [
+            33,
+            32
+          ],
+          "work_ratio": 0.9696969696969697
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            -144,
+            -144
+          ],
+          "seconds": [
+            0.08020460000261664,
+            0.05712200002744794
+          ],
+          "time_ratio": 0.7122035397668507,
+          "work": [
+            363,
+            256
+          ],
+          "work_ratio": 0.7052341597796143
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            -144,
+            -144
+          ],
+          "seconds": [
+            0.12445510004181415,
+            0.09007799997925758
+          ],
+          "time_ratio": 0.723779097433479,
+          "work": [
+            589,
+            420
+          ],
+          "work_ratio": 0.7130730050933786
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            -140,
+            -140
+          ],
+          "seconds": [
+            0.23653880006168038,
+            0.1686671000206843
+          ],
+          "time_ratio": 0.7130631421851396,
+          "work": [
+            1093,
+            766
+          ],
+          "work_ratio": 0.7008234217749314
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            14,
+            14
+          ],
+          "seconds": [
+            0.33646879997104406,
+            0.23787119996268302
+          ],
+          "time_ratio": 0.7069636173789481,
+          "work": [
+            1618,
+            1153
+          ],
+          "work_ratio": 0.7126081582200248
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            0.49218780000228435,
+            0.385891699930653
+          ],
+          "time_ratio": 0.7840334521271393,
+          "work": [
+            2327,
+            1779
+          ],
+          "work_ratio": 0.7645036527718092
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            0.7163972000125796,
+            0.5476674999808893
+          ],
+          "time_ratio": 0.7644746517312917,
+          "work": [
+            3529,
+            2720
+          ],
+          "work_ratio": 0.7707565882686314
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            1.2110943000297993,
+            0.969314599991776
+          ],
+          "time_ratio": 0.8003626141811796,
+          "work": [
+            5768,
+            4579
+          ],
+          "work_ratio": 0.7938626907073509
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            1.8251569999847561,
+            1.4399860999546945
+          ],
+          "time_ratio": 0.7889656067761411,
+          "work": [
+            9118,
+            7405
+          ],
+          "work_ratio": 0.8121298530379469
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            3.545658400049433,
+            3.0381902999943122
+          ],
+          "time_ratio": 0.856876201032777,
+          "work": [
+            16580,
+            14059
+          ],
+          "work_ratio": 0.8479493365500603
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            6.423080599983223,
+            4.987758200033568
+          ],
+          "time_ratio": 0.7765367602652528,
+          "work": [
+            28718,
+            23900
+          ],
+          "work_ratio": 0.8322306567309701
+        },
+        {
+          "action_equal": true,
+          "depth": 12,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            15.225775200058706,
+            13.047871300019324
+          ],
+          "time_ratio": 0.8569594078841395,
+          "work": [
+            54592,
+            46558
+          ],
+          "work_ratio": 0.8528355803048066
+        },
+        {
+          "action_equal": true,
+          "depth": 13,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            25.289228899986483,
+            21.273859999957494
+          ],
+          "time_ratio": 0.8412221694892748,
+          "work": [
+            97303,
+            81760
+          ],
+          "work_ratio": 0.8402618624297298
+        },
+        {
+          "action_equal": true,
+          "depth": 14,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            55.513762400019914,
+            48.862992499955
+          ],
+          "time_ratio": 0.8801960160411947,
+          "work": [
+            193583,
+            166074
+          ],
+          "work_ratio": 0.857895579673835
+        },
+        {
+          "action_equal": true,
+          "depth": 15,
+          "score_equal": true,
+          "scores": [
+            -21,
+            -21
+          ],
+          "seconds": [
+            102.53403820004314,
+            87.51265339995734
+          ],
+          "time_ratio": 0.8534985545894604,
+          "work": [
+            381843,
+            318775
+          ],
+          "work_ratio": 0.8348326406402632
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        15,
+        15
+      ],
+      "final_scores": [
+        -21,
+        -21
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 15,
+        "score_equal": true,
+        "scores": [
+          -21,
+          -21
+        ],
+        "seconds": [
+          102.53403820004314,
+          87.51265339995734
+        ],
+        "time_ratio": 0.8534985545894604,
+        "work": [
+          381843,
+          318775
+        ],
+        "work_ratio": 0.8348326406402632
+      },
+      "key": "r4-p0",
+      "masks": [
+        10,
+        19
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "IMMEDIATE_CORE_WIN_VERIFIED",
+      "actor": 1,
+      "common_depths": [],
+      "common_value_parity": null,
+      "final_actions_equal": true,
+      "final_depths": [
+        0,
+        0
+      ],
+      "final_scores": [
+        999999999,
+        999999999
+      ],
+      "highest_common": null,
+      "key": "r4-p5",
+      "masks": [
+        10,
+        19
+      ],
+      "result_sources": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ],
+      "termination": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ]
+    },
+    {
+      "WDL_quality": "IMMEDIATE_CORE_WIN_VERIFIED",
+      "actor": 0,
+      "common_depths": [],
+      "common_value_parity": null,
+      "final_actions_equal": true,
+      "final_depths": [
+        0,
+        0
+      ],
+      "final_scores": [
+        999999999,
+        999999999
+      ],
+      "highest_common": null,
+      "key": "r5-p0",
+      "masks": [
+        11,
+        20
+      ],
+      "result_sources": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ],
+      "termination": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ]
+    },
+    {
+      "WDL_quality": "IMMEDIATE_CORE_WIN_VERIFIED",
+      "actor": 1,
+      "common_depths": [],
+      "common_value_parity": null,
+      "final_actions_equal": true,
+      "final_depths": [
+        0,
+        0
+      ],
+      "final_scores": [
+        999999999,
+        999999999
+      ],
+      "highest_common": null,
+      "key": "r5-p5",
+      "masks": [
+        11,
+        20
+      ],
+      "result_sources": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ],
+      "termination": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 0,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            7,
+            7
+          ],
+          "seconds": [
+            0.006540699978359044,
+            0.006140999961644411
+          ],
+          "time_ratio": 0.938890330081321,
+          "work": [
+            39,
+            39
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            487,
+            487
+          ],
+          "seconds": [
+            0.10047339997254312,
+            0.0775653999298811
+          ],
+          "time_ratio": 0.7719993545662612,
+          "work": [
+            442,
+            367
+          ],
+          "work_ratio": 0.830316742081448
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            494,
+            494
+          ],
+          "seconds": [
+            0.1703514999244362,
+            0.13352329994086176
+          ],
+          "time_ratio": 0.7838105329280309,
+          "work": [
+            798,
+            665
+          ],
+          "work_ratio": 0.8333333333333334
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            491,
+            491
+          ],
+          "seconds": [
+            0.2947716999333352,
+            0.23706389998551458
+          ],
+          "time_ratio": 0.8042288321406985,
+          "work": [
+            1386,
+            1158
+          ],
+          "work_ratio": 0.8354978354978355
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            491,
+            491
+          ],
+          "seconds": [
+            0.4248377999756485,
+            0.3428037000121549
+          ],
+          "time_ratio": 0.8069048941308994,
+          "work": [
+            2064,
+            1738
+          ],
+          "work_ratio": 0.8420542635658915
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            494,
+            494
+          ],
+          "seconds": [
+            0.7547117999056354,
+            0.6124275999609381
+          ],
+          "time_ratio": 0.8114721408059504,
+          "work": [
+            3560,
+            2915
+          ],
+          "work_ratio": 0.8188202247191011
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            494,
+            494
+          ],
+          "seconds": [
+            1.2556283999001607,
+            0.9319604999618605
+          ],
+          "time_ratio": 0.7422263625416277,
+          "work": [
+            5825,
+            4726
+          ],
+          "work_ratio": 0.8113304721030042
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            491,
+            491
+          ],
+          "seconds": [
+            2.4309437999036163,
+            1.957705199951306
+          ],
+          "time_ratio": 0.8053272148985617,
+          "work": [
+            10887,
+            8950
+          ],
+          "work_ratio": 0.8220813814641316
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            491,
+            491
+          ],
+          "seconds": [
+            3.9230637999717146,
+            3.01894340000581
+          ],
+          "time_ratio": 0.7695371663411583,
+          "work": [
+            18830,
+            15174
+          ],
+          "work_ratio": 0.8058417419012215
+        },
+        {
+          "action_equal": true,
+          "depth": 10,
+          "score_equal": true,
+          "scores": [
+            494,
+            494
+          ],
+          "seconds": [
+            7.42207570001483,
+            5.944738199934363
+          ],
+          "time_ratio": 0.8009535930659513,
+          "work": [
+            33498,
+            27352
+          ],
+          "work_ratio": 0.8165263597826736
+        },
+        {
+          "action_equal": true,
+          "depth": 11,
+          "score_equal": true,
+          "scores": [
+            494,
+            494
+          ],
+          "seconds": [
+            14.806995299994014,
+            9.973594299983233
+          ],
+          "time_ratio": 0.6735731387709203,
+          "work": [
+            62421,
+            49805
+          ],
+          "work_ratio": 0.7978885311033146
+        },
+        {
+          "action_equal": true,
+          "depth": 12,
+          "score_equal": true,
+          "scores": [
+            492,
+            492
+          ],
+          "seconds": [
+            43.12748509994708,
+            33.04570569994394
+          ],
+          "time_ratio": 0.7662330790529793,
+          "work": [
+            136417,
+            108774
+          ],
+          "work_ratio": 0.7973639649017351
+        },
+        {
+          "action_equal": true,
+          "depth": 13,
+          "score_equal": true,
+          "scores": [
+            494,
+            494
+          ],
+          "seconds": [
+            70.64526769996155,
+            54.035877399961464
+          ],
+          "time_ratio": 0.7648902631306878,
+          "work": [
+            252008,
+            197462
+          ],
+          "work_ratio": 0.7835544903336402
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        13,
+        14
+      ],
+      "final_scores": [
+        494,
+        498
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 13,
+        "score_equal": true,
+        "scores": [
+          494,
+          494
+        ],
+        "seconds": [
+          70.64526769996155,
+          54.035877399961464
+        ],
+        "time_ratio": 0.7648902631306878,
+        "work": [
+          252008,
+          197462
+        ],
+        "work_ratio": 0.7835544903336402
+      },
+      "key": "r6-p0",
+      "masks": [
+        12,
+        23
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    },
+    {
+      "WDL_quality": "IMMEDIATE_CORE_WIN_VERIFIED",
+      "actor": 1,
+      "common_depths": [],
+      "common_value_parity": null,
+      "final_actions_equal": true,
+      "final_depths": [
+        0,
+        0
+      ],
+      "final_scores": [
+        999999999,
+        999999999
+      ],
+      "highest_common": null,
+      "key": "r6-p5",
+      "masks": [
+        12,
+        23
+      ],
+      "result_sources": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ],
+      "termination": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ]
+    },
+    {
+      "WDL_quality": "IMMEDIATE_CORE_WIN_VERIFIED",
+      "actor": 0,
+      "common_depths": [],
+      "common_value_parity": null,
+      "final_actions_equal": true,
+      "final_depths": [
+        0,
+        0
+      ],
+      "final_scores": [
+        999999999,
+        999999999
+      ],
+      "highest_common": null,
+      "key": "r7-p0",
+      "masks": [
+        13,
+        24
+      ],
+      "result_sources": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ],
+      "termination": [
+        "root_immediate_win",
+        "root_immediate_win"
+      ]
+    },
+    {
+      "WDL_quality": "UNKNOWN",
+      "actor": 1,
+      "common_depths": [
+        {
+          "action_equal": true,
+          "depth": 1,
+          "score_equal": true,
+          "scores": [
+            -1359,
+            -1359
+          ],
+          "seconds": [
+            0.0018076000269502401,
+            0.001726199989207089
+          ],
+          "time_ratio": 0.9549678930462906,
+          "work": [
+            4,
+            4
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 2,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            0.045453400001861155,
+            0.046517199953086674
+          ],
+          "time_ratio": 1.0234041887115586,
+          "work": [
+            166,
+            166
+          ],
+          "work_ratio": 1.0
+        },
+        {
+          "action_equal": true,
+          "depth": 3,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            0.1638820000225678,
+            0.1451865000417456
+          ],
+          "time_ratio": 0.8859209676581462,
+          "work": [
+            610,
+            495
+          ],
+          "work_ratio": 0.8114754098360656
+        },
+        {
+          "action_equal": true,
+          "depth": 4,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            0.57745820004493,
+            0.4159468000289053
+          ],
+          "time_ratio": 0.7203063355867869,
+          "work": [
+            2312,
+            1581
+          ],
+          "work_ratio": 0.6838235294117647
+        },
+        {
+          "action_equal": true,
+          "depth": 5,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            1.4854189000325277,
+            1.2944403999717906
+          ],
+          "time_ratio": 0.8714312171088202,
+          "work": [
+            5910,
+            4777
+          ],
+          "work_ratio": 0.8082910321489002
+        },
+        {
+          "action_equal": true,
+          "depth": 6,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            4.8027235000627115,
+            3.829036599956453
+          ],
+          "time_ratio": 0.7972635942723864,
+          "work": [
+            19506,
+            14748
+          ],
+          "work_ratio": 0.756075053829591
+        },
+        {
+          "action_equal": true,
+          "depth": 7,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            12.391161300009117,
+            10.802386500057764
+          ],
+          "time_ratio": 0.8717816061396777,
+          "work": [
+            48412,
+            39816
+          ],
+          "work_ratio": 0.8224407171775593
+        },
+        {
+          "action_equal": true,
+          "depth": 8,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            39.60986790002789,
+            31.602393900044262
+          ],
+          "time_ratio": 0.7978414363765653,
+          "work": [
+            164644,
+            125205
+          ],
+          "work_ratio": 0.7604589295692524
+        },
+        {
+          "action_equal": true,
+          "depth": 9,
+          "score_equal": true,
+          "scores": [
+            -999999996,
+            -999999996
+          ],
+          "seconds": [
+            104.0674735000357,
+            92.32085979997646
+          ],
+          "time_ratio": 0.8871250227857678,
+          "work": [
+            419795,
+            353687
+          ],
+          "work_ratio": 0.8425231362927142
+        }
+      ],
+      "common_value_parity": true,
+      "final_actions_equal": true,
+      "final_depths": [
+        9,
+        9
+      ],
+      "final_scores": [
+        -999999996,
+        -999999996
+      ],
+      "highest_common": {
+        "action_equal": true,
+        "depth": 9,
+        "score_equal": true,
+        "scores": [
+          -999999996,
+          -999999996
+        ],
+        "seconds": [
+          104.0674735000357,
+          92.32085979997646
+        ],
+        "time_ratio": 0.8871250227857678,
+        "work": [
+          419795,
+          353687
+        ],
+        "work_ratio": 0.8425231362927142
+      },
+      "key": "r7-p5",
+      "masks": [
+        13,
+        24
+      ],
+      "result_sources": [
+        "main_iteration",
+        "main_iteration"
+      ],
+      "termination": [
+        "time_limit",
+        "time_limit"
+      ]
+    }
+  ],
+  "parity_mismatches": [],
+  "pv_legal_steps": 272,
+  "queries": 32,
+  "rules": 8,
+  "scope": "Qualification is data binding, not successful optimization or WDL truth. All mismatches/negative costs retained.",
+  "status": "DATA_QUALIFIED",
+  "termination_counts": {
+    "root_immediate_win": 10,
+    "time_limit": 22
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "batch_seconds": 240,
+  "cost": "10newcandidate calls at20s max, <=4min total, paired oldcontrols alreadypaid; expected short-clock8 finish much sooner. No rerun on failure/extra seeds, no changes to default UI.",
+  "decision": "Exact action/score/main/q shared-prefix parity required. Completion only if actual completed_depth>=clock cap; requested ceiling alone is not proof. New earlier timeout remains UNKNOWN, never forced.",
+  "hypothesis": "Can an admitted hard-clock request ceiling avoid provably redundant completed iterations without changing the actual shared prefix/value or live budgets?",
+  "inputs": ".local_agent\\leaper-default-panel-20261025\\inputs.json",
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "limits": {
+    "max_depth": 64,
+    "max_nodes": 250000,
+    "max_time_seconds": 20.0
+  },
+  "prepared_at": "2026-10-24T22:31:23.087096+00:00",
+  "reference": ".local_agent/clock-completion-panel-20261025 baseline(default) rows;reuse paid controls, no refills.",
+  "scope": "All10 exposed histories remaining<=10, including2budget-limited roots H10/9; one exact pureLeaper rule, not class-wide strength. Feature defaultfalse. Admission excludes PENDING/other policies, active drops/promotion,nonLeaper executable geometry. Fullstate/history untouched.",
+  "slots": [
+    "cost-p54",
+    "cost-p56",
+    "cost-p58",
+    "cost-p60",
+    "cost-p62",
+    "next-role-p55",
+    "next-role-p57",
+    "next-role-p59",
+    "next-role-p61",
+    "next-role-p63"
+  ],
+  "source_hashes": {
+    "generic_chess/ai/alphabeta/player.py": "efcb186c227818c7a0d03e76f8db9b4b568a2874abddb5dfde82d4725b448855",
+    "generic_chess/ai/alphabeta/rule_clock.py": "9a80d8c041f8adfa907170f4c24fb760af0b59c1eb41d5cbcd11b62c525fb622",
+    "generic_chess/ai/alphabeta/search.py": "417b5b84c2d88c84e578a0af5dd45676aa5309f0a3665c96f21960354de7f5d5",
+    "scripts\\leaper_rule_clock_cap_check.py": "ace09854e3c82087c279e6525971d77f2919f8b5e88cd23cf53a3bb8e4c42af9"
+  }
+}

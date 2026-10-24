@@ -7369,3 +7369,37 @@ thread1792850530.391389. Immutable payload/receipt/readback match; no new reply
 at bounded verification. Questions ask for a falsifier of clock-horizon versus
 contract failure and whether safe initial-q refinement outranks that diagnosis.
 Pending advice is not adopted/executed and does not gate independent work.
+
+
+## 2026-10-25 PRIMARY clock horizon and conservative backend ceiling
+
+- PRIMARY executed83successful Player calls/1failed observer attempt and551legal
+  exportedPVsteps; verified exact inputs/source/complete histories. One44minute
+  measured q-cost cohort, then serial clock mechanisms; no extra worker or AUX
+  checkout/state/control message.180minute recurrence unchanged.
+- New8rule q-order strata preserve11nontrivial common-score pairs with measured
+  median work/time ratios0.8348/0.8535;5immediate-win pairs are excluded from deep
+  parity evidence. No nontrivial heldout WDL/strength claim or default activation.
+- Actual endpoint static-1106 becomes terminal-only0 at fullremaining4. Last1q
+  expansion fails despite10720activations;full<=4q expansion regresses20s quality
+ 16/16 to15/16 with no repairs. Both rejected, no threshold/cap refill.
+- Implemented defaultfalse backend cap_pure_leaper_rule_clock;10candidate calls
+  reuse10paid controls. Exact common prefixes/rootvalues;8DRAW complete-clock
+  cases87.906s→13.353s/307059→85520events;2budget-limited controls stay limited.
+  Tested hardclock/PENDING/geometry/budgets; no evaluator/TT/Core/history edits.
+- Read autonomous ChatGPT review1792857477.655359 complete(1message,no new reply)
+  and known Dot thread1792850530.391389 complete(6messages,no new reply at start).
+  Kept its time-to-correct/no blindmask-loop advice; fixed qcost registration was
+  one measured bottleneck hypothesis, not repeated outcome-selected masks.
+- Used fixed published AUX26d414c labels/shared Core only; not independently solved.
+  No AUX work/availability claim. Dot's previous followup1792870426.396909 remains
+  preserved; new conversation/delivery is recorded only after actual publish/send.
+-51unique relevant tests PASS. Temporary OS pytest directory denial resolved with
+  fresh ignored supportedbasetemp, no security edits. Two invalid unit fixtures
+  diagnosed at compiler validation; assertions unchanged. Observer failed due
+  runtime-view serialization; savedD1–5match,missingD6/7remainUNKNOWN,notrerun.
+- Accepted research session21399c2a-600c-46b3-9c1a-8bd936b434b3 ended after
+ 4195.6984059999995effective seconds/77intervals; UTC-zero spans and administrative
+  time uncredited. Quality/finish/final-checkPASS. Began zero-query same-score
+  witness1103:D6WIN/D8DRAW; main p53 error remainsopen. Delivery overhead is real
+  and not amortized by8saved queries; cap evidence is a scoped latency result.

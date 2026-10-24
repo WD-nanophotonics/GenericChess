@@ -1,0 +1,228 @@
+{
+  "baseline_correct": 0,
+  "completion_correct": 0,
+  "goal": "reported_any_win_feasibility",
+  "pairs": [
+    {
+      "baseline_chosen": 0,
+      "baseline_correct": false,
+      "changed": false,
+      "completion_chosen": 0,
+      "completion_correct": false,
+      "depths": [
+        9,
+        6
+      ],
+      "key": "next-role-p53",
+      "root_global_WDL": -1,
+      "seconds": [
+        148.62288269994315,
+        120.42745179997291
+      ],
+      "work": [
+        1000000,
+        1000000
+      ]
+    }
+  ],
+  "pv_legal_steps": 15,
+  "queries": 2,
+  "regressions": [],
+  "repairs": [],
+  "results": [
+    {
+      "actor": 1,
+      "chosen_global_WDL": 0,
+      "completed_depth": 6,
+      "completion": true,
+      "correct": false,
+      "cpu_seconds": 120.171875,
+      "first_correct": null,
+      "iterations": [
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 1,
+          "elapsed": 0.010700599988922477,
+          "nodes": 19,
+          "qnodes": 9,
+          "score": 1094
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 2,
+          "elapsed": 0.08201300003565848,
+          "nodes": 40,
+          "qnodes": 203,
+          "score": 1097
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 3,
+          "elapsed": 2.282184000010602,
+          "nodes": 166,
+          "qnodes": 17674,
+          "score": 1106
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 4,
+          "elapsed": 9.499823300051503,
+          "nodes": 379,
+          "qnodes": 75827,
+          "score": 1097
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 5,
+          "elapsed": 16.03213870001491,
+          "nodes": 1909,
+          "qnodes": 128441,
+          "score": 1106
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 6,
+          "elapsed": 70.92762900004163,
+          "nodes": 5861,
+          "qnodes": 570478,
+          "score": 1098
+        }
+      ],
+      "key": "next-role-p53",
+      "policy_counts": {
+        "beta_cutoffs": 71418,
+        "root_remaining_3": 3295,
+        "root_remaining_4": 2254,
+        "roots": 5549,
+        "terminal": 837155,
+        "visits": 983488
+      },
+      "remaining": 11,
+      "reported_mate_band_win": false,
+      "root_global_WDL": -1,
+      "score": 1098,
+      "seconds": 120.42745179997291,
+      "source": "main_iteration",
+      "termination": "node_limit",
+      "work": 1000000
+    },
+    {
+      "actor": 1,
+      "chosen_global_WDL": 0,
+      "completed_depth": 9,
+      "completion": false,
+      "correct": false,
+      "cpu_seconds": 148.375,
+      "first_correct": {
+        "chosen_global_WDL": -1,
+        "correct": true,
+        "depth": 6,
+        "elapsed": 11.703860600013286,
+        "nodes": 6296,
+        "qnodes": 27754,
+        "score": 1103
+      },
+      "iterations": [
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 1,
+          "elapsed": 0.005050799925811589,
+          "nodes": 19,
+          "qnodes": 9,
+          "score": 1094
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 2,
+          "elapsed": 0.07585059991106391,
+          "nodes": 40,
+          "qnodes": 203,
+          "score": 1097
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 3,
+          "elapsed": 0.22791339992545545,
+          "nodes": 166,
+          "qnodes": 604,
+          "score": 1106
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 4,
+          "elapsed": 0.7596660999115556,
+          "nodes": 379,
+          "qnodes": 1732,
+          "score": 1097
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 5,
+          "elapsed": 1.9366658999351785,
+          "nodes": 1909,
+          "qnodes": 5099,
+          "score": 1106
+        },
+        {
+          "chosen_global_WDL": -1,
+          "correct": true,
+          "depth": 6,
+          "elapsed": 11.703860600013286,
+          "nodes": 6296,
+          "qnodes": 27754,
+          "score": 1103
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 7,
+          "elapsed": 28.919531099963933,
+          "nodes": 25680,
+          "qnodes": 124392,
+          "score": 1106
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 8,
+          "elapsed": 82.19218559993897,
+          "nodes": 52589,
+          "qnodes": 393583,
+          "score": 1103
+        },
+        {
+          "chosen_global_WDL": 0,
+          "correct": false,
+          "depth": 9,
+          "elapsed": 146.90471299993806,
+          "nodes": 215836,
+          "qnodes": 770193,
+          "score": 1106
+        }
+      ],
+      "key": "next-role-p53",
+      "policy_counts": {},
+      "remaining": 11,
+      "reported_mate_band_win": false,
+      "root_global_WDL": -1,
+      "score": 1106,
+      "seconds": 148.62288269994315,
+      "source": "main_iteration",
+      "termination": "node_limit",
+      "work": 1000000
+    }
+  ],
+  "scope": "Exposed one-rule/full-history tests, fixed published AUX labels/shared Core, not independent solving or heldout strength. Distinct goals; no common-depth parity requirement for the intentionally changed q policy.",
+  "status": "DATA_QUALIFIED"
+}
