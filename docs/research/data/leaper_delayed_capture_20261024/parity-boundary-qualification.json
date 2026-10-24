@@ -1,0 +1,32 @@
+{
+  "checked_king_square": [
+    0,
+    1
+  ],
+  "implication": "Adding only Wazir breaks the even-offset corner lemma. Old joint static capacity was already positive on n3, yet this common fresh entry is born. B survival separates ongoing from stalemate under oldA22.",
+  "noncorner_mate": true,
+  "scope": "Four literal complete fresh records. Does not extend the A6/A22 corner law toA23 or assert new generic WDL labels.",
+  "status": "PASS",
+  "terminals": [
+    {
+      "B_present": true,
+      "mask": 22,
+      "status": "ongoing"
+    },
+    {
+      "B_present": true,
+      "mask": 23,
+      "status": "checkmate"
+    },
+    {
+      "B_present": false,
+      "mask": 22,
+      "status": "stalemate"
+    },
+    {
+      "B_present": false,
+      "mask": 23,
+      "status": "checkmate"
+    }
+  ]
+}

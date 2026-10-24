@@ -1,0 +1,17 @@
+{
+  "cap_seconds": 600,
+  "changed_premise": "The parity-boundary shared Ferz example makes a noncorner mate. Separately, the old sealed corner cage K0c1/A0c3/K1a1/Ba2 can now be entered by new Wazir A b3-c3; old post-position is already staticmate, but old action was illegal.",
+  "classification": "shared action with changed terminal; new action with old static postmate; new action with old nonmate static post. Old illegal-action staticpost is NOT an old legal GameRecord.",
+  "counts": "All other counts UNKNOWN before enumeration. Retain every negative root and legal oneply return; do not select by old WDL labels.",
+  "existing_reuse": "Reuse exact matching A22/A23 Bpresent parity-boundary action returns if canonical fullR/root/actions match; replaybinding allowed, no duplicate independent observations.",
+  "expected_total_seconds": 180,
+  "mu": "Uniform paired completeRuleSets generated from all distinctphysical K0/A0/K1/B1 boards, bothKingssafe under BOTH rules, White0H6repeat2draw; preserve completeR and freshrecord for everycase.",
+  "predicted_mechanisms": [
+    "at least one shared noncorner mate with oldongoing child (existing parity-boundary root, reuse returned action cell)",
+    "at least one newly legal Wazir entry into already-checkmated old staticcorner cage (K0c1/A0b3/K1a1/Ba2)"
+  ],
+  "question": "On the complete n3 common-safe fresh law for A22-to-A23/B5, do wins enter old sealed mate cages as well as arise through shared moves into newly checking states?",
+  "scope": "Exactly one n3 rule pairA22/A23 and B5, all common safe fresh four-piece initializers. Exhaustive oneply Core only, no Gamegraph/Player/remaining-rootWDL. New initialization law differs from A6/A22 law360; never combine denominators.",
+  "started_at": "2026-10-24T04:56:12.966731+00:00",
+  "stop": "Complete finite onepair census or first actual mismatch/stop/cap; no root extension, no curve, allmissingUNKNOWN."
+}

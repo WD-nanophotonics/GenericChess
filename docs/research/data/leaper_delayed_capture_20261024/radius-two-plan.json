@@ -1,0 +1,18 @@
+{
+  "cap_seconds": 600,
+  "changed_premise": "All n5 sole-escape cages either expose previous mover to B27 or have B27 captureA. All pieces relevant to a possible mate must lie within radius2 of checked King.",
+  "expected_total_seconds": 180,
+  "proof_obligations": [
+    "A6/22 check offsets have even parity, so every in-board orthogonal neighbor of checked King is unattacked by A; at least2exist for n>=3.",
+    "If attacking King is farther thanChebyshev2, at least2orthogonal escapes remain beforeB; oneB cannot blockboth.",
+    "Potential mate therefore has K0,A withinradius2 andB on soleKingescape withinradius1.",
+    "For n>=5 translate each target coordinate to0/1/2/3/4 by nearest edge profile; every radius2 in-board test and relative offset is preserved.",
+    "Only missing simultaneous-near-opposite-edge profiles are n3/n4. Enumerate those and compare n5 reduced candidates exactly to originalcompletecensus.",
+    "A noncapturing B Leap cannot interpose on A Leap check. OwnKing safety plus one legal captureA is enough to refute mate."
+  ],
+  "question": "Does a radius2 reduction turn the completed n5 negative into a scoped all-square no-white-mate obstruction for A6/A22 versus B27?",
+  "scope": "Pure symmetric Leap/remove/no-promotion/drop/effect, oneAwhite oneB27black K8; valid safe mover poststates only. Not generic DSL or forced-win sufficiency.",
+  "selection": "Exactly n3/n4 missing boundary cases plus independent n5 geometric match; no n6+ runtime panel or solver.",
+  "started_at": "2026-10-24T04:26:25.326613+00:00",
+  "stop": "Any geometric/Core mismatch invalidates allsize inference; keep finite evidence and no search replacement."
+}

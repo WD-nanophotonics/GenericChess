@@ -1,0 +1,22 @@
+{
+  "cap_seconds": 600,
+  "changed_premise": "The n3 zero-entry and n4 positive witness show static capacity is insufficient. The same corner templates admit exactly bounded local incoming sources; denominator grows with board.",
+  "denominator": "For each nonadjacent orderedKings u,v, allowedA=board minus{u,v} minus A22 attackpredecessors ofv; allowedB=board minus{u,v} minus B5 attackpredecessors ofu. Count |A|*|B|-|A intersectionB|. Independent brute permutations on n3/n4.",
+  "derivation": "For canonical mate K0c1/A0c3/K1a1/Ba2, fresh A predecessor cells n4:b4,d2,d4; n5 adds e3,c5,a5,e1,e5. Eight D4 orientations. Verify exact distinct roots, legal common admission and no duplicates.",
+  "expected_total_seconds": 180,
+  "limits": "Immediate-mate incidence is not total forcedWIN rate, difficulty, strength or price. n>=5 bounded corner entry has64roots, but extrapolation of full rootWDL remainsUNKNOWN.",
+  "mu": "Uniform over all labelled distinct K0,A0,K1,B1 boards with bothKingssafe under BOTH complete paired rules, White0 fresh H6repeat2. This is a law on paired FULL RuleSets with initial board varied by initializer, not one fixed fullRuleSet with hidden different setups. Every executed positive stores its own full RuleSet/record/fingerprint.",
+  "predictions": {
+    "n3_immediate_mate_roots": 0,
+    "n4_immediate_mate_roots": 24,
+    "n4_shared_winning_actions": 24,
+    "n5_immediate_mate_roots": 64,
+    "n5_new_Alfil_winning_actions": 24,
+    "n5_shared_winning_actions": 40
+  },
+  "question": "How much of a uniform common-safe fresh initialization law sees the new immediate mating entry, despite unchanged positive static capacity?",
+  "selection": "B5 only, A6-to-A22, n3/4/5 exact denominator and incoming-root counts. This is not a new game/price/seed panel or root-WDL solve.",
+  "started_at": "2026-10-24T04:41:25.603034+00:00",
+  "stop": "Any count/geometry/Core mismatch invalidates forecast, no refit or refill.",
+  "validation": "All88positive n4/n5 roots with full fresh high-rule record and actual mate action. Shared/new action classification checked against old physical legalfrontier; n3absence follows complete incoming proof, no exhaustiveWDL."
+}

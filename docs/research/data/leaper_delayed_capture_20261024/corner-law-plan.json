@@ -1,0 +1,16 @@
+{
+  "cap_seconds": 600,
+  "changed_premise": "All n3/n4/n5 candidates repeat the same 40/56 counts. Parity shows any possible target must be a corner: A6/22 cannot attack orthogonal royal escapes, nonadjacent attacking King covers at most one, and B occupies at most one.",
+  "derivation": "Orient targetV=(0,0), B=(0,1), K0=(2,0)or(2,1). CheckingA6 positions=(1,1),(2,0),(0,2), excluding collision. A22 adds(2,2). Five/seven exact templates. B check ofK0 is Knight forK0(2,0), Dabbaba forK0(2,1); B captureA is Wazir forA(1,1)/(0,2), Knight forA(2,0)/(2,2).",
+  "expected_total_seconds": 180,
+  "fixed_validation": "Exactly 5+7 oriented corner templates times31B masks on5x5, full Core legal frontiers on every safe template. D4 covers other orientations; symbolic theorem covers n>=3. No graph or WDL.",
+  "new_fresh_witness": "B5 fixed; K0c1/A0e3/K1a1/B1a2 on5x5, White0 fresh H6repeat2draw; shared A e3-c3. OldA6 predicted stalemateDRAW, newA22 predicted checkmateWIN. Root labels remain unclaimed except immediate action.",
+  "predicted_formula": {
+    "A22_mate": "B lacks Knight OR lacks both Wazir and Dabbaba",
+    "A6_mate": "at most one of B Wazir,Dabbaba,Knight is present"
+  },
+  "question": "Can the B-blocker obstruction be expressed as an exact conditional static-capacity law rather than a B27-only finite negative?",
+  "scope": "OneA6/22white and one variable pureLeap Bblack; no promotion/drop/effects, remove, K8. Static possiblemate, not reachable sufficiency, strength or learning gate.",
+  "started_at": "2026-10-24T04:30:43.111742+00:00",
+  "stop": "Any mismatch invalidates formula; keep all rows, do not fit bit formula to returned values or hunt replacements."
+}

@@ -1,0 +1,18 @@
+{
+  "cap_seconds": 300,
+  "changed_premise": "A22/B5n3 has positive static capacity but no legal entering mate. Add only Wazir toA (22to23), holding B5 and a common fresh physical root fixed. This invalidates the orthogonal-safe-neighbor lemma.",
+  "decision": "If valid, explicitly restrict corner law to even attacksets and separate joint capacity, legal entry, roster-dependent absorption and actionvalue; do not revive all-domain claims.",
+  "expected_total_seconds": 120,
+  "fixed_root": "n3 WhiteKc2 A c3 BlackKa2 B a1, White0 freshH6repeat2draw; shared A c3-b2 (Ferz).",
+  "logic": "At childK0c2/A b2/K1a2, oldA22 attacks a1/a3 but notKing a2. K0covers b1,b2,b3. NewWazir checks a2; B5a1 cannot captureA b2 because Ferz missing and cannot interpose onLeap.",
+  "predicted_results": {
+    "A22_B5": "ongoing; Black King not checked and B has legal moves",
+    "A22_Babsent": "stalemateDRAW; no ordinaryB move",
+    "A23_B5": "checkmate, White0 winner, targeta2 is edge notcorner",
+    "A23_Babsent": "checkmateWhite0"
+  },
+  "question": "Does breaking the even-attack premise create a noncorner immediate mate without changing an already-positive joint static-capacity flag?",
+  "scope": "Exactly four literal fresh record/action cells (A22/A23 × B5present/absent), same physical surviving pieces. No Player/price/factorial performance or graphWDL campaign.",
+  "started_at": "2026-10-24T04:52:10.586151+00:00",
+  "stop": "Any mismatch preservesfailure and stops boundarycandidate, no substitute search."
+}

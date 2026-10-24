@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T04:32:02.927761+00:00",
+  "cause": "Manual causal review: under oldA6 the defending King is not checked, so ordinaryB5 may move even when King has no moves. Therefore absence of King escapes is NOT stalemate for a four-actor roster.",
+  "corrected_prediction": "old child ongoing with B legal moves; old exact action/rootWDL UNKNOWN. Formula predicts oldA6/B5 never wins by mate under draw endings. NewA22 same shared action checkmates.",
+  "old_prediction": "old A e3-c3 gives stalemateDRAW",
+  "original_plan_sha256": "8d5c29a674dd8557c48b4d1a4c4dcd9cd5310aee3e05d8a166dc20eb6d631d22",
+  "phase": "BEFORE any new B-mask Core validation or fresh witness execution",
+  "preserved": "Original registration remains unchanged. No expected test/output value was adjusted to actual Core returns."
+}

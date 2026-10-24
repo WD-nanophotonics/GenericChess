@@ -1,0 +1,33 @@
+{
+  "candidate_exposed": true,
+  "clock_counterfactual": "Separate white-fresh board K0a1/A0c1/K1c2/B1a3, H1 and H2, never invent H6 prefix. Enumerate only full one/two ply frontiers needed for literal short-clock argument.",
+  "expected_total_seconds": 900,
+  "hard_checkpoint_seconds": 1800,
+  "named_root": {
+    "H": 6,
+    "blackB": "a3",
+    "blackK": "b3",
+    "repeat": 2,
+    "scoring": "draw",
+    "turn": "black",
+    "whiteA": "c1",
+    "whiteK": "a1"
+  },
+  "negative_controls": "Retain both unchanged old white actions in high rule; compare all legal replies for named actions; preserve invalidity and UNKNOWN.",
+  "prediction": "Both children ongoing, same board/roster/remaining5; old white options two admit named mate replies, new A c1xa3 removesB. Verify literal premises before any WDL inference.",
+  "question": "Can a shared ongoing action revalue through a one-ply-later capture exit, and can a short clock hide the effect?",
+  "scope": "No Player, training, solver, whole graph, price panel, AUX file edits or certificates rerun.",
+  "scoring_counterfactual": "First check named H6 capture exit under draw versus loss; changed scoring is new fingerprint, new fresh record, no rootWDL transfer from no-checkmate alone.",
+  "selection": "Exactly Chat named candidate; stop after this candidate, even if invalid. No replacement search.",
+  "shared_action": "black K b3-c2",
+  "source_pair": [
+    6,
+    27,
+    22,
+    27
+  ],
+  "source_reply": "1792813645.559729",
+  "started_at": "2026-10-24T04:08:35.385443+00:00",
+  "stop": "One valid ongoing/ongoing witness refutes instantaneous-only universal claim. One H1/H2 pair separates clock. No pair or mu panel.",
+  "supported_encoding": "Core always starts seat0: globally exchange owners for black-first, preserving complete rule and fresh history, no manual GameState injection."
+}

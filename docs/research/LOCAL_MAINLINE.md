@@ -93,6 +93,19 @@ obsolete instructions, actual unfinished work and reasons.
   Thus movement-only/rootWDL-only signatures miss action/absorption/scoring
   structure. WDL is attributed to fixed published AUX labels, never re-solved here.
 
+- [Legal entry and capture laws](LEAPER_ENTRY_AND_CAPTURE_LAWS_20261024.md) completes
+  the selected ordinary-defender diagnostic and changes the next coordinate:
+  both ongoing children can hide LOSS->DRAW through capture/remnant/history;
+  the proposed different-history LOSS fails (both DRAW). A6/A22 conditional
+  corner capacity has exact B-mask laws, yet n3 legal entry can be impossible.
+  A22/B5 immediate incidence is0/360,24/12500,64/130316 on n3/n4/n5, not total
+  WDL/difficulty. Adding odd Wazir admits noncorner mates. On two fixed A22/A23
+  rules plus explicit152key mu,112immediate WIN/24certified NOT-WIN/16UNKNOWN
+  bound totalWIN112..128;19D4orbits are deterministic, not IID replicates.
+  The new capture obstruction step was actually executed; two remaining exact
+  frontiers are prepared. Later proposed two-orbit strategies are NOT_EXECUTED,
+  not extra labels or a silently refillable phase. No Player/solver/learning.
+
 Earlier costs/width, E0, contact-price and learning reports remain evidence in
 Git and their purpose reports. CLOSED1904 old missing E0 outcomes remain UNKNOWN.
 Do not revive them from a dated manual, old memo, script name or unused fixture.
@@ -102,19 +115,20 @@ with exact additional uncommitted originals saved privately; history is preserve
 
 ## Current executable reserve
 
-Main: Does the shared-action/new-action/scoring signature transfer to an ordinary-defender roster?
-| Use prepared af-next-H6-prepared.json (public next-H6.json.gz):128common actual fullrule pairs/256strict initial replays; freeze predicted oneply absorption/capture/scoring transitions before missing literal comparisons, reuse source child evidence
-| Full-rule/history H6repeat2 rows, source-bound positive/negative mechanisms and explicit unknown continuation values; keep singleton H64 law separate
-| End if only re-labeling existing16LOSS-to-DRAW evidence; no solver/price/seed/budget campaign, training gate, default or AUX write.
-Backup1: Which absorption effects depend on terminal convention rather than geometry?
-| Reuse the completed8reference/new draw-versus-loss child observations and25shared-action defense witnesses; generalize only with a specific missing mechanism
-| Explicit changed scoring field, same physical board/frontier and separately attributed root/action values
-| No rootWDL transfer from immediate payoffs or new unchanged complete-game repeats.
-Backup2: Does the opposing roster alter the right structural prediction?
-| Reuse published role-capacity data and prepared A1/B8 fullinputs0Player only if Main reveals a different question; keep single-piece capacity distinct from joint-roster opportunity
-| Exact complete rule, history/clock and honest total cost, no source-selected training sample
-| Prepared input is a conditional reserve, not an automatic cost run or inverse/learner activation.
+Main: Does common-safe input support survive a proposed rule contrast?
+| Before any new matched outcome query, analytically audit A23 versus A30 with B5 on n3/n4; both add different odd orbits to A22. Enumerate only legal fresh support, preserve complete rules/history and reject empty support rather than changing the denominator after results
+| Explicit common/excluded initializer counts and geometric reason; n3 union-of-attacks empty-support is a hypothesis to check, no WDL labels or Player
+| End after this support audit; select another question only with changed premise, no wholegraph/cost/price/training panel.
+Backup1: Is closing the remaining16UNKNOWN strategically informative?
+| Read next-two-orbits.json.gz and the unexecuted manual strategy plan as hypotheses; assess value/cost and Chat's independent argument review before any separately registered finite certificate task
+| Exact all-White/all-Black choice coverage under original fixedRuleSet152mu; keep112..128bound until validated
+| Do not reopen the closed unexecuted phase or claim DRAW from NOT-WIN; no blind branch search/solver or AUX duplication.
+Backup2: Does the geometric law fail outside its stated scope?
+| Review the corner/no-entry proof for concrete counterexamples using existing odd-offset and capture-remnant controls
+| Distinct static-capacity, legal-entry and full-history claims, explicit exclusions
+| A real contradiction changes the law; no learner/default/inverse activation follows automatically.
 
-The original UUID was resumed after the direct review; its old effective work
-was preserved and the review/offline gap excluded. Scientific acceptance above
-is complete; the session ledger/final-check governs workflow closure. Science is OPEN.
+All current scientific producers are CLOSED. The session ledger/final-check owns
+workflow completion; the overall scientific objective remains OPEN. The latest
+user request changes both existing schedules to120minutes, not the60–90minute
+effective research requirement or the>=120minute individual-run review threshold.

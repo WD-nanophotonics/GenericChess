@@ -1,0 +1,36 @@
+{
+  "asymptotic": "For n>=5 the local inverse-corner templates fit fully:64 distinct roots. mu_n=n^8+O(n^6) because only finite-local attacks/royal adjacency/collisions are excluded. Immediate incidence is Theta(n^-8), not an assertion about overall game difficulty or WIN rate.",
+  "interpretation": "Exact geometric fresh initializer incidence of at least one immediate mate. Other n4/n5 rootWDL and total forcedWIN rate UNKNOWN; n3 zero all-mate entry proven separately.",
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "status": "PASS",
+  "summary": [
+    {
+      "approximate_probability": 0.0,
+      "exact_immediate_mate_probability": "0/360",
+      "immediate_mate_roots": 0,
+      "mu_count": 360,
+      "n": 3,
+      "new_winning_actions": 0,
+      "shared_winning_actions": 0
+    },
+    {
+      "approximate_probability": 0.00192,
+      "exact_immediate_mate_probability": "24/12500",
+      "immediate_mate_roots": 24,
+      "mu_count": 12500,
+      "n": 4,
+      "new_winning_actions": 0,
+      "shared_winning_actions": 24
+    },
+    {
+      "approximate_probability": 0.0004911139077319746,
+      "exact_immediate_mate_probability": "64/130316",
+      "immediate_mate_roots": 64,
+      "mu_count": 130316,
+      "n": 5,
+      "new_winning_actions": 24,
+      "shared_winning_actions": 40
+    }
+  ]
+}

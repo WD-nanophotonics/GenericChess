@@ -1,0 +1,127 @@
+{
+  "independently_recomputed": "Strict same-Core record and frontier binding; NOT an independent WDL solver",
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "node_occurrences": 106,
+  "qualification": {
+    "added_capture_exits": 1,
+    "both_shared_children_ongoing": true,
+    "candidate_shared_action_WDL_black": [
+      1,
+      0
+    ],
+    "candidate_shared_action_WDL_white": [
+      -1,
+      0
+    ],
+    "clocks": [
+      {
+        "H": 1,
+        "evidence": "All white options, named mate responses; all capture-branch H2 replies.",
+        "mask": 6,
+        "white_WDL": 0
+      },
+      {
+        "H": 2,
+        "evidence": "All white options, named mate responses; all capture-branch H2 replies.",
+        "mask": 6,
+        "white_WDL": -1
+      },
+      {
+        "H": 1,
+        "evidence": "All white options, named mate responses; all capture-branch H2 replies.",
+        "mask": 22,
+        "white_WDL": 0
+      },
+      {
+        "H": 2,
+        "evidence": "All white options, named mate responses; all capture-branch H2 replies.",
+        "mask": 22,
+        "white_WDL": 0
+      }
+    ],
+    "mate_response_witnesses": [
+      {
+        "black_mate": [
+          "B",
+          6,
+          1,
+          null
+        ],
+        "mask": 6,
+        "ply": 3,
+        "white_action": [
+          "A",
+          2,
+          8,
+          null
+        ]
+      },
+      {
+        "black_mate": [
+          "B",
+          6,
+          4,
+          null
+        ],
+        "mask": 6,
+        "ply": 3,
+        "white_action": [
+          "A",
+          2,
+          4,
+          null
+        ]
+      },
+      {
+        "black_mate": [
+          "B",
+          6,
+          1,
+          null
+        ],
+        "mask": 22,
+        "ply": 3,
+        "white_action": [
+          "A",
+          2,
+          8,
+          null
+        ]
+      },
+      {
+        "black_mate": [
+          "B",
+          6,
+          4,
+          null
+        ],
+        "mask": 22,
+        "ply": 3,
+        "white_action": [
+          "A",
+          2,
+          4,
+          null
+        ]
+      }
+    ],
+    "new_Player_queries": 0,
+    "new_graph_or_solver_calls": 0,
+    "old_white_options": 2,
+    "proof_scope": "Exposed named action, not new black-root WDL or 128-root population prediction. Remaining scoring values UNKNOWN.",
+    "remnant_draw_basis": "Complete remove-only, no promotion/drop/pass, draw-stalemate, finiteH/repeat2; A22 offset independence forbids checkmate and bare king cannot mate.",
+    "scoring": {
+      "limit": "No additional branches were selected to hunt a scoring effect.",
+      "node_occurrences_compared": 12,
+      "payoff_changes": [],
+      "root_WDL": "UNKNOWN; limited literal continuations do not solve loss-stalemate",
+      "terminal_status_counts": {
+        "ongoing": 12
+      }
+    },
+    "status": "PASS"
+  },
+  "status": "PASS",
+  "unique_full_records": 98
+}

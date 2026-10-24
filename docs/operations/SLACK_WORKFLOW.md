@@ -6,15 +6,15 @@ existing GenericChess project Chat, carried through NanoMelon `#generic-chess`
 wait/poll and daily consultation. Read the existing Chat; do not start a separate
 advisor exchange or inspect auxiliary chats from this patrol.
 
-## 60-minute inbound read
+## 120-minute inbound read
 
 One direct user request to inspect the latest messages permits a fresh bounded
 manual capture/new read UUID, even after the automated read. It does not add a
 probe, recurrence or polling loop. Ordinary patrols retain the limit below.
 
-At most once per existing 60-minute PRIMARY heartbeat, read newly available project
+At most once per existing 120-minute PRIMARY heartbeat, read newly available project
 Chat messages and the complete relevant threads. Also perform this incoming read
-before Main at each explicit manual work start/resume unless the current 60-minute
+before Main at each explicit manual work start/resume unless the current 120-minute
 patrol already completed it. Outside the direct-user exception above, do not
 reread within the same patrol. Use the
 connected read path for the channel and individual threads; do not create a new

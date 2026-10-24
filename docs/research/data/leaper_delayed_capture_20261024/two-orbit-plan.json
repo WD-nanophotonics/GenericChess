@@ -1,0 +1,14 @@
+{
+  "NOT_WIN_strategy": "canonicalRoot(0,2,7,5), only unresolved WhiteA c1-b1; chooseBlackK b3-a3. Then enumerate all Whitechoices; predicted everychoice either capturesB andstalemateDRAW or has BlackcaptureA. Allother Whiteinitialchoices reuse existing184capture certificates.",
+  "WIN_strategy": "canonicalRoot(1,0,7,3): WhiteA a1xa2 removesB; expected complete Blackfrontier is exactlyK b3-c3; WhiteA a2-b2 checkmates atply3. Any additional legalBlackreply invalidates this fixed proof, no replacementsearch.",
+  "cap_seconds": 300,
+  "changed_premise": "The previous capture-only phase is CLOSED with16UNKNOWN. Manual geometry now supplies one non-WIN response trap and one3plyall-defense WIN path; no blind deepersearch or cap refill.",
+  "expected_total_seconds": 120,
+  "fixed_rule": "The same compiledA23/B5n3 fixedcompleteRuleSet,152mu,H6/repeat2/stalemateDRAW.",
+  "optional_lower_bound": "Data-only inspect preexisting legalWhiteactions removingtheonlyBlackB for roots nowNOTWIN. Such a child leavesbareBlackKing unabletoWin under this scope, proving White>=DRAW. Only if this lowerbound exists combinewithNOTWIN tolabelDRAW; otherwiseleaveLOSSvsDRAWUNKNOWN.",
+  "predictions": "8additionalNOTWIN,8delayedWIN. Whether every32NOTWIN root has the captureB lowerbound is a hypothesis, not assumed. No otherrootlabels or policygain inferred.",
+  "question": "Can the two remaining geometric orbits be closed by the two explicitly derived finite strategies, without graphsearch?",
+  "started_at": "2026-10-24T05:39:45.576179+00:00",
+  "stop": "Any named premise fails: preservefailure and original112..128bound, no substitute branch hunt. Preserve all previous packets and their caps.",
+  "validation": "Apply the exactD4mapped fixed strategies on all8actualnamed histories in each orbit. For NOTWIN cover allWhiteactions at both levels; forWIN cover ALLBlackresponses, not justonePV."
+}

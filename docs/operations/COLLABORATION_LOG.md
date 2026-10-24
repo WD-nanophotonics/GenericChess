@@ -7134,3 +7134,33 @@ proof execution. Only the next missing mechanism is selected; not a repeated
 solver or AUX assignment. Claude's7cell universal-ceiling/Markov proposal stays
 deferred. Continuing two-way authorization is direct user authority; a new
 substantive merged progress/question message follows reviewed push/fullSHA.
+
+## Legal entry/capture follow-up and two-hour cadence —2026-10-24
+
+PRIMARY read the original pending thread once and saved exact originals before
+assessment. Chat1792813645's named defender/history suggestions were adopted
+and executed as finite complete-prefix diagnostics: shared ongoing action
+LOSS->DRAW, H1/H2 contrast and a retained failed history-LOSS prediction. No
+routine acknowledgment, Dot contact, live wait, AUX write/solver or new worker.
+Published AUX e71968ff remains attribution, not an independently rerun engine.
+
+New structural work separates static joint-roster capacity, legal entry,
+initializer support and actual history. The corner law and n3 inverse obstruction
+explain why capacity alone fails. Odd movement changes support and noncorner
+entry. Two fixed named rules give152explicit initializers;112immediate-WIN,
+24NOT-WIN and16UNKNOWN remain distinct. Deterministic D4 gives19orbits, not IID.
+The 184capture response step began the next useful task after60effective minutes.
+Two additional manual strategy hypotheses were registered but voluntarily closed
+unexecuted; no predicted labels were credited. Reader/proof guards repair actual
+RED defects instead of fitting expected scientific values. Full report and
+source/provenance limitations are in LEAPER_ENTRY_AND_CAPTURE_LAWS_20261024.md.
+
+The user then explicitly requested both existing automations every two hours.
+Native updates/readback confirm genericchess and dev-aux ACTIVE/120minutes with
+unchanged target chats. Only PRIMARY manuals were edited; AUX checkout/state
+untouched. Research duration stays60–90effective minutes. Conservative ledger
+audit excludes276.385443mixed administrative seconds:4093.91718research seconds
+remain,17intervals. The public summary does not count configuration or delivery.
+One meaningful combined report/question will follow reviewed push/fullSHA;
+Chat review of the analytic law and finite-orbit closure value is a real pending
+method question, not a scientific approval gate or a reason to wait.

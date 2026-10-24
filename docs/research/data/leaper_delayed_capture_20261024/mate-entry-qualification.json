@@ -1,0 +1,16 @@
+{
+  "conclusion": "n3 static possibility is not reachable mating opportunity from compiler-admitted safe roots. n4 has literal fresh entering moves for all four newly positive B masks.",
+  "exclusions": {
+    "enemy_king_checked_before_White_turn": 160,
+    "occupied_predecessor_square": 64,
+    "outside_board": 416
+  },
+  "limits": "No graph closure or independent engine, no arbitrary initial-check relaxation, no exact LOSS/DRAW labels for remaining roots.",
+  "n3_admissible_last_move_predecessors": 0,
+  "n3_static_mates": 32,
+  "n4_paired_fresh_Win_entries": 4,
+  "new_Player_queries": 0,
+  "new_graph_or_solver_calls": 0,
+  "status": "PASS",
+  "theorem_basis": "No added/captured-back pieces or type changes exist in this scope. Last White action must move K orA; all inverse sources are occupied/outside or already check the enemy King, impossible at a legal White turn. Fresh compiler rejects checked anchors."
+}

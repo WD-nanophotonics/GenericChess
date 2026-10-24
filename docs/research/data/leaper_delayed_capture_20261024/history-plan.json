@@ -1,0 +1,16 @@
+{
+  "cap_seconds": 900,
+  "changed_premise": "The delayed candidate has a legal 4ply reversible A/K cycle. Two named setups can merge at the same state at ply4 with different occurrence counts.",
+  "expected_total_seconds": 300,
+  "freshness": "New named RuleSet and full legal GameRecords; never inject visited-set, fake ply_count or transplant a foreign fingerprint.",
+  "new_Player_queries": 0,
+  "new_solver_calls": 0,
+  "paths": "Default A:c1-c3 K:c2-b3 A:c3-c1 K:b3-c2; alternate A:b2-c3 followed by identical last3moves.",
+  "prediction": "Both histories reach same exact Position and ply4. Default second visit is repetitionDRAW; alternate first visit ongoing with two white options, each admitting the already-named black mate atply6.",
+  "question": "Can complete legal history change WDL with exactly the same full RuleSet, physical Position and remaining clock?",
+  "rule": "3x3 King8 A6 B27 remove, H6 repeat2 stalemateDRAW; default K0a1 A0c1 K1c2 B1a3, named alternate changes only A0 to b2.",
+  "scope": "One local complete-path proof, not AUX whole graph or original128mu.",
+  "selection": "One explicit A6/B27 role0-white diagram only, no graph/label search. Stop on failure or first valid witness.",
+  "started_at": "2026-10-24T04:14:02.836769+00:00",
+  "stop": "No alternative hunting if premises fail; preserve raw returns before qualification."
+}

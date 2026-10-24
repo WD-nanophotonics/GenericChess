@@ -1,0 +1,12 @@
+{
+  "cap_seconds": 600,
+  "changed_premise": "The new corner law has eight oriented mating cages for each newly positive B, all with A atc3/K0c1/K1a1/Ba2 up toD4. Static poststates are not automatically reachable from fresh-safe histories.",
+  "expected_total_seconds": 180,
+  "fixed_validation": "Enumerate all inverse A atoms for the32new mate cages on3x3; verify occupied/check exclusions and actual Core mate status. Execute four complete fresh n4A22/B5/7/21/23 root-and-action records plus matched A6 controls, no Player.",
+  "prediction": "On3x3 every possible inverse A Leap into c3 either starts on an occupied royal square or at a3/b2, already checking the enemy King. A King last move cannot create an unchanged Leap check. Therefore no legal incoming white move from a safe-enemy White turn. On4x4 a fresh A d4-c3 (Ferz) gives a valid incoming mate; n5 earlier e3-c3 witness retained.",
+  "question": "Does n3 static capacity created by A6-to-A22 against B5/7/21/23 have ANY admissible last-move predecessor?",
+  "scope": "OneA6/22white oneBblack, K8, remove, no promo/drop/pass/effects, safe initial royal states and legal prefixes. No arbitrary initial checked positions, no WDL graph.",
+  "selection": "Only the four newly positive B masks and their exact eight D4 mate templates, not new rootWDL sampling or full graph.",
+  "started_at": "2026-10-24T04:36:08.358399+00:00",
+  "stop": "Any admissible predecessor invalidates no-entry claim; preserve it, no broadened search. If valid, static possibility versus enterability becomes separate coordinate."
+}

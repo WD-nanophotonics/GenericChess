@@ -1,0 +1,50 @@
+{
+  "new_graph_or_solver_calls": 0,
+  "node_occurrences": 20,
+  "qualification": {
+    "alternate_white_options": [
+      {
+        "action": [
+          "A",
+          2,
+          4,
+          null
+        ],
+        "white_action_WDL": -1
+      },
+      {
+        "action": [
+          "A",
+          2,
+          8,
+          null
+        ],
+        "white_action_WDL": 0
+      }
+    ],
+    "binding_status": "PASS",
+    "cause": "The alternate prefix already visited the c3 child atply1. White c1-c3 atply5 is a repetition DRAW before the alleged black mate. Fresh-root two-ply loss proof cannot be transplanted to this history.",
+    "different_target_terminal_status": [
+      "repetition",
+      "ongoing"
+    ],
+    "predicted_white_WDL": [
+      0,
+      -1
+    ],
+    "prediction_status": "REFUTED",
+    "proven_white_WDL": [
+      0,
+      0
+    ],
+    "remaining": 2,
+    "same_full_rule_Position_and_clock": true,
+    "stop": "First named history value candidate failed; no replacement history search or fabricated counts.",
+    "supported_claim": "Same Position/clock need not determine terminal status or legal continuations.",
+    "target_ply": 4,
+    "unsupported_claim": "This candidate does NOT demonstrate different WDL for same Position/clock."
+  },
+  "same_Core_binding_only": true,
+  "status": "PASS",
+  "unique_full_records": 18
+}

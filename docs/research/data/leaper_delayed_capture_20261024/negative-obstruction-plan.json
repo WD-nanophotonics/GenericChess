@@ -1,0 +1,12 @@
+{
+  "cap_seconds": 180,
+  "changed_premise": "The complete152mu has112immediateWIN roots and40without an immediate mate. Absence of immediate mate does not imply no forcedWIN; a local all-White-action capture obstruction may cheaply close some while leaving the restUNKNOWN.",
+  "expected_results": "Numbers of closed roots and unresolved actions UNKNOWN before analysis. All missing capture branches remainunresolved, never relabeledDRAW.",
+  "expected_total_seconds": 90,
+  "intended_claim": "A root is NOT-WIN only if EVERY Whiteaction either ends non-White-win immediately or has a verified legal Blackreply removingtheonlyWhiteA. WhitebareKing cannot win under this exact remove/no-drop/no-promotion/draw-ending scope. Exact LOSS versusDRAW remainsUNKNOWN.",
+  "question": "Which of the40negative immediate-mate roots can be certified NOT-White-WIN by a simple capture-the-only-attacker response to every White action?",
+  "scope": "Exactly40negative roots under the fixedA23/B5 completeRuleSet and152keymu. Use recorded fullWhite frontiers and each actual childBlack frontier. No new graph, solver, Player, deepersearch or AUX unpublished work.",
+  "selection": "For each nonterminal Whitechild with legal Black captureA, choose lexicographically first physical captureA; apply once through strict GameSession on the actual fixednamed record. No response hunt when none exists.",
+  "started_at": "2026-10-24T05:21:47.436171+00:00",
+  "stop": "All40roots handled or first mismatch/stop/cap. Do not extend unclosed branches, no new rootWDL panel."
+}
