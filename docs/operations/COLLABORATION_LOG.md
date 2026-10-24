@@ -7349,3 +7349,19 @@ readback differs only in two numbered-list Markdown markers, fully reconciled
 without resend. No new reply at that bounded read. Session61593633-a900-48ee-bfd7-
 5cfee059c780 ended with matching quality/final-check PASS at3897.763535seconds/
 10intervals. Exact public accounting follows; this delivery adds0research time.
+
+## PRIMARY2026-10-25: actualdefault clock failure and q-order limit
+
+PRIMARY reused AUX's fixed published26d414c complete-history WDL/rank labels,
+not its checkout or computation. New64default queries find63correct,29/30sensitive,
+and one45sWIN-to-DRAW. Initialq-reserve error is separate. Existingq-order reduces
+work yet does not repair the failure; new73queries/525legalPVsteps and26tests are
+scoped development evidence. Independent ChatGPT review originally supplied the
+truth/caller checks; latest bounded Slack channel/known Dot-thread read found no
+new root/reply, exact wrappers saved first. No new source authority inferred.
+Dot's earlier root-panel advice was executed; direct work/quality evidence now
+limits it: deeper/faster is not monotone quality. User's pure-Leaper-first scope
+remains; no default/NNUE/legacy expansion. Prepared2critical child histories,
+0new queries, for next rootbranch/leafclock diagnosis.61m30.666s effective/13
+intervals; session ended with matching quality/final-check. Public source and
+remote SHA verification precede the planned substantive Dot follow-up.

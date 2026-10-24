@@ -1,0 +1,6 @@
+{
+  "error": "Traceback (most recent call last):\n  File \"<stdin>\", line 6, in <module>\n  File \"scripts\\leaper_default_cost_profile.py\", line 46\n    finally:write_json(d/'receipt.json',dict(status=status,started_at=began,ended_at=stamp(),seconds=time.perf_counter()-tick,cpu_seconds=time.process_time()-cpu,queries=1 if status=='CLOSED'else0))\n                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: expected 'else' after 'if' expression\n",
+  "explanation": "Missing whitespace in conditional expression; caught before producer execution. Frozen slots/limits unchanged.",
+  "queries": 0,
+  "when": "2026-10-24T18:42:40.220830+00:00"
+}

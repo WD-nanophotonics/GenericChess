@@ -1,0 +1,20 @@
+{
+  "controller": "Default p/evaluation/history/tuning fixed. Only research override of _ordinary_qdepth_limit removes initial ordinary-q0 reserve in second arm; production code unchanged.",
+  "cost_estimate": "2x10s caps plus replay/qualification <1min; serial only after panel CLOSED.",
+  "frozen_at": "2026-10-24T18:49:52.545681+00:00",
+  "hypothesis": "Is the observed default D1 DRAW-to-LOSS error corrected by ordinaryQ4 at the SAME main depth? D1/D2 observation confounds two mechanisms.",
+  "inputs": ".local_agent\\leaper-default-panel-20261025\\inputs.json",
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "key": "next-role-p7",
+  "limits": {
+    "max_depth": 1,
+    "max_nodes": 1000000,
+    "max_time_seconds": 10,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4
+  },
+  "preceding_panel": ".local_agent\\leaper-default-panel-20261025\\run-default45",
+  "selection": "First actual default shallow error observed in ongoing frozen64panel; intentionally exposed targeted case, not heldout or panel extension.",
+  "source_sha256": "3a551c5c236d83c4dfe357f776b4ac6185ab0ee1f58badafa97fc8fe003d6ee7",
+  "stop": "Two arms once, no restart/refill; compare original D1 exact action/score/main/q prefix to paid panel. No prefix equality or no completed D1 => causal evidence UNKNOWN. Removing latency protection is not generally endorsed."
+}

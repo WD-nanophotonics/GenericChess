@@ -1,0 +1,110 @@
+{
+  "PV_steps": 9,
+  "checks": [
+    {
+      "PV_final_result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "arm": "original_reserve",
+      "chosen": 1,
+      "depth": 1,
+      "phase": "qreserve-cause"
+    },
+    {
+      "PV_final_result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "arm": "ordinaryQ4_at_D1",
+      "chosen": 0,
+      "depth": 1,
+      "phase": "qreserve-cause"
+    },
+    {
+      "PV_final_result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "arm": null,
+      "chosen": 0,
+      "depth": 7,
+      "phase": "cost-profile"
+    }
+  ],
+  "limitations": "Cumulative nested profiler rows overlap; profiler throughput not normal speed. Shared Core replay is not independent solver/rules engine. Q4 override is research-only and does not establish global latency safety.",
+  "profile_selected_rows": [
+    {
+      "cumulative_seconds": 215.2190698,
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "function": "_quiescence_runtime",
+      "line": 673,
+      "primitive_calls": 39466,
+      "self_seconds": 2.4309838000000004,
+      "total_calls": 294609
+    },
+    {
+      "cumulative_seconds": 178.51310800000002,
+      "file": "generic_chess/core/search_runtime.py",
+      "function": "_push_impl",
+      "line": 1361,
+      "primitive_calls": 706636,
+      "self_seconds": 6.5616579,
+      "total_calls": 706636
+    },
+    {
+      "cumulative_seconds": 41.838959,
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "function": "checkpoint",
+      "line": 177,
+      "primitive_calls": 68375380,
+      "self_seconds": 20.2820132,
+      "total_calls": 68375380
+    },
+    {
+      "cumulative_seconds": 20.1980997,
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "function": "_runtime_legal_actions",
+      "line": 277,
+      "primitive_calls": 161252,
+      "self_seconds": 0.19947440000000002,
+      "total_calls": 161252
+    },
+    {
+      "cumulative_seconds": 13.467786100000001,
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "function": "_evaluate",
+      "line": 204,
+      "primitive_calls": 206411,
+      "self_seconds": 0.44433130000000004,
+      "total_calls": 206411
+    },
+    {
+      "cumulative_seconds": 1.4422169,
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "function": "_order_qactions",
+      "line": 628,
+      "primitive_calls": 140633,
+      "self_seconds": 0.0377474,
+      "total_calls": 140633
+    }
+  ],
+  "profile_self_seconds_sum": 225.88428000000002,
+  "queries": 3,
+  "status": "PASS"
+}

@@ -1,0 +1,39 @@
+{
+  "TT_question": "Zero tt_cutoffs does not count EXACT returns. Measure all actual TT probes, depth deltas and eligible exact/bounds without changing key or probe result.",
+  "batch_seconds": 900,
+  "cost_estimate": "4x180s at most12min cooperative queries plus qualification under15min; separately sequenced after64root panel CLOSED. No new AUX solve or worker.",
+  "frozen_at": "2026-10-24T18:22:01.689030+00:00",
+  "hypothesis": "Existing q move ordering may reduce unneeded quiet-classification pushes and q visits with fixed q action sets; default q traversal is lexical and measured q-work is material. Measure complete-iteration parity, label quality and cost; no feature matrix.",
+  "inputs": ".local_agent\\leaper-default-panel-20261025\\inputs.json",
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "limits": {
+    "max_depth": 12,
+    "max_nodes": 10000000,
+    "max_time_seconds": 180,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4
+  },
+  "preceding_panel": ".local_agent\\leaper-default-panel-20261025\\run-default45",
+  "selection": "First root of each already exposed TRAIN episode, chosen by metadata before their full45second panel results, not selected for mistakes. First root result already exposed; both roots explicitly development cases.",
+  "slots": [
+    {
+      "key": "cost-p0",
+      "ordered": false
+    },
+    {
+      "key": "cost-p0",
+      "ordered": true
+    },
+    {
+      "key": "next-role-p1",
+      "ordered": true
+    },
+    {
+      "key": "next-role-p1",
+      "ordered": false
+    }
+  ],
+  "source_sha256": "56ae8e783ab168bc24b95ad0e037bfa97e1daf59c9b040ebe70a0e3bde277c5d",
+  "stop": "Hard user/role stop or900s batch cap. No extra cases, repeats or refills. Negative/UNKNOWN retained. Not default activation.",
+  "success": "For every common completed depth compare exact root score, root WDL and main+q work; all12 depth slots retained, missing requested depth UNKNOWN. A cost win in two cases is scoped diagnostic, not class strength. qordering can change ties/PV. Reject adoption on score/semantics discrepancy pending causal diagnosis."
+}

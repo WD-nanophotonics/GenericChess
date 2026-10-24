@@ -1,0 +1,35 @@
+{
+  "batch_seconds": 180,
+  "changed_premise": "Frozen default45 panel found actual WIN-to-DRAW final decision at p53, not merely a Unit or initial reserve weakness. Only one K move retainsWIN within remaining11plies; final B move requires12>remaining10 child plies.",
+  "cost_estimate": "Two45s slots90s+qualification <3min, after qorder and profile CLOSED. No repeats/refill, no extension of requested depths in prior studies.",
+  "frozen_at": "2026-10-24T19:02:03.621809+00:00",
+  "hypothesis": "Does the SAME existing q-order mechanism improve or worsen an actual bounded-default decision at45seconds? Fresh samebudget pair with identical TT observer, no heuristic/label fitting.",
+  "inputs": ".local_agent\\leaper-default-panel-20261025\\inputs.json",
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "limits": {
+    "max_depth": 14,
+    "max_nodes": 10000000,
+    "max_time_seconds": 45,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4
+  },
+  "preceding_panel": ".local_agent\\leaper-default-panel-20261025\\run-default45",
+  "selection": "Targeted exposed development failure selected after64panel, not independent validation or class-wide estimate. Original64 result remains unchanged.",
+  "sequential_after": [
+    ".local_agent\\leaper-default-panel-20261025\\qorder-mechanism",
+    ".local_agent\\leaper-default-panel-20261025\\cost-profile"
+  ],
+  "slots": [
+    {
+      "key": "next-role-p53",
+      "ordered": false
+    },
+    {
+      "key": "next-role-p53",
+      "ordered": true
+    }
+  ],
+  "source_sha256": "56ae8e783ab168bc24b95ad0e037bfa97e1daf59c9b040ebe70a0e3bde277c5d",
+  "stop": "Bothslots once, negative/UNKNOWN retained; no defaultactivation, extra cases, graph or worker.",
+  "success": "Compare actual returned certifiedWDL at45s; costs/main+q, lastcomplete iterations, commonvalue parity, failures. SameDRAW means no repair; score/depth alone not improvement."
+}

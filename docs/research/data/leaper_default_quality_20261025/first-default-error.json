@@ -1,0 +1,81 @@
+{
+  "actor": 1,
+  "cause_status": "UNKNOWN: D1 versus D2 changes both main depth and first-iteration ordinary-q reserve. No single-mechanism attribution yet.",
+  "claim": "D1 loses an available DRAW for actor1; D2 corrects it; final45second decision is correct.",
+  "first_two": [
+    {
+      "certificate": {
+        "barrier_value": 1,
+        "basis": "barrier_rank_with_clock",
+        "proof": 0,
+        "rank": 9,
+        "remaining": 56,
+        "root_count": 1,
+        "value": 1,
+        "vertex": 52511
+      },
+      "iteration": {
+        "action": {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 4,
+            "rank": 4
+          },
+          "geometry_id": "g17",
+          "pattern_id": "legacy_018",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 2
+          }
+        },
+        "chosen_global_WDL": 1,
+        "depth": 1,
+        "elapsed": 0.00338410004042089,
+        "nodes": 13,
+        "preserves_root_value": false,
+        "qnodes": 7,
+        "score": 124
+      }
+    },
+    {
+      "certificate": {
+        "barrier_value": 0,
+        "basis": "barrier_rank_with_clock",
+        "proof": 0,
+        "rank": null,
+        "remaining": 56,
+        "root_count": 1,
+        "value": 0,
+        "vertex": 50620
+      },
+      "iteration": {
+        "action": {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 4,
+            "rank": 4
+          },
+          "geometry_id": "g19",
+          "pattern_id": "legacy_022",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 3
+          }
+        },
+        "chosen_global_WDL": 0,
+        "depth": 2,
+        "elapsed": 0.10249790002126247,
+        "nodes": 38,
+        "preserves_root_value": true,
+        "qnodes": 390,
+        "score": 116
+      }
+    }
+  ],
+  "key": "next-role-p7",
+  "next": "One targeted same-depth1 original-reserve versus ordinaryQ4 check, keeping rule/history/evaluator/tuning fixed, after current producer CLOSED. Never default activation or an independent heldout success.",
+  "root_global_WDL": 0,
+  "state_sha256": "7cf385dea3c1b6c7ff3117c6bb198b56595494a4da6d330b823d75c465385c36"
+}

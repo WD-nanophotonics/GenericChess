@@ -1,0 +1,37 @@
+{
+  "clock_failure": "p53 remains actualdefaultWIN-to-DRAW, D6correct/D7wrong. No staticvalue change, forcedD6 selection or keyweakening. Leaf-horizon estimate explanation remains hypothesis,not a demonstrated implementation defect.",
+  "default_quality": {
+    "choice_sensitive_correct": 29,
+    "choice_sensitive_total": 30,
+    "early_error_roots": [
+      "next-role-p7",
+      "next-role-p47",
+      "next-role-p49",
+      "next-role-p53"
+    ],
+    "final_correct": 63,
+    "total": 64
+  },
+  "initial_reserve": "SameD1 original loses availableDRAW; ordinaryQ4 restoresDRAW. Original prefix exact; exposed target, no global latency-safety evidence.",
+  "next": "Prepared2full child records/frontiers/clock10,0queries. Freeze readonly rootbranch score-window and leafclock/qcutoff trace before new query; do not refill old caps.",
+  "phase_counts": {
+    "default45": 64,
+    "profiler": 1,
+    "qorder_failure53": 2,
+    "qorder_metadata": 4,
+    "same_D1_reserve": 2
+  },
+  "q_order": {
+    "common_completed_values": "all match in3pairs",
+    "failure53_final": "DRAW in both45s arms; availableWIN not recovered",
+    "failure53_shared_D7_work_reduction_percent": 30.04224638840024,
+    "metadata_shared_work_reduction_percent": [
+      4.30208974992635,
+      44.57272505020917
+    ],
+    "requested_D12_D14": "UNKNOWN when not completed"
+  },
+  "qualified_exported_PV_steps": 525,
+  "status": "EVIDENCE_REVIEWED_NO_DEFAULT_CHANGE",
+  "successful_queries": 73
+}
