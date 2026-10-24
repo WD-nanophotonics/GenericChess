@@ -1515,3 +1515,29 @@ tests/development/test_leaper_component_paths.py text eol=lf
 tests/development/test_leaper_twoa_random_headroom.py text eol=lf
 tests/development/test_leaper_twoa_trajectory_truth.py text eol=lf
 tests/development/test_verify_leaper_random_headroom.py text eol=lf
+
+
+# Preserve exact A/B evidence bytes and executed scientific source.
+docs/research/data/leaper_price_exposure_20261024/** -text whitespace=cr-at-eol
+docs/research/data/leaper_ab_learning_and_rank_20261024/** -text whitespace=cr-at-eol
+docs/research/LEAPER_PRICE_EXPOSURE_AND_CONTACT_20261024.md -text whitespace=cr-at-eol
+scripts/leaper_two_type_contact.py text eol=lf
+scripts/leaper_two_type_forward.py text eol=lf
+scripts/leaper_two_type_geometry.py text eol=lf
+scripts/leaper_two_type_packet.py text eol=lf
+scripts/leaper_two_type_qualify.py text eol=lf
+tests/development/test_leaper_two_type_forward.py text eol=lf
+scripts/leaper_ab_depth_support.py text eol=lf
+scripts/leaper_ab_initialization_control.py text eol=lf
+scripts/leaper_ab_learner_exposure.py text eol=lf
+scripts/leaper_ab_learning_truth.py text eol=lf
+scripts/leaper_ab_material_deadzone.py text eol=lf
+scripts/leaper_ab_rank_diagnostics.py text eol=lf
+scripts/leaper_ab_suffix_exposure.py text eol=lf
+scripts/leaper_ab_tie_reference.py text eol=lf
+scripts/leaper_ab_uniform_learning.py text eol=lf
+scripts/verify_leaper_ab_deadzone.py text eol=lf
+scripts/verify_leaper_ab_learning.py text eol=lf
+scripts/verify_leaper_ab_learning_packet.py text eol=lf
+scripts/verify_leaper_ab_rank_diagnostics.py text eol=lf
+tests/development/test_leaper_ab_learning.py text eol=lf

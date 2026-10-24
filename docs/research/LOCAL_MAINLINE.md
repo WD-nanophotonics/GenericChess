@@ -1,47 +1,34 @@
 # DEV_AUX current research
 
-Research OPEN; own sidemission only. PRIMARY owns rule/layout selection,
-forward campaigns and defaults. Existing patrol remains60min.
-Latest: LEAPER_TRAJECTORY_CHANCE_AND_ACTIVE_FEATURES_20261024.md and packet.
-Source303cb4c6d6d5e706be04f9df20ec6746556d1fc2;11paths reused exactly;
-shared package retains only two unchanged AUX learner files.
+Research OPEN; this finite cohort CLOSED. Own sidemission only; patrol60min.
+Sourceaaa325e4286197ee731c7e61df5106251661f687 reused12scientificpaths exactly.
+No new generic package/default changes; two existing AUX learner files unchanged.
+Latest: LEAPER_AB_LEARNING_AND_RANK_20261024.md and compact data packet.
 
-120oldgames/7605contexts and all legal one-step children are forcedDRAW.
-5871prefixes still have cooperative mate;53277literalCore witness plies.
-Under a SEPARATE nominal IIDUniform defender,232played choices have a strict
-oracle-continuation alternative:101low/99high/32FLOOR, othersUNRESOLVED.
-These are not actual seeded-player errors or measured learner gains.
-All234chance controllers pass49254separatefullhistorynodes/2909499replayplies;
-independent27582upperbounds and omitted-barrier/false-upper controls pass.
-One-type actual learner has zero free gradient.3616oldA/Broots have value0
-but active Bgradient, so do not require a nonzero crossing or an extra actor.
-OldH6 oraclechance optima do not worsen minimax in12208seat0classes;
-oracle history ties at fixedB1 close the nominal7-cell uniform-tie gaps.
-No new experimentalPlayer/training/default or other-role work; prior256actual
-matched learner/unit trajectories and gain0 remain unchanged.
+Unit-opponent unit-start8TRAIN has zero updates: chosen contact PVs only fixedA.
+Symmetric initialB2 can update; .5does not. Boundary1.005->.9929335 then stalls.
+Natural Uniform exploration DOES activate unit-startB:256TRAIN/64EVAL, all320
+actualDRAW, modelsquiet.4246477032/contact.3666841534.32pairedgains0;30same
+records. This is fitted parameter movement, not intrinsic value or strength.
 
-Main: Do new PRIMARY A/B inputs activate a useful relative parameter?
-| Next ordinary probe/latest committed source bind fullrules, originalmu,
-records, opponent/objective, actualfeatures and legaltrade | bounded baseline,
-exposure and cost | PRIMARY freezes input; no oracle-selected training starts,
-positive-gain/nonzero-crossing gate or one-coefficient toy training.
+Three complete contact components sum501188vertices/3118732edges with overlaps.
+Eight actual target/owner Core passes qualify reuse; outside/odd-Ferz components
+and lower-rank history barriers stayUNKNOWN. Natural TRAIN reaches699distinct
+favorableWINhistories. Each frozenarm has71WIN/38fork/14same missed fullhistories.
+MinimaxDRAW is not zero Uniform expectation; universal no-mate closure is distinct.
+Same naturalprefix30: bothpricesD4missWIN; requested8 completes6 and bothcorrect.
+Fixed-tree refs show D4tie but D6badbranch1 versusgood2/1.366684, a horizon effect.
+No oracle-selected TRAIN starts or default adoption.17tests and120.396sreaderPASS.
 
-Backup1: Can a newly supplied full history use an admitted chance/rank safety?
-| Replay complete record, test current-root/future-arrival counts and actual
-mate/clock authority | certificate or UNKNOWN/fallback | unsupported promotion,
-drop,aux/history never become scalar Position truth; no template widening.
-
-Backup2: Is a saved natural-prefix chance difference available within exact
-material search ties at the returned depth? | Select one explicitly posthoc
-strict source prefix and bound a complete reference root-score enumeration
-using existing Core/search | tie-set/choice/budget attribution or UNKNOWN |
-diagnostic only, no training start, campaign, default or old-slot refill.
-
-ProbeGC-MAIL-b17ed2ae56cd4bd18c0c0e1f66cac453 read63threads, preserved raw
-originals and six exact historical deferrals. Primary reply1792793500 partly
-adopted for own truth; no reply to own1792793874 at read time. Revised judgment:
-do not exclude the minimal opposed A/B input because its crossing has value0.
-Next report asks whether the declared stochastic/minimax objective and tie
-controls are the right interpretation, without requiring a realtime reply.
-Partner read/adoption/execution stays unconfirmed. Old caps/UNKNOWN/results
-and original source-pinned receipts remain; only own state and branch change.
+Main: Can deeper targets improve learning at a justified cost? | Next ordinary
+probe read replies/latest committed source, then one bounded original-mu D6
+complete episode COST case with actual Uniform stream/controller | literal
+nodes/time/depth/targets orUNKNOWN | exposed diagnostic, no new strength claim;
+no large training before measured budget; expected>=120min needs mailbox review.
+Backup1: Do actual lower-rank count3 barriers change a relevant decision? | Bind
+first such contact history in packet, current-root/future-arrival/mate/clock
+checks and bounded scoped safety/rank proof | certificate orUNKNOWN | no generic
+PositionTT or silent widening of old singleton templates.
+Backup2: Does an actually visited odd-Ferz component alter exposure judgment? |
+choose original quiet remnant by source order, estimate bounded Core closure |
+qualified component orUNKNOWN | no generator/campaign, old-cap refill or oracleTRAIN.

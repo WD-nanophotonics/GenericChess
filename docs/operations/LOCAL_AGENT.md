@@ -118,3 +118,21 @@ the default complete table. Finite default hand prices can remain while stock
 is unreachable. Do not rewrite a product expectation merely to match a table.
 DEV_AUX keeps its own scope/state;this adoption imports no PRIMARY task or
 default change. The shared package and tests have no delta from291f2c3.
+
+
+## Committed mainline clarification reused — 2026-10-24
+
+From sandboxaaa325e4286197ee731c7e61df5106251661f687: controller identity is
+the actual complete constructor/weights, not a seed label or inherited writer
+name. Distinguish fixed leaf prices from ordering and active dynamic terms.
+Identical deterministic no-update controls are redundant paid executions, not
+independent outcomes; retain and disclose their originals. Do not turn legal
+leaf crossings, selected PV signal or a bad-action threshold into a learning
+gate. Root choices and terminal payoff need their own evidence. Exact executed
+UTF8 capsules are read as bytes; presentation normalization gets a separate hash.
+
+DEV_AUX actual episode labels bind before/after weights and its unchanged public
+q0 learner adapter; foes are the declared Unit model or recorded legal Uniform
+stream. Imported PRIMARY profile metadata does not replace this actual caller
+contract. This adopts methodological clarification only, not PRIMARY task/state,
+controller defaults or another role's publication/recurring configuration.

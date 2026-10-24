@@ -1660,3 +1660,38 @@ administrative entry was moved to preserved uncredited evidence before finish;
 valid intervals were not reset. Other failed reader/probe versions remain
 private and repaired errors are not current blockers. Research is OPEN; next
 consume PRIMARY's frozen A/B input or one bounded natural-prefix tie diagnostic.
+
+
+## 2026-10-24 — A/B natural learning and rank-qualified depth mechanism
+
+PRIMARY supplied committed quiet/contact full inputs, original unfiltered roots,
+profiles and records ataaa325e4286197ee731c7e61df5106251661f687. AUX reused12
+scientific blobs exactly, retained only its unchanged learner differences, and
+ran its own bounded learning/validation. No PRIMARY state, generator, campaign
+or default was changed. All404new full episodes are actual draws; the Uniform
+subset256TRAIN/64EVAL movesB but has0observed gain in32frozen pairs,30records
+identical. No-update deterministic controls are disclosed as redundant costs.
+
+AUX closes three actual material components, then reexecutes target/owner
+frontiers under both complete source RuleSets. Eight static passes and finite
+clock/rank DP qualify restricted full-history labels. TRAIN has699distinct
+favorableWINhistories; each frozenarm misses the same14known full histories.
+UNKNOWNrosters, odd-Ferz components and lower-rank barriers remain. One actual
+prefix30(rank23) gives a controlled mechanism: Unit/TD D4chooseDRAW, completedD6
+chooseWIN; fixed-tree refs separate the branches only atD6. Larger paid work is
+reported, not learner acceleration or whole-game strength.
+
+Claude1792795837 partly adopted for ratio cells/exposure/cost; reject oracle
+WIN/rank-filtered mu and WDL-only replacement of actual opponent payoff. User
+direction remains authoritative. Source operations' controller/profile and
+byte-preservation clarifications were read and reused. Partner reading/adoption/
+independent execution of these new results remains unconfirmed. The one final
+mailbox report will link this containing revision after own push/full-SHA check.
+
+17tests and the120.396s portable reader pass. Tuple/list reader failure and
+startup errors were preserved/repaired without experimental reruns or cap reset.
+The mixed initial171.437174s interval is conservatively uncredited while exact
+UUID/origin/records remain. Accepted final timing is in the evidence accounting
+file. Publication and transport are not research credit. Research remainsOPEN;
+next original probe follows replies and measures one bounded deeper-episode cost
+before choosing any new learning budget. No extra worker or recurrence change.

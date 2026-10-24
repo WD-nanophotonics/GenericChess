@@ -1,0 +1,69 @@
+{
+  "id": "00595781-9565-49e7-9834-d6b94a6f7cb4",
+  "started_at": "2026-10-23T23:41:08.762512+00:00",
+  "ended_at": "2026-10-24T01:23:38.895849+00:00",
+  "effective_work_seconds": 4577.473083,
+  "reason": "safe_checkpoint",
+  "state": "ended",
+  "duration_gate_passed": true,
+  "memo_synced": true,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-23T23:49:28.834862+00:00",
+      "evidence": "artifacts/leaper-ab-pilot-v2-20261024/result.json; artifacts/leaper-ab-suffix-20261024/result.json",
+      "question": "Does unchanged TDLeaf update the free B parameter and improve matched literal payoff from all original A/B roots without oracle selection?",
+      "started_at": "2026-10-23T23:45:35.902520+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T00:03:21.280502+00:00",
+      "evidence": ".local_agent/probe-005957/learning-verification.json; artifacts/leaper-ab-init-20261024/result.json; artifacts/leaper-ab-boundary-20261024/result.json; artifacts/leaper-ab-ties-20261024/result.json; artifacts/leaper-ab-depth-20261024/result.json; .local_agent/probe-005957/session-suffix.json",
+      "question": "Is material-gradient starvation caused by initialization/tie and shallow chosen PV rather than an absent free parameter?",
+      "started_at": "2026-10-23T23:49:29.190885+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T00:15:05.922233+00:00",
+      "evidence": "artifacts/leaper-ab-deadzone-20261024/result.json; .local_agent/probe-005957/domain-0-verification.json; artifacts/leaper-ab-local-envelope-20261024/result.json",
+      "question": "Are the actual free-B gradient remnants within a complete no-mate draw domain, and what does that imply about fixed material approximation rather than intrinsic prices?",
+      "started_at": "2026-10-24T00:03:21.649016+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T00:52:53.784602+00:00",
+      "evidence": ".local_agent/probe-005957/uniform-verification.json; .local_agent/probe-005957/uniform-truth-final.json; .local_agent/probe-005957/rank-panel-verification.json; artifacts/leaper-ab-natural-case-20261024/reference-result.json; .local_agent/probe-005957/natural-case-ranks.json",
+      "question": "Can full-history rank-qualified diagnostics distinguish price/depth choice quality while actual training gradient exposure remains in proven draw remnants?",
+      "started_at": "2026-10-24T00:15:06.281698+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T00:57:31.263576+00:00",
+      "evidence": "scripts/verify_leaper_ab_learning_packet.py; py_compile PASS; actual full-packet validation pending after administrative assembly",
+      "question": "Can a portable data-only reader reproduce the full A/B learning, RNG, rank/history and natural-mistake evidence with explicit qualified-graph limits and no new Player or training calls?",
+      "started_at": "2026-10-24T00:57:30.478099+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T01:06:41.129281+00:00",
+      "evidence": ".local_agent/probe-005957/public-reader.log; scripts/verify_leaper_ab_learning_packet.py tuple/list normalization repair",
+      "question": "Does the assembled public evidence reproduce all 404 actual episodes, exact RNG/PV/TD traces and scoped rank/history classifications without executing capsules or new games?",
+      "started_at": "2026-10-24T01:03:32.436464+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T01:12:33.964479+00:00",
+      "evidence": "artifacts/leaper-ab-public-reader-v2-20261024/verification.json; .local_agent/probe-005957/delivery-tests.xml",
+      "question": "Does the corrected portable reader reproduce the exact public packet with normalized JSON representations and all actual learning/history bindings?",
+      "started_at": "2026-10-24T01:06:42.767770+00:00"
+    }
+  ],
+  "uncredited_work": [
+    {
+      "ended_at": "2026-10-23T23:45:35.530921+00:00",
+      "evidence": ".local_agent/probe-005957/exposure.json; .local_agent/probe-005957/upstream-qualification.json",
+      "question": "Do the newly committed A/B complete trajectories expose an active relative material coordinate and legal action tradeoffs under actual full-history Core semantics, without conflating price sensitivity with payoff?",
+      "reason": "Conservatively omit the whole mixed initial mailbox-decision/source-compatibility interval: administrative transport was not separately timed. This also undercredits real scientific implementation/census work; original exact interval and all results preserved, no invented subinterval times.",
+      "reclassified_at": "2026-10-24T00:54:23.824283+00:00",
+      "started_at": "2026-10-23T23:42:44.093747+00:00"
+    }
+  ],
+  "format": "dev-aux-effective-work-accounting-v1",
+  "finish_accepted": true,
+  "effective_minutes": 76.29121805,
+  "administrative_publication_excluded": true,
+  "uncredited_seconds": 171.437174
+}
