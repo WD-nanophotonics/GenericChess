@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-24T14:27:51.296393+00:00",
+  "files": [
+    {
+      "file": "existence-registration.json.gz",
+      "sha256": "2ef6ae3c7fcba4728cbfcd0474c2799242a1d57244e59b5de08f86c3fadb00e4",
+      "top_keys": [
+        "complete_rules",
+        "original_deadline",
+        "plan",
+        "producer_source_sha256",
+        "selected_key",
+        "source_inputs_sha256"
+      ]
+    },
+    {
+      "file": "existence-completed.json.gz",
+      "first_row_keys": [
+        "H",
+        "all_black_defenses",
+        "all_white_first",
+        "chosen_capture",
+        "origin",
+        "root"
+      ],
+      "rows": 4,
+      "sha256": "0ba65acc77a8e30aeaea05314fc7207d73297d620539fade8a845769e31a0b0e",
+      "top_keys": [
+        "ended_at",
+        "new_Core_child_applications",
+        "new_Player_queries",
+        "new_graph_or_solver_calls",
+        "producer_seconds_before_final_write",
+        "repair",
+        "rows",
+        "source_capsule_executions",
+        "started_at"
+      ]
+    },
+    {
+      "file": "existence-qualification.json",
+      "sha256": "d526b4018409a0b2d45c31f7930da9b877faf60e7b86bcc60ea588bd7fa28a10",
+      "top_keys": [
+        "finite_strategy_WDL",
+        "new_Core_child_applications",
+        "new_Player_queries",
+        "new_graph_or_solver_calls",
+        "newly_labeled_H6_roots",
+        "placement",
+        "population_WIN_count_lower_bound",
+        "population_WIN_count_upper_bound",
+        "record_occurrences",
+        "root_has_immediate_win",
+        "scope",
+        "selected_key",
+        "source_capsule_executions",
+        "status",
+        "unique_full_records"
+      ]
+    }
+  ],
+  "purpose": "Next algorithmic ordering/work-control study per direct user ChatGPT review;do not rerun old audits or rebuildAUXgraph",
+  "status": "PREPARED_SOURCE_COVERAGE_ONLY;0newPlayer/solverqueries",
+  "warning": "Existing two known n3H6 roots are shallow controls,not allnode/allaction oracle. Must bind actual fullhistory/clock and objective beforeclaimidealordering. No neworacle benchmark executed."
+}

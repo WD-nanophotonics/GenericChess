@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-24T14:31:16.216583+00:00",
+  "platform": "Windows",
+  "python": "3.12.14",
+  "scope": "Fileidentity observed duringproducer;no machineidentity/accountdetails;actualCppuse is separately measured byqueries.",
+  "source_and_native_files": [
+    {
+      "bytes": 13440,
+      "path": "generic_chess/ai/alphabeta/player.py",
+      "sha256": "a7e19412613d676fb4c132131e6164a069bb9e1cc6d68ae3d40e58fc3aac395e"
+    },
+    {
+      "bytes": 55639,
+      "path": "generic_chess/ai/alphabeta/search.py",
+      "sha256": "417b5b84c2d88c84e578a0af5dd45676aa5309f0a3665c96f21960354de7f5d5"
+    },
+    {
+      "bytes": 15934,
+      "path": "generic_chess/ai/alphabeta/native_legality.py",
+      "sha256": "0b50788f8893e57502c8eb966aa52ec7476d50c03cdadb9076f1b5c40f435542"
+    },
+    {
+      "bytes": 63886,
+      "path": "generic_chess/core/search_runtime.py",
+      "sha256": "965107c426e0fa3b79c909162e6dada5b720a78ab0b281dcab7d0db3a5318739"
+    }
+  ]
+}

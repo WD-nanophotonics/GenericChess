@@ -7278,3 +7278,34 @@ publication-before-send, scope/budget/role/stops. No invented mention ID or extr
 worker. Existing pending requests remain untouched. Historical entries above
 record prior rules only; current SLACK_WORKFLOW is authoritative. Bounded workflow
 repair adds0research time and does not alter the180minute recurrence or AUX.
+
+## Pure-Leaper experiment and direct ChatGPT learning —2026-10-25
+
+PRIMARY alone executed six full-rule pure-Leaper templates/twelve complete roots,
+no AUX files/computation accessed. DotGC230144 reply1792850744 was actually read,
+exact-preserved, reconciled and adopted: frozen panel first, reference pair not
+regret, no reply/budget gate. The user then provided ChatGPT's direct review;
+its higher-priority objective was adopted as fewer unnecessary search events and
+time-to-correct decisions rather than extending constant-cost sweeps. Frozen
+current inputs/caps stayed unchanged; a new existing-PVS diagnostic was separately
+registered inside the same original100minute total cap, after cost closure.
+
+Availability costs improve14.8–22.5percent across12roots;45/48timed pairs sameaction,
+3differences one root. Four forced-child references show a small shrinking
+same-evaluator advantage, no independent WDL. PVS24calls yields10complete same-
+value pairs and2censored requestedD8pairs; mixed work/time benefit, no large
+breakthrough. Six availability-only games give0W1L5D,all eligible; PVS is not part
+of the game comparison. Negative results/UNKNOWN remain. Full data-only replay
+checks449decisions/3329PVplies. Original preparesource metadata defect failed
+beforequeries; actual Position contract corrected, no score expectation changed.
+
+A zero-query coverage inventory of existing public certificates has begun the
+next step; it is not a new all-node Oracle or AUX graph rebuild. PVS/aspiration
+exist, LMR absent was verified locally; external-engine/Elo claims in the direct
+review remain context, not local verification. No default/Core/kernel/UI change,
+training/worker/schedule or rule expansion. Research receipts close before the
+original deadline; actual ledger15intervals is retained, admin0credit. Full
+source, positive/negative results and technical user review are in the new report/
+packet. Initial per-phase Native-count omission is corrected transparently in
+final reader; no data/result rewritten. New Main replaces an endless mask/flag
+sweep with truth-coverage/order/work diagnosis and meaningful error controls.

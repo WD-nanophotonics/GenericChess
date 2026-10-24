@@ -1,0 +1,661 @@
+{
+  "new_Player_queries": 0,
+  "observed_at": "2026-10-24T15:13:41.340210+00:00",
+  "rows": [
+    {
+      "base_tuning": {
+        "aspiration_delta": 50,
+        "aspiration_start_depth": 4,
+        "history_max": 65536,
+        "quiet_buckets": 8,
+        "require_full_pv": false,
+        "stop_after_root_win": false,
+        "use_aspiration": false,
+        "use_capture_only_qsearch": false,
+        "use_check_only_qsearch": false,
+        "use_countermove": false,
+        "use_lazy_successors": false,
+        "use_mate_distance_pruning": false,
+        "use_ordered_qsearch": false,
+        "use_ordered_qsearch_in_check": true,
+        "use_pvs": false,
+        "use_root_tactical": true,
+        "use_staged_move_picker": false
+      },
+      "config": {
+        "anchor_escape_weight": 5,
+        "coverage_weight": 0.1,
+        "density_points": [
+          0.0,
+          0.125,
+          0.25,
+          0.375,
+          0.5
+        ],
+        "density_weights": [
+          0.25,
+          0.2,
+          0.2,
+          0.18,
+          0.17
+        ],
+        "dynamic_mobility_weight": 2,
+        "evaluator_version": "generic-v5",
+        "hand_weight": 0.9,
+        "mc_samples": 64,
+        "normal_piece_median_value": 1000,
+        "path_efficiency_weight": 0.05,
+        "promotion_potential_weight": 3,
+        "reachability_weight": 0.05
+      },
+      "constructor": "Default generated profile/evaluator;nooverride,nohumanlabels;use_disk_cacheFalse",
+      "profile": {
+        "board_value_by_type": {
+          "A": 1000,
+          "B": 1000,
+          "K": 0
+        },
+        "config_hash": "150943185e85eb46e1dba53047a442e5fe918349dd957deddcb6de54b1f74b7b",
+        "evaluator_version": "generic-v5",
+        "hand_value_by_base_type": {
+          "A": 900,
+          "B": 900,
+          "K": 0
+        },
+        "median_non_anchor_value": 1000.0,
+        "piece_profiles": {
+          "A": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,0],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0]]",
+            "normalized_board_value": 1000,
+            "normalized_hand_value": 900,
+            "promotion_option_value": 0,
+            "raw_capability_score": 2.8223863636363635,
+            "type_id": "A"
+          },
+          "B": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+            "normalized_board_value": 1000,
+            "normalized_hand_value": 900,
+            "promotion_option_value": 0,
+            "raw_capability_score": 2.823455882352941,
+            "type_id": "B"
+          },
+          "K": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "promotion_option_value": 0,
+            "raw_capability_score": 4.820053879310345,
+            "type_id": "K"
+          }
+        },
+        "promotion_gain_by_type": {
+          "A": 0,
+          "B": 0,
+          "K": 0
+        },
+        "ruleset_fingerprint": "9a9dd221ec97fc5cd0f5d5475bce5be6439fd216c3453052a3b3581536375bfc",
+        "schema_version": 1
+      },
+      "rule_case": "n4-a1-b8-p0"
+    },
+    {
+      "base_tuning": {
+        "aspiration_delta": 50,
+        "aspiration_start_depth": 4,
+        "history_max": 65536,
+        "quiet_buckets": 8,
+        "require_full_pv": false,
+        "stop_after_root_win": false,
+        "use_aspiration": false,
+        "use_capture_only_qsearch": false,
+        "use_check_only_qsearch": false,
+        "use_countermove": false,
+        "use_lazy_successors": false,
+        "use_mate_distance_pruning": false,
+        "use_ordered_qsearch": false,
+        "use_ordered_qsearch_in_check": true,
+        "use_pvs": false,
+        "use_root_tactical": true,
+        "use_staged_move_picker": false
+      },
+      "config": {
+        "anchor_escape_weight": 5,
+        "coverage_weight": 0.1,
+        "density_points": [
+          0.0,
+          0.125,
+          0.25,
+          0.375,
+          0.5
+        ],
+        "density_weights": [
+          0.25,
+          0.2,
+          0.2,
+          0.18,
+          0.17
+        ],
+        "dynamic_mobility_weight": 2,
+        "evaluator_version": "generic-v5",
+        "hand_weight": 0.9,
+        "mc_samples": 64,
+        "normal_piece_median_value": 1000,
+        "path_efficiency_weight": 0.05,
+        "promotion_potential_weight": 3,
+        "reachability_weight": 0.05
+      },
+      "constructor": "Default generated profile/evaluator;nooverride,nohumanlabels;use_disk_cacheFalse",
+      "profile": {
+        "board_value_by_type": {
+          "A": 1652,
+          "B": 348,
+          "K": 0
+        },
+        "config_hash": "150943185e85eb46e1dba53047a442e5fe918349dd957deddcb6de54b1f74b7b",
+        "evaluator_version": "generic-v5",
+        "hand_value_by_base_type": {
+          "A": 1487,
+          "B": 313,
+          "K": 0
+        },
+        "median_non_anchor_value": 1000.0,
+        "piece_profiles": {
+          "A": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 1652,
+            "normalized_hand_value": 1487,
+            "promotion_option_value": 0,
+            "raw_capability_score": 4.820053879310345,
+            "type_id": "A"
+          },
+          "B": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-2,-2],[\"L\",-2,2],[\"L\",2,-2],[\"L\",2,2]]",
+            "normalized_board_value": 348,
+            "normalized_hand_value": 313,
+            "promotion_option_value": 0,
+            "raw_capability_score": 1.0145833333333332,
+            "type_id": "B"
+          },
+          "K": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "promotion_option_value": 0,
+            "raw_capability_score": 4.820053879310345,
+            "type_id": "K"
+          }
+        },
+        "promotion_gain_by_type": {
+          "A": 0,
+          "B": 0,
+          "K": 0
+        },
+        "ruleset_fingerprint": "95a60d9dd6bf12c6a8345d782da32e5b7a0118a4932a181548b5ceec51f78f78",
+        "schema_version": 1
+      },
+      "rule_case": "n4-a3-b16-p0"
+    },
+    {
+      "base_tuning": {
+        "aspiration_delta": 50,
+        "aspiration_start_depth": 4,
+        "history_max": 65536,
+        "quiet_buckets": 8,
+        "require_full_pv": false,
+        "stop_after_root_win": false,
+        "use_aspiration": false,
+        "use_capture_only_qsearch": false,
+        "use_check_only_qsearch": false,
+        "use_countermove": false,
+        "use_lazy_successors": false,
+        "use_mate_distance_pruning": false,
+        "use_ordered_qsearch": false,
+        "use_ordered_qsearch_in_check": true,
+        "use_pvs": false,
+        "use_root_tactical": true,
+        "use_staged_move_picker": false
+      },
+      "config": {
+        "anchor_escape_weight": 5,
+        "coverage_weight": 0.1,
+        "density_points": [
+          0.0,
+          0.125,
+          0.25,
+          0.375,
+          0.5
+        ],
+        "density_weights": [
+          0.25,
+          0.2,
+          0.2,
+          0.18,
+          0.17
+        ],
+        "dynamic_mobility_weight": 2,
+        "evaluator_version": "generic-v5",
+        "hand_weight": 0.9,
+        "mc_samples": 64,
+        "normal_piece_median_value": 1000,
+        "path_efficiency_weight": 0.05,
+        "promotion_potential_weight": 3,
+        "reachability_weight": 0.05
+      },
+      "constructor": "Default generated profile/evaluator;nooverride,nohumanlabels;use_disk_cacheFalse",
+      "profile": {
+        "board_value_by_type": {
+          "A": 806,
+          "B": 1194,
+          "K": 0
+        },
+        "config_hash": "150943185e85eb46e1dba53047a442e5fe918349dd957deddcb6de54b1f74b7b",
+        "evaluator_version": "generic-v5",
+        "hand_value_by_base_type": {
+          "A": 725,
+          "B": 1075,
+          "K": 0
+        },
+        "median_non_anchor_value": 1000.0,
+        "piece_profiles": {
+          "A": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",1,-1],[\"L\",1,1]]",
+            "normalized_board_value": 806,
+            "normalized_hand_value": 725,
+            "promotion_option_value": 0,
+            "raw_capability_score": 2.407554098360656,
+            "type_id": "A"
+          },
+          "B": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+            "normalized_board_value": 1194,
+            "normalized_hand_value": 1075,
+            "promotion_option_value": 0,
+            "raw_capability_score": 3.5680809523809525,
+            "type_id": "B"
+          },
+          "K": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "promotion_option_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "type_id": "K"
+          }
+        },
+        "promotion_gain_by_type": {
+          "A": 0,
+          "B": 0,
+          "K": 0
+        },
+        "ruleset_fingerprint": "ecbe96c311c37cad4f384fd4439354cb409f40dc6e79d10caba02711510d36f0",
+        "schema_version": 1
+      },
+      "rule_case": "n5-a2-b8-p0"
+    },
+    {
+      "base_tuning": {
+        "aspiration_delta": 50,
+        "aspiration_start_depth": 4,
+        "history_max": 65536,
+        "quiet_buckets": 8,
+        "require_full_pv": false,
+        "stop_after_root_win": false,
+        "use_aspiration": false,
+        "use_capture_only_qsearch": false,
+        "use_check_only_qsearch": false,
+        "use_countermove": false,
+        "use_lazy_successors": false,
+        "use_mate_distance_pruning": false,
+        "use_ordered_qsearch": false,
+        "use_ordered_qsearch_in_check": true,
+        "use_pvs": false,
+        "use_root_tactical": true,
+        "use_staged_move_picker": false
+      },
+      "config": {
+        "anchor_escape_weight": 5,
+        "coverage_weight": 0.1,
+        "density_points": [
+          0.0,
+          0.125,
+          0.25,
+          0.375,
+          0.5
+        ],
+        "density_weights": [
+          0.25,
+          0.2,
+          0.2,
+          0.18,
+          0.17
+        ],
+        "dynamic_mobility_weight": 2,
+        "evaluator_version": "generic-v5",
+        "hand_weight": 0.9,
+        "mc_samples": 64,
+        "normal_piece_median_value": 1000,
+        "path_efficiency_weight": 0.05,
+        "promotion_potential_weight": 3,
+        "reachability_weight": 0.05
+      },
+      "constructor": "Default generated profile/evaluator;nooverride,nohumanlabels;use_disk_cacheFalse",
+      "profile": {
+        "board_value_by_type": {
+          "A": 1363,
+          "B": 637,
+          "K": 0
+        },
+        "config_hash": "150943185e85eb46e1dba53047a442e5fe918349dd957deddcb6de54b1f74b7b",
+        "evaluator_version": "generic-v5",
+        "hand_value_by_base_type": {
+          "A": 1227,
+          "B": 573,
+          "K": 0
+        },
+        "median_non_anchor_value": 1000.0,
+        "piece_profiles": {
+          "A": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,0],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0]]",
+            "normalized_board_value": 1363,
+            "normalized_hand_value": 1227,
+            "promotion_option_value": 0,
+            "raw_capability_score": 2.9975384615384617,
+            "type_id": "A"
+          },
+          "B": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-2,-2],[\"L\",-2,2],[\"L\",2,-2],[\"L\",2,2]]",
+            "normalized_board_value": 637,
+            "normalized_hand_value": 573,
+            "promotion_option_value": 0,
+            "raw_capability_score": 1.4020333333333332,
+            "type_id": "B"
+          },
+          "K": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "promotion_option_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "type_id": "K"
+          }
+        },
+        "promotion_gain_by_type": {
+          "A": 0,
+          "B": 0,
+          "K": 0
+        },
+        "ruleset_fingerprint": "461c9ee4c18b27a73da87f7c1ae470eb040907b2dcb96d69584d990907241a4d",
+        "schema_version": 1
+      },
+      "rule_case": "n5-a1-b16-p0"
+    },
+    {
+      "base_tuning": {
+        "aspiration_delta": 50,
+        "aspiration_start_depth": 4,
+        "history_max": 65536,
+        "quiet_buckets": 8,
+        "require_full_pv": false,
+        "stop_after_root_win": false,
+        "use_aspiration": false,
+        "use_capture_only_qsearch": false,
+        "use_check_only_qsearch": false,
+        "use_countermove": false,
+        "use_lazy_successors": false,
+        "use_mate_distance_pruning": false,
+        "use_ordered_qsearch": false,
+        "use_ordered_qsearch_in_check": true,
+        "use_pvs": false,
+        "use_root_tactical": true,
+        "use_staged_move_picker": false
+      },
+      "config": {
+        "anchor_escape_weight": 5,
+        "coverage_weight": 0.1,
+        "density_points": [
+          0.0,
+          0.125,
+          0.25,
+          0.375,
+          0.5
+        ],
+        "density_weights": [
+          0.25,
+          0.2,
+          0.2,
+          0.18,
+          0.17
+        ],
+        "dynamic_mobility_weight": 2,
+        "evaluator_version": "generic-v5",
+        "hand_weight": 0.9,
+        "mc_samples": 64,
+        "normal_piece_median_value": 1000,
+        "path_efficiency_weight": 0.05,
+        "promotion_potential_weight": 3,
+        "reachability_weight": 0.05
+      },
+      "constructor": "Default generated profile/evaluator;nooverride,nohumanlabels;use_disk_cacheFalse",
+      "profile": {
+        "board_value_by_type": {
+          "A": 1152,
+          "B": 848,
+          "K": 0
+        },
+        "config_hash": "150943185e85eb46e1dba53047a442e5fe918349dd957deddcb6de54b1f74b7b",
+        "evaluator_version": "generic-v5",
+        "hand_value_by_base_type": {
+          "A": 1037,
+          "B": 763,
+          "K": 0
+        },
+        "median_non_anchor_value": 1000.0,
+        "piece_profiles": {
+          "A": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 1152,
+            "normalized_hand_value": 1037,
+            "promotion_option_value": 0,
+            "raw_capability_score": 5.579053617571058,
+            "type_id": "A"
+          },
+          "B": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+            "normalized_board_value": 848,
+            "normalized_hand_value": 763,
+            "promotion_option_value": 0,
+            "raw_capability_score": 4.103142282554047,
+            "type_id": "B"
+          },
+          "K": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "promotion_option_value": 0,
+            "raw_capability_score": 5.579053617571058,
+            "type_id": "K"
+          }
+        },
+        "promotion_gain_by_type": {
+          "A": 0,
+          "B": 0,
+          "K": 0
+        },
+        "ruleset_fingerprint": "db1de4377e39a96cf2b0f7b47c1135bbe6714563227a2f733adb44e079bf5acf",
+        "schema_version": 1
+      },
+      "rule_case": "n6-a3-b8-p0"
+    },
+    {
+      "base_tuning": {
+        "aspiration_delta": 50,
+        "aspiration_start_depth": 4,
+        "history_max": 65536,
+        "quiet_buckets": 8,
+        "require_full_pv": false,
+        "stop_after_root_win": false,
+        "use_aspiration": false,
+        "use_capture_only_qsearch": false,
+        "use_check_only_qsearch": false,
+        "use_countermove": false,
+        "use_lazy_successors": false,
+        "use_mate_distance_pruning": false,
+        "use_ordered_qsearch": false,
+        "use_ordered_qsearch_in_check": true,
+        "use_pvs": false,
+        "use_root_tactical": true,
+        "use_staged_move_picker": false
+      },
+      "config": {
+        "anchor_escape_weight": 5,
+        "coverage_weight": 0.1,
+        "density_points": [
+          0.0,
+          0.125,
+          0.25,
+          0.375,
+          0.5
+        ],
+        "density_weights": [
+          0.25,
+          0.2,
+          0.2,
+          0.18,
+          0.17
+        ],
+        "dynamic_mobility_weight": 2,
+        "evaluator_version": "generic-v5",
+        "hand_weight": 0.9,
+        "mc_samples": 64,
+        "normal_piece_median_value": 1000,
+        "path_efficiency_weight": 0.05,
+        "promotion_potential_weight": 3,
+        "reachability_weight": 0.05
+      },
+      "constructor": "Default generated profile/evaluator;nooverride,nohumanlabels;use_disk_cacheFalse",
+      "profile": {
+        "board_value_by_type": {
+          "A": 1209,
+          "B": 791,
+          "K": 0
+        },
+        "config_hash": "150943185e85eb46e1dba53047a442e5fe918349dd957deddcb6de54b1f74b7b",
+        "evaluator_version": "generic-v5",
+        "hand_value_by_base_type": {
+          "A": 1088,
+          "B": 712,
+          "K": 0
+        },
+        "median_non_anchor_value": 1000.0,
+        "piece_profiles": {
+          "A": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",1,-1],[\"L\",1,1]]",
+            "normalized_board_value": 1209,
+            "normalized_hand_value": 1088,
+            "promotion_option_value": 0,
+            "raw_capability_score": 2.599101473922903,
+            "type_id": "A"
+          },
+          "B": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-2,-2],[\"L\",-2,2],[\"L\",2,-2],[\"L\",2,2]]",
+            "normalized_board_value": 791,
+            "normalized_hand_value": 712,
+            "promotion_option_value": 0,
+            "raw_capability_score": 1.7006349206349207,
+            "type_id": "B"
+          },
+          "K": {
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "promotion_option_value": 0,
+            "raw_capability_score": 5.579053617571058,
+            "type_id": "K"
+          }
+        },
+        "promotion_gain_by_type": {
+          "A": 0,
+          "B": 0,
+          "K": 0
+        },
+        "ruleset_fingerprint": "a45f78b90a4d45cc5204a4c08ba3facde4e3d4e521f311b69a67ab08f31c0267",
+        "schema_version": 1
+      },
+      "rule_case": "n6-a2-b16-p0"
+    }
+  ],
+  "scope": "Postquery provenance observation from unchanged registered constructor and pinned source;not a retroactive registration. Botharms identical leaf/order profile;PVSonlyswitchinitsphase."
+}

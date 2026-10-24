@@ -1,0 +1,5117 @@
+{
+  "base_sha": "320d93d0b365e5af1ced8fec72615c64db435842",
+  "cases": [
+    {
+      "actual_ply": 0,
+      "input_sha256": "6ac80b5523e447e3d5226a3c593ef4f8954d9e52b9ca9cd8d365b383ff5efbf0",
+      "key": "n4-a1-b8-p0",
+      "masks": [
+        1,
+        8
+      ],
+      "n": 4,
+      "nominal_prefix": 0,
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "9a9dd221ec97fc5cd0f5d5475bce5be6439fd216c3453052a3b3581536375bfc",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "9a9dd221ec97fc5cd0f5d5475bce5be6439fd216c3453052a3b3581536375bfc"
+    },
+    {
+      "actual_ply": 5,
+      "input_sha256": "3b22708259a361bf6ee244eb783e65cd8ef8b51ab14f011fa5f8478fc269518a",
+      "key": "n4-a1-b8-p5",
+      "masks": [
+        1,
+        8
+      ],
+      "n": 4,
+      "nominal_prefix": 5,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "B",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g19",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              2,
+              3
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "9a9dd221ec97fc5cd0f5d5475bce5be6439fd216c3453052a3b3581536375bfc",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "9a9dd221ec97fc5cd0f5d5475bce5be6439fd216c3453052a3b3581536375bfc"
+    },
+    {
+      "actual_ply": 0,
+      "input_sha256": "f64b99473cab4852fc01960c79b0f39233f7ca9d53953f55f35d987909f64b44",
+      "key": "n4-a3-b16-p0",
+      "masks": [
+        3,
+        16
+      ],
+      "n": 4,
+      "nominal_prefix": 0,
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "95a60d9dd6bf12c6a8345d782da32e5b7a0118a4932a181548b5ceec51f78f78",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "95a60d9dd6bf12c6a8345d782da32e5b7a0118a4932a181548b5ceec51f78f78"
+    },
+    {
+      "actual_ply": 5,
+      "input_sha256": "ca47e89646e0c3aaf2acf53bdb1f0e41369b6f51f1512d53b6bb3b3ad6e45968",
+      "key": "n4-a3-b16-p5",
+      "masks": [
+        3,
+        16
+      ],
+      "n": 4,
+      "nominal_prefix": 5,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "B",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_007",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_007",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "95a60d9dd6bf12c6a8345d782da32e5b7a0118a4932a181548b5ceec51f78f78",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "95a60d9dd6bf12c6a8345d782da32e5b7a0118a4932a181548b5ceec51f78f78"
+    },
+    {
+      "actual_ply": 0,
+      "input_sha256": "910d831bf6b36e86c1e901c9400f0c82e23e1b651e4f710d39a39b24097e3a61",
+      "key": "n5-a2-b8-p0",
+      "masks": [
+        2,
+        8
+      ],
+      "n": 5,
+      "nominal_prefix": 0,
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ecbe96c311c37cad4f384fd4439354cb409f40dc6e79d10caba02711510d36f0",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "ecbe96c311c37cad4f384fd4439354cb409f40dc6e79d10caba02711510d36f0"
+    },
+    {
+      "actual_ply": 5,
+      "input_sha256": "3858641c069e14091609c7215724af8e9acaff915fd9c26b36741080876b25b9",
+      "key": "n5-a2-b8-p5",
+      "masks": [
+        2,
+        8
+      ],
+      "n": 5,
+      "nominal_prefix": 5,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "B",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              3
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              3,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ecbe96c311c37cad4f384fd4439354cb409f40dc6e79d10caba02711510d36f0",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "ecbe96c311c37cad4f384fd4439354cb409f40dc6e79d10caba02711510d36f0"
+    },
+    {
+      "actual_ply": 0,
+      "input_sha256": "c87edf58ae1fb30914f61feb2246b1ca8786bb3646486c0b1d4b96034056d8db",
+      "key": "n5-a1-b16-p0",
+      "masks": [
+        1,
+        16
+      ],
+      "n": 5,
+      "nominal_prefix": 0,
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "461c9ee4c18b27a73da87f7c1ae470eb040907b2dcb96d69584d990907241a4d",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "461c9ee4c18b27a73da87f7c1ae470eb040907b2dcb96d69584d990907241a4d"
+    },
+    {
+      "actual_ply": 5,
+      "input_sha256": "3937e934bc11239372f0dd615f19b0efd9856ccb88dc7aeb91695e5ccb9e7a7e",
+      "key": "n5-a1-b16-p5",
+      "masks": [
+        1,
+        16
+      ],
+      "n": 5,
+      "nominal_prefix": 5,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "A",
+            "from": [
+              3,
+              4
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "461c9ee4c18b27a73da87f7c1ae470eb040907b2dcb96d69584d990907241a4d",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 5,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "461c9ee4c18b27a73da87f7c1ae470eb040907b2dcb96d69584d990907241a4d"
+    },
+    {
+      "actual_ply": 0,
+      "input_sha256": "f0b4ed4b55103fce3e3114ba87474999d9aa6823027b42f76a833a135cda68f4",
+      "key": "n6-a3-b8-p0",
+      "masks": [
+        3,
+        8
+      ],
+      "n": 6,
+      "nominal_prefix": 0,
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "db1de4377e39a96cf2b0f7b47c1135bbe6714563227a2f733adb44e079bf5acf",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 6,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "db1de4377e39a96cf2b0f7b47c1135bbe6714563227a2f733adb44e079bf5acf"
+    },
+    {
+      "actual_ply": 5,
+      "input_sha256": "6d1295b40b9d7b588f933faf4ffe89c33ad57e15b01720db54380caf15007315",
+      "key": "n6-a3-b8-p5",
+      "masks": [
+        3,
+        8
+      ],
+      "n": 6,
+      "nominal_prefix": 5,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "B",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              5,
+              4
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              2
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "B",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "db1de4377e39a96cf2b0f7b47c1135bbe6714563227a2f733adb44e079bf5acf",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 6,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "db1de4377e39a96cf2b0f7b47c1135bbe6714563227a2f733adb44e079bf5acf"
+    },
+    {
+      "actual_ply": 0,
+      "input_sha256": "f7853eac1dc93cf1aa14676172e7ac6faab953dced947da03e3db050593bf847",
+      "key": "n6-a2-b16-p0",
+      "masks": [
+        2,
+        16
+      ],
+      "n": 6,
+      "nominal_prefix": 0,
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a45f78b90a4d45cc5204a4c08ba3facde4e3d4e521f311b69a67ab08f31c0267",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 6,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "a45f78b90a4d45cc5204a4c08ba3facde4e3d4e521f311b69a67ab08f31c0267"
+    },
+    {
+      "actual_ply": 5,
+      "input_sha256": "1915a48894570b988b6e70dd187ca873316093ab1580344ab370e60ca6fb7e0a",
+      "key": "n6-a2-b16-p5",
+      "masks": [
+        2,
+        16
+      ],
+      "n": 6,
+      "nominal_prefix": 5,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              5,
+              5
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a45f78b90a4d45cc5204a4c08ba3facde4e3d4e521f311b69a67ab08f31c0267",
+        "schema_version": 1
+      },
+      "result": {
+        "declaration_id": null,
+        "declaration_outcome": null,
+        "declaration_score": null,
+        "declared_by": null,
+        "resigned_by": null,
+        "status": "ongoing",
+        "winner": null
+      },
+      "rule": {
+        "board_size": 6,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "scope": "6actors;fullrules;LeapAtom only;no promotion/drop/hand;maxply96;repetition4",
+      "semantic_fingerprint": "a45f78b90a4d45cc5204a4c08ba3facde4e3d4e521f311b69a67ab08f31c0267"
+    }
+  ],
+  "ended_at": "2026-10-24T14:04:39.392379+00:00",
+  "source_sha256": "091f265c0f8671f3a25c8b2bc6cd6db75178bf1bdee6fe3e4345d1231421bf43",
+  "started_at": "2026-10-24T14:04:39.355296+00:00",
+  "wall_seconds": 0.03168659994844347
+}

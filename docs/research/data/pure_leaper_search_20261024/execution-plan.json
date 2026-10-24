@@ -1,0 +1,54 @@
+{
+  "caller_max_plies": 96,
+  "cases": [
+    "n4-a1-b8-p0",
+    "n4-a1-b8-p5",
+    "n4-a3-b16-p0",
+    "n4-a3-b16-p5",
+    "n5-a2-b8-p0",
+    "n5-a2-b8-p5",
+    "n5-a1-b16-p0",
+    "n5-a1-b16-p5",
+    "n6-a3-b8-p0",
+    "n6-a3-b8-p5",
+    "n6-a2-b16-p0",
+    "n6-a2-b16-p5"
+  ],
+  "cost_basis": "12actualpilotcalls*32nodes*2prefixes*4reps; nonlinear unknown;45s safety/call and original100mininclusive deadline prevail;no promisedfullcoverage/caprefill",
+  "depth": 64,
+  "forecast_node_seconds": 2096.913715213537,
+  "forecast_wall_seconds": 480,
+  "game_cases": [
+    "n4-a1-b8-p5",
+    "n5-a2-b8-p5",
+    "n6-a3-b8-p5"
+  ],
+  "game_seconds": 2,
+  "max_game_seconds": 1152,
+  "maximum_reference_seconds": 720,
+  "method": "12exogenousroots/6rules;fixedbeforepilot;ABBA perroot;freshPlayer/coldNativecachepercall.4timingreps notindependentroots;knownoldsolvednotincluded",
+  "modes": [
+    "nodes",
+    "wall"
+  ],
+  "nodes": 131072,
+  "production_defaults_changed": false,
+  "reference": {
+    "controller": "Coreavailabilityoff;Nativelegalityon;samecurrentmap;freshPlayercoldTT",
+    "depths": [
+      6,
+      8
+    ],
+    "max_queries": 48,
+    "nodes": 262144,
+    "only_different_actions": true,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4,
+    "scope": "pairedactiondifference only;notglobalregret/independenttruth",
+    "seconds": 15
+  },
+  "registered_at": "2026-10-24T14:06:41.919654+00:00",
+  "repetitions": 4,
+  "safety_seconds": 45,
+  "seconds": 5
+}

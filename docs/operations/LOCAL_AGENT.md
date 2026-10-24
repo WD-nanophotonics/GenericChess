@@ -685,3 +685,29 @@ published AUX labels is not independent solving. Shared Core root/child/defense
 replay qualifies semantic binding only. Never execute packet source capsules or
 rebuild another role's graph to make a summary. Presentation source hashes can
 explicitly normalize LF; original executed-source byte hashes cannot.
+
+
+## Pure-Leaper algorithmic work and Oracle scope —2026-10-25
+
+The current scientific selection is in LOCAL_MAINLINE. Operationally, distinguish
+per-work cost from main+q budget events and actual decision quality. A fixed-depth
+PVS comparison may preserve values while changing work/PV/tied actions; an
+incomplete requested depth remains UNKNOWN. Record null-window/re-search counts
+and full outer cost; fewer visits can be offset by higher per-visit overhead.
+A selective approximation such as LMR needs different miss-risk/quality checks;
+completed-value parity is not a universal validation rule for approximate search.
+
+A reference based on two proposed first actions is paired-action difference,
+not global regret. Same-evaluator deeper results are not independent truth.
+Require complete history/clock/goal binding for any Oracle ordering label; root
+WDL or a three-way WDL bucket does not establish ideal fixed-depth score order.
+Do not demand a new universal solver before a bounded useful prototype. Preserve
+exposure: current development rules/time repeats do not become independent heldout.
+Source/schema inventories alone are0queries and not executed Oracle experiments.
+
+For multi-phase summaries, explicitly sum actual metrics by phase. The initial
+intermediate search reader counted Native availability only for pilot/panel;
+final reader also counts fresh-Player PVS totals and per-turn game deltas. Keep
+intermediate files/original returns and state the corrected scope; no new query
+or changed experimental outcome is created by accounting. Source/JSONL gzip
+archives are lossless; LF display JSON has distinct publication/original hashes.
