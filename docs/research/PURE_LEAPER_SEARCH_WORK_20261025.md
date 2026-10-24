@@ -129,7 +129,14 @@ also made0queries. No score/test expectation was edited to match output.
 
 All actual scientific work ends at the saved receipts. The session ledger at
 closure records3969.00498effective seconds in15intervals;
-offline/failed-job/administrative gaps are excluded. Transport/docs/publication
+offline/failed-job/administrative gaps are excluded. A conservative final audit removes58.708795seconds from the first interval:
+its prior end extended beyond the pilot receipt into an unseparated Slack/read/
+assessment gap. The entire gap is excluded. Final audited effective work is
+3910.296185seconds (65.172minutes),15intervals.
+The exact original session is retained privately; work-ledger-audit.json contains
+old/new bounds and causal evidence. science-closure.json preserves its historical
+pre-audit number and does not override this amendment. No scientific rerun or
+result changed. Transport/docs/publication
 add0research credit. The session still needs its separate finish/quality acceptance;
 scientific closure is not a false claim of session completion.
 

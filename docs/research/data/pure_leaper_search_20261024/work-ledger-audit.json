@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-24T15:28:57.711070+00:00",
+  "effective_seconds_after": 3910.296185,
+  "effective_seconds_before": 3969.00498,
+  "excluded_seconds": 58.70879500000001,
+  "frozen_science_closure": "science-closure.json records preaudit ledger as historical, not final acceptance; actualscientificresults unchanged449decisions/3329PV and0W1L5D",
+  "new_first_interval": {
+    "activity": "analysis",
+    "ended_at": "2026-10-24T14:04:47.967838+00:00",
+    "evidence": "New pureLeaper scoped design6rules/12fullroots on4/5/6boards; existing availability provider sourceguard/terminalhistory ownership reviewed;12actualpilotqueries4096nodes preserve exactscore/PV/main+q/TT/pushpop withfreshPlayercache;Nativeboolqueriesverified;metadatawrapperfingerprintfailure0queries preserved then correctPositioncontract;no rule/expectation changes. Conservativefinalaudit caps interval at actualpilotend; entire subsequent unseparated Slack/read/assessment gap excluded.",
+    "recorded_at": "2026-10-24T14:05:46.678638+00:00",
+    "seconds": 91.967838,
+    "started_at": "2026-10-24T14:03:16+00:00"
+  },
+  "old_first_interval": {
+    "activity": "analysis",
+    "ended_at": "2026-10-24T14:05:46.676633+00:00",
+    "evidence": "New pureLeaper scoped design6rules/12fullroots on4/5/6boards; existing availability provider sourceguard/terminalhistory ownership reviewed;12actualpilotqueries4096nodes preserve exactscore/PV/main+q/TT/pushpop withfreshPlayercache;Nativeboolqueriesverified;metadatawrapperfingerprintfailure0queries preserved then correctPositioncontract;no rule/expectation changes.",
+    "recorded_at": "2026-10-24T14:05:46.678638+00:00",
+    "seconds": 150.676633,
+    "started_at": "2026-10-24T14:03:16+00:00"
+  },
+  "original_session_sha256": "73f29279fa2d4e3b121625bd7124a268fcc09b323b76528105937908366c596a",
+  "private_original": ".local_agent/pl-session-before-conservative-audit.json",
+  "reason": "First analysis interval extended beyond pilot receipt into unseparated Slack transport/read/assessment. Conservatively credit only through actualpilotend; whole following gap excluded rather than infer active analysis from clock. Other14intervals/UUID/start/state unchanged.",
+  "scope": "Conservative final ledger correction; no research/source/data rerun",
+  "session_id": "6476ce57-1d32-4ce1-a8ed-6c5b3306e9c4"
+}
