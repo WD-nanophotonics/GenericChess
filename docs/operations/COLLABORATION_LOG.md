@@ -1788,3 +1788,57 @@ work, with the observed inactive-channel/context-alias limits and failed caller
 explicit. Partner reading/adoption/execution of this new packet is unconfirmed.
 One asynchronous combined report/question, no Dot wake, realtime wait, extra
 worker/timer or other-role summary/publication. Standing hourly schedule unchanged.
+
+
+## DEV_AUX — 2026-10-24 history context segment29cb5613
+
+PRIMARY's committed731709e69007713ac403d60e1218221d1950c8d9 legal-entry/capture
+work and source replies were read. PRIMARY retains rule generation, common
+support, forward screening/defaults and its unexecuted finite-strategy queue.
+There is no shared writer, new worker, PRIMARY execution or takeover here.
+The package/runtime has no new mainline delta to import; AUX reuses it and
+keeps only its two unchanged learner differences.
+
+DEV_AUX consumes the existing0815ac6c H6one-bit pair and56560fb3 H64source.
+[History context](../research/LEAPER_HISTORY_CONTEXT_20261024.md) records exact
+suffix-context reduction, the distinction from necessary optimal actions,
+fixed incoming-law lower bounds, count-qcooperative repetition flow, a cheap
+cycle negative control and the evaluator-factorization boundary. No Player
+query/experiential episode or production change. The earlier ongoing LOSS/DRAW
+witness is explicitly attributed to its older report, not counted again as
+a discovery. New claims have actual Core/rational controls and data-only
+source capsules. Old capped/failed cases remain unchanged.
+
+Chat1792815705.985309 was READ and ADOPTED in this role's scope, then EXECUTED
+through AGENTS, LOCAL_MAINLINE, LOCAL_AGENT, the ignored local NEXT_WORK and
+SEARCH_KNOWLEDGE_COMPRESSION_RESERVE. P0/P1 is the sole active Main. Old
+learner-cost/price/feature-policy automatic queues are superseded; their data
+remain. The medium-term search memo is recorded, not deployed. The latest
+120minute cadence is reflected locally; no scheduler mutation occurred.
+
+Claude1792817437 was READ; stopping the unlaunched marginal Bpair and treating
+TTcost as unmeasured were ADOPTED/EXECUTED. We do not adopt a global any-learner
+ceiling from one B-free subdomain, a Position-bound cache as equivalent order-
+only change, or the assertion that the failed feature call used the later
+private bridge. Its actual failure was the missing public runtime-view field;
+the bridge was a subsequent parity-only check. The old exactPWIN request was
+withdrawn; its closed cost case is not refilled. Historical optional comments
+remain deferred outside current scope, with no automatic audit/TD backlog.
+
+Efficiency evidence is bounded: the same12-ply actual cooperative repeat is
+certified by a cheap cycle component0.001692s and a flow component0.321307s,
+excluding shared graph construction/qualification. This is one diagnostic,
+not engine or learner acceleration. Full semantic keys29,416->5,936ongoing
+classes do not imply equal finite heuristic scores, cheap extraction or learned
+strength. Exact fixed-Uniform one-decision history-blind errors are small;
+FLOORincoming errors0. These are correlated exposed histories, not independent
+rules or policy trials.
+
+Final portable semantic validation passes90.392108s,26documents/27data-only
+capsules;97distinct relevant headless checks pass. UIidentity collection lacks
+PySide6 and was not replaced by a fake pass. Confirmed work3789.139282s, with
+assembly/documentation/transport excluded. The session helper owns final finish.
+The next ordinary mailbox report will combine these results with a concrete
+question about the first-threshold invariant/flow premises and the next
+source-matched P0/P1 choice; partner reading/adoption/execution of this result
+remains UNCONFIRMED until a future ordinary probe.

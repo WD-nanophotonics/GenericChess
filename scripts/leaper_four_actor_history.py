@@ -11,11 +11,9 @@ from scripts.leaper_history_barrier_rank import solve
 from scripts.leaper_microgames import role_stop_requested
 from generic_chess.core.identity import repetition_identity_key
 
-def load(graph,qualification,world):
-    g=json.loads(gzip.decompress(graph.read_bytes()));q=L.load(qualification)
+def admit_world(world):
+    """Reuse fixed full-rule admission without decoding every graph position."""
     c=L.compile_rule(L.ruleset_from_dict(world['rule']))
-    if g['rule']!=world['rule']or not q['verified']or q['sha256']!=L.sha(graph)or q['target_fingerprint']!=c.ruleset_fingerprint:
-        raise ValueError('complete qualified source binding differs')
     if c.ruleset_fingerprint!='173bd8ad8bc61414547559bea1bd9196f9d03f8fb5f3e0f35673f14c5108df77':
         raise ValueError('outside fixed four-actor rule')
     support=c.support;rule=L.ruleset_from_dict(world['rule'])
@@ -27,6 +25,13 @@ def load(graph,qualification,world):
         raise ValueError('outside plain Leaper scope')
     if any(getattr(support,k)for k in('automatic_adjudications','consecutive_action_adjudications','no_progress_draw','pass_enabled'))or getattr(c,'repeated_cycle_target_conditions',())or getattr(support,'declarations',()):
         raise ValueError('extra history/terminal effect')
+    return c
+
+def load(graph,qualification,world):
+    g=json.loads(gzip.decompress(graph.read_bytes()));q=L.load(qualification)
+    c=admit_world(world)
+    if g['rule']!=world['rule']or not q['verified']or q['sha256']!=L.sha(graph)or q['target_fingerprint']!=c.ruleset_fingerprint:
+        raise ValueError('complete qualified source binding differs')
     ps=[decode_position(x,c.initial_position)for x in g['positions']]
     ix={p:i for i,p in enumerate(ps)}
     keys={repetition_identity_key(p,c):i for i,p in enumerate(ps)}

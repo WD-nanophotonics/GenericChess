@@ -1,0 +1,410 @@
+{
+  "format": "leaper-history-context-manifest-v1",
+  "packet_sha256": "42302c0f2665a7b35e4ac1751808006188efd21a97e9e78bb55a327442cb2e1a",
+  "decoded_sha256": "33559bcfeda6c4f9b3d86cf9b9c0e5d11eae5616aa45ebea65406f70c18ab809",
+  "documents_utf8": {
+    "context/census-v1.json": {
+      "bytes": 8124,
+      "sha256": "07742fad11681067ac3eb6d18765656a4d4b4b2b9de8b888903ced998a23a7f2"
+    },
+    "context/census.json": {
+      "bytes": 11251,
+      "sha256": "adacb7e131d2670d31be44efdfbcce9aea66436e18e31efc195c0e68219b2737"
+    },
+    "context/literal-v1.json": {
+      "bytes": 1456160,
+      "sha256": "62eb7d353a1b3d1d78a6d5cc8a50a2eae51ea2e94658b371d05dcba8c2c0fe06"
+    },
+    "context/literal.json": {
+      "bytes": 2978615,
+      "sha256": "29a09e66cc0bc16341a7ffe900d80675a970a1d992dd18428ef36b9427ba5ac8"
+    },
+    "context/sessions.json": {
+      "bytes": 1111,
+      "sha256": "9b6f346a42e19379687c7de40f159f2324681e32c870e3450b6641a1b6150585"
+    },
+    "cone/result.json": {
+      "bytes": 175104,
+      "sha256": "afc2db2b6a41e654255172c9a9a79b79e500d0966e667e386ec0dfe2d947d757"
+    },
+    "cone/partition.json": {
+      "bytes": 10506,
+      "sha256": "eda41afc87776ec8aa3641c631e735f6a2dd5b5c1ac614017c2ecbbff1432857"
+    },
+    "cone/first-hit-partition.json": {
+      "bytes": 11781,
+      "sha256": "caa56e0b81bcaac63c7ab2d572077a8beb37da19b97df7230bceccd812d7d036"
+    },
+    "abstract/cone.json": {
+      "bytes": 725,
+      "sha256": "70c42621d06bf2d02f3edd91fe5aa2917a9df350a0c9386651552160b26ab4fa"
+    },
+    "abstract/first-hit.json": {
+      "bytes": 658,
+      "sha256": "efe7a2f8ceec833a8ac89dce2740d2eac6727d8f7e6b4006f519885cac5057b0"
+    },
+    "abstract/threshold.json": {
+      "bytes": 743,
+      "sha256": "7674577a6142a750de46010d007b6e4bd0e29a4c232fe2208b9c6b49e7c58bad"
+    },
+    "abstract/flow.json": {
+      "bytes": 760,
+      "sha256": "04f9c1bcb6ba20c15157d91835bb9e8c7cd4ab7d094007b819037844552879c0"
+    },
+    "action/result.json": {
+      "bytes": 380661,
+      "sha256": "18c57f09afb89e7673f4d8d0ed011ce4032e36ace26b619ddaac4f73dd171971"
+    },
+    "action/literal.json": {
+      "bytes": 44480,
+      "sha256": "0e55f6499ccd121c93677c227a7d9111d48c860fc5f61cfdc6c81c720ab7f5a2"
+    },
+    "action/law-literal-v1.json": {
+      "bytes": 2875,
+      "sha256": "883205f6680aa1fbfa7bdae3e128d1653d7dd0e5ec87b3a1baaa712d5e4ad7e6"
+    },
+    "action/law-literal.json": {
+      "bytes": 2875,
+      "sha256": "932427333a82922acf9fb352c2902f81ee5362c43923aae1c5a885c50c203ed9"
+    },
+    "action/covers.json": {
+      "bytes": 420016,
+      "sha256": "a8ffcb6ceca1691d4d4f76d546dcaec603b43b8dac15b56e1a30aa73aaf8e8c3"
+    },
+    "action/covers-literal.json": {
+      "bytes": 2874,
+      "sha256": "ad4d4247bd470f853bda93e749ee4c3202159971af7f9dba27e67056baaf6352"
+    },
+    "flow/plan.json": {
+      "bytes": 17595,
+      "sha256": "b7743e3f1cb6da6dc38da9c300c8643ee7d5920a90766c5025dd844dd76ea769"
+    },
+    "flow/result.json": {
+      "bytes": 402165,
+      "sha256": "373f187037d10d907d85ba33a0479e6cd6575ee71dd452dcb93cd8785b65c12a"
+    },
+    "flow/baseline.json": {
+      "bytes": 26874,
+      "sha256": "4ae6c99a143b1b9404a07d166e3dd08da85f380d2abbc9284754dcf5ad319adb"
+    },
+    "proof/cone.md": {
+      "bytes": 5651,
+      "sha256": "37c072fbe6a8a73f1916a5004cedcaeb8d887672b0fc9fc0985693a3e7ec3f82"
+    },
+    "proof/flow.md": {
+      "bytes": 3944,
+      "sha256": "940694e2cbab1c252b08ae16688b6d9b31c407e58398a9817beeb139017da03c"
+    },
+    "failures-and-limits.json": {
+      "bytes": 859,
+      "sha256": "2b344f28301f81b88c6b4e0c3e92a39737853e92610e01f2a324e69badfa61c8"
+    },
+    "consumer/abstract.json": {
+      "bytes": 1543,
+      "sha256": "9806e336d9b066453fa8a51ba0d60bd1fc098dcd56304e10acb9cf6348fb1660"
+    },
+    "consumer/actual.json": {
+      "bytes": 138229,
+      "sha256": "0779c9cff0da56b052c88f44cd7805a85743c85a709bef9dca43fe755c10a17b"
+    }
+  },
+  "source_capsules_utf8": {
+    "source/census-v1.py": {
+      "bytes": 7302,
+      "sha256": "c65c88d07653de36ead0562d3e9c9b4d4c0669650658e06c5a28930275dd381e"
+    },
+    "source/census.py": {
+      "bytes": 7575,
+      "sha256": "881d1b20cbb063d1c776d32dbcc05b9777825d81943623dd4f7abb63f9907fb8"
+    },
+    "source/context-literal.py": {
+      "bytes": 6283,
+      "sha256": "5d6fdc778eedca91ed3e4555fae1308f560cd91ae95408a01c58f9186a1830f6"
+    },
+    "source/context-sessions.py": {
+      "bytes": 5890,
+      "sha256": "d6b5db330f08791b7459a98a50352545c26e8de751b2bb7cecfd09dce7e7c35c"
+    },
+    "source/cone-v1.py": {
+      "bytes": 9355,
+      "sha256": "cf003823d44fec5e30795c98c52adb2cab7b333d4517b0c91008dbc7e550188e"
+    },
+    "source/cone.py": {
+      "bytes": 10341,
+      "sha256": "9abc18574acfb38367340bc78542cbd33d531a80b059abf763ad92ae69f784c9"
+    },
+    "source/literal-partition.py": {
+      "bytes": 6616,
+      "sha256": "8d3eb54d831dcb99cd73f9fde4ffdef392e9c122701d860ded089f605b27fd5c"
+    },
+    "source/first-hit-partition.py": {
+      "bytes": 7302,
+      "sha256": "6604c954e990cd72d01657ec3197ae5d2136f55abac541306a9a68ac4eccddb1"
+    },
+    "source/abstract-cone.py": {
+      "bytes": 4304,
+      "sha256": "5abe8e293237eb9ce4c9e50723af4d99e9bba3fcc70fa032c1b22fb53fa99b83"
+    },
+    "source/abstract-first-hit.py": {
+      "bytes": 2845,
+      "sha256": "95f924d40af4869bcfe474c73f6a73f43d64ea70fca1bf7e7f48b691ba981edd"
+    },
+    "source/abstract-threshold.py": {
+      "bytes": 3371,
+      "sha256": "9f8c3c20836a333c42e9bcb0f8a74b90698559c28bbcaa73cf1de3c2b563e32d"
+    },
+    "source/abstract-flow.py": {
+      "bytes": 3650,
+      "sha256": "d62703e24b1d8f139d41cba087ab8c644222e14c66a386f8156575545408b396"
+    },
+    "source/action.py": {
+      "bytes": 6534,
+      "sha256": "774a0608724754d4b0e36b2d5eaf0fd29c4992ec568747aca377d8f383a75cea"
+    },
+    "source/action-literal.py": {
+      "bytes": 4087,
+      "sha256": "76348a90cb98b9998dd3933a39272369ab9a16361465c79d793df06015cee797"
+    },
+    "source/action-law-v1.py": {
+      "bytes": 4931,
+      "sha256": "f07fd7229f457c239ab2ea2d297b17ad921f47b0d818e6bc0941322c06f79fb9"
+    },
+    "source/action-law-v2.py": {
+      "bytes": 5894,
+      "sha256": "8b259763f042b6e4309dc775fc065285e1f45c4b9fd0d07e55eb12456d4d7665"
+    },
+    "source/action-law.py": {
+      "bytes": 7247,
+      "sha256": "f289a438038033607a5c95b1c04ba256f00c88ef4d4be0e6a2221c7d1e6aff52"
+    },
+    "source/action-covers.py": {
+      "bytes": 7471,
+      "sha256": "ca242679e087a5236d81c9e95d5973830c76a89b9afda55752090221b8b7716d"
+    },
+    "source/flow-v1.py": {
+      "bytes": 2813,
+      "sha256": "fca91341e0eacdf3c503b6db0cf5179a1ad838d71480648f22d8dd701f229e4a"
+    },
+    "source/flow.py": {
+      "bytes": 4176,
+      "sha256": "66cd5e6f1cedea0f22a4978bd6e9eaac3ba4af92f93237af20bac26710bde29f"
+    },
+    "source/actual-flow.py": {
+      "bytes": 7352,
+      "sha256": "5ae253759ffa58c788d5e8d5610e957b6f21b27e624c5fcdbfcb79808aa00131"
+    },
+    "source/cycle.py": {
+      "bytes": 1270,
+      "sha256": "679b2b019507217ddab40cf47857791ea46ed98052f35938bfc51541f8e3e19b"
+    },
+    "source/cycle-baseline-v1.py": {
+      "bytes": 5032,
+      "sha256": "d1c4d320288fa22b9d298fd04cca0101870bb4fde29c6b0c400f137dc7c6addf"
+    },
+    "source/cycle-baseline.py": {
+      "bytes": 5094,
+      "sha256": "cc94dbb026779450968976887008f589b3ef4235bb8040814cc50ba0b9882fc1"
+    },
+    "source/four-actor-admission.py": {
+      "bytes": 13286,
+      "sha256": "bfd73f50e4602c2f5cc632dbfaf8511ee79e4c245de9116fc651c77d9dae11b2"
+    },
+    "source/consumer-abstract.py": {
+      "bytes": 2243,
+      "sha256": "d86cb7577c3b4988f11cea8d15b62823774647bc47be22181c890097648d1c63"
+    },
+    "source/consumer-actual.py": {
+      "bytes": 5293,
+      "sha256": "8c2b4f4c86761f728f483ed260f418c910d7d658ee3f8b9a2b246da88aa232a0"
+    }
+  },
+  "external_files": {},
+  "producer_bindings": {},
+  "parent_sources": {
+    "docs/research/data/leaper_h6_initial_truth_20261023/inputs.json.gz": "75ce22f0ce2b4bc522a8f1e0149d5e68a138eefc45468068779e84146720956b",
+    "docs/research/data/leaper_h6_initial_truth_20261023/truth.json.gz": "56e720c681c4417693758a777c6625485c6fd330f283242c74442c9440a1911c",
+    "docs/research/data/leaper_h6_initial_truth_20261023/adjacent-pairs.json.gz": "08ed8aa4e7749d73a9f2187307f3d9d7b63d6f0bf19b17a232af06944bedbace",
+    "docs/research/data/leaper_h6_initial_truth_20261023/summary.json": "740cb3c9edecae56ef014b024a8f94f7ba64a5f8379dff6923649ab2ff523289",
+    "docs/research/data/leaper_h6_initial_truth_20261023/domain6.json.gz": "f3b0e5e964f2fb0959c34fad8137cc9051bc282804a8190a38edc543b2638349",
+    "docs/research/data/leaper_h6_initial_truth_20261023/domain9.json.gz": "dddb6af5593c3d7f121300de11a20f42fe8d4c891c90f89a5aa1c69a241318e8",
+    "docs/research/data/leaper_pair_transfer_20261024/policy-laws.json.gz": "ebc38cc4ff858cefa0598466634dd4437d908a3a0015f1ca640a71fcb512020d",
+    "docs/research/data/leaper_four_actor_signal_20261024/manifest.json": "f5860240a058c94c8351c0f29653534fb12ab762325e261a5ce90f8e4d6eabf2",
+    "docs/research/data/leaper_four_actor_signal_20261024/evidence.json.gz": "4d10dc3e97f73d63d00854593bd38d1b22796fc0a0fe6c75c765a5f5da8281ef",
+    "docs/research/data/leaper_four_actor_signal_20261024/domain.json.gz": "9f4d582b8865a79a5f2b9a34649b6a6ceedb1cf0bbc3dfcf5fe839a9dee41861"
+  },
+  "source_bindings": [
+    {
+      "document": "context/census-v1.json",
+      "fields": [
+        "plan",
+        "source_sha256"
+      ],
+      "capsule": "source/census-v1.py"
+    },
+    {
+      "document": "context/census.json",
+      "fields": [
+        "plan",
+        "source_sha256"
+      ],
+      "capsule": "source/census.py"
+    },
+    {
+      "document": "context/literal-v1.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/context-literal.py"
+    },
+    {
+      "document": "context/literal.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/context-literal.py"
+    },
+    {
+      "document": "cone/result.json",
+      "fields": [
+        "plan",
+        "source_sha256"
+      ],
+      "capsule": "source/cone-v1.py"
+    },
+    {
+      "document": "cone/partition.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/literal-partition.py"
+    },
+    {
+      "document": "cone/first-hit-partition.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/first-hit-partition.py"
+    },
+    {
+      "document": "abstract/cone.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/abstract-cone.py"
+    },
+    {
+      "document": "abstract/first-hit.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/abstract-first-hit.py"
+    },
+    {
+      "document": "abstract/threshold.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/abstract-threshold.py"
+    },
+    {
+      "document": "abstract/flow.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/abstract-flow.py"
+    },
+    {
+      "document": "action/result.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/action.py"
+    },
+    {
+      "document": "action/literal.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/action-literal.py"
+    },
+    {
+      "document": "action/law-literal-v1.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/action-law-v1.py"
+    },
+    {
+      "document": "action/law-literal.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/action-law-v2.py"
+    },
+    {
+      "document": "action/covers.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/action-covers.py"
+    },
+    {
+      "document": "action/covers-literal.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/action-law.py"
+    },
+    {
+      "document": "flow/plan.json",
+      "fields": [
+        "producer_sha256"
+      ],
+      "capsule": "source/actual-flow.py"
+    },
+    {
+      "document": "flow/plan.json",
+      "fields": [
+        "flow_sha256"
+      ],
+      "capsule": "source/flow.py"
+    },
+    {
+      "document": "flow/result.json",
+      "fields": [
+        "spec",
+        "producer_sha256"
+      ],
+      "capsule": "source/actual-flow.py"
+    },
+    {
+      "document": "flow/result.json",
+      "fields": [
+        "spec",
+        "flow_sha256"
+      ],
+      "capsule": "source/flow.py"
+    },
+    {
+      "document": "flow/baseline.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/cycle-baseline.py"
+    },
+    {
+      "document": "consumer/abstract.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/consumer-abstract.py"
+    },
+    {
+      "document": "consumer/actual.json",
+      "fields": [
+        "source_sha256"
+      ],
+      "capsule": "source/consumer-actual.py"
+    }
+  ]
+}

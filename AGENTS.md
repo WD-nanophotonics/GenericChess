@@ -1,5 +1,21 @@
 # GenericChess local research policy
 
+## Current user direction and cadence — 2026-10-24
+
+Latest heartbeat explicitly sets the two existing patrols to120minutes. This
+supersedes the historical60-minute wording below; no schedule change is made
+by this research segment. Keep role boundaries and60–90effective-minute work.
+
+The current scientific priority is P0/P1 structural rule counterfactuals and
+complete-history truth, then matched explorer calibration, conditional learning/
+strong teachers, and long-term inverse design. See the sole active
+docs/research/LOCAL_MAINLINE.md. The2026-10-21/22 learner-first or screen-first
+queue below is historical and superseded as an automatic task order. Existing
+caps, stops, evidence and roles remain. Chat1792815705.985309 requests this
+actual recovery-chain correction; search-knowledge compression remains a
+medium-term idea, not an automatic new training or engineering task.
+
+
 ## Latest direct user cadence correction — 2026-10-23
 
 The user changed both existing DEV_AUX and PRIMARY patrols back to every hour

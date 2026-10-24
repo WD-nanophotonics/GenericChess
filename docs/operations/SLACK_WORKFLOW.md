@@ -8,8 +8,8 @@ effects. Combine progress and questions within the one-message maximum; no
 fabricated questions, realtime waiting, reminders or other-role ownership.
 Preserve uncertain old sends without retrying them, but diagnose an entry that
 otherwise prevents every new distinct report. Publication and full-SHA checks
-remain mandatory. The latest direct user cadence correction sets both existing
-patrols ACTIVE at60 minutes with unchanged chats, superseding the earlier120.
+remain mandatory. The latest2026-10-24 heartbeat sets both existing patrols at120 minutes;
+historical60-minute wording is superseded, with unchanged chats.
 
 User decision 2026-10-20 applies to PRIMARY_SANDBOX, DEV_AUX and DEEPSEEK_AUX.
 Dot is paused. Replace realtime consultation with asynchronous Chat comments

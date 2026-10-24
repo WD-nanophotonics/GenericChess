@@ -1,0 +1,121 @@
+{
+  "id": "29cb5613-007f-4be2-9301-195077d6a732",
+  "started_at": "2026-10-24T06:27:19.357477+00:00",
+  "ended_at": "2026-10-24T08:03:20.367311+00:00",
+  "reason": "safe_checkpoint",
+  "work_accounting_version": 1,
+  "effective_work_seconds": 3789.139282,
+  "duration_gate_passed": true,
+  "memo_synced": true,
+  "research_stage_count": 16,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-24T06:34:39.923160+00:00",
+      "evidence": "artifacts/leaper-history-edit-context-20261024/result.json",
+      "question": "On the frozen A6-to-A22 B27 one-orbit pair, can distinct actually reachable histories at the same Position and clock change WDL or the rule-edit effect, beyond the previously failed history example?",
+      "started_at": "2026-10-24T06:32:36.295773+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T06:37:10.207476+00:00",
+      "evidence": "artifacts/leaper-history-edit-context-20261024/literal.json",
+      "question": "Does the first retained equal-Position/clock, both-ongoing history pair actually have LOSS versus DRAW under full Core GameState recursion in each unchanged rule?",
+      "started_at": "2026-10-24T06:35:45.440598+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T06:40:15.200668+00:00",
+      "evidence": "artifacts/leaper-history-edit-context-20261024/sessions.json",
+      "question": "Can all existing paired common-prefix contexts be independently reconstructed by literal Session/Core, including future repetition terminals and same-root negative scope?",
+      "started_at": "2026-10-24T06:38:24.241560+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T06:44:22.545172+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/result.json",
+      "question": "Does retaining only actual prior positions in the finite future-reach cone preserve full WDL and Uniform terminal laws on the already-closed H6 pair, and how many exact history classes can it merge?",
+      "started_at": "2026-10-24T06:41:38.575343+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T06:48:28.995318+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/abstract-control.json",
+      "question": "Does full-count future-cone projection preserve exact WDL and terminal-reason probability for repeat2/3/4 on every bounded four-vertex alternating arena, including unsafe current-terminal and barrier-only controls?",
+      "started_at": "2026-10-24T06:44:23.310902+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T06:52:56.908209+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/literal-partition.json",
+      "question": "Does the future-cone key preserve the entire literal action/terminal suffix tree, not merely WDL or one policy's probabilities, and how close is it to the exact finite suffix equivalence partition?",
+      "started_at": "2026-10-24T06:49:20.578533+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T06:58:14.379919+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/first-hit-partition.json",
+      "question": "Are the remaining272cone distinctions caused by prior positions hidden behind an earlier repetition stop, and does first-hit frontier pruning preserve the actual finite suffix-game partition?",
+      "started_at": "2026-10-24T06:52:57.280980+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:01:16.046701+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/threshold-abstract.json",
+      "question": "For repeat3/4, is the set of possible first-threshold(vertex,future-visit-ordinal) events a complete suffix-game invariant at fixed Position and remaining clock, and what lower-count counterexamples exclude a barrier-only extension?",
+      "started_at": "2026-10-24T06:58:14.779332+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:06:33.868462+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/action-literal.json",
+      "question": "Do the existing equal-Position/clock history distinctions force different optimal ACTIONS, or can a Position-clock-only oracle act optimally on every admitted H6 history? Measure exact fixed incoming one-decision regret, not policy strength.",
+      "started_at": "2026-10-24T07:01:16.450855+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:14:33.431078+00:00",
+      "evidence": "artifacts/leaper-first-repetition-flow-20261024/result.json",
+      "question": "Can possible FIRST count-q repetition events be decided by an integral vertex-capacitated min-cost flow on the admitted physical graph, including the current vertex's existing count, static terminal precedence and clock?",
+      "started_at": "2026-10-24T07:06:34.237967+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:21:31.035349+00:00",
+      "evidence": "artifacts/leaper-first-repetition-flow-20261024/cycle-baseline.json",
+      "question": "Does the general count-q flow add information over a cheap repeated-single-cycle certificate on the ONE actual first-return case, and what explicit scope-limited counterexample separates the methods?",
+      "started_at": "2026-10-24T07:17:11.281295+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:28:21.957743+00:00",
+      "evidence": "scripts/verify_leaper_history_context_packet.py",
+      "question": "Does one portable data-only reader reproduce the new source-bound history/edit census, exact suffix partitions, history-dependent action constraints and actual count4 repetition certificates without executing capsules or refilling old Player cases?",
+      "started_at": "2026-10-24T07:26:55.271146+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:34:53.192714+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/action-law-literal.json",
+      "question": "Does independent full-GameState Core traversal reproduce the exact Uniform/FLOOR incoming action-conflict lower bounds, rather than only the compact graph's expected visit total?",
+      "started_at": "2026-10-24T07:31:40.661946+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:39:06.874034+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/action-covers-literal.json",
+      "question": "How many distinct action outputs, hence oracle history tags, are minimally necessary at each fixed Position/clock group in the exposed H6 corpus, and at which remaining horizons do conflicts occur?",
+      "started_at": "2026-10-24T07:34:53.560575+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:44:54.388365+00:00",
+      "evidence": "artifacts/leaper-history-context-reader-20261024/verification.json",
+      "question": "Does the complete portable history packet reproduce all new exact scientific objects from public data and current shared Core, while keeping actual executed capsule bytes and old UNKNOWN cases intact?",
+      "started_at": "2026-10-24T07:41:01.552968+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:46:53.576014+00:00",
+      "evidence": "artifacts/leaper-future-history-cone-20261024/actual-consumer-boundary.json",
+      "question": "Does exact game-suffix equivalence alone authorize sharing finite-depth heuristic bounds when the evaluator can inspect discarded incoming history, or is an extra consumer-factorization premise necessary?",
+      "started_at": "2026-10-24T07:44:54.740198+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:49:10.623928+00:00",
+      "evidence": "scripts/verify_leaper_history_context_packet.py",
+      "question": "Does the final portable reader independently verify the actual-Core heuristic-consumer counterexample and preserve the strict distinction between game semantics, exact action truth and finite heuristic scores?",
+      "started_at": "2026-10-24T07:48:11.090219+00:00"
+    },
+    {
+      "ended_at": "2026-10-24T07:55:20.510342+00:00",
+      "evidence": "artifacts/leaper-history-context-delivery-reader-20261024/verification.json",
+      "question": "Does the final complete packet, including actual-Core consumer boundaries and semantic rejection controls, pass fresh end-to-end verification under the latest reused infrastructure?",
+      "started_at": "2026-10-24T07:49:35.175180+00:00"
+    }
+  ]
+}

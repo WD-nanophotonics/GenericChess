@@ -33,11 +33,12 @@ origin/sandbox. Inspect the fixed fetched commit before importing its files.
 
 ## Research and timing
 
-Read LOCAL_MAINLINE.md for the current question. The direct2026-10-21 Leaper
-redirection replaces expansion of the old TDLeaf panels. Use exact small-game
-baselines, conditional value/policy comparisons and later learning diagnostics;
-reuse the existing learner when relevant. Keep full executable rules/history
-and UNKNOWN semantics.
+Read LOCAL_MAINLINE.md for the current P0/P1 structural counterfactual and
+complete-history truth question. Earlier learner-cost, TD and screen-first
+automatic queues are superseded by the2026-10-23/24 direction. Preserve their
+evidence/caps without launching an unstarted price or feature-policy reserve.
+Later learning/teachers/inverse and search-knowledge compression are conditional
+future work. Keep full executable rules/history and UNKNOWN semantics.
 Do not restore retired audit chains merely because an old memo names them.
 
 Before substantive work, do one role-local mailbox probe per SLACK_WORKFLOW.md.
