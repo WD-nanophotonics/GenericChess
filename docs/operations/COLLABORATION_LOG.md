@@ -7455,3 +7455,20 @@ locates standpat dependence without a full repair. A distinct all-anchor pilot
 again repairs p53/regresses p49 and is rejected; remaining60notrun. Existing
 Backup1 now evaluates code-defined real consumer budgets; this checkpoint reports
 only completed1.5second pairs, not the runningnode arms. AUX/UI/default unchanged.
+
+
+### Round096f closure and user reply semantics
+
+Closed real-budget288returns qualify identical62/64,64/64,16/16 actual quality;
+20deep node-target timecensors remain separate. No first-Q production promotion.
+Existing opt-in clockcap three-case50k qualification preserves action/score/WDL
+while reducing two lateclock costs; no AUX/UI/default changes. Report/manifests
+retain all fixed budgets, source capsules, partial failures and unknown chains.
+User clarified11:22Dot reply was read: request02:20:17.804589UTC, reply02:22:36.084629,
+first check02:25:36. The later no-new-reply referred to followup02:55:12, not that
+reply. Five minutes is check timing, not expiry. Subsequent relevant opening
+saved complete Chat root1792890455.776499(onepost) and Dot root1792894817.804589
+(threeposts), no new roots; source authority remains solicited Dot, not autonomous
+Chat review. User now requires Dot response to AGENT_REQUEST; all other types
+allow discretionary response and no enforced silence. Active threepolicy/manual
+files agree; local documentation does not claim remote enforcement was installed.

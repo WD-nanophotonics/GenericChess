@@ -24,9 +24,9 @@ def assess(directory):
     if receipt['status']=='CLOSED':assert len(rr)==len(plan['slots'])==288
     qmap={key(x['slot']):x for x in qq};assert len(qmap)==len(qq);cases={c['key']:c for c in data['cases']};out=[];steps=0;pair_profiles={}
     for r in rr:
-        slot=r['slot'];case=cases[slot['key']];assert r['state_sha256']==case['state_sha256'];c=L.compile_rule(L.ruleset_from_dict(data['rules'][case['rule_sha256']]));s=replay(c,case['record']);assert L.state_sha(s.state)==case['state_sha256']
+        slot=r['slot'];case=cases[slot['key']];assert r['state_sha256']==case['state_sha256'];c=L.compile_rule(L.ruleset_from_dict(data['rules'][case['rule_sha256']]));s=replay(c,case['record']);assert L.state_sha(s.state)==case['state_sha256']and s.state.position.side_to_move==case['actor']
         labels={key(x['action']):x['truth']['value']for x in case['labelled_actions']};assert set(labels)=={key(L.record_value(a))for a in s.legal_actions()};assert(max if case['actor']==0 else min)(labels.values())==case['root_global_WDL']
-        dec=r['decision'];value=labels[key(dec['action'])];q=qmap[key(slot)];assert q['chosen_global_WDL']==value and q['correct']==(value==case['root_global_WDL'])
+        dec=r['decision'];assert dec['runtime_depth_balanced']and dec['runtime_pushes']==dec['runtime_pops'];value=labels[key(dec['action'])];q=qmap[key(slot)];assert q['chosen_global_WDL']==value and q['correct']==(value==case['root_global_WDL'])
         for a in dec['principal_variation']:s.submit(L.match_action(s,a));steps+=1
         profile=(r['tuning'],r['evaluation_profile']);pk=(slot['budget'],slot['key']);assert pk not in pair_profiles or profile==pair_profiles[pk];pair_profiles[pk]=profile
         if slot['arm']=='default':assert not r['policy_counts']

@@ -71,6 +71,14 @@ Record checked UTC/result; no repeated polling, waiting for a reply, new worker
 or timer. On a real interruption, preserve the due check for same-round resume;
 do not claim it was executed. Replies retain their solicited Dot authority.
 
+User clarification2026-10-25: TYPE=AGENT_REQUEST requires a Dot reply. Other
+message types, including AGENT_FOLLOWUP, allow a discretionary reply: neither
+mandatory response nor mandatory silence. This is the requested collaboration
+contract, not proof of delivery or a guaranteed local enforcement mechanism.
+Five minutes is the single delayed-check target, NOT a response expiry: retain
+late replies and read them at the next meaningful interaction. No missing reply
+creates a research/publication gate or permission to poll repeatedly.
+
 ## Exact originals before evaluation
 
 Save the exact raw, project-related read in Git-ignored `.local_agent` BEFORE

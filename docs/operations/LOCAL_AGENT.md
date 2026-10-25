@@ -94,6 +94,14 @@ without automatic retry; keep old PENDING requests and later reply association.
 Dot's opinion alone is not that confirmation. Continue independent short work
 without a reply. Details: SLACK_WORKFLOW.md.
 
+User clarification2026-10-25: TYPE=AGENT_REQUEST requires a Dot reply. Other
+message types, including AGENT_FOLLOWUP, allow a discretionary reply: neither
+mandatory response nor mandatory silence. This is the requested collaboration
+contract, not proof of delivery or a guaranteed local enforcement mechanism.
+Five minutes is the single delayed-check target, NOT a response expiry: retain
+late replies and read them at the next meaningful interaction. No missing reply
+creates a research/publication gate or permission to poll repeatedly.
+
 ## Start, recovery and memo
 
 1. Read .local_agent/NEXT_WORK.md in full, AGENTS.md, LOCAL_MAINLINE.md and
