@@ -7425,3 +7425,18 @@ Delivery/this log after the accepted session adds0 effective research time.
 ## 2026-10-25 PRIMARY request-trigger correction
 
 The user identified that reading an old Dot thread and AGENT_FOLLOWUP did not initiate the required new-round consultation. PRIMARY updated AGENTS, LOCAL_AGENT and SLACK_WORKFLOW to require a fresh TYPE=AGENT_REQUEST per new round, bound to its session, without duplicate sends on resumption. This is a missed-trigger correction, not evidence of a Dot reply or adopted advice. Closed compulsory-continuation negatives and the first-Q pilot are published before the replacement request; the remaining guard is still running. AUX files/state were untouched.
+
+
+PRIMARY new AGENT_REQUEST GC-SLACK-20261025-101229-19c1f677 was delivered at
+1792890794.866589 with published c9b521fd0019f3258ed6e8639069c27eca75b41c;
+exact parent readback verified. The single delayed check began01:18:27UTC,
+after01:13:14UTC send, and captured solicited Dot1792890925.877869. New autonomous
+Chat review1792890455.776499 was saved/read separately. Neither advisor reran
+queries/tests. Adopted: distinguish actual return from internal callback, add
+cancel tail/source before the unexecuted consumer, prioritize p53 causal evidence.
+Executed effects: all128actual returns qualified, scoped paired latency0.6682
+with unchanged61/64 quality; full45s guard63/64 unchanged. New offline cold ladder
+reproduces nominalD6→D7 reversal; precise quiet frontier/originalwarm chain UNKNOWN.
+Latest user correction is active in all manuals: check new comments at every
+logical Slack opening and one reply check about5minutes after each Dot send.
+No schedule/worker/AUX changes. Session time is actual ledger, not open UTC age.

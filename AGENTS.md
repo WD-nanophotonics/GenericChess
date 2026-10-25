@@ -57,7 +57,9 @@ workers may be created.
   reading or posting FOLLOWUP in an old thread does not trigger a new request.
   Resume the same active round without duplicating a verified request. First
   publish reviewed referenced work and verify the full remote SHA; a send failure
-  remains explicit and does not stop independent work. Do not invent a question
+  remains explicit and does not stop independent work. Send at round start
+  using the existing reviewed/published checkpoint and plan, not at round end;
+  no new scientific result is required before this trigger. Do not invent a question
   or make the reply a work gate. At later reads/sends consider relevant follow-up.
   Authority: latest direct user instructions > independently initiated ChatGPT
   Slack review comments > Dot's solicited replies/messages > local proposals.
@@ -104,6 +106,21 @@ do not append competing live policies. At compaction/handoff carry these causal
 relationships, active boundaries and unresolved issues, not isolated permissions.
 A stale memo/summary cannot revive an abandoned route. Resolve from current user
 directions and evidence without another approval queue.
+
+
+User correction2026-10-25: at the opening of EVERY logical Slack interaction,
+check newly available Chat comments and complete relevant threads, not only at
+the scheduled patrol. A send/readback/five-minute follow-up belonging to that
+interaction does not recursively open another interaction or require an endless
+channel-read loop. Preserve raw originals first; record newest covered root and
+thread boundaries, including replies on relevant existing comments.
+After each Dot send, record sent UTC and due UTC (+5minutes), continue useful
+independent work, then perform ONE bounded reply check at about five minutes.
+The immediate delivery/payload readback does not replace this delayed reply check.
+If that check opens a fresh Slack interaction, check new Chat comments there too.
+Record checked UTC/result; no repeated polling, waiting for a reply, new worker
+or timer. On a real interruption, preserve the due check for same-round resume;
+do not claim it was executed. Replies retain their solicited Dot authority.
 
 ## Continuing authority and actual boundaries
 

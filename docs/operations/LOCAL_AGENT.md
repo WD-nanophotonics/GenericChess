@@ -55,14 +55,32 @@ only route and one-message-per-probe cap for that dialogue. User correction
 to Dot, with the actual next action/evidence and relevant uncertainty, after
 publish and full remote SHA verification. Reading an old thread or sending
 AGENT_FOLLOWUP does not replace this trigger. Bind the request to the session
-UUID in the memo/evidence; resuming the same round does not duplicate verified
+UUID in the memo/evidence. Send at the start using the existing reviewed and
+published checkpoint plus current plan; do not defer until new results or round
+end. Resuming the same round does not duplicate verified
 delivery. Diagnose and record failures; no automatic resend of uncertain sends.
 Later reads/sends may use meaningful follow-ups. Do not invent a question or
 require a response to proceed.
 Use the existing project channel/mailbox and verified identities. No new worker,
 channel, scheduler, empty polling/chasing or self-reply loops. No compulsory
-comment-style report replaces direct Dot dialogue. Ordinary incoming reviews are
-still read once per patrol; relevant active Dot thread follow-ups are permitted.
+comment-style report replaces direct Dot dialogue. New Chat comments and
+complete relevant threads are checked at each logical Slack interaction opening;
+relevant active Dot thread follow-ups are permitted.
+
+
+User correction2026-10-25: at the opening of EVERY logical Slack interaction,
+check newly available Chat comments and complete relevant threads, not only at
+the scheduled patrol. A send/readback/five-minute follow-up belonging to that
+interaction does not recursively open another interaction or require an endless
+channel-read loop. Preserve raw originals first; record newest covered root and
+thread boundaries, including replies on relevant existing comments.
+After each Dot send, record sent UTC and due UTC (+5minutes), continue useful
+independent work, then perform ONE bounded reply check at about five minutes.
+The immediate delivery/payload readback does not replace this delayed reply check.
+If that check opens a fresh Slack interaction, check new Chat comments there too.
+Record checked UTC/result; no repeated polling, waiting for a reply, new worker
+or timer. On a real interruption, preserve the due check for same-round resume;
+do not claim it was executed. Replies retain their solicited Dot authority.
 
 Authority: latest direct user instructions > autonomous ChatGPT Slack review
 comments > Dot's solicited replies/messages > local proposals. Account identity
@@ -206,7 +224,7 @@ handling. Raw capture paths use the active session UUID plus a fresh read UUID;
 final opaque bytes MUST use slack_transport.save_plugin_original, which refuses
 a different existing original. Time-only names and direct replacing writes are
 not safe across days/resumes. Read new project Chat messages/comments and relevant complete threads
-at existing180minute patrol/manual starts; preserve exact raw output before
+at existing180minute patrol/manual starts AND each logical Slack opening; preserve exact raw output before
 assessment. For active direct Dot dialogue, bounded relevant thread follow-ups
 are allowed. Apply the hierarchy and sender/provenance checks in SLACK_WORKFLOW.
 The old no-Dot/no-live/single-comment rule is superseded. A >=120minute run still

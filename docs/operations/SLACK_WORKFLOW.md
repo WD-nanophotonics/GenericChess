@@ -34,7 +34,10 @@ work and verify the full remote SHA BEFORE sending. Record session UUID, request
 ID and verified root in local evidence/memo. Resume the same active round without
 duplicating a verified request. If send is uncertain reconcile it, never blindly
 resend; record a real failure and continue independent work. This requirement
-replaces optional-only start consultation; no response is a work gate. During
+replaces optional-only start consultation. Send at the start, not after doing
+the research or at round end: the already reviewed/published checkpoint plus
+the current executable plan suffices; no new result is required first. No
+response is a work gate. During
 later reads/sends consider a concrete question, especially doubts about
 correctness, interpretation or method; do not fabricate a scientific question. Relevant active Dot thread replies and bounded substantive
 follow-ups may be read/sent within the work segment; the ordinary patrol cadence
@@ -52,6 +55,21 @@ Keep meaningful progress/negative results/UNKNOWN/cost/next action in substantiv
 conversation, with fixed published source/full verified remote SHA. Each send,
 including follow-ups, requires reviewed content and push/SHA verification first.
 A real refusal is reported and diagnosed, never bypassed or retried blindly.
+
+
+User correction2026-10-25: at the opening of EVERY logical Slack interaction,
+check newly available Chat comments and complete relevant threads, not only at
+the scheduled patrol. A send/readback/five-minute follow-up belonging to that
+interaction does not recursively open another interaction or require an endless
+channel-read loop. Preserve raw originals first; record newest covered root and
+thread boundaries, including replies on relevant existing comments.
+After each Dot send, record sent UTC and due UTC (+5minutes), continue useful
+independent work, then perform ONE bounded reply check at about five minutes.
+The immediate delivery/payload readback does not replace this delayed reply check.
+If that check opens a fresh Slack interaction, check new Chat comments there too.
+Record checked UTC/result; no repeated polling, waiting for a reply, new worker
+or timer. On a real interruption, preserve the due check for same-round resume;
+do not claim it was executed. Replies retain their solicited Dot authority.
 
 ## Exact originals before evaluation
 

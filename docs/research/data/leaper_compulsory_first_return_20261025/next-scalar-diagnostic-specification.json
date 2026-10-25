@@ -1,0 +1,20 @@
+{
+  "question": "Which recorded frontier/return boundary can account for the cold childD5-to-D6 reversal?",
+  "changed_premise": "The cold equal-allocation ladder now reproduces WIN-to-DRAW reversal, so broad root-order-only intervention is lower information.",
+  "first_action": "Bind two decisive existing full-history children/PVs and inventory exact missing scalar fields before admitting any new producer.",
+  "required_fields": [
+    "exact input/full-history SHA and actor/remaining clock",
+    "actual negamax entry alpha/beta and return classification, ply/depth/qdepth",
+    "bounded action-path identity and root-selected return dependency",
+    "qreturn site: standpat, q cap, check hard cap, terminal/clock/repetition; preserve UNKNOWN if absent"
+  ],
+  "constraints": [
+    "No mutable RuntimeSearchState serialization; frozen scalar projection only",
+    "No policy, eval, ordering or WDL-label injection",
+    "Reversible AST wrapper and abort/no-false-return zero-query checks before execution",
+    "At most two new cold childD6 calls,30s/20M each,batch75s IF this distinct diagnostic is admitted later; no refill if incomplete",
+    "Do not replay old failed warm-root observer or claim PV endpoint alone establishes causality",
+    "No new query this segment; current scientific receipts are CLOSED"
+  ],
+  "status": "SPECIFICATION_STARTED_NOT_EXECUTED"
+}

@@ -30,23 +30,26 @@ def run(d):
                 case=cases[key];c=L.compile_rule(L.ruleset_from_dict(data['rules'][case['rule_sha256']]));s=replay(c,case['record']);assert L.state_sha(s.state)==case['state_sha256']
                 player=AlphaBetaPlayer(c,use_disk_cache=False,tuning=SearchTuning());roots=[];stages=[];its=[]
                 class Cancel:
-                    last=0.;role=False
+                    last=0.;role=False;first_cancel_elapsed=None
                     def is_cancelled(self):
                         now=time.perf_counter()
                         if now-self.last>.25:self.last=now;self.role=stopped()or now-tick>p['batch_seconds']
-                        return self.role or len(its)>=2
+                        cancel=self.role or len(its)>=2
+                        if cancel and self.first_cancel_elapsed is None:self.first_cancel_elapsed=now-qt
+                        return cancel
                 def observe(*args,**kw):
                     reserve=args[5].first_main_iteration_complete is False;r=oq(*args,**kw)
                     if args[4]==0:roots[:]=[r];stages[:]=[0 if reserve else args[5].qdepth_limit]
                     return r
                 def progress(dep,n,qn):
                     r=roots[0];its.append(dict(depth=dep,ordinary_qdepth=stages[0],score=r.score,action=L.record_value(r.best_action),nodes=n,qnodes=qn,elapsed=time.perf_counter()-qt))
-                start=stamp();qt=time.perf_counter();qc=time.process_time();S.negamax=observe;policy=FirstQRefinement()if arm=='refined'else None
+                start=stamp();qt=time.perf_counter();qc=time.process_time();cancel=Cancel();S.negamax=observe;policy=FirstQRefinement()if arm=='refined'else None
                 try:
                     with policy if policy is not None else nullcontext():
-                        attempted+=1;dec=player.choose_action(s,SearchLimits(**p['limits']),cancel_token=Cancel(),progress_callback=progress)
+                        attempted+=1;dec=player.choose_action(s,SearchLimits(**p['limits']),cancel_token=cancel,progress_callback=progress)
                 finally:S.negamax=oq
-                end=stamp();row=dict(key=key,arm=arm,started_at=start,ended_at=end,seconds=time.perf_counter()-qt,cpu_seconds=time.process_time()-qc,decision=L.record_value(dec),iterations=its,state_sha256=L.state_sha(s.state),policy_counts=dict(policy.counts)if policy else{},tuning=L.record_value(SearchTuning()),evaluation_profile=L.record_value(player.evaluation_profile))
+                end=stamp();row=dict(key=key,arm=arm,started_at=start,ended_at=end,seconds=time.perf_counter()-qt,cpu_seconds=time.process_time()-qc,decision=L.record_value(dec),iterations=its,state_sha256=L.state_sha(s.state),policy_counts=dict(policy.counts)if policy else{},tuning=L.record_value(SearchTuning()),evaluation_profile=L.record_value(player.evaluation_profile),cancel_observed_seconds=cancel.first_cancel_elapsed,returned_source=dec.result_source)
+                row['cancel_to_return_seconds']=None if cancel.first_cancel_elapsed is None else row['seconds']-cancel.first_cancel_elapsed
                 append(d/'queries.jsonl',row);count+=1
                 assert row['state_sha256']==case['state_sha256']
                 labels={json.dumps(x['action'],sort_keys=True):x['truth']['value']for x in case['labelled_actions']};value=labels[json.dumps(L.record_value(dec.action),sort_keys=True)]
