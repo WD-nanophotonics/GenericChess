@@ -7509,3 +7509,14 @@ with no newreply; currentChat root remains1post, no newchannelroots. A complete
 regression,4goalstops, aggregatewall-2.93% but medianratio1.00088. All60non-goal
 selected signatures match.32deepcalls remain outside this prefix qualification,
 not a fake batchreceipt; originalsingleproducer/budget continues unchanged.
+
+Fbb scientific closure: all160returns/1050PVsteps qualify.50k64/64both/deep16/16both,
+0repair/regression, aggregatewall-2.93%/-5.62% but median~1.001/~1.000 and only4/1
+actualgoalstops. Deep10/9timecensors remain explicit. No defaults/UI/AUX changes.
+Common16 analysis prevents comparing different cohort proofcounts as budgeteffect.
+New boundedcoverage review finds13label-schema copies→1Rule64records, while8-rule
+qordertruthUNKNOWN and6-ruleheuristic/game evidence remain separately scoped.
+Next source-binding question is begun; no new solver or automaticexactproofgate.
+Milestone1792903861.438259 contentverified after119e9a46 fullSHA; one delayedcheck
+started04:57:31UTC, about90seconds after04:56:01target. Actualtiming explicitlyretained,
+no claimon-time/no expiry/no repeatedpoll; no newreply/Chatcomment in coveredthreads.

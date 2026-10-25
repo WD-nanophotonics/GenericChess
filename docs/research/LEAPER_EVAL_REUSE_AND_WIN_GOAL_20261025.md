@@ -1,8 +1,8 @@
 # Default static reuse and existing proof-goal return —2026-10-25
 
 PRIMARY pure-Leaper work only; default/UI/AUX unchanged. Cache feasibility is
-CLOSED; the complete50k proof-goal phase is qualified; the same frozen200k phase is
-RUNNING at this checkpoint. The entire160call batch is NOT CLOSED. Source capsules are data, not executed by readers.
+CLOSED; all160 proof-goal calls are CLOSED and qualified. The intermediate50k prefix
+below remains a separate historical snapshot, never a fake batch receipt. Source capsules are data, not executed by readers.
 
 ## Cheap exclusion before an implementation
 
@@ -91,7 +91,7 @@ identity and payload matched, and the derived snapshot was fixed from retained
 raw output without reread/resend/configuration changes. No tool refusal occurred.
 
 
-## Complete50k milestone;200k still running
+## Historical50k milestone; deep was still running
 
 The complete128call50k prefix is saved separately, not relabeled as a batch
 execution receipt. The read-only reader replays811exported PV steps and checks
@@ -118,7 +118,8 @@ evidence, not all-domain equivalence or an independent proof verifier.
 Retain the existing option for its explicit any-winning-choice objective. This
 result does not justify a default/UI change, general pure-Leaper success, a
 strategic repair, a new largerpanel or expansion into other rule classes.
-The predetermined16deep200k pairs continue under the original65minute batch cap;
+At that intermediate checkpoint the predetermined16deep200k pairs continued under
+the original65minute batch cap;
 their desired-node attainment and actual returned WDL will be reported separately.
 The prefix qualification marks those32slots as NOT COVERED in that snapshot,
 not as unexecuted forever or silently successful.
@@ -127,3 +128,74 @@ A separate static-data reader recomputed all8083unique saved default-evaluator
 positions and every recorded raw integer, with saved rule/config/profile binding
 checks and finite hit counts. It performs0search/solver queries and never runs
 archived source capsules. This does not turn offline cache cost into search gain.
+
+
+## Final160call qualification and decision
+
+All160registered calls closed within the original3900second batch; no slot/cap
+was refilled. The independent read-only reader replays1050returned PV steps,
+checks complete rules/history/actions/globalWDL/actor, profile/tuning isolation,
+actual sources and balanced runtime pushes/pops. It executes no source capsule,
+solver or AUX graph. All160actual choices match their fixed published WDL labels.
+
+|Budget|Default/goal correct|Choice-sensitive both|Goalstops|Timecensor default/goal|Wallseconds default/goal|Events default/goal|Median paired latency ratio|
+|---|---|---|---:|---|---|---|---:|
+|50k|64/64 each|30/30|4|0/0|883.155/857.259|3021095/2906258|1.00088|
+|200k|16/16 each|11/11|1|10/9|698.287/659.078|2773453/2638876|1.00000|
+
+Aggregate querywall falls2.93%/5.62%, work3.80%/4.85%. CPU881.344→855.266seconds
+and696.578→657.625seconds is separate. No actual selected action changes here;
+no quality repair or regression. Typical paired latency is unchanged. All60
+eligible non-goal50k pairs and6eligible200k pairs match selected execution
+signatures. The other deep pairs are time-censored and are not recast as completed
+200k-work experiments. A completed goal legitimately stops below the resource
+ceiling; a timecensored node target remains UNKNOWN even if returned WDL is known.
+
+The four50k goal cases use48.520→21.366seconds; remaining60use834.635→835.893seconds.
+The singledeep goal uses45.000→5.146seconds; remaining15use653.287→653.932seconds.
+These post-analysis strata explain concentration, not new independent samples or
+a positive-only selection. The small non-goal timing increase is not assigned a
+cause from shared-machine wall clocks. Neither CPU timing nor work savings alone
+establishes strategic quality. Engineering, tests, recording and this full
+qualification also cost work; a small per-call benefit is not automatically a
+net project gain or a reason for more panels/integration without a real consumer.
+
+Population differs across budgets. The fixed16common histories are16/16correct
+under both modes at both presets. Their50k wall totals231.541/227.646seconds
+versus200k698.287/659.078seconds, with one win-band root in each mode/budget.
+Onlycost-p0 among the four50k proof roots is in the16subset. Thus4versus1goalstops
+is not evidence that more budget reduces goal recognition. These saturated,
+exposed16records do not identify an optimal universal node budget.
+
+Retain the EXISTING explicit any-winning-choice option for its stated objective;
+do not promote a default/UI setting or infer shortestmate/class strength. Do not
+extend into mixed/legacy/NNUE from this result. The primary quality objective is
+still OPEN. No more broad cost panel on these same64exposed records is queued.
+
+## Next useful step actually begun: evidence coverage
+
+A fixed-bound metadata inventory examined23published syntheticLeaper inputfiles
+(17,768,762uncompressed bytes;64files/4MiBeach/32MiBtotal caps, no skips/conflicts).
+Thirteen inputs carrying the complete labelled-actions/root-globalWDL/actor/record
+schema deduplicate to ONE exact RuleSet and64exact canonicalGameRecords:30choice-
+sensitive,49ownWIN/15DRAW/0LOSS. Input copies, including unexecuted old repair
+inputs, are not new queries, independent validations or new tasks. Literal record
+hash identity is not semantic-state equivalence or IID.
+
+Other formats remain distinct: qorder has8rules/16roots and explicitly declares
+truthUNKNOWN/common-depthscore-cost only; the six-rule12root panel has full rules
+and records but no all-action WDL schema, with earlier heuristic references/games
+serving different claims. This bounded inventory does NOT assert that no other
+project/public certificate exists, nor independently verify new truth. It is a
+new source-coverage inference with a concrete next-quality use, not an excuse to
+recreate retired audits or run archived experiments.
+
+Next bind a suitable pinned public quality/reference source outside this repeatedly
+used guard and formulate ONE decision-changing pure-Leaper experiment with evidence
+appropriate to its claim. Inspect differently scoped existing certificates or a
+bounded reference if needed; do not create an AUX-competing solver or impose exact
+WDL as a universal gate. Preserve exposed/UNKNOWN and avoid label/price/depth fitting.
+The coverage inventory/source/inspection and common16analysis are in the manifest.
+
+Scientific producers are closed; session effective-work/finish acceptance is a
+separate ledger review. Administrative transport/docs/publication add no credit.

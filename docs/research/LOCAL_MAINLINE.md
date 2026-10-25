@@ -1,86 +1,74 @@
 # Current GenericChess mainline
 
-AGENTS.md owns authority/roles, LOCAL_AGENT.md operations, SLACK_WORKFLOW.md
-communication. PRIMARY alone writes sandbox; PURE LEAPER first. Mixed/legacy,
-promotion/drop/NNUE expansion remains deferred. No AUX/extra worker or default/UI
-activation. Existing recurrence180minutes; research effective60–90minutes.
+AGENTS.md owns authority/roles; LOCAL_AGENT.md operating methods; SLACK_WORKFLOW.md
+communication. PRIMARY alone writes sandbox. PURE LEAPER first; mixed/legacy,
+promotion/drop/NNUE expansion remains deferred. Default/UI/AUX unchanged. Existing
+recurrence180minutes; normal segments60–90effective minutes, never wall-clock credit.
 
-## Current decision and reason —2026-10-25
+## Current judgment and reason —2026-10-25
 
-Optimize correct useful decisions per actual total cost. Every new work round
-starts a fresh TYPE=AGENT_REQUEST after publish/fullSHA verification; Dot must
-reply to that type. Other types allow discretionary replies, neither mandatory
-response nor mandatory silence. Each logical Slack opening checks new Chat
-comments/full relevant threads. One check about5minutes after each Dot send is
-not an expiry; late replies remain eligible. Resume does not duplicate requests.
-User > autonomous Chat review > solicited Dot > local. No reply is a work gate.
+Optimize correct useful decisions per total cost, including development/recording.
+[Static reuse and win-goal study](LEAPER_EVAL_REUSE_AND_WIN_GOAL_20261025.md) is CLOSED.
+3default-evaluate sequences show rawinteger/finiteFIFO reuse, offline ratios
+0.558/0.197/0.606. But typical evaluation cost share2.714% bounds opportunity;
+no cached-search implementation, capacity sweep or bigger cache panel follows.
 
-[Closed scalar/actual-budget report](LEAPER_SCALAR_FRONTIER_20261025.md) separates
-source-bound frontier observations from causal interventions and actual cost.
-Two scalar D6 calls match prior action/score/work. Selected final-loop standpat
-endpoints have actual non-noisy exclusions, but full call graph/TT producer chain
-and effective post-TT windows are missing; original warmD7 remains UNKNOWN.
-Two Q4 leaf calls are censored with caller-I/O contamination, no refill. Distinct
-Q0 full-clock leaf calls return0. Point coverage changes one root score, not the
-wrong ordering. Semantic all-anchor pilot repairs p53 but regresses p49: REJECT
-activation/remaining60guard/threshold sweeps. Static component decomposition is
-an offline explanation at fixed endpoints, not price/escape-weight fitting.
+Existing stop_after_root_win at actual50k/200k presets closes160calls: correct
+64/64and16/16 in both modes,0repair/regression/action change. Aggregatequerywall
+-2.93%/-5.62%, work-3.80%/-4.85%, medianpairedlatency~1.001/~1.000. Effects concentrate
+in4/1win-band roots; no strategic repair/general acceleration. Deep10/9safety-time
+censors are distinct from actual WDL and desirednode attainment. The fixedcommon16
+are saturatedcorrect in both budgets;4versus1proofcounts reflect sample composition,
+not a budget-recognition law. Keep existing explicit any-winning-choice option;
+no default/UI/classsuccess or shortestmate claim. Do not queue another broad cost
+panel on the same exposed guard merely because existing code permits one.
 
-All288 real-budget first-Q calls are CLOSED: default/refined actual WDL correct
-62/64 at1.5seconds,64/64 at50k,16/16 in fixed16subset at200k; no repairs or
-regressions. At200k ten per arm hit45second safety, so node-target attainment
-UNKNOWN despite qualified returned actions. Ratios approximately1.006/1.000/1.000
-show no meaningful actual-budget advantage. Prior two-callback latency0.6682 is
-only its old stage-mismatched consumer result, not a universal anytime gain.
-Keep FirstQ research-only; no larger panel or production activation follows.
+New bounded coverage analysis has already begun:23syntheticinputfiles examined;
+13full-label-schema copies deduplicate to1RuleSet/64exactrecords,30sensitive,
+49ownWIN15DRAW0LOSS.8rule16root qorder data explicitlytruthUNKNOWN;6rule12root
+cost/reference/game evidence differs from all-actionWDL. This is bounded metadata
+coverage, not allproject truth absence/new solver/IID/holdout. Source/provenance
+and unknown formats remain explicit. Data files are evidence, never experiment queues.
 
-Three distinct existing-clock-cap calls reuse paid default50k controls. Cases
-cost-p58/p60 retain action/score/WDL while work50000→3443 and12178→538;
-actual call23.518→0.652s and5.740→0.099s. Nonbindingp53 remains same correctD6,
-50000events. Exposed selected cases in oneRuleSet are scoped cost evidence,
-not class-wide success, holdout or p53 repair. Cap stays opt-in/defaultfalse.
+## Main: choose the next falsifiable decision-quality question within pure Leapers
 
-## Main: qualify existing completed-root-win return for a fixed WDL consumer
+Question: What suitable quality/reference evidence exists beyond the repeatedly
+used one-rule guard? | Use completed coverage inventory and inspect pinned public
+certificate/reference sources; bind complete rules/history, outcome meaning and
+consumer objective before ONE bounded algorithmic feasibility test | A concrete
+quality falsifier/reference with honest scope/cost, or explicit missing coverage
+and a useful bounded alternative | No AUX-competing solver/new worker, artificial
+holdout, universal exact-proof gate, known-label/depth fit or old-panel refill.
+Do not spend a segment only maintaining framework; select AND BEGIN useful science.
 
-[Current protocol and closed cache feasibility](LEAPER_EVAL_REUSE_AND_WIN_GOAL_20261025.md).
-The cap caller inventory is already complete/nonbinding; do not rerun its old
-panel.3default evaluation request samples show finite static reuse but only a
-small total-cost share; cache feasibility is CLOSED, no cached-search expansion.
-Question: does existing stop_after_root_win save actual cost for any correct WIN
-action? | Execute frozen160paired50k/200k slots after published plan/source review
-and same-round Dot followup | Actual WDL, proof-goal stop/source/completeddepth,
-main/qwork/totalcaller cost, time/node censor and all negatives | Wholelogical
-expected82min, batch65min; no cap refill/threshold/default/UI/shortestmate claim.
-Only4/64prior50k returns are win-band, so sparse/nearzero benefit is plausible.
+Backup1: Can a changed consumer justify an existing scoped cost option?
+| Retain existing any-win/clockcap/staticreuse/FirstQ evidence for an actual changed
+requirement | Cost/source/quality separately; no real productionclockcap caller;
+static ratios not search speed; FirstQ realbudgetnull | No integration/default/UI
+change from small exposed positives or another sweep without changed premise.
 
-Backup1: New mechanism for finite-horizon quality | Retain closed frontier/point/
-component evidence; require changed premise | Missing TT/call-chain facts stay
-UNKNOWN | No singleton/all-anchor/full<=4Q revival, price/depth fitting or AUXsolve.
-
-Backup2: Actual caller justifying a closed candidate | Use cap/cache/FirstQ records
-only for a changed consumer contract | Static cached/raw ratios are not search
-speedup; no production cap caller | No obsolete panel rerun or inferred queue.
+Backup2: New mechanism for genuine finite-horizon decision errors?
+| Use closed p53scalar/point/component findings only with a changed causal premise
+| Actual standpat/exclusion vs missing TT/call-chain fields; local coverage changes
+value not ranking | No singleton/all-anchor/full<=4Q revival, pricefitting or failed
+observer slot refill. OriginalwarmD7 explanation remains UNKNOWN.
 
 ## Evidence and previous negatives
 
-This round303 Player calls (12diagnostic/reference/pilot,288budget,3cap), exact
-executed capsules and failures are in the report manifest. All1627budget PVsteps
-replay and runtime pushes/pops balance; qualification shares Core/fixed published
-AUX labels, no independent solver or AUX checkout access.64fullhistories are
-44physical positions from2TRAINtrajectories in oneRuleSet. Keep node safety
-censor, AST caller overhead, shared-load timing and exposure limits explicit.
+Current160win-goal calls/1050PVsteps plus3static samples are qualified; no AUX graph,
+checkout or solver was executed. [Scalar frontier study](LEAPER_SCALAR_FRONTIER_20261025.md)
+closed303calls and rejected all-anchor pilot(p53repair/p49regression); remaining60
+notrun. FirstQ288actualbudgetcalls show no qualitygain. Existing conservative clock
+cap has8DRAW plus3actual-budget scoped qualifications, staysopt-in; old6-rule roots
+remaining91/96 do not bind under64. [Compulsory/first-return study](LEAPER_COMPULSORY_FIRST_RETURN_20261025.md)
+closed222calls and rejected three singleton policies. Earlier q-order cost savings
+have limited decision evidence, not a strength claim or automatic next panel.
 
-[Previous compulsory/first-return study](LEAPER_COMPULSORY_FIRST_RETURN_20261025.md)
-closed222calls and rejected three singleton policies. Earlier last-ply/full<=4Q
-completion negatives and q-ordering limited work savings remain evidence, not
-an experiment queue. Reopen only with changed premise/decision-changing test.
+Each new work round starts fresh AGENT_REQUEST after publish/fullSHA; Dot mustreply.
+Other types allow discretionary replies, not silence. Each logical Slack opening
+checks new Chat comments/full relevant threads; one check about5minutes aftereach
+send is not expiry. User > autonomousChatreview > solicitedDot > local. No reply is
+work/publish gate. Keep actual delayedcheck timing, adoption and execution separate.
 
-The next zero-query feasibility step is already performed:12old published roots
-across6rules compile/replay with remaining91/96, so cap does not bind below the
-default64 ceiling. Only tests/research currently enable the flag. Therefore do
-not rerun that old panel or claim production benefit. [Feasibility evidence](data/leaper_scalar_frontier_20261025/next-clock-feasibility.json)
-binds its exact input. This finding moved cap work to the conditional reserve. Current Main above
-is the selected next question; it does not queue a cap-panel rerun.
-
-Science is OPEN. Normal finish requires current ledger/quality review and final
-check, never active-state final or wall-clock credit. Transport/admin excluded.
+Science is OPEN. Finish requires matching effective ledger/qualityreview and
+session final-check; never an active-state final or clock-gap credit.
