@@ -25,49 +25,45 @@ strategies replay on currentCore. Otherlabels remain sourcegraph attribution;
 no AUXsolver/graphcensus/training/checkout executed. The old boundedfile-schema
 inventory did not establish absence of other quality evidence.
 
-## Main: actual nonroot consumer and payback BEFORE draw-cutoff implementation
+## Main: broader actual DEFAULT/PVS service cost and deadline quality
 
-Latest independent manualChatreview1792912079.322259(445c613e fixedsource,no
-Python/solver/test rerun) is read/adopted. This supersedes the immediate-prototype
-ordering below445c613e:132twoKROOTcalls/264.755s(12.70%recordedgamequerycost) is
-an opportunity,NOT measured nonroot saving. Sixrulefiniteinvariant6608positions/
-33344edges/12negativeadmissions remains valid localqualification,not a consumer.
+[True-DRAW falsifier](LEAPER_DRAW_CUTOFF_20261025.md) is CLOSED:1349newqueries,
+194quality/24actualruleDrawgames,16timingeligible/5fullyeligiblecolorpairs.
+Fixed1.5both62/64,50k32/32both,0repairs/regressions/actionschanged despiteactive
+cutoffs. CanonicalsafeDrawactionboth;score-21to0,notrootoptimalityproof.
+Othergame roots804.454/400candidate vs798.264/399control seconds/queries;
+two-Kroots5.747/179 vs348.325/177. Strongcostdifferenceisrootinventorylocalized,
+not broadnonroot optimization or scopedclassstrength. STOP expanding/tuning
+this nonrootfeature; preservecode/data asresearchonly, no default/UI activation.
 
-[The consumer survey](LEAPER_DRAW_CONSUMER_20261025.md) is CLOSED:22queries,
-11pairs allvalue/action/PV/work parity.6initialroots867post-pointnonoverlap events
-(865fromone4x4);5paidtwoKroots49683events. ActualeligibleTTreturns0here, notglobal.
-Classifier0.057/0.065s; instrumentedregiontime0.147/10.658s is GROSS opportunity,
-not net saving. No sixth paidtwoKroot exists; coverage missing is preserved.
+Question: Can existing readonlyNative availability/check improve actual DEFAULT/
+PVS/Q4 pure-Leaper deadlinequality/cost without changing the searchpolicy? |
+Sourcefeasibility639 isDONE,0newservicecalls; register a small completed-depth
+parity/cancel/fullhistory/provider-delta qualification usingexistingPRIMARYflags,
+thenfreeze a real1.5sWDL/cost falsifier onlyif feasible | Actualproviderattempts/
+success/decline/importreuse plusoutercost andchosenWDL,notNPSalone | Stop on
+mismatch/decline/nullbenefit; no newbackend, AUXruntime implementation edits,
+oldslotrefill, policycombination/defaultchange or ruleclassexpansion.
 
-Question: Does trueDRAW0 replacement pay back without harming actual choices? |
-Reversible researchcutoff qualified8realCore tests; execute frozen draw-study-639
-194qualityslots+24colorpairedgames, node/time/history/controller/source/caps fixed |
-Matched WDL repairs/regressions, actualgameoutcomes, caller/search costs andUNKNOWN |
-Reject activation on qualityregression/no useful cost; no default/UI/TTguard change.
+Reason: currentactiveDrawcutoffs didnotfix p49/p53, costbenefitconcentratedat
+rootknownendgames. Existingconstructor still onlyNativelegality bydefault;
+availability/check are optins and their actualmetrics are not PlayerDecision
+fields. OldUnitNativeAll panels are differentcontrollers, not thiscomparison.
+A source/API survey is not an executed newserviceexperiment or costpromise.
+Any newlogicalexperiment needs an honestfull-costforecast beforeexecution;
+USER>=120minuteauthority and no clock/specreset remain.
 
-Admission stays pureLeaper4/5/6, ordinaryK8, remove-only, nootherinventory/aux/
-promotion/drop/adjudication, repeat4Draw. Positive hardclocks64/96/128 share the
-same finite nondecisive twoK invariant; clock still really terminates in Core.
-Alternate setup registries only initialize selected fullrecords, as confirmed in
-schema/session/initial_state; complete compiledfingerprint/history/selectedsetup
-remain retained. Both choices are explicit qualifications, not TTcanonicalization.
+Backup1: Is a tiny root-only knownDRAWconsumer worth engineering? | Onlyif an
+actualbackendconsumerneed is established | KeepvalidCorehistory/fullruleguard/
+cancel/cost/qualityseparate fromnonroot | Currentdrawchaincumulativecost carries
+forward; >=120USER, no automatically enlarged validationpanel.
 
-New experiment forecast6234.51seconds includes oldqualification/preparation1200s,
-currentengineering900s,420s reserve and480sreview. Producer hard4200s; nocaprefill.
-Known64exposed oneRuleSet are correlated,32systematic50kinputs include p49/p53;
-canonicalbadK/safeB certificates remain limited, otherchoicesUNKNOWN. Games use
-6exposedrules/12fullhistories, not classwideholdout. TrueDRAW0 may change parent
-choices and futurework. No PVS-stylevalueequivalence or strength claim.
+Backup2: New causal premise for p49/p53? | Preserveclosed frontiers/negativeLMR/
+Draw controls | MissingTT/fullcausalchains remainUNKNOWN | No oldwarmD7/quiet/
+singleton/anchor/caprefill or score/depth/pricefit; no universalOracle gate.
 
-Backup1: Why do actual1.5s p49/p53 still fail? | Retain newPVS/LMRnegativecontrols
-and closed scalar/frontier evidence; pursue only a new decision-changing causal
-premise | No singleton/all-anchor/quiet-cap refills or price/depth fitting |
-OriginalwarmD7chain remainsUNKNOWN; do not turn staticgap into causal proof.
-
-Backup2: A real changed consumer for existing cost options? | Keep anywin/clockcap/
-staticreuse/FirstQ conditional; no repeatedsaturatedbroadpanels | Anywin sparse
-costqualification, evalfraction2.714%, FirstQ realbudgetnull, no cap caller |
-No default/UI/mixedactivation or capacity/deadline sweeps without new premise.
+PureLeaper correctness,totalcost andactualdecisionquality still define scoped
+success. Mixed/legacy/promotion/drop/NNUE remain deferred. Science is OPEN.
 
 ## Communication and closure
 

@@ -7575,3 +7575,14 @@ point/nonoverlap semantics; no independent query/proof rerun claimed. Five paid
 Researchcutoff8Coretests pass; separate194slot/24game qualitycost falsifier frozen,
 not a defaultchange. Fullscope/cost/UNKNOWN in LEAPER_DRAW_CONSUMER and MAINLINE.
 AUX paused/checkout untouched; no worker/scheduler created.
+
+
+2026-10-25 PRIMARY639 completion: consumer22queries plus trueDRAW1349queries/
+194quality/24actualDrawgames closed.16timingeligible/5fullyeligiblecolorpairs;
+8ineligiblegames preserved. No matchedWDLrepair/regression/actionchange; active
+cutoffs andcostlocalizedtoalreadytwoKroots support stoppingbroadnonrootroute.
+Dot1792913515's sourceonlyTT/insertionpoint/nonoverlap advice executed; last
+FOLLOWUP1792914955 verified,one+5minutecheck found0newreply, not expired. Chat
+1792912079 complete1post unchanged atlastlogicalopening. NewNative service
+feasibility is sourceonly0calls, notpartnerapproval/newbackend/AUXwork. Costs,
+negativeevidence, prequerysourceamendments in LEAPER_DRAW_CUTOFF manifest.
