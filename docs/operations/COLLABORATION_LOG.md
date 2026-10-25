@@ -7768,3 +7768,15 @@ structural witness is not an equivalence proof or authorization to remove a
 history guard. Current Dot receipt/intake decisions are recorded in own transport
 state; a pending reply is not a work gate. Delivery and closing cost follow the
 scientific checkpoint and add no effective research time.
+
+## 2026-10-26 PRIMARY fresh-key lifecycle checkpoint
+
+PRIMARY published a zero-Player fresh-key/equality/eviction feasibility result;
+AUX files/state/research were not changed or repeated. GitHub Patrol blobs were
+unchanged at9a9f080b; Slack source-only Dot reply independently identified the
+same local key reuse, without running tests. Adopted lifecycle/memory cautions;
+rejected its proposed Dot substitution for USER>=120minute approval against the
+latest direct user policy. Read/adopted is not independent execution. No product
+key memo or whole-query extension started. A concrete cumulative180/cap200 plan
+is pending USER assessment; the100.023201 prior cost is retained. See
+[feasibility report](../research/LEAPER_KEY_LIFECYCLE_20261026.md).

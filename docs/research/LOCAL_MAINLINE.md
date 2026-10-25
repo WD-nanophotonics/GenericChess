@@ -34,16 +34,22 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Main: cheaper immutable full-key hashing with every guard retained
+## Main: full-key memo feasibility qualified; USER budget decision pending
 
-Question: can a complete RuntimeSearchKey hash memo reduce net search cost beyond
-the admitted two-cell hash? | Begin with the completed 14-actual-key feasibility
-probe, then audit first-use/allocation/memory, real call reuse and source overlap
-before registering a whole-query test | Preserve all position, rule, exact count,
-ply and history guard fields, cross-flag TT interoperability, complete semantics
-and actual cost | Component gains alone do not justify a product kernel/default;
-include ALL current kernel costs in the forecast, and obtain USER assessment if
-a single related logical run would be expected to reach >=120 minutes.
+[Fresh-key lifecycle](LEAPER_KEY_LIFECYCLE_20261026.md) adds0Player evidence:
+normal cold insertion hashes the same key3times; a single-use wrapper is slower,
+while the3-use component is faster. Exact raw/cached interoperability and bounded
+eviction pass on12existing keys. Wrapper extra84B/key; actual occupancy/RSS and
+whole-call gain UNKNOWN. Prior probes/hits do not identify lifetime distribution.
+
+Question: does compact complete-key memo reduce whole-call cost relative to the
+admitted local-hash configuration? | Await the sent USER necessity assessment
+for estimated180/cap200 cumulative minutes, then only if approved implement the
+single exact opt-in memo and frozen16-call comparison | Four existing board
+controls x two repeats x two arms;30s/50k percall,batch600s;allTTguards retained,
+wholecost/memory/parity | NOT_STARTED; no Dot waiver, guard coarsening, old-slot
+refill or new200minute allowance. Prior100.023201 plus this feasibility/delivery
+continues in the same logical cost. See report for scope and failure stops.
 
 The new AB/BA toy histories share complete counts/clock and public Core identity
 but differ under the conservative Runtime guard. Three one-ply successors agree;
