@@ -33,26 +33,31 @@ ordering below445c613e:132twoKROOTcalls/264.755s(12.70%recordedgamequerycost) is
 an opportunity,NOT measured nonroot saving. Sixrulefiniteinvariant6608positions/
 33344edges/12negativeadmissions remains valid localqualification,not a consumer.
 
-Question: Does the admitted class actually occur at costly nonterminal nonroot
-search calls not already handled cheaply? | Existing-artifact visibilityaudit is
-DONE:rootrecords/aggregatecounters/returnedPV cannot reconstruct internalhits,
-TT/terminalsplit or classifiercost. Prepare ONE new bounded scalar trace if
-needed; freeze inputs/source/caps and qualify observer work/value/action/cancel
-parity before calls | A table of actualhits/depths, terminal/TT handling,
-classification/once-per-rulegate cost and conservative payback,or UNKNOWN |
-Ifrare/alreadycheap/overheaddominates,STOP feature and use Backup1. Only after
-useful actualconsumer+scopequalification implement reversible researchcutoff.
-No new framework/prover/AUXstate, oldslotrefill, TTidentityweakening, clock/Core
-terminal/defaultchange or type-name shortcut. ReturnedPV is not fullsearchtrace.
+[The consumer survey](LEAPER_DRAW_CONSUMER_20261025.md) is CLOSED:22queries,
+11pairs allvalue/action/PV/work parity.6initialroots867post-pointnonoverlap events
+(865fromone4x4);5paidtwoKroots49683events. ActualeligibleTTreturns0here, notglobal.
+Classifier0.057/0.065s; instrumentedregiontime0.147/10.658s is GROSS opportunity,
+not net saving. No sixth paidtwoKroot exists; coverage missing is preserved.
 
-The next step has begun via offlinevisibilityaudit following the actualfinite
-invariant test; no trace/pruning/costsaving is claimed. Preserve prior inventory,
-proposal/qualification costs in this distinct logicalexperiment, not fresh
-session quotas. Any expected>=120min run needs USERconfirmation, neverDot.
-True minimaxDRAW0 replacing a finiteheuristic may change a nonDrawparent's choice;
-quality controls include knownp49/p53, canonicalbadK/safeB, history/clock and
-loss/geometry negatives. Any genuinelynewpureLeaperroots must be frozen before
-exposure; no retrospectiveholdout claim or universaloracle prerequisite.
+Question: Does trueDRAW0 replacement pay back without harming actual choices? |
+Reversible researchcutoff qualified8realCore tests; execute frozen draw-study-639
+194qualityslots+24colorpairedgames, node/time/history/controller/source/caps fixed |
+Matched WDL repairs/regressions, actualgameoutcomes, caller/search costs andUNKNOWN |
+Reject activation on qualityregression/no useful cost; no default/UI/TTguard change.
+
+Admission stays pureLeaper4/5/6, ordinaryK8, remove-only, nootherinventory/aux/
+promotion/drop/adjudication, repeat4Draw. Positive hardclocks64/96/128 share the
+same finite nondecisive twoK invariant; clock still really terminates in Core.
+Alternate setup registries only initialize selected fullrecords, as confirmed in
+schema/session/initial_state; complete compiledfingerprint/history/selectedsetup
+remain retained. Both choices are explicit qualifications, not TTcanonicalization.
+
+New experiment forecast6234.51seconds includes oldqualification/preparation1200s,
+currentengineering900s,420s reserve and480sreview. Producer hard4200s; nocaprefill.
+Known64exposed oneRuleSet are correlated,32systematic50kinputs include p49/p53;
+canonicalbadK/safeB certificates remain limited, otherchoicesUNKNOWN. Games use
+6exposedrules/12fullhistories, not classwideholdout. TrueDRAW0 may change parent
+choices and futurework. No PVS-stylevalueequivalence or strength claim.
 
 Backup1: Why do actual1.5s p49/p53 still fail? | Retain newPVS/LMRnegativecontrols
 and closed scalar/frontier evidence; pursue only a new decision-changing causal

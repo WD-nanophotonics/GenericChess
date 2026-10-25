@@ -7565,3 +7565,13 @@ survey BEFORE drawcutoff implementation. Existingexport audit finds onlyroots,
 aggregateevents and returnedPV; exactinternalhits remainUNKNOWN. No newtrace,
 pruning or unexposedrootexperiment executed, no review-readingresearchcredit,
 no routineSlackacknowledgement loop. Next meaningful round reports execution.
+
+
+2026-10-25 PRIMARY round639: autonomousChat1792912079 consumer-first executed,
+22query/11pair scalar survey closed with completevalue/action/work parity.
+Dot1792913515 solicitedsource review contributed realTTEXACT-site/postTT insertion
+point/nonoverlap semantics; no independent query/proof rerun claimed. Five paid
+2Kroot controls differ from sixfullinventoryroots; no synthetic sixthpositive.
+Researchcutoff8Coretests pass; separate194slot/24game qualitycost falsifier frozen,
+not a defaultchange. Fullscope/cost/UNKNOWN in LEAPER_DRAW_CONSUMER and MAINLINE.
+AUX paused/checkout untouched; no worker/scheduler created.
