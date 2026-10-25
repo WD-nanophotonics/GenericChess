@@ -25,25 +25,34 @@ strategies replay on currentCore. Otherlabels remain sourcegraph attribution;
 no AUXsolver/graphcensus/training/checkout executed. The old boundedfile-schema
 inventory did not establish absence of other quality evidence.
 
-## Main: scoped proven-draw search cutoff feasibility
+## Main: actual nonroot consumer and payback BEFORE draw-cutoff implementation
 
-Question: Can a rule-admitted exactDraw cutoff remove observed wasted work
-without damaging finite policy quality? | BEGIN research-only nonroot prototype
-from the completed minimal-rule admission/transition-invariant check; preserve
-rootlegalaction, completehistory, cancellation/budget and sourceprovenance |
-Sixfixed4/5/6square rules close6608ordinaryKingPositions/33344Coreedges and reject
-12loss/geometryadmissions;132actualtwoKrootqueries cost264.755s(12.70%gamequery
-cost),not measured savings | Only exactadmission/plain8offsetanchors/remove/no
-promotion/drop/extra policy/H96/repeat4draw/stalematedraw. No type-name shortcut,
-Coreterminal rewrite/default/AUXsolver/worker. TrueDRAWleaf can still change an
-approximate non-drawparentchoice: require scoped quality AND actualtotalcost,
-not blanket baselinefinite-score parity or all-domainproof prerequisite.
+Latest independent manualChatreview1792912079.322259(445c613e fixedsource,no
+Python/solver/test rerun) is read/adopted. This supersedes the immediate-prototype
+ordering below445c613e:132twoKROOTcalls/264.755s(12.70%recordedgamequerycost) is
+an opportunity,NOT measured nonroot saving. Sixrulefiniteinvariant6608positions/
+33344edges/12negativeadmissions remains valid localqualification,not a consumer.
 
-This next question has actually begun via paid-record reuse and12.527s finite
-Corequalification; no pruning implementation or speedup is claimed. Carry its
-source/actualcost and earlierpreparation into continuation; conservatively budget
-prior preparation plus new implementation/validation, no new-session quota reset.
-Any expected>=120minute logicalrun needs USERconfirmation, never Dot approval.
+Question: Does the admitted class actually occur at costly nonterminal nonroot
+search calls not already handled cheaply? | Existing-artifact visibilityaudit is
+DONE:rootrecords/aggregatecounters/returnedPV cannot reconstruct internalhits,
+TT/terminalsplit or classifiercost. Prepare ONE new bounded scalar trace if
+needed; freeze inputs/source/caps and qualify observer work/value/action/cancel
+parity before calls | A table of actualhits/depths, terminal/TT handling,
+classification/once-per-rulegate cost and conservative payback,or UNKNOWN |
+Ifrare/alreadycheap/overheaddominates,STOP feature and use Backup1. Only after
+useful actualconsumer+scopequalification implement reversible researchcutoff.
+No new framework/prover/AUXstate, oldslotrefill, TTidentityweakening, clock/Core
+terminal/defaultchange or type-name shortcut. ReturnedPV is not fullsearchtrace.
+
+The next step has begun via offlinevisibilityaudit following the actualfinite
+invariant test; no trace/pruning/costsaving is claimed. Preserve prior inventory,
+proposal/qualification costs in this distinct logicalexperiment, not fresh
+session quotas. Any expected>=120min run needs USERconfirmation, neverDot.
+True minimaxDRAW0 replacing a finiteheuristic may change a nonDrawparent's choice;
+quality controls include knownp49/p53, canonicalbadK/safeB, history/clock and
+loss/geometry negatives. Any genuinelynewpureLeaperroots must be frozen before
+exposure; no retrospectiveholdout claim or universaloracle prerequisite.
 
 Backup1: Why do actual1.5s p49/p53 still fail? | Retain newPVS/LMRnegativecontrols
 and closed scalar/frontier evidence; pursue only a new decision-changing causal

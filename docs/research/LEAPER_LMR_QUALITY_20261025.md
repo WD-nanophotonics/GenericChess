@@ -118,9 +118,11 @@ the original single result is authoritative.
 
 The finite invariant and checked draw-only history/clock policies support a
 SCOPED FUTURE cutoff. It is not implemented/timed as a cutoff, not general
-all-Leaper proof, and never changes Core terminals. Next qualify a minimal
-research-only nonroot cutoff under exact admission, budget/cancel/history and
-actual cost. Replacing a finite heuristic with trueDRAW can still change choices
+all-Leaper proof, and never changes Core terminals. The latest autonomous review1792912079.322259 instead prioritizes a real
+nonroot-hit/terminal/TT/classifier-cost survey BEFORE cutoff implementation.
+Offline artifact audit confirms those exactinternal fields are not retained;
+rootcounter/PV cannot replace a bounded trace. Only after consumer/payback and
+scope qualification should a reversible research cutoff begin. Replacing a finite heuristic with trueDRAW can still change choices
 at non-draw parents: quality controls remain necessary. No type-name shortcut,
 clock change, AUX-competing solver, worker or default activation follows.
 
@@ -151,3 +153,12 @@ frozen capsules; original diagnostic retained.
 are lossless gzip copies with hashes. Capsules are DATA ONLY. All producers close;
 no missing slot is filled or failure hidden. Negative LMR and positive finite-
 invariant feasibility are not class-wide strength/success or mixed/NNUE expansion.
+
+
+Latest review adoption: newChatroot1792912079.322259 was discovered during the
+single final delayed check, then its complete one-post thread was privately
+saved/read. It independently reviews published445c613e without rerunning code.
+Adopted survey-first order; executed only the offline observability audit, not
+new trace/cutoff/unknownroot experiments. No newresearchtime claimed from reading
+this review. No extra Slack acknowledgement loop; next meaningful request will
+report actual follow-through. Original report/results and frozen caps unchanged.
