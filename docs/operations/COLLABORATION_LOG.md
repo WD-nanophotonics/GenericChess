@@ -7482,3 +7482,22 @@ frontier repair, with evidence/own view/alternative explicit. Delayed check due
 03:50:16.816439UTC remains pending at this publication; no reply claim yet.
 Zero-query follow-on finds no production cap caller and no binding cap in12old
 roots across6rules, so a gratuitous old-panel rerun is rejected, not queued.
+
+
+## 2026-10-25 PRIMARY fbb: cheap static feasibility, distinct win-goal protocol
+
+Fresh request GC-SLACK-20261025-125425-b65f0796/root1792900492.200599 has verified
+payload/account/thread binding after12fe198f fullremoteSHA check. One delayed
+check captured solicitedDot1792900631.486249; oldChat root still1post. Dot reviewed
+source, not queries. Adopt completePosition key/frozenprofile/finitecapacity/
+request-sequence/memory/cost boundary and3sample limit; do not conflate arbitrary
+override/native material/default paths. User segment-time rule outranks Dot's
+upper-only duration wording. All raw originals retained before assessment.
+Three actual samples close static feasibility with rawinteger parity and offline
+ratios0.558/0.197/0.606, but default50k evaluation cost share2.714% limits potential.
+No cached-search/default implementation or larger cache panel follows.
+A distinct existing proof-goal publicflag question is now frozen:160paired actual
+nodepreset returns, WDL-only winning-choice objective, no shortestmate/depth claim.
+Prior4/64winband suggests sparse benefit; no positive-only case selection. Source,
+complete rules/history and cost forecast are published before execution. No AUX
+checkout/solver/unpublished work, schedule or UI/default changes.
