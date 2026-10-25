@@ -27,24 +27,29 @@ No productflag/defaultactivation,newbackend,AUXruntimeedits or mixedexpansion.
 costbenefitlocalizedalreadytwoKroots,notbroadnonrootroute. Do notretune/expand.
 Root-onlyDRAW remainsconditionalonactualconsumerneed andfullscope/cost,notMain.
 
-## Main: qualify nontrivial multi-rule budget-final-choice measurements
+## Main: explain the actual p49 D3-to-D4 evaluation reversal
 
-[Root-cost audit](LEAPER_ROOT_COST_20261025.md): existing aspiration50 CLOSED
-with18newreturns; p49D6 events29056unchanged,p53only2less. No useful opportunity,
-no delta sweep/64panel. Root paid-cost observer8returns rules out mere partial
-result publication: first knownWIN child p49 2.493s,p53 4.741s, outside1.5s.
-No root-order/oracle patch. Earlier score-highest/actionstability already failed.
-Horizontal3 certificate guard actually has no Nativeprovider because its full
-max_ply774840979 exceeds Native65535; all inputs are semantic, flags notservice.
-Other three guards and p49/p53 activate Nativeboth. Preserve complete clocks.
+Latest autonomousChat1792932855 independently reviewed fixed2e1, no execution;
+its priority after failedwindow is the actual evaluation/leaf-boundary mechanism,
+not cycling accelerationflags. Window18returns and rootcost8returns are CLOSED.
+New read of the already measured D3/D4 root-call prefix: sourceWIN K d4-c3
+returns1094 bothlayers; sourceDRAW B e4-c3 rises1087->1103 and replacesit.
+D4already visitsKfirst. Original-window interior returns locate the boundary,
+not the ultimate Qleaf/TT cause. Mere incomplete-root publication also fails:
+no knownWIN D6child before1.5s. No new root policy/oracle patch.
 
-Question: Does more actual search budget improve final choice across rules? |
-Freeze17old19-excluded exact histories/9RuleSets, first2lexical metadata
-nontrivial source-WDL roots (WINrank>=12/DRAWwithLOSS), then bounded actual
-DEFAULT/PVS/Nativeboth budget curves and
-resource-labelled games | Full history/clock/action coverage, actual service,
-UNKNOWN/censors and source-label exposure | No new solver/AUX/default/holdout
-claim; full forecast including related prep <120min or USER first.
+Question: Which actual evaluation/frontier/TT return supports B's16point rise? |
+Audit a minimal complete bounded p49D4 iterative return/evaluation observation,
+reusing its D3prefix and published unobservedD4qualification; new call only after
+reversible scope/abort/work-parity qualification | Actual windows, dependency
+edges/evaluation components and complete coverage orUNKNOWN | No old failed
+p53D6cap refill, quiet-omission causalclaim, new solver/AUX/default or label-fed
+policy. Carryrelatedcost and requireUSERif full expectedlogical>=120min.
+
+The17metadata-selected histories/9rules and frozen68budget+18game plan remain
+NOT_STARTED, now DEFERRED under the newChat priority. No current-player result
+selected the histories; no expansion experiment runs by default. Inputs retain
+future consumer value; this is not discarded evidence or an active secondjob.
 
 Backup1: Can a cheap label-free root order reduce paid late discovery? | Only
 with a concrete independently motivated feature/cost prediction, qualify actual
@@ -85,4 +90,4 @@ No newexperimentaljob/capextension or defaultchange. Finalmanifest77members.
 Newconsumer source-data preflight0queries/all9Nativeproviders active. Frozen
 68budget calls1.5/6/20/60s then18same-engine3s-vs1.5sresourcegames; first17
 allcorrect=>EASY_COHORTstop. Wholechain110min inclrelatedrootcost/prior5;
-logicalorigin12:42:21UTC, batch<=3650s,scienceend<=origin+105min. No query yet.
+logicalorigin12:42:21UTC, batch<=3650s,scienceend<=origin+105min. No query; subsequent Chat priority explicitly deferred the entire plan.

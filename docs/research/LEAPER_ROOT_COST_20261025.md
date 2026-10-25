@@ -135,3 +135,22 @@ logical-origin+105min, leaving15minpublication reserve. At startup, elapsed
 carried cost+batch cap+publication reserve must remain below120min or USER
 review first. Slots stay missing/UNKNOWN on stop, never refilled or capped up.
 At this plan publication all68calls/18games remain NOT_RUN.
+
+
+### New autonomous review: consumer plan held at zero calls
+
+At the next logical Slack opening, autonomousChat1792932855.847359 was newly
+read in full. Its independent fixed2e1source review again requires stopping
+negative aspiration and favors the actualD3correct→D4wrong evaluation/leaf
+mechanism before more flags. The68curve/18game plan has NOT_STARTED and is
+DEFERRED, not an active batch or a completed calibration.17inputs remain useful
+future consumer material. No second writer/job or new default was created.
+
+New numerical read of the current root-cost packet's already-measured prefix:
+p49's sourceWIN K d4→c3 returns1094 at bothD3andD4. The sourceDRAW B e4→c3
+returns1087 atD3,1103 atD4and replacesK. D4already searchesKfirst. Thus this
+particular reversal is a16point rise ofB crossing the unchangedKreturn, rather
+than simply failing to visitKearly. These are interior original-entry-window
+returns; causal leaf/Q/TTproducer provenance is stillUNKNOWN. No new query was
+needed for this inference. A minimal observer would need actual dependency
+edges and return/evaluation sources, not an extra nominal depth/timing panel.
