@@ -68,7 +68,8 @@ warm/nearclock/cancel/costboundariesexecuted;notfirst-everruntimehandoffproof.
 Premature09:14readwaspreserved/notaccepted;+5check09:17:24readreply. LatestChat
 1792912079 complete1post unchangedatopening. Finalfollowup/check status lives
 in executablememo/private receipts, never inferdelivery/completionfromthisplan.
-Current scientificproducers CLOSED. Normalfinishstillrequiresmatchingactual
-workledger/qualityreview/sessionfinish/final-check,notactive-statepromise.
+Current scientificproducers CLOSED. Sessionbbee ended62.894effective minutes;
+matchingqualityreview/finish/final-check ACCEPTED10:30:59UTC. Nextnewround must
+startanewsession/request; no oldactive-statepromise orwallclockcredit.
 Pinnedcanonicalc5e6d667 andAUXpublishedproofs remainread-onlyhistoricalevidence;
 no AUXsolver/checkout/graphcensus executed. Oldclosedcapfailures remainUNKNOWN.

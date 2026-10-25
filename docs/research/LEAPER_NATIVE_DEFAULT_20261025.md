@@ -163,3 +163,14 @@ main sources/receipts, and are DATA ONLY, not an independent original capture.
 Private raw Slack/account wrappers and pstats paths are excluded from publication.
 
 [Lossless evidence manifest](data/leaper_native_default_20261025/manifest.json).
+
+Operational close: 40 targeted Native/handoff/terminal/Qsearch controls passed.
+The scientific packet was published and full remote SHA independently verified
+as 9fcbe14da416ba0411291ef2dfa75e9c8f9ea428 before the final Dot follow-up.
+Session bbee209c-39ba-44c3-a6bf-e958b53565eb ended safe_checkpoint at
+2026-10-25T10:30:59.301018+00:00 with 3773.622921999994 recorded effective
+seconds (62.894min), 1287 ledger intervals, matching substantive quality JSON,
+and accepted finish plus final-check. Wall81.559min was not substituted for
+work. Five sub-resolution query intervals remain uncredited rather than using
+perf_counter to invent UTC endpoints. The research objective remains open;
+this is a completed bounded study and next executable question, not class success.
