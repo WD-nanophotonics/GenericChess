@@ -782,3 +782,22 @@ last_rule_clock_cap is the effective requested ceiling, not proof of completion.
 See LEAPER_CLOCK_HORIZON_AND_EXACT_CAP_20261025 for8DRAW/2limited real cases and
 scoped costs. It does not fix the p53 selective-search error; q-frontier completion
 prototypes were rejected. No AUX branch/state or automatic merge is involved.
+
+
+## Pure-Leaper compiled hash prototype — 2026-10-26
+
+SearchTuning adds default-False `use_plain_leaper_local_hash` and
+`use_cached_position_identity_hash`. Core certifies a narrow square plain-Leaper
+IR effect footprint; unsupported rules keep full diff hashing and base identity.
+Legality, transitions, all live history/clocks, adjudication and exact TT fields
+are unchanged. Python-only change, no Native rebuild or UI/default activation.
+Optional PlayerDecision fields report local/full-diff hash operations and actual
+identity-cache admission. Hash operations include attempts preceding a later
+push failure; completed push/pop counters retain their old contract. Terminal
+results with no runtime observation report None.
+
+LEAPER_COMPILED_HASH_20261026.md records matched whole-query cost -5.32%, no
+observed equal-time choice repair/regression on 19 known histories, 248 Core
+history cases and 125 tests. Cache factorial is incomplete (59/96), not a default
+recommendation. No class strength or history quotient is claimed. Full-key hash
+memo exists only as a component feasibility probe, not production code.

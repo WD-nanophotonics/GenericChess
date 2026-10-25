@@ -260,7 +260,7 @@ q-depth consumption and cost; it was not tested or recommended.
 ## Independent limited feature diagnostic and next useful step
 
 A predeclared complete2x2presence/absence diagnostic evaluates all153legal
-children of the17fixed source-metadata roots plus two exposed6x6controls.
+children of the17fixed source-metadata roots plus two exposed5x5controls.
 584manual static evaluations use exactly the same rule-derived material prices;
 known Core terminals are handled uniformly. There are0immediate-terminal
 source-label mismatches, which does not independently certify deeper labels.
@@ -273,7 +273,7 @@ This is ONE-PLY ranking, not actual Q4 Player fitness:
 | anchor0 |11|9|2/0|
 | both0 |8|0|2/3|
 
-All four configurations miss both exposed6x6controls in this one-ply diagnostic.
+All four configurations miss both exposed5x5controls in this one-ply diagnostic.
 Anchor0is a posthoc development signal, not an actual-search repair. On the
 frozen p49D4leaves, deleting mobility alone still prefers Bby5, deleting anchor
 still prefers Bby4; deleting both only ties. No weight was fitted or default
@@ -330,3 +330,7 @@ and is not included in that number. All additional time since scientificEND
 was publication/transport/delayed-check administration, with0new experimental
 job or work-ledger entry. Keep this variance and the earlierQ122.143min overrun;
 do not substitute either wall clock for67.317recorded research minutes.
+
+Correction 2026-10-26: the two named one-ply controls p49/p53 have board_size=5
+in their complete frozen RuleSets. Earlier 6x6 wording was a dimension error;
+records, clocks, labels and measured results are unchanged.

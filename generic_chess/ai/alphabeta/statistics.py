@@ -95,6 +95,8 @@ class SearchStatistics:
     runtime_exact_position_comparisons: int = 0
     runtime_legacy_incremental_updates: int = 0
     runtime_semantic_full_diff_fallbacks: int = 0
+    runtime_semantic_local_hash_updates: int = 0
+    runtime_position_identity_hash_cached: bool = False
     runtime_snapshot_exact_comparisons: int = 0
     runtime_collision_checks: int = 0
     runtime_collision_fallbacks: int = 0

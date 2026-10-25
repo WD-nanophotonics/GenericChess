@@ -1,0 +1,76 @@
+{
+  "correctness": {
+    "history_cases": 248,
+    "pytest_final": 125,
+    "sampled_branches": 76440,
+    "walk_plies": 13947
+  },
+  "files": {
+    "component-probes.json.gz": {
+      "bytes": 5065,
+      "decoded_sha256": "e66784e4eb7fe78558509af1ae1e828418faeae8e5b77336cf64aac52d1ac33b",
+      "sha256": "7f78421279ad7da7d04b8bcff4996f9246300581942f09ae4279687d66da0c5a"
+    },
+    "contract-branches.jsonl.gz": {
+      "bytes": 3180964,
+      "decoded_sha256": "bdcaff39115792d96d96d41491c2ca439c4bece6ee87ee67bfaac1caecc8c23e",
+      "sha256": "69669493ed7cd20f769eb3515098cec8fb1384665136605504e83d23ea6b4847"
+    },
+    "contract-cases.jsonl.gz": {
+      "bytes": 120929,
+      "decoded_sha256": "b29b568e0b2c0748d73b6a312c28305a27756e1505ec43d535399cb6be71eedd",
+      "sha256": "7e31aff4cc822e01354dba3b782fe70a462115140684c0692addd0ebd31156d9"
+    },
+    "contract-summary.json.gz": {
+      "bytes": 2378,
+      "decoded_sha256": "803e4f2ea77e6820c505b460818ac7d3b7fe95778ebf0b6b765c17eb0f8be561",
+      "sha256": "828dd24ed3533900d2068022b3b576367687a7c5816de4e66ed9f70a904b4a21"
+    },
+    "equal-time.json.gz": {
+      "bytes": 35481,
+      "decoded_sha256": "b66e0bf7ed3aee4ff2ed59f1c1bce0a5425f3c69029f185f049e9d14878c5961",
+      "sha256": "735e3cf2b475ae355254c9b5e2a4a22fc15e6b65b9abcca4f5ba6876da1fbeb5"
+    },
+    "factorial.json.gz": {
+      "bytes": 26182,
+      "decoded_sha256": "326a9459be4064e2b7c147b10509e8effbeb8b163d010d2fd23d1c1b29f2d4b4",
+      "sha256": "a6a9e9f6103c069a7c9f5d529263ffd1fe828d77da5a308101f118f4bee68228"
+    },
+    "fixed-work.json.gz": {
+      "bytes": 43353,
+      "decoded_sha256": "f6fc50450838c392542cefcdba76ff687f64f1b3d368656579b5b42018d69db5",
+      "sha256": "ecea29d6b36b82cf843da935c4c15943e44f263326d70e89586066143ed6c6ae"
+    },
+    "invalid-call-profile.json.gz": {
+      "bytes": 22849,
+      "decoded_sha256": "c493e4faccd93d8305aae23a5ec41069e3de64562b57431c79b158074bbed1f8",
+      "sha256": "3786b6ab7ec267711de4dbc390dba99c7145e3896f4173068856dc63371eb3f6"
+    },
+    "profile.json.gz": {
+      "bytes": 24561,
+      "decoded_sha256": "0a9ae8ac176cb355fb0d7eb42726bac9df104e76129eb84014e68e83d7d003cd",
+      "sha256": "e1983aaeb1f7b04630076b16dfffb6acbcb57f8cfcc23320fde0349ef0652e54"
+    },
+    "sources.zip": {
+      "bytes": 254045,
+      "sha256": "63e50015ea5521e4fa880b1c23e5d65cd7a6f53414b9f2c80b6c3c9751379be2"
+    }
+  },
+  "limits": [
+    "37factorialslotsNOT_RUN; no refill",
+    "Firstfixedworkbinarynotbytepinnedatentry; withinprocesspairedserviceidentical. Factorial/qualityNativebinarySHApinned.",
+    "Microcomponenttimesnotwholequery/strength",
+    "Originalpersonalpathskeptprivate; publicationcopiesexclude them",
+    "Two oldnamedcontrolsactually5x5; older6x6labelcorrected",
+    "Datarecords preservefailedhypothesis, UTCzero andCPUzero limitations."
+  ],
+  "research_player_returns": 181,
+  "return_counts": {
+    "equal_time": 38,
+    "factorial_partial": 59,
+    "fixed_work": 72,
+    "invalid_call_profile": 2,
+    "profile": 10
+  },
+  "scope": "PRIMARY pureLeaper compiledhash20261026; allproject-only evidence. DATAONLY sourcecapsule; neverimport/executearchivedsources."
+}

@@ -13,10 +13,10 @@ import hashlib
 import json
 from contextlib import contextmanager
 from functools import lru_cache
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, fields, replace
 from typing import Any, Callable, Iterable, Mapping
 
-from .actions import Action, BoardMove, DropMove, PassAction, action_from_dict, action_to_dict
+from .actions import Action, BoardMove, DropMove, PassAction, SemanticBoardMove, action_from_dict, action_to_dict
 from .attacks import is_in_check
 from .errors import IllegalActionError, ensure_ruleset_match
 from .identity import ExternalStableKey, RuntimeHash, position_identity_key
@@ -63,7 +63,24 @@ class RuntimePositionIdentity:
         )
 
 
-def _runtime_position_identity(position: Position, compiled) -> RuntimePositionIdentity:
+@dataclass(frozen=True, slots=True, eq=False)
+class _CachedRuntimePositionIdentity(RuntimePositionIdentity):
+    """Lazily reuse the SAME Python hash; exact base equality stays authoritative.
+
+    Position and its board, hands and aux payload are immutable. The memo is
+    process-local and never an external key, equality shortcut or serialized ID.
+    """
+    _cached_hash: int | None = field(default=None, init=False, repr=False)
+
+    def __hash__(self):
+        value = self._cached_hash
+        if value is None:
+            value = hash(self.position)
+            object.__setattr__(self, '_cached_hash', value)
+        return value
+
+
+def _runtime_position_identity(position: Position, compiled, *, cache_hash=False) -> RuntimePositionIdentity:
     """Keep semantic default omission equal in the exact collision guard.
 
     F1 already treats an absent compiled aux slot as its declared default.
@@ -71,9 +88,10 @@ def _runtime_position_identity(position: Position, compiled) -> RuntimePositionI
     position. Normalize only the private identity; actual state/witnesses and
     external record keys remain unchanged. Foreign aux entries stay present.
     """
+    identity_type = _CachedRuntimePositionIdentity if cache_hash else RuntimePositionIdentity
     engine = semantic_engine_for(compiled)
     if engine is None or not position.aux_state:
-        return RuntimePositionIdentity(position)
+        return identity_type(position)
     defaults = {
         (slot.slot_id, owner): slot.initial
         for slot in engine.ir.aux_slots
@@ -87,7 +105,7 @@ def _runtime_position_identity(position: Position, compiled) -> RuntimePositionI
     ))
     if aux != position.aux_state:
         position = replace(position, aux_state=aux)
-    return RuntimePositionIdentity(position)
+    return identity_type(position)
 
 
 @dataclass(frozen=True, slots=True)
@@ -581,6 +599,113 @@ def _semantic_component_diff_hash(parent: Position, child: Position, compiled, c
     return value
 
 
+def _plain_leaper_hash_patterns(compiled):
+    """Certify a narrow two-cell transition footprint from executable IR.
+
+    This does not certify legal actions or skip Core transition/adjudication.
+    Unknown schema fields, arbitrary effects, triggers and promotion fail closed.
+    """
+    from ..rules.ir import (
+        CompiledEffect, CompiledGeometry, CompiledMovePattern,
+        CompiledSemanticIR, CompiledSquareRef,
+    )
+    ir = getattr(compiled, 'ir', None)
+    if type(ir) is not CompiledSemanticIR or ir.ir_version != 2:
+        return None
+    reviewed_fields = {
+        Position: 'board hands side_to_move ruleset_fingerprint aux_state board_width board_height',
+        CompiledSemanticIR: 'ir_version ruleset_fingerprint geometry zones patterns aux_slots triggers automatic_adjudications declarations capabilities consecutive_action_adjudications repeated_cycle_target_conditions',
+        CompiledGeometry: 'geometry_id kind owner_relative offset direction min_steps max_steps atom_source paths',
+        CompiledMovePattern: 'pattern_id name type_ids geometry_ids target path guards slot_guards effects invariants postconditions promotion_mode explicit_promotion_type composition replaced_pattern_ids cost_class stratum square_zone_guards',
+        CompiledEffect: 'kind from_ref to_ref square_ref piece_owner piece_type_ref disposition slot_id type_ref count value',
+        CompiledSquareRef: 'kind square offset owner_relative step slot_id',
+    }
+    if any({f.name for f in fields(cls)} != set(names.split())
+           for cls, names in reviewed_fields.items()):
+        return None
+    size = compiled.board_size
+    if (type(size) is not int or size <= 0
+            or compiled.board_shape.width != size
+            or compiled.board_shape.height != size):
+        return None
+    if (not ir.patterns or not ir.geometry or ir.aux_slots or ir.triggers
+            or ir.declarations or ir.automatic_adjudications
+            or ir.consecutive_action_adjudications or ir.repeated_cycle_target_conditions
+            or compiled.pass_enabled or compiled.no_progress_draw is not None):
+        return None
+    if any(t.is_promotable or t.promotion_target_ids for t in compiled.piece_types):
+        return None
+    if any(any(owners) for owners in compiled.promotion_allowed.values()):
+        return None
+    if any(any(owners) for owners in compiled.promotion_forced.values()):
+        return None
+    if any(type(g) is not CompiledGeometry
+           for g in ir.geometry.values()):
+        return None
+    move = CompiledEffect('move', from_ref=CompiledSquareRef('source'),
+                          to_ref=CompiledSquareRef('target'))
+    remove = CompiledEffect('remove', square_ref=CompiledSquareRef('target'),
+                            piece_owner='opponent', disposition='remove_from_game')
+    pairs = set()
+    for pattern in ir.patterns:
+        if (type(pattern) is not CompiledMovePattern or not pattern.type_ids
+                or not pattern.geometry_ids or pattern.path or pattern.guards
+                or pattern.slot_guards or pattern.square_zone_guards
+                or pattern.postconditions or pattern.explicit_promotion_type is not None
+                or pattern.promotion_mode not in ('none', 'inherit_compiled_masks')
+                or pattern.composition != 'augment' or pattern.replaced_pattern_ids
+                or any(i.kind != 'own_anchor_safe' or i.square_refs
+                       for i in pattern.invariants)):
+            return None
+        # Legacy lowering retains drop patterns even when every allowed mask
+        # is false. Core's _iter_drop_candidates cannot produce such an action.
+        # Never include them in the certified board-action pairs.
+        if all(g in ir.geometry and ir.geometry[g].kind == 'drop'
+               for g in pattern.geometry_ids):
+            masks = compiled.drop_allowed
+            if any(t not in masks or any(any(row) for row in masks[t])
+                   for t in pattern.type_ids):
+                return None
+            continue
+        expected = ((move,) if pattern.target.kind == 'target_empty' else
+                    (remove, move) if pattern.target.kind == 'target_enemy' else None)
+        if expected is None or pattern.effects != expected:
+            return None
+        for geometry_id in pattern.geometry_ids:
+            if geometry_id not in ir.geometry or ir.geometry[geometry_id].kind != 'leap':
+                return None
+            pairs.add((pattern.pattern_id, geometry_id))
+    return frozenset(pairs)
+
+
+def _plain_leaper_local_hash(parent, child, action, compiled, current, patterns):
+    """Same component tokens as full hashing, on a certified two-cell move."""
+    if (not isinstance(action, SemanticBoardMove)
+            or (action.pattern_id, action.geometry_id) not in patterns
+            or action.promotion_target_id is not None
+            or parent.hands != child.hands or parent.aux_state or child.aux_state
+            or parent.ruleset_fingerprint != child.ruleset_fingerprint
+            or parent.board_width != child.board_width
+            or parent.board_height != child.board_height
+            or len(parent.board) != compiled.board_size ** 2
+            or len(parent.board) != len(child.board)
+            or parent.board_width not in (None, compiled.board_size)
+            or parent.board_height not in (None, compiled.board_size)):
+        return None
+    size = compiled.board_size
+    source = action.from_square.rank * size + action.from_square.file
+    target = action.to_square.rank * size + action.to_square.file
+    value = _xor(current, _component_token(('side',), parent.side_to_move))
+    value = _xor(value, _component_token(('side',), child.side_to_move))
+    for index in (source,) if source == target else (source, target):
+        old = _component_map_cell(parent, index)
+        new = _component_map_cell(child, index)
+        if old != new:
+            value = _xor(value, _component_token(('board', index), old))
+            value = _xor(value, _component_token(('board', index), new))
+    return value
+
+
 class SearchPathRuntime:
     """Core-owned mutable DFS context with strict exception-safe undo."""
 
@@ -594,9 +719,19 @@ class SearchPathRuntime:
         legal_binding_provider: Callable | None = None,
         availability_provider: Callable | None = None,
         check_provider: Callable | None = None,
+        use_plain_leaper_local_hash: bool = False,
+        use_cached_position_identity_hash: bool = False,
     ):
         ensure_ruleset_match(state.position, compiled)
         self.compiled = compiled
+        admitted = (
+            _plain_leaper_hash_patterns(compiled)
+            if use_plain_leaper_local_hash or use_cached_position_identity_hash else None
+        )
+        self._plain_leaper_hash_patterns = admitted if use_plain_leaper_local_hash else None
+        self._cache_position_identity_hash = bool(
+            use_cached_position_identity_hash and admitted is not None
+        )
         # Opaque Core-neutral callback: Core never imports Native and never
         # stores a Native capsule/rules object.
         self.availability_provider = availability_provider
@@ -607,7 +742,8 @@ class SearchPathRuntime:
         self.ply_count = state.ply_count
         self.terminal_status = state.terminal_status
         self._external_root_key = ExternalStableKey(position_identity_key(self.position, compiled))
-        self._identity = _runtime_position_identity(self.position, compiled)
+        self._identity = _runtime_position_identity(self.position, compiled,
+            cache_hash=self._cache_position_identity_hash)
         self._counts_external = dict(state.repetition_counts)
         if self._counts_external and any(int(count) <= 0 for count in self._counts_external.values()):
             raise ValueError("malformed imported repetition counts")
@@ -661,7 +797,8 @@ class SearchPathRuntime:
                         self._identity
                         if witness == self.position
                         and _aux_value_equal(witness.aux_state, self.position.aux_state)
-                        else _runtime_position_identity(witness, compiled)
+                        else _runtime_position_identity(witness, compiled,
+                            cache_hash=self._cache_position_identity_hash)
                     )
                 runtime_hash = imported_hashes.get(record.position_key)
                 if runtime_hash is None:
@@ -728,6 +865,7 @@ class SearchPathRuntime:
         self.exact_position_comparisons = 0
         self.legacy_incremental_updates = 0
         self.semantic_full_diff_fallbacks = 0
+        self.semantic_local_hash_updates = 0
         self.snapshot_exact_comparisons = 0
         self.collision_checks = 0
         self.collision_fallbacks = 0
@@ -865,7 +1003,8 @@ class SearchPathRuntime:
             return self._identity
         witness = self._history_witness_by_key.get(key)
         if witness is not None:
-            return _runtime_position_identity(witness, self.compiled)
+            return _runtime_position_identity(witness, self.compiled,
+                cache_hash=self._cache_position_identity_hash)
         return _ImportedIdentity(key)
 
     def _runtime_hash_for_identity(self, identity: object) -> RuntimeHash:
@@ -909,6 +1048,8 @@ class SearchPathRuntime:
         legal_binding_provider: Callable | None = None,
         availability_provider: Callable | None = None,
         check_provider: Callable | None = None,
+        use_plain_leaper_local_hash: bool = False,
+        use_cached_position_identity_hash: bool = False,
     ):
         return cls(
             state,
@@ -918,6 +1059,8 @@ class SearchPathRuntime:
             legal_binding_provider=legal_binding_provider,
             availability_provider=availability_provider,
             check_provider=check_provider,
+            use_plain_leaper_local_hash=use_plain_leaper_local_hash,
+            use_cached_position_identity_hash=use_cached_position_identity_hash,
         )
 
     @property
@@ -974,6 +1117,8 @@ class SearchPathRuntime:
 
     def attach_stats(self, stats):
         self.stats = stats
+        if self.stats is not None:
+            self.stats.runtime_position_identity_hash_cached = self._cache_position_identity_hash
         self._sync_stats()
 
     def _sync_stats(self):
@@ -987,6 +1132,7 @@ class SearchPathRuntime:
         self.stats.runtime_exact_position_comparisons = self.exact_position_comparisons
         self.stats.runtime_legacy_incremental_updates = self.legacy_incremental_updates
         self.stats.runtime_semantic_full_diff_fallbacks = self.semantic_full_diff_fallbacks
+        self.stats.runtime_semantic_local_hash_updates = self.semantic_local_hash_updates
         self.stats.runtime_snapshot_exact_comparisons = self.snapshot_exact_comparisons
         self.stats.runtime_collision_checks = self.collision_checks
         self.stats.runtime_collision_fallbacks = self.collision_fallbacks
@@ -1402,15 +1548,24 @@ class SearchPathRuntime:
             None if isinstance(action, PassAction) else gave_check
         )
         child_external_key = self._opaque_history_key_for_child(child)
-        child_identity = _runtime_position_identity(child, self.compiled)
+        child_identity = _runtime_position_identity(child, self.compiled,
+            cache_hash=self._cache_position_identity_hash)
         if self._forced_hash is not None:
             child_hash = self.runtime_hash
         elif engine is None:
             child_hash = _legacy_incremental_hash(parent, child, action, self.compiled, self.runtime_hash)
             self.legacy_incremental_updates += 1
         else:
-            child_hash = _semantic_component_diff_hash(parent, child, self.compiled, self.runtime_hash)
-            self.semantic_full_diff_fallbacks += 1
+            child_hash = (
+                _plain_leaper_local_hash(parent, child, action, self.compiled,
+                                        self.runtime_hash, self._plain_leaper_hash_patterns)
+                if self._plain_leaper_hash_patterns is not None else None
+            )
+            if child_hash is None:
+                child_hash = _semantic_component_diff_hash(parent, child, self.compiled, self.runtime_hash)
+                self.semantic_full_diff_fallbacks += 1
+            else:
+                self.semantic_local_hash_updates += 1
         self.position = child
         self.ply_count += 1
         self._identity = child_identity

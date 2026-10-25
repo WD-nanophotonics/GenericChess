@@ -59,3 +59,11 @@ class SearchTuning:
     # shallow playability screen), not the shortest mate or a full iteration.
     # The result keeps its actual source, last complete depth and stop reason.
     stop_after_root_win: bool = False
+
+    # Opt-in exact component hashing for certified plain-Leaper semantic moves.
+    # Core transition, history, terminal and TT guards retain their full semantics.
+    use_plain_leaper_local_hash: bool = False
+
+    # Opt-in lazy Python identity-hash memo for the same admitted Leaper scope.
+    # Exact position/history equality is unchanged; external identities stay SHA.
+    use_cached_position_identity_hash: bool = False

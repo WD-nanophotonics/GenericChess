@@ -7743,3 +7743,28 @@ was likewise privately preserved and fully read before reconciling unpublished
 workflow commits. Its 00:38:51 review reinforces the same priority, without new
 execution; latest covered Patrol boundary includes both files. No source review
 was relabelled a timing/quality result and no force-push was used.
+
+
+## 2026-10-26 PRIMARY: compiled hash and quality boundary
+
+Autonomous GitHub Patrol reviews 07875ca3/e39989c6 redirected the earlier anchor
+screen to existing-compilation/full-search cost audit. PRIMARY adopted that
+source-only direction and independently measured/implemented the admitted local
+hash. No AUX work was rerun or its checkout/state modified. Existing Native
+features were audited rather than assumed equivalent to the Python evaluator.
+
+The completed 72-return cost study saves 5.32% whole-call wall time with matching
+actual search/service work. Equal-time 19 choices remain identical (17 optimal
+labels, both named errors uncorrected). 248 history cases and 125 tests qualify
+exact guards/undo. The position-cache factorial stopped 59/96 on a real UTC-zero
+ledger rejection; 37 slots remain NOT_RUN. Two residual profile calls are invalid
+because the caller's own stop checks dominated. Both failures are retained, not
+replaced. Initial disabled-drop diagnosis was corrected from actual executor
+semantics. Old named-control dimensions were corrected to 5x5 from frozen rules.
+
+Next consultation should review whole immutable-key hash memo, first-use/memory
+tradeoffs and the quality discriminator, with all TT fields retained. The AB/BA
+structural witness is not an equivalence proof or authorization to remove a
+history guard. Current Dot receipt/intake decisions are recorded in own transport
+state; a pending reply is not a work gate. Delivery and closing cost follow the
+scientific checkpoint and add no effective research time.

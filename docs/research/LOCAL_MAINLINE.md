@@ -1,128 +1,93 @@
 # Current GenericChess mainline
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
-At work opening, CHATGPT_REVIEW_WORKFLOW.md adds remote GitHub ChatGPT Patrol
-review discovery to Slack intake; assess both before selecting Main.
-PRIMARY writes sandbox only. PURE LEAPER first; mixed/legacy/promotion/drop/NNUE
-expansion deferred. Default/UI/AUX unchanged. Both schedules180min; PRIMARYactive,
-AUXexistingPAUSED, bindings intact. Normal60–90recorded effective researchminutes.
+CHATGPT_REVIEW_WORKFLOW.md adds current GitHub ChatGPT Patrol intake to Slack.
+PRIMARY publishes sandbox only. Both existing schedules remain 180 minutes;
+PRIMARY ACTIVE, AUX PAUSED. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
+optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current judgment and reason —2026-10-26
+## Current judgment — 2026-10-26
 
-[Root/frontier diagnosis](LEAPER_ROOT_COST_20261025.md) is CLOSED locally:
-32newscientificPlayerreturns,67.317effective minutes,28tests,finish/final-checkPASS.
-Window18calls show p49D6same29056events,p53only2less; no useful opportunity,
-no delta sweep. Rootcost8calls finds no knownWIN D6child before1.5s; merely
-exposing incomplete children cannot repair the two observed errors.
+[Compiled hashing](LEAPER_COMPILED_HASH_20261026.md) produced a scoped exact-runtime
+improvement: 72 fixed-work returns, 33 nonterminal matched pairs, wall cost -5.32%
+and CPU -5.27%, with action/score/PV/work/TT/Native parity. Both tuning switches
+default OFF. The independent Position-hash memo has only incomplete factorial
+cost evidence: 59/96 returns, 37 NOT_RUN after a real zero-UTC ledger rejection;
+no refill. Its isolated 10× component speedup is not a whole-query claim.
 
-Earlier autonomous Slack review1792932855 prioritized D3correct->D4wrong evaluation/leaf
-mechanism over cycling flags. Assignment3calls capture2568calls/17828events,
-no drops and actualwork/Nativeparity. p49WIN K1094bothlayers; DRAW B1087->1103.
-Observed Bscout16point rise=6mobility+10anchor, same material. Finalresearch
-usesinherited/TTbounds, originalproducerUNKNOWN. ExplicitTTscoreoff2calls still
-D3WIN1094/D4DRAW1103. OfflineD3Bsolequietchild isstatic-1103vsstandpat-1087;
-its exactfullrecord equalsD4Bscoutleaf. ONE guarded eventreplacement makesD3
-root1103/sourceDRAW, worsening priorWIN. No generalquietcoverage/singleton
-optimizer, WDLzugzwangproof or productfix. SourceWDL isattributed,notnewproof.
+38 equal-time returns keep all 19 choices: both match 17 existing optimal labels,
+with no repairs or regressions. The known p49/p53 controls are actually 5×5 and
+remain wrong. This panel is exposed and largely at ceiling, not a strength
+holdout. 248 full-history cases / 76,440 sampled branches and 125 regression tests
+pass exact hashes, TT keys, terminal, collision and undo contracts. No class-wide
+success or default/UI activation is declared. All source plans/partial/failure
+records are bound by the report manifest.
 
-The17metadata-selected roots/9rules arefullyboundbut exposedTRAIN. Their
-68budgetcall+18resourcegameplan remainsNOT_STARTED_DEFERRED,0queries/0games.
-Oneply2x2feature diagnostic (19roots incl2controls,153Corechildren/584evals)
-finds anchorzero canonical9->11/17,+2/-0 but only9alltiesoptimal. Mobilityzero
-0repair/2regression, bothzero2/3; allfour missboth6x6controls. No realPlayer
-anchorzero/featureablation wasexecuted. No default or classstrengthclaim.
+The source-only autonomous GitHub reviews at 07875ca38f44d5086a0fa394c21583e3c829bfd2
+and e39989c6a44b00916af21eda6e2d4fa38df6ef45 established compilation/full-search
+cost priority; the last opening covered sandbox45adda191f28913ecafcc4ed66608ef78e9d32e0
+with no new Patrol blobs. Re-resolve current remote refs at the next opening;
+these provenance SHAs must not hide later edits. Read/adopted is not execution.
+Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa090d26346ebda75
+(2026-10-26_015905_JST_45adda1.md), fully preserved/read. Its source-only
+45adda absence assessment predates this implementation. Adopt its strict
+admission/whole-cost/quality gates; do not treat it as independent validation of
+new results or an instruction to rerun closed slots. No AUX change.
 
-## Main: audit pure-Leaper compilation and the actual search hot path
+## Main: cheaper immutable full-key hashing with every guard retained
 
-Autonomous GitHub review at sandbox07875ca38f44d5086a0fa394c21583e3c829bfd2,
-[ChatGPT Patrol](../reviews/chatgpt_patrol/2026-10-26_002651_JST_GITHUB_WRITE_TEST.md),
-now has priority over the earlier solicited Dot feature-screen suggestion.
-The second review at e39989c6a44b00916af21eda6e2d4fa38df6ef45,
-2026-10-26_003851_JST_GITHUB_WRITE_TEST.md in the same directory, was also
-fully read. It reinforces this priority, notes existing single-push noisy-child
-reuse and profiler perturbation; no new local measurements were reported.
-It explicitly reports source-only review, not new benchmark execution. Adopt the
-broader mechanism question; do not label its candidate bottlenecks measured.
+Question: can a complete RuntimeSearchKey hash memo reduce net search cost beyond
+the admitted two-cell hash? | Begin with the completed 14-actual-key feasibility
+probe, then audit first-use/allocation/memory, real call reuse and source overlap
+before registering a whole-query test | Preserve all position, rule, exact count,
+ply and history guard fields, cross-flag TT interoperability, complete semantics
+and actual cost | Component gains alone do not justify a product kernel/default;
+include ALL current kernel costs in the forecast, and obtain USER assessment if
+a single related logical run would be expected to reach >=120 minutes.
 
-Question: Can a strictly admitted pure-Leaper compiled representation reduce
-FULL search cost beyond existing Core/Native facilities? | First audit existing
-leap_targets/empty_mobility, Native attack/check/availability, semantic hash and
-Python/Native pack/restore callers; identify one actual nonduplicate hot path and
-forecast a bounded measurement before implementation | Fixed-source evidence,
-actual service/caller costs and semantic admission; p49/p53 are regression inputs,
-not fitted optimization targets | No duplicate precompute project, WDL geometry
-pruning, kernel implementation or3-5rule/game batch without a decision-changing
-question, full-history correctness controls and complete cost forecast. Required
->=120minute USER assessment, frozen caps and role boundaries still apply.
+The new AB/BA toy histories share complete counts/clock and public Core identity
+but differ under the conservative Runtime guard. Three one-ply successors agree;
+this is not an all-future equivalence proof or permission to coarsen TT keys.
+No guard or live history was removed. Whole-key memo is the safer initial route.
+The failed two-call residual profiler was dominated by its own unthrottled stop
+file reads and is closed invalid; do not refill it or the factorial missing slots.
 
-The new review proposes reverse attack masks/local changes and a conditional
-nonroyal safety shortcut. These remain unvalidated proposals; audit Native's
-existing behavior first and prove all admission assumptions before any shortcut.
-If a scoped prototype is justified, compare complete legal actions/order contracts,
-make/unmake/history/terminal/TT identity and full search wall/CPU/setup/packing at
-matched depth/work; stop on semantic differences or absent whole-query benefit.
-NPS/depth alone is not strength; later fixed-time unseen-rule games are conditional.
+Backup1: is a next quality discriminator informative? | Assess already published
+pure-Leaper sources and independent metadata/proof tiers before any new panel or
+games; do not duplicate AUX solver/runtime/learning assignments | Preserve known
+exposure and natural/caller censors | 17/19 ceiling examples and all-draw old games
+cannot establish strength; no automatic old panel/anchor plan resumption.
 
-The anchor0 consumer screen remains UNEXECUTED:19root/10rule zero-query preflight
-passed, source audit distinguishes the joint escape/check term and separate
-config hashes, and Dot suggested38calls at1.5s only. Its candidate-generating
-p49chain already has116.004747min delivery cost plus proposed35min extension;
-no newsession resets that cost. Defer it behind this new compilation audit,
-preserve its complete plan/evidence, and do not treat Dot as USER budget approval.
+Backup2: can compiled attack-union features preserve the leaf exactly? | Audit
+existing tables/Native paths before a new representation or implementation |
+Native dynamic_features counts legal actions; current Python features use pseudo
+attack unions and escape terms | The observed 4–5% evaluation share is perturbed,
+not an unbiased ceiling; no changed evaluation/NNUE/mixed scope without evidence.
 
-Backup1: Is the quality target discriminating? | Reuse17fixedsourcehistories
-and named-action independentproofs as distinct tiers; select a specific consumer
-questionbeforemorecost | Complete actions/clocks andactualservice | No old64
-blindpanel, holdoutinflation, AUXsolver/graphcensus or automatic68+18resume.
+## Retained decisions and costs
 
-Backup2: Is an uncaptured TTproducer needed for a new decision? | Keep original
-boundaryUNKNOWN; reuse explicitTT-scorecounterfactual and actualscoutchain |
-No invented leafdependency fromsamevalue | No oldp53D6/D7tracecaprefill or
-samefailedsingleton/anchorquiet-depth prototype withoutchangedpremise.
+[Root/frontier diagnosis](LEAPER_ROOT_COST_20261025.md) remains CLOSED: 32 actual
+returns, 67.317 effective minutes and 28 tests. p49 D6 window work is unchanged;
+p53 saves only two events. The captured scout/TT chain does not establish the
+original producer or a general quiet omission fix. Explicit TT-score-off still
+selects the labelled DRAW; the one-event replacement worsens the prior WIN.
+No old D6/D7 trace, singleton or quiet-depth cap is reopened.
 
-## Retained negative evidence and boundaries
+The old anchor0 consumer screen remains UNEXECUTED behind this compilation route.
+Its related p49 evaluation chain already recorded 116.004747 minutes including
+delivery, plus a proposed 35-minute extension, so that revival needs USER budget
+assessment. The 68-call/18-game old plan stays NOT_STARTED_DEFERRED. A new UUID or
+controller label does not reset either cost. Original price profiles stay fixed.
 
-[Native DEFAULT/PVS](LEAPER_NATIVE_DEFAULT_20261025.md) CLOSED:64same-rule
-sourcehistories50k cost839.615->519.211s(-38.16%), sameactions/scores/events,
-both64/64. At1.5sboth62/64; no qualityrepair;24gamesallDRAW,17eligible/6pairs.
-[OrdinaryQfullsort](LEAPER_ORDINARY_QORDER_20261025.md) CLOSED-negative:1.5s
-both62/64,50kcost+0.95%;24games23DRAW/1candidateLOSS,20eligible/9pairs.
-[LMR](LEAPER_LMR_QUALITY_20261025.md) and[TrueDRAW](LEAPER_DRAW_CUTOFF_20261025.md)
-remainCLOSED; no unmodified retuning. Deeper or faster is not monotonicallybetter.
+[Native DEFAULT/PVS](LEAPER_NATIVE_DEFAULT_20261025.md): 64 same-rule 50k histories
+cost 839.615→519.211s, identical work/actions, 62/64 at 1.5s both, 24 games all DRAW.
+[Ordinary-Q sorting](LEAPER_ORDINARY_QORDER_20261025.md) remains closed negative:
++0.95% cost and one candidate LOSS among 24 games. LMR/TrueDRAW negative evidence
+also remains closed. Faster/deeper does not monotonically improve decisions.
 
-Horizontal3named-proof guard issemantic butnoNativeprovider:fullmax_ply774840979
-exceedsNative65535. Flagsnotactualservice; otherthreeguard/6x6actualNativeboth.
-Keep its fullclock, neveralterrulesforadmission. Foureasyguardsnotfitnesssuccess.
-Sourceconstantprice differencescannotfixrelativecomparisons atfourfrozenleaves
-with identicalinventory; no generalprice/averagingrefutation or whole-treeclaim.
-
-Newround AGENT_REQUEST mandatoryafterpush/fullSHA;Dotmustreply,othersmayreply.
-EverylogicalSlackopeningchecksnewChat/fullrelevantthreads, originalsfirst.
-CurrentrequestGC-SLACK-20261025-213845-138d9b1f/root1792931958.813939 answered
-by solicitedDot1792932149. Followup1792934376 sent13:19:36,+5due13:24:36,
-checked13:26:05,0newreply;finalopeningalso0newreply/newChat. Late repliesnext
-meaningfulinteraction. User>autonomousChat>Dot>local; no reply/workgate.
-
-Current sessionENDED,e4100959-ff6a-4346-b35b-f8e83a57022d,4039.0184409999997
-recordedseconds/90intervals,END14:22:39UTC. Memo/sessionauthoritative; final
-transport cost/remoteSHA ownreceipts. Currentroot/evalorigin12:42:21 includes
-prior5minandheldplanengineering; scientificEND100.298min, deliverypending.
-OldQ122.143min deliveryoverrun retained, not offset; newUUIDneverresetsrelatedcost.
-
-
-### Verified delivery and forecast variance
-
-Scientific604fe5aea9303a347a4d3564ec2cf573dc71a53dpassed28publisher tests,
-fullremoteSHAverified. Anonymous fixedSHAmanifest/trace downloads matched
-originalbytes;28executed-source checks passed (one preservedAST-equivalent
-display exception). FinalFOLLOWUP1792938648.305859 sent2026-10-25T14:30:48.305859+00:00,
-+5due2026-10-25T14:35:48.305859+00:00,singlecheck2026-10-25T14:38:21.485773+00:00:0newreply/Chatroots,
-complete latestChatthreadunchanged. Payloadverified; late repliesnextopening.
-
-Conservative logical cost through this actual check=116.004747min versus110min
-forecast (variance+6.004747min). This is a timestamped delivery-cost
-point, not effective research; the closing receipt publication itself follows
-and is not included in that number. All additional time since scientificEND
-was publication/transport/delayed-check administration, with0new experimental
-job or work-ledger entry. Keep this variance and the earlierQ122.143min overrun;
-do not substitute either wall clock for67.317recorded research minutes.
+Current exact session state, effective intervals, active request and full remote
+SHA live in the own memo/session/transport receipts. The kernel question forecast
+is 100 minutes including all source work, validation, failed calls and delivery;
+the scientific checkpoint is at 74.877 wall minutes and 61.944 recorded segment
+minutes (including 71.173026 earlier recorded seconds). Administrative work is
+not added to that ledger. Closing delivery cost remains separately explicit.

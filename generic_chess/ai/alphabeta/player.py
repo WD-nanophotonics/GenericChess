@@ -292,6 +292,15 @@ class AlphaBetaPlayer:
             result_check_hard_qdepth=stats.result_check_hard_qdepth,
             runtime_pushes=stats.runtime_pushes if stats.runtime_root_imports else None,
             runtime_pops=stats.runtime_pops if stats.runtime_root_imports else None,
+            runtime_semantic_local_hash_updates=(
+                stats.runtime_semantic_local_hash_updates if stats.runtime_root_imports else None
+            ),
+            runtime_position_identity_hash_cached=(
+                stats.runtime_position_identity_hash_cached if stats.runtime_root_imports else None
+            ),
+            runtime_semantic_full_diff_fallbacks=(
+                stats.runtime_semantic_full_diff_fallbacks if stats.runtime_root_imports else None
+            ),
             runtime_depth_balanced=(
                 stats.runtime_depth_balanced if stats.runtime_root_imports else None
             ),
