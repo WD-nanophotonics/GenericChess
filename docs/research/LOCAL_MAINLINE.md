@@ -27,40 +27,33 @@ No productflag/defaultactivation,newbackend,AUXruntimeedits or mixedexpansion.
 costbenefitlocalizedalreadytwoKroots,notbroadnonrootroute. Do notretune/expand.
 Root-onlyDRAW remainsconditionalonactualconsumerneed andfullscope/cost,notMain.
 
-## Main: test a concrete root-window hypothesis before more switches
+## Main: qualify nontrivial multi-rule budget-final-choice measurements
 
-[OrdinaryQ study](LEAPER_ORDINARY_QORDER_20261025.md) is CLOSED-negative:
-1.5sec both62/64/zero repair,50kboth64/64 but517.716->522.642s;24actualgames
-23DRAW/1candidate checkmateLOSS,20eligible/9completecolorpairs. No activation or
-mask/seed refill. Most quiet rejects occur on exhausted frontiers, so raw quiet
-counts are not reclaimable time. Last loss move was already forced/known-MATE.
+[Root-cost audit](LEAPER_ROOT_COST_20261025.md): existing aspiration50 CLOSED
+with18newreturns; p49D6 events29056unchanged,p53only2less. No useful opportunity,
+no delta sweep/64panel. Root paid-cost observer8returns rules out mere partial
+result publication: first knownWIN child p49 2.493s,p53 4.741s, outside1.5s.
+No root-order/oracle patch. Earlier score-highest/actionstability already failed.
+Horizontal3 certificate guard actually has no Nativeprovider because its full
+max_ply774840979 exceeds Native65535; all inputs are semantic, flags notservice.
+Other three guards and p49/p53 activate Nativeboth. Preserve complete clocks.
 
-New rootchoice timing changes the diagnosis: p49 chooses sourceWIN D3/.187s,
-thenDRAW D4/5, thenWIN D6; p53 firstWIN D6/4.921s thenDRAW D7. Sourcegraph labels
-are not new independent proofs. Highest-past-score and two-layer actionstability
-fail both traces; correct choices are below mate threshold. No oracle stop.
+Question: Does more actual search budget improve final choice across rules? |
+Freeze ALL13 of published f53819 roots with distinct legal-action source-WDL,
+across5RuleSets, then bounded actual DEFAULT/PVS/Nativeboth budget curves and
+resource-labelled games | Full history/clock/action coverage, actual service,
+UNKNOWN/censors and source-label exposure | No new solver/AUX/default/holdout
+claim; full forecast including related prep <120min or USER first.
 
-Question: Can EXISTING default50aspiration reduce actual Nativeboth/PVS cost
-without changing complete root values or worsening real deadline choice? | FIRST
-review existing window/TT/fail-research contracts and register a TINY same-depth
-feasibility with an actionable cost/1.5sec prediction; no large panel yet |
-Baseline D4+score jumps<=9predict window containment only IF values match; actual
-cost/selection remainUNKNOWN | Reject non-equivalence/no usefulcost; no delta
-sweep/newbackend/AUX/default/mixed or revival of failed singleton/anchor policy.
-This is an unrun hypothesis, not an enabled optimization. Define separate logical
-mechanism/budget with reused preparation; UUID alone never resets ongoing cost.
+Backup1: Can a cheap label-free root order reduce paid late discovery? | Only
+with a concrete independently motivated feature/cost prediction, qualify actual
+root cost/action choices | Reuse actual calls, not knownWIN oracle ordering |
+No singleton/anchor/Qsort/aspiration delta sweep or post-outcome patch.
 
-Backup1: Is the next quality cohort nontrivial across rules? | Consume published
-four-case/three-rule named-action guards and bind a small prefrozen additional
-choice-sensitive history contrast | Exact source/clock/action tiers; four guards
-already select supported actions quickly, so are not hard fitness/holdout |
-No all-root label inflation, new solver/AUX compute or after-outcome reselection.
-
-Backup2: Is root allocation actually a recoverable cost opportunity? | Only if
-window feasibility fails, preregister a minimal action-bound root-cost observation
-with explicit missing fields and prediction | New measured paid work/first/final
-choice timeline, not aggregatequiet*NPS arithmetic | No oldQchild cap refill,
-unbounded traces or another blind64history sweep; >=120min USER first.
+Backup2: Is an action-quality guard truly discriminating? | Bind fixed
+published named-action proofs and complete source-action tiers separately |
+Nontrivial choices across rules, never all-action label inflation | No solver,
+AUX compute or relabelled holdout; four easy guards are not fitness success.
 
 ## Communication and closure
 

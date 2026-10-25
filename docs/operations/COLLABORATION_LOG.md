@@ -7649,3 +7649,17 @@ replies/Chatroots. Receipt/raworiginals retained;late notexpired. PUBLICanonymou
 unchanged. Conservativefull-delivery+prior10min122.143 atcheck exceeds117.19
 forecast;publish honestvariance,notbudgetsuccess. Allscientificjobs endedbefore
 post-ENDtransport;no furtherresearch/capextension/extraeffectivecredit.
+
+
+## PRIMARY e410 milestone2026-10-25 —window/rootcost
+
+Newround AGENT_REQUEST1792931958 verified2e1cbbd7; one+5check read solicited
+Dot1792932149, source-only, no autonomousChat addition. Dot small window design
+matched18actualcalls; no net work reduction, no sweep. New8call root-cost audit
+refutes merely exposing incomplete-root children within1.5s.250+563CorePVsteps
+read independently. Horizontal guard Native max-ply admission correction retained,
+including first mistaken legacy explanation and failed reader; no output fitted.
+13nontrivial exposed f538roots/5rules bound, not yet current-controller executed.
+No AUX writes/solver, deployed heuristic or cross-rule strength claim. Raw Slack
+kept private; fixed project-only scientific capsules published. PreviousQ
+122.143min overrun retained; new forecasts include related preparation.

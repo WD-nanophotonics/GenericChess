@@ -269,3 +269,15 @@ UUID. Subsequent synchronization of this cost correction is administrative too.
 The77member final manifest comprises the73-member scientific/closure packet plus
 four delivery/access/accounting notes; all byte hashes pass. No extra Slack ping
 is sent for this bookkeeping correction, avoiding a recursive send/check loop.
+
+
+### Native admission scope correction —2026-10-25 e410
+
+The four named-action guards requested Native availability/check, but the 3x3
+horizontal guard actually had no provider: its max_ply774840979 exceeds the
+Native semantic limit65535. Original records already contain empty service
+deltas there. All four compile as semantic rules; this is not a legacy backend.
+The other three guards activate Nativeboth. Preserve the exact long clock and
+certificate; do not silently shrink it for admission. The same correction
+applies to the four-guard terminology above, not to the 6x6 Nativeboth results.
+See [new measured scope and root-cost audit](LEAPER_ROOT_COST_20261025.md).
