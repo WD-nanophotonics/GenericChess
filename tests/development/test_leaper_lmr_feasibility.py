@@ -51,3 +51,20 @@ def test_live_cancellation_does_not_mutate_complete_history_or_leave_patch():
     assert d.termination_reason == 'cancelled'
     assert L.record_value(s.to_record()) == before
     assert S.negamax is original
+
+
+def test_abort_inside_an_actual_reduced_branch_unwinds_runtime_and_patch():
+    from scripts.pure_leaper_search_study import rule
+    c=L.compile_rule(rule(4,1,8));s=L.GameSession(c)
+    before=L.record_value(s.to_record());original=S.negamax
+    with LateQuietReduction() as policy:
+        class CancelAfterReduction:
+            def is_cancelled(self):
+                return policy.counts['reduced_calls']>0
+        d=AlphaBetaPlayer(c,use_disk_cache=False,tuning=SearchTuning(use_pvs=True)).choose_action(
+            s,SearchLimits(max_depth=8,max_nodes=50000),cancel_token=CancelAfterReduction())
+    assert policy.counts['reduced_calls']>0, 'must exercise a reduced recursive branch'
+    assert d.termination_reason=='cancelled'
+    assert d.runtime_pushes==d.runtime_pops
+    assert L.record_value(s.to_record())==before
+    assert S.negamax is original and not hasattr(S,'_research_lmr')

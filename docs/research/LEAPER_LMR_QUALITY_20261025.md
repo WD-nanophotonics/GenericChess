@@ -1,98 +1,153 @@
-# Conservative late quiet reduction: quality feasibility
+# Conservative late quiet reduction: closed quality study
 
-Status: RUNNING. This report is a research checkpoint, not segment acceptance.
-PRIMARY_SANDBOX only; no default, UI, mixed-rule or AUX activation.
+All frozen producers are CLOSED:1,177 new Player returns and7,543 literal PV
+steps qualified. The fixed LMR prototype shows **no observed WDL benefit** and
+some additional cost. Do not integrate it or expand/tune its parameters from
+these results. PURE LEAPER remains the scope; default/UI/AUX are unchanged.
 
-The old exposed64-history guard is saturated for current cost options. A bounded
-file-schema inventory was not evidence that other quality references do not
-exist. This study changes the algorithmic question: can one fixed selective
-search reduce unproductive late work without losing useful actions, and does
-that help actual bounded play? Nominal depth and NPS are not the answer.
+## Actual results
 
-## Supplied quality references actually checked
+Both arms use the same default dynamic evaluator, PVS and Q4/hard8. The baseline
+is PVS-enabled, not the product's default PVS-off tuning. Quality uses actual
+returned actions and source-attributed full-history WDL, never score/depth.
 
-Pinned AUX d485c487ba6c3503a7d5af9d8bba465746dfb9a1 contains a selected horizontal
-3x3 initial root137 with a22-node all-defenseWIN strategy. PRIMARY replays every
-literal legal defender branch and terminal on current Core, retaining the full
-rule/repetition/clock. Other actionDRAW labels remain attributed to the source
-complete graph. No AUX graph, solver, learner or checkout was executed.
+| Cohort/budget | Baseline/candidate correct | Repairs/regressions | Query seconds, baseline → candidate | Target-node time censors |
+|---|---:|---:|---:|---:|
+|19 histories,50k/10s|19/19 →19/19|0/0|180.765 →186.199 (+3.01%)|11/13|
+|same19,200k/30s|19/19 →19/19|0/0|570.005 →570.218|19/19|
+|same19,existing1.5s|19/19 →19/19|0/0|28.504 →28.659|not a node target|
+|p47/p49/p53 controls,1.5s|1/3 →1/3|0/0|4.500 →4.526|not a node target|
 
-Fresh default-dynamic/PVS calls at D1/2/4/6/8 select source-WDL
-WIN/DRAW/WIN/WIN/WIN in BOTH arms. D2 cannot activate the late reduction. The old
-AUX material-price D2/D4 tie behavior is a different controller; do not inherit
-its failure or call this an LMR effect. This exposed small example is not a
-class-wide quality benchmark or an independent holdout.
+The50k events are885,684 →852,492;200k events2,671,564 →2,516,407.
+Fewer events do not establish lower total cost: per-event work and reduction/
+re-search/patching overhead change. All200k returns hit30s; desired node
+attainment stays UNKNOWN although actual chosen WDL is known. Fixed-time stops
+are the intended consumer boundary, not missing game outcomes. This is not
+evidence of policy equivalence.
 
-Dot's solicited reply pointed to canonical data pinned at
-c5e6d667a8f00f8e0c421e41cabae96752e54a13. PRIMARY checked the original capsule
-SHA256 8af501fffbf8428e4393efe167c4b772d0be45ade4fffaf9b214fd62eeb10ddb
-and bound the adb75... actual17ply history, H128/repeat4, actor1.
-The actual bad K action permits an opponent0WIN: the supplied2664-node strategy
-replays all defenses. The safe B capture enters the supplied4264-position region:
-all18720 Core transitions stay inside and have no decisive terminal. The scope
-checks plain Leaps, capture removal, no promotion/drop or decisive history rules;
-repetition/clock can add draws. Fresh graph vertices used for this closure check
-are explicitly not reconstructed played histories. The actual root and safe
-child retain their complete records. A wrong proof/action binding is rejected.
-The finite reader closes in18.418s; no full WDL census is independently solved.
+The19-witness bundle has9 complete RuleSets,13 WDL-fork histories across5 rules,
+9 rootWIN/10DRAW and one structural-draw history. Nine rules are not nine
+independent sensitive families. The corpus is previously selected/exposed by
+AUX, not a holdout or a newly solved census.
 
-## Frozen prototype and comparison
+The first batch completes24colorpaired games on6existing rules/12full-history
+roots, configured2s/search and original maxply96. All24 end in actual ruleDRAW;
+20 meet the benchmark's timing eligibility. This shows no observed strength
+benefit, not equivalence. Some trajectories repeat early, others reach the clock.
+Game-query totals1041.438/1043.470s are not identical-query paired cost trials.
 
-The research-only source transform preserves all existing TT identities/history
-guards. Both arms use PVS, default dynamic evaluation, Q4/hard8 and isolated
-policy-specific Player/TT state. The candidate tries one-ply reduction only at
-nonroot nonPV nodes, depth>=3 and moveindex>=3, on noncapture/nonpromotion board
-moves outside check. Checking and terminal children stay unreduced. An alpha-
-raising null-window probe is re-searched at original depth/window. No thresholds
-are fitted to labels, and no oracle controls traversal.
+The service clock includes AST/Player work, recording and PV replay. Two early
+flags are2.108/2.125s: one reports search2.089872s; another reports search2.000105s
+but query2.117336s. Residual locations differ; exact OS/atomic-work cause is
+UNKNOWN. All four timing-ineligible games and their actual DRAW outcomes stay.
+Shared load/recording overhead limit interpretation; no such slot is rerun.
 
-This IS selective search. Its nominal completed depth, TT EXACT label and
-mate-band scores do not certify the original full-width tree or forced WIN.
-The ordinary result-source fields are retained as raw provenance, not promoted
-to proof. The existing any-win option remains false; no default contract changes.
-Quiet threats and zugzwang can still be missed. The recorded accepted-fail-low
-counter includes probes whose checking/terminal child refused reduction; actual
-reduced_calls is a separate count. No claim uses that counter as exact miss risk.
+## Prototype, registration and controller boundaries
 
-Disabled-transform actual Core action/value/PV/work/TT parity, exception restore
-and live-cancellation/history tests pass3/3. The pilot uses two distinct roots,
-fixedD6/100k/5s;164 actual reduced calls qualify activation. This is feasibility,
-not evidence of correctness equivalence or game quality.
+The research-only reversible transform reduces one ply at nonroot nonPV nodes,
+depth>=3/moveindex>=3, for noncapture/nonpromotion board moves outside check.
+Checking/terminal children refuse reduction. An alpha-raising null probe requests
+original-depth/window re-search. No labels choose actions, prices, parameters
+or stopping depths. TT history/clock identities remain; arm-specific Player/TT
+state stays isolated.
 
-The immutable first batch contains24colorpaired games on6existing rules and12
-full-history roots, configured2s per search, actual maxply96 and3900s aggregate
-cap. Both colors and all negative/ineligible/missing outcomes stay. True rule
-terminals differ from external stops/UNKNOWN. Actual service cost includes source
-patching, recording and validation overhead beyond the search's configured limit;
-game timing-eligibility uses the existing benchmark tolerance. Two early candidate
-turns exceed it at2.108/2.125s, so their games are retained and flagged. Concurrent
-Core reference reading and machine load limit timing interpretation; no rerun.
+This is selective search: nominal depth, TT EXACT and mate bands do NOT certify
+the original full-width tree/forced WIN. Raw result-source fields are provenance,
+not proof. The any-win option remains false. Re-search counters count requests,
+not guaranteed physical expansion past a TT hit. Quiet threats/zugzwang can fail.
+Accepted-fail-low counters include unreduced checking/terminal-child probes;
+actual reduced_calls is distinct.
 
-The second frozen diagnostic is NOT_LAUNCHED until the first batch closes. It
-uses all19 preexisting published witness histories/9rules, with full legal-action
-and state-hash binding before queries. Both arms use fresh isolated Players at
-50k/10s and200k/30s ceilings. These are source-attributed graph labels, not a new
-independent all-action proof set. No source prices are copied into the controller.
-Repairs and regressions are separated per budget; saturation does not prove
-equivalence, and a time-censored target budget remains UNKNOWN.
+Disabled-transform real Core action/value/PV/work/TT parity, exception restore,
+immediate cancellation and cancellation INSIDE an actual reduced branch pass.
+The pilot requestsD6/100k/5s:4x4 completesD6;6x6 retainsD5 under the safety guard.
+It triggers164 actual reductions, qualifying activation rather than quality.
 
-## Cost and collaboration boundaries
+The76-slot quality batch was frozen before queries. After its first11 correct
+returns a NEW38-slot existing1.5s-limit follow-up was frozen before its own
+calls. It reuses the desktop allocator's LIMIT SHAPE; both arms still use PVS.
+It is not original76-slot preregistration, independent validation, an arbitrary
+threshold scan or refill of censored targets.
 
-The same logical LMR chain begins2026-10-25T05:36:42UTC. Preparation, engineering,
-recording and every phase count in expected experiment cost; no session/phase
-quota reset. The second phase can start only before70minutes cumulative elapsed,
-has1600s aggregate cap and reserves20minutes review (<120total). Longer expected
-work requires USER confirmation; Dot's contrary suggestion is explicitly rejected.
-Neither a reply nor a new exact solver is a publication/research gate.
+Saturation is budget-specific: the older64-history default was perfect at50k/
+200k, but62/64 at1.5s. Its actual misses are p49/p53; p47 is an adjacent sensitive
+correct control. The NEW6-slot control preserves H64/5x5 full histories and
+converts global seat0 labels to mover perspective. Both current PVS arms still
+miss p49/p53. Historical PVS-off default results cannot be credited as LMR gains.
+No old FirstQ/singleton/anchor experiment/cap was resumed or rewritten.
+
+## Supplied reference evidence actually checked
+
+Pinned AUX d485c487ba6c3503a7d5af9d8bba465746dfb9a1 supplies horizontal3x3
+root137. PRIMARY replays22 all-defenseWIN nodes, including every literal defender
+branch. Other actionDRAW labels remain source-graph attribution. Fresh default-
+dynamic/PVS D1/2/4/6/8 calls select WIN/DRAW/WIN/WIN/WIN in BOTH arms. D2 cannot
+activate reduction. Older AUX material-price/tie behavior is a different caller.
+
+Dot identified canonical data at c5e6d667a8f00f8e0c421e41cabae96752e54a13;
+original capsule SHA256:
+8af501fffbf8428e4393efe167c4b772d0be45ade4fffaf9b214fd62eeb10ddb.
+PRIMARY binds adb75...'s actual17ply H128/repeat4 history, actor1. The bad K
+move permits opponent0WIN, checked by2664 literal all-defense nodes. The safe B
+capture enters the supplied4264-position/18720-Core-edge region with no decisive
+terminal. Plain-Leap/remove/no-promotion/drop/history-policy scope is checked;
+repetition/clock only add draws. Fresh graph vertices are NOT reconstructed
+played histories; actual root/safe-child records stay intact. Wrong action/proof
+binding is rejected; this finite reader closes in18.418s.
+
+Two additional strategies exactly match19-bundle roots and verify78 nodes. They
+prove specified winning actions, not unlisted alternatives. No AUX solver, full
+graph census, learner or checkout was executed. Other all-action labels retain
+original complete-graph provenance, not independent census reproduction.
+
+## Next useful step already begun: a concrete draw-cost opportunity
+
+The new paid games include132 root queries with only two ordinary King anchors:
+264.755s, about12.70% of2084.908s game-query time. Name-only counting is an
+opportunity measure, not proof or measured savings. A changed policy can change
+future trajectories/frequency.
+
+A separate zero-Player check rebuilds all six FULL rules from a minimal
+constructor: ordinary8-offset anchors, capture removal, no promotion/drop/extra
+policy, H96/repeat4DRAW/stalemateDRAW. Across every nonadjacent King placement/
+both turns,6608 fresh Positions and33344 literal Core transitions stay closed
+without decisive terminals; ply advances/side alternates. Twelve incompatible
+loss/geometry admissions are rejected. Its90s/60k-edge plan closes in12.527s.
+One accidentally repeated invocation is refused at exclusive mkdir BEFORE work;
+the original single result is authoritative.
+
+The finite invariant and checked draw-only history/clock policies support a
+SCOPED FUTURE cutoff. It is not implemented/timed as a cutoff, not general
+all-Leaper proof, and never changes Core terminals. Next qualify a minimal
+research-only nonroot cutoff under exact admission, budget/cancel/history and
+actual cost. Replacing a finite heuristic with trueDRAW can still change choices
+at non-draw parents: quality controls remain necessary. No type-name shortcut,
+clock change, AUX-competing solver, worker or default activation follows.
+
+## Cost, communication and delivery
+
+The LMR chain begins2026-10-25T05:36:42UTC, including engineering/recording/all
+phases. The76-slot batch requires parentCLOSED/start<70 cumulative minutes;
+1600s cap plus20minute review reserve stays below120. New deadline phases keep
+90s/30s caps and the original origin, not new quotas. The tiny invariant is a
+distinct next-step feasibility question using paid observations; its measured
+cost and prior preparation must carry into continuation. Expected>=120minute
+runs still need USER confirmation; contrary Dot advice was explicitly rejected.
 
 Fresh request GC-SLACK-20261025-143549-d40632c7 is verified at root
-1792906576.977249. The single delayed check reads reply1792906749.584589 and the
-unchanged autonomous Chat comment1792890455.776499. Adopted: alternate pinned
-quality sources, local proof plus actual games, selective TT/mate interpretation.
-The already frozen game cohort is retained; it is a quality test, not a six-rule
-cost sweep. No remote reviewer independently executed these new results.
+1792906576.977249. One five-minute check reads Dot1792906749.584589. Adopted:
+alternate pinned sources, proof plus actual games, selective TT/mate distinction.
+Follow-up1792907766.581369 is verified and checked once about five minutes later,
+with no reply; five minutes is not expiry. Latest/relevant older Chat threads
+are rechecked before delivery. No remote reviewer is claimed to have run this.
 
-Immutable inputs, plans, supplied proof/closure and exact executed-source capsules
-are in [the data manifest](data/leaper_lmr_20261025/manifest.json). Capsules are data
-only. Final results, costs, missing slots and acceptance will be added after the
-frozen producers close; this checkpoint does not claim them.
+Both schedules now use60minutes: PRIMARY ACTIVE; existing AUX PAUSED and chat
+bindings preserved. Stale AUX automation-only Dot bans are replaced by fresh
+AGENT_REQUEST/comment-check/five-minute rules. No AUX checkout/state/research
+files are edited. Public-manifest LF formatting was repaired without altering
+frozen capsules; original diagnostic retained.
+
+[Immutable originals, executed sources and results](data/leaper_lmr_20261025/manifest.json)
+are lossless gzip copies with hashes. Capsules are DATA ONLY. All producers close;
+no missing slot is filled or failure hidden. Negative LMR and positive finite-
+invariant feasibility are not class-wide strength/success or mixed/NNUE expansion.

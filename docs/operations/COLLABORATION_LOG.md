@@ -7520,3 +7520,39 @@ Next source-binding question is begun; no new solver or automaticexactproofgate.
 Milestone1792903861.438259 contentverified after119e9a46 fullSHA; one delayedcheck
 started04:57:31UTC, about90seconds after04:56:01target. Actualtiming explicitlyretained,
 no claimon-time/no expiry/no repeatedpoll; no newreply/Chatcomment in coveredthreads.
+
+
+## PRIMARY_SANDBOX —2026-10-25: LMR closed, admitted draw opportunity begun
+
+PRIMARY implemented one research-only selective late quiet reduction, qualified
+actual cancellation inside a reduced branch, and closed1177Playerreturns/7543PV
+steps.24games allruleDRAW(20timingeligible); source19histories/9rules remain19/19
+both at50k/200k/1.5s; knownp49/p53missesremain, adjacentp47safe. NoWDLbenefit and
+50kcost+3.01% reject expansion/integration of this configuration. Saturation was
+corrected to be budget-specific; old1.5source62/64 is not a saturated50kguard.
+HistoricalPVSoff never serves as contemporaneousPVS/LMR repair credit.
+
+Dot supplied useful pinnedcanonicalAUX evidence outside the old schema audit.
+PRIMARY replayed supplied2664nodebadWINproof/4264position18720edge safeclosure,
+root13722nodes and two positive78node strategies. NoAUXsolver/graphcensus/source
+capsule/learner was executed; noAUXcheckout/state changed. All-actionlabels beyond
+those checks retain sourcegraph provenance. These are exposedselected controls,
+not independentheldout or9independentqualityfamilies. Dot did not rerun the study.
+Dot's attempted>=120approval substitution was rejected against currentUSERrule.
+AGENT_REQUEST/payload/five-minutecheck and meaningfulfollow-up/readback/check are
+recorded; no reply is a research gate or expired atfive minutes.
+
+Nextstep is grounded in newactualconsumer evidence:132twoKrootcalls cost264.755s,
+12.70% of recordedgamequerytime. A separate finite invariant closes6608positions/
+33344Coreedges on6fixed minimalrules, rejecting12incompatibleadmissions. This is
+proof/admission feasibility, not an implementedcutoff, realisedsaving, allclass
+success or automaticfinite-parentpolicy improvement. A duplicate invocation was
+refused by exclusive mkdir before work; original12.527s run retained. No refills.
+
+Both existing automation schedules now60minutes; PRIMARYACTIVE/AUXPAUSED and
+chatbindings preserved. Stale AUXautomation-only Dotbans were corrected to latest
+request/comment/five-minuteprotocol, without editing itsresearchfiles. Public
+manifest CRLF formatting refusal was diagnosed and fixed only in presentation;
+exact frozenoriginals/capsules remain unchanged. Four prototypecontrols pass;
+publication additionally runs existingqsearchcorrectness controls. NoAgent/Goal/
+worker/newtimer/UI/default/mixed/visibility changes or other-project operations.
