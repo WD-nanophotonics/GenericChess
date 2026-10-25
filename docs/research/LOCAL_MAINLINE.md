@@ -91,3 +91,11 @@ is 100 minutes including all source work, validation, failed calls and delivery;
 the scientific checkpoint is at 74.877 wall minutes and 61.944 recorded segment
 minutes (including 71.173026 earlier recorded seconds). Administrative work is
 not added to that ledger. Closing delivery cost remains separately explicit.
+
+Closing receipt: data/leaper_compiled_hash_20261026/closing-receipt.json records
+accepted session finish/final-check, fixed-SHA public evidence verification and
+the one delayed Dot check (0 replies/new Chat in covered threads). Cost through
+that check is 96.84643 minutes versus the 100-minute forecast; closing receipt
+synchronization follows, with zero new experimental work. Late Dot replies are
+read at the next meaningful interaction. The next run must include this related
+cost and final synchronization; no new session resets it.
