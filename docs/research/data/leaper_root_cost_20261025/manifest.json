@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T12:59:06.460341+00:00",
+  "at": "2026-10-25T13:09:12.265487+00:00",
   "files": [
     {
       "file": "aspiration-plan.json.gz",
@@ -189,7 +189,49 @@
       "raw_bytes": 2694,
       "sha256": "e1b44e753a4b700f9fa1be4bed8902022fbedb344fc1f22062a97dfeda2badd8",
       "raw_sha256": "00b1390a8baebf6c6fbdf29bb14c47df341ea96ac481b8dffdb417216e2b1de4"
+    },
+    {
+      "file": "multirule-fresh-inputs.json.gz",
+      "bytes": 14417,
+      "raw_bytes": 438112,
+      "sha256": "859e989420cf96b7de1ff7b3ed24d353731acedc892620a6984b4402c0b0429e",
+      "raw_sha256": "1be0e9f1e3e37050b2887d9b7ec2441c2bd8c87331393e4fd46a8988be4f3024"
+    },
+    {
+      "file": "multirule-fresh-binding.json.gz",
+      "bytes": 789,
+      "raw_bytes": 3099,
+      "sha256": "e998a0460367bbf2aa6094590343ef5c4d21916df8202ea808848d95c2923ee5",
+      "raw_sha256": "fdfa032b984b652c3902b0866bfb52fffa7798c9ad52389aba1eaf9da7dff199"
+    },
+    {
+      "file": "multirule-selection-upgrade.json.gz",
+      "bytes": 349,
+      "raw_bytes": 529,
+      "sha256": "692eee9ab583fbcdfe423f305bc92c9b96a4302963cb842fb296848dce75e9b4",
+      "raw_sha256": "c9ae5f2aab18438319674899c77f8fb14652e9b6c1cd9650cbdf1629acecd8d2"
+    },
+    {
+      "file": "multirule-plan.json.gz",
+      "bytes": 2149,
+      "raw_bytes": 9432,
+      "sha256": "9fd5429ffd03bfdd0b34640f07b7897f28ce482de8c2fdf2d2663e1655ad2671",
+      "raw_sha256": "8fcffd6300329968123fb6fcc5018bb8cc3b1da13561576e7336635edf23f205"
+    },
+    {
+      "file": "multirule-no-query-preflight.json.gz",
+      "bytes": 512,
+      "raw_bytes": 865,
+      "sha256": "0bdc7b8492f0c06fdcbd649c0adb7e2a9094efefa96ee53031adc171066a4898",
+      "raw_sha256": "b74be425d84ed8c3c9b0a64e4f194c2a4194c9278074421fa5a832c72f76c28a"
+    },
+    {
+      "file": "leaper_multirule_budget.py.gz",
+      "bytes": 3207,
+      "raw_bytes": 8803,
+      "sha256": "27fe3979d5a54893da8a5b27029ecd4567c118af0c519b3539f077e5870b84bc",
+      "raw_sha256": "9bcb33063a6b460ee789b1e5879affbc1a2ff00a6b03fd22a653051963d01257"
     }
   ],
-  "scope": "26new returns. Lossless data/source copies, not modules. No raw Slack account wrappers; no independent solve. Multirule inputs bound only, not executed."
+  "scope": "26new returns, two closed probes. Multi-rule13old-source bound only, then upgraded before any newPlayer to17old19-excluded roots/9rules;68curves/18games frozen but NOT_YET_RUN. No capsules executed."
 }

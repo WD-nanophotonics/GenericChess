@@ -39,8 +39,9 @@ max_ply774840979 exceeds Native65535; all inputs are semantic, flags notservice.
 Other three guards and p49/p53 activate Nativeboth. Preserve complete clocks.
 
 Question: Does more actual search budget improve final choice across rules? |
-Freeze ALL13 of published f53819 roots with distinct legal-action source-WDL,
-across5RuleSets, then bounded actual DEFAULT/PVS/Nativeboth budget curves and
+Freeze17old19-excluded exact histories/9RuleSets, first2lexical metadata
+nontrivial source-WDL roots (WINrank>=12/DRAWwithLOSS), then bounded actual
+DEFAULT/PVS/Nativeboth budget curves and
 resource-labelled games | Full history/clock/action coverage, actual service,
 UNKNOWN/censors and source-label exposure | No new solver/AUX/default/holdout
 claim; full forecast including related prep <120min or USER first.
@@ -80,3 +81,8 @@ for next meaningful opening. Conservative whole-delivery+prior10min122.143 at
 check exceeded117.19forecast; sciencehadENDED earlier. Preserve costvariance
 for relatedfuturebudget, no UUIDreset; post-END transport is not researchcredit.
 No newexperimentaljob/capextension or defaultchange. Finalmanifest77members.
+
+Newconsumer source-data preflight0queries/all9Nativeproviders active. Frozen
+68budget calls1.5/6/20/60s then18same-engine3s-vs1.5sresourcegames; first17
+allcorrect=>EASY_COHORTstop. Wholechain110min inclrelatedrootcost/prior5;
+logicalorigin12:42:21UTC, batch<=3650s,scienceend<=origin+105min. No query yet.

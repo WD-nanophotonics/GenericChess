@@ -100,3 +100,38 @@ complete expected logical cost before launching;>=120min needs the user.
 
 Evidence is lossless in [manifest](data/leaper_root_cost_20261025/manifest.json).
 Archive source capsules are data only, never imported/executed as modules.
+
+
+### Prospective consumer upgraded before any Player query
+
+The old19-witness LMR report already had19/19correct at30s; filtering it to13
+choice-sensitive roots was only a data-structure feasibility step, not a hard
+new quality target. Before executing it, a flat published-data join selected
+the first2lexical root IDs per fixed RuleSet, excluding old19, requiring at
+least2different complete source-action WDL values and WINrank>=12 (or a DRAW
+with a losing alternative). This yields17exact histories/9RuleSets. One source
+rule has only one eligible root. No current-player result informed selection.
+All source rules, full clocks, actions and literal trajectory prefixes match
+their published state hashes. Every RuleSet admits Native service in a zero-
+query constructor preflight. Source capsule bytes matchSHA256
+8af501fffbf8428e4393efe167c4b772d0be45ade4fffaf9b214fd62eeb10ddb at fixed
+c5e6d667a8f00f8e0c421e41cabae96752e54a13; data only, no embedded code executed.
+This is still an exposed endogenous family, never a new independent holdout.
+
+Frozen before execution:68fresh-player actual-budget calls across1.5/6/20/60s,
+1Mnode safety cap, unchanged DEFAULT/PVS/Q4hard8/Nativeboth. If all first17
+1.5schoices are source-optimal, stop as EASY_COHORT and skip higher costs.
+Otherwise preserve all budgets, including regressions and censors.18games
+compare this SAME engine at3s versus1.5s, both color assignments on the first
+frozen history perRuleSet. This is an explicitly unequal-resource response
+curve, not a new algorithm/Elo gain. Caller extra64ply cap differs from Core
+clocks; per-arm actual driver timing determines eligibility, not the runner's
+shared3sflag. No censored/unfinished game becomes DRAW.
+
+Whole consumer forecast110min includes prior5min, the related root-cost source/
+diagnostic work, new data/engineering, at most1550s curves and2100s games,
+analysis/publication and reserve. Single batch<=3650s; no scientific job after
+logical-origin+105min, leaving15minpublication reserve. At startup, elapsed
+carried cost+batch cap+publication reserve must remain below120min or USER
+review first. Slots stay missing/UNKNOWN on stop, never refilled or capped up.
+At this plan publication all68calls/18games remain NOT_RUN.
