@@ -27,44 +27,40 @@ No productflag/defaultactivation,newbackend,AUXruntimeedits or mixedexpansion.
 costbenefitlocalizedalreadytwoKroots,notbroadnonrootroute. Do notretune/expand.
 Root-onlyDRAW remainsconditionalonactualconsumerneed andfullscope/cost,notMain.
 
-## Main: ordinary Q ordering under the actual Native/PVS controller
+## Main: test a concrete root-window hypothesis before more switches
 
-ACTIVE bounded comparison, not a product/default change. The completed tiny
-observer found real costs: 6x6/D5 classified20,694 children,18,698 quiet-rejected;
-quiet push+pop0.949s in a2.392s observed call (overhead perturbs timing; not savings).
-A supplementary behavior-identical observer pair found558 ordinary child-cutoff
-nodes,234 after at least4 quiet rejections,15 after at least16. Most quiet costs
-(16,289 of18,698) were instead on exhausted frontiers. Missing/unvisited candidates
-remain UNKNOWN; first inclusion reason can hide a simultaneous terminal effect.
-No geometric quiet skip or duplicate-push patch is justified.
+[OrdinaryQ study](LEAPER_ORDINARY_QORDER_20261025.md) is CLOSED-negative:
+1.5sec both62/64/zero repair,50kboth64/64 but517.716->522.642s;24actualgames
+23DRAW/1candidate checkmateLOSS,20eligible/9completecolorpairs. No activation or
+mask/seed refill. Most quiet rejects occur on exhausted frontiers, so raw quiet
+counts are not reclaimable time. Last loss move was already forced/known-MATE.
 
-Eight D4 pairs with both existing Native services/PVStrue preserve complete root
-value/action/legal PV/full history; cancellation balances. Aggregate time ratio
-0.9524 is small/local, and p49/p53 have unchanged work with slightly higher cost.
-Thus the next bounded test is EXISTING ordinaryQ ordering ON versus OFF, keeping
-check-evasion order lexical, Q4/hard8/evaluation/history unchanged. This differs
-from old PVSoff/availability-off/all-Q sorting evidence and does not discover
-Q sorting for the first time. Frozen256quality calls +24actual2sec games are
-running; no refills. Completed1.5sec64pairs: both62/64,zero repairs/regressions,
-zero action changes,one score change; p49/p53 still incorrectDRAW atD5. No
-strength claim or expansion follows from deeper iterations/work counts.
+New rootchoice timing changes the diagnosis: p49 chooses sourceWIN D3/.187s,
+thenDRAW D4/5, thenWIN D6; p53 firstWIN D6/4.921s thenDRAW D7. Sourcegraph labels
+are not new independent proofs. Highest-past-score and two-layer actionstability
+fail both traces; correct choices are below mate threshold. No oracle stop.
 
-Question: Does ordinaryQ ordering have incremental total-cost/real-decision benefit
-under Nativeboth/PVStrue? | Complete frozen50k and actualgames; data-only full
-history/PV/WDL/tuning/service/timing acceptance | Preserve negative/equal results,
-all censors and ineligible games | No default/AUX/newbackend/mixed/oldslotrefill;
-whole Q diagnostic-chain110min forecast includes previous profile/source600sec;
->=120min requires user, never reset by this UUID. Evidence scripts/probe originals
-remain private until a reviewed lossless project-only publication packet closes.
+Question: Can EXISTING default50aspiration reduce actual Nativeboth/PVS cost
+without changing complete root values or worsening real deadline choice? | FIRST
+review existing window/TT/fail-research contracts and register a TINY same-depth
+feasibility with an actionable cost/1.5sec prediction; no large panel yet |
+Baseline D4+score jumps<=9predict window containment only IF values match; actual
+cost/selection remainUNKNOWN | Reject non-equivalence/no usefulcost; no delta
+sweep/newbackend/AUX/default/mixed or revival of failed singleton/anchor policy.
+This is an unrun hypothesis, not an enabled optimization. Define separate logical
+mechanism/budget with reused preparation; UUID alone never resets ongoing cost.
 
-Backup1: Is availability-only enough for a concrete consumer? | ExistingD3threearm
-costs0.742availability/0.734both vs1.100control; do notclaimreliablecheckincrement;
-onlyregisterfurtherablation ifdecisionneedsit | Actualsameproviderdeltas plus
-outercost/quality/lifecycle | Nativechaincostcarries;no expansivepanel/defaultflip.
+Backup1: Is the next quality cohort nontrivial across rules? | Consume published
+four-case/three-rule named-action guards and bind a small prefrozen additional
+choice-sensitive history contrast | Exact source/clock/action tiers; four guards
+already select supported actions quickly, so are not hard fitness/holdout |
+No all-root label inflation, new solver/AUX compute or after-outcome reselection.
 
-Backup2: Is a tiny root-onlyknownDRAWconsumer needed? | Onlyafteractualconsumerneed
-andnewcostforecast | KeepfullCorehistory/cancel/quality andexistingnegative
-nonrootevidence | No automaticintegration;drawchaincarries;>=120USER.
+Backup2: Is root allocation actually a recoverable cost opportunity? | Only if
+window feasibility fails, preregister a minimal action-bound root-cost observation
+with explicit missing fields and prediction | New measured paid work/first/final
+choice timeline, not aggregatequiet*NPS arithmetic | No oldQchild cap refill,
+unbounded traces or another blind64history sweep; >=120min USER first.
 
 ## Communication and closure
 
@@ -72,13 +68,15 @@ Newround AGENT_REQUEST ismandatoryafterpush/fullSHA; Dotmustreply,othersmayreply
 orbequiet. EachlogicalSlackopening checksnewChatcomments/full relevantthreads,
 exactoriginalsfirst. One+5minutecheckisnotexpiry. User>autonomousChat>Dot>local.
 Currentround0c6c7787 requestGC-SLACK-20261025-193713-e6220aa6/root1792924666.163109
-was verified against0e4408b95a37da6365755a9441e3fb60f3cfdc06 at10:37:46UTC.
-Single delayed check due10:42:46 executed10:44:10UTC; Dot1792924826.304999
-is solicited source-only advice, not independently rerun evidence. Adopted actual
-quiet-before-cutoff observation, no-extra-query terminal annotation, ordinary-only
-qualification and old-controller distinction. Chat1792912079 complete1post
-unchanged. Five minutes is not expiry. Active session clock/memo own actual time;
-previousbbee ended62.894min, not credited anew. Producer/finish status must be
-read from current session and receipts; this plan cannot certify completion.
+used verified0e4408b9. Dot1792924826 is solicited/source-only; initial+5check
+10:44:10UTC read/adopted. Published51ac8c1d before milestoneFOLLOWUP
+1792927242.881689/sent11:20:42UTC; actualsingle delayedcheck11:27:49UTC had
+no new Dot reply and discovered autonomousChat1792927446.870839. Complete new
+thread retained; adopted and EXECUTED frozen-game completion, root-timing review
+and certificate-tier input binding. Chat does not claim independent execution.
+All scientific producers CLOSED;1,292new returns, no reused-call time credits.
+Session0c ended71.941effective minutes/1300intervals at12:16:19UTC with matching
+qualityJSON,finish andfinal-checkPASS. Finaltransport receipts andmemo own delivery; do not
+infer an active/completed state from an old report. New request only next newround.
 Pinnedcanonicalc5e6d667 andAUXpublishedproofs remainread-onlyhistoricalevidence;
 no AUXsolver/checkout/graphcensus executed. Oldclosedcapfailures remainUNKNOWN.

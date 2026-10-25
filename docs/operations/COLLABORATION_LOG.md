@@ -7624,3 +7624,20 @@ AUX/default/UI/mixed/newbackend/worker change. Mainline replaced obsolete
 observer TODO; no blind quiet skip or recycled old cap. Next genuine decision:
 cheap checking-order hint versus more independent nontrivial quality evidence;
 not another threshold sweep or assumption that speed alone means strength.
+
+
+PRIMARY0c final science: autonomousChat1792927446.870839 discovered in actual
+11:27:49 delayedcheck; complete private thread read before adopting. Higher
+priority than solicited Dot, independently source-read51ac8c1d, not reruncode.
+ExecutedA:all24games retained,20eligible/9pairs,23DRAW/1candidateLOSS; complete
+Core/PV/timingacceptance. Lastloss root has1legal action/already-MATE;9edge local
+terminal witness doesnotproveearliercause. ExecutedB/C:3rule/4exacthistory action
+certificate guards,10new supplied-subtree nodes;8newobserver returns and2new
+current-controller root timing returns. p49 earlyWIN lostD4/5, p53D6WIN4.921s
+lostD7. Sourcegraph WDL nevercallednewproof;UNKNOWNnotwrong/success;fakeiteration0
+rejected. Maxscore/actionstability shortcuts refuted. OrdinaryQfullsort closed
+negative;existingaspiration50 is source-only next hypothesis, no runtime/default
+flag changed. Finalpacket includesfailed binder format diagnosis, originalstage
+versions and all1,292newreturns;4copiedqualificationrows notnewcalls/work.
+
+PRIMARY0c operationalacceptance: ENDED2026-10-25T12:16:19.451041+00:00,effective71.941min/1300intervals,quality/finish/final-checkPASS. No wall/offline/admincredit. Final73member hashes reviewed; freshscientificdatadecompression/replayPASS. Finaltransport not researchtime.

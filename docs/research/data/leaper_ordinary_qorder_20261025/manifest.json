@@ -1,5 +1,12 @@
 {
-  "at": "2026-10-25T11:14:41.564971+00:00",
+  "at": "2026-10-25T12:10:45.181171+00:00",
+  "counts": {
+    "certificate_observer": 8,
+    "new_deadline_root_observer": 2,
+    "observer": 8,
+    "ordinary_fitness": 1256,
+    "ordinary_qualification": 18
+  },
   "files": [
     {
       "gzip_bytes": 798,
@@ -142,11 +149,11 @@
       "raw_sha256": "9d9c9cbb6727e24dfca93c0d60a479f07a68080bf524a259ff2a441bfcf1d494"
     },
     {
-      "gzip_bytes": 103112,
-      "gzip_sha256": "0e841be38c2c4fbc57926dacdfbf5dcdf8aa33b0836f1348b142f9d6c83ed9c7",
+      "gzip_bytes": 517293,
+      "gzip_sha256": "09532e231e34a848ef06b0e9cf168c7ea0eeac7b71abae5262cb0452f9108bf4",
       "path": "ordering/fitness-queries.jsonl.gz",
-      "raw_bytes": 2920128,
-      "raw_sha256": "73af63d388ea6037f6067b0477c04a0df2c704ca04c796f6b78b163e6eee369d"
+      "raw_bytes": 13674376,
+      "raw_sha256": "114136ce2a34ee0c20a636a33f2a594837dfc5882b028dfd36a7ff50bd11d8be"
     },
     {
       "gzip_bytes": 1491,
@@ -163,11 +170,11 @@
       "raw_sha256": "739194e758630d534a7be4208505f53b211780195c406de3060ab62b0501fc12"
     },
     {
-      "gzip_bytes": 403,
-      "gzip_sha256": "f2ad3ae833d2e5fde46ddea9027b4ee7ebbc84a8768531bfcdac6f3d392e7605",
+      "gzip_bytes": 274,
+      "gzip_sha256": "b6c104780e30957fb4d28e993c04f217a92efd82b40cfb0806f257df7155cafc",
       "path": "ordering/scope.json.gz",
-      "raw_bytes": 595,
-      "raw_sha256": "70a42cfb8670e7ea64629295f240f599580b0b32750ed1d0084214ab71961ea2"
+      "raw_bytes": 331,
+      "raw_sha256": "5ca000b0b8cedd955c92eabb4c32ad6a53993397caed9e029f53aa29586a3f13"
     },
     {
       "gzip_bytes": 798,
@@ -252,8 +259,269 @@
       "path": "sources/generic_chess/ai/alphabeta/tuning.py.gz",
       "raw_bytes": 2644,
       "raw_sha256": "7fcf2a1c6f6b423f5da5e49c518c711daaf82fb10f79744bb5a75d61f85c4c1b"
+    },
+    {
+      "gzip_bytes": 238,
+      "gzip_sha256": "bf8a86d6b85121634012e4acfe85e9eb3bee4eff11533ccd26b26ed2b0f7228d",
+      "path": "ordering/fitness-receipt.json.gz",
+      "raw_bytes": 325,
+      "raw_sha256": "066cd3cc9287d5eca45ca3057a7a2630dbb093dc964b42d1c66671d40cc5fc12"
+    },
+    {
+      "gzip_bytes": 32135,
+      "gzip_sha256": "c6a582196d9ca9038545a52a6e88beeaa52ec234f690c7d036797e2efac09003",
+      "path": "ordering/games.jsonl.gz",
+      "raw_bytes": 517543,
+      "raw_sha256": "eb5c5be0deb9d1db77580453f0b90fafba1e99a954761c86800d8d72d36eba24"
+    },
+    {
+      "gzip_bytes": 5856,
+      "gzip_sha256": "d4b3c98337f7d097de86f084150ff5a7719ef1c629ede52a896dbcd2bf9dce58",
+      "path": "ordering/assessment.json.gz",
+      "raw_bytes": 69620,
+      "raw_sha256": "f634722a9073054a1a39c26c94ebac9269ee5919f589525abc744374b60e8278"
+    },
+    {
+      "gzip_bytes": 345,
+      "gzip_sha256": "68ca573db5653aef87ec021eee071eb7e1593a09522dc70fa7667bed52aa6f3c",
+      "path": "ordering/decisive-game-observed.json.gz",
+      "raw_bytes": 746,
+      "raw_sha256": "e2c6ba94c12033fb45fecc034bb1677e8fb34b3a94ab5b4c1d5fdaf976175df4"
+    },
+    {
+      "gzip_bytes": 798,
+      "gzip_sha256": "f5887ac6b7aff89e5280a46979659211f02c74c17d4b31664a6a6481fa1199be",
+      "path": "notes/quality-target-structure.json.gz",
+      "raw_bytes": 16454,
+      "raw_sha256": "b76c4f6f1d2e5b93019df78acd4722f8ab8898c49bc98219dde6a433179e775d"
+    },
+    {
+      "gzip_bytes": 954,
+      "gzip_sha256": "f86da48cc037cf44c2aec7d6b65e45bdb7728f1b899c24b357a13b2df54efe66",
+      "path": "notes/new-chat-assessment.json.gz",
+      "raw_bytes": 1600,
+      "raw_sha256": "ba9fe77981d4755106e72d4d68f3798349d17a2ddf8582bdda3dadf7767b27cf"
+    },
+    {
+      "gzip_bytes": 1129,
+      "gzip_sha256": "8458fcf8578bf9d8d1b64b2d529e94d1712c7aa6ddfe73b2042809e3b4f5e8a1",
+      "path": "notes/loss-terminal-check-plan.json.gz",
+      "raw_bytes": 19408,
+      "raw_sha256": "1efe92b1b46147d5b833633dc4457fd9105d905aecc844c28f7ecdb625c05c6e"
+    },
+    {
+      "gzip_bytes": 634,
+      "gzip_sha256": "7e28c6cee6bf58077bca4cf43863f7cc42a4e83439ccb8b9c29aea63bb16c36c",
+      "path": "notes/loss-terminal-check.json.gz",
+      "raw_bytes": 1864,
+      "raw_sha256": "3ec2fc30138c3486eac865525fcfdb122e506dd9a2d1c5f8302e2d0d9e9c3eb4"
+    },
+    {
+      "gzip_bytes": 727,
+      "gzip_sha256": "4b8ed629d98de15497711e2dfd752d262fca3aab9af479f95725b2295123897f",
+      "path": "notes/root-retention-refutations.json.gz",
+      "raw_bytes": 1880,
+      "raw_sha256": "9956dbe257a6fc2755f387ebdd6742510cc92af3095c0126b26093b8892ab7df"
+    },
+    {
+      "gzip_bytes": 1119,
+      "gzip_sha256": "e8bfaec5c9c73083c57c306c677e04a3ba571d5c7692ba37eba891e33dfc9cac",
+      "path": "notes/next-mechanism-feasibility.json.gz",
+      "raw_bytes": 2123,
+      "raw_sha256": "611fa96f8cf12113b6de898a04ce0f17fa32e60a76e7c0b9e5c8b61182510c16"
+    },
+    {
+      "gzip_bytes": 4089,
+      "gzip_sha256": "1c347baea0952059c218e2005599789c2366d6732fc83fe14dd45d23acaaef2c",
+      "path": "certified-inputs/inputs.json.gz",
+      "raw_bytes": 73722,
+      "raw_sha256": "02fbcf56beed8f909185ea5eb988e6097ea2a4ae790e94517d99b1ee26bd5e39"
+    },
+    {
+      "gzip_bytes": 779,
+      "gzip_sha256": "90b6ab3ddb5a6c538da921ba36fc210737a6b564b5e0e8cb8df93cf807cd99dd",
+      "path": "certified-inputs/binding-assessment.json.gz",
+      "raw_bytes": 1395,
+      "raw_sha256": "8a662839d2dd888907fc399e3c501e02d2c0e7c4df3bd1da29d0f3bd175a5013"
+    },
+    {
+      "gzip_bytes": 3302,
+      "gzip_sha256": "07afea7a5acd3c23cd22ed5f61b7aad531f5d6a1722aea2a95115f0681088d2d",
+      "path": "diagnostics/certificate-input-attempt1/attempt1-source.py.txt.gz",
+      "raw_bytes": 8216,
+      "raw_sha256": "299dd649fa499a014beba0796ef6ed78de03f09a61db32f7bde3e92c6040dc78"
+    },
+    {
+      "gzip_bytes": 483,
+      "gzip_sha256": "db669af1cb7617a1ed610951f3ae0d57b8674e4f6ba6f5bbbde1ea369477b989",
+      "path": "diagnostics/certificate-input-attempt1/binding-failure.json.gz",
+      "raw_bytes": 732,
+      "raw_sha256": "2028bc02d945a250d1a61913f6a0bd0db82cf2f4e615fbc4f2bffaf918864fcb"
+    },
+    {
+      "gzip_bytes": 4150,
+      "gzip_sha256": "e6bcbe00070019eca936d5c52ddfb76c4d0669a9d52c496306890972bd32517c",
+      "path": "iteration-observation/inputs.json.gz",
+      "raw_bytes": 74019,
+      "raw_sha256": "2fe319774a77320d93f77a1eaa92c7daa8c2100b31b23e311a6322111b1d5646"
+    },
+    {
+      "gzip_bytes": 1397,
+      "gzip_sha256": "bde5a62dc9c530f7aad1f8902b7d23f327c7208f23c48a49312bba5d9ae2b90c",
+      "path": "iteration-observation/plan.json.gz",
+      "raw_bytes": 2944,
+      "raw_sha256": "c5856477580404f715363c41e50944cce73f7ecad12387b58750e645717fc6ab"
+    },
+    {
+      "gzip_bytes": 3310,
+      "gzip_sha256": "51b0a6676177b266cc037448b82d4de8a7cc29ff84af2b8547ffd20a75df9814",
+      "path": "iteration-observation/qualification-queries.jsonl.gz",
+      "raw_bytes": 33183,
+      "raw_sha256": "bda288fccf12cce937c00e6b66287024040693d89b5ab0ef2925c5d988ecbeb8"
+    },
+    {
+      "gzip_bytes": 187,
+      "gzip_sha256": "0fa99181c605a021bd21f16c804787f34621f5e698cebbacdeec6f3042ff4391",
+      "path": "iteration-observation/qualification-receipt.json.gz",
+      "raw_bytes": 217,
+      "raw_sha256": "ef9a733b697092c482892e7c7b7b34800ec4d17a1e6992002759adf6e1b9e719"
+    },
+    {
+      "gzip_bytes": 266,
+      "gzip_sha256": "e6452771764459af321d952e7eee3b49b5ff0ed15e8d22fb883f54d2678b68bd",
+      "path": "iteration-observation/qualification-assessment.json.gz",
+      "raw_bytes": 438,
+      "raw_sha256": "c64f07f769fb181c0416ab72c530417e478b76a23bfa64ca87a62b10d198f2fd"
+    },
+    {
+      "gzip_bytes": 5418,
+      "gzip_sha256": "0a148de3af67d310c2333a852fa9b1531b7d81ee15cf4495038e063de8ec71f5",
+      "path": "iteration-observation/measurement-queries.jsonl.gz",
+      "raw_bytes": 69930,
+      "raw_sha256": "68be7e0e74b242e00e58254015f4ca93d7e5a443cfc34351d57c49b48ef47e4c"
+    },
+    {
+      "gzip_bytes": 185,
+      "gzip_sha256": "c5a38bd95915f08151f10bc24b493839698f8f871f009fbffb820817a3acfa7f",
+      "path": "iteration-observation/measurement-receipt.json.gz",
+      "raw_bytes": 215,
+      "raw_sha256": "6af678840f8a87a9f4da498804d65428eee12f6aeabbc21515653376651cae06"
+    },
+    {
+      "gzip_bytes": 1667,
+      "gzip_sha256": "bf935e1877281354ab0c1c84838e8d60a64e7e7c70b24163a8e2abdb3bd1a045",
+      "path": "iteration-observation/assessment.json.gz",
+      "raw_bytes": 19346,
+      "raw_sha256": "3e48283e54221e7b968467c25b9133d6bdc7324eb36db196ab6a5454a047afe7"
+    },
+    {
+      "gzip_bytes": 7313,
+      "gzip_sha256": "7c36e4a4f3a07d02284c25f6b5c4e86f8f5c0ab7f2853d4dad319dfc8e7594c1",
+      "path": "deadline-choice-observation/inputs.json.gz",
+      "raw_bytes": 163740,
+      "raw_sha256": "d916c6e76886d0303521a92a9daa5349e667a4de1858db218e31bac2fa7379c8"
+    },
+    {
+      "gzip_bytes": 1666,
+      "gzip_sha256": "a60147684e6a85b7874791cffb8a3b317953f8c197acfe6dcf5b72f266197fee",
+      "path": "deadline-choice-observation/plan.json.gz",
+      "raw_bytes": 3418,
+      "raw_sha256": "fe32be6d24cd4c427154b0e1bc2073259d2929dcbbf115080eeb08e5ab9cff9d"
+    },
+    {
+      "gzip_bytes": 3310,
+      "gzip_sha256": "51b0a6676177b266cc037448b82d4de8a7cc29ff84af2b8547ffd20a75df9814",
+      "path": "deadline-choice-observation/qualification-queries.jsonl.gz",
+      "raw_bytes": 33183,
+      "raw_sha256": "bda288fccf12cce937c00e6b66287024040693d89b5ab0ef2925c5d988ecbeb8"
+    },
+    {
+      "gzip_bytes": 187,
+      "gzip_sha256": "0fa99181c605a021bd21f16c804787f34621f5e698cebbacdeec6f3042ff4391",
+      "path": "deadline-choice-observation/qualification-receipt.json.gz",
+      "raw_bytes": 217,
+      "raw_sha256": "ef9a733b697092c482892e7c7b7b34800ec4d17a1e6992002759adf6e1b9e719"
+    },
+    {
+      "gzip_bytes": 266,
+      "gzip_sha256": "e6452771764459af321d952e7eee3b49b5ff0ed15e8d22fb883f54d2678b68bd",
+      "path": "deadline-choice-observation/qualification-assessment.json.gz",
+      "raw_bytes": 438,
+      "raw_sha256": "c64f07f769fb181c0416ab72c530417e478b76a23bfa64ca87a62b10d198f2fd"
+    },
+    {
+      "gzip_bytes": 3670,
+      "gzip_sha256": "f1ec9218297ee58cf21e5bac5e1a736151d38c7a5f70a37b0d1529c87ce90648",
+      "path": "deadline-choice-observation/measurement-queries.jsonl.gz",
+      "raw_bytes": 45446,
+      "raw_sha256": "ee98eb378b9f1f89c20fc5fabdb4bc15699deec931b4c20df3001c46a2902287"
+    },
+    {
+      "gzip_bytes": 185,
+      "gzip_sha256": "411d409a0aa7b6ac116309eeb112411e0a289fcb194fc2652c502175d9562409",
+      "path": "deadline-choice-observation/measurement-receipt.json.gz",
+      "raw_bytes": 215,
+      "raw_sha256": "3131be08b478dfad87473893c7fd40adb4215878460deef2b19086b61c83c295"
+    },
+    {
+      "gzip_bytes": 1290,
+      "gzip_sha256": "31dc03e47c39b94fffb3d36f313f5b43705b1cb993492b3271e143d4dea6c719",
+      "path": "deadline-choice-observation/assessment.json.gz",
+      "raw_bytes": 11460,
+      "raw_sha256": "e0198a3db4d9c9d8d06a504c1cb950c0dca6cf0ca0dad48cba59e6fa558c2f0f"
+    },
+    {
+      "gzip_bytes": 209,
+      "gzip_sha256": "b7d681500b7e86d0e68af8c8eb6d794c94dfa8b444bbab158dfb52b610afe9b9",
+      "path": "notes/timing-reader-negative-controls.json.gz",
+      "raw_bytes": 329,
+      "raw_sha256": "081fbc6ea690da8be751d4d26471af31a8a5a63839088f9c596da80fc60c9a7a"
+    },
+    {
+      "gzip_bytes": 3378,
+      "gzip_sha256": "8478d91e872b8fe1d8556848807ee93fa3ee2d76f65d4b8b00539b69de3f7bc8",
+      "path": "sources/scripts/leaper_decision_certificate_inputs.py.gz",
+      "raw_bytes": 8453,
+      "raw_sha256": "637ded913826b72ea1e5fbaf23f5a1a269f329a2b492065571c6c914a995fd78"
+    },
+    {
+      "gzip_bytes": 441,
+      "gzip_sha256": "26c3598da92eef367e4bd52c593bc6c7076302122a45dc92549953adf164bcc8",
+      "path": "sources/scripts/leaper_iteration_choice_observer.py.gz",
+      "raw_bytes": 792,
+      "raw_sha256": "2aac909a47d8e01e1abac11a0f3a30accf412b441d7c942d4308c816b7c395cb"
+    },
+    {
+      "gzip_bytes": 2260,
+      "gzip_sha256": "1954d3a77cf64f6799dabe0d29f08b4df69a1baa81b54d01a7b6cab49ec576d3",
+      "path": "sources/scripts/leaper_certified_choice_timing.py.gz",
+      "raw_bytes": 5285,
+      "raw_sha256": "430809cc7686afc4f65c461adb26b18495502742df92d92f3a0c65fb7f324561"
+    },
+    {
+      "gzip_bytes": 2293,
+      "gzip_sha256": "c2f52ebbb832dbd3dd1eccc9548cdf9a27801f8395d42c5d5e7f0e13d60abfd6",
+      "path": "sources/scripts/verify_leaper_certified_choice_timing.py.gz",
+      "raw_bytes": 5782,
+      "raw_sha256": "b8eca5dd39752868e5a1919cbffa42b80c4c244ed15b151d4ece90b6ca62d188"
+    },
+    {
+      "gzip_bytes": 419,
+      "gzip_sha256": "c73c2cd0e36036d6c7bf317f67d85db8d9962fbcc78a9369f4c43476745193e9",
+      "path": "notes/closure-cost-checkpoint.json.gz",
+      "raw_bytes": 661,
+      "raw_sha256": "087d07a8223fc2f999f8a812239311b19f9711fbf34554ac6fc6e482eccb8591"
+    },
+    {
+      "gzip_bytes": 564,
+      "gzip_sha256": "4f69a538bcc13c15391562dbee3be2761f900710f6e54e67e106cfa3b1b60171",
+      "path": "notes/closure-acceptance.json.gz",
+      "raw_bytes": 1078,
+      "raw_sha256": "f6af5a368c47ad961e3b7c5af0c8d6d29fbd60b84ca134af0560a132816d4b5b"
     }
   ],
-  "scope": "Project-only reviewed data; no raw Slack/account wrappers/session/offline timing. Source capsules are data only; no imports from evidence archives. 8observer+18qualification+256quality new returns; games unfinished and omitted, session active.",
-  "state": "QUALITY_CLOSED_GAMES_RUNNING"
+  "new_player_returns": 1292,
+  "reuse": "Four qualification rows copied into deadline packet are prior returns, not new queries/time. Initial256-only milestone remains exact in Git51ac8c1d; full original1256raw returns replace milestone prefix in current tree.",
+  "scope": "Reviewed project-only source/input/plan/returns/failed diagnostics, no raw Slack/account wrappers. Source capsules data-only. Named action certificates and attributed sourcegraph WDL are different tiers; unknown remains unknown.",
+  "state": "RESEARCH_ENDED_QUALITY_AND_FINAL_CHECK_PASSED"
 }
