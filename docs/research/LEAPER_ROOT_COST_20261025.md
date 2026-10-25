@@ -312,3 +312,21 @@ frontier work, including the held consumer's spent engineering. Scientific END
 67.317recorded effective research. Final publication/Slack cost remains to be
 recorded from actual receipts. The oldQdelivery122.143min overrun is preserved
 as a different closed mechanism, never offset by this session.
+
+
+### Verified delivery and forecast variance
+
+Scientific604fe5aea9303a347a4d3564ec2cf573dc71a53dpassed28publisher tests,
+fullremoteSHAverified. Anonymous fixedSHAmanifest/trace downloads matched
+originalbytes;28executed-source checks passed (one preservedAST-equivalent
+display exception). FinalFOLLOWUP1792938648.305859 sent2026-10-25T14:30:48.305859+00:00,
++5due2026-10-25T14:35:48.305859+00:00,singlecheck2026-10-25T14:38:21.485773+00:00:0newreply/Chatroots,
+complete latestChatthreadunchanged. Payloadverified; late repliesnextopening.
+
+Conservative logical cost through this actual check=116.004747min versus110min
+forecast (variance+6.004747min). This is a timestamped delivery-cost
+point, not effective research; the closing receipt publication itself follows
+and is not included in that number. All additional time since scientificEND
+was publication/transport/delayed-check administration, with0new experimental
+job or work-ledger entry. Keep this variance and the earlierQ122.143min overrun;
+do not substitute either wall clock for67.317recorded research minutes.

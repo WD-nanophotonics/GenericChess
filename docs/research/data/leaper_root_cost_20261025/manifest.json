@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T14:28:36.749700+00:00",
+  "at": "2026-10-25T14:38:21.485773+00:00",
   "files": [
     {
       "file": "aspiration-plan.json.gz",
@@ -708,6 +708,38 @@
       "raw_bytes": 1511,
       "sha256": "dbc4b46b812092c2b864716850c92c71168e96c2c09c5e193b2642e77f399a78",
       "raw_sha256": "98d150fb89ca22308bca375f89d20ff5ad07577f7a84b9d8e06c0fb59749757d"
+    },
+    {
+      "file": "delivery-final-receipt.json.gz",
+      "source_relative": ".local_agent/assignment-e410/final-delivery-receipt.json",
+      "bytes": 390,
+      "raw_bytes": 679,
+      "sha256": "f528def9c85be2e3168b1106befeeaf1f592e222bd6b100bdb0d6c1f45916612",
+      "raw_sha256": "928e63346b71eac17c259e8c1faf8456d5ef688895d2a4f0147194ffa88eb4bb"
+    },
+    {
+      "file": "delivery-cost-at-check.json.gz",
+      "source_relative": ".local_agent/assignment-e410/final-transport-cost.json",
+      "bytes": 445,
+      "raw_bytes": 743,
+      "sha256": "2026d0c011042033be6daff4e65564054581c6dee695d13587b913bbd8fdc75f",
+      "raw_sha256": "c98eac6b578c14b6732b38d9fcadd33cb40567cc8bd234d3673fc744deeff0a5"
+    },
+    {
+      "file": "delivery-anonymous-readback.json.gz",
+      "source_relative": ".local_agent/assignment-e410/anonymous-remote-verification/receipt.json",
+      "bytes": 357,
+      "raw_bytes": 618,
+      "sha256": "7c2e15752f70322b061c7726d29e4f9bab3180d332ec467bdd87b86cfc333226",
+      "raw_sha256": "6df1f486d120e88f6d9956153772acad3162ce868604a1847b3c95d88000b3e0"
+    },
+    {
+      "file": "delivery-source-integrity.json.gz",
+      "source_relative": ".local_agent/assignment-e410/postpublish-source-integrity.json",
+      "bytes": 592,
+      "raw_bytes": 3640,
+      "sha256": "8e4ac3666cf15968fcb0cb040f28d0e84e32d9e471514a1bad73611564ddcb7a",
+      "raw_sha256": "8c66c0c7e092ce6f5971e7a72bf37be495f69b8f47f5fef322dfd931258b348f"
     }
   ],
   "scope": "Final e410ENDED,32newscientificPlayerreturns,67.317recordedeffective minutes/90intervals.627additionalmanualevals, sourceWDLnotnewproof.17input68call18gameplanNOT_STARTED_DEFERRED. Allcapsulesdataonly;rawSlack/account/JUnitwrappersprivate.",
@@ -715,5 +747,6 @@
   "session_id": "e4100959-ff6a-4346-b35b-f8e83a57022d",
   "state": "ENDED",
   "effective_seconds": 4039.0184409999997,
-  "work_intervals": 90
+  "work_intervals": 90,
+  "delivery_status": "Final604fe5science published/anonymousreadbackmatched; finalDotpayloadverified andone+5checkcomplete,0newreply; receiptpublicationfollowsthischeck."
 }
