@@ -7726,3 +7726,20 @@ Next work opening rediscovers it without guessing a directory or adding polling.
 Shared protocol links/bytes match in both checkouts; two AUX isolated role/branch
 tests passed. This work earns zero research time; PRIMARY's interrupted UUID
 8eb29d8a-651f-4104-91e5-fcafbad57bf5 retains71.17302600000001seconds/2intervals.
+
+
+During publication the remote advanced to07875ca38f44d5086a0fa394c21583e3c829bfd2
+with docs/reviews/chatgpt_patrol/2026-10-26_002651_JST_GITHUB_WRITE_TEST.md.
+The normal publisher refused divergence, correctly revealing the new review.
+Exact bytes were retained before full reading. PRIMARY adopted a next-step audit
+of existing pure-Leaper compilation/actual Native hot paths and deferred the
+unexecuted anchor0screen; no new scientific execution or measured-bottleneck claim.
+Only the local unpublished workflow commit was replayed above the remote addition;
+remote review/history were preserved and no force-push was used. The earlier
+not-found observation is superseded by this positive directory discovery.
+
+A second concurrent remote addition,e39989c6a44b00916af21eda6e2d4fa38df6ef45,
+was likewise privately preserved and fully read before reconciling unpublished
+workflow commits. Its 00:38:51 review reinforces the same priority, without new
+execution; latest covered Patrol boundary includes both files. No source review
+was relabelled a timing/quality result and no force-push was used.

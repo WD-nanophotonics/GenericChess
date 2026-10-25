@@ -7,7 +7,7 @@ PRIMARY writes sandbox only. PURE LEAPER first; mixed/legacy/promotion/drop/NNUE
 expansion deferred. Default/UI/AUX unchanged. Both schedules180min; PRIMARYactive,
 AUXexistingPAUSED, bindings intact. Normal60–90recorded effective researchminutes.
 
-## Current judgment and reason —2026-10-25
+## Current judgment and reason —2026-10-26
 
 [Root/frontier diagnosis](LEAPER_ROOT_COST_20261025.md) is CLOSED locally:
 32newscientificPlayerreturns,67.317effective minutes,28tests,finish/final-checkPASS.
@@ -15,7 +15,7 @@ Window18calls show p49D6same29056events,p53only2less; no useful opportunity,
 no delta sweep. Rootcost8calls finds no knownWIN D6child before1.5s; merely
 exposing incomplete children cannot repair the two observed errors.
 
-Latest autonomousChat1792932855 prioritized D3correct->D4wrong evaluation/leaf
+Earlier autonomous Slack review1792932855 prioritized D3correct->D4wrong evaluation/leaf
 mechanism over cycling flags. Assignment3calls capture2568calls/17828events,
 no drops and actualwork/Nativeparity. p49WIN K1094bothlayers; DRAW B1087->1103.
 Observed Bscout16point rise=6mobility+10anchor, same material. Finalresearch
@@ -32,16 +32,43 @@ finds anchorzero canonical9->11/17,+2/-0 but only9alltiesoptimal. Mobilityzero
 0repair/2regression, bothzero2/3; allfour missboth6x6controls. No realPlayer
 anchorzero/featureablation wasexecuted. No default or classstrengthclaim.
 
-## Main: test the consumer before interpreting a feature deletion as progress
+## Main: audit pure-Leaper compilation and the actual search hot path
 
-Question: Does an isolated anchor-term change help actual same-budget pureLeaper
-decisions? | Complete the begun oldcaller/config/cost audit; ifnovelandjustified,
-preregister a tiny exact-controller realPlayercomparison with fixed prices,
-fullhistory/Q/PVS/Native service and explicitdevelopment exposure | Source
-oneply11/17isnotsearchrepair; preserve regressions/UNKNOWN | No weightfit,
-price-labelinjection/default/AUXlearning/largegamebatch; carryrelatedprep and
-USERfirst if wholeexpectedlogicalexperiment>=120min. This is not yet admitted
-as a new producer and does not restart any closed cap.
+Autonomous GitHub review at sandbox07875ca38f44d5086a0fa394c21583e3c829bfd2,
+[ChatGPT Patrol](../reviews/chatgpt_patrol/2026-10-26_002651_JST_GITHUB_WRITE_TEST.md),
+now has priority over the earlier solicited Dot feature-screen suggestion.
+The second review at e39989c6a44b00916af21eda6e2d4fa38df6ef45,
+2026-10-26_003851_JST_GITHUB_WRITE_TEST.md in the same directory, was also
+fully read. It reinforces this priority, notes existing single-push noisy-child
+reuse and profiler perturbation; no new local measurements were reported.
+It explicitly reports source-only review, not new benchmark execution. Adopt the
+broader mechanism question; do not label its candidate bottlenecks measured.
+
+Question: Can a strictly admitted pure-Leaper compiled representation reduce
+FULL search cost beyond existing Core/Native facilities? | First audit existing
+leap_targets/empty_mobility, Native attack/check/availability, semantic hash and
+Python/Native pack/restore callers; identify one actual nonduplicate hot path and
+forecast a bounded measurement before implementation | Fixed-source evidence,
+actual service/caller costs and semantic admission; p49/p53 are regression inputs,
+not fitted optimization targets | No duplicate precompute project, WDL geometry
+pruning, kernel implementation or3-5rule/game batch without a decision-changing
+question, full-history correctness controls and complete cost forecast. Required
+>=120minute USER assessment, frozen caps and role boundaries still apply.
+
+The new review proposes reverse attack masks/local changes and a conditional
+nonroyal safety shortcut. These remain unvalidated proposals; audit Native's
+existing behavior first and prove all admission assumptions before any shortcut.
+If a scoped prototype is justified, compare complete legal actions/order contracts,
+make/unmake/history/terminal/TT identity and full search wall/CPU/setup/packing at
+matched depth/work; stop on semantic differences or absent whole-query benefit.
+NPS/depth alone is not strength; later fixed-time unseen-rule games are conditional.
+
+The anchor0 consumer screen remains UNEXECUTED:19root/10rule zero-query preflight
+passed, source audit distinguishes the joint escape/check term and separate
+config hashes, and Dot suggested38calls at1.5s only. Its candidate-generating
+p49chain already has116.004747min delivery cost plus proposed35min extension;
+no newsession resets that cost. Defer it behind this new compilation audit,
+preserve its complete plan/evidence, and do not treat Dot as USER budget approval.
 
 Backup1: Is the quality target discriminating? | Reuse17fixedsourcehistories
 and named-action independentproofs as distinct tiers; select a specific consumer

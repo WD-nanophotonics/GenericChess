@@ -64,14 +64,26 @@ reviews checked, invent a path, overwrite a prior covered boundary, or declare
 no advice exists. Use one bounded discovery attempt at the existing work start;
 continue independent authorized work without empty polling or a new timer.
 
-## Current discovery observation
+## Located review channel — 2026-10-26
 
-During this bounded workflow update, origin default master was
-3d9eaaaad78166177bdb331fa79314b77c225374 and sandbox was
-fb9cda2c9bbff79e9b71dc87c02dbfa567205a7f. The fetched remote tree inventory and
-GitHub file/PR searches did not locate ChatGPT Patrol. This is limited observed
-coverage, not a claim that a future review cannot appear. Discover its actual
-path/ref at the next opening; no placeholder review directory was created.
+The actual directory is `docs/reviews/chatgpt_patrol/` on remote `sandbox`.
+Always resolve/fetch its CURRENT full SHA at work opening; the observation SHA
+below is provenance, not a pin that may hide later reviews. DEV_AUX's own-branch
+fetch alone is insufficient: explicitly fetch/read remote sandbox for this intake.
+
+The directory appeared during this update after the initial tree/file/PR lookup
+had no match. A subsequent publish fetch found remote commit
+`07875ca38f44d5086a0fa394c21583e3c829bfd2` adding
+`docs/reviews/chatgpt_patrol/2026-10-26_002651_JST_GITHUB_WRITE_TEST.md`.
+Its exact bytes were privately preserved before full reading. It contains actual
+autonomous direction review, not just a write-test receipt: prioritize checking
+pure-Leaper compilation/full-search hot paths; retain p49/p53 as diagnostics.
+The review states source-only inspection and no new local benchmark execution.
+Each role assesses applicability independently; a read is not implementation.
+
+Initial absence and the later discovery are both retained. Future discovery
+still checks new/modified files, related refs and incomplete coverage; no guessed
+path, placeholder directory, automatic merge or research-state takeover.
 
 Cadence remains 180 minutes. PRIMARY remains ACTIVE and DEV_AUX remains PAUSED;
 existing IDs/chat bindings and the 60–90-minute effective research requirement

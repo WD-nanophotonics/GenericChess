@@ -49,7 +49,9 @@ workers may be created.
 - User review-source correction2026-10-26: before choosing work at every new
   round/manual start/heartbeat, check the project GitHub remote for new or edited
   autonomous ChatGPT reviews, especially the user-designated ChatGPT Patrol
-  file/directory, AND retain Slack review checks. Locate the actual path/ref from
+  file/directory, AND retain Slack review checks. Observed directory:
+  docs/reviews/chatgpt_patrol/ on remote sandbox; resolve its latest SHA each
+  opening, never freeze to the discovery commit. Locate a moved path/ref from
   remote trees; pin full commit/blob hashes and preserve originals before
   assessment. No automatic pull/merge/execution or other-role state changes.
   Follow docs/operations/CHATGPT_REVIEW_WORKFLOW.md; record coverage gaps and
