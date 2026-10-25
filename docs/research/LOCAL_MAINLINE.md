@@ -76,5 +76,13 @@ closed222calls and rejected three singleton policies. Earlier last-ply/full<=4Q
 completion negatives and q-ordering limited work savings remain evidence, not
 an experiment queue. Reopen only with changed premise/decision-changing test.
 
+The next zero-query feasibility step is already performed:12old published roots
+across6rules compile/replay with remaining91/96, so cap does not bind below the
+default64 ceiling. Only tests/research currently enable the flag. Therefore do
+not rerun that old panel or claim production benefit. [Feasibility evidence](data/leaper_scalar_frontier_20261025/next-clock-feasibility.json)
+binds its exact input. Next bind an actual lateclock consumer/distribution; if
+none exists, select a distinct semantics-preserving pure-Leaper cost hypothesis
+instead of expanding the same exposed cap examples. No new query executed.
+
 Science is OPEN. Normal finish requires current ledger/quality review and final
 check, never active-state final or wall-clock credit. Transport/admin excluded.
