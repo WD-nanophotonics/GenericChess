@@ -34,41 +34,35 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Main: full-key memo feasibility qualified; USER budget decision pending
+## Main: cross-rule quality evidence and bounded baseline calibration
 
-[Fresh-key lifecycle](LEAPER_KEY_LIFECYCLE_20261026.md) adds0Player evidence:
-normal cold insertion hashes the same key3times; a single-use wrapper is slower,
-while the3-use component is faster. Exact raw/cached interoperability and bounded
-eviction pass on12existing keys. Wrapper extra84B/key; actual occupancy/RSS and
-whole-call gain UNKNOWN. Prior probes/hits do not identify lifetime distribution.
+[Quality controls](LEAPER_QUALITY_CONTROLS_20261026.md) adopt autonomous035602/
+055824 reviews atc49f46fd: cross-rule quality discrimination now precedes further
+key-memo engineering. Five frozen different4x4/H128rules yield three strict
+named-action contrasts after1620literalproofnodes and312position/1152edge
+remnant qualification; two candidates remain partial-only. All are exposed;
+current1.5s difficulty remains UNKNOWN. Actual sourceparent/proofroot differ
+in7/29certificates; preserve separate hashes, full records and value tiers.
 
-Question: does compact complete-key memo reduce whole-call cost relative to the
-admitted local-hash configuration? | Await the sent USER necessity assessment
-for estimated180/cap200 cumulative minutes, then only if approved implement the
-single exact opt-in memo and frozen16-call comparison | Four existing board
-controls x two repeats x two arms;30s/50k percall,batch600s;allTTguards retained,
-wholecost/memory/parity | NOT_STARTED; no Dot waiver, guard coarsening, old-slot
-refill or new200minute allowance. Prior100.023201 plus this feasibility/delivery
-continues in the same logical cost. See report for scope and failure stops.
+Question: do the three strict controls show current fixed-budget improvement
+space or low certificate coverage? | After zero-query publication execute only
+the frozen six baseline calls (threeparents x tworepeats,1.5s,Nativeboth/PVS/Q4,
+freshTT,bothhashflagsOFF) | Raw legal decisions, wholecost, certificate-only
+classification and separately attributed full-source WDL | No algorithmclaim,
+newbudgetgrid/oldslotrefill/holdout or unknown-as-error. Whole quality preparation
+and delivery forecast85minutes, never a new85-minute allowance.
 
-The new AB/BA toy histories share complete counts/clock and public Core identity
-but differ under the conservative Runtime guard. Three one-ply successors agree;
-this is not an all-future equivalence proof or permission to coarsen TT keys.
-No guard or live history was removed. Whole-key memo is the safer initial route.
-The failed two-call residual profiler was dominated by its own unthrottled stop
-file reads and is closed invalid; do not refill it or the factorial missing slots.
+Backup1: is the deferred complete-key memo worth its opportunity cost? | Retain
+published lifecycle findings and prior114.83+finalsync cumulative cost; do not
+start the180/cap200 extension merely because it was proposed | Missing actual
+lifetime distribution/RSS/wholegain stays UNKNOWN | USER>=120 gate remains;
+new autonomous reviews recommend DEFER, not user budget approval/rejection.
 
-Backup1: is a next quality discriminator informative? | Assess already published
-pure-Leaper sources and independent metadata/proof tiers before any new panel or
-games; do not duplicate AUX solver/runtime/learning assignments | Preserve known
-exposure and natural/caller censors | 17/19 ceiling examples and all-draw old games
-cannot establish strength; no automatic old panel/anchor plan resumption.
-
-Backup2: can compiled attack-union features preserve the leaf exactly? | Audit
-existing tables/Native paths before a new representation or implementation |
-Native dynamic_features counts legal actions; current Python features use pseudo
-attack unions and escape terms | The observed 4–5% evaluation share is perturbed,
-not an unbiased ceiling; no changed evaluation/NNUE/mixed scope without evidence.
+Backup2: can future validation reserve rule/trajectory groups without exposure
+leakage? | Use frozen source geometry/history/origin inventory, not renaming or
+unlisted-action penalties | Three named contrasts are not an independent hard
+panel; old19/new17 jointlycover10correlatedfamilies | No newsolver/games/training
+or AUX work; separately assess necessity and cumulativecost before computation.
 
 ## Retained decisions and costs
 

@@ -95,8 +95,10 @@ repetition/clock only add draws. Fresh graph vertices are NOT reconstructed
 played histories; actual root/safe-child records stay intact. Wrong action/proof
 binding is rejected; this finite reader closes in18.418s.
 
-Two additional strategies exactly match19-bundle roots and verify78 nodes. They
-prove specified winning actions, not unlisted alternatives. No AUX solver, full
+Two additional strategies associated with19-bundle parent identifiers verify78
+nodes. One starts at the winning parent; the other starts AFTER a losing move
+from a drawn parent. Their actual complete proof records, not identifier names,
+define the supported winning-action history. Neither labels unlisted alternatives. No AUX solver, full
 graph census, learner or checkout was executed. Other all-action labels retain
 original complete-graph provenance, not independent census reproduction.
 

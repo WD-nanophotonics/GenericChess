@@ -7780,3 +7780,15 @@ latest direct user policy. Read/adopted is not independent execution. No product
 key memo or whole-query extension started. A concrete cumulative180/cap200 plan
 is pending USER assessment; the100.023201 prior cost is retained. See
 [feasibility report](../research/LEAPER_KEY_LIFECYCLE_20261026.md).
+
+## 2026-10-26 PRIMARY quality-control evidence
+
+Read/preserved autonomous GitHub035602/055824 atc49f46fd and adopted quality
+discrimination over deferred fullkeymemo. New Dot request1792962965.574779 was
+payloadverified; one delayedcheck21:21:42UTC read source-only advice, not proof
+replication. PRIMARY qualified1620suppliednodes/5rules, three named value gaps
+and partial-label scoring with9checks;0Player designphase. Found7/29proof IDs
+refer to a parent while proofrecord begins after a losing move; retained the
+failed consumer and explicit corrected join. Updated older LMR wording without
+rewriting evidence. AUX checkout/state/solver work untouched. Six fixed1.5s
+baseline calls are separately frozen, not current method/strength results.
