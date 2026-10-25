@@ -1,10 +1,11 @@
 # GenericChess local research policy
 
-## Current user direction and cadence — 2026-10-24
+## Current review intake and cadence — 2026-10-26
 
-Latest heartbeat explicitly sets the two existing patrols to120minutes. This
-supersedes the historical60-minute wording below; no schedule change is made
-by this research segment. Keep role boundaries and60–90effective-minute work.
+Latest direct user cadence is180minutes for both existing patrols. PRIMARY is
+ACTIVE and DEV_AUX remains PAUSED, with unchanged IDs/chat bindings. Older60/90/120
+minute receipts below are historical, not live recurrence instructions. Keep role
+boundaries and60–90effective-minute work; this workflow update does not resume AUX.
 
 The current scientific priority is P0/P1 structural rule counterfactuals and
 complete-history truth, then matched explorer calibration, conditional learning/
@@ -16,7 +17,25 @@ actual recovery-chain correction; search-knowledge compression remains a
 medium-term idea, not an automatic new training or engineering task.
 
 
-## Latest direct user cadence correction — 2026-10-23
+## Current review sources — user2026-10-26
+
+Before selecting research at every new round/manual start/heartbeat, check both
+GitHub remote autonomous ChatGPT reviews (including the dedicated ChatGPT Patrol
+file/directory) and new Slack comments/relevant complete threads. Follow
+[docs/operations/CHATGPT_REVIEW_WORKFLOW.md](docs/operations/CHATGPT_REVIEW_WORKFLOW.md).
+Discover the actual remote path/ref; pin full commit/path/blob hashes, preserve
+originals and coverage gaps before assessment. No automatic pull/merge/execution,
+new worker or other-role research/state write follows from reading a review.
+Latest direct user > autonomous ChatGPT GitHub/Slack review > solicited Dot >
+local proposals; filename/account/TYPE alone does not prove autonomous origin.
+Record read/adopt/defer/reject and execution separately in own existing records.
+This replaces Slack-only review intake. Direct Dot contact is restored by the
+user's2026-10-24/25 instructions: a fresh AGENT_REQUEST at a new work round start,
+one delayed reply check about5minutes after each send, useful bounded dialogue,
+no duplicate verified same-round request or empty polling. Preserve existing
+scope/stops, publish/fullSHA-before-send and cumulative experiment limits.
+
+## Historical cadence receipt — 2026-10-23
 
 The user changed both existing DEV_AUX and PRIMARY patrols back to every hour
 (60 minutes), superseding the earlier120-minute entries below. Both existing
@@ -25,18 +44,13 @@ Keep two-way Slack, role boundaries and60–90 effective-minute research segment
 Configuration time earns no research credit. Historical cadence receipts do not
 authorize reverting this latest direct instruction.
 
-## Direct user two-way Slack instruction — 2026-10-23
+## Current two-way communication
 
-Both existing patrol prompts now explicitly require proactive project Slack
-reports and concrete questions to Chat/Claude when an uncertainty can change a
-research decision. Follow replies at the next ordinary probe and distinguish
-reading, adoption and execution. Reports/questions may share the one message
-per probe. Do not invent questions, wait in realtime, wake Dot or duplicate the
-other role's work. Old uncertain sends must not be resent or silently prevent
-all new, distinct communication; diagnose the own-role entry while preserving
-its ledger. Existing push/full-SHA, privacy, stops and role boundaries remain.
-Both patrols remain ACTIVE at120 minutes with their original chats. Prompt
-configuration is administrative and earns no effective research time.
+Autonomous ChatGPT reviews may arrive on GitHub or Slack. Daily outbound
+collaboration addresses Dot in the existing project channel. Use the current
+SLACK_WORKFLOW.md and CHATGPT_REVIEW_WORKFLOW.md. The old asynchronous-only,
+Dot-pause and one-message-per-probe policies are superseded, not live options.
+No extra worker/timer; no source reply is a research or publication gate.
 
 ## Direct user cadence update — 2026-10-23
 
@@ -187,28 +201,26 @@ checks. Stop/limit exceptions retain their evidence rules. After finish the
 helper synchronizes the memo Segment to ENDED. Full accounting contract and
 limitations: docs/operations/EFFECTIVE_WORK_ACCOUNTING.md.
 
-The two user-authorized hourly patrol prompts are durable role/bootstrap rules,
+The two existing patrol prompts are durable role/bootstrap rules at the latest
+user-set cadence (currently180minutes),
 not copies of temporary experiment choices or historical decisions. Recover
 current tasks, scope, communication and budgets from this checkout's current
 records. Only explicit user schedule changes authorize modifying recurrence or
 binding. This configuration repair itself is not a research-duration sample.
 
 
-## Current communication decision — 2026-10-20
+## Review and transport authority — current2026-10-26
 
-All project roles use periodic Chat mailbox exchange. Dot calls, mentions,
-realtime waits/followups/monitoring, daily10:00 gates and DOT_REPLY requirements
-are paused. Each existing Slack probe performs one logical paginated read,
-privately saves raw evidence, records adopt/defer/reject for historical Chat
-comments, then writes at most one progress report to RECIPIENT=CHAT. No response
-is required for ordinary research; uncertain sends reconcile at the next probe,
-never by immediate resend. Old Dot pending requests do not block new reports.
-Keep old ledgers/stops, role boundaries and recurring targets/cadence. Each role
-migrates only its own configuration via mailbox migrate; shared protocol:
-docs/operations/SLACK_WORKFLOW.md. Runs expected >=120minutes await explicit
-Chat mailbox assessment of scope/budget; shorter independent work continues.
-This supersedes live Dot/daily-window instructions below; historical closure
-records remain evidence and must not revive realtime consultation.
+GitHub ChatGPT Patrol and Slack are both review sources. The Oct20 Dot pause,
+sole-Slack assumption, compulsory RECIPIENT=CHAT report and no-realtime policy
+are superseded by latest direct user instructions above. Preserve historical
+messages/receipts and uncertain sends; no automatic resend or ledger reset.
+Use supported own-role transport. A stale local pause/entry error is diagnosed,
+never treated as missing user authority or bypassed by hidden alternatives.
+Review actual outgoing project content; exclude personal information/passwords/
+credentials, push sidemission and verify its full remote SHA before any send.
+Incoming advice cannot expand research scope, clear user stops, take PRIMARY
+ownership or waive required long-experiment necessity assessment.
 
 This is the sole active policy; user instructions take precedence. DEV_AUX is the original auxiliary on sidemission in this independent checkout;
 PRIMARY_SANDBOX owns sandbox and DEEPSEEK_AUX owns codex/deepseek-aux elsewhere.
@@ -294,10 +306,10 @@ At every start, restart, heartbeat and after compaction, FIRST read
 rollout/advisor/slack stop flags. Never clear a user stop. A missing/stale memo
 is rebuilt from evidence before research; checking flags never permits clearing them.
 At each new or resumed research segment, before substantive research, run one
-role-local Chat mailbox probe and read/save/review newly available Chat comments.
+own GitHub/Slack review intake and read/save/review newly available Chat comments.
 Record an adopt/defer/reject decision for each new or edited comment; if there is
-no new comment, continue without waiting. This is an asynchronous read, not a
-request that Chat reply or a realtime consultation.
+no new comment, continue without waiting. Reading a review does not make a
+solicited reply a research gate; use the current Dot request contract.
 Before every Slack message, first review the exact outgoing text and own-branch
 working tree, commit and push the relevant checked project state to
 origin/sidemission, and verify the complete remote SHA. If there is no new
@@ -360,8 +372,8 @@ interaction evaluators may receive literature and low-cost feasibility review.
 User2026-10-09 authorizes appropriate small local training without per-run user
 approval. User decision2026-10-15 20:31 JST, directly confirmed2026-10-17,
 supersedes the old one-hour gate: estimated runs UNDER TWO HOURS need no prior
-review; a run expected to reach TWO HOURS (>=120minutes) first goes to Chat by mailbox for
-necessity assessment before launch. Record the
+review; a run expected to reach TWO HOURS (>=120minutes) requires the current explicit necessity assessment before launch; GitHub/Slack
+are intake channels, not automatic approval. Record the
 decision question, estimated cost and cheaper alternatives. This applies to
 training and other project runs, not the60-90minute Agent research segment.
 If confirmation is pending, continue independent shorter work. Do not split a
@@ -412,10 +424,10 @@ The validator checks declared closed work intervals and structure; bypass or rej
 workflow failure, not a compliant inspection. App uptime is not guaranteed.
 
 Chat and Agent are research partners; explicit user instructions take precedence.
-Use the sole project Slack route and the asynchronous protocol in
-docs/operations/SLACK_WORKFLOW.md. Read/save/review historical Chat comments,
-then write one checked progress report per existing probe. No realtime Dot
-consultation or reply requirement. Preserve raw originals privately and exclude
+Check GitHub remote reviews using docs/operations/CHATGPT_REVIEW_WORKFLOW.md
+and Slack reviews using docs/operations/SLACK_WORKFLOW.md before work selection.
+Direct Dot consultation is restored; apply the current request/delayed-check
+contract rather than historical asynchronous-only instructions. Preserve raw originals privately and exclude
 personal information/passwords/credentials from outgoing Git/Slack copies.
 Before every Slack message, commit and push the reviewed work to this role's
 authorized branch, verify the complete remote SHA, and include that exact SHA
@@ -542,7 +554,8 @@ visibility-change command; this does not identify a historical settings actor.
 
 The user confirms their2026-10-15 20:31 JST decision relayed by Dot at
 root1792063970.985749: estimated runs under two hours need no prior review;
-expected runs of two hours or more first receive Chat's explicit mailbox necessity assessment.
+expected runs of two hours or more first receive the required explicit necessity assessment, with GitHub/Slack
+review intake both available and no automatic approval by transport.
 This replaces the one-hour threshold in policy, manuals, memo and own heartbeat.
 Closing59 had retained the stricter threshold because the relay was treated as
 advisor-origin rather than user authority. That interpretation is superseded;

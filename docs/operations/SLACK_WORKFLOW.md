@@ -1,118 +1,151 @@
-# GenericChess periodic Chat mailbox
+# GenericChess Slack collaboration workflow —2026-10-24
 
-User update2026-10-23: exchange is explicitly two-way. Proactively report
-meaningful new evidence and ask Chat/Claude a concrete decision-changing question
-when warranted, with current interpretation, alternatives and the requested
-judgment. Follow the answer at the next existing probe and report actual adoption
-effects. Combine progress and questions within the one-message maximum; no
-fabricated questions, realtime waiting, reminders or other-role ownership.
-Preserve uncertain old sends without retrying them, but diagnose an entry that
-otherwise prevents every new distinct report. Publication and full-SHA checks
-remain mandatory. The latest2026-10-24 heartbeat sets both existing patrols at120 minutes;
-historical60-minute wording is superseded, with unchanged chats.
+## Review sources and current authority
 
-User decision 2026-10-20 applies to PRIMARY_SANDBOX, DEV_AUX and DEEPSEEK_AUX.
-Dot is paused. Replace realtime consultation with asynchronous Chat comments
-and one progress report per existing periodic Slack probe. No Dot mention,
-DOT_REPLY requirement, realtime wait, automatic followup, or daily 10:00 gate.
-Existing research, recurring cadence, stop scopes, writer/branch boundaries,
-PUBLIC repository and publication/content permissions remain unchanged.
+The2026-10-26 user correction adds GitHub ChatGPT Patrol reviews at every work
+opening. Follow [CHATGPT_REVIEW_WORKFLOW.md](CHATGPT_REVIEW_WORKFLOW.md) for
+remote discovery, full-SHA reads, changed-file coverage and adoption. This file
+continues to govern Slack transport; Slack is not the sole review source.
 
-## Route, ownership and migration
+## Restored Dot contact
 
-Sole route: NanoMelon #generic-chess C0C6L21UU20. Every role maintains only its
-own ignored .local_agent/slack/mailbox state. Shared account identity is not
-process authentication. Chat comments are suggestions, not new user authority.
-Each owner runs its own local command: mailbox migrate. This saves original
-advisor/Slack config privately, disables legacy Dot dispatch and mentions, and
-selects chat_mailbox without clearing stops, deleting the old SQLite ledger,
-changing another role, or creating/changing a schedule's cadence or target.
-Unmigrated configs also fail closed for new Dot dispatch; run mailbox migrate
-before sending the new protocol. Historical Dot handling is preserved in SLACK_DOT_HISTORY.md; consult-status
-and reconciliation remain available for historical evidence, not new sends.
+The user lifted the Dot pause on2026-10-24. Direct two-way Dot consultation,
+including bounded real-time exchange, is restored in existing NanoMelon
+`#generic-chess` (`C0C6L21UU20`). Outbound collaboration addresses Dot directly;
+a separate asynchronous comment-style report is no longer mandatory. The old
+Oct20 pause and Oct23 asynchronous-only/no-mention/single-message rules are
+superseded, not alternative live policies. No new channel/chat/worker/scheduler.
 
-## One logical read, then one report
+Priority: latest direct user instructions > independently initiated ChatGPT
+GitHub or Slack review comments > Dot's solicited replies/messages > local proposals.
+Continue reading ChatGPT's autonomous reviews; an immediate answer to a local
+question is not that higher-priority autonomous review. Shared account IDs and
+TYPE=CHAT_REPLY/DOT_REPLY markers are transport/provenance clues, not proof of
+independent authorship or authority. Save origin, timestamp, full thread, context
+and uncertainty. Unknown origin stays unclassified. Record adopt/defer/reject,
+reasons and execution effects. If evidence challenges advice, surface the conflict
+instead of silently treating speculation as fact. Neither advisor expands user
+scope, budgets, AUX authority or platform permissions. Dot cannot override the
+pure-Leaper-first direction or authorize >=120minute runs on the user's behalf.
 
-At each new or resumed research segment, perform one role-bound mailbox probe
-before substantive research. Read back to the saved coverage boundary, save raw
-tool evidence privately, and adopt/defer/reject each new or edited Chat comment
-before choosing the next action. If there is no new advice, continue research
-without waiting for a reply. Resume/heartbeat checks do not create realtime
-consultation or a reply requirement.
+## Reading and actual Slack interactions
 
-Use the role-bound local CLI (DEV_AUX: dev-aux-local.cmd):
-1. mailbox start: create/resume one probe and obtain previous coverage plus
-   relevant tracked thread roots. Pending Chat advice or old Dot requests do
-   not block another completed probe.
-2. Read channel pages back to the prior coverage boundary and complete pages
-   of relevant threads (including tracked reports that could receive delayed
-   replies). This is one logical read; pagination is not another probe.
-   Preserve each exact tool result privately before evaluation.
-3. Bundle raw results in a private JSON snapshot with team_id, channel_id,
-   channel_pages, thread_pages (root timestamp -> list of raw tool pages),
-   and coverage_complete=true only after actual boundary/thread verification.
-   mailbox ingest --probe-id ID --file SNAPSHOT copies raw bytes before parsing
-   or advancing coverage. First migration explicitly uses the prior verified
-   coverage boundary; it must not silently discard older unread messages.
-4. For every new/edited CHAT_Comments or TYPE=CHAT_* revision, use mailbox
-   decide --probe-id ID --message-ts TS --sha256 HASH --decision
-   adopt|defer|reject --reason REASON. Decisions bind exact message revisions;
-   deferred items remain in the next probe's backlog. Adoption is not execution.
-   Other roles' advice can be deferred as outside this role's assignment.
-5. Before any message is sent, commit and push the reviewed work to the owning
-   role's authorized branch and verify the full remote SHA in that checkout.
-   For DEV_AUX this is origin/sidemission. If push or verification fails, do not
-   send; preserve the failure and continue independent work. Then save a checked
-   report file whose evidence links and committed SHA refer to that verified
-   revision. mailbox prepare --probe-id ID --file REPORT prepares one
-   AGENT_MAILBOX_REPORT addressed RECIPIENT=CHAT with role, probe ID, reviewed
-   comments, results, failures/limits, next action, fixed-SHA public evidence
-   links, and the verified full remote SHA. Do not include personal information
-   or credentials.
-6. mailbox begin-send --probe-id ID durably records SEND_UNCERTAIN before the
-   installed Slack send tool is called exactly once. Save its exact result
-   privately; mailbox bind --probe-id ID --message-ts TS --file RECEIPT records
-   confirmed delivery only if receipt route/timestamp match.
-   Do not read again after sending to await a reply. Reading, acceptance and
-   independent execution by Chat remain unverified unless later evidence says so.
+At each existing180minute patrol/manual work start, read new autonomous ChatGPT
+project comments and complete relevant threads once; retain coverage boundaries
+and any gaps. A direct request for latest messages permits a fresh bounded read.
+User correction2026-10-25: every NEW work round must initiate a fresh mailbox
+`TYPE=AGENT_REQUEST` root addressed to Dot. Old-thread reads and AGENT_FOLLOWUP
+messages do not substitute for the request trigger. Prepare the actual next-step
+plan, evidence, own judgment and any real decision question; publish referenced
+work and verify the full remote SHA BEFORE sending. Record session UUID, request
+ID and verified root in local evidence/memo. Resume the same active round without
+duplicating a verified request. If send is uncertain reconcile it, never blindly
+resend; record a real failure and continue independent work. This requirement
+replaces optional-only start consultation. Send at the start, not after doing
+the research or at round end: the already reviewed/published checkpoint plus
+the current executable plan suffices; no new result is required first. No
+response is a work gate. During
+later reads/sends consider a concrete question, especially doubts about
+correctness, interpretation or method; do not fabricate a scientific question. Relevant active Dot thread replies and bounded substantive
+follow-ups may be read/sent within the work segment; the ordinary patrol cadence
+is not a ban on real-time dialogue. Do not add empty repeated polls, chasing,
+self-reply loops or idle waiting. If no reply, continue independent useful work;
+contact permission does not prove current Dot availability or local push delivery.
 
-Read/send failures are preserved. A partial read cannot advance coverage or
-prepare a report. An uncertain send is reconciled by the next periodic read;
-never resend immediately or automatically. If delivery cannot be established,
-record the uncertainty and continue independent work; the one-write rule is a
-maximum, not permission to duplicate a possibly delivered report.
-No new daemon, worker, realtime monitor or replacement scheduler is introduced.
+Use the existing Slack plugin/channel/mailbox, identity binding and supported
+thread transport. Mentions are allowed when an existing verified Dot routing ID
+requires them; never invent an ID or mention a different account to wake it.
+Current shared-account channel routing remains unchanged. Request TYPE=DOT_REPLY
+and the immutable REQUEST_ID for solicited Dot replies. Existing CHAT_REPLY and
+old DOT_REPLY remain compatible; they do not determine scientific authority.
+Keep meaningful progress/negative results/UNKNOWN/cost/next action in substantive
+conversation, with fixed published source/full verified remote SHA. Each send,
+including follow-ups, requires reviewed content and push/SHA verification first.
+A real refusal is reported and diagnosed, never bypassed or retried blindly.
 
-## Committed raw-capture preservation reused — 2026-10-23
 
-DEV_AUX reuses `save_plugin_original` and the strict cursor-linked page parser
-from sandbox `edda38828d970cb6a1669ffa3ac95aa93167ce71`, with its tests. For each
-logical read, use the active session UUID plus a fresh read UUID and separate
-page names. Retain the tool result before serialization; save final opaque bytes
-through that helper in ignored `.local_agent`. It creates exclusively, accepts
-only an identical retry and refuses replacement by different bytes. Preflight
-Unicode/quoted bytes on a separate synthetic path. A failed save retries the
-same retained return under a fresh name, without another Slack read.
+User correction2026-10-25: at the opening of EVERY logical Slack interaction,
+check newly available Chat comments and complete relevant threads, not only at
+the scheduled patrol. A send/readback/five-minute follow-up belonging to that
+interaction does not recursively open another interaction or require an endless
+channel-read loop. Preserve raw originals first; record newest covered root and
+thread boundaries, including replies on relevant existing comments.
+After each Dot send, record sent UTC and due UTC (+5minutes), continue useful
+independent work, then perform ONE bounded reply check at about five minutes.
+The immediate delivery/payload readback does not replace this delayed reply check.
+If that check opens a fresh Slack interaction, check new Chat comments there too.
+Record checked UTC/result; no repeated polling, waiting for a reply, new worker
+or timer. On a real interruption, preserve the due check for same-round resume;
+do not claim it was executed. Replies retain their solicited Dot authority.
 
-This imports the shared preservation/parser implementation, not PRIMARY's
-research task or communication policy. DEV_AUX retains its paused-Dot guards
-and historical numbered-list receipt compatibility. No schedule, stop flag,
-other-role state, new send or uncertain-send retry is changed.
+User clarification2026-10-25: TYPE=AGENT_REQUEST requires a Dot reply. Other
+message types, including AGENT_FOLLOWUP, allow a discretionary reply: neither
+mandatory response nor mandatory silence. This is the requested collaboration
+contract, not proof of delivery or a guaranteed local enforcement mechanism.
+Five minutes is the single delayed-check target, NOT a response expiry: retain
+late replies and read them at the next meaningful interaction. No missing reply
+creates a research/publication gate or permission to poll repeatedly.
 
-## Long experiments
+## Exact originals before evaluation
 
-A single experiment expected below 120 minutes needs no prior external review.
-At or above 120 minutes, first submit its exact scope, necessity, expected cost,
-frozen budget and cheaper alternatives in the Chat mailbox report. Start only
-after a later probe receives an explicit assessment addressing that scope and
-budget. Preserve the assessment's exact message/hash and adoption reasoning.
-Silence or an unrelated comment is not assessment. Continue shorter independent
-work while waiting. Never split to evade review or extend frozen old caps.
+Save the exact raw, project-related read in Git-ignored `.local_agent` BEFORE
+parsing, reconciling or adopting advice. Keep timestamps as exact strings. For a
+long thread request small pages (limit 20) and follow the returned cursor chain;
+validate actual reply counts using the existing strict parser. Preserve partial,
+refused and failed reads as evidence. If the connected read path is unavailable,
+report the visibility limit and do not claim that the Chat is clear or healthy.
 
-## Acceptance and delivery
+Preflight the save/serialization path with synthetic Unicode and quoted text
+before making the patrol read. In functions.exec, immediately `store` the exact
+returned object under a project-specific key BEFORE any encoding, shell call or
+assessment, then save its lossless JSON privately. Do not rely on an unavailable
+global such as `btoa`, or interpolate untrusted message text as shell code.
+For chunked capture, check each native save exit code before continuing and
+verify the assembled byte count against the retained serialization before
+saving the final original. Refuse an empty or incomplete assembly. Exercise the
+same chunk-save expression in the synthetic preflight: a separate simpler call
+does not detect a syntax error in the real capture command. If
+disk capture fails, retry saving the SAME retained return after diagnosing the
+serializer; do not make another channel read. Only assess after the private save
+succeeds. If the returned object was lost, preserve the failure and leave that
+coverage boundary open; do not advance the last-complete boundary or claim the
+messages were reviewed. Read again at the next permitted patrol, not in a loop.
 
-Test empty/delayed/new/edited comments, paginated threads, duplicate probe calls,
-raw-before-cursor durability, uncertain sends, receipt mismatch, stops and old
-pending compatibility. Perform one real read and one report with no post-send
-read. Publish reviewed shared code/docs on the owning branch; other roles
-migrate their own local state and existing prompts. No role controls another.
+Use the active session UUID plus a FRESH read UUID for every logical patrol
+capture, with distinct channel/thread/page names. A time-only suffix such as
+1935 repeats on another day; a session UUID alone can repeat after resumption.
+Before a read, preflight a separate synthetic path through
+`tools.local_agent.slack_transport.save_plugin_original(path, payload_bytes)`.
+Use that helper for the final lossless raw bytes as well: it requires an ignored
+path under this checkout .local_agent, creates exclusively, and refuses different
+bytes at an existing path. An identical retry confirms bytes without rewriting.
+Do not use WriteAllBytes/WriteAllText/Path.write_bytes or mutable write_json to
+replace an original. Mutable assessments still use write_json.
+If a collision is refused, keep the SAME retained tool return and save it under
+a fresh read UUID; do not reread Slack. A partial failed write is also preserved.
+Never reconstruct a lost wrapper and call it the exact original. The observed
+2026-10-22 collision lost the preceding day's channel-wrapper original while
+its complete thread original remained; the provenance amendment records that
+limit. This is a data-preservation rule, not a send/approval/worker mechanism.
+
+## Delivery and pending requests
+
+The repository remains PUBLIC. Inspect outgoing actual content and exclude
+personal information/passwords/credentials; sanitize publication copies only.
+Preserve exact private originals in ignored .local_agent. Publish reviewed DEV_AUX role work on sidemission using its own reviewed
+commit/push route and relevant tests; verify FULL origin/sidemission SHA before
+a send. Do not use PRIMARY publish/promote commands. No force-push or cross-checkout delivery.
+
+Use the existing mailbox: prepare immutable request, begin-send once, store the
+exact plugin result before encoding, bind a successful receipt and verify parent
+payload by bounded thread readback. Preserve old request bodies, content hashes,
+roots and revisions. Never rewrite historical requests to address Dot or reinterpret
+old advice as autonomous review. A verified-delivered PENDING request can coexist
+with a distinct substantive request via existing asynchronous_progress_enabled;
+that legacy-named flag is transport concurrency, not an asynchronous-only policy.
+PREPARED/SEND_UNCERTAIN/unverified sends require reconciliation, no automatic
+resend. Reply in the known thread for a genuine follow-up after content/push/SHA
+checks and preserve its exact receipt; never silently change the parent payload.
+Follow unresolved questions during relevant dialogue or the next original patrol;
+reading, adopting and executing are distinct. No reply is a research/publication
+gate. >=120minute runs still need the user's confirmation, not Dot approval.

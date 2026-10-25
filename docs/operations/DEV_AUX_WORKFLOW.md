@@ -2,7 +2,8 @@
 
 User instruction 2026-10-11: DEV_AUX inherits primary research cadence and
 periodic Chat mailbox exchange, while keeping its checkout, branch and tasks independent.
-This expressly permits a separate native hourly heartbeat for this chat;
+This expressly permits this chat's existing heartbeat at the latest user-set
+cadence (currently180minutes, PAUSED);
 the historical single-heartbeat rule is overridden only to this extent.
 
 ## Recovery and research segments
@@ -25,7 +26,7 @@ or a broken timer. Use explicit own-checkout workdir and supported escalation
 when ordinary sandbox access fails. Verify actual target ID/status/interval before
 reporting any schedule defect; do not create/rebind/pause a correct heartbeat.
 
-User correction2026-10-20: the DEV_AUX heartbeat cadence is hourly. The saved
+Historical receipt2026-10-20 (not current cadence): the heartbeat was hourly. The saved
 recurrence was already hourly; its stale 90-minute prompt wording was corrected
 through the automation tool, preserving the same target and ACTIVE status.
 
@@ -63,21 +64,20 @@ A completed assigned validation is followed by another nonduplicative useful
 independent audit/counterexample within the user's inherited research scope;
 never take over primary product work or change defaults/UI.
 
-## Periodic Chat mailbox
+## GitHub and Slack reviews, then direct Dot collaboration
 
-User2026-10-20 suspends Dot for every project role. Follow SLACK_WORKFLOW.md:
-one logical channel/relevant-thread read per existing probe; preserve exact raw
-output privately, review new/edited historical Chat comments, save progress,
-then write one RECIPIENT=CHAT report. No mention, realtime wait, followup loop,
-daily10:00 window or response requirement. Old pending requests are historical,
-not blockers. DEV_AUX migrates only its own ignored config with mailbox migrate;
-preserve existing stops and heartbeat target/cadence.
+Before each new work round, inspect remote ChatGPT Patrol files and new/edited
+Slack autonomous comments/full relevant threads. Follow CHATGPT_REVIEW_WORKFLOW.md
+for remote discovery, pinned full SHA/path/blob, raw preservation, change coverage
+and read/adopt/defer/reject. GitHub is now a review source alongside Slack; no
+merge, code execution or PRIMARY research takeover is implied by a review read.
+Use SLACK_WORKFLOW.md for restored direct Dot requests and bounded exchanges:
+fresh AGENT_REQUEST per new round, same-round verified request not duplicated,
+one delayed reply check about5minutes after each send, no empty polling.
+Latest user > autonomous ChatGPT GitHub/Slack review > solicited Dot > local.
+Own publication/fullSHA, content review, stops and experiment budgets remain.
+The former Dot pause/asynchronous-only/one-report cap is historical, not active.
 
-For expected runs >=120minutes, await an explicit Chat mailbox assessment of
-the exact scope and budget; work on shorter independent tasks while waiting.
-Under120minutes needs no prior review. Never extend old caps or split runs.
-Commit/push checked auxiliary work only to origin/sidemission, verify full SHA,
-exclude credentials/personal information, and distinguish delivered/read/executed.
 
 ## Setup status
 

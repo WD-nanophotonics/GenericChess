@@ -10,7 +10,9 @@ Read .local_agent/NEXT_WORK.md in full, then AGENTS.md, the current mainline
 and own role/rollout/advisor/Slack stop flags. Use an explicit own-checkout
 working directory; run `dev-aux-local.cmd doctor`. Identity must match DEV_AUX,
 this repository root and sidemission. Never infer identity from app default cwd.
-Check heartbeat binding or remote transport only when investigating that issue.
+Check heartbeat binding only when investigating that issue. Remote review checks
+are routine at work opening under CHATGPT_REVIEW_WORKFLOW.md, not restricted
+to transport incidents.
 Unknown process visibility is not evidence that a process exited.
 
 An active session is authoritative even if the memo is stale. Use
@@ -31,6 +33,17 @@ Fetch the explicit tracking ref with
 fetch configuration may otherwise update only FETCH_HEAD and leave a stale
 origin/sandbox. Inspect the fixed fetched commit before importing its files.
 
+## GitHub and Slack review intake
+
+At every new round/manual start/heartbeat, read the remote ChatGPT Patrol review
+files and new/edited Slack autonomous comments before selecting research. Follow
+CHATGPT_REVIEW_WORKFLOW.md: discover actual remote path/ref, explicitly update
+needed tracking refs, pin full SHA/path/blob, compare changed files, retain exact
+originals and incomplete-coverage boundaries. No merge/import/execution is needed
+to read advice. Apply latest user > autonomous GitHub/Slack ChatGPT > Dot > local;
+record adoption and actual execution separately. Current cadence180minutes,
+AUX remains PAUSED; no scheduler, session or research-state mutation here.
+
 ## Research and timing
 
 Read LOCAL_MAINLINE.md for the current P0/P1 structural counterfactual and
@@ -41,11 +54,12 @@ Later learning/teachers/inverse and search-knowledge compression are conditional
 future work. Keep full executable rules/history and UNKNOWN semantics.
 Do not restore retired audit chains merely because an old memo names them.
 
-Before substantive work, do one role-local mailbox probe per SLACK_WORKFLOW.md.
+Before substantive work, complete own GitHub/Slack intake per
+CHATGPT_REVIEW_WORKFLOW.md and SLACK_WORKFLOW.md.
 Review new/edited Chat comments with adopt/defer/reject reasons; advice does not
 replace explicit user direction. The completed cleanup was read-only;
-normal research follows the periodic mailbox protocol.
-No Dot realtime wait, daily gate, resend or reply requirement.
+normal research follows current review intake and restored bounded Dot dialogue.
+Newround AGENT_REQUEST and one +5minute reply check apply; no empty polling.
 Raw originals use the committed `save_plugin_original` helper, active session
 UUID and a fresh read UUID per logical capture; see SLACK_WORKFLOW.md. Identical
 retries preserve bytes, while a different existing original cannot be replaced.
@@ -76,7 +90,8 @@ pause does not change recurrence; only explicit schedule instructions do.
 ## Experiment cost and records
 
 A single expected run under120minutes may proceed within standing scope;
->=120minutes first needs explicit Chat mailbox scope/budget assessment.
+>=120minutes first needs the required explicit scope/budget assessment under
+current user instructions. GitHub/Slack are review intake, not automatic approval.
 Do not split a run to evade assessment, reset an old cap, or extend frozen tests
 based on observed results. Preserve failed/partial/censored and missing records.
 
