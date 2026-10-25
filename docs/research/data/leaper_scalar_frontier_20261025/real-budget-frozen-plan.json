@@ -1,0 +1,1523 @@
+{
+  "batch_seconds": 3900,
+  "budgets": {
+    "balanced50k": {
+      "actual_limits": {
+        "deterministic": true,
+        "max_depth": null,
+        "max_nodes": 50000,
+        "max_time_seconds": 45,
+        "quiescence_hard_max_depth": 8,
+        "quiescence_max_depth": 4,
+        "quiescence_max_nodes": null
+      },
+      "ui_allocated_limits": {
+        "deterministic": true,
+        "max_depth": null,
+        "max_nodes": 50000,
+        "max_time_seconds": null,
+        "quiescence_hard_max_depth": 8,
+        "quiescence_max_depth": 4,
+        "quiescence_max_nodes": null
+      }
+    },
+    "deep200k": {
+      "actual_limits": {
+        "deterministic": true,
+        "max_depth": null,
+        "max_nodes": 200000,
+        "max_time_seconds": 45,
+        "quiescence_hard_max_depth": 8,
+        "quiescence_max_depth": 4,
+        "quiescence_max_nodes": null
+      },
+      "ui_allocated_limits": {
+        "deterministic": true,
+        "max_depth": null,
+        "max_nodes": 200000,
+        "max_time_seconds": null,
+        "quiescence_hard_max_depth": 8,
+        "quiescence_max_depth": 4,
+        "quiescence_max_nodes": null
+      }
+    },
+    "fixed1.5": {
+      "actual_limits": {
+        "deterministic": true,
+        "max_depth": null,
+        "max_nodes": null,
+        "max_time_seconds": 1.5,
+        "quiescence_hard_max_depth": 8,
+        "quiescence_max_depth": 4,
+        "quiescence_max_nodes": null
+      },
+      "ui_allocated_limits": {
+        "deterministic": true,
+        "max_depth": null,
+        "max_nodes": null,
+        "max_time_seconds": 1.5,
+        "quiescence_hard_max_depth": 8,
+        "quiescence_max_depth": 4,
+        "quiescence_max_nodes": null
+      }
+    }
+  },
+  "cost": "Median paiddefault query_seconds/event0.0002447544 => timed192s+balanced1566.43s+deep16pairs1566.43s=3324.86s55.414min;15percent reserve3823.6s<3900s batch65min. Includes frozen source/prep below. Previous independent first-Q stage2596.103s43.27min+about10min preparation across both rounds; total expected108.7min, hard batch upper118.3min<120. p53causal/singleton/point experiments are different question, separately retained, not a budget reset. Review whole first-Q logical cost; stop atbatch65, no continuation/refill to evade120.",
+  "dependencies": {
+    "generic_chess/ai/alphabeta/player.py": "efcb186c227818c7a0d03e76f8db9b4b568a2874abddb5dfde82d4725b448855",
+    "generic_chess/ai/alphabeta/search.py": "417b5b84c2d88c84e578a0af5dd45676aa5309f0a3665c96f21960354de7f5d5",
+    "generic_chess/ai/budget.py": "bb4e02d77b4d2aa97d8e531da5ff1cd74c2ce5a5a60788ce7a9ff6af2b00ca0d",
+    "scripts/leaper_first_q_refinement.py": "85e9a084de12d09f426beb8edd98439bb7bb6870c9fa8b4fb3c44bb2b488fc47"
+  },
+  "inputs_sha256": "8cbe21b96c4ddfd4b620f240248476875ea4518766badf627a5226be1517f02e",
+  "premise": "Prior two-callback experiment compared different stages; real code uses fixed1.5s and balanced50k/deep200k presets. Need actual same-allocation returns, not internalbest or label-selected stopping.",
+  "prior_receipt": ".local_agent/anchor-mandatory-pilot-096f/receipt.json",
+  "question": "Does first-Q refinement preserve actual decision quality at existing desktop-derived time/node consumers?",
+  "registered_at": "2026-10-25T02:45:47.333300+00:00",
+  "review": "Anchor pilotfailed; no remaining60anchor guard. This is existing Backup1 with real code-defined consumer budgets, not a substitute long run of a rejected policy.",
+  "scope": "Exposed64fullhistories/twoTRAINtrajectories/oneRuleSet; deep16fixed every-fourth input in preexisting order, not chosen from results. Fresh Player/TT per arm, alternating pair order. Budgets read existing allocator; nodearms45s safetyguard with censorshipUNKNOWN to budget attainment. No UI/default change, holdout, strength or another rule class claim.",
+  "slots": [
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p0"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p0"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p2"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p2"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p4"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p4"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p6"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p6"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p8"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p8"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p10"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p10"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p12"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p12"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p14"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p14"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p16"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p16"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p18"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p18"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p20"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p20"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p22"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p22"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p24"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p24"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p26"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p26"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p28"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p28"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p30"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p30"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p32"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p32"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p34"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p34"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p36"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p36"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p38"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p38"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p40"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p40"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p42"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p42"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p44"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p44"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p46"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p46"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p48"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p48"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p50"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p50"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p52"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p52"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p54"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p54"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p56"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p56"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p58"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p58"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p60"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p60"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "cost-p62"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "cost-p62"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p1"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p1"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p3"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p3"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p5"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p5"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p7"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p7"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p9"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p9"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p11"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p11"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p13"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p13"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p15"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p15"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p17"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p17"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p19"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p19"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p21"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p21"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p23"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p23"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p25"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p25"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p27"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p27"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p29"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p29"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p31"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p31"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p33"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p33"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p35"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p35"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p37"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p37"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p39"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p39"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p41"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p41"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p43"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p43"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p45"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p45"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p47"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p47"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p49"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p49"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p51"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p51"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p53"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p53"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p55"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p55"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p57"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p57"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p59"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p59"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p61"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p61"
+    },
+    {
+      "arm": "refined",
+      "budget": "fixed1.5",
+      "key": "next-role-p63"
+    },
+    {
+      "arm": "default",
+      "budget": "fixed1.5",
+      "key": "next-role-p63"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p0"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p0"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p2"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p2"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p4"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p4"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p6"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p6"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p8"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p8"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p10"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p10"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p12"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p12"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p14"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p14"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p16"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p16"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p18"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p18"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p20"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p20"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p22"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p22"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p24"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p24"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p26"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p26"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p28"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p28"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p30"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p30"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p32"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p32"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p34"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p34"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p36"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p36"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p38"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p38"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p40"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p40"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p42"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p42"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p44"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p44"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p46"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p46"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p48"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p48"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p50"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p50"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p52"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p52"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p54"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p54"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p56"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p56"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p58"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p58"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p60"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p60"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "cost-p62"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "cost-p62"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p1"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p1"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p3"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p3"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p5"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p5"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p7"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p7"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p9"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p9"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p11"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p11"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p13"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p13"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p15"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p15"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p17"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p17"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p19"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p19"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p21"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p21"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p23"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p23"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p25"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p25"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p27"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p27"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p29"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p29"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p31"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p31"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p33"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p33"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p35"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p35"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p37"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p37"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p39"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p39"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p41"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p41"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p43"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p43"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p45"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p45"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p47"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p47"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p49"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p49"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p51"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p51"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p53"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p53"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p55"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p55"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p57"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p57"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p59"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p59"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p61"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p61"
+    },
+    {
+      "arm": "refined",
+      "budget": "balanced50k",
+      "key": "next-role-p63"
+    },
+    {
+      "arm": "default",
+      "budget": "balanced50k",
+      "key": "next-role-p63"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p0"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p0"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p8"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p8"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p16"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p16"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p24"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p24"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p32"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p32"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p40"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p40"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p48"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p48"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "cost-p56"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "cost-p56"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p1"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p1"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p9"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p9"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p17"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p17"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p25"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p25"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p33"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p33"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p41"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p41"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p49"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p49"
+    },
+    {
+      "arm": "refined",
+      "budget": "deep200k",
+      "key": "next-role-p57"
+    },
+    {
+      "arm": "default",
+      "budget": "deep200k",
+      "key": "next-role-p57"
+    }
+  ],
+  "source_sha256": "3b9f0f1c05422bee3b49f69189359c75dd7724a68f45fc8c42ce2193c3eefaec",
+  "stop": "Exactly288calls once if within batch; a stopped batch leaves missing outcomesUNKNOWN. No resampling/rerun/extension/deadline sweep. All WDLnegative/censored/actualsources retained. No activation decision from this one exposedRuleSet."
+}

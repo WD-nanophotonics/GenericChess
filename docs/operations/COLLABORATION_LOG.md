@@ -7440,3 +7440,18 @@ reproduces nominalD6→D7 reversal; precise quiet frontier/originalwarm chain UN
 Latest user correction is active in all manuals: check new comments at every
 logical Slack opening and one reply check about5minutes after each Dot send.
 No schedule/worker/AUX changes. Session time is actual ledger, not open UTC age.
+
+
+## 2026-10-25 PRIMARY scalar frontier round096f
+
+Newrequest GC-SLACK-20261025-111951-c2fef553/root1792894817.804589 was delivered
+and exact-readback verified after published61b3dc09fullSHA verification. Start
+comment/oldDot threads had no new posts. One delayed check02:25:36UTC read
+solicited Dot1792894956.084629. Its method advice informs explicit observed-vs-
+missing fields, return-time TT snapshot erratum, abort limits and cumulative cost;
+not all recommended call IDs/effective windows were captured, and no independent
+advisor execution is claimed. New two-call scalar parity plus local actual coverage
+locates standpat dependence without a full repair. A distinct all-anchor pilot
+again repairs p53/regresses p49 and is rejected; remaining60notrun. Existing
+Backup1 now evaluates code-defined real consumer budgets; this checkpoint reports
+only completed1.5second pairs, not the runningnode arms. AUX/UI/default unchanged.

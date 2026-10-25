@@ -1,0 +1,35 @@
+# Pure-Leaper selected frontier coverage — 2026-10-25
+
+Intermediate checkpoint: the separate real-budget first-Q comparison is RUNNING. Closed p53 diagnostics below do not activate a policy, repair the full search objective, or establish class-wide strength. PRIMARY alone writes sandbox; AUX and UI/defaults are unchanged.
+
+## What was observed
+
+Two new cold-child D6 calls instrumented only scalar return projections and selected dependency chains. Both complete with exactly the previous action, score, main nodes and q nodes: branch1 -1106, branch8 -1098. Four D5/D6 selected chains replay their full input history and action paths under Core. Their selected endpoints are noncheck qdepth0 final-loop return-alpha values equal to standpat and strictly above incoming alpha. The D6 endpoints have four clock plies left. Branch1's one legal action and branch8's two legal actions were actually classified non-noisy and excluded. Neither endpoint exited through the qdepth cap or hard-check limit. This identifies observed coverage candidates and numerical sources; it is not an all-defense causal explanation.
+
+The observer preserves target-function AST after removing wrappers and skips nested helper returns. Its initial zero-query test failed because it also wrapped nested child_search returns; the cause was fixed without changing score expectations. Value/action/work and cancellation equivalence tests then passed. Only selected chains persist. Numerical bound_vs_entry classifies against the original call window, not necessarily the TT-tightened effective window. The recorded tt_entry is a return-time snapshot whose object may have changed during store, not a probe-time snapshot. Unique IDs for every discarded search call and a complete TT producer chain are absent. Opaque TT/incoming-bound endpoints and missing coverage remain UNKNOWN; no complete event graph or original warm-D7 reconstruction is claimed.
+
+## Full-clock reference and intervention
+
+Two Q4 frontier reference calls at five seconds returned only D1. Their caller polled stop files on every checkpoint, unlike the earlier throttled controller. These timings are contaminated by caller transport; they do not establish high Core or Q-policy cost. The original capped outcomes remain UNKNOWN and were not rerun. A regression test bounds future stop-file polls to one per quarter second, without changing the search's own deadline.
+
+A distinct Q0 full-main-four reference, at the same five-second cap, completed both frontier histories with value0 (about0.045/0.058seconds). This uses the existing Player/Core, not an independent solver. It shows that the selected finite-depth line under the truly winning child has itself reached a draw. A nominal winning child does not make its exported finite PV a winning certificate. Timing differences against the defective Q4 caller are not a controlled Q-policy speed comparison.
+
+The subsequent two-call point-coverage intervention executes an inner existing-Player Q0 full remaining-clock search at only the frozen full-history/action-path frontier. It receives no desired score or root WDL, charges nested work/time to the outer call, and is explicitly diagnostic, never a deployable selector. Both outer D6 calls complete. Branch1 changes -1106→-1103, branch8 stays -1098; the comparison still prefers the DRAW branch. Actual local coverage therefore affects a root value but is insufficient to repair the ordering. The future-only qnode-cap check was added after these closed calls; their actual qnode cap was None and outcomes are unchanged. Exact executed source capsules are retained.
+
+## Distinct semantic-anchor falsifier: rejected
+
+New observed branching anchor frontiers are absent from the old singleton policy, motivating one fixed four-case pilot. AnchorMandatoryQ forces actual legal anchor moves only when every legal action is an anchor board move, removes standpat there, retains initial/explicitQ0 and the existing check/declaration/hard/node controls, and uses semantic is_anchor rather than a K name or position label. Six real-Core/contract tests cover singleton/three-choice anchors, clock completion and budget boundaries.
+
+At45seconds on p53/p7/p47/p49, final quality is3/4, unchanged aggregate: p53 is repaired and p49 regresses again. Search completes only D4–6 on these cases and visits tens of thousands of anchor frontiers. The preregistered no-regression gate fails. REJECT activation and the remaining60guard; no singleton threshold/depth sweep or cap refill follows. A new semantics-based proposal is not made successful by an exposed single-case repair.
+
+## Active backup: actual existing caller budgets
+
+The desktop configuration's initial fixed-time value is1.5seconds. The existing Qt-free budget allocator supplies BALANCED50k and DEEP200k node presets. A separate frozen paired first-Q study compares actual default/refined returns on all64 exposed histories at1.5seconds and50k, plus16 histories selected every fourth original input at200k. Pair order alternates; each arm uses fresh Player/TT and actual default profiles. Node arms have a45second safety guard; guard censoring is UNKNOWN for attaining the desired node budget. The first-Q research AST installation adds about8–9ms outside the Player timer and stays in total return/caller costs; equal SearchLimits is not a strict end-to-end deadline.
+
+The complete plan contains288calls and a3900second hard batch, no resampling or refill. The cost estimate uses paid per-event rates and includes previous first-Q work/preparation in its under120minute logical-run assessment. Already-paid p53 causal work is separately retained, not silently credited as new research. At this intermediate checkpoint,1.5second actual returns are62/64 in both arms with no paired quality change; other planned slots remain unqualified until completed. No UI/default change follows from partial data.
+
+## Evidence and communication
+
+[Manifest](data/leaper_scalar_frontier_20261025/manifest.json) binds lossless private-original/public-copy hashes, frozen inputs/plans, executed sources, successful/partial/capped returns and assessments. Readers use shared Core and fixed published AUX labels only; no AUX checkout, graph or worker was touched. The source/analysis limitations above are part of the result.
+
+This round started new AGENT_REQUEST GC-SLACK-20261025-111951-c2fef553 at root1792894817.804589 after full remote61b3dc09fd61ead4b88fcc948381ee1b139e0b20 verification. New comments and relevant complete threads were captured first. Its one five-minute check read solicited Dot1792894956.084629: advice on omitted-vs-unvisited actions, numeric provenance, TT opacity, aborts/truncation and cumulative cost is adopted within captured limits, not claimed fully implemented. No advisor independently ran these queries/tests. Broader quiet-cause and strength claims remain UNKNOWN.

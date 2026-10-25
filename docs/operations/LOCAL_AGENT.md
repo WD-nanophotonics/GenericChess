@@ -774,3 +774,25 @@ is not an achieved depth or certificate. Preserve caller node/time/q/cancellatio
 and TT contracts. Complete game-clock stopping is different from selecting an
 old depth with a favorable label. Current scientific selection/negative policies
 and exact source/version provenance remain in LOCAL_MAINLINE/report, not here.
+
+
+## Scalar observer and research-stop transport —2026-10-25
+
+AST return observers must skip nested helper function scopes; a nested return's
+locals are not the enclosing negamax locals. Reversible AST/source checks alone
+do not prove that instrumentation targets the correct scope. Preserve failed
+zero-query checks and test real-Core value/action/work/cancellation parity before
+admitting a frozen observer query. Do not serialize or retain runtime owners.
+
+A TT entry read at return may be a mutable post-store snapshot, not the original
+probe. Original-entry-window numerical bounds are not automatically effective
+post-TT bounds. Selected action paths are not a complete call/event graph; mark
+uncaptured TT producers, inherited-alpha and discarded/truncated events UNKNOWN.
+Record actual classification/visit provenance; not generated is not filtered.
+
+Research-only cancellation tokens reading stop JSON files need bounded transport
+polling, while the search still observes its own node/time guards. An observed
+unthrottled caller produced capped low-node returns; keep those originals and do
+not attribute its timing to the leaf policy. Fix future capture/control, never
+refill a closed failed/censored slot merely to repair metadata. These instructions
+do not throttle normal product in-memory cancellation events.
