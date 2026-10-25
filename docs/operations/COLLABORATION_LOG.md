@@ -7608,3 +7608,19 @@ scientific9fcbe14da416ba0411291ef2dfa75e9c8f9ea428 verifiedbeforeFOLLOWUP
 acceptedENDED10:30:59UTC. OneendingwrapperSyntaxError executednothing; active
 statecheckedbeforecorrectedcall, nofalseacceptedreceipt. Closing+5checkdue
 10:32:52UTC retainedinmemo untilactualexecution; no wait/admincredit.
+
+
+2026-10-25 PRIMARY0c quality milestone: AGENT_REQUEST
+GC-SLACK-20261025-193713-e6220aa6/root1792924666.163109 verifiedagainst0e4408b9.
+Single+5due10:42:46 check10:44:10 captured Dot1792924826.304999, solicited
+source-only, not autonomous Chat/independent execution. Adopted missing real
+quiet-before-cutoff observation and Nativeboth/PVS/ordinary-only distinction.
+8observer+18qualification+256quality returns; see LEAPER_ORDINARY_QORDER.
+1.5both62/64,no repair/regression/actionchange;50kboth64/64,sameaction/score/depth,
+cost517.716→522.642s. Existingfullsort not worth promotion on this cohort.
+24actualgames stillRUNNING; no completed-session claim. Independent immutable
+prefix corrected a mistaken new test assumption, not measured results. No
+AUX/default/UI/mixed/newbackend/worker change. Mainline replaced obsolete
+observer TODO; no blind quiet skip or recycled old cap. Next genuine decision:
+cheap checking-order hint versus more independent nontrivial quality evidence;
+not another threshold sweep or assumption that speed alone means strength.
