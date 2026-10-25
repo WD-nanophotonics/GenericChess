@@ -2,7 +2,7 @@
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
 PRIMARY writes sandbox only. PURE LEAPER first; mixed/legacy/promotion/drop/NNUE
-expansion deferred. Default/UI/AUX unchanged. Both schedules60min; PRIMARYactive,
+expansion deferred. Default/UI/AUX unchanged. Both schedules180min; PRIMARYactive,
 AUXexistingPAUSED, bindings intact. Normal60–90recorded effective researchminutes.
 
 ## Current judgment and reason —2026-10-25
