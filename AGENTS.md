@@ -9,7 +9,7 @@ write prohibition. It does not transfer research ownership or permit worker
 creation, active-file interference, merges, history rewriting or Slack deletion.
 The user then directed: do not message/pause either researcher; clean only files
 confirmed static and mark the remainder incomplete. Preserve active work,
-sessions/stops and the existing recurrence (now180minutes for PRIMARY by the later user
+sessions/stops and the existing recurrence (now60minutes for PRIMARY by the later user
 direction). General rules/search/learning remain the
 mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
 Closed experiment payloads may leave the current tree after checking dependencies;
@@ -40,8 +40,9 @@ workers may be created.
   TT guards. Current controls, success evidence and next action live in MAINLINE.
   Small solved examples or NPS alone do not establish class-wide/strength success.
 
-- User correction2026-10-24: both existing roles now recur every180minutes,
-  superseding the earlier120minute interval. The user explicitly requested both
+- User correction2026-10-25: both existing role schedules now recur every60minutes,
+  superseding the earlier180minute interval. Preserve ACTIVE/PAUSED states;
+  DEV_AUX was PAUSED when this cadence-only change was applied. The user explicitly requested both
   existing schedules be updated; both IDs/chat bindings remain active. PRIMARY
   updates only its own checkout policy and does not edit AUX research state. The60–90minute effective research requirement
   remains separate. One inspection pause does not pause recurring scheduling.
@@ -304,7 +305,7 @@ conditions; distinguish ordering prices from leaf prices.
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing asynchronous mailbox.
 Read autonomous ChatGPT project reviews and complete relevant threads at each
-existing180minute patrol/manual work start. Start every new work round with a fresh mailbox `TYPE=AGENT_REQUEST` to Dot
+existing60minute patrol/manual work start. Start every new work round with a fresh mailbox `TYPE=AGENT_REQUEST` to Dot
 after the required publish/full-SHA verification; an old-thread FOLLOWUP is not
 a substitute. Record the round/request association; resuming that same round
 does not duplicate verified delivery. During later Slack interactions consider

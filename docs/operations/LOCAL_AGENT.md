@@ -39,14 +39,14 @@ publication. DEV_AUX owns its existing sidemission checkout and outputs; do not
 write its files, state, session, memo or unpublished work. This patrol covers
 only PRIMARY mainline research and the existing project Chat.
 
-The existing `genericchess` heartbeat recurs every180minutes by the explicit
-latest2026-10-24 user direction, superseding its120minute cadence while preserving
-its identity. Both existing roles recur every three hours; only PRIMARY checkout files are updated here.
+The existing `genericchess` heartbeat recurs every60minutes by the explicit
+latest2026-10-25 user direction, superseding its180minute cadence while preserving
+its identity. Both existing schedules use one hour; preserve their enabled/paused states; only PRIMARY checkout files are updated here.
 A one-time pause applies only to that inspection and never edits the
 recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
-At each existing180minute patrol/manual work start, read newly available
+At each existing60minute patrol/manual work start, read newly available
 independently initiated ChatGPT review comments and complete relevant threads.
 The2026-10-24 direct user correction restores direct Dot consultation, including
 bounded real-time thread exchanges; it supersedes the old pause, asynchronous-
@@ -232,7 +232,7 @@ handling. Raw capture paths use the active session UUID plus a fresh read UUID;
 final opaque bytes MUST use slack_transport.save_plugin_original, which refuses
 a different existing original. Time-only names and direct replacing writes are
 not safe across days/resumes. Read new project Chat messages/comments and relevant complete threads
-at existing180minute patrol/manual starts AND each logical Slack opening; preserve exact raw output before
+at existing60minute patrol/manual starts AND each logical Slack opening; preserve exact raw output before
 assessment. For active direct Dot dialogue, bounded relevant thread follow-ups
 are allowed. Apply the hierarchy and sender/provenance checks in SLACK_WORKFLOW.
 The old no-Dot/no-live/single-comment rule is superseded. A >=120minute run still

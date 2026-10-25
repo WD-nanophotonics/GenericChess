@@ -3,7 +3,7 @@
 AGENTS.md owns authority/roles; LOCAL_AGENT.md operating methods; SLACK_WORKFLOW.md
 communication. PRIMARY alone writes sandbox. PURE LEAPER first; mixed/legacy,
 promotion/drop/NNUE expansion remains deferred. Default/UI/AUX unchanged. Existing
-recurrence180minutes; normal segments60–90effective minutes, never wall-clock credit.
+recurrence60minutes; normal segments60–90effective minutes, never wall-clock credit.
 
 ## Current judgment and reason —2026-10-25
 
