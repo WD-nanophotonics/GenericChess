@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-25T05:53:25.629953+00:00",
+  "files": [
+    {
+      "bytes": 1469,
+      "file": "lmr-f538-plan.json.gz",
+      "original_sha256": "9d459305f578184d540179bd33479c301e70e84cc1c45a859cf05a483ab6881b",
+      "sha256": "7b4cac59d516353a05a21b63b823025fc42cd90ef5a41cc7ae5f69e7c1eaacbe",
+      "uncompressed_bytes": 2733
+    },
+    {
+      "bytes": 4338,
+      "file": "lmr-f538-inputs.json.gz",
+      "original_sha256": "5e0b78350106cd1a066a031c8b6d841b5c94495580b70297789e742a9a4622f9",
+      "sha256": "3933e47ec2082bc58daf40e2aa06dca73d0dc57801db8402dbcd40b2e32e3ce9",
+      "uncompressed_bytes": 142038
+    },
+    {
+      "bytes": 20023,
+      "file": "lmr-f538-source-capsule.json.gz",
+      "original_sha256": "72235a4fff4667740ff89af56362d9b1d3302d92c8b45b4e5da99afe8a9bcf2b",
+      "sha256": "bec1ecb756c101638442d32e7c2e0de0ec089ddc2e9bab4f0edf73cb6ed85060",
+      "uncompressed_bytes": 90490
+    },
+    {
+      "bytes": 273,
+      "file": "lmr-f538-reference-proof.json.gz",
+      "original_sha256": "21d414701a252a1f50ad5d4b7c865e66ed08517594cceb5144974a1724fb37f1",
+      "sha256": "8f5f8f29b5ef67072b83f1cc5ae6583423475db8c734e31bbd27f2711c23f52d",
+      "uncompressed_bytes": 430
+    },
+    {
+      "bytes": 94,
+      "file": "lmr-f538-pilot-gate.json.gz",
+      "original_sha256": "295f40194d773e25cd82426e6fd45eb7992e944b942f470cb1ba054bf74c89da",
+      "sha256": "31d9fbaf8e5c844dd95038b94670b029ba5d6d5ce76ed1cbc9dd22de87dc3783",
+      "uncompressed_bytes": 87
+    },
+    {
+      "bytes": 2561,
+      "file": "lmr-quality-f538-plan.json.gz",
+      "original_sha256": "63d8f1d4f44aecb05dccb11bada86418b3c304983aff06f25a5e001cbc6119b5",
+      "sha256": "a3223c934333ac304d2533a87d88bdd2a877d38cf3bd1c8fadcc57fae5db346f",
+      "uncompressed_bytes": 17141
+    },
+    {
+      "bytes": 9274,
+      "file": "lmr-quality-f538-inputs.json.gz",
+      "original_sha256": "c384350423f6310fcfb9bb8e0f29bd6f2ccc47130d2b37d9ec8b03678ce81e72",
+      "sha256": "6eb62c8eae43199ce5f0fd3716ab9d844bade5d3215b9f2cb824806de51b281a",
+      "uncompressed_bytes": 318600
+    },
+    {
+      "bytes": 19700,
+      "file": "lmr-quality-f538-source-capsule.json.gz",
+      "original_sha256": "53c03d20ef8368d6aaa7130fe8b8213fe9becb598b7870f0b47eb572c2546130",
+      "sha256": "f7a105bf73004eb489911de73590e65d8f64624e1103eb5c5fb7cb037e6a5cde",
+      "uncompressed_bytes": 88822
+    },
+    {
+      "bytes": 403,
+      "file": "reference-analysis-f538.json.gz",
+      "original_sha256": "daacdf718013cc96a025c2dd6dd8adc54e18d696077434eba049d6db9ff0c3a7",
+      "sha256": "26ed337f34f5fdf9ce67864b2e954072fce29d05515a4cc52b9f0e6e2b949234",
+      "uncompressed_bytes": 1906
+    },
+    {
+      "bytes": 58188,
+      "file": "canonical-input-f538.json.gz",
+      "original_sha256": "e6b7bec5dcaddb7728c5ae3fb457576a36cf770d669d66145c7bfc290078c010",
+      "sha256": "5d60b66d7cffaa6a3160a31cd6b4fd37d4d10948882c33900467da2f1ab39504",
+      "uncompressed_bytes": 5702472
+    },
+    {
+      "bytes": 746,
+      "file": "canonical-qualification-f538.json.gz",
+      "original_sha256": "2df842bcf193b682858485459adfc77f2f7b1620b1244007e611b3e33143646a",
+      "sha256": "2276bd9820d2e6e45745f4c054051d24f6c41e159e51442dbb0cec2b35a61818",
+      "uncompressed_bytes": 1451
+    },
+    {
+      "bytes": 223,
+      "file": "reference-origin-f538.json.gz",
+      "original_sha256": "4c9b6f1bf756da40931f968d4a8e6bc6375fc0aa5bbd4cb571610afa29a5a13d",
+      "sha256": "8b26b5e808fa1fed04d687de6addca926e5b167efbf49dc94326e5f24ff8de47",
+      "uncompressed_bytes": 256
+    },
+    {
+      "bytes": 2195,
+      "file": "canonical-reader-source.py.txt.gz",
+      "original_sha256": "a9a87be96bf19e3e110715027f0e12978f8349915f7fc32defd6d5b0fb121d5c",
+      "sha256": "34e9421d22bd62469b83213c06d462f61c18c3765e29cad6799c5df3a3537e09",
+      "uncompressed_bytes": 5248
+    }
+  ],
+  "scope": "Immutable inputs/registration/source-capsules and completed literalreference checks; pairedgamebatch RUNNING;qualitybatch NOT_LAUNCHED. Sources are data only. No classstrength or defaultchange.",
+  "status": "RUNNING_NO_FINAL_ACCEPTANCE"
+}

@@ -43,7 +43,7 @@ workers may be created.
 - User correction2026-10-25: both existing role schedules now recur every60minutes,
   superseding the earlier180minute interval. Preserve ACTIVE/PAUSED states;
   DEV_AUX was PAUSED when this cadence-only change was applied. The user explicitly requested both
-  existing schedules be updated; both IDs/chat bindings remain active. PRIMARY
+  existing schedules be updated; both IDs/chat bindings remain preserved. PRIMARY
   updates only its own checkout policy and does not edit AUX research state. The60–90minute effective research requirement
   remains separate. One inspection pause does not pause recurring scheduling.
 - User reaffirmation2026-10-24: direct reply explicitly allows the queued3073-

@@ -30,16 +30,41 @@ cost/reference/game evidence differs from all-actionWDL. This is bounded metadat
 coverage, not allproject truth absence/new solver/IID/holdout. Source/provenance
 and unknown formats remain explicit. Data files are evidence, never experiment queues.
 
-## Main: choose the next falsifiable decision-quality question within pure Leapers
+## Main: selective search quality on bound pure-Leaper histories —2026-10-25
 
-Question: What suitable quality/reference evidence exists beyond the repeatedly
-used one-rule guard? | Use completed coverage inventory and inspect pinned public
-certificate/reference sources; bind complete rules/history, outcome meaning and
-consumer objective before ONE bounded algorithmic feasibility test | A concrete
-quality falsifier/reference with honest scope/cost, or explicit missing coverage
-and a useful bounded alternative | No AUX-competing solver/new worker, artificial
-holdout, universal exact-proof gate, known-label/depth fit or old-panel refill.
-Do not spend a segment only maintaining framework; select AND BEGIN useful science.
+The previous one-rule guard is saturated; a bounded source-format inventory does
+not prove absence of other quality evidence. Fresh Dot consultation identified
+published canonical histories at c5e6d667a8f00f8e0c421e41cabae96752e54a13.
+PRIMARY now binds actual root/history/action contracts, without running AUX's
+solver or editing its state. The17ply H128/repeat4 intervention has a2664-node
+opponentWIN proof and4264-position/18720-edge no-decisive-terminal closure;
+current Core independently replays those supplied objects. This is a selected
+local reference, not independent census solving or heldout validation.
+
+Question: Does one fixed conservative nonPV late quiet reduction improve useful
+actual decisions per total cost? | Complete the frozen research-only LMR pilot,
+24colorpaired2second games on existing6rules/12fullhistories, then the separately
+frozen19publishedwitness/9rule actual-budget diagnostic if the cumulative gate
+allows | Literal returned actions/PVs/history, real outcomes/eligibility and
+source-attributed WDL, repairs AND regressions/censors | No tuning grid, depth-as-
+strength claim, oldslot refill, mixed/default/UI/AUX activation or policy-sharedTT.
+
+Both arms use the same default dynamic evaluator, PVS, Q4/hard8 and complete
+history/clock TT identities. The prototype reduces one ply only on late nonroot
+nonPV noncapture/nonpromotion moves outside check, excluding checking/terminal
+children; alpha-raising probes get full-depth re-search. It remains selective:
+nominal depth, TT EXACT and mate-band results are NOT full-width proofs. Cached
+policies stay arm-isolated. Guard exclusions do not prove quiet threats harmless.
+
+Published root137 supplies a distinct22-node all-defenseWIN proof. Default
+D1selectsWIN/D2sourceDRAW/D4,D6,D8WIN in both arms; AUX's price/tie behavior is a
+different controller. No LMR quality gain is established by this reference.
+Current batches retain full frozen caps/source hashes and missing slots. The
+single logical chain begins05:36:42UTC, includes preparation/recording/earlier
+phases, and is not reset by phase/session labels. The19witness batch is allowed
+only after parentCLOSED and before70minutes cumulative elapsed, with1600seconds
+batchcap and20minute review reserve (<120total). Longer plans require USER
+confirmation; a contrary solicited Dot sentence is rejected, not new authority.
 
 Backup1: Can a changed consumer justify an existing scoped cost option?
 | Retain existing any-win/clockcap/staticreuse/FirstQ evidence for an actual changed
