@@ -7586,3 +7586,18 @@ FOLLOWUP1792914955 verified,one+5minutecheck found0newreply, not expired. Chat
 1792912079 complete1post unchanged atlastlogicalopening. NewNative service
 feasibility is sourceonly0calls, notpartnerapproval/newbackend/AUXwork. Costs,
 negativeevidence, prequerysourceamendments in LEAPER_DRAW_CUTOFF manifest.
+
+
+2026-10-25 PRIMARY bbee: freshAGENT_REQUEST GC-SLACK-20261025-181049-62d7ba8e
+(root1792919485.929179) against verified2bbb5e30 checkpoint. Dot1792919653 is
+solicitedsourceonly, not independent execution. Corrected our framing: oldtests
+alreadyprove runtimehandoff; newstudy qualifiesactualDEFAULT/PVS/Q4pureLeaper.
+Adopted sameprovider/thread deltas,warmTT/fullhistory/nearclock/cancelrecovery,
+actualcost and TT-PVscope. Oneearlyread09:14 waspreserved andnotcredited as+5;
+actualsingle delayedcheck09:17:24 capturedreply. Chat1792912079 complete1post
+unchanged.Exactnewreturns27+1234+24+2=1287; seeLEAPER_NATIVE_DEFAULT.
+50kcost-38.16%,sameevents/action/score,0real1.5WDLrepair/regression;24actualDRAW,
+17timingeligible/6fullcolorpairs,8invalidcalls/7gamesretained. Profiler/source
+rejectfake duplicatepushfix: qclassificationalreadyreuseschild,terminalchildren
+mustremainincluded. Newqscreenopportunity is an unprovednextquestion,not a patch.
+No default/UI/AUX/mixed/visibility/schedulechange,newworker or graphsolving.

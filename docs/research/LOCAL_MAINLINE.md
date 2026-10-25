@@ -7,80 +7,68 @@ PRIMARY ACTIVE/AUX existing PAUSED, bindings intact; normal60–90effective minu
 
 ## Current judgment and reason —2026-10-25
 
-[The LMR quality study](LEAPER_LMR_QUALITY_20261025.md) is CLOSED,1177newPlayer
-returns/7543legalPVsteps. One untuned conservative nonPV late quiet reduction
-shows zeroWDLrepair/regression:19/19both on9publishedrules at50k/200k/1.5s;
-old p47/p49/p53 contemporaneousPVS controls1/3both, both missp49/p53. Actual24
-colorpairedgames allruleDRAW,20timingeligible.50kquerycost180.765→186.199s(+3.01%);
-200kall30stimecensored, desirednode attainmentUNKNOWN. Do not expand/retune or
-integrate this prototype from no benefit. No general equivalence/strength claim.
+[Native DEFAULT/PVS study](LEAPER_NATIVE_DEFAULT_20261025.md) is CLOSED:
+27qualification +1234fitness +24boundary +2profile =1287newreturns. Existing
+readonlyavailability/check opts, actualDEFAULTdynamic/PVStrue/Q4hard8, preserve
+8coldD3triplets pluswarm/fullhistory/cancel boundaries.64paired50k histories
+have samechosenaction/score and3,021,084events each;839.615→519.211s(-38.16%).
+Both64/64correct. Allthesequalityroots areotherinventory,notroot-twoKonly.
+Real1.5s both62/64,0repairs/regressions,2action/24scorechanges. p49/p53 still
+wrongDrawchoice at1.5 (D4control/D5candidate), bothcorrectD6 at50k. Costsuccess
+is not a strengthrepair or allruleclasssuccess.64histories areexposedcorrelated
+TRAIN fromoneRuleSet, not unknown-ruleholdout or independently solved anew.
+24actualgames on6knownrules allCoreDRAW;17timingeligible/6fullyeligiblecolorpairs,
+8over-tolerancecalls in7games retained. Eventgain under2sec doesnotprovequality.
+No productflag/defaultactivation,newbackend,AUXruntimeedits or mixedexpansion.
 
-Saturation is budget-specific: old64is perfect at50k/200k, but old1.5s62/64.
-HistoricalPVSoff differsfrom currentPVSbaseline. Knownfailures remain real;
-newwrong-to-right credit requires contemporaneousmatchedcontrol, not an old run.
-Source19has13forkhistories/5sensitiveRuleSets,not9independentfamilies/holdout.
-Pinnedcanonicalc5e6d667a8f00f8e0c421e41cabae96752e54a13 supplies fullhistories;
-selectedbad2664nodeWINproof/safe4264position18720edgeclosure and two78nodeWIN
-strategies replay on currentCore. Otherlabels remain sourcegraph attribution;
-no AUXsolver/graphcensus/training/checkout executed. The old boundedfile-schema
-inventory did not establish absence of other quality evidence.
+[LMR](LEAPER_LMR_QUALITY_20261025.md) staysCLOSED:zeroWDLrepair/regression,
+50kcost+3%,200kalltimecensored. Stop thisparameterprototype,notallLMRtheory.
+[TrueDRAW](LEAPER_DRAW_CUTOFF_20261025.md) staysCLOSED:zeroqualityrepair,
+costbenefitlocalizedalreadytwoKroots,notbroadnonrootroute. Do notretune/expand.
+Root-onlyDRAW remainsconditionalonactualconsumerneed andfullscope/cost,notMain.
 
-## Main: broader actual DEFAULT/PVS service cost and deadline quality
+## Main: understand paid Q classification before another optimization
 
-[True-DRAW falsifier](LEAPER_DRAW_CUTOFF_20261025.md) is CLOSED:1349newqueries,
-194quality/24actualruleDrawgames,16timingeligible/5fullyeligiblecolorpairs.
-Fixed1.5both62/64,50k32/32both,0repairs/regressions/actionschanged despiteactive
-cutoffs. CanonicalsafeDrawactionboth;score-21to0,notrootoptimalityproof.
-Othergame roots804.454/400candidate vs798.264/399control seconds/queries;
-two-Kroots5.747/179 vs348.325/177. Strongcostdifferenceisrootinventorylocalized,
-not broadnonroot optimization or scopedclassstrength. STOP expanding/tuning
-this nonrootfeature; preservecode/data asresearchonly, no default/UI activation.
+Question: Can a conservative pure-Leaper search-layer screen avoid costly
+classification pushes WITHOUT losing terminal/noisy coverage? | NewNativecandidate
+D5costprofile/source review isDONE; nextregisterone tiny per-site classification
+outcome/cost observer (actualquiet/terminal/check/material, reachedvsunvisited),
+with completedaction/value/PV/work parity before a prototype | Newprofile28184
+pushes,8472Qcalls/6606recursive,20694classifications allfromQ;>=14088donotrecurse;
+measure actualcost,notcount-proportional savings | Stop no soundcheapcertificate
+or nullcost; no AUXruntime implementation,newbackend,oldtrace/slotrefill,price/
+depthfit,capture-onlyswitch,skippedterminal or mixedexpansion. Forecast whole
+qdiagnosticchain inclthisprofile/sourceprep beforequeries;>=120USER,noUUIDreset.
 
-Question: Can existing readonlyNative availability/check improve actual DEFAULT/
-PVS/Q4 pure-Leaper deadlinequality/cost without changing the searchpolicy? |
-Sourcefeasibility639 isDONE,0newservicecalls; register a small completed-depth
-parity/cancel/fullhistory/provider-delta qualification usingexistingPRIMARYflags,
-thenfreeze a real1.5sWDL/cost falsifier onlyif feasible | Actualproviderattempts/
-success/decline/importreuse plusoutercost andchosenWDL,notNPSalone | Stop on
-mismatch/decline/nullbenefit; no newbackend, AUXruntime implementation edits,
-oldslotrefill, policycombination/defaultchange or ruleclassexpansion.
+Reason: profile2.138→5.638s isperturbed,notunbiasedcostfractions. Pushinclusive
+3.141 andQinclusive4.710 overlap. Source alreadyusesONEpushedchild forclassification
+ANDrecursion: rejectduplicatepushfix. noisy_child includesANYterminalchild before
+quiet/checkfiltering, soemptytarget/noncheckcannotcertify omission. Current
+ordering/evalcounters6.259/23.383 against519.022searchseconds donotjustifyanother
+cache. First learn which actualclassifications arecostly andwhich canbeexcluded
+soundly. Do notimplementa conjecture justfromlargeaggregatepushcount.
 
-Reason: currentactiveDrawcutoffs didnotfix p49/p53, costbenefitconcentratedat
-rootknownendgames. Existingconstructor still onlyNativelegality bydefault;
-availability/check are optins and their actualmetrics are not PlayerDecision
-fields. OldUnitNativeAll panels are differentcontrollers, not thiscomparison.
-A source/API survey is not an executed newserviceexperiment or costpromise.
-Any newlogicalexperiment needs an honestfull-costforecast beforeexecution;
-USER>=120minuteauthority and no clock/specreset remain.
+Backup1: Is availability-only enough for a concrete consumer? | ExistingD3threearm
+costs0.742availability/0.734both vs1.100control; do notclaimreliablecheckincrement;
+onlyregisterfurtherablation ifdecisionneedsit | Actualsameproviderdeltas plus
+outercost/quality/lifecycle | Nativechaincostcarries;no expansivepanel/defaultflip.
 
-Backup1: Is a tiny root-only knownDRAWconsumer worth engineering? | Onlyif an
-actualbackendconsumerneed is established | KeepvalidCorehistory/fullruleguard/
-cancel/cost/qualityseparate fromnonroot | Currentdrawchaincumulativecost carries
-forward; >=120USER, no automatically enlarged validationpanel.
-
-Backup2: New causal premise for p49/p53? | Preserveclosed frontiers/negativeLMR/
-Draw controls | MissingTT/fullcausalchains remainUNKNOWN | No oldwarmD7/quiet/
-singleton/anchor/caprefill or score/depth/pricefit; no universalOracle gate.
-
-PureLeaper correctness,totalcost andactualdecisionquality still define scoped
-success. Mixed/legacy/promotion/drop/NNUE remain deferred. Science is OPEN.
+Backup2: Is a tiny root-onlyknownDRAWconsumer needed? | Onlyafteractualconsumerneed
+andnewcostforecast | KeepfullCorehistory/cancel/quality andexistingnegative
+nonrootevidence | No automaticintegration;drawchaincarries;>=120USER.
 
 ## Communication and closure
 
-Newround AGENT_REQUEST is mandatory after push/fullSHA; Dot mustreply. Other
-message types may reply or stayquiet. Each logical Slack opening checks newChat
-comments/full relevantthreads, exactoriginals first. One +5minutecheck is not
-replyexpiry. User > autonomousChatreview > solicitedDot > local; no reply gate.
-Latest CLOSED round639requestGC-SLACK-20261025-162843-2e9d68da/root
-1792913357.988659 receivedDot1792913515.763369; directTT/post-point/nonoverlap
-advice executed. FinalFOLLOWUP1792918618.618669 sentafterverified8a3f13a3;
-its09:02UTCsingle+5minutecheck found0newreply/newChat,notreplyexpiry. Chatroot
-1792912079.322259 remainscomplete1post. Allproducers/checksCLOSED;sessionfinish
-andfinal-check accepted65.629effective minutes. Nextnewround needs freshrequest;
-no stalef538request or active-statepromise substitutes forit. PriorDotbudget
-claims remain rejected: onlyUSERconfirms>=120. Scientificdefaults/visibility/
-role boundaries cannot be changed by advice.
-
-Normal finish needs matching actualworkledger/qualityreview/sessionfinal-check.
-No active-statefinal or offline/admin/wall-clock credit. Sourcecapsules are data,
-not experimentqueues or executable imported research. Read the executable memo.
+Newround AGENT_REQUEST ismandatoryafterpush/fullSHA; Dotmustreply,othersmayreply
+orbequiet. EachlogicalSlackopening checksnewChatcomments/full relevantthreads,
+exactoriginalsfirst. One+5minutecheckisnotexpiry. User>autonomousChat>Dot>local.
+Currentroundbbee requestGC-SLACK-20261025-181049-62d7ba8e/root1792919485.929179
+receivedsolicitedDot1792919653.784419/sourceonlyreview. Actualproviderdeltas,
+warm/nearclock/cancel/costboundariesexecuted;notfirst-everruntimehandoffproof.
+Premature09:14readwaspreserved/notaccepted;+5check09:17:24readreply. LatestChat
+1792912079 complete1post unchangedatopening. Finalfollowup/check status lives
+in executablememo/private receipts, never inferdelivery/completionfromthisplan.
+Current scientificproducers CLOSED. Normalfinishstillrequiresmatchingactual
+workledger/qualityreview/sessionfinish/final-check,notactive-statepromise.
+Pinnedcanonicalc5e6d667 andAUXpublishedproofs remainread-onlyhistoricalevidence;
+no AUXsolver/checkout/graphcensus executed. Oldclosedcapfailures remainUNKNOWN.
