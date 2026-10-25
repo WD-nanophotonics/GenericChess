@@ -52,8 +52,13 @@ workers may be created.
 - User communication correction2026-10-24: the pause on Dot contact is lifted.
   Direct two-way Dot consultation, including bounded real-time exchanges and
   Dot messages, is restored in the existing project Slack. At each actual Slack
-  read or send, consider asking Dot about the next step, especially uncertainty
-  about correctness; do not invent a question or make a reply a work gate.
+  new work round must initiate a fresh mailbox TYPE=AGENT_REQUEST to Dot,
+  stating the actual next action and any uncertainty. User correction2026-10-25:
+  reading or posting FOLLOWUP in an old thread does not trigger a new request.
+  Resume the same active round without duplicating a verified request. First
+  publish reviewed referenced work and verify the full remote SHA; a send failure
+  remains explicit and does not stop independent work. Do not invent a question
+  or make the reply a work gate. At later reads/sends consider relevant follow-up.
   Authority: latest direct user instructions > independently initiated ChatGPT
   Slack review comments > Dot's solicited replies/messages > local proposals.
   ChatGPT's autonomous review is not the same as an immediate Dot response even
@@ -274,8 +279,11 @@ conditions; distinguish ordering prices from leaf prices.
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing asynchronous mailbox.
 Read autonomous ChatGPT project reviews and complete relevant threads at each
-existing180minute patrol/manual work start. During an actual Slack interaction,
-consider a concrete next-step question to Dot; bounded real-time thread exchange
+existing180minute patrol/manual work start. Start every new work round with a fresh mailbox `TYPE=AGENT_REQUEST` to Dot
+after the required publish/full-SHA verification; an old-thread FOLLOWUP is not
+a substitute. Record the round/request association; resuming that same round
+does not duplicate verified delivery. During later Slack interactions consider
+a concrete next-step question to Dot; bounded real-time thread exchange
 is allowed under the authority hierarchy above. Preserve exact originals before
 assessment. Record adoption/defer/reject and reasons; do not confuse read/adopted/
 executed. No mandatory comment-style outbound report or Dot pause remains.

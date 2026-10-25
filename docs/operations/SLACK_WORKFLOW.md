@@ -26,10 +26,17 @@ pure-Leaper-first direction or authorize >=120minute runs on the user's behalf.
 At each existing180minute patrol/manual work start, read new autonomous ChatGPT
 project comments and complete relevant threads once; retain coverage boundaries
 and any gaps. A direct request for latest messages permits a fresh bounded read.
-At every actual Slack read/send, consider a concrete next-step question to Dot,
-especially doubts about correctness, interpretation or method. State evidence,
-own view, options and exact decision sought. No fabricated question or mandatory
-ritual exchange. Relevant active Dot thread replies and bounded substantive
+User correction2026-10-25: every NEW work round must initiate a fresh mailbox
+`TYPE=AGENT_REQUEST` root addressed to Dot. Old-thread reads and AGENT_FOLLOWUP
+messages do not substitute for the request trigger. Prepare the actual next-step
+plan, evidence, own judgment and any real decision question; publish referenced
+work and verify the full remote SHA BEFORE sending. Record session UUID, request
+ID and verified root in local evidence/memo. Resume the same active round without
+duplicating a verified request. If send is uncertain reconcile it, never blindly
+resend; record a real failure and continue independent work. This requirement
+replaces optional-only start consultation; no response is a work gate. During
+later reads/sends consider a concrete question, especially doubts about
+correctness, interpretation or method; do not fabricate a scientific question. Relevant active Dot thread replies and bounded substantive
 follow-ups may be read/sent within the work segment; the ordinary patrol cadence
 is not a ban on real-time dialogue. Do not add empty repeated polls, chasing,
 self-reply loops or idle waiting. If no reply, continue independent useful work;

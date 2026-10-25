@@ -50,9 +50,15 @@ At each existing180minute patrol/manual work start, read newly available
 independently initiated ChatGPT review comments and complete relevant threads.
 The2026-10-24 direct user correction restores direct Dot consultation, including
 bounded real-time thread exchanges; it supersedes the old pause, asynchronous-
-only route and one-message-per-probe cap for that dialogue. At every actual Slack
-read/send, consider a concrete next-step question to Dot, especially uncertainty
-about correctness; do not invent a question or require a response to proceed.
+only route and one-message-per-probe cap for that dialogue. User correction
+2026-10-25: every NEW work round must send a fresh mailbox TYPE=AGENT_REQUEST
+to Dot, with the actual next action/evidence and relevant uncertainty, after
+publish and full remote SHA verification. Reading an old thread or sending
+AGENT_FOLLOWUP does not replace this trigger. Bind the request to the session
+UUID in the memo/evidence; resuming the same round does not duplicate verified
+delivery. Diagnose and record failures; no automatic resend of uncertain sends.
+Later reads/sends may use meaningful follow-ups. Do not invent a question or
+require a response to proceed.
 Use the existing project channel/mailbox and verified identities. No new worker,
 channel, scheduler, empty polling/chasing or self-reply loops. No compulsory
 comment-style report replaces direct Dot dialogue. Ordinary incoming reviews are

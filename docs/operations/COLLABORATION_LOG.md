@@ -7420,3 +7420,8 @@ allocation; no new AUX task/authority or reply/publication gate. Zero new replie
 at that bounded readback: questions pending, not adopted or executed. Raw send
 and readback preserved privately before assessment; parent/old requests unchanged.
 Delivery/this log after the accepted session adds0 effective research time.
+
+
+## 2026-10-25 PRIMARY request-trigger correction
+
+The user identified that reading an old Dot thread and AGENT_FOLLOWUP did not initiate the required new-round consultation. PRIMARY updated AGENTS, LOCAL_AGENT and SLACK_WORKFLOW to require a fresh TYPE=AGENT_REQUEST per new round, bound to its session, without duplicate sends on resumption. This is a missed-trigger correction, not evidence of a Dot reply or adopted advice. Closed compulsory-continuation negatives and the first-Q pilot are published before the replacement request; the remaining guard is still running. AUX files/state were untouched.
