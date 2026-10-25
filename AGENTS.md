@@ -23,7 +23,9 @@ Before selecting research at every new round/manual start/heartbeat, check both
 GitHub remote autonomous ChatGPT reviews (including the dedicated ChatGPT Patrol
 file/directory) and new Slack comments/relevant complete threads. Follow
 [docs/operations/CHATGPT_REVIEW_WORKFLOW.md](docs/operations/CHATGPT_REVIEW_WORKFLOW.md).
-Discover the actual remote path/ref; pin full commit/path/blob hashes, preserve
+Observed review directory: docs/reviews/chatgpt_patrol/ on remote sandbox;
+resolve its latest full SHA at each opening. Discover any moved path/ref;
+pin full commit/path/blob hashes, preserve
 originals and coverage gaps before assessment. No automatic pull/merge/execution,
 new worker or other-role research/state write follows from reading a review.
 Latest direct user > autonomous ChatGPT GitHub/Slack review > solicited Dot >
