@@ -80,3 +80,10 @@ qualityJSON,finish andfinal-checkPASS. Finaltransport receipts andmemo own deliv
 infer an active/completed state from an old report. New request only next newround.
 Pinnedcanonicalc5e6d667 andAUXpublishedproofs remainread-onlyhistoricalevidence;
 no AUXsolver/checkout/graphcensus executed. Oldclosedcapfailures remainUNKNOWN.
+
+Final delivery: b7bd1f6f fullscientificSHA verifiedbeforeFOLLOWUP1792930834;sent
+12:20:34UTC,+5due12:25:34,checked12:27:42;0newDot/Chatroots. Late replies stay
+for next meaningful opening. Conservative whole-delivery+prior10min122.143 at
+check exceeded117.19forecast; sciencehadENDED earlier. Preserve costvariance
+for relatedfuturebudget, no UUIDreset; post-END transport is not researchcredit.
+No newexperimentaljob/capextension or defaultchange. Finalmanifest77members.

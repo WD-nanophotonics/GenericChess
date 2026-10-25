@@ -7641,3 +7641,11 @@ flag changed. Finalpacket includesfailed binder format diagnosis, originalstage
 versions and all1,292newreturns;4copiedqualificationrows notnewcalls/work.
 
 PRIMARY0c operationalacceptance: ENDED2026-10-25T12:16:19.451041+00:00,effective71.941min/1300intervals,quality/finish/final-checkPASS. No wall/offline/admincredit. Final73member hashes reviewed; freshscientificdatadecompression/replayPASS. Finaltransport not researchtime.
+
+PRIMARY0c deliveryclose: scientificb7bd1f6f verifiedbefore finalFOLLOWUP
+1792930834.032659/sent12:20:34UTC;delayedcheck12:27:42 due12:25:34 finds0newDot
+replies/Chatroots. Receipt/raworiginals retained;late notexpired. PUBLICanonymous
+4resources200/byte-equal;1292queryspans eachbindledger once;ENDED/quality/memo
+unchanged. Conservativefull-delivery+prior10min122.143 atcheck exceeds117.19
+forecast;publish honestvariance,notbudgetsuccess. Allscientificjobs endedbefore
+post-ENDtransport;no furtherresearch/capextension/extraeffectivecredit.

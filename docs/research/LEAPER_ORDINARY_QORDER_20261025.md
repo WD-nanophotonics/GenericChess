@@ -249,3 +249,23 @@ substantive quality JSON, finish and final-check passed. Full scientific packet
 has73lossless members; fresh72scientific-member data replay plus closing-summary
 hashes pass. Final Slack delivery/check remains separate transport evidence, not
 a claim of research continuing after END. Next normal round starts fresh request.
+
+
+Final transport/cost correction: final Dot FOLLOWUP1792930834.032659 referenced
+verifiedb7bd1f6f3b175b8418249d2f0963e6366d26abb4, sent12:20:34UTC. Its one delayed
+check, due12:25:34, actually ran12:27:42UTC:4thread posts,0newreplies; latest
+autonomousChat1792927446 complete1post unchanged, no newchannelroots. Late
+replies are not expired and remain for next meaningful interaction. Anonymous
+PUBLIC reads of report,manifest,observer and fullrawdata all200/byte-identical.
+
+Conservative whole-delivery elapsed INCLUDING prior10min and post-END transport
+was122.143min AT THAT CHECK, exceeding the117.19forecast. The earlier below120
+figure was a forecast, NOT an actual budget-success claim. All experimental
+Player/Core jobs had already closed and the research session ENDED12:16:19UTC;
+no further scientific job, cap extension or planned>=120min experiment followed.
+Post-END publication/communication receives zero effective researchtime. The
+overrun is retained for related future budget assessment, not erased by a new
+UUID. Subsequent synchronization of this cost correction is administrative too.
+The77member final manifest comprises the73-member scientific/closure packet plus
+four delivery/access/accounting notes; all byte hashes pass. No extra Slack ping
+is sent for this bookkeeping correction, avoiding a recursive send/check loop.

@@ -1,5 +1,6 @@
 {
   "at": "2026-10-25T12:10:45.181171+00:00",
+  "cost_variance": "At final reply check conservative elapsed plus prior10min was122.143min, above117.19forecast. Scientific experimentalcalls and session ended before this post-END transport; no new experimentalrun/capextension. Subsequent cost-note synchronization administrative, zero effectivework. Carry relevant actualcost forward.",
   "counts": {
     "certificate_observer": 8,
     "new_deadline_root_observer": 2,
@@ -518,10 +519,39 @@
       "path": "notes/closure-acceptance.json.gz",
       "raw_bytes": 1078,
       "raw_sha256": "f6af5a368c47ad961e3b7c5af0c8d6d29fbd60b84ca134af0560a132816d4b5b"
+    },
+    {
+      "gzip_bytes": 486,
+      "gzip_sha256": "d73f7ea9ac83d988e8381118c3ab8f70b0e9185585eb4bc6b40597413e0006e4",
+      "path": "notes/final-slack-delivery.json.gz",
+      "raw_bytes": 777,
+      "raw_sha256": "0ab651315ab8db8f88de7f15a7f18044f5c297a7e451cbaddead0850b1fd3cf7"
+    },
+    {
+      "gzip_bytes": 605,
+      "gzip_sha256": "7ef346e21532bc391cee3fcb91df880c7419a749445e6716e688f7e671137d80",
+      "path": "notes/final-transport-cost.json.gz",
+      "raw_bytes": 1062,
+      "raw_sha256": "ee3b1785ffe805cfde564086b5bf9ad9a6f605a5dd8ca0cd27703e5f53400a47"
+    },
+    {
+      "gzip_bytes": 450,
+      "gzip_sha256": "356c4492597f89bb79edc7aba18ce35b103e96236c19d9446c3db8f312327960",
+      "path": "notes/postclose-integrity.json.gz",
+      "raw_bytes": 737,
+      "raw_sha256": "9545e824b0f50c22a22a950cde0b02b953812a3968a564dfc926e3240649024d"
+    },
+    {
+      "gzip_bytes": 612,
+      "gzip_sha256": "02f99e18d72ff0a5efef8634a9926ddcd5f7d8e2e54831a415a413476d935a34",
+      "path": "notes/public-anonymous-access.json.gz",
+      "raw_bytes": 1294,
+      "raw_sha256": "0728a04dfd22ee6725c0ec141a45fc076fd05c39896b7a114b7a3d883eb62269"
     }
   ],
   "new_player_returns": 1292,
   "reuse": "Four qualification rows copied into deadline packet are prior returns, not new queries/time. Initial256-only milestone remains exact in Git51ac8c1d; full original1256raw returns replace milestone prefix in current tree.",
   "scope": "Reviewed project-only source/input/plan/returns/failed diagnostics, no raw Slack/account wrappers. Source capsules data-only. Named action certificates and attributed sourcegraph WDL are different tiers; unknown remains unknown.",
-  "state": "RESEARCH_ENDED_QUALITY_AND_FINAL_CHECK_PASSED"
+  "state": "RESEARCH_ENDED_QUALITY_AND_FINAL_CHECK_PASSED",
+  "transport_status": "FINAL_MESSAGE_VERIFIED_SINGLE_DELAYED_CHECK_DONE_NO_NEW_REPLY"
 }
