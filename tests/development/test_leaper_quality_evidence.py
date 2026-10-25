@@ -72,3 +72,26 @@ def test_no_returns_has_unknown_coverage_not_zero_success():
     s = summarize_certified_choices(fixture({"win": 1}), [])
     assert s["certified_value_coverage"] is None
     assert s["returned_actions"] == 0
+
+
+def test_certified_nonwinning_root_bound_can_close_a_draw_optimum():
+    c = fixture({"safe": 0, "bad": -1})
+    c["certified_root_upper_WDL"] = 0
+    row = score(c, "safe")
+    assert row["category"] == "CERTIFIED_OPTIMAL"
+    assert row["root_own_WDL_interval"] == [0, 0]
+    assert score(c, "bad")["category"] == "CERTIFIED_INFERIOR"
+
+
+def test_root_bound_cannot_override_a_contradictory_win_certificate():
+    c = fixture({"win": 1})
+    c["certified_root_upper_WDL"] = 0
+    with pytest.raises(ValueError, match="contradicts"):
+        score(c, "win")
+
+
+def test_boolean_root_bound_is_not_a_certificate():
+    c = fixture({"win": 1})
+    c["certified_root_upper_WDL"] = True
+    with pytest.raises(ValueError, match="upper bound must be integer"):
+        score(c, "win")

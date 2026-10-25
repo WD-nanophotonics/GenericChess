@@ -35,7 +35,11 @@ def classify_certified_choice(control: dict, action: dict, *, root_state_sha256:
             raise ValueError("conflicting certified values for one action")
         labels[key] = value
     lower = max(labels.values(), default=-1)
-    upper = 1
+    upper = control.get("certified_root_upper_WDL", 1)
+    if type(upper) is not int or upper not in (-1, 0, 1):
+        raise ValueError("certified root upper bound must be integer -1/0/1")
+    if upper < lower:
+        raise ValueError("root upper bound contradicts a certified action value")
     value = labels.get(_action_key(action))
     if value is None:
         category = "UNCERTIFIED_ACTION"

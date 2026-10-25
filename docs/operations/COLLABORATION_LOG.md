@@ -7792,3 +7792,15 @@ refer to a parent while proofrecord begins after a losing move; retained the
 failed consumer and explicit corrected join. Updated older LMR wording without
 rewriting evidence. AUX checkout/state/solver work untouched. Six fixed1.5s
 baseline calls are separately frozen, not current method/strength results.
+
+### Same PRIMARY segment: closed calibration and prospective review package
+
+Six separately frozen baseline calls completed, no newmethod: all6chosenactions
+are optimal after an exactone-rule loneK upperbound(4680positions/24156edges).
+This is negative evidence for currentpanel difficulty, not strength. No oldroot
+scan/refill followed. The followup1792964812.198209 was payloadverified with
+one delayedcheck21:53:29UTC(due21:51:52);0newreplies, no chasing. Prepared4new
+span3/directedpureLeaper rules/8fullhistories at0Player/0games and a concrete
+16game Native-service proposal; cumulative270/cap300 needs USER, not Dot.
+AUX state/checkout/solver untouched. All rawreturns/initiallabelassessments and
+executed old scorer retained; new upperbound is a derivedproof, not queryrerun.

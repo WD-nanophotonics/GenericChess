@@ -34,35 +34,35 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Main: cross-rule quality evidence and bounded baseline calibration
+## Main: quality contrasts are correct but saturated; prospective validation pending
 
-[Quality controls](LEAPER_QUALITY_CONTROLS_20261026.md) adopt autonomous035602/
-055824 reviews atc49f46fd: cross-rule quality discrimination now precedes further
-key-memo engineering. Five frozen different4x4/H128rules yield three strict
-named-action contrasts after1620literalproofnodes and312position/1152edge
-remnant qualification; two candidates remain partial-only. All are exposed;
-current1.5s difficulty remains UNKNOWN. Actual sourceparent/proofroot differ
-in7/29certificates; preserve separate hashes, full records and value tiers.
+[Quality controls](LEAPER_QUALITY_CONTROLS_20261026.md):5source-rule controls,
+3strictnamedcontrasts,1620strategy nodes. Scoped4680position/24156edge loneK
+upperbound completes the DRAW proof. Sixfrozen1.5s baselinecalls on3rules all
+choose certifiedoptimal actions;0inferior, no methodcomparison/holdout.12research
+consumer checks pass;7/29sourceproof IDs refer to before a losing move while
+the actual proofrecord starts after it. Fullparent/proof history bindings stay.
+Stop oldcase/depth/budget expansion: these are correctnessguards, not harddata.
 
-Question: do the three strict controls show current fixed-budget improvement
-space or low certificate coverage? | After zero-query publication execute only
-the frozen six baseline calls (threeparents x tworepeats,1.5s,Nativeboth/PVS/Q4,
-freshTT,bothhashflagsOFF) | Raw legal decisions, wholecost, certificate-only
-classification and separately attributed full-source WDL | No algorithmclaim,
-newbudgetgrid/oldslotrefill/holdout or unknown-as-error. Whole quality preparation
-and delivery forecast85minutes, never a new85-minute allowance.
+Question: can the existing Native-service cost gain improve outcomes across
+other frozen pure-Leaper families? | Await USER necessity assessment of the
+prepared4rules/8histories/16colorpairedgames proposal, cumulativeforecast270/
+totalcap300; then source/resource-preflight and strict16D3qualification BEFORE
+any games | Inputs/preflight8/8constructor accepted; actualQA/gamesNOT_STARTED |
+No implicit approval, newworker, solver, NNUE/mixed scope, adaptive rules/caps,
+oldslotrefill or new300minute allowance. PriorNative110planningcharge/current
+quality85forecast/future60batch+15delivery all carried, actualeffective separate.
 
-Backup1: is the deferred complete-key memo worth its opportunity cost? | Retain
-published lifecycle findings and prior114.83+finalsync cumulative cost; do not
-start the180/cap200 extension merely because it was proposed | Missing actual
-lifetime distribution/RSS/wholegain stays UNKNOWN | USER>=120 gate remains;
+Backup1: is the complete-key memo worth opportunity cost? | Retain published
+single-use loss/multiuse benefit, wholecost/RSS UNKNOWN and deferred180/cap200
+proposal | No new evidence justifies promotion | USER>=120 gate unchanged;
 new autonomous reviews recommend DEFER, not user budget approval/rejection.
 
-Backup2: can future validation reserve rule/trajectory groups without exposure
-leakage? | Use frozen source geometry/history/origin inventory, not renaming or
-unlisted-action penalties | Three named contrasts are not an independent hard
-panel; old19/new17 jointlycover10correlatedfamilies | No newsolver/games/training
-or AUX work; separately assess necessity and cumulativecost before computation.
+Backup2: what evidence would make future validation interpretable? | Maintain
+fullhistory/seed/color compositekeys, physicalCoreoutcomes and strict-budget
+counterfactual bounds, metadata-only exposuregroups | Currentprospectiveinputs
+are not globally unseen; actualoperation/RSS stillUNKNOWN | No newqueries or
+broad sampling before a new decision-changing premise and cumulativeforecast.
 
 ## Retained decisions and costs
 

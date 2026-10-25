@@ -7,16 +7,32 @@
     "path": "docs/research/data/leaper_canonical_triage_20261022/evidence.json.gz",
     "gzip_sha256": "8af501fffbf8428e4393efe167c4b772d0be45ade4fffaf9b214fd62eeb10ddb"
   },
-  "new_Player_calls": 0,
-  "phase": "0querydesignCLOSED;6baselinecalibrationregisteredNOTSTARTED",
+  "new_Player_calls": 6,
+  "phase": "Phase0designCLOSED;phase1sixbaselinequeriesCLOSED;future16gamesNOTSTARTED_USERASSESSMENT",
   "files": {
     "all29-source-bindings.json.gz": {
       "bytes": 2584,
       "sha256": "45a17eebb6d30cfedffdefc925928af313301cf1f4bb031d8820991a79b7f249"
     },
+    "calibration-assessments.jsonl.gz": {
+      "bytes": 565,
+      "sha256": "762cd4a04786180444a4dc673111e423fab01b2cbf69269a7deade0777d24963"
+    },
+    "calibration-derived-assessment-v2.json.gz": {
+      "bytes": 1272,
+      "sha256": "f65569922d57b1e3b3e9ce4347b1e20002533d1749cfa77859a74ac42e2e9e41"
+    },
     "calibration-plan.json.gz": {
       "bytes": 1401,
       "sha256": "63166ddebbba3ca4971976a2648ed40e7b1a2b877c4097afab4b3ab4fad9068e"
+    },
+    "calibration-queries.jsonl.gz": {
+      "bytes": 6093,
+      "sha256": "b24594364bb41fd11e5522cfa8eaf06ac0eb964550a2540da3e29ee74805e8ce"
+    },
+    "calibration-receipt.json.gz": {
+      "bytes": 256,
+      "sha256": "13a277938e1f64f5c25a6d668819553c4e86f7605ccc2d8ddd672454e4aac37e"
     },
     "candidate-origins.json.gz": {
       "bytes": 1324,
@@ -26,9 +42,17 @@
       "bytes": 32647,
       "sha256": "7c63ce41eba4c1e681ed0c93a75672c6ca54ae8bc30c4f3f588dd3c4d2316677"
     },
+    "controls-derived-v2.json.gz": {
+      "bytes": 5868,
+      "sha256": "c7785ea525df434934cee9f0073e11f6717b68e42b40f516b52a87bc084e4fcb"
+    },
     "controls.json.gz": {
       "bytes": 5709,
       "sha256": "724bb87341e20e0e00cf0e795e8d9b25a5ad3e2bc97d985fd9627d3eb578292c"
+    },
+    "future-endpoint-contract.json.gz": {
+      "bytes": 1750,
+      "sha256": "032e103c70415f065e612553e63983692493dac6cb07c33aa0dd9c77f88b15dc"
     },
     "king-remnant-plan.json.gz": {
       "bytes": 342,
@@ -58,13 +82,61 @@
       "bytes": 360,
       "sha256": "050d1a47e361d8ac42fbb8d73199447bbf6fde98f12c3ecfea6df6c1dfc16368"
     },
+    "lone-king-upper-edges.jsonl.gz": {
+      "bytes": 167901,
+      "sha256": "c92bbebb8551cf60a9a9666ed3a8a7a4a7c7d0fbcd41d8f4ade616d09786340b"
+    },
+    "lone-king-upper-plan.json.gz": {
+      "bytes": 631,
+      "sha256": "662e5e723a988cfcb3a2381cb9fe45619607099bcfadfe1046d36e7aff8b4f2c"
+    },
+    "lone-king-upper-result.json.gz": {
+      "bytes": 515,
+      "sha256": "739d1f7e65bce65d50a1aa23750ff6afc1dc2bb58f2ea678a93d543d3da4bd68"
+    },
+    "lone-king-upper-states.json.gz": {
+      "bytes": 24141,
+      "sha256": "e6e4922ebbebaaf0752a8c970820461398a5e372ddbdb6c1124c0753f94dcb0b"
+    },
     "phase-amendment.json.gz": {
       "bytes": 619,
       "sha256": "81281e55a28ca882e706515587e96b080f9c52a82cddefa4935a2eb81fadfdb2"
     },
+    "phase1-sources.zip": {
+      "bytes": 8297,
+      "sha256": "4d7171170cf4f848be14e65eab612e141deee5a06319f0b876e57cc1fdffcfdd"
+    },
+    "prior-game-finite-budget-bounds.json.gz": {
+      "bytes": 1055,
+      "sha256": "18adcc45b244a3473b58284f50df186e9ee885311d04946ba43d5d0e0b9ae425"
+    },
     "proof-parent-child-binding.json.gz": {
       "bytes": 2882,
       "sha256": "cf75362bcad4939fee3469de07f6ae92d23b04f704279c2b663ddf719a2e54f6"
+    },
+    "prospective-budget-proposal.json.gz": {
+      "bytes": 3209,
+      "sha256": "cbcbb21e39e19228a543ae14e6fda798d71f7005b3d3ce8310b45aa9cc8b3279"
+    },
+    "prospective-contract-check.json.gz": {
+      "bytes": 297,
+      "sha256": "a5360b6cdf7cc14b5ebe28b539cf24d22d5e6182d32aa800c29d58c67dbdf392"
+    },
+    "prospective-family-grouping.json.gz": {
+      "bytes": 1649,
+      "sha256": "ebee8d8780f968953ffc9a59c3b10182c495abf3a927d53d46f370f2f9fcf7ba"
+    },
+    "prospective-family-plan.json.gz": {
+      "bytes": 315,
+      "sha256": "d8e4f7cb9ffb001a3eab7f808d458cba5670fa77924013c46572e96c0c62df7b"
+    },
+    "prospective-input-plan.json.gz": {
+      "bytes": 285,
+      "sha256": "f75952da3a1874069f08c0e4d519ea20f1a70c1943978c02354340d3f69794e5"
+    },
+    "prospective-inputs.json.gz": {
+      "bytes": 3847,
+      "sha256": "da8e4e104dac1be7d3e99fa424cb1133999fae96feed0447a53d3a8f62a41dd5"
     },
     "rule-inventory.json.gz": {
       "bytes": 2197,
@@ -79,5 +151,31 @@
       "sha256": "48de6e4b820111ea7bf0f85e27736c3efad30aba22dbf329c22aef31165ee0fb"
     }
   },
-  "scope": "Fiveexistingdifferent4x4/H128sourceRuleSets;3namedstrictvaluecontrasts/2partial;allsourceexposed;current1.5difficultyUNKNOWN;archiveTEXTDATAONLY"
+  "scope": "Fiveexistingdifferent4x4/H128sourceRuleSets;3namedstrictvaluecontrasts/2partial;allsourceexposed;current1.5difficultyUNKNOWN;archiveTEXTDATAONLY",
+  "updated_at": "2026-10-25T22:29:02.004988+00:00",
+  "new_games": 0,
+  "new_solver_calls": 0,
+  "calibration": {
+    "certified_optimal": 6,
+    "calls": 6,
+    "exposed_rules": 3,
+    "whole_seconds": 9.078425299958326,
+    "CPU_seconds": 9.046875,
+    "source": "calibration-derived-assessment-v2.json.gz"
+  },
+  "strict_loneKing_bound": {
+    "positions": 4680,
+    "edges": 24156,
+    "root_upper_WDL": 0,
+    "not_general_leaper": true
+  },
+  "proposal": {
+    "input_worlds": 4,
+    "contexts": 8,
+    "planned_games": 16,
+    "actual_games": 0,
+    "cumulative_forecast_minutes": 270,
+    "cumulative_cap_requested_minutes": 300,
+    "not_new_allowance": true
+  }
 }
