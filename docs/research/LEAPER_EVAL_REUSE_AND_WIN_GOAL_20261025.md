@@ -1,8 +1,8 @@
 # Default static reuse and existing proof-goal return —2026-10-25
 
 PRIMARY pure-Leaper work only; default/UI/AUX unchanged. Cache feasibility is
-CLOSED; a separate proof-goal budget study is frozen and NOT YET EXECUTED at this
-checkpoint. Source capsules are data, not executed by readers.
+CLOSED; the complete50k proof-goal phase is qualified; the same frozen200k phase is
+RUNNING at this checkpoint. The entire160call batch is NOT CLOSED. Source capsules are data, not executed by readers.
 
 ## Cheap exclusion before an implementation
 
@@ -89,3 +89,41 @@ and smallsample stop. Its upper-only segment wording does not override the
 user's60–90effective-minute requirement. A local snapshot omitted thread_ts;
 identity and payload matched, and the derived snapshot was fixed from retained
 raw output without reread/resend/configuration changes. No tool refusal occurred.
+
+
+## Complete50k milestone;200k still running
+
+The complete128call50k prefix is saved separately, not relabeled as a batch
+execution receipt. The read-only reader replays811exported PV steps and checks
+full Core histories/actions, all root WDL labels/seat orientation, profile and
+all tuning except the soleflag, runtime push/pop balance. Both arms64/64correct,
+30/30choice-sensitive, no paired repair/regression and no45second safetycensor.
+
+|50k metric|Default|Any-root-win goal|
+|---|---:|---:|
+|Query wallseconds|883.155|857.259|
+|Caller wallseconds incl compile/replay/Player setup|884.302|858.432|
+|Process CPUseconds|881.344|855.266|
+|Main+q budgetevents|3021095|2906258|
+|Actual goalstops|0|4|
+
+Aggregate query wall decreases about2.93% and work about3.80%. Median paired
+latency ratio is1.00088: the typical pair does not improve. Savings concentrate
+in four win-band cases, not general search acceleration. All64actual actions
+match here, though the contract does not require shortestmate/sameaction/depth.
+All60non-win-band, non-time-censored pairs match selected action/score/full
+returnedPV/depth/main/q/TT/beta-cutoff signatures. This is stronger scoped control
+evidence, not all-domain equivalence or an independent proof verifier.
+
+Retain the existing option for its explicit any-winning-choice objective. This
+result does not justify a default/UI change, general pure-Leaper success, a
+strategic repair, a new largerpanel or expansion into other rule classes.
+The predetermined16deep200k pairs continue under the original65minute batch cap;
+their desired-node attainment and actual returned WDL will be reported separately.
+The prefix qualification marks those32slots as NOT COVERED in that snapshot,
+not as unexecuted forever or silently successful.
+
+A separate static-data reader recomputed all8083unique saved default-evaluator
+positions and every recorded raw integer, with saved rule/config/profile binding
+checks and finite hit counts. It performs0search/solver queries and never runs
+archived source capsules. This does not turn offline cache cost into search gain.

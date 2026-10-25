@@ -7501,3 +7501,11 @@ nodepreset returns, WDL-only winning-choice objective, no shortestmate/depth cla
 Prior4/64winband suggests sparse benefit; no positive-only case selection. Source,
 complete rules/history and cost forecast are published before execution. No AUX
 checkout/solver/unpublished work, schedule or UI/default changes.
+
+Fbb plan/result followup1792901673.994439 was published-source/fullSHAfdb525aa
+verified before send and exact-canonical readback. One delayed check completed
+with no newreply; currentChat root remains1post, no newchannelroots. A complete
+50k milestone now qualifies128returns/811PVsteps,64/64both,30/30sensitive,0repair/
+regression,4goalstops, aggregatewall-2.93% but medianratio1.00088. All60non-goal
+selected signatures match.32deepcalls remain outside this prefix qualification,
+not a fake batchreceipt; originalsingleproducer/budget continues unchanged.
