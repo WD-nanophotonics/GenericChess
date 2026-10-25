@@ -71,9 +71,15 @@ Newround AGENT_REQUEST is mandatory after push/fullSHA; Dot mustreply. Other
 message types may reply or stayquiet. Each logical Slack opening checks newChat
 comments/full relevantthreads, exactoriginals first. One +5minutecheck is not
 replyexpiry. User > autonomousChatreview > solicitedDot > local; no reply gate.
-CurrentrequestGC-SLACK-20261025-143549-d40632c7/root1792906576.977249 received
-Dot1792906749.584589; adoption is selective. Contra USER>=120authority rejected.
-Scientific defaults/visibility/role boundaries cannot be changed by that advice.
+Latest CLOSED round639requestGC-SLACK-20261025-162843-2e9d68da/root
+1792913357.988659 receivedDot1792913515.763369; directTT/post-point/nonoverlap
+advice executed. FinalFOLLOWUP1792918618.618669 sentafterverified8a3f13a3;
+its09:02UTCsingle+5minutecheck found0newreply/newChat,notreplyexpiry. Chatroot
+1792912079.322259 remainscomplete1post. Allproducers/checksCLOSED;sessionfinish
+andfinal-check accepted65.629effective minutes. Nextnewround needs freshrequest;
+no stalef538request or active-statepromise substitutes forit. PriorDotbudget
+claims remain rejected: onlyUSERconfirms>=120. Scientificdefaults/visibility/
+role boundaries cannot be changed by advice.
 
 Normal finish needs matching actualworkledger/qualityreview/sessionfinal-check.
 No active-statefinal or offline/admin/wall-clock credit. Sourcecapsules are data,
