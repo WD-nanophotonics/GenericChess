@@ -1,6 +1,8 @@
 # Current GenericChess mainline
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
+At work opening, CHATGPT_REVIEW_WORKFLOW.md adds remote GitHub ChatGPT Patrol
+review discovery to Slack intake; assess both before selecting Main.
 PRIMARY writes sandbox only. PURE LEAPER first; mixed/legacy/promotion/drop/NNUE
 expansion deferred. Default/UI/AUX unchanged. Both schedules180min; PRIMARYactive,
 AUXexistingPAUSED, bindings intact. Normal60–90recorded effective researchminutes.

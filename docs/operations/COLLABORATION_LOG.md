@@ -7703,3 +7703,26 @@ and is not included in that number. All additional time since scientificEND
 was publication/transport/delayed-check administration, with0new experimental
 job or work-ledger entry. Keep this variance and the earlierQ122.143min overrun;
 do not substitute either wall clock for67.317recorded research minutes.
+
+
+## 2026-10-26: user-requested dual-source review workflow (configuration only)
+
+The user explicitly requested updates to BOTH existing roles' prompts and
+workflow documents. PRIMARY updated the requested clean/static AUX workflow
+documents under that bounded grant; this does not transfer AUX research/state
+ownership. No AUX memo/session/stop/computation/result file was changed. Existing
+180-minute recurrences, PRIMARY ACTIVE/AUX PAUSED and chat bindings were retained.
+
+Both workflows now inspect GitHub remote ChatGPT Patrol reviews alongside Slack
+before selecting a work-round action, using observed refs/paths and fixed full
+SHA/blob coverage. Autonomous GitHub/Slack reviews have the same advisory priority
+under latest user instructions; Dot and budget/role boundaries remain distinct.
+Stale AUX sole-Slack/paused-Dot communication text was replaced, not left as a
+second live route. No scientific task/controller/default was changed.
+
+The fetched remote tree inventory and GitHub file/PR searches did not locate the
+Patrol directory at this check; actual path remains UNKNOWN, not 'no reviews'.
+Next work opening rediscovers it without guessing a directory or adding polling.
+Shared protocol links/bytes match in both checkouts; two AUX isolated role/branch
+tests passed. This work earns zero research time; PRIMARY's interrupted UUID
+8eb29d8a-651f-4104-91e5-fcafbad57bf5 retains71.17302600000001seconds/2intervals.

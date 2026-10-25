@@ -37,7 +37,7 @@ repairs/results clearly separate from the reviewed direction documents.
 PRIMARY_SANDBOX owns the mainline checkout, research clock, sandbox branch and
 publication. DEV_AUX owns its existing sidemission checkout and outputs; do not
 write its files, state, session, memo or unpublished work. This patrol covers
-only PRIMARY mainline research and the existing project Chat.
+only PRIMARY mainline research and existing GitHub/Slack project reviews.
 
 The existing `genericchess` heartbeat recurs every180minutes by the explicit
 latest2026-10-25 user direction, superseding its60minute cadence while preserving
@@ -46,8 +46,11 @@ A one-time pause applies only to that inspection and never edits the
 recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
-At each existing180minute patrol/manual work start, read newly available
-independently initiated ChatGPT review comments and complete relevant threads.
+At each existing180minute patrol/manual work start, inspect remote GitHub
+ChatGPT Patrol reviews using CHATGPT_REVIEW_WORKFLOW.md, then read newly
+available autonomous Slack review comments and complete relevant threads.
+Pin remote refs/paths/blob hashes, preserve originals and record coverage gaps;
+no automatic merge, execution or import is implied by a review read.
 The2026-10-24 direct user correction restores direct Dot consultation, including
 bounded real-time thread exchanges; it supersedes the old pause, asynchronous-
 only route and one-message-per-probe cap for that dialogue. User correction
@@ -82,7 +85,7 @@ Record checked UTC/result; no repeated polling, waiting for a reply, new worker
 or timer. On a real interruption, preserve the due check for same-round resume;
 do not claim it was executed. Replies retain their solicited Dot authority.
 
-Authority: latest direct user instructions > autonomous ChatGPT Slack review
+Authority: latest direct user instructions > autonomous ChatGPT GitHub/Slack review
 comments > Dot's solicited replies/messages > local proposals. Account identity
 or TYPE marker alone cannot distinguish autonomous ChatGPT review from Dot when
 shared. Record source/context/thread and mark uncertainty without promotion.
@@ -107,7 +110,8 @@ creates a research/publication gate or permission to poll repeatedly.
 1. Read .local_agent/NEXT_WORK.md in full, AGENTS.md, LOCAL_MAINLINE.md and
    rollout/advisor/slack stop flags. Latest user direction wins. Reconcile
    decision + reason + superseded alternative + execution consequence before
-   acting. Never clear a stop merely to resume.
+   acting. Before research selection check GitHub reviews per
+   CHATGPT_REVIEW_WORKFLOW.md and Slack comments. Never clear a stop merely to resume.
 2. For RESEARCH use generic-chess-local.cmd session start. session.json owns
    UUID/UTC start; active same-chat segments retain both after compaction.
    Another chat cannot take over. Explicit bounded configuration/review/repair

@@ -1,6 +1,13 @@
 # GenericChess Slack collaboration workflow —2026-10-24
 
-## Current authority and restored Dot contact
+## Review sources and current authority
+
+The2026-10-26 user correction adds GitHub ChatGPT Patrol reviews at every work
+opening. Follow [CHATGPT_REVIEW_WORKFLOW.md](CHATGPT_REVIEW_WORKFLOW.md) for
+remote discovery, full-SHA reads, changed-file coverage and adoption. This file
+continues to govern Slack transport; Slack is not the sole review source.
+
+## Restored Dot contact
 
 The user lifted the Dot pause on2026-10-24. Direct two-way Dot consultation,
 including bounded real-time exchange, is restored in existing NanoMelon
@@ -10,7 +17,7 @@ Oct20 pause and Oct23 asynchronous-only/no-mention/single-message rules are
 superseded, not alternative live policies. No new channel/chat/worker/scheduler.
 
 Priority: latest direct user instructions > independently initiated ChatGPT
-Slack review comments > Dot's solicited replies/messages > local proposals.
+GitHub or Slack review comments > Dot's solicited replies/messages > local proposals.
 Continue reading ChatGPT's autonomous reviews; an immediate answer to a local
 question is not that higher-priority autonomous review. Shared account IDs and
 TYPE=CHAT_REPLY/DOT_REPLY markers are transport/provenance clues, not proof of

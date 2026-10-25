@@ -25,7 +25,7 @@ Never touch alphasho, its audits/tasks, or other projects. Do not spawn/delegate
 Agents, create extra Work/Codex workers, add fees, or run uncontrolled jobs.
 DEV_AUX remains an independent, user-established role in its own checkout; do not
 write its files/state or duplicate its assigned work. This PRIMARY patrol covers
-only its own mainline research and the existing project Chat. No additional
+only its own mainline research and existing project GitHub/Slack reviews. No additional
 workers may be created.
 
 ## Current decisions and their reasons —2026-10-24
@@ -46,6 +46,17 @@ workers may be created.
   existing schedules be updated; both IDs/chat bindings remain preserved. PRIMARY
   updates only its own checkout policy and does not edit AUX research state. The60–90minute effective research requirement
   remains separate. One inspection pause does not pause recurring scheduling.
+- User review-source correction2026-10-26: before choosing work at every new
+  round/manual start/heartbeat, check the project GitHub remote for new or edited
+  autonomous ChatGPT reviews, especially the user-designated ChatGPT Patrol
+  file/directory, AND retain Slack review checks. Locate the actual path/ref from
+  remote trees; pin full commit/blob hashes and preserve originals before
+  assessment. No automatic pull/merge/execution or other-role state changes.
+  Follow docs/operations/CHATGPT_REVIEW_WORKFLOW.md; record coverage gaps and
+  read/adopt/defer/reject separately. GitHub and Slack autonomous reviews share
+  the same authority below latest direct user instructions and above Dot advice.
+  This replaces the Slack-only review assumption, not existing Dot consultation,
+  role/budget boundaries or the 180-minute recurrence.
 - User reaffirmation2026-10-24: direct reply explicitly allows the queued3073-
   character report and reaffirms continuing bounded two-way authorization. The
   old read-only restriction is superseded; no renewed per-message consent queue.
@@ -63,7 +74,7 @@ workers may be created.
   no new scientific result is required before this trigger. Do not invent a question
   or make the reply a work gate. At later reads/sends consider relevant follow-up.
   Authority: latest direct user instructions > independently initiated ChatGPT
-  Slack review comments > Dot's solicited replies/messages > local proposals.
+  GitHub or Slack review comments > Dot's solicited replies/messages > local proposals.
   ChatGPT's autonomous review is not the same as an immediate Dot response even
   when both appear through one Slack account. Preserve origin/thread/provenance;
   a TYPE marker/account alone does not establish independent review. Unknown
@@ -190,7 +201,8 @@ without doing so.
 At start/restart/heartbeat/after compaction FIRST read .local_agent/NEXT_WORK.md
 in full, then this file, docs/research/LOCAL_MAINLINE.md and rollout/advisor/slack
 stop flags. Reconcile current decision/reason with newer user directions BEFORE
-acting. Never clear a user stop; restart or flag inspection does not revoke it.
+acting. Inspect GitHub reviews per docs/operations/CHATGPT_REVIEW_WORKFLOW.md and Slack comments
+before selecting research. Never clear a user stop; restart or flag inspection does not revoke it.
 A one-time stop/pause of the current inspection suspends that inspection only;
 do not alter the recurring heartbeat unless the user explicitly asks to pause or
 turn off the schedule. A role/project stop flag still suspends work,
@@ -304,7 +316,8 @@ conditions; distinguish ordering prices from leaf prices.
 ## Chat messages and delivery
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing asynchronous mailbox.
-Read autonomous ChatGPT project reviews and complete relevant threads at each
+Check GitHub ChatGPT Patrol reviews per docs/operations/CHATGPT_REVIEW_WORKFLOW.md, and read
+Slack autonomous ChatGPT project reviews and complete relevant threads at each
 existing180minute patrol/manual work start. Start every new work round with a fresh mailbox `TYPE=AGENT_REQUEST` to Dot
 after the required publish/full-SHA verification; an old-thread FOLLOWUP is not
 a substitute. Record the round/request association; resuming that same round
