@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T13:09:12.265487+00:00",
+  "at": "2026-10-25T14:28:36.749700+00:00",
   "files": [
     {
       "file": "aspiration-plan.json.gz",
@@ -252,7 +252,468 @@
       "raw_bytes": 998,
       "sha256": "fe114c14bf063e7eb7136ff8088b42667d0e03cba0d16943dcef9c7a17e34f3a",
       "raw_sha256": "2bc824de835bf2321764b00c1db482fd94ad6ccb92e069b0f721421784f46202"
+    },
+    {
+      "file": "assignment-plan.json.gz",
+      "source_relative": ".local_agent/assignment-e410/plan.json",
+      "bytes": 1323,
+      "raw_bytes": 2489,
+      "sha256": "9c438da941b85d4ef0a20b7432043ee1f976edc5ce1b96f7305c1428a867fd42",
+      "raw_sha256": "b310990a9e8c3bde645ea3f5313aa32f035f50303e4877915a7a71f83b049dd0"
+    },
+    {
+      "file": "assignment-inputs.json.gz",
+      "source_relative": ".local_agent/assignment-e410/inputs.json",
+      "bytes": 7313,
+      "raw_bytes": 163740,
+      "sha256": "7c36e4a4f3a07d02284c25f6b5c4e86f8f5c0ab7f2853d4dad319dfc8e7594c1",
+      "raw_sha256": "d916c6e76886d0303521a92a9daa5349e667a4de1858db218e31bac2fa7379c8"
+    },
+    {
+      "file": "assignment-queries.jsonl.gz",
+      "source_relative": ".local_agent/assignment-e410/queries.jsonl",
+      "bytes": 3539,
+      "raw_bytes": 37136,
+      "sha256": "c416e4dec6465a94116fa379aa509adf5d02a4d0cd46cc2a493a742ee75dbed1",
+      "raw_sha256": "9050ae207cbdc77a0ddbdbeeb5e065764cfa14507a84d01aa6adbf2af3891611"
+    },
+    {
+      "file": "assignment-qualification.json.gz",
+      "source_relative": ".local_agent/assignment-e410/qualification.json",
+      "bytes": 178,
+      "raw_bytes": 320,
+      "sha256": "861abe371602855f9f5f9bf08603075c298bc4f13ad23ec3c7d6a2ee17107c2f",
+      "raw_sha256": "a8bc21e1ab15c389bfba561e6d1a2874c64867f47b891ccfd7dcc4dd1c8b89bb"
+    },
+    {
+      "file": "assignment-p49-reused-baseline-parity.json.gz",
+      "source_relative": ".local_agent/assignment-e410/p49-reused-baseline-parity.json",
+      "bytes": 336,
+      "raw_bytes": 580,
+      "sha256": "7b1f2b0e0c6fcd8ffd4803948d03eac67d54947d224629c6fdc3f5aff266b0b4",
+      "raw_sha256": "f1552cbbe9b294cb6cac20c765bac290db13275e34b5fca30dc3d10d602c7849"
+    },
+    {
+      "file": "assignment-reused-baseline-D4.json.gz",
+      "source_relative": ".local_agent/assignment-e410/reused-baseline-D4.json",
+      "bytes": 2947,
+      "raw_bytes": 28991,
+      "sha256": "fc7382e009e18dbc8cb5c8fb6633c0b0c018d6577381cbc912d0619863b7affc",
+      "raw_sha256": "f408a574f2b5bef4c7daf1aaf1c0b06a83666b964ccd2d67d821d62fd6730a1f"
+    },
+    {
+      "file": "assignment-receipt.json.gz",
+      "source_relative": ".local_agent/assignment-e410/receipt.json",
+      "bytes": 203,
+      "raw_bytes": 269,
+      "sha256": "25c5fbadd09059549bfba53986756279f8963f8142c454e03f2bd10f19b6e7f8",
+      "raw_sha256": "05ea53916e1e51df3a63fd7f0400bf779aa8ec4913e058b050f4ac84d604e26f"
+    },
+    {
+      "file": "assignment-p49-D4-trace.json.gz",
+      "source_relative": ".local_agent/assignment-e410/p49-D4-trace.json",
+      "bytes": 542893,
+      "raw_bytes": 16316490,
+      "sha256": "5075378f4f5a59feff4d790f7fec1aa31177457f41d44eba66e54e714a483110",
+      "raw_sha256": "50bc077fe54ef6319d9a81c0dcae9d05e916d2bc46fa87196d5d8daa90c43848"
+    },
+    {
+      "file": "assignment-native-qualification-on-trace.json.gz",
+      "source_relative": ".local_agent/assignment-e410/native-qualification-on-trace.json",
+      "bytes": 40263,
+      "raw_bytes": 1039712,
+      "sha256": "793498f8816aaad5e193967eaa82d9ef8633ad324636f1a64c7314f50d25f12e",
+      "raw_sha256": "4710db3052f775b2bae877cd296a5c864e4fd86c84be30e945b5b7240c1b6e60"
+    },
+    {
+      "file": "assignment-assessment.json.gz",
+      "source_relative": ".local_agent/assignment-e410/assessment.json",
+      "bytes": 4109,
+      "raw_bytes": 115378,
+      "sha256": "7c840ec2d9d431ad895a05104b049af2368d6d055570176c4f4f5bbe7ffacb5e",
+      "raw_sha256": "25b3217917d90f07ae8ff2d5e153e13be1c92bdf4ca1ca045fd8d9990de8fab1"
+    },
+    {
+      "file": "assignment-reader-v1-failed.py.gz",
+      "source_relative": ".local_agent/assignment-e410/reader-v1-failed.py",
+      "bytes": 4151,
+      "raw_bytes": 12762,
+      "sha256": "7418838841319728f55b92613265488af214b052febdd1345adc55ac30f9bbd9",
+      "raw_sha256": "6c3ec4574823bc11adf8121cdd7855505185ca22830823036e97cbdaec3f5af8"
+    },
+    {
+      "file": "assignment-reader-v1-failure.json.gz",
+      "source_relative": ".local_agent/assignment-e410/reader-v1-failure.json",
+      "bytes": 541,
+      "raw_bytes": 1395,
+      "sha256": "d024a9c6698a5f0d387893b57eb01f130fff540e08e0bf9dd48923b75aca7e15",
+      "raw_sha256": "82b0331b78788094f77e1ae16b2c785e445409600f0ec33b034af12c897468f6"
+    },
+    {
+      "file": "assignment-reader-mutants.json.gz",
+      "source_relative": ".local_agent/assignment-e410/reader-mutants.json",
+      "bytes": 133,
+      "raw_bytes": 157,
+      "sha256": "44845f433a31e7a5f209b63f11b5a8475e6b8a887ad5c8e3b8554b250da28a5d",
+      "raw_sha256": "44bdcbe0aa208f8ed1f6c9450b06bc8179f55d10109fe8e38feef89cb84709c1"
+    },
+    {
+      "file": "assignment-frozen-leaf-price-invariance.json.gz",
+      "source_relative": ".local_agent/assignment-e410/frozen-leaf-price-invariance.json",
+      "bytes": 646,
+      "raw_bytes": 2388,
+      "sha256": "b30f15c137a87438a1475b88380c01493a629876e0379e5214b21e27881a45a7",
+      "raw_sha256": "0a4cb28c3d7068bc49766622d04842e946dc87cf0a38864857847191c92f1bef"
+    },
+    {
+      "file": "assignment-alternative-valuation-review.json.gz",
+      "source_relative": ".local_agent/assignment-e410/alternative-valuation-review.json",
+      "bytes": 678,
+      "raw_bytes": 1127,
+      "sha256": "362e770d537120a8e54860278797241fd5c8592d7828e2159e52bee62396a36e",
+      "raw_sha256": "a2166e58ff5ef65d5e3de65431dc01d995f6533cd6ae18fdef0c5a02a67ed9fa"
+    },
+    {
+      "file": "assignment-next-action-feasibility.json.gz",
+      "source_relative": ".local_agent/assignment-e410/next-action-feasibility.json",
+      "bytes": 711,
+      "raw_bytes": 1142,
+      "sha256": "7ffa6c5e45d2d30a480091780ebbcf8a1c63547248e4fe71f0fea20110a42479",
+      "raw_sha256": "ed2aeaaeab0f5e62de1de6343eb2754d4fb2b24203e647a515e2a4d042ad9b43"
+    },
+    {
+      "file": "assignment-scientific-closure-summary.json.gz",
+      "source_relative": ".local_agent/assignment-e410/scientific-closure-summary.json",
+      "bytes": 425,
+      "raw_bytes": 687,
+      "sha256": "b06b106563fb8958c816730b2f9c04eec953df6e18ab1de9dc7722790c0c1615",
+      "raw_sha256": "faef804542f03be74debc9c4446d96275fbfbf3b005566ae7cf5b3b2e66296c7"
+    },
+    {
+      "file": "assignment-final-opening-coverage.json.gz",
+      "source_relative": ".local_agent/assignment-e410/final-opening-coverage.json",
+      "bytes": 329,
+      "raw_bytes": 610,
+      "sha256": "d3911664200bdb63c4c24795068e624dc0f39a7ffe0cff024e1395a9d002eb52",
+      "raw_sha256": "e8cbb7ce79a4f220a89877f7a6aa36a1f40075b3b8d5bb2046dfad2d2dad2c25"
+    },
+    {
+      "file": "assignment-quality-review.json.gz",
+      "source_relative": ".local_agent/assignment-e410/quality-review.json",
+      "bytes": 6273,
+      "raw_bytes": 45585,
+      "sha256": "fd00e5e6ce3962a77ab9bd1064e20f75a019c9358e698ce55bd88c1e62f6808e",
+      "raw_sha256": "502d8befa3dbb42b05b8eb59a55913ccf700dc1f03b9fa4a427743c78e24f452"
+    },
+    {
+      "file": "assignment-finish-final-check.json.gz",
+      "source_relative": ".local_agent/assignment-e410/finish-final-check.json",
+      "bytes": 329,
+      "raw_bytes": 693,
+      "sha256": "a3e77f93b7ad6fad1cf53d3bbb1b0a1bb307b120ebe10b8950a0846395a84c06",
+      "raw_sha256": "d68371d7a1661900b786f267d478fd67ce691d2ae58705a76f3fb1b5a41cbe9b"
+    },
+    {
+      "file": "assignment-executed-side-reader-original.py.gz",
+      "source_relative": ".local_agent/assignment-e410/executed-side-reader-original.py",
+      "bytes": 3253,
+      "raw_bytes": 10227,
+      "sha256": "22ef8769f08bf89897cc615839365144571d5de860231cd9518d521124d4a3b4",
+      "raw_sha256": "af3fed4663360850dde32f52d8c7e3c2614a5bfc0a30d8ce9ce313ee8fed078b"
+    },
+    {
+      "file": "assignment-side-reader-presentation.json.gz",
+      "source_relative": ".local_agent/assignment-e410/side-reader-presentation.json",
+      "bytes": 197,
+      "raw_bytes": 243,
+      "sha256": "8cff9d3bbae0c94d6f033631f9fef6204911f6abddf90b4238a068d3eb3bb105",
+      "raw_sha256": "23b85b25195d26191275f1abfc1d6f798203c630ed5a5b16b90e16b67bc658ee"
+    },
+    {
+      "file": "leaf-factorial-plan.json.gz",
+      "source_relative": ".local_agent/leaf-factorial-e410/plan.json",
+      "bytes": 1201,
+      "raw_bytes": 1998,
+      "sha256": "ca3e33e8aeda0b30c244b94abdb3c63aced579cf91043ccec36b869b30ea71e5",
+      "raw_sha256": "11a70b0a87d3cc694505f92a1adfa9ba67d450b1fa83268e63e4af4d2eb4c32a"
+    },
+    {
+      "file": "leaf-factorial-inputs.json.gz",
+      "source_relative": ".local_agent/leaf-factorial-e410/inputs.json",
+      "bytes": 17331,
+      "raw_bytes": 527767,
+      "sha256": "17db793c14d17c600f347ac2d3f5efffef6a294b5b989cb187eee721a31e06b9",
+      "raw_sha256": "6cac38ecba8bba3c3923916c3705be325baae58e0eb800de4b1e8d5606c059db"
+    },
+    {
+      "file": "leaf-factorial-rows.jsonl.gz",
+      "source_relative": ".local_agent/leaf-factorial-e410/rows.jsonl",
+      "bytes": 35111,
+      "raw_bytes": 1372622,
+      "sha256": "7ab9d94f14fbfefc5d97d745d47354cb20e794c75a4a835b2dde2707088a35fb",
+      "raw_sha256": "467d3e3b5c2ef9c44c585c192697b3aabeaf47f5614448cc87776093d1563fef"
+    },
+    {
+      "file": "leaf-factorial-receipt.json.gz",
+      "source_relative": ".local_agent/leaf-factorial-e410/receipt.json",
+      "bytes": 272,
+      "raw_bytes": 374,
+      "sha256": "2ad921860cc60a706c80b18b58291c40a5ec2ce14bb31378113f8d3e2390908b",
+      "raw_sha256": "00919fd183898d12697acfc35989773aa6331f2ea1b5a18f7e76524cae7707d5"
+    },
+    {
+      "file": "leaf-factorial-assessment.json.gz",
+      "source_relative": ".local_agent/leaf-factorial-e410/assessment.json",
+      "bytes": 437,
+      "raw_bytes": 1783,
+      "sha256": "637b7989d0e6c467c2972b8d0c13a2e8a02045707b9f9846c9928cbac8cc68f5",
+      "raw_sha256": "7d82d97c908eec72c4baa5be6560f5430965a9b7218c3893e4114ac805ce5543"
+    },
+    {
+      "file": "frontier-oneply-plan.json.gz",
+      "source_relative": ".local_agent/frontier-oneply-e410/plan.json",
+      "bytes": 845,
+      "raw_bytes": 1344,
+      "sha256": "f7704c586347843539141a3fdfd728ede4c1fa81ba7918f9c82cd2fd1ce537a8",
+      "raw_sha256": "19949fe49c02a92e20ab0e00d9b75d1e0e005726827f641167dc2873a24690e2"
+    },
+    {
+      "file": "frontier-oneply-inputs.json.gz",
+      "source_relative": ".local_agent/frontier-oneply-e410/inputs.json",
+      "bytes": 1856,
+      "raw_bytes": 80367,
+      "sha256": "5c3f4eb9adec59551d3ea9a0ca8b71b2c463c16c2eb7e792e2c537afe01da9cb",
+      "raw_sha256": "e8cbbb33959fe94a58711910e2c79e7753992bd6958838320d721996adf11fba"
+    },
+    {
+      "file": "frontier-oneply-rows.jsonl.gz",
+      "source_relative": ".local_agent/frontier-oneply-e410/rows.jsonl",
+      "bytes": 5352,
+      "raw_bytes": 351169,
+      "sha256": "8943500bad52cd729c05173543d68ffd5ceaa11ad8a62c95c07be0934ef984a7",
+      "raw_sha256": "a91559dafd23c531576cf117244800e07a9ac6ad6ee0b9ac7c6080bb69372e87"
+    },
+    {
+      "file": "frontier-oneply-receipt.json.gz",
+      "source_relative": ".local_agent/frontier-oneply-e410/receipt.json",
+      "bytes": 190,
+      "raw_bytes": 250,
+      "sha256": "5667a4fc180b4187907a65be8f59bd11bd2579c4c7da8678833475b618f90941",
+      "raw_sha256": "250c6607de5a588a9ca0034e6789d0cab54dcc7a98d2aa2cfb0bf520b835613f"
+    },
+    {
+      "file": "frontier-oneply-assessment.json.gz",
+      "source_relative": ".local_agent/frontier-oneply-e410/assessment.json",
+      "bytes": 430,
+      "raw_bytes": 1086,
+      "sha256": "aea919d162aac1c87cce950a9331d0caec652f383a5f18683f9ae891d216f2ca",
+      "raw_sha256": "0c10e13475ced3b4cd4d76be070fdda29e4401e90a1c5302ea7055ac7d521158"
+    },
+    {
+      "file": "frontier-surgery-plan.json.gz",
+      "source_relative": ".local_agent/frontier-surgery-e410/plan.json",
+      "bytes": 984,
+      "raw_bytes": 1602,
+      "sha256": "3461c9ff243256bf54c717d6ef58d056850e059a1ef91136c75c630953f0eccc",
+      "raw_sha256": "a8b9c5d142aba337bf618673c8a3b212422e4e06df5523040484ac0647b4b70a"
+    },
+    {
+      "file": "frontier-surgery-inputs.json.gz",
+      "source_relative": ".local_agent/frontier-surgery-e410/inputs.json",
+      "bytes": 3122,
+      "raw_bytes": 77128,
+      "sha256": "1094806171a2c52f604c8289242c0d07bc3a53f473204a4926ed09a5caabf3e4",
+      "raw_sha256": "e21bbdb13f057c9e838bb006f7ad0cb7e6cf178a74631c2a9ff42617b0b9e765"
+    },
+    {
+      "file": "frontier-surgery-result.json.gz",
+      "source_relative": ".local_agent/frontier-surgery-e410/result.json",
+      "bytes": 2831,
+      "raw_bytes": 27126,
+      "sha256": "2697f844106dbd4427904032a3b1d30d7ccd6d9e1013a3b5365f26f470416727",
+      "raw_sha256": "f7ce07eef21def012fdc1febff6cc0820287063c8765fe64930d52a8a7aa1de2"
+    },
+    {
+      "file": "frontier-surgery-receipt.json.gz",
+      "source_relative": ".local_agent/frontier-surgery-e410/receipt.json",
+      "bytes": 202,
+      "raw_bytes": 270,
+      "sha256": "bcf7f72b63fbe4ba49d6263281e12407846ed4b1ace7bc5dd99969b7cf25f1a5",
+      "raw_sha256": "382a14b20dfaf8ad858c347e4861b7aadcf43f1df8b7ab13f5b8c9be5f2dd260"
+    },
+    {
+      "file": "frontier-surgery-executed-source-original.py.gz",
+      "source_relative": ".local_agent/frontier-surgery-e410/executed-source-original.py",
+      "bytes": 1625,
+      "raw_bytes": 3728,
+      "sha256": "c4669c22dbd5d381044edd9fe5fa79c38249f49112eda69c17c7f60eafe5f3f8",
+      "raw_sha256": "0aace2af0f3290f26a3963931d787a5449175463e391ab1f5168bee309727122"
+    },
+    {
+      "file": "frontier-surgery-source-presentation.json.gz",
+      "source_relative": ".local_agent/frontier-surgery-e410/source-presentation.json",
+      "bytes": 302,
+      "raw_bytes": 395,
+      "sha256": "266c63af485bef3f7da818cf866f8d191ac0eef3f3d756619fd1cf3dc103a8b6",
+      "raw_sha256": "c8fb3ee0f199366b105fcc03a48d2a6737447d01e06721ea8805f2d72da12f32"
+    },
+    {
+      "file": "tt-counterfactual-plan.json.gz",
+      "source_relative": ".local_agent/tt-counterfactual-e410/plan.json",
+      "bytes": 1065,
+      "raw_bytes": 1764,
+      "sha256": "9ba8053bc744504f7ccc20e8dfc61008e168884481062a0ef5eca721a41a8788",
+      "raw_sha256": "1619654ea1746213cd505490e753ab976a4bb83501ac926bee08f9b67616652d"
+    },
+    {
+      "file": "tt-counterfactual-inputs.json.gz",
+      "source_relative": ".local_agent/tt-counterfactual-e410/inputs.json",
+      "bytes": 7313,
+      "raw_bytes": 163740,
+      "sha256": "7c36e4a4f3a07d02284c25f6b5c4e86f8f5c0ab7f2853d4dad319dfc8e7594c1",
+      "raw_sha256": "d916c6e76886d0303521a92a9daa5349e667a4de1858db218e31bac2fa7379c8"
+    },
+    {
+      "file": "tt-counterfactual-queries.jsonl.gz",
+      "source_relative": ".local_agent/tt-counterfactual-e410/queries.jsonl",
+      "bytes": 2975,
+      "raw_bytes": 32231,
+      "sha256": "7cbd705c1cbe6d5fbfd3dac659249a7c6ad2bafdf9998a2d134268ee16d1abb7",
+      "raw_sha256": "ccf8dd7c956c8db22b1998ed03c8d75fee276b0a2fb418c182c36b9d57e95fa3"
+    },
+    {
+      "file": "tt-counterfactual-receipt.json.gz",
+      "source_relative": ".local_agent/tt-counterfactual-e410/receipt.json",
+      "bytes": 202,
+      "raw_bytes": 269,
+      "sha256": "3057183a547c5cb7125859fb2304fe70039e7c6636f8e3d3b6f0458cc3b32692",
+      "raw_sha256": "23a9a1ce2dd2d79f5c8ba8e92f59b16daa81e6e1ef5a037aa8764e81f6e0b286"
+    },
+    {
+      "file": "tt-counterfactual-assessment.json.gz",
+      "source_relative": ".local_agent/tt-counterfactual-e410/assessment.json",
+      "bytes": 443,
+      "raw_bytes": 1037,
+      "sha256": "e3b1584971d0a7892245c242731cc939fc96c5aa5e3f0e5001b72439389f38c3",
+      "raw_sha256": "1ad9a870124082c5bc8d9f05e26f5456c4cba88a9338feb9629a10952e87d913"
+    },
+    {
+      "file": "release28-receipt.json.gz",
+      "source_relative": ".local_agent/e410-release-receipt.json",
+      "bytes": 378,
+      "raw_bytes": 854,
+      "sha256": "5a78f4a0619b6c8601afcd6272fed5f8480caf67cede13ef9a3dcc83a5124f51",
+      "raw_sha256": "ece50c37ee78d3577e6711ab3169344771838740c420b69da214fae9f01789d1"
+    },
+    {
+      "file": "leaper_assignment_dependencies.py.gz",
+      "source_relative": "scripts/leaper_assignment_dependencies.py",
+      "bytes": 4333,
+      "raw_bytes": 14498,
+      "sha256": "08e8ba0d341ae242aaf880c25a9598bb91450dee81002e14e66eb265bbcf9375",
+      "raw_sha256": "e7f9723c8c60dede62576e38c2a47ad77eb37ca3cf87c25a7a7e66c74b536949"
+    },
+    {
+      "file": "leaper_assignment_probe.py.gz",
+      "source_relative": "scripts/leaper_assignment_probe.py",
+      "bytes": 2075,
+      "raw_bytes": 5319,
+      "sha256": "c794da2a985e9d51e6d437e733876111ac895cc2a9148c74bb20d481808397a5",
+      "raw_sha256": "c1d74ebca8ba2130854ee6c3b4762e264c2c99381f4817dd87fcfd98c0653db9"
+    },
+    {
+      "file": "verify_leaper_assignment_dependencies.py.gz",
+      "source_relative": "scripts/verify_leaper_assignment_dependencies.py",
+      "bytes": 4177,
+      "raw_bytes": 12757,
+      "sha256": "66a90bb54aeba9e79647c5e6ed641ef11ebe9af0663435c92ab29e57eeed349f",
+      "raw_sha256": "91ae49d67f5f24490b105f7615a104e2f77d4bb03fef4eaa0199c0427378009f"
+    },
+    {
+      "file": "leaper_leaf_feature_factorial.py.gz",
+      "source_relative": "scripts/leaper_leaf_feature_factorial.py",
+      "bytes": 2072,
+      "raw_bytes": 5698,
+      "sha256": "cf8c633d886166ddb9a15cac45ad79ceeeb0503d2669d13a799988b8ad96f327",
+      "raw_sha256": "281614212d4ebbbfd4f58de45c8fc4829fd7c4c9ad09949d33a73d9c3139b4b5"
+    },
+    {
+      "file": "leaper_frontier_oneply.py.gz",
+      "source_relative": "scripts/leaper_frontier_oneply.py",
+      "bytes": 1715,
+      "raw_bytes": 4022,
+      "sha256": "b09a3b22b80338e25970f79309b07c32d97bda393b8362224795673313e5be5c",
+      "raw_sha256": "116516b9bd7ccd2e9e9307a6631048d73e0fdfff68d5e62dac3da6ac3eff4a43"
+    },
+    {
+      "file": "leaper_tt_score_counterfactual.py.gz",
+      "source_relative": "scripts/leaper_tt_score_counterfactual.py",
+      "bytes": 390,
+      "raw_bytes": 777,
+      "sha256": "33731e7f7ee01a7d253a106a63dadaee43483e941de1cf8d509b177d9ca7a537",
+      "raw_sha256": "320f5c1b899d0f4193d0afd2260b43e643a094fceb0023d94881364c36386ff5"
+    },
+    {
+      "file": "leaper_tt_score_probe.py.gz",
+      "source_relative": "scripts/leaper_tt_score_probe.py",
+      "bytes": 1659,
+      "raw_bytes": 3851,
+      "sha256": "c4d88180000579e38010769719ad69d322dd05b09e2c837bb461445a0bbfa349",
+      "raw_sha256": "3b777ebe881e12acd7e7e3596b3051ea89880ebbb65df100c1372757e592d68b"
+    },
+    {
+      "file": "leaper_frontier_surgery.py.gz",
+      "source_relative": "scripts/leaper_frontier_surgery.py",
+      "bytes": 785,
+      "raw_bytes": 1986,
+      "sha256": "7cfc0f6281edcf78117823f3bb9305106e59b776782fc56e2a183049f2f694b0",
+      "raw_sha256": "50871802b9f4b70fec249cb610cfae211a21d9c761f530ea879c75e33a95233a"
+    },
+    {
+      "file": "leaper_frontier_surgery_probe.py.gz",
+      "source_relative": "scripts/leaper_frontier_surgery_probe.py",
+      "bytes": 1625,
+      "raw_bytes": 3730,
+      "sha256": "7c07e1577a0bd59eec3b58814f341da714bf27ef20962f04e791b8c1fd89dd4e",
+      "raw_sha256": "dd4e943994bb86ca855d4adbaace0239e2993b37a8e9bff237160adc84f9f2de"
+    },
+    {
+      "file": "verify_leaper_leaf_diagnostics.py.gz",
+      "source_relative": "scripts/verify_leaper_leaf_diagnostics.py",
+      "bytes": 3254,
+      "raw_bytes": 10228,
+      "sha256": "a2db7597f4de1f51c69ec8944752c56fd26b5cdcc51146a38fbdfcc10219acc1",
+      "raw_sha256": "e936f8113e0c3a202d94c92d03b7484e94fba0bef697ee4479d411e12e684d0e"
+    },
+    {
+      "file": "test_assignment_dependencies.py.gz",
+      "source_relative": "tests/product/test_assignment_dependencies.py",
+      "bytes": 1468,
+      "raw_bytes": 4123,
+      "sha256": "c56ddc843ff531a36b37e770e7f10d72214cdd56e39e64a5fc5ba28bb471a47b",
+      "raw_sha256": "3699e8496ac6b23cd641c3015dccf9af5ed034d6b56f85587d7794beaf803921"
+    },
+    {
+      "file": "test_tt_score_counterfactual.py.gz",
+      "source_relative": "tests/product/test_tt_score_counterfactual.py",
+      "bytes": 515,
+      "raw_bytes": 1137,
+      "sha256": "31b5e9231dff93d7b85ea45269e1ea78bfdc49de91aa63b271efd0b066b72676",
+      "raw_sha256": "a78dbfd851460a327ae65a21c2ecc1ca4ed42e50f7e5d6e96b3a1f7a1672c54f"
+    },
+    {
+      "file": "test_frontier_surgery.py.gz",
+      "source_relative": "tests/product/test_frontier_surgery.py",
+      "bytes": 640,
+      "raw_bytes": 1511,
+      "sha256": "dbc4b46b812092c2b864716850c92c71168e96c2c09c5e193b2642e77f399a78",
+      "raw_sha256": "98d150fb89ca22308bca375f89d20ff5ad07577f7a84b9d8e06c0fb59749757d"
     }
   ],
-  "scope": "26newreturns; window/rootcostprobes CLOSED.17multirule inputs/68+18plan explicitly NOT_STARTED_DEFERRED after newautonomousChat. Newp49D3/D4 boundary analysis0queries."
+  "scope": "Final e410ENDED,32newscientificPlayerreturns,67.317recordedeffective minutes/90intervals.627additionalmanualevals, sourceWDLnotnewproof.17input68call18gameplanNOT_STARTED_DEFERRED. Allcapsulesdataonly;rawSlack/account/JUnitwrappersprivate.",
+  "new_scientific_Player_returns": 32,
+  "session_id": "e4100959-ff6a-4346-b35b-f8e83a57022d",
+  "state": "ENDED",
+  "effective_seconds": 4039.0184409999997,
+  "work_intervals": 90
 }

@@ -7663,3 +7663,25 @@ including first mistaken legacy explanation and failed reader; no output fitted.
 No AUX writes/solver, deployed heuristic or cross-rule strength claim. Raw Slack
 kept private; fixed project-only scientific capsules published. PreviousQ
 122.143min overrun retained; new forecasts include related preparation.
+
+
+## PRIMARY e410 completed —actual evaluation boundary,2026-10-25
+
+AutonomousChat1792932855wasfound atlogicalopening, fulloriginalretained, adopted
+andexecuted: negativewindowSTOP, p49D3/D4actualmechanism beforemoreflags.
+Dot1792932149source-only advice adopted; milestoneFOLLOWUP1792934376hadone
++5check13:26UTC,0newreply, finalopeningunchanged. Sharedaccount/TYPEdidnot
+upgrade solicited advice. Held17root/68curve/18gameplanhas0queries/0games.
+
+32newscientificPlayerreturns allCLOSED; assignment2568calls/17828events0drops,
+TTscoreoffstillflip, one fullhistoryeventreplacement worsensD3WIN->DRAW.
+584factorial+35frontier+8reader manualevals separatefromsearch; sourceWDL
+attributed, no independent solver. Localforcedquietstep links exactD3/D4
+leafhistory; nottrueWDLzugzwang or a deployable singletonrepair. Dynamic
+anchorzerooneply2/0development signal not actualPlayerfitness. Nextcaller/cost
+auditbegun; no newprototype/default/UI/AUXwork or wholeclassstrengthclaim.
+
+Finish/final-checkPASS,67.317recordedeffective minutes/90intervals; oldQ
+122.143min overrunretained. Currentlogicalorigin12:42:21,scienceEND14:22:39,
+whole-delivery costpending. Private raw originals remainuntouched; public
+scientific/evaluation/source capsules inspected separately fromaccountwrappers.

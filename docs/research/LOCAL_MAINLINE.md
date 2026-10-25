@@ -2,92 +2,80 @@
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
 PRIMARY writes sandbox only. PURE LEAPER first; mixed/legacy/promotion/drop/NNUE
-expansion stays deferred. Default/UI/AUX unchanged. Both schedules60minutes;
-PRIMARY ACTIVE/AUX existing PAUSED, bindings intact; normal60–90effective minutes.
+expansion deferred. Default/UI/AUX unchanged. Both schedules60min; PRIMARYactive,
+AUXexistingPAUSED, bindings intact. Normal60–90recorded effective researchminutes.
 
 ## Current judgment and reason —2026-10-25
 
-[Native DEFAULT/PVS study](LEAPER_NATIVE_DEFAULT_20261025.md) is CLOSED:
-27qualification +1234fitness +24boundary +2profile =1287newreturns. Existing
-readonlyavailability/check opts, actualDEFAULTdynamic/PVStrue/Q4hard8, preserve
-8coldD3triplets pluswarm/fullhistory/cancel boundaries.64paired50k histories
-have samechosenaction/score and3,021,084events each;839.615→519.211s(-38.16%).
-Both64/64correct. Allthesequalityroots areotherinventory,notroot-twoKonly.
-Real1.5s both62/64,0repairs/regressions,2action/24scorechanges. p49/p53 still
-wrongDrawchoice at1.5 (D4control/D5candidate), bothcorrectD6 at50k. Costsuccess
-is not a strengthrepair or allruleclasssuccess.64histories areexposedcorrelated
-TRAIN fromoneRuleSet, not unknown-ruleholdout or independently solved anew.
-24actualgames on6knownrules allCoreDRAW;17timingeligible/6fullyeligiblecolorpairs,
-8over-tolerancecalls in7games retained. Eventgain under2sec doesnotprovequality.
-No productflag/defaultactivation,newbackend,AUXruntimeedits or mixedexpansion.
+[Root/frontier diagnosis](LEAPER_ROOT_COST_20261025.md) is CLOSED locally:
+32newscientificPlayerreturns,67.317effective minutes,28tests,finish/final-checkPASS.
+Window18calls show p49D6same29056events,p53only2less; no useful opportunity,
+no delta sweep. Rootcost8calls finds no knownWIN D6child before1.5s; merely
+exposing incomplete children cannot repair the two observed errors.
 
-[LMR](LEAPER_LMR_QUALITY_20261025.md) staysCLOSED:zeroWDLrepair/regression,
-50kcost+3%,200kalltimecensored. Stop thisparameterprototype,notallLMRtheory.
-[TrueDRAW](LEAPER_DRAW_CUTOFF_20261025.md) staysCLOSED:zeroqualityrepair,
-costbenefitlocalizedalreadytwoKroots,notbroadnonrootroute. Do notretune/expand.
-Root-onlyDRAW remainsconditionalonactualconsumerneed andfullscope/cost,notMain.
+Latest autonomousChat1792932855 prioritized D3correct->D4wrong evaluation/leaf
+mechanism over cycling flags. Assignment3calls capture2568calls/17828events,
+no drops and actualwork/Nativeparity. p49WIN K1094bothlayers; DRAW B1087->1103.
+Observed Bscout16point rise=6mobility+10anchor, same material. Finalresearch
+usesinherited/TTbounds, originalproducerUNKNOWN. ExplicitTTscoreoff2calls still
+D3WIN1094/D4DRAW1103. OfflineD3Bsolequietchild isstatic-1103vsstandpat-1087;
+its exactfullrecord equalsD4Bscoutleaf. ONE guarded eventreplacement makesD3
+root1103/sourceDRAW, worsening priorWIN. No generalquietcoverage/singleton
+optimizer, WDLzugzwangproof or productfix. SourceWDL isattributed,notnewproof.
 
-## Main: explain the actual p49 D3-to-D4 evaluation reversal
+The17metadata-selected roots/9rules arefullyboundbut exposedTRAIN. Their
+68budgetcall+18resourcegameplan remainsNOT_STARTED_DEFERRED,0queries/0games.
+Oneply2x2feature diagnostic (19roots incl2controls,153Corechildren/584evals)
+finds anchorzero canonical9->11/17,+2/-0 but only9alltiesoptimal. Mobilityzero
+0repair/2regression, bothzero2/3; allfour missboth6x6controls. No realPlayer
+anchorzero/featureablation wasexecuted. No default or classstrengthclaim.
 
-Latest autonomousChat1792932855 independently reviewed fixed2e1, no execution;
-its priority after failedwindow is the actual evaluation/leaf-boundary mechanism,
-not cycling accelerationflags. Window18returns and rootcost8returns are CLOSED.
-New read of the already measured D3/D4 root-call prefix: sourceWIN K d4-c3
-returns1094 bothlayers; sourceDRAW B e4-c3 rises1087->1103 and replacesit.
-D4already visitsKfirst. Original-window interior returns locate the boundary,
-not the ultimate Qleaf/TT cause. Mere incomplete-root publication also fails:
-no knownWIN D6child before1.5s. No new root policy/oracle patch.
+## Main: test the consumer before interpreting a feature deletion as progress
 
-Question: Which actual evaluation/frontier/TT return supports B's16point rise? |
-Audit a minimal complete bounded p49D4 iterative return/evaluation observation,
-reusing its D3prefix and published unobservedD4qualification; new call only after
-reversible scope/abort/work-parity qualification | Actual windows, dependency
-edges/evaluation components and complete coverage orUNKNOWN | No old failed
-p53D6cap refill, quiet-omission causalclaim, new solver/AUX/default or label-fed
-policy. Carryrelatedcost and requireUSERif full expectedlogical>=120min.
+Question: Does an isolated anchor-term change help actual same-budget pureLeaper
+decisions? | Complete the begun oldcaller/config/cost audit; ifnovelandjustified,
+preregister a tiny exact-controller realPlayercomparison with fixed prices,
+fullhistory/Q/PVS/Native service and explicitdevelopment exposure | Source
+oneply11/17isnotsearchrepair; preserve regressions/UNKNOWN | No weightfit,
+price-labelinjection/default/AUXlearning/largegamebatch; carryrelatedprep and
+USERfirst if wholeexpectedlogicalexperiment>=120min. This is not yet admitted
+as a new producer and does not restart any closed cap.
 
-The17metadata-selected histories/9rules and frozen68budget+18game plan remain
-NOT_STARTED, now DEFERRED under the newChat priority. No current-player result
-selected the histories; no expansion experiment runs by default. Inputs retain
-future consumer value; this is not discarded evidence or an active secondjob.
+Backup1: Is the quality target discriminating? | Reuse17fixedsourcehistories
+and named-action independentproofs as distinct tiers; select a specific consumer
+questionbeforemorecost | Complete actions/clocks andactualservice | No old64
+blindpanel, holdoutinflation, AUXsolver/graphcensus or automatic68+18resume.
 
-Backup1: Can a cheap label-free root order reduce paid late discovery? | Only
-with a concrete independently motivated feature/cost prediction, qualify actual
-root cost/action choices | Reuse actual calls, not knownWIN oracle ordering |
-No singleton/anchor/Qsort/aspiration delta sweep or post-outcome patch.
+Backup2: Is an uncaptured TTproducer needed for a new decision? | Keep original
+boundaryUNKNOWN; reuse explicitTT-scorecounterfactual and actualscoutchain |
+No invented leafdependency fromsamevalue | No oldp53D6/D7tracecaprefill or
+samefailedsingleton/anchorquiet-depth prototype withoutchangedpremise.
 
-Backup2: Is an action-quality guard truly discriminating? | Bind fixed
-published named-action proofs and complete source-action tiers separately |
-Nontrivial choices across rules, never all-action label inflation | No solver,
-AUX compute or relabelled holdout; four easy guards are not fitness success.
+## Retained negative evidence and boundaries
 
-## Communication and closure
+[Native DEFAULT/PVS](LEAPER_NATIVE_DEFAULT_20261025.md) CLOSED:64same-rule
+sourcehistories50k cost839.615->519.211s(-38.16%), sameactions/scores/events,
+both64/64. At1.5sboth62/64; no qualityrepair;24gamesallDRAW,17eligible/6pairs.
+[OrdinaryQfullsort](LEAPER_ORDINARY_QORDER_20261025.md) CLOSED-negative:1.5s
+both62/64,50kcost+0.95%;24games23DRAW/1candidateLOSS,20eligible/9pairs.
+[LMR](LEAPER_LMR_QUALITY_20261025.md) and[TrueDRAW](LEAPER_DRAW_CUTOFF_20261025.md)
+remainCLOSED; no unmodified retuning. Deeper or faster is not monotonicallybetter.
 
-Newround AGENT_REQUEST ismandatoryafterpush/fullSHA; Dotmustreply,othersmayreply
-orbequiet. EachlogicalSlackopening checksnewChatcomments/full relevantthreads,
-exactoriginalsfirst. One+5minutecheckisnotexpiry. User>autonomousChat>Dot>local.
-Currentround0c6c7787 requestGC-SLACK-20261025-193713-e6220aa6/root1792924666.163109
-used verified0e4408b9. Dot1792924826 is solicited/source-only; initial+5check
-10:44:10UTC read/adopted. Published51ac8c1d before milestoneFOLLOWUP
-1792927242.881689/sent11:20:42UTC; actualsingle delayedcheck11:27:49UTC had
-no new Dot reply and discovered autonomousChat1792927446.870839. Complete new
-thread retained; adopted and EXECUTED frozen-game completion, root-timing review
-and certificate-tier input binding. Chat does not claim independent execution.
-All scientific producers CLOSED;1,292new returns, no reused-call time credits.
-Session0c ended71.941effective minutes/1300intervals at12:16:19UTC with matching
-qualityJSON,finish andfinal-checkPASS. Finaltransport receipts andmemo own delivery; do not
-infer an active/completed state from an old report. New request only next newround.
-Pinnedcanonicalc5e6d667 andAUXpublishedproofs remainread-onlyhistoricalevidence;
-no AUXsolver/checkout/graphcensus executed. Oldclosedcapfailures remainUNKNOWN.
+Horizontal3named-proof guard issemantic butnoNativeprovider:fullmax_ply774840979
+exceedsNative65535. Flagsnotactualservice; otherthreeguard/6x6actualNativeboth.
+Keep its fullclock, neveralterrulesforadmission. Foureasyguardsnotfitnesssuccess.
+Sourceconstantprice differencescannotfixrelativecomparisons atfourfrozenleaves
+with identicalinventory; no generalprice/averagingrefutation or whole-treeclaim.
 
-Final delivery: b7bd1f6f fullscientificSHA verifiedbeforeFOLLOWUP1792930834;sent
-12:20:34UTC,+5due12:25:34,checked12:27:42;0newDot/Chatroots. Late replies stay
-for next meaningful opening. Conservative whole-delivery+prior10min122.143 at
-check exceeded117.19forecast; sciencehadENDED earlier. Preserve costvariance
-for relatedfuturebudget, no UUIDreset; post-END transport is not researchcredit.
-No newexperimentaljob/capextension or defaultchange. Finalmanifest77members.
+Newround AGENT_REQUEST mandatoryafterpush/fullSHA;Dotmustreply,othersmayreply.
+EverylogicalSlackopeningchecksnewChat/fullrelevantthreads, originalsfirst.
+CurrentrequestGC-SLACK-20261025-213845-138d9b1f/root1792931958.813939 answered
+by solicitedDot1792932149. Followup1792934376 sent13:19:36,+5due13:24:36,
+checked13:26:05,0newreply;finalopeningalso0newreply/newChat. Late repliesnext
+meaningfulinteraction. User>autonomousChat>Dot>local; no reply/workgate.
 
-Newconsumer source-data preflight0queries/all9Nativeproviders active. Frozen
-68budget calls1.5/6/20/60s then18same-engine3s-vs1.5sresourcegames; first17
-allcorrect=>EASY_COHORTstop. Wholechain110min inclrelatedrootcost/prior5;
-logicalorigin12:42:21UTC, batch<=3650s,scienceend<=origin+105min. No query; subsequent Chat priority explicitly deferred the entire plan.
+Current sessionENDED,e4100959-ff6a-4346-b35b-f8e83a57022d,4039.0184409999997
+recordedseconds/90intervals,END14:22:39UTC. Memo/sessionauthoritative; final
+transport cost/remoteSHA ownreceipts. Currentroot/evalorigin12:42:21 includes
+prior5minandheldplanengineering; scientificEND100.298min, deliverypending.
+OldQ122.143min deliveryoverrun retained, not offset; newUUIDneverresetsrelatedcost.
