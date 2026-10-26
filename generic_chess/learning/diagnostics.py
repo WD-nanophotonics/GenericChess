@@ -457,6 +457,7 @@ def feature_bottleneck_diagnostics(compiled, corpus):
 def _engine_for(compiled, native_rules, checkpoint, tt_mb):
     from types import SimpleNamespace
 
+    checkpoint.validate_ruleset(compiled)
     profile = SimpleNamespace(
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         promotion_gain_by_type={pt.type_id: 0 for pt in compiled.piece_types},
@@ -622,11 +623,35 @@ def teacher_benchmark(
     teacher_nodes=40000,
     max_positions: int | None = None,
 ):
-    """Best-move agreement of student (gen_g at student_nodes) vs teacher
-    (Gen0 at teacher_nodes); also teacher self-agreement at 2x budget."""
+    """Completed-action agreement, not WDL truth or teacher correctness.
+
+    Missing actions, zero-depth and fallback-only results do not constitute
+    completed search decisions. A partial comparison stays unknown on its
+    original corpus denominator; it is never silently filtered to a high rate.
+    Last completed iterations at a node/time cap remain valid decisions.
+    """
+    if max_positions is not None and (type(max_positions) is not int or max_positions < 0):
+        raise ValueError("max_positions must be a nonnegative integer or None")
+    if not checkpoints:
+        raise ValueError("at least one teacher checkpoint is required")
     teacher_positions = corpus.nonterminal_positions(compiled)
     if max_positions is not None:
         teacher_positions = teacher_positions[:max_positions]
+
+    def completed_action(result):
+        if (result.action is None or result.completed_depth <= 0
+                or result.used_fallback):
+            return None
+        return result.action
+
+    def compare(left, right):
+        valid = [(a, b) for a, b in zip(left, right)
+                 if a is not None and b is not None]
+        matches = sum(a == b for a, b in valid)
+        n = len(teacher_positions)
+        rate = matches / n if n and len(valid) == n else None
+        return rate, dict(positions=n, valid_pairs=len(valid), matching_pairs=matches)
+
     teacher_results = {}
     for budget in (teacher_nodes, teacher_nodes * 2):
         results = []
@@ -634,34 +659,30 @@ def teacher_benchmark(
             result, _session = _search_position(
                 compiled, native_rules, checkpoints[0], pos, budget
             )
-            results.append(str(result.action))
+            results.append(completed_action(result))
         teacher_results[str(budget)] = results
-    self_agreement = sum(
-        1
-        for a, b in zip(
-            teacher_results[str(teacher_nodes)],
-            teacher_results[str(teacher_nodes * 2)],
-        )
-        if a == b
-    ) / len(teacher_positions)
+    self_agreement, self_coverage = compare(
+        teacher_results[str(teacher_nodes)], teacher_results[str(teacher_nodes * 2)]
+    )
     agreement = {}
+    coverage = {"teacher_self": self_coverage}
     for g in range(len(checkpoints)):
         student = []
         for pos in teacher_positions:
             result, _session = _search_position(
                 compiled, native_rules, checkpoints[g], pos, student_nodes
             )
-            student.append(str(result.action))
-        n = len(teacher_positions)
-        agreement[str(g)] = sum(
-            1 for a, b in zip(student, teacher_results[str(teacher_nodes)]) if a == b
-        ) / n
+            student.append(completed_action(result))
+        agreement[str(g)], coverage[str(g)] = compare(
+            student, teacher_results[str(teacher_nodes)]
+        )
     return {
         "positions": len(teacher_positions),
         "student_nodes": student_nodes,
         "teacher_nodes": teacher_nodes,
         "teacher_self_agreement": self_agreement,
         "best_move_agreement": agreement,
+        "comparison_coverage": coverage,
     }
 
 
@@ -750,6 +771,7 @@ def load_checkpoints_from_experiment(
         )
     else:
         gen0 = _gen0_checkpoint(compiled, seed)
+    gen0.validate_ruleset(compiled)
     checkpoints = [gen0]
     gen = 1
     while True:
@@ -757,9 +779,9 @@ def load_checkpoints_from_experiment(
         if not path.exists():
             break
         data = json.loads(path.read_text(encoding="utf-8"))
-        checkpoints.append(
-            LearnableMaterialCheckpoint.from_dict(data["child"])
-        )
+        checkpoint = LearnableMaterialCheckpoint.from_dict(data["child"])
+        checkpoint.validate_ruleset(compiled)
+        checkpoints.append(checkpoint)
         gen += 1
     return checkpoints
 
@@ -1011,7 +1033,11 @@ def _verdict_search(search: dict) -> str:
 
 
 def _verdict_teacher(teacher: dict) -> str:
-    if teacher.get("teacher_self_agreement", 0.0) < 0.8:
+    if (teacher.get("teacher_self_agreement") is None
+            or not teacher.get("best_move_agreement")
+            or any(v is None for v in teacher["best_move_agreement"].values())):
+        return "INCONCLUSIVE"
+    if teacher["teacher_self_agreement"] < 0.8:
         return "TEACHER_UNSTABLE"
     g0 = teacher["best_move_agreement"]["0"]
     g3 = teacher["best_move_agreement"].get("3", g0)
@@ -1046,7 +1072,9 @@ def _verdict_next_phase(td, bottleneck, search, teacher, sens) -> str:
     arena_sensitive = not all(
         v.get("weak_side_mean_pair_score", 0.5) == 0.5 for v in sens.values()
     )
-    teacher_changed = teacher.get("teacher_self_agreement", 0.0) < 0.8
+    teacher_changed = (teacher.get("teacher_self_agreement") is None
+                       or teacher["teacher_self_agreement"] < 0.8
+                       or any(v is None for v in teacher.get("best_move_agreement", {}).values()))
     if teacher_changed:
         return "INCONCLUSIVE"
     if td_present and representation_bottleneck and decisions_changed:

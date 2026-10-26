@@ -1235,7 +1235,7 @@ def verdict_learning_retest(retest: dict) -> str:
     teacher = retest.get("teacher", {})
     agreement = teacher.get("best_move_agreement", {})
     g0 = agreement.get("0")
-    if g0 is None:
+    if g0 is None or any(v is None for v in agreement.values()):
         return "INCONCLUSIVE"
     arena = retest.get("paired_arena", {})
     if not arena:
