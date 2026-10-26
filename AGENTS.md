@@ -9,7 +9,7 @@ write prohibition. It does not transfer research ownership or permit worker
 creation, active-file interference, merges, history rewriting or Slack deletion.
 The user then directed: do not message/pause either researcher; clean only files
 confirmed static and mark the remainder incomplete. Preserve active work,
-sessions/stops and the existing recurrence (now180minutes for PRIMARY by the later user
+sessions/stops and the existing recurrence (now60minutes for both roles by the latest user
 direction). General rules/search/learning remain the
 mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
 Closed experiment payloads may leave the current tree after checking dependencies;
@@ -21,9 +21,12 @@ Details and unresolved delivery: docs/operations/CLEANUP_20261021.md.
 
 This is the sole active policy. Latest explicit user directions take precedence.
 PRIMARY_SANDBOX is the sole writer/publisher of sandbox in this checkout.
-Never touch alphasho, its audits/tasks, or other projects. Do not spawn/delegate
-Agents, create extra Work/Codex workers, add fees, or run uncontrolled jobs.
-DEV_AUX remains an independent, user-established role in its own checkout; do not
+Never touch alphasho, its audits/tasks, or other projects. Do not create new Agents/Work/Codex workers, add fees, or run uncontrolled jobs.
+The2026-10-26 user explicitly authorizes assigning this first bounded assistance
+task to the EXISTING DEV_AUX; future AUX tasks come from the user. This is not
+authority to spawn workers or edit its checkout/state.
+DEV_AUX remains the existing user-established role in its own checkout, now
+resumed for the assigned assistance task; do not
 write its files/state or duplicate its assigned work. This PRIMARY patrol covers
 only its own mainline research and existing project GitHub/Slack reviews. No additional
 workers may be created.
@@ -52,12 +55,18 @@ workers may be created.
   TT guards. Current controls, success evidence and next action live in MAINLINE.
   Small solved examples or NPS alone do not establish class-wide/strength success.
 
-- User correction2026-10-25: both existing role schedules now recur every180minutes,
-  superseding the earlier60minute interval by the latest direct request to inspect every3hours. Preserve ACTIVE/PAUSED states;
-  DEV_AUX was PAUSED when this cadence-only change was applied. The user explicitly requested both
-  existing schedules be updated; both IDs/chat bindings remain preserved. PRIMARY
-  updates only its own checkout policy and does not edit AUX research state. The60–90minute effective research requirement
-  remains separate. One inspection pause does not pause recurring scheduling.
+- User correction2026-10-26: BOTH existing schedules now run every60minutes
+  and are ACTIVE. This replaces the180minute cadence and explicitly resumes
+  DEV_AUX's prior patrol pause. Preserve both IDs and existing chat bindings;
+  no new role/worker/schedule. PRIMARY assigns ONLY this first assistance task;
+  subsequent AUX work is assigned by the user. Each role writes only its own
+  checkout/branch/session/memo/stops. AUX applies the trusted resume instruction
+  to its own relevant pause state, never clearing unrelated stops. Normal60–90
+  effective research requirements remain separate; the initial15minute bounded
+  source review is not a normal successful research segment. After that task,
+  AUX waits for user assignments instead of automatically resuming its old Main
+  or repeating the review each heartbeat. Active rounds resume one writer/UUID
+  if the next hourly trigger arrives before completion.
 - User review-source correction2026-10-26: before choosing work at every new
   round/manual start/heartbeat, check the project GitHub remote for new or edited
   autonomous ChatGPT reviews, especially the user-designated ChatGPT Patrol
@@ -70,7 +79,7 @@ workers may be created.
   read/adopt/defer/reject separately. GitHub and Slack autonomous reviews share
   the same authority below latest direct user instructions and above Dot advice.
   This replaces the Slack-only review assumption, not existing Dot consultation,
-  role/budget boundaries or the 180-minute recurrence.
+  role/budget boundaries or the current60-minute recurrence.
 - User reaffirmation2026-10-24: direct reply explicitly allows the queued3073-
   character report and reaffirms continuing bounded two-way authorization. The
   old read-only restriction is superseded; no renewed per-message consent queue.
@@ -332,7 +341,7 @@ conditions; distinguish ordering prices from leaf prices.
 Use docs/operations/SLACK_WORKFLOW.md for the existing asynchronous mailbox.
 Check GitHub ChatGPT Patrol reviews per docs/operations/CHATGPT_REVIEW_WORKFLOW.md, and read
 Slack autonomous ChatGPT project reviews and complete relevant threads at each
-existing180minute patrol/manual work start. Start every new work round with a fresh mailbox `TYPE=AGENT_REQUEST` to Dot
+existing60minute patrol/manual work start. Start every new work round with a fresh mailbox `TYPE=AGENT_REQUEST` to Dot
 after the required publish/full-SHA verification; an old-thread FOLLOWUP is not
 a substitute. Record the round/request association; resuming that same round
 does not duplicate verified delivery. During later Slack interactions consider

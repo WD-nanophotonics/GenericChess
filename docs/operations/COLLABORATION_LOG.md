@@ -7870,3 +7870,17 @@ or executed. The original unittypo was corrected by edit with preserved original
 and readback:53224–97896bytes means52–96KiB. Normal sessionfinish/final-check
 accepted60.256 effective minutes; conservative opening-to-acceptance cost97.606min
 plus final synchronization,kept in the SAME105min forecast. No other-role state changed.
+
+## 2026-10-26 hourly restoration and initial AUX assignment
+
+Latest direct user instruction restores both existing roles hourly and authorizes
+PRIMARY to assign an initial supporting task; later tasks come from the user.
+Both existing heartbeat IDs and chat bindings were retained and ACTIVE/60minute
+settings read back. No new worker or cross-checkout write. Latest remote review
+87df8521a7f3826d209c81e5db566fba7746c4eb was privately preserved and read; its
+consumer/whole-cost necessity gate is adopted. Further H6 syntax iteration is
+deferred. The initial AUX assignment is a15minute TOTAL zero-query source audit
+of actual execution consumers/cost opportunities/semantic risks, not PRIMARY
+quality-design work. Assignment specification is published here before delivery;
+execution and findings remain unverified until AUX reports. This bounded
+configuration adds zero research time; prior ended UUID/3615.343863s are retained.

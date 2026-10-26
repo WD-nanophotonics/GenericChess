@@ -39,14 +39,19 @@ publication. DEV_AUX owns its existing sidemission checkout and outputs; do not
 write its files, state, session, memo or unpublished work. This patrol covers
 only PRIMARY mainline research and existing GitHub/Slack project reviews.
 
-The existing `genericchess` heartbeat recurs every180minutes by the explicit
-latest2026-10-25 user direction, superseding its60minute cadence while preserving
-its identity. Both existing schedules use three hours; preserve their enabled/paused states; only PRIMARY checkout files are updated here.
+The existing `genericchess` and `dev-aux` heartbeats recur every60minutes by
+latest2026-10-26 direct user instruction; BOTH are ACTIVE. This replaces180min
+and explicitly resumes AUX's old patrol pause, preserving IDs/chat bindings.
+PRIMARY assigns the first bounded assistance review; later AUX tasks come from
+user. No new worker/role is created and no cross-checkout writes are allowed.
+AUX updates its own workflow/memo/resume state. After the first task it checks
+new assignments/reviews at the existing hourly patrol, without repeating the
+finished review, restoring old Main or padding a60minute research quota.
 A one-time pause applies only to that inspection and never edits the
 recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
-At each existing180minute patrol/manual work start, inspect remote GitHub
+At each existing60minute patrol/manual work start, inspect remote GitHub
 ChatGPT Patrol reviews using CHATGPT_REVIEW_WORKFLOW.md, then read newly
 available autonomous Slack review comments and complete relevant threads.
 Pin remote refs/paths/blob hashes, preserve originals and record coverage gaps;
@@ -236,7 +241,7 @@ handling. Raw capture paths use the active session UUID plus a fresh read UUID;
 final opaque bytes MUST use slack_transport.save_plugin_original, which refuses
 a different existing original. Time-only names and direct replacing writes are
 not safe across days/resumes. Read new project Chat messages/comments and relevant complete threads
-at existing180minute patrol/manual starts AND each logical Slack opening; preserve exact raw output before
+at existing60minute patrol/manual starts AND each logical Slack opening; preserve exact raw output before
 assessment. For active direct Dot dialogue, bounded relevant thread follow-ups
 are allowed. Apply the hierarchy and sender/provenance checks in SLACK_WORKFLOW.
 The old no-Dot/no-live/single-comment rule is superseded. A >=120minute run still

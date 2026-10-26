@@ -2,8 +2,8 @@
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
 CHATGPT_REVIEW_WORKFLOW.md adds current GitHub ChatGPT Patrol intake to Slack.
-PRIMARY publishes sandbox only. Both existing schedules remain 180 minutes;
-PRIMARY ACTIVE, AUX PAUSED. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
+PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
+PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
 ## Current judgment — 2026-10-26
@@ -34,7 +34,19 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Main: scoped pure-H6 syntax candidate, cost is not strength
+## Current coordination —2026-10-26 user update
+
+Both existing roles are hourly/ACTIVE. PRIMARY assigns the existing DEV_AUX
+one bounded15minute zero-query consumer/source audit; later tasks are user's.
+[Initial assignment](../operations/AUX_INITIAL_CONSUMER_AUDIT_20261026.md).
+AUX owns its report/branch, PRIMARY owns quality-design decisions. No new worker
+or cross-checkout write. Latest14:03JST review at87df8521a7f3826d209c81e5db566fba7746c4eb
+(blob62678c9d44e7c2ff2d52141d2dace975ab5c3a2c) was fully read and its consumer
+and opportunity-cost gate adopted; the study's positive narrow result remains,
+but further H6 syntax iteration is deferred, not an automatic long-term mainline.
+This configuration/delegation adds zero research time to the ended segment.
+
+## Main: consumer/quality necessity gate before more H6 syntax work
 
 [H6 syntax study](LEAPER_H6_SYNTAX_20261026.md) consumes pinned AUXH6/repeat2
 full RuleSets/records as data; no AUX solver/checkout work.1520 new returns over
