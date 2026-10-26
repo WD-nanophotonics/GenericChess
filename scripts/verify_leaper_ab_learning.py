@@ -34,7 +34,7 @@ def td_sum(before,receipts,outcome,eta=.05,lam=.95,scale=10.):
         error=target-p;elig=[lam*a+b for a,b in zip(elig,g)];delta=[a+error*b for a,b in zip(delta,elig)];terms+=1;loss+=error*error/2
         if i+1==len(receipts):terminal_credit=sum(abs(error*e)for e in elig)
     after=[a+eta*b for a,b in zip(before,delta)];after[0]=1.
-    return after,dict(samples=terms,loss=loss/max(1,terms),changed=any(delta),terminal_credit_l1=terminal_credit,observed_searches=len(receipts),censored=outcome is None)
+    return after,dict(samples=terms,loss=loss/max(1,terms),changed=after!=list(before),terminal_credit_l1=terminal_credit,observed_searches=len(receipts),censored=outcome is None)
 
 
 def verify_game(world,row):

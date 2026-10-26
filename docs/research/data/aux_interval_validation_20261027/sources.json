@@ -4,19 +4,41 @@
   "Pro_blob": "8eafba5353ed18e7bdf3fece499e9049cbd357cb",
   "session": "1e5f0dfd-3761-49e6-a6b3-22226fdb916e",
   "state": "ACTIVE_NOT_FINISHED",
-  "confirmed_effective_seconds_at_milestone": 1125.291125,
-  "related_tests_passed": 163,
+  "confirmed_effective_seconds_at_milestone": 3481.073553,
+  "related_tests_passed": 178,
   "before_fix_synthetic_failures": 15,
   "before_fix_controls": 26,
   "code_bytes_sha256": {
-    "scripts/interval_value_diagnostics.py": "4d3e37cc477f541e9d28f8ff586e3351881c8c552dfa4665834a58b4eafb2a5b",
-    "generic_chess/learning/incremental.py": "5b9a94d8a7928ef7f030813dfd0508169fcdbd06b6bbceb749d183d3cd2adac3",
-    "scripts/verify_leaper_ab_learning.py": "a95c6ff9e5961f7a07daf17457dc7aea0988552a420dfc70c46cf3a6d5ca9755",
-    "tests/development/test_tdleaf_frozen_parameters.py": "ea5d195b92d3932589efdc7a83ff9f9c77b943423e573207d9b322a0b78d1e4e",
-    "tests/development/test_interval_value_diagnostics.py": "9efc49e31c4bd16847c40c40fc1c682edc62dd8c6d9ecb3a3aed76c6ee600cb7"
+    "scripts/interval_value_diagnostics.py": "82ab5d03c5eb2ded18c86706c2759e0d425deedf995a222e92e8181bae9ff6fb",
+    "generic_chess/learning/incremental.py": "a69ed7a5e9bac5ac958b384fd153bd5f8efb17875d125e1b32db3c41c03aab5a",
+    "scripts/verify_leaper_ab_learning.py": "376d7b20d801f6b236f5d5891e023615e562a769ee9784835abcba2b7082f1bb",
+    "tests/development/test_tdleaf_frozen_parameters.py": "37c6e4d3d0327abf1f9af7a03f50c5813972c0b0c1157feb5c624a0d8f2ff9ab",
+    "tests/development/test_interval_value_diagnostics.py": "7ec2d0788f2c726cb7b795e3236e733c0ec409a9e50a4126e2c3cec6f09bee56",
+    "tests/development/test_tdleaf_completion_geometry.py": "9a211602da2b798236b8276e2f65588aba61352c449247eaec173474784806c1"
   },
   "data_bytes_sha256": {
-    "risk-negative-controls.json": "fc1ac0fce89b263b69bdabb414b1c498e3bc6d08760ab7a780942664c2763a24"
+    "risk-negative-controls.json": "a5f5348b6021fc57f6aee9ecd1d93ea22024009ef4535be400114bcd2675d757",
+    "historical-parameter-change-check.json": "983bd0c2e3b723e4462746258a8da2591231bc6ee75cbade07fa20af8e701b98",
+    "td-completion-example.json": "c5454df59d5b692c9d24c3c25f28cb7f82356b30a7a89c9112e7c8c9e2c0624a",
+    "td-eligibility-cancellation.json": "d81f5464809895f9b26ac49dd810e66b2b2d6ff5cc56c104a17a51f3419c255f"
   },
-  "counts_scope": "Static research diagnostics: no new Core/Player/game/fit. Existing semantic regression tests execute unit Core/Player/arithmetic updates, totals UNKNOWN; not strength trials."
+  "counts_scope": "Static research diagnostics: no new Core/Player/game/fit. Existing semantic regression tests execute unit Core/Player/arithmetic updates, totals UNKNOWN; not strength trials.",
+  "new_learner_fixes": [
+    "Literal terminal WDL independent of material scale",
+    "Frozen identity includes weights/fixed/scale",
+    "changed compares realized before/after weights"
+  ],
+  "diagnostic_numeric_fix": "Exact binary-input rational endpoint signs and outward float bounds; underflow never implies equality.",
+  "literature": {
+    "arxiv_cs_9901002v1": {
+      "url": "https://arxiv.org/abs/cs/9901002v1",
+      "PDF_sha256": "4ef51a94b47991cf4e27b4d12adbfd433f4d9b2aaf4dbfcd15a23001e27aa150",
+      "text_sha256": "87ae71230250a85bcd6c35533550cfc38aa128dd400d467b386d83a95ea70c97",
+      "coverage": "Full extracted method and discussion read; private raw originals."
+    },
+    "Beal_Smith_1997": {
+      "DOI": "10.3233/icg-1997-20302",
+      "coverage": "Metadata only; primary publisher fulltext403. No unread experiment assumptions."
+    }
+  }
 }

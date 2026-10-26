@@ -330,8 +330,9 @@ class TDLeafEpisode:
                 delta[j] += error * e
             if i + 1 == len(rows):
                 terminal_change = sum((abs(error * e) for e in elig))
+        before_update = tuple(model.weights)
         model.apply([self.eta * x for x in delta])
-        stats = dict(samples=terms, loss=loss / max(1, terms), changed=any(delta), terminal_credit_l1=terminal_change, observed_searches=len(rows), censored=outcome is None)
+        stats = dict(samples=terms, loss=loss / max(1, terms), changed=tuple(model.weights) != before_update, terminal_credit_l1=terminal_change, observed_searches=len(rows), censored=outcome is None)
         self.reset()
         return stats
 

@@ -18,8 +18,12 @@ def test_exhaustive_discrete_errors_and_shared_truth_difference():
         errors = [(a - v) ** 2 for v in truth]
         diffs = [(a - v) ** 2 - (b - v) ** 2 for v in truth]
         risk, pair = loss_envelope(a, bounds), paired_loss_difference(a, b, bounds)
-        assert risk['deterministic_WDL_lower'] == min(errors)
-        assert risk['squared_error_upper'] == max(errors)
+        from fractions import Fraction
+        exact_errors = [(Fraction(a) - v) ** 2 for v in truth]
+        assert Fraction(risk['deterministic_WDL_lower']) <= min(exact_errors)
+        assert Fraction(risk['squared_error_upper']) >= max(exact_errors)
+        assert risk['deterministic_WDL_lower'] == pytest.approx(min(errors), abs=1e-14)
+        assert risk['squared_error_upper'] == pytest.approx(max(errors), abs=1e-14)
         assert risk['continuous_relaxation_lower'] <= min(errors) + 1e-14
         assert pair['lower'] == pytest.approx(min(diffs), abs=1e-14)
         assert pair['upper'] == pytest.approx(max(diffs), abs=1e-14)
@@ -186,3 +190,59 @@ def test_partial_pair_can_order_regret_without_complete_frontier_or_root_value()
 def test_invalid_choice_contrast_is_refused(values, a, b, actor):
     from scripts.interval_value_diagnostics import choice_regret_difference
     with pytest.raises(ValueError): choice_regret_difference(values, a, b, actor=actor)
+
+
+
+def test_fully_unknown_row_cannot_strictly_order_bounded_point_predictions():
+    # This is an identification limit, not a claim that their errors are equal.
+    for a, b in product(GRID, GRID):
+        d = paired_loss_difference(a, b, [-1, 1])
+        assert d['lower'] <= 0 <= d['upper']
+        assert d['upper'] - d['lower'] == pytest.approx(4 * abs(a - b), abs=1e-14)
+
+
+def test_sparse_certificates_can_order_shared_prediction_pair_without_full_truth():
+    # Only1%qualified target mass, but identical predictions on unknown rows
+    # cancel. This is a synthetic fixed-row risk comparison, not policy gain.
+    rows = [(1., -.1, -.9, [0, 1]), (99., .4, .4, [-1, 1])]
+    r = weighted_outer_summary(rows)
+    assert r['paired_lower'] == pytest.approx(-.024)
+    assert r['paired_upper'] == pytest.approx(-.008)
+    assert r['paired_upper'] < 0
+    assert r['a_upper'] > r['b_lower']  # Separate risk envelopes still overlap.
+
+
+
+def test_actual_large_scale_model_error_underflow_is_not_false_equality():
+    from fractions import Fraction
+    p = Model([1., 1.], scale=1e200).prediction((0., 1.))
+    assert p > 0 and p * p == 0.  # Ordinary float multiplication underflows.
+    risk = loss_envelope(p, [0, 0])
+    assert risk['squared_error_upper'] > 0
+    pair = paired_loss_difference(0., p, [0, 0])
+    assert pair['verdict'] == 'A_STRICTLY_LOWER_SCALAR_ERROR'
+    assert Fraction(pair['exact_upper']) < 0
+    aggregate = weighted_outer_summary([(1., 0., p, [0, 0])])
+    assert aggregate['paired_verdict'] == 'A_STRICTLY_LOWER_SCALAR_ERROR'
+
+
+
+def test_weighted_outward_bounds_and_exact_pair_survive_tiny_effect_cancellation():
+    from fractions import Fraction
+    # Independent direct squared-loss enumeration at each permissible truth.
+    # The tiny known-row difference disappears if independent float risks are
+    # subtracted, but common unknown-row risk must cancel exactly.
+    rows = [(.1, 0., 1e-200, [0, 0]), (.3, .4, .4, [-1, 1])]
+    report = weighted_outer_summary(rows)
+    total = sum(Fraction(r[0]) for r in rows)
+    assert report['paired_verdict'] == 'A_STRICTLY_LOWER_SCALAR_ERROR'
+    for unknown_value in (-1, 0, 1):
+        values = (0, unknown_value)
+        a = sum(Fraction(w) * (Fraction(pa) - v) ** 2
+                for (w, pa, pb, _), v in zip(rows, values)) / total
+        b = sum(Fraction(w) * (Fraction(pb) - v) ** 2
+                for (w, pa, pb, _), v in zip(rows, values)) / total
+        assert a < b
+        assert Fraction(report['a_lower']) <= a <= Fraction(report['a_upper'])
+        assert Fraction(report['b_lower']) <= b <= Fraction(report['b_upper'])
+        assert Fraction(report['paired_lower']) <= a - b <= Fraction(report['paired_upper'])

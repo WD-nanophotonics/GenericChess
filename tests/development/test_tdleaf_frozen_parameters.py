@@ -1,4 +1,4 @@
-"""Receipt-only controls for fixed-unit/scale semantics; no search or training."""
+"""Static parameter controls and existing Core terminal integration, no campaign."""
 import pytest
 from generic_chess.learning.incremental import MATE, Model, Receipt, TDLeafEpisode
 
@@ -111,5 +111,51 @@ def test_independent_terminal_arithmetic_matches_library_without_applying_update
     actual_stats = episode.finish(model, None)
     assert len(captured) == 1
     assert [v + d for v, d in zip(before, captured[0])] == pytest.approx(expected_after, abs=1e-15)
-    assert actual_stats == expected_stats
+    assert {k:v for k,v in actual_stats.items() if k != 'changed'} == {k:v for k,v in expected_stats.items() if k != 'changed'}
+    assert actual_stats['changed'] is False  # The intercepted apply did not mutate weights.
     assert model.weights == before  # Independent arithmetic only; no fit.
+
+
+
+@pytest.mark.parametrize('eta,weights,phi,outcome', [
+    (0., [1., 2.], (0., 1.), 0),
+    (.05, [1., 20.], (0., 9.), 1),
+])
+def test_changed_means_actual_parameter_change_not_unscaled_direction(eta, weights, phi, outcome):
+    from scripts.verify_leaper_ab_learning import td_sum
+    model = Model(weights); episode = TDLeafEpisode(eta=eta)
+    value = model.raw(phi)
+    r = dict(value=value, pv_phi=phi, pv_terminal=False)
+    episode.observe(model, receipt(value, phi, False))
+    stats = episode.finish(model, outcome)
+    independent_after, independent_stats = td_sum(weights, [r], outcome, eta=eta)
+    assert model.weights == weights == independent_after
+    assert stats['changed'] is False
+    assert independent_stats['changed'] is False
+
+
+
+@pytest.mark.parametrize('outcome,expected', [('WIN', 1), ('LOSS', -1)])
+def test_actual_core_terminal_reaches_large_scale_target_without_Player(outcome, expected, monkeypatch):
+    from dataclasses import replace
+    from scripts.generic_proof_fixtures import krk_ruleset
+    from generic_chess.rules.schema import RuleDeclaration
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.session.session import GameSession
+    from generic_chess.learning.incremental import FixedScaleSessionEnv
+    from generic_chess.learning import mainline_search
+    rule = replace(krk_ruleset(4), declarations=(RuleDeclaration(
+        'claim', 0, require_not_in_check=False, failure_outcome=outcome),))
+    session = GameSession(compile_ruleset_for_execution(rule))
+    session.declare('claim')
+    env = FixedScaleSessionEnv(session, unit_type='R')
+    assert env.terminal() == expected
+    model = Model([1.] * len(env.names), scale=1e12)
+    def forbidden(*args, **kwargs):
+        raise AssertionError('actual terminal fastpath must construct no Player')
+    monkeypatch.setattr(mainline_search, 'AlphaBetaPlayer', forbidden)
+    r = mainline_search.search(env, model, depth=1, nodes=1, seconds=1)
+    assert r.complete and r.pv_terminal and r.nodes == 0 and r.value == MATE * expected
+    episode = TDLeafEpisode(); episode.observe(model, r)
+    assert episode.rows == [(float(expected), tuple(0. for _ in model.weights))]
+    assert model.weights == [1.] * len(env.names)

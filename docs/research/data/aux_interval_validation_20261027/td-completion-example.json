@@ -1,0 +1,56 @@
+{
+  "before": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "synthetic_receipts": [
+    {
+      "value": 0.0,
+      "pv_phi": [
+        0.0,
+        1.0,
+        -1.0
+      ],
+      "pv_terminal": false
+    },
+    {
+      "value": 1.0,
+      "pv_phi": [
+        0.0,
+        2.0,
+        -1.0
+      ],
+      "pv_terminal": false
+    }
+  ],
+  "results": {
+    "-1.0": [
+      1.0,
+      0.9843874748726366,
+      1.0101688040643537
+    ],
+    "0.0": [
+      1.0,
+      0.999038137781111,
+      1.0004684726101165
+    ],
+    "1.0": [
+      1.0,
+      1.0136888006895852,
+      0.9907681411558792
+    ],
+    "None": [
+      1.0,
+      1.0004983399731249,
+      0.9995016600268752
+    ],
+    "endpoint_midpoint": [
+      1.0,
+      0.9990381377811108,
+      1.0004684726101165
+    ],
+    "None_equals_DRAW": false,
+    "scope": "Hypothetical arithmetic final target only; no bound on actual continuation payoff or model.apply."
+  }
+}

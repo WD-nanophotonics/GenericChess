@@ -3,7 +3,8 @@
 No truth admission, Core/search, optimizer, model update or training target.
 Caller must bind complete rule/history identity and declare prediction semantics.
 """
-from math import isfinite
+from fractions import Fraction
+from math import isfinite, nextafter, inf
 from numbers import Real
 
 WDL = (-1, 0, 1)
@@ -31,6 +32,24 @@ def _bounds(bounds):
     return lo, hi
 
 
+
+def _down(exact):
+    value = float(exact)
+    return nextafter(value, -inf) if Fraction(value) > exact else value
+
+
+def _up(exact):
+    value = float(exact)
+    return nextafter(value, inf) if Fraction(value) < exact else value
+
+
+def _verdict(lower, upper):
+    return ("A_STRICTLY_LOWER_SCALAR_ERROR" if upper < 0 else
+            "B_STRICTLY_LOWER_SCALAR_ERROR" if lower > 0 else
+            "EQUAL_SCALAR_ERROR" if lower == upper == 0 else
+            "UNRESOLVED_SCALAR_ERROR_ORDER")
+
+
 def actor_view(prediction, fixed_seat0_bounds, actor):
     """Change BOTH scalar and endpoints, without interpreting child side-to-move."""
     p = _prediction(prediction)
@@ -50,15 +69,17 @@ def loss_envelope(prediction, bounds):
     p = _prediction(prediction)
     lo, hi = _bounds(bounds)
     feasible = tuple(v for v in WDL if lo <= v <= hi)
+    p, lo, hi = Fraction(p), Fraction(lo), Fraction(hi)
     nearest_continuous = min(hi, max(lo, p))
     residual = p - nearest_continuous
     return {
         "feasible_WDL": feasible,
-        "continuous_relaxation_lower": residual ** 2,
-        "deterministic_WDL_lower": min((p - v) ** 2 for v in feasible),
-        "squared_error_upper": max((p - lo) ** 2, (p - hi) ** 2),
-        "continuous_constraint_derivative": 2 * residual,
-        "point_target_derivative_bounds": (2 * (p - hi), 2 * (p - lo)),
+        "continuous_relaxation_lower": _down(residual ** 2),
+        "deterministic_WDL_lower": _down(min((p - v) ** 2 for v in feasible)),
+        "squared_error_upper": _up(max((p - lo) ** 2, (p - hi) ** 2)),
+        "continuous_constraint_derivative": float(2 * residual),
+        "point_target_derivative_bounds": (_down(2 * (p - hi)), _up(2 * (p - lo))),
+        "numeric_scope": "Exact binary-input rational arithmetic; reported scalar bounds rounded outward",
         "meaning": "Conditional scalar-error diagnostics only; no selected truth or training target",
     }
 
@@ -71,15 +92,15 @@ def paired_loss_difference(prediction_a, prediction_b, bounds):
     """
     a, b = _prediction(prediction_a), _prediction(prediction_b)
     lo, hi = _bounds(bounds)
+    a, b, lo, hi = map(Fraction, (a, b, lo, hi))
     def difference(v):
         return (a - b) * (a + b - 2 * v)
     values = (difference(lo), difference(hi))
     lower, upper = min(values), max(values)
-    verdict = ("A_STRICTLY_LOWER_SCALAR_ERROR" if upper < 0 else
-               "B_STRICTLY_LOWER_SCALAR_ERROR" if lower > 0 else
-               "EQUAL_SCALAR_ERROR" if lower == upper == 0 else
-               "UNRESOLVED_SCALAR_ERROR_ORDER")
-    return {"lower": lower, "upper": upper, "verdict": verdict,
+    return {"lower": _down(lower), "upper": _up(upper),
+            "exact_lower": str(lower), "exact_upper": str(upper),
+            "verdict": _verdict(lower, upper),
+            "numeric_scope": "Verdict uses exact rational binary-input endpoints; displayed bounds round outward",
             "meaning": "Same-context scalar error, not policy quality or search accuracy"}
 
 
@@ -93,26 +114,35 @@ def weighted_outer_summary(rows):
     rows = list(rows)
     if not rows:
         raise ValueError("nonempty explicit-weight rows required")
-    total = 0.0
-    sums = dict(a_lower=0., a_upper=0., b_lower=0., b_upper=0.,
-                paired_lower=0., paired_upper=0.)
+    total = Fraction(0)
+    sums = dict.fromkeys(("a_lower", "a_upper", "b_lower", "b_upper",
+                          "paired_lower", "paired_upper"), Fraction(0))
     for weight, a, b, bounds in rows:
         weight = _number(weight, "weight")
         if weight < 0:
             raise ValueError("negative weight")
         av, bv = loss_envelope(a, bounds), loss_envelope(b, bounds)
         diff = paired_loss_difference(a, b, bounds)
+        weight = Fraction(weight)
         total += weight
         for name, value in (("a_lower", av["deterministic_WDL_lower"]),
                             ("a_upper", av["squared_error_upper"]),
                             ("b_lower", bv["deterministic_WDL_lower"]),
                             ("b_upper", bv["squared_error_upper"]),
-                            ("paired_lower", diff["lower"]),
-                            ("paired_upper", diff["upper"])):
-            sums[name] += weight * value
-    if total <= 0 or not isfinite(total) or not all(map(isfinite, sums.values())):
-        raise ValueError("positive finite weight sum and sums required")
-    return {"total_weight": total, **{key: value / total for key, value in sums.items()},
+                            ("paired_lower", Fraction(diff["exact_lower"])),
+                            ("paired_upper", Fraction(diff["exact_upper"]))):
+            sums[name] += weight * Fraction(value)
+    try:
+        total_float = float(total)
+    except OverflowError:
+        raise ValueError("finite total weight required") from None
+    if total <= 0 or not isfinite(total_float):
+        raise ValueError("positive finite weight sum required")
+    return {"total_weight": total_float,
+            **{key: (_down if key.endswith('lower') else _up)(value / total)
+               for key, value in sums.items()},
+            "paired_verdict": _verdict(sums['paired_lower'], sums['paired_upper']),
+            "numeric_scope": "Binary-input rational weighted sums; reported bounds round outward",
             "meaning": "Weighted same-context scalar-error OUTER bounds; no calibration, sampling or strength claim"}
 
 

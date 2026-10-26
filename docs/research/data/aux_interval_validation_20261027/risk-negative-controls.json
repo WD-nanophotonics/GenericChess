@@ -9,21 +9,25 @@
     "unique_contexts": {
       "total_weight": 1775.0,
       "a_lower": 0.0,
-      "a_upper": 0.9898591549295774,
+      "a_upper": 0.9898591549295775,
       "b_lower": 0.0,
-      "b_upper": 0.9898591549295774,
+      "b_upper": 0.9898591549295775,
       "paired_lower": 0.0,
       "paired_upper": 0.0,
+      "paired_verdict": "EQUAL_SCALAR_ERROR",
+      "numeric_scope": "Binary-input rational weighted sums; reported bounds round outward",
       "meaning": "Weighted same-context scalar-error OUTER bounds; no calibration, sampling or strength claim"
     },
     "source_occurrences": {
       "total_weight": 2115.0,
       "a_lower": 0.0,
-      "a_upper": 0.9905437352245863,
+      "a_upper": 0.9905437352245864,
       "b_lower": 0.0,
-      "b_upper": 0.9905437352245863,
+      "b_upper": 0.9905437352245864,
       "paired_lower": 0.0,
       "paired_upper": 0.0,
+      "paired_verdict": "EQUAL_SCALAR_ERROR",
+      "numeric_scope": "Binary-input rational weighted sums; reported bounds round outward",
       "meaning": "Weighted same-context scalar-error OUTER bounds; no calibration, sampling or strength claim"
     },
     "limitation": "All source bounds already admitted zero in the previous report. This applies a new risk diagnostic, not new proof propagation or a full-game zero solution. Zero lower error is compatibility, not measured accuracy."
@@ -269,5 +273,10 @@
   "new_Player_calls": 0,
   "model_updates": 0,
   "new_bounds_or_proof_propagation": 0,
-  "scope": "No raw PVS score is treated as calibrated WDL. The material tanh output is inspected under an explicit conditional-WDL diagnostic hypothesis only. These exposed ply95 contexts are not holdout or policy strength."
+  "scope": "No raw PVS score is treated as calibrated WDL. The material tanh output is inspected under an explicit conditional-WDL diagnostic hypothesis only. These exposed ply95 contexts are not holdout or policy strength.",
+  "exact_context_unit_material_mean_squared_error_outer": [
+    0.008743539293791586,
+    0.00874353929379159
+  ],
+  "numeric_scope": "Binary input predictions evaluated with rational endpoint arithmetic, reported outer bounds round outward. The displayed scalar mean is approximate, not a confidence interval."
 }

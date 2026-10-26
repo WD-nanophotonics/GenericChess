@@ -1,0 +1,44 @@
+{
+  "receipts": [
+    {
+      "value": 1.0,
+      "pv_phi": [
+        0.0,
+        1.0
+      ],
+      "pv_terminal": false
+    },
+    {
+      "value": -1.0,
+      "pv_phi": [
+        0.0,
+        -1.0
+      ],
+      "pv_terminal": false
+    }
+  ],
+  "lambda": 1.0,
+  "before": [
+    1.0,
+    1.0
+  ],
+  "counterfactual_targets_and_after": {
+    "-1.0": [
+      1.0,
+      0.9990132207824547
+    ],
+    "0.0": [
+      1.0,
+      0.9990132207824547
+    ],
+    "1.0": [
+      1.0,
+      0.9990132207824547
+    ],
+    "None": [
+      1.0,
+      0.9990132207824547
+    ]
+  },
+  "meaning": "Pure arithmetic: final eligibility0 makes final-target uncertainty irrelevant while interior update persists; not no-learning or actual-rule claim."
+}

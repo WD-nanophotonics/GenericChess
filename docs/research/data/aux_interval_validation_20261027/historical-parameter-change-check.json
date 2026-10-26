@@ -1,0 +1,99 @@
+{
+  "kind": "NEW_CHANGED_FLAG_CONSISTENCY_CHECK_ON_FIXED_OLD_RECORDS_NOT_RERUN",
+  "fixed_source_commit": "89e1274d6e34f04a3e5235b39169026cfc13bc87",
+  "source_packet_path": "docs/research/data/leaper_ab_learning_and_rank_20261024/evidence.json.gz",
+  "source_packet_sha256": "ef6f0e954d3fd07f6ea688c5355b0f1da183d329a428639b34497a9c6410a9f1",
+  "manifest_blob": "08edefe3a3920979691c83fd065af97ea02dea5a",
+  "scanned_full_episode_documents": 404,
+  "per_document_byte_hashes_verified": 404,
+  "counts": {
+    "unit": {
+      "all_episodes": 40,
+      "train_episodes": 8,
+      "flagged_changed": 0,
+      "actual_vector_changed": 0,
+      "false_positive_flag": 0,
+      "false_negative_flag": 0,
+      "eval_episodes": 32,
+      "frozen_eval_vectors_verified": 32
+    },
+    "initial": {
+      "all_episodes": 40,
+      "train_episodes": 8,
+      "flagged_changed": 2,
+      "actual_vector_changed": 2,
+      "false_positive_flag": 0,
+      "false_negative_flag": 0,
+      "eval_episodes": 32,
+      "frozen_eval_vectors_verified": 32
+    },
+    "boundary": {
+      "all_episodes": 4,
+      "train_episodes": 4,
+      "flagged_changed": 1,
+      "actual_vector_changed": 1,
+      "false_positive_flag": 0,
+      "false_negative_flag": 0
+    },
+    "uniform": {
+      "all_episodes": 320,
+      "train_episodes": 256,
+      "flagged_changed": 179,
+      "actual_vector_changed": 179,
+      "false_positive_flag": 0,
+      "false_negative_flag": 0,
+      "eval_episodes": 64,
+      "frozen_eval_vectors_verified": 64
+    }
+  },
+  "mismatches": [],
+  "new_Core_calls": 0,
+  "new_Player_calls": 0,
+  "new_training_episodes": 0,
+  "new_model_apply_calls": 0,
+  "WDL_or_TD_returns_recomputed": 0,
+  "scope": "Compare stored boolean changed with exact stored before/after numeric vectors only. No replay, solver, return or frozen512/1520experiment is recomputed; historical payloads stay unchanged. Not a comprehensive cause analysis or proof that other archives lack the bug.",
+  "total_train_episodes": 276,
+  "actual_parameter_changed_episodes": 182,
+  "total_frozen_eval_episodes": 128,
+  "new_terminal_receipt_field_contract_check": {
+    "fixed_source_commit": "89e1274d6e34f04a3e5235b39169026cfc13bc87",
+    "source_path": "docs/research/data/leaper_ab_learning_and_rank_20261024/evidence.json.gz",
+    "source_packet_sha256": "ef6f0e954d3fd07f6ea688c5355b0f1da183d329a428639b34497a9c6410a9f1",
+    "counts": {
+      "recorded_receipts": 14598,
+      "complete": 14598,
+      "material_leaf": 13626,
+      "literal_terminal": 972,
+      "terminal_zero": 972
+    },
+    "per_cohort": {
+      "unit": {
+        "recorded_receipts": 1590,
+        "complete": 1590,
+        "material_leaf": 1435,
+        "literal_terminal": 155
+      },
+      "initial": {
+        "recorded_receipts": 2560,
+        "complete": 2560,
+        "material_leaf": 2400,
+        "literal_terminal": 160
+      },
+      "boundary": {
+        "recorded_receipts": 256,
+        "complete": 256,
+        "material_leaf": 240,
+        "literal_terminal": 16
+      },
+      "uniform": {
+        "recorded_receipts": 10192,
+        "complete": 10192,
+        "material_leaf": 9551,
+        "literal_terminal": 641
+      }
+    },
+    "field_contract_failures": [],
+    "scope": "Recorded fields only, all actors/phases included. No Core/PV replay, truth admission or TD-return recomputation; query events include uncommitted tails and are not all training observations. Nonterminal features checked for shape only, not regenerated from state. Scale/fixed epoch immutability is not proved by arrays that do not log it. No archived code executed."
+  }
+}
