@@ -6,7 +6,7 @@ from any claim of full-tree optimality or terminal improvement.
 """
 from collections import Counter
 from pathlib import Path
-from math import tanh,isclose
+from math import tanh,isclose,isfinite
 import argparse,json,time
 import random
 from scripts import leaper_design as L
@@ -17,7 +17,7 @@ from generic_chess.core.actions import action_to_dict
 
 
 def td_sum(before,receipts,outcome,eta=.05,lam=.95,scale=10.):
-    predictions=[]
+    predictions=[];gradients=[]
     for r in receipts:
         if r['pv_terminal']:
             if (r.get('pv_phi') is not None or isinstance(r['value'],bool)
@@ -25,12 +25,17 @@ def td_sum(before,receipts,outcome,eta=.05,lam=.95,scale=10.):
                 raise ValueError('terminal arithmetic requires literal MATE*WDL and no features')
             predictions.append(r['value']/MATE)
         else:
+            if not isfinite(r['value']):raise ValueError('nonfinite TD observation')
             predictions.append(tanh(r['value']/scale))
+        p=predictions[-1]
+        g=[0.]*len(before)if r['pv_terminal']else[x*(1-p*p)/scale for x in r['pv_phi']];g[0]=0.
+        if not isfinite(p)or not all(map(isfinite,g)):raise ValueError('nonfinite TD observation')
+        gradients.append(g)
     elig=[0.]*len(before);delta=[0.]*len(before);terms=0;loss=0.;terminal_credit=0.
     for i,r in enumerate(receipts):
         target=predictions[i+1]if i+1<len(receipts)else outcome
         if target is None:break
-        p=predictions[i];g=[0.]*len(before)if r['pv_terminal']else[x*(1-p*p)/scale for x in r['pv_phi']];g[0]=0.
+        p=predictions[i];g=gradients[i]
         error=target-p;elig=[lam*a+b for a,b in zip(elig,g)];delta=[a+error*b for a,b in zip(delta,elig)];terms+=1;loss+=error*error/2
         if i+1==len(receipts):terminal_credit=sum(abs(error*e)for e in elig)
     after=[a+eta*b for a,b in zip(before,delta)];after[0]=1.

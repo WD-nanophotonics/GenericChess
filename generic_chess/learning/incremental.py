@@ -298,8 +298,12 @@ class TDLeafEpisode:
             value = receipt.value / MATE
             grad = tuple(0.0 for _ in model.weights)
         else:
+            if not isfinite(receipt.value):
+                raise ValueError('nonfinite TD observation')
             value = transformed(receipt.value, model.scale)
             grad = model.gradient(receipt.pv_phi)
+        if not isfinite(value) or not all(map(isfinite, grad)):
+            raise ValueError('nonfinite TD observation')
         # Failed receipt validation must not leave a partly frozen observation.
         if self.snapshot is None:
             self.snapshot = current

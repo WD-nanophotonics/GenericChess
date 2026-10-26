@@ -1,0 +1,21 @@
+{
+  "suites": [
+    {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "195",
+      "time": "2.110",
+      "timestamp": "2026-10-27T04:54:19.880295+09:00"
+    }
+  ],
+  "new_regression_file": "tests/development/test_tdleaf_update_bound.py",
+  "scope": "static bound controls and related existing semantic regressions; existing Core/Player/TD unit operations uninstrumented totals UNKNOWN; no new research campaign",
+  "before_fix": "Four initial nonfinite-gradient/prediction controls FAILED: no ValueError and observation state was accepted. Raw-inf and independentreader agreement subsequently added.",
+  "files": {
+    "generic_chess\\learning\\incremental.py": "693ffd40b905e9ef90b9f312600c2f931c141446ee5be1e497df9c3dabca1934",
+    "scripts\\verify_leaper_ab_learning.py": "e62f188492d6e342e74da788b7109611925a8cdae0c42747d9daa2b2ae8a0a45",
+    "tests\\development\\test_tdleaf_update_bound.py": "8ec7e7905e65609cec25325fefcd0445a247cbdcaeae612862c97217a0d0b0e6"
+  }
+}
