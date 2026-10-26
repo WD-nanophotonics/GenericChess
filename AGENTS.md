@@ -221,6 +221,15 @@ without doing so.
 
 ## Recovery, stops and effective work
 
+User clarification2026-10-26: recurring patrol prompts are generic entry points,
+not copies of research plans or policy history. They identify the existing role
+and point to the own NEXT_WORK, current mainline and operating/review protocols.
+Keep immediate work details and executable next actions in NEXT_WORK; keep
+research direction, ordering and decision reasons in LOCAL_MAINLINE. Maintain
+durable rules here and methods in LOCAL_AGENT. Update these authoritative files
+when work changes rather than expanding the recurring prompt. Preserve existing
+schedule IDs, cadence, state and thread bindings unless the user changes them.
+
 At start/restart/heartbeat/after compaction FIRST read .local_agent/NEXT_WORK.md
 in full, then this file, docs/research/LOCAL_MAINLINE.md and rollout/advisor/slack
 stop flags. Reconcile current decision/reason with newer user directions BEFORE

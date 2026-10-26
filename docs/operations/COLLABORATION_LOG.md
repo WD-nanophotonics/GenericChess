@@ -7907,3 +7907,16 @@ nextaction is a consequential-controller/endpoint and cost-necessity decision,
 not another prototype/flag rotation. Closing fixed-SHA Dot progress follows
 publication; that later receipt lives in own memo/private transport record, not
 a retrospective claim that this log itself proves delivery.
+
+
+## 2026-10-26 generic patrol prompts (bounded user configuration)
+
+The user requested separating scheduler entry instructions from current plans.
+Updated only the two existing heartbeat prompts through the app: PRIMARY
+3861 to484 characters; DEV_AUX3443 to442. Verified every configuration field
+except prompt/updated_at unchanged: same IDs, hourly cadence, ACTIVE states
+and chat bindings. Both prompts read own NEXT_WORK first and point to current
+policy, mainline and operating/review/Slack protocols. No AUX checkout/state
+was edited and no research task assigned. Immediate work remains in NEXT_WORK;
+research decisions remain in LOCAL_MAINLINE. Own AGENTS/manual now document
+this division. This configuration work adds no research time or session.

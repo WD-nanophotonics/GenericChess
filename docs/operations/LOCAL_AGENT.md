@@ -8,6 +8,13 @@ Git4f6858b128e38c3b93360d78b7f5de6ad61af695; they are evidence, not active tasks
 
 ## Research selection versus operating instructions —2026-10-24
 
+The recurring patrol prompt is a short generic recovery/read instruction. It
+points to the own NEXT_WORK, AGENTS, LOCAL_MAINLINE and operating/review/Slack
+protocols; it does not duplicate their evolving details. NEXT_WORK owns the
+executable immediate task and handoff; LOCAL_MAINLINE owns current research
+plans, priority and reasons. Keep these files current instead of accumulating
+tasks, dated permissions, experiment details or results in the scheduler prompt.
+
 Read LOCAL_MAINLINE.md's priority/order before selecting any research command.
 This manual explains HOW to execute a chosen task; the dated caller/cost/price
 examples below are conditional contracts and historical defect lessons, NOT a
