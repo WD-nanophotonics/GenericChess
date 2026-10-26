@@ -1,6 +1,6 @@
 # Partial WDL intervals, prediction diagnostics and fixed-scale model identity
 
-Status: ACTIVE DEV_AUX segment1e5f0dfd-3761-49e6-a6b3-22226fdb916e, origin2026-10-26T17:56:08.506075Z. This is a new effective-work ledger; the previous64.78964-minute segment is ENDED and earns no credit here. Formal finish is pending.
+Status: ENDED DEV_AUX segment1e5f0dfd-3761-49e6-a6b3-22226fdb916e. Origin2026-10-26T17:56:08.506075Z; accepted safe-checkpoint finish2026-10-26T19:14:34.514224Z. Confirmed effective work3752.021972seconds=62.53370minutes across9closed intervals; duration gate passed and memo synchronized. [Accepted ledger](data/aux_interval_validation_20261027/session-finish.json). The previous segment contributes no credit to this round.
 
 The useful outcome is a bounded validation contract and three concrete learner fixes. Interval compatibility does not establish accuracy. A shared-truth paired error contrast can be informative even when two separate error intervals overlap. The actual TDLeaf consumer also needs literal terminal targets independent of material scale and an episode guard covering scale/fixed-unit index as well as weights. Neither result is policy-strength evidence.
 
@@ -154,4 +154,24 @@ The diagnostic now treats its finite binary floating INPUT values as exact ratio
 
 The existing real-data negative controls are regenerated only through this corrected arithmetic. Inputs, WDL bounds, model coefficients and source identities do not change. The approximate18-context scalar mean is accompanied by an outward-rounded interval. No data fitting, new truth, new source-state expansion or rerun of a closed experiment follows.
 
-Closing-science checkpoint:178relatedtestsPASS and 58.01789confirmed effective minutes; sessionACTIVEduringpublication, no normalfinishyet. Full final ledger will follow after the minimum and final semantic-control checkpoint. No uncredited transport/publication/offline time is added.
+Historical closing-science checkpoint before the final control:178relatedtestsPASS and 58.01789confirmed effective minutes; sessionACTIVEduringpublication, no normalfinishyet. Full final ledger will follow after the minimum and final semantic-control checkpoint. No uncredited transport/publication/offline time is added.
+
+## Final semantic control: lower scalar error can worsen the chosen action
+
+Even pointwise scalar-error improvements are not a controller-quality theorem. In a synthetic complete two-action table with true fixed-seat0values[0,1], baseline predictions[-.9,.1]choose the winning action. Candidate predictions[.4,.3]are CLOSER to BOTH true values, but choose the DRAW action. The exact paired scalar diagnostic correctly prefers the candidate at each action; the action-regret diagnostic correctly gives candidate-minus-baseline regret+1. This is an algebraic control, not new rule reachability or evidence that these estimates occur in current runs.
+
+A sufficient link needs additional conditions. If estimates for every actual choice satisfy a common sup error epsilon, a greedy action has minimax regret at most2epsilon. If a true unique-action gap exceeds2epsilon, it selects that best action. This derivation requires the same action-value target/perspective and the ACTUAL selection rule; a single returned PV or static root feature is not that complete estimate table. Missing legal declarations or different policy-continuation values can break the premise. Existing direct action-coverage bounds can sometimes prove optimality with less information; this is not a universal oracle/solver gate.
+
+Consequently the new partial-risk criterion is useful for its declared scalar diagnostic and for falsifying exaggerated accuracy claims. Actual action/regret/payoff and same-resource execution evidence must remain separate. This final control closes the method interpretation without another training or policy-control campaign.
+
+## Executable continuation after this safe checkpoint
+
+The completed interval/gauge/censored/flag checks are not a new run queue. Next intake must use current GitHub Pro and the pending Dot method reply. One distinct AUX question, if no new assigned task supersedes it, is whether a uniformly bounded same-unit material perturbation can qualify action stability on an ALREADY complete fixed-depth tree. Max/min are nonexpansive in the sup norm, but a reported PV alone does not supply the required leaf-domain bound, and time-cancelled or selectively changed trees do not automatically share that guarantee. The first action is source/caller admission of the existing tree/profile and feature domain, not generating a tree or launching a solver. The deliverable is a precise applicable bound or an explicit source gap.
+
+A second independent backup is to inspect the original fixed-policy TD function-approximation theorem and identify which assumptions the current nonlinear, search-controlled learner does not meet. This is a new primary-source question, not rereading the completed KnightCap report, implementing another learner, claiming convergence or starting training. The choice follows the next Pro/user plan; neither missing input nor a silent Dot reply becomes a permission gate. Existing H6/PVS/Uniform closures, limits, role boundaries and all actual cumulative costs remain intact.
+
+## Accepted final closure
+
+179relatedregressionsPASS. Accepted effective research62.53370minutes; actual origin-to-finish window78.433469minutes plus actual final delivery, with prior cumulative costs retained and no admin/transport credit. No open work interval, new writer, research campaign, PRIMARY change or cadence change. Final control separates pointwise value-error improvement from chosen-action regret.
+
+Milestone1493969465166b44772d8e604fab63ada1684711was pushed/fullremoteverified before closing followup1793041659.871849at19:07:39.871849UTC. Its one delayed complete-thread check19:13:50UTC found3replies(priorDotanswer and twoownfollowups), no new method answer and no pagination gap. InitialDot1793037889mathematical cautions remain adopted, not numerical execution endorsement. The unanswered affine-target question remains for the next meaningful intake, not a gate, expired request or reason to poll again. Executable continuation is in the own memo/temporary plan; completed controls are not repeated.

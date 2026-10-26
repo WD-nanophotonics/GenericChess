@@ -246,3 +246,21 @@ def test_weighted_outward_bounds_and_exact_pair_survive_tiny_effect_cancellation
         assert Fraction(report['a_lower']) <= a <= Fraction(report['a_upper'])
         assert Fraction(report['b_lower']) <= b <= Fraction(report['b_upper'])
         assert Fraction(report['paired_lower']) <= a - b <= Fraction(report['paired_upper'])
+
+
+
+def test_pointwise_better_value_errors_can_still_choose_worse_action():
+    # Synthetic complete action-value table, not a new rule/game observation.
+    # Both bounded candidate estimates are closer to their own true values,
+    # yet candidate order reverses the two actions and incurs minimax regret.
+    from scripts.interval_value_diagnostics import choice_regret_difference
+    baseline = (-.9, .1)
+    candidate = (.4, .3)
+    truth = (0, 1)
+    for a, b, v in zip(candidate, baseline, truth):
+        assert paired_loss_difference(a, b, [v, v])['verdict'] == 'A_STRICTLY_LOWER_SCALAR_ERROR'
+    baseline_choice = max(range(2), key=lambda i: baseline[i])
+    candidate_choice = max(range(2), key=lambda i: candidate[i])
+    assert baseline_choice == 1 and candidate_choice == 0
+    d = choice_regret_difference([[0, 0], [1, 1]], candidate_choice, baseline_choice, actor=0)
+    assert (d['lower'], d['upper']) == (1., 1.)

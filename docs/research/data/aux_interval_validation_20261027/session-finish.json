@@ -1,0 +1,71 @@
+{
+  "id": "1e5f0dfd-3761-49e6-a6b3-22226fdb916e",
+  "state": "ended",
+  "started_at": "2026-10-26T17:56:08.506075+00:00",
+  "ended_at": "2026-10-26T19:14:34.514224+00:00",
+  "reason": "safe_checkpoint",
+  "duration_gate_passed": true,
+  "effective_work_seconds": 3752.021972,
+  "elapsed_minutes": 78.433,
+  "research_stage_count": 8,
+  "memo_synced": true,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-26T18:03:37.937219+00:00",
+      "evidence": "scripts/interval_value_diagnostics.py;tests/development/test_interval_value_diagnostics.py:18PASS exhaustive discrete truth/sign/shared-target/derivative controls. New actual Model static counterexamples: large-scale terminal receipt shrinks literalWIN; episode guard ignores scale mutation. No Core/Player/model.apply/fit.",
+      "question": "Derive partial-interval prediction-risk envelopes, WDL-discrete versus continuous relaxations and constraint semi-gradients with actual existing Model semantics; no new game truth or training.",
+      "started_at": "2026-10-26T17:59:28.568902+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T18:19:02.063423+00:00",
+      "evidence": "docs/research/AUX_INTERVAL_VALIDATION_AND_MODEL_UNITS_20261027.md; scripts/interval_value_diagnostics.py; generic_chess/learning/incremental.py; scripts/verify_leaper_ab_learning.py; .local_agent/round-1e5f0dfd/tests-milestone.txt:163PASS. Reproduced then repaired literalterminalscale/fixedparameterfreeze; independentchecker aligned. Existing named regressions include unit Core/Player/update operations, uninstrumented totalsUNKNOWN, no newresearchcampaign. Positiveunitrawsafetycounterexample and real-data constantzero risk negativecontrol preserved.",
+      "question": "Audit actual TDLeaf frozen-model identity and literal terminal targets under declared unit/scale changes; reproduce and repair only own learner semantic contract, with no training or Core/Player runs.",
+      "started_at": "2026-10-26T18:04:26.140615+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T18:24:03.128111+00:00",
+      "evidence": "Hypothetical td_sum endpoint completion example saved in td-completion-example.json, None!=DRAW and common-target1Dcorrelation. Two new concrete changed-stat failures reproduced:eta0 and nonzeroeta below representable parameterstep; narrow actualpostweights fix+independentreader,165relatedtestsPASS in tests-change-stat.txt. No newresearchfit/games/frontier; existingunitregressionoperationscountUNKNOWN.",
+      "question": "Derive affine final-target TD completion geometry using frozen receipts and existing independent arithmetic; distinguish censoredNone, hypotheticalWDL endpoints and minimax-versus-realized-return semantics without applying model updates.",
+      "started_at": "2026-10-26T18:21:52.701700+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T18:25:45.712197+00:00",
+      "evidence": "Affine TD final-target geometry derived; actualNone!=DRAW counterexample saved. Actualpostweights changed-stat fix165PASS retained. Primaryliterature lookup attemptedwithnormalTLS, Python local CA failure then one nativevalidatedclient fallback; no TLS bypass, no experimental code/state expansion.",
+      "question": "Determine which affine TD final-target conclusions survive discrete WDL, shared eligibility coordinates, censoring and actual floating-point update realization; distinguish theoretical directions from measured learning.",
+      "started_at": "2026-10-26T18:24:20.997540+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T18:26:36.727455+00:00",
+      "evidence": "Original KnightCap/TDLeaf abstract saved, arXivcs/9901002 verified title, historical FICS learning not newGeneric evidence; actualPDF145722bytes/SHA4ef51a94... preserved. Text extractor missingfitz, no repeateddownload or sourceassumptions; method fulltextnotyetread.",
+      "question": "Read original TDLeaf method for its PV-gradient/tie/target assumptions and compare to the actual frozen-episode library; verify affine completion only as sensitivity, not policy-return or learned-price truth.",
+      "started_at": "2026-10-26T18:26:10.893429+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T18:43:01.659520+00:00",
+      "evidence": "PrimaryKnightCap/TDLeaf1999 fullmethodsections2-4read and pinnedPDF4ef51a94/text87ae7123; actualadapter defaultsPVS/aspiration/stagedOFF sourcequalified. Seven new pure-arithmetic completion/tie controlsPASS plus actualCoreterminalWIN/LOSS scale1e12 tests(noPlayer). Strongtiecounterexamplehasjointimprovingdirection; no actualRuleSetreachabilityclaim. Actualchanged-statfix165basePASS; laternew7+2testsindividuallyPASS. Beal/SmithDOI10.3233/icg-1997-20302metadataonly; publishedfulltext403retained, no unreadexperimentalassumptions.",
+      "question": "Independently compare original TDLeaf PV-gradient method and current episode-frozen implementation, and derive testable scope of censored-completion sensitivity with no new learning/search experiment.",
+      "started_at": "2026-10-26T18:27:35.485532+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T18:58:45.198206+00:00",
+      "evidence": "404publishedoldrecordflags match276TRAINvectors(182changed)/128frozenEVAL;14598receiptfields compatible(972terminalDRAW,0nonzeroterminal). No returns/Core/replayrecomputed. Newpairedpartialtargetcriterion verified; exactModelscale1e200p=1e-200 exposed false risk equality, failing-before saved, rational/outwardroundedfix32diagnostictestsPASS, cacheddataregeneratedonlyarithmetically.",
+      "question": "Derive a minimal distinction between deterministic minimax regret and fixed-policy expected return, and specify a decision-changing learner validation criterion without new rules, frontier expansion, old-campaign reruns or training.",
+      "started_at": "2026-10-26T18:43:23.972267+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:04:37.853344+00:00",
+      "evidence": "Final numerical/scientificreview:178relatedtestsPASS in tests-final-numeric.txt; exactbinaryrationalpairedsign with outwarddisplaybounds and weightedtiny-effect/direct-loss enumeration validated. Newdataflags/terminalfields scope, paperassumptions, scalar-versus-policy objectives reviewed. Static18-contextmeanouter[.008743539293791586,.00874353929379159]. No furtherresearchcampaign or Corefrontier.",
+      "question": "Verify exact binary-input weighted-risk containment and sign authority under underflow/cancellation; distinguish floating displays, precise paired comparisons and practical learning claims, then complete final scientific consistency review.",
+      "started_at": "2026-10-26T19:00:10.445937+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:12:18.090408+00:00",
+      "evidence": "Finalscientificcontrol complete179relatedPASS: candidateclosertobothsynthetictrueactionvaluesyetgreedyregretworse+1; epsilon/gap sufficientconditions, actualselector/fulllegalchoice scope and no-oraclegate qualified. Distinctfuture treeperturbation-admission and fixedpolicyTDprimarysource questions selected, no rerun/newtree/fit. Finalcriticalscience reviewcomplete; safecheckpoint after60+effective.",
+      "question": "Complete final semantic control linking value-error diagnostics to actual action regret: pointwise lower squared error need not preserve greedy action ordering; derive exact conditions and retain UNKNOWN without a universal-oracle gate.",
+      "started_at": "2026-10-26T19:07:47.141989+00:00"
+    }
+  ],
+  "effective_work_minutes": 62.53369953333333,
+  "origin_to_finish_seconds": 4706.008149,
+  "cost_scope": "Prior cumulative costs retained; full origin-to-finish window plus actual closing delivery, distinct from confirmed research. Administrative/transport/offline/idle earns no research credit."
+}

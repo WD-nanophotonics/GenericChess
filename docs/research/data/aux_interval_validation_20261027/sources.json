@@ -3,9 +3,9 @@
   "shared_baseline_SHA": "376cb684519c420c8ebd295e18e23f5a5c9b616d",
   "Pro_blob": "8eafba5353ed18e7bdf3fece499e9049cbd357cb",
   "session": "1e5f0dfd-3761-49e6-a6b3-22226fdb916e",
-  "state": "ACTIVE_NOT_FINISHED",
+  "state": "ENDED_ACCEPTED_SAFE_CHECKPOINT",
   "confirmed_effective_seconds_at_milestone": 3481.073553,
-  "related_tests_passed": 178,
+  "related_tests_passed": 179,
   "before_fix_synthetic_failures": 15,
   "before_fix_controls": 26,
   "code_bytes_sha256": {
@@ -13,7 +13,7 @@
     "generic_chess/learning/incremental.py": "a69ed7a5e9bac5ac958b384fd153bd5f8efb17875d125e1b32db3c41c03aab5a",
     "scripts/verify_leaper_ab_learning.py": "376d7b20d801f6b236f5d5891e023615e562a769ee9784835abcba2b7082f1bb",
     "tests/development/test_tdleaf_frozen_parameters.py": "37c6e4d3d0327abf1f9af7a03f50c5813972c0b0c1157feb5c624a0d8f2ff9ab",
-    "tests/development/test_interval_value_diagnostics.py": "7ec2d0788f2c726cb7b795e3236e733c0ec409a9e50a4126e2c3cec6f09bee56",
+    "tests/development/test_interval_value_diagnostics.py": "b0538820d63c41e74632a6599c105f49cd963ea5ab71e6d29577e7c3078d38c3",
     "tests/development/test_tdleaf_completion_geometry.py": "9a211602da2b798236b8276e2f65588aba61352c449247eaec173474784806c1"
   },
   "data_bytes_sha256": {
@@ -40,5 +40,23 @@
       "DOI": "10.3233/icg-1997-20302",
       "coverage": "Metadata only; primary publisher fulltext403. No unread experiment assumptions."
     }
+  },
+  "effective_work_seconds": 3752.021972,
+  "effective_work_minutes": 62.53369953333333,
+  "origin_to_finish_seconds": 4706.008149,
+  "session_finish": {
+    "path": "session-finish.json",
+    "sha256": "fe3615c7b55a87feacc2643088d12cf7e2928b87f46eed8ecbb962ff03cea2a1"
+  },
+  "published_before_Slack": [
+    "89e1274d6e34f04a3e5235b39169026cfc13bc87",
+    "1493969465166b44772d8e604fab63ada1684711"
+  ],
+  "closing_Slack": {
+    "sent_ts": "1793041659.871849",
+    "sent_UTC": "2026-10-26T19:07:39.871849+00:00",
+    "due_UTC": "2026-10-26T19:12:39.871849+00:00",
+    "single_check_UTC": "2026-10-26T19:13:50.088033+00:00",
+    "result": "Complete thread3replies: priorDotanswer+twoownfollowups; no newreply to methodquestion. No resend or expiry inference."
   }
 }
