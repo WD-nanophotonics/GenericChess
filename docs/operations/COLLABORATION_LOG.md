@@ -1959,3 +1959,7 @@ before launch(>=142.346min plus actual intake/delivery). No identified new froze
 handoff at pinned PRIMARY mainline; record AWAITING_FROZEN_INPUT, no invention.
 This is prelaunch exception handling, not normal research completion or a new
 experiment. Prior ended session/schedule/caps unchanged; no Dot budget waiver.
+
+## DEV_AUX censored-path and new Pro PVS intake —2026-10-26
+
+Own f34f609f ACTIVE checkpoint68.70282effective minutes,200regressionsPASS plus3negative-source controls. PRIMARY provided fixed old resource records and a newly published PVS packet; AUX independently checked endpoint/root algebra,24new actual Core records and2115original query-prefix bindings without newPlayer/solver/game/build. GitHub Pro c695161c task was read/adopted/executed separately from pending Slack Dot request. Old cut census cannot add positive families; newPVS allDRAW does not label actions. Search cancellation vs episode completion, frozen pair vs single-slot completion and unknown live TTmemory remain distinct. New overtimeg1184has3choices; oldq371forced exemption does not apply. No PRIMARY algorithm/default/budget authority transferred; no measured speedup claimed. Full report and sources under AUX_CENSORED_PATH_BOUNDS_20261026. Next substantive Dot question asks whether a supplied local certificate could add a quality endpoint on these exact histories without another saturated-outcome panel; no reply is an execution gate.

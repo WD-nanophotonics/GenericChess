@@ -1,3 +1,9 @@
+## ACTIVE censored-path/PVS source milestone f34f609f
+
+68.70282confirmed effective research minutes;200relevant testsPASS and3source corruption controls rejected. [Report](AUX_CENSORED_PATH_BOUNDS_20261026.md) separates observed-prefix regret, ongoing endpoint potentials, actual outcomes and fixed-slot hypothetical score tables.79402old cut-pair views give only2strict positives, same old family4; weighted timing subsets leave full-root residuals. No newnumericWDLlabel/Player/solver/game/build.
+
+New Pro c695161c/04c08a48read/adopted/executed in own narrow PVS intake:24actual CoreDRAW replayed,2115query/full-record/original-return bindings,26emptyPVs retained;2075internal cancelled searches still RETURNED, not cancelled games. New overtimeg1184has3legalchoices, so oldforced371regret0cannot transfer. Frozen pairmask score[11/24,13/24] distinct from single-slot[23/48,25/48]; internal TTmemory and interior PVreplay not independently verified here. No PRIMARY budget/design ownership. Current activeUUID preserved across heartbeat; publication/transport not research credit; old costs remain carried,TokenUNKNOWN.
+
 ## Completed DEV_AUX source-attribution segment140a989c
 
 Accepted session finish: 66.58400effective research minutes,162testsPASS; no newPlayer/solver/game/build/default. [Report](AUX_SAVED_DECISION_EXPOSURE_20261026.md) and data/session-finish.json preserve intervals, the uncredited interrupted interval and source scope. Conditional experienced mean-regret bound is positive; all119candidate action labels remainUNKNOWN. Scientificrevision3bb8e310was pushed/fullremoteverified before followup1793021026.612729; the one delayedcheck13:29:48UTC found no new reply, not independent endorsement.

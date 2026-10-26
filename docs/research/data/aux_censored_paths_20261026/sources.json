@@ -1,0 +1,60 @@
+{
+  "primary_commit": "fd7d7eacbdc2741e766f26b67b0f54018a998aa7",
+  "qualified_source": {
+    "commit": "bfd43fe406b72c7d4a4f5df492f42772fc4a60ba",
+    "path": "docs/research/data/aux_saved_decisions_20261026/game-exposure.json.gz",
+    "sha256": "20510b7d6985512057ae20af46b5ba86a8f2c98cefb5aa3055bb92b196d24062"
+  },
+  "qualified_git_blob": "b6f1637a433fbfc1cb4afee9dabcb8b0c3820fdd",
+  "pro_review": {
+    "commit": "8edbf21d56b7df9b19fb09ad9ff63011e1f97021",
+    "path": "docs/reviews/chatgpt_patrol/2026-10-26_221052_JST_5f134bb.md",
+    "blob": "7d704214a796fed19a2fc5c0eca7e118e6ffca85",
+    "decision": "AUX independent proof/history scope adopted; requested old active milestone already ended at140a. No PRIMARY execution or budget adopted."
+  },
+  "code": {
+    "scripts/paired_path_bounds.py": {
+      "executed_utf8_sha256": "71b3a19c102eb75d0b6b676a19d2e2065fab65f74a87a9bd4d334c226120b2d8",
+      "git_normalized_blob": "071296247a13808c3df1cf808df91089dc2130bf"
+    },
+    "scripts/analyze_censored_leaper_records.py": {
+      "executed_utf8_sha256": "543cdaf3729f82d536d005bb6f6c80de13c73d4262e07bc7ca73d85be1efa561",
+      "git_normalized_blob": "a2790ad6f585544f85d0a9937f29cd7be5dede76"
+    },
+    "scripts/leaper_truth_compatibility.py": {
+      "executed_utf8_sha256": "0c88df56dc86989cbdcd3c87d83fe37f193b13716d88cfb9d7f62bfbfaa5db90",
+      "git_normalized_blob": "9996f8c5dfd14d1ffe7bcf27f2676b6348919579"
+    },
+    "scripts/audit_published_leaper_exposure.py": {
+      "executed_utf8_sha256": "ebb224956aaeccdec815bce60e4883948d484d80e28eff63658bee87820f1afc",
+      "git_normalized_blob": "20de4bfbb24751fe1b5e69d653510c17a38850c4"
+    },
+    "scripts/qualify_pvs_source_intake.py": {
+      "executed_utf8_sha256": "52ac8eb8b2d72901e6ab4c50950f7f2471ee5930a077a299ae1f03c781ab95e3",
+      "git_normalized_blob": "8f8f579e57a75d7ba8204ac7b94a4a851ff167c2"
+    }
+  },
+  "fixture": {
+    "path": "tests/fixtures/paired_path_source_controls.json.gz",
+    "sha256": "53443d803501de93d0b8c70ad9f93d315d936556da6a74c81db0077e04368cfb"
+  },
+  "new_Player": 0,
+  "new_solver": 0,
+  "new_games": 0,
+  "new_build": 0,
+  "analysis_sha256": "10c79dca08e6e9b1ba30e529dd0b1c755a66acaf004f0a72d9e9e9498f47654a",
+  "shared_runtime_baseline": "8edbf21d56b7df9b19fb09ad9ff63011e1f97021",
+  "closing_pro_review": {
+    "commit": "c695161cbc16fe5881773d4465ad00c1c5e1181e",
+    "path": "docs/reviews/chatgpt_patrol/2026-10-27_000503_JST_4f9f41e.md",
+    "blob": "04c08a48e883b84b90c178ae35bef5827102294e",
+    "sha256": "036d16ee367b6db3a26d4caf750b30ad6a85c589e353ba6fc9edba690b913117",
+    "decision": "ADOPTED/EXECUTED: narrow PVS full-history/source denominator intake; no PRIMARY budget/design takeover"
+  },
+  "shared_runtime_latest_checked": "c695161cbc16fe5881773d4465ad00c1c5e1181e",
+  "additional_data": {
+    "independent-root-relaxation.json.gz": "c2f70041b2598a76d933f82521de3b15dc5b0acfec9560a90f74ff3fcc4d601a",
+    "pvs-negative-source-controls.json.gz": "c6ed1c01a887fb1a4281608b619b31f4220177732abc35f81c3cd8eb26719d0a",
+    "pvs-source-intake.json.gz": "3643e783c93c9dd3c6c0ce104e8ca9f1b3d7129279c7b326a59f34d0bb678202"
+  }
+}
