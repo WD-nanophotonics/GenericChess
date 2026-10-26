@@ -1,0 +1,136 @@
+{
+  "primary_PVS_source": "c695161cbc16fe5881773d4465ad00c1c5e1181e",
+  "opening_shared_baseline": "ec5fc26503493460b28210d72745311b49a750c9",
+  "latest_shared_baseline_checked": "4a688eb334463f72f320b0e78521e7abe24e677f",
+  "production_runtime_delta": "NONE",
+  "opening_Pro_blob": "04c08a48e883b84b90c178ae35bef5827102294e",
+  "new_Pro": {
+    "commit": "4a688eb334463f72f320b0e78521e7abe24e677f",
+    "path": "docs/reviews/chatgpt_patrol/2026-10-27_020414_JST_ec5fc26.md",
+    "blob": "8eafba5353ed18e7bdf3fece499e9049cbd357cb",
+    "sha256": "bbc8c7038c3c305f2e1748bdec30ba593850743b748013900b1182e431b2ab0e",
+    "decision": "READ/ADOPTED: phase1alreadycompletedwithin16.878effective minutes; no strict terminal split, so no further state expansion, deeper solve or repeating saturated panel. Existing finite bound deductions/reverification performed before this new intake are published with actual costs, not claimed as source metadata truth."
+  },
+  "input_gzip_sha256": "dc471719ad6720f97be01b0a052cdc14728dfdab29dbe4b8bdb8a0785fb9dd93",
+  "games_gzip_sha256": "bc483a7acb18ec5840a327af8e8372d8f2644ae57c50d7d5917718f6ee94fd89",
+  "data": {
+    "frontiers.json.gz": {
+      "sha256": "42bff041b88f04ee51d7388246e329c04f54a216587a3b62b19b9592a7f8d30c",
+      "gzip_bytes": 1671776,
+      "uncompressed_bytes": 40122712
+    },
+    "partial-bounds.json.gz": {
+      "sha256": "3218b8f7d4ff85caac2cba671cc08afe2e0081ff560455594a08c4cba7314664",
+      "gzip_bytes": 1668108,
+      "uncompressed_bytes": 15429811
+    },
+    "verified-strategies.json.gz": {
+      "sha256": "eb98f6fce3d4619b094c3239121adbaa9d622a386340c487293c131986dfc715",
+      "gzip_bytes": 88887,
+      "uncompressed_bytes": 864025
+    },
+    "one-step-certificates.json.gz": {
+      "sha256": "dd09bfa1ea130629654e6643aa5d256659497584ce24982df8b49ca81fcc9080",
+      "gzip_bytes": 65756,
+      "uncompressed_bytes": 696030
+    },
+    "learning-limits.json.gz": {
+      "sha256": "498d65127138d32ef5c66123734675fa54b9521404451d948e0361ccca463aa3",
+      "gzip_bytes": 2467,
+      "uncompressed_bytes": 22118
+    },
+    "horizon-portability.json.gz": {
+      "sha256": "9c911799b35b8ab1a47de22f6f47e11aed3dc224bd982f22de5a9a05ed3888a1",
+      "gzip_bytes": 53847,
+      "uncompressed_bytes": 199355
+    },
+    "stalemate-target-replay.json.gz": {
+      "sha256": "da56a735ab6f579d6ac0afa4835bd53760026665e47b10f5c53d2a0688550dd5",
+      "gzip_bytes": 3452,
+      "uncompressed_bytes": 12252
+    },
+    "exposure-denominators.json.gz": {
+      "sha256": "d787c0738c2568825a64389fedfd4f245ffc50f449d3255eb2ecb41b1475c3b8",
+      "gzip_bytes": 248,
+      "uncompressed_bytes": 726
+    },
+    "witness-choice-analysis.json.gz": {
+      "sha256": "26ee496661375af2b513dfcd9c56f99bf405bd4d898bc1e03f6f65b3719ca1ae",
+      "gzip_bytes": 509,
+      "uncompressed_bytes": 1921
+    },
+    "partial-safe-action-sets.json.gz": {
+      "sha256": "ccdc9b4e1ecd718d84a3fc2ab9af937cb118b7a94b6584b62d3af06acb85ffe6",
+      "gzip_bytes": 255,
+      "uncompressed_bytes": 528
+    }
+  },
+  "code": {
+    "scripts/leaper_terminal_frontier.py": {
+      "executed_bytes_sha256": "9c5e8cbbc268c6496854c6aaae0afa838cde0ecbd046bde2f21f88c836e4bf09",
+      "git_normalized_blob": "8569a2f6feb97f510b254d91eb9b3bf9ab9af684"
+    },
+    "scripts/inspect_pvs_terminal_frontiers.py": {
+      "executed_bytes_sha256": "229da2a8b44ab222304c4d4443fc3c50cd371e6c4a4333cf8397486aa8a51e30",
+      "git_normalized_blob": "a4c7d6bbc4fcb62c02f7a9dd2211cf7b9139407c"
+    },
+    "scripts/propagate_pvs_terminal_bounds.py": {
+      "executed_bytes_sha256": "090cb30d3245ab11dbd0e620d1342313d32f6d99e2b594bcb7347bb77befa09f",
+      "git_normalized_blob": "a9ff92ebd713d2fe7d1ffdc6032922b133f3ce3f"
+    },
+    "scripts/verify_terminal_frontier_proofs.py": {
+      "executed_bytes_sha256": "e8efdc306a582e76f08cd52c9d4fa2485a4af6a3b263e0915f6d7650d3f38440",
+      "git_normalized_blob": "d4881ad814f71d9d4808a95a5cec19337837f34b"
+    },
+    "scripts/analyze_frontier_learning_limits.py": {
+      "executed_bytes_sha256": "7472ba601147f728b0a82c1f358e9d6572989b4f810b1a538e8b0fe1e3358696",
+      "git_normalized_blob": "72dda56d008910977a3fdba72dab1781835a8884"
+    },
+    "scripts/leaper_truth_compatibility.py": {
+      "executed_bytes_sha256": "0c88df56dc86989cbdcd3c87d83fe37f193b13716d88cfb9d7f62bfbfaa5db90",
+      "git_normalized_blob": "9996f8c5dfd14d1ffe7bcf27f2676b6348919579"
+    },
+    "scripts/analyze_leaper_td_signals.py": {
+      "executed_bytes_sha256": "04723b8a121b387e2d1c13598b36f25292590e64db53b353603908cfd8f655b4",
+      "git_normalized_blob": "536c865c4de306f7655c8b91d44835bfe3cd66e1"
+    },
+    "scripts/verify_leaper_ab_learning.py": {
+      "executed_bytes_sha256": "437d19162a446bb55ffa3c0c36d8ab697963fac45bbc7fde36c77434c9c919d9",
+      "git_normalized_blob": "da90d019f9c0e163c23f0548e6e4df1311bdf7d5"
+    },
+    "generic_chess/core/transition.py": {
+      "executed_bytes_sha256": "f3468263b2339f2bd7002a3b078d808b5db87360cb4de6da5ed428500ec56780",
+      "git_normalized_blob": "db6d9c7a4682b21f37c5cb5131413eb5d8e8385e"
+    },
+    "generic_chess/core/identity.py": {
+      "executed_bytes_sha256": "b3e9dd9925551ecee2be8457784359219f5981a1716162c0804fa28ed40c980b",
+      "git_normalized_blob": "44545a54062c416509b10632807383139e548edc"
+    },
+    "generic_chess/core/terminal.py": {
+      "executed_bytes_sha256": "cdfd7082bb3a66eac4cc6fccb89f9ffc01cd2a3db017083962560ff40b55f594",
+      "git_normalized_blob": "1b64fdb8accb8bcbdeb9aeb5778c014be702bbb0"
+    },
+    "generic_chess/session/session.py": {
+      "executed_bytes_sha256": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+      "git_normalized_blob": "6b34a074b8f7ae7e47bc45249ad7b476d7622e9d"
+    },
+    "generic_chess/learning/incremental.py": {
+      "executed_bytes_sha256": "bd8d4047c1b5178ef7d6cd878e0d1a13f6d0965c5e6b801228b6d77b4eb078a9",
+      "git_normalized_blob": "5bd5ea1dc78d596243ca5ebe59cc65a269f16fb5"
+    },
+    "generic_chess/learning/mainline_search.py": {
+      "executed_bytes_sha256": "02936acbd8bac01fda6d1a2a30cb32e3e83925e7907001f6f79a1f18cd7f7052",
+      "git_normalized_blob": "9e2f1370922496e109125a56dd981ac78854d237"
+    }
+  },
+  "fixture": {
+    "path": "tests/fixtures/terminal_frontier_source_controls.json.gz",
+    "sha256": "1e938713df5e55672091a807139e177411423844fba4829dd42aa71052fd7d95"
+  },
+  "new_Player_calls": 0,
+  "new_played_games": 0,
+  "new_training_campaigns": 0,
+  "complete_game_solver_calls": 0,
+  "new_Core_work": "Explicitly counted one-step counterfactual and finite verification work; see report. Unit/manual Core counts UNKNOWN; not a zero-compute source intake.",
+  "verification": "253relatedtestsPASS; all77newone-sidedstrategies independently checked through existing Core finite checker; same Core authority, not another rules implementation."
+}
