@@ -8,6 +8,18 @@ optimization remains deferred. All admitted semantics, histories and clocks stay
 
 ## Current decision -2026-10-26 measured runtime consumer
 
+[Immutable-child proposal](LEAPER_CHILD_CONSTRUCTION_PROPOSAL_20261026.md) is
+NOT_STARTED pending USER necessity assessment: one guarded Semantic transition
+adapter, exact-state/cancel/undo qualification then at most144 fixed-depth Player
+slots, no games/default activation. Carry final prior whole314.129940 minutes,
+plus actual new opening/proposal overhead. Forecast439.130 with conservative25
+minute opening allowance and100minute extension; proposed cumulative ceiling460.
+The old320grant is not authority for this new extension. No implementation/query
+has begun. Main's next action is the USER cost decision on this reviewable plan,
+not an unapproved run. New session fa6aa28f starts with0effective work; review,
+transport and proposal documentation do not inherit the prior60.611 minutes.
+
+
 [Cost attribution](LEAPER_COST_ATTRIBUTION_20261026.md) records172new original-Player
 returns,0games/solver/product changes. Complete-work trios preserve all non-timing
 action/value/PV/work. Lower-disturbance push observation:10eligible D8 trios over

@@ -8001,3 +8001,17 @@ explicit deviation. No repeat requests/polls. Follow-on source-only consumer
 check distinguishes existing reverseattack/two-cell features and sharedpacking
 from a new netbenefit. Shape normalization counterexample is not currentbug or
 actualgame evidence. No product/UI/AUXcheckout/schedule/visibility change.
+
+## PRIMARY immutable-child budget intake -2026-10-26
+
+PRIMARY checked current remote sandbox e0559cf51c11542d7f1f727e3b1284882cc72f62
+and the unchanged Patrol tree, both complete autonomous Slack threads and
+current PRIMARY/AUX threads. No new review was found in that covered scope.
+No AUX work was assigned or rerun. A fresh opening AGENT_REQUEST at
+1793026379.737969 asks a real adapter-cost question using the published pilot;
+its exact payload readback is verified and one +5-minute check is due.
+The 24-draw PVS pilot remains closed; its actual delivery cost314.129940 minutes
+is carried into the proposed one-candidate extension. Only a NOT_STARTED plan
+was written; no candidate implementation, Player/Core/solver/game/build started.
+The related extension requires USER necessity assessment, not Dot budget approval.
+This opening/transport/document preparation adds no effective research time.
