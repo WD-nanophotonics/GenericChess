@@ -34,53 +34,43 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Main: current quality signal insufficient; defer the16-game proposal
+## Main: scoped pure-H6 syntax candidate, cost is not strength
 
-[Zero-query resolution audit](LEAPER_QUALITY_RESOLUTION_20261026.md) adopts the
-new08:12JST autonomous review at ac361556bb28db8553316d55c3badd495729fede.
-103unique complete records/11full rule fingerprints in the selected old/new
-cohorts provide only2current1.5s source-labelled inferior roots, p49/p53 in one
-5x5rule.256raw Native returns rejoin actual actions/fullhistories/labels; the
-3newcertificate rules remain6/6optimal. This is not an exhaustive31390history
-search or a new WDL proof. ExistingLMR19is also1.5s saturated but its actual
-Native legality-only constructor differs from currentNative-both. No newPlayer,
-solver, game, sourcecapsule execution or AUX change.
+[H6 syntax study](LEAPER_H6_SYNTAX_20261026.md) consumes pinned AUXH6/repeat2
+full RuleSets/records as data; no AUX solver/checkout work.1520 new returns over
+20 exposed roots/11 families qualify a strict compiled legality/syntax prototype.
+Final within-build300-call screen preserves work/action/value/PV and measures
+constructor+choose -7.11%; shared replay/record costs are not allocated by arm.
+S3-alone has no demonstrated useful net gain; practical Python source-recompile/
+per-position guard route is3.89x slower. Additional traced Python cache memory
+53–98KiB; full RAM/Native heap UNKNOWN.18340ordered frontiers,5346attack predicates,
+100synthetic doublechecks and budget/recovery parity support limited correctness,
+not all-class/heldout/strength success. Product/default/installed backend unchanged.
 
-Four planned rule groups cannot become16independent rules by color/prefix
-replication. Conditional exact sign-model resolution is not actualMDE/power;
-zero/unknown draws and correlation stay explicit. Games do not universally need
-certificates or statistical significance. This particular16game proposal is
-DEFERRED/NOT_STARTED and not recommended given current information, rather than
-renameddeploymentandrun. Original inputs/plans remain immutable historical
-proposals. Existing12consumer checks remain correct; no productdefaults change.
+The new tiny-budget abort records yield4/20 inferior actions at node1,2/20 at8,
+both arms identical and all fullD6 recoveries optimal. This is a posthoc contract
+join, not a new real-time strength claim, a cap-selection target or a fallback
+bug proof. Source0 fallback score is uncertified. Do not invent a successful
+quality experiment from cost parity or select favorable latency thresholds.
 
-User decision2026-10-26 explicitly defers the16games. Mark the original request
-CLOSED_WITHOUT_BUDGET_GRANT, not awaiting approval; retain NOT_STARTED inputs and
-all cost/evidence. Do not ask again unchanged. This is not a global research stop.
+Question: is this compiled syntax candidate worth a next quality/consumer test? |
+Evaluate Dot/new autonomous reviews against scoped evidence, define actual consumer,
+full end-to-end goal/exposure/operational risks and cumulative cost BEFORE queries |
+A falsifiable necessity/design decision, not another saturation report |
+Carry the SAME H6 study's90->105minute forecast/all actual costs; any related
+forecast>=120 needs USER before further runs, no UUID reset/default activation.
 
-The source-only10:09JST autonomous review at
-2b62171f9de528c01958e45dd868cf047cc675f5 (blob
-a7e3f25d0399cc370bea26fa29cefdecf3753b9d) was fully read during this bounded
-decision update. Adopt moving beyond repeated saturation reports. Its H6truth
-compatibility suggestion is a possible source, not an executed experiment or
-new permission. H6/repeat2 truth cannot be applied as H128/repeat4 truth, and
-published forks do not prove current-controller errors. No H6audit or ordering
-queries have started; no AUX checkout/process is touched.
+Backup1: complete-key memo remainsDEFERRED180/cap200, no changed whole-cost/RSS
+premise; no resumed factorial or TT-guard change.
+Backup2: identify whether a genuine decision-quality question remains useful |
+Use the already-saved source joins and fallback contract, with no new queries |
+Separate incomplete-iteration semantics, literal source labels and causal gaps |
+No arbitrary-node/time threshold hunt, source-label patch or old p49/p53 revival.
 
-Question: which new pure-Leaper quality hypothesis could change a decision? |
-At the next research opening inspect current reviews/Dot, define a falsifiable
-bounded comparison and its complete cost lineage first; assess whether published
-H6 full-history truth is semantically applicable before proposing any queries |
-Compatibility/exposure/actual-controller distinctions, not new strength claims |
-Do not revive16games/keymemo, repeat saturation bookkeeping, transfer clock
-truth, reset related cost or run any related>=120 experiment withoutUSER.
-
-Backup1: complete-key memo remainsDEFERRED180/cap200 with no changed wholecost/RSS
-premise; fresh08:12review concurs. No resumed factorial or changedTT guards.
-Backup2: evaluate distinct execution-kernel feasibility only with actualconsumer/
-cost premise: currentNativecheck bypasses the Python single-target attack path,
-and Pythonpseudo-map is a separate consumer. No wholesale nested-profile cost
-credit or automatic bitmap prototype. Future full-map acceleration not refuted.
+User16-game Native-service proposal remains DEFERRED/NOT_STARTED and its request
+CLOSED_WITHOUT_BUDGET_GRANT. User metadata decision remains future identity only:
+no published history rewrite. The old quality-resolution audit remains evidence,
+not an active approval queue. Pure Leaper first; no mixed-rule/NNUE expansion.
 
 ## Retained decisions and costs
 
@@ -103,14 +93,14 @@ cost 839.615→519.211s, identical work/actions, 62/64 at 1.5s both, 24 games al
 +0.95% cost and one candidate LOSS among 24 games. LMR/TrueDRAW negative evidence
 also remains closed. Faster/deeper does not monotonically improve decisions.
 
-Current exact session state, effective intervals, active request and full remote
-SHA live in the own memo/session/transport receipts. The kernel question forecast
-is 100 minutes including all source work, validation, failed calls and delivery;
+Historical compiled-hash session state and its closing receipts remain evidence;
+the CURRENT H6 state lives in the own memo/session/transport receipts above.
+That earlier kernel question forecast was 100 minutes including all source work, validation, failed calls and delivery;
 the scientific checkpoint is at 74.877 wall minutes and 61.944 recorded segment
 minutes (including 71.173026 earlier recorded seconds). Administrative work is
 not added to that ledger. Closing delivery cost remains separately explicit.
 
-Closing receipt: data/leaper_compiled_hash_20261026/closing-receipt.json records
+Historical kernel closing receipt: data/leaper_compiled_hash_20261026/closing-receipt.json records
 accepted session finish/final-check, fixed-SHA public evidence verification and
 the one delayed Dot check (0 replies/new Chat in covered threads). Cost through
 that check is 96.84643 minutes versus the 100-minute forecast; closing receipt

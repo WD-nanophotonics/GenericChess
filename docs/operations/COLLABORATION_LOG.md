@@ -7844,3 +7844,23 @@ blob a7e3f25d0399cc370bea26fa29cefdecf3753b9d. Read/adopted its direction to avo
 repeated saturation reports and consider a genuinely consequential bounded
 quality hypothesis; H6compatibility/ordering suggestions remain NOT_STARTED.
 No new Slack interaction, Player/solver/game, AUX write or review execution.
+
+
+## 2026-10-26 PRIMARY pure-H6 syntax milestone
+
+PRIMARY read/adopted current autonomous12:00JST GitHub Patrol review at a2950df
+(full SHA/blob in LEAPER_H6_SYNTAX_20261026.md), retained Slack review checks,
+and delivered opening Dot AGENT_REQUEST315cf692 with one delayed check03:24:26UTC.
+Dot's source-only H6/rule-clock/cost advice was adopted and executed: no AUX solver
+source ran, H6 did not become H128 truth, missing families/exposure remained.
+AUX's published5584387 truth/data were read only; no AUX checkout/state changes.
+
+New evidence:1520 Player returns,18340ordered frontiers,5346attack predicates,
+100synthetic doublechecks; final immutable-syntax within-build constructor+choose
+screen -7.11% with exact decisions/work. S3-alone and costly Python guard routes
+are negative. Tiny-node quality remains inferior on some roots in both arms;
+no strength claim, all-domain proof, product/default activation or16-game revival.
+Source/root costs, missing metadata, tracer memory and strict-error-policy scope
+are explicit. Full costs remain one90->105minute logical study, not reset by
+prototype/session names. A published milestone/follow-up to Dot is prepared;
+send/adoption/execution status is recorded separately after actual receipts.
