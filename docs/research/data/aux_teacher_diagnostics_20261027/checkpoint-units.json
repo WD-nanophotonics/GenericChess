@@ -1,0 +1,55 @@
+{
+  "scope": "read-only actual checkpoint quantization methods, synthetic metadata only, no compiledrule/Core/Native/search/training/weightapply",
+  "rows": [
+    {
+      "checkpoint_id": "5288f075b0e80a821328f4a06d9ee337ca6a7f7502490d23e02e0c355ac40fc3",
+      "evaluator_version": "learnable-material-v1",
+      "physical_B": 1.4,
+      "legacy_quantized": [
+        1,
+        1
+      ],
+      "semantic_scale": 1,
+      "semantic_quantized": [
+        1,
+        1
+      ],
+      "dynamic_quantized": null
+    },
+    {
+      "checkpoint_id": "44fbcb71f63b35d7b8752a2615eaaed3ff8386ab2f41379f1bf848c33cf34144",
+      "evaluator_version": "learnable-material-v1",
+      "physical_B": 1.49,
+      "legacy_quantized": [
+        1,
+        1
+      ],
+      "semantic_scale": 1,
+      "semantic_quantized": [
+        1,
+        1
+      ],
+      "dynamic_quantized": null
+    },
+    {
+      "checkpoint_id": "01c074d44a54295bfe394a94cc301486d141ef4d5e1d5e1735b45a2affabf2ba",
+      "evaluator_version": "learnable-generic-v2",
+      "physical_B": 1.49,
+      "legacy_quantized": [
+        1,
+        1
+      ],
+      "semantic_scale": 256,
+      "semantic_quantized": [
+        256,
+        381
+      ],
+      "dynamic_quantized": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "conclusion": "checkpoint identity/float differences do not by themselves imply deployed legacy static differences; supplied zero dynamic map selects a different explicit semantic precision/version, not an intrinsic material law or measured performance gain"
+}

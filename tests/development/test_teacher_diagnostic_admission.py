@@ -5,6 +5,7 @@ from generic_chess.learning import diagnostics as D
 
 class Corpus:
     def __init__(self, n=2): self.n=n
+    def validate(self, compiled): pass
     def nonterminal_positions(self, compiled): return list(range(self.n))
 
 def result(action='a', depth=1, fallback=False, reason='node_limit'):
@@ -109,3 +110,56 @@ def test_engine_binding_rejects_wrong_checkpoint_before_native_compile(monkeypat
     with pytest.raises(ValueError,match='fingerprint'):
         D._engine_for(SimpleNamespace(ruleset_fingerprint='rule-target',piece_types=()),
                       None,checkpoint('other'),8)
+
+
+@pytest.mark.parametrize('corruption', ['fingerprint', 'position_key', 'side', 'ply'])
+def test_direct_teacher_entry_rejects_invalid_corpus_before_search(monkeypatch, corruption):
+    from dataclasses import replace
+    from native_test_helpers import generated_compiled
+    from generic_chess.session.session import GameSession
+    from generic_chess.core.identity import position_identity_key
+
+    compiled = generated_compiled(size=4, seed=7)
+    root = GameSession(compiled)
+    pos = D.DiagnosticPosition(0, (),
+        position_identity_key(root.state.position, compiled),
+        root.state.position.side_to_move, root.state.ply_count)
+    corpus = D.LearningDiagnosticCorpus(
+        ruleset_fingerprint=compiled.ruleset_fingerprint, positions=(pos,))
+    if corruption == 'fingerprint':
+        corpus = replace(corpus, ruleset_fingerprint='different-rules')
+    else:
+        field, value = {'position_key': ('position_key', 'wrong-key'),
+                        'side': ('side_to_move', 1-root.state.position.side_to_move),
+                        'ply': ('ply', root.state.ply_count+1)}[corruption]
+        corpus = replace(corpus, positions=(replace(pos, **{field: value}),))
+    monkeypatch.setattr(D, '_search_position',
+        lambda *args: pytest.fail('invalid corpus reached search'))
+    with pytest.raises(ValueError, match='fingerprint|key mismatch|side mismatch|ply mismatch'):
+        D.teacher_benchmark(compiled, None, [object()], corpus, max_positions=0)
+
+
+def test_wrong_rule_corpus_cannot_earn_agreement_with_legal_actions(monkeypatch):
+    from dataclasses import replace
+    from native_test_helpers import generated_compiled
+    from generic_chess.session.session import GameSession
+    from generic_chess.core.identity import position_identity_key
+    compiled = generated_compiled(size=4, seed=7)
+    root = GameSession(compiled)
+    action = root.legal_actions()[0]
+    pos = D.DiagnosticPosition(0, (),
+        position_identity_key(root.state.position, compiled),
+        root.state.position.side_to_move, 0)
+    valid = D.LearningDiagnosticCorpus(
+        ruleset_fingerprint=compiled.ruleset_fingerprint, positions=(pos,))
+    calls=[]
+    def search(*args):
+        calls.append(args)
+        return result(action), root
+    monkeypatch.setattr(D, '_search_position', search)
+    assert D.teacher_benchmark(compiled, None, [object()], valid)['teacher_self_agreement']==1.
+    calls.clear()
+    with pytest.raises(ValueError, match='fingerprint'):
+        D.teacher_benchmark(compiled, None, [object()],
+                            replace(valid, ruleset_fingerprint='other-rules'))
+    assert calls == []

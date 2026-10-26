@@ -34,7 +34,7 @@ from .openings import ArenaOpeningCorpus
 from .selfplay import SelfPlayConfig, collect_self_play
 from .serialization import canonical_json, stable_sha256
 from .statistics import bootstrap_pair_mean_ci
-from .tdleaf import TDLeafConfig, tdleaf_update
+from .tdleaf import TDLeafConfig, _learning_rate, tdleaf_update
 
 
 # ---------------------------------------------------------------- corpus
@@ -240,7 +240,7 @@ def td_signal_diagnostics(trajectories, checkpoint, config: TDLeafConfig):
     if checkpoint.compact_nonlinear:
         raise NotImplementedError("TDLeaf diagnostics do not support compact nonlinear checkpoints")
     value_scale = config.value_scale or checkpoint.value_scale
-    alpha = config.alpha or 0.01 * max(checkpoint.reference_median, 1.0)
+    alpha = _learning_rate(checkpoint, config)
     records: list[TDUpdateRecord] = []
     board_delta: dict[str, float] = {}
     hand_delta: dict[str, float] = {}
@@ -634,6 +634,7 @@ def teacher_benchmark(
         raise ValueError("max_positions must be a nonnegative integer or None")
     if not checkpoints:
         raise ValueError("at least one teacher checkpoint is required")
+    corpus.validate(compiled)
     teacher_positions = corpus.nonterminal_positions(compiled)
     if max_positions is not None:
         teacher_positions = teacher_positions[:max_positions]

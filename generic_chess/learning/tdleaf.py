@@ -17,6 +17,25 @@ class TDLeafConfig:
     alpha: float | None = None  # default = 0.01 * initial weight scale
     value_scale: float | None = None
 
+    def __post_init__(self) -> None:
+        # Both batch arithmetic and its diagnostic mirror implement gamma=1.
+        # Reject unsupported settings rather than silently changing their meaning.
+        if isinstance(self.gamma, bool) or self.gamma != 1.0:
+            raise ValueError("batch TDLeaf supports only gamma=1")
+        if (isinstance(self.lambd, bool) or not math.isfinite(self.lambd)
+                or not 0.0 <= self.lambd <= 1.0):
+            raise ValueError("lambd must be finite and in [0, 1]")
+        if self.alpha is not None and (
+            isinstance(self.alpha, bool) or not math.isfinite(self.alpha)
+            or not 0.0 < self.alpha < 1e6
+        ):
+            raise ValueError("alpha must be finite and in (0, 1e6)")
+        if self.value_scale is not None and (
+            isinstance(self.value_scale, bool) or not math.isfinite(self.value_scale)
+            or self.value_scale <= 0.0
+        ):
+            raise ValueError("value_scale must be finite and positive")
+
 
 @dataclass(frozen=True, slots=True)
 class TDLeafUpdateResult:
@@ -53,6 +72,21 @@ def _normalized_value(
     return math.tanh(v / value_scale) if value_scale > 0 else 0.0
 
 
+def _learning_rate(checkpoint: LearnableMaterialCheckpoint, config: TDLeafConfig) -> float:
+    """Resolve the batch learner's historical default for both consumers."""
+    alpha = config.alpha
+    if alpha is None:
+        median = (
+            checkpoint.reference_median
+            if checkpoint.reference_median > 0
+            else checkpoint.value_scale / 4.0
+        )
+        alpha = 0.01 * max(median, 1.0)
+    if not (0.0 < alpha < 1e6):
+        raise ValueError(f"unreasonable learning rate {alpha}")
+    return alpha
+
+
 def tdleaf_update(
     trajectories: list[TrainingTrajectory],
     checkpoint: LearnableMaterialCheckpoint,
@@ -67,16 +101,7 @@ def tdleaf_update(
     if checkpoint.compact_nonlinear:
         raise NotImplementedError("TDLeaf does not support compact nonlinear checkpoints")
     value_scale = config.value_scale or checkpoint.value_scale
-    alpha = config.alpha
-    if alpha is None:
-        median = (
-            checkpoint.reference_median
-            if checkpoint.reference_median > 0
-            else checkpoint.value_scale / 4.0
-        )
-        alpha = 0.01 * max(median, 1.0)
-    if not (0.0 < alpha < 1e6):
-        raise ValueError(f"unreasonable learning rate {alpha}")
+    alpha = _learning_rate(checkpoint, config)
     if not (0.0 <= config.lambd <= 1.0):
         raise ValueError(f"lambda must be in [0, 1], got {config.lambd}")
 
