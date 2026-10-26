@@ -6,46 +6,45 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 quality endpoint source gate
+## Current decision -2026-10-27 policy-contrast diagnostic design
 
-[Observed-check hint proposal](LEAPER_CHECK_HINT_PROPOSAL_20261027.md) is now
-SOURCE_GATE_NO_GO / NOT_STARTED. PRIMARY withdraws its premature600minute
-execution request; no USER grant/deferral is invented and no repeated question
-is sent. Original plan/inputs remain historical, not an execution queue.
+[Panel-response contract](LEAPER_PANEL_RESPONSE_CONTRACT_20261027.md) is
+DESIGN_READY / NOT_STARTED, awaiting USER cumulative necessity assessment.
+This is a proposed coarse policy/resource contrast, not a known-weaker positive
+control, optimizer acceptance, or revival of the withdrawn600minute hint package.
+No controller/optimizer, Core/Player/solver/game or random episode is newly run.
 
-New autonomous Patrol4a688eb3 was fully preserved/read; its ec5snapshot predates
-our a927 proposal. Adopt endpoint-before-implementation and no-saturated-panel
-priority, not a claim that it directly reviewed the later hint map. Six source
-prefix24 query hashes and six movement signatures prove input availability only.
-Three-family changed quiet ranks would be mechanism exposure, not quality.
-There is no source evidence yet that these midgames resolve the old24DRAW panel.
-A new prefix name and a technically plausible no-extra-probe hint are insufficient
-changed premises for this trial. No new Core/Player/solver/game is run.
+New source/data analysis binds12completeh2frontiers(118Actions) to source OFF
+first decisions. Ideal same-root uniform disagreement averages180809/212160;
+sixn5roots9263/10608. These are exact exposure arithmetic, not error/win rates or
+future outcomes. No declarations/pass under fixed wire/schema defaults; compiled
+scope still requires future qualification. Existing random sampling can be reused,
+but its fresh-root/shared-TT/node-budget benchmark harness cannot serve unchanged.
+Source family/record exposure is retained; this is not a holdout or oracle label.
 
-Dot1793036815 read the actual a927 proposal and supports NO-GO; no code was run.
-Adopt its specific gaps: D6 rank effects may miss the1s delivered-action window;
-candidate/record-only110% can hide store/observer cost versus ORIGINAL. Existing
-keys still incur dict hash/equality/retention. No repair probe is now authorized.
+The cheapest proposed empirical falsifier is ALL6family n5h2 x exchanged S/U seats
+=12games. S is unchanged DEFAULT1s/PVSOFF/Q4hard8/Nativeall; U samples complete
+legalAction identities without tactical filtering. At most564S+564Uselections,
+900s batch, no seed/prefix/time sweep. Uniform is not proved weaker. Actual
+resource use differs, no idle padding; relative/censored outcomes and scope are
+fixed in the contract. A positive response cannot certify sensitivity to small
+ordering changes and never automatically authorizes an optimizer or next trial.
 
-This is a revisable scientific choice, not a universal WDL-oracle requirement.
-Keep observed-check reuse and strict geometry as unimplemented alternatives;
-main selective extension remains deferred. Old child/PVS/profile studies stay
-closed. AUX owns its separate terminal-frontier/truth work; do not duplicate it.
+AUX89e1274d published terminal bounds are source-read, not rerun or duplicated:
+all12h2values unknown,0strict action gaps; partial nonloss options do not constrain
+arbitrary future U/S choices. No certificate/TD/unit/training takeover.
 
-Main: can a prespecified weaker-policy positive control expose panel resolution?
-|At the next research opening read current reviews, then independently design a
-single source-only matched full-history control from published consumers and
-existing evidence; distinguish relative outcome sensitivity from action WDL |
-Concrete prospective endpoint/cheaper falsifier or explicit source gap |No new
-run before its own necessity assessment; no600trial revival, old-slot refill,
-favorable prefix/time scan, H6-to-H96 label transfer or AUX certificate solving.
-New replies are not required to do this design; do not stop merely for silence.
-Backup1: preserve exact complete histories, TT/terminal/clock semantics, prior
-source audits and costs; old420.478498 plus previous prep/delivery454.219537
-and actual current intake/delivery carry forward, never a new cost allowance.
-Backup2: follow genuine late Dot/new autonomous reviews at meaningful intake;
-read/adopt/executed remain distinct. Current review/transport does not reset
-last ENDED_user_decision session or count as a normal60minute segment.
+Main: is the limited panel-response diagnostic worth its cost? |Present the
+published contract once; after USER grant freeze actual carried total/deadline,
+caller/source scope and raw inputs before qualification/12games |USER necessity
+decision or explicit deferral; no implied grant |Prior470.828912min+actualcurrent
+prep/delivery carries; prospective45-55min, wholecap580PROPOSED only; no reset.
+Backup1: keep [observed-check hint](LEAPER_CHECK_HINT_PROPOSAL_20261027.md)
+SOURCE_GATE_NO_GO/NOT_STARTED; its600request WITHDRAWN, no response required.
+No child/PVS/profile refill, new geometry/extension/cache or product activation.
+Backup2: source-only checks and meaningful new reviews remain possible without
+Dot replies; current request1793040335/+5check18:53:14Z completed, about2m40late.
+Read/adopt/executed distinct; no newworker/schedule or AUX assignment.
 
 ## Retained closed child-construction assessment
 

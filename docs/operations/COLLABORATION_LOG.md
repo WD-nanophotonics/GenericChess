@@ -8091,3 +8091,31 @@ not a new60minute research sample; no offline gap or review/administration time
 was added to the8.722minute ledger. Next independent source-only design remains
 possible without a new message, but new experimental runs need their own concrete
 scope and cumulative necessity assessment. Existing hourly schedules unchanged.
+
+
+## PRIMARY policy-contrast source design -2026-10-27
+
+Fresh GitHub sandbox376cb684Patrol unchanged. Exact Slack roots/comments and
+current own thread preserved; AUX new root1793037535 and prior followup read.
+Published AUX terminal report89e1274d/blob37c8d5fb is saved/read as source evidence,
+not rerun: all12h2values unknown and0strict local preference, with partial safe
+strategies. PRIMARY does not copy its proof/loss/TD/unit work or make new tasks.
+
+New own round0fc768d3-9dee-4217-b64c-128ee2adf534 opened18:44:18.735443UTC;
+AGENT_REQUEST GC-SLACK-20261027-034519-3232e7aa/root1793040335.197359 sent
+18:45:35.197359UTC, exact payload readbackPASS. One delayed check completed
+18:53:14.984093UTC versusdue18:50:35.197359UTC,2m39.786734late while source
+analysis continued; preserve this timing failure, not expiry or on-time success.
+Dot1793040532.875389 source-only reply adopted: call it policy contrast, not
+known-weaker positive control; reuse sampling not fresh-root harness; preserve
+declarations/Action multiplicity/censoring, no tiny-node-as-uniform shortcut,
+no automatic optimizer approval. It grants neither execution nor USER budget.
+
+New PRIMARY saved-data arithmetic binds24old members/12complete root queries,
+118Action labels and exact uniform disagreement180809/212160. Prospective
+sixn5/all6family scope has9263/10608mean; no random sample or new engine query.
+Static schema/compiler and frozen-driver AST checks qualify source description,
+not runtime or WDL. Actual compiled qualification remains unexecuted. One
+12game panel-response contract is now reviewable, with lower engineering scope
+than the withdrawn hint package;45-55future minutes and cumulative580cap are
+proposals requiring USER necessity assessment, not an old-budget transfer.
