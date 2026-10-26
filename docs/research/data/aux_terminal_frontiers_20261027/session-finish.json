@@ -1,0 +1,46 @@
+{
+  "id": "a0a30c04-7cf8-423d-a413-5725d15eba69",
+  "started_at": "2026-10-26T16:22:08.327135+00:00",
+  "ended_at": "2026-10-26T17:51:00.247683+00:00",
+  "state": "ended",
+  "reason": "safe_checkpoint",
+  "duration_gate_passed": true,
+  "effective_work_seconds": 3887.378158,
+  "elapsed_minutes": 88.865,
+  "research_stage_count": 5,
+  "memo_synced": true,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-26T16:31:41.154385+00:00",
+      "evidence": "One-step pilot12roots/118Corechildren0terminal in0.110sec. Bounded full PVS pass COMPLETE2115queries/1775fullcontexts,14803newhypotheticalCorechildren,232actualterminalchildren(allDRAW:148maxply/61repetition/23stalemate),8.038sec.20exactrootDRAWexposures allply95;118selectedWDLoptimal exposures=100forced+18nonforcedhorizonterminal.0provedbadmoves; ongoing remainsUNKNOWN. Newlabels are actualone-step terminalfacts, not oldH6 or strength.",
+      "question": "Reuse Core legal successors and fixed-seat action bounds to derive exact one-step terminal certificates on supplied PVS contexts, with a deterministic12root cost/admission pilot and no Player/newgames/fullgamesolve.",
+      "started_at": "2026-10-26T16:27:33.642128+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T16:46:32.415072+00:00",
+      "evidence": "221relevant regressionsPASS(21newsource/algebra controls). Existing finitecheckers verify93distinct contexts:18completeone-stepDRAW+75one-sidedDRAWoption; falsecompleteDRAW/upperboundmissingdefense rejected. StaleContextliveSession mutation guard added. Maxply96->97controlledcounterfactual18sameboards/turn/actions generates150newCorechildren,alloldexactDRAWboundsnolongerexact; notprovedtrueWDLchange. Finalqualifiedfullsourcepassretains2115/1775,14803newhypoCorechildren,232terminalDRAW,0provedbadmoves; finalcodehashes saved. No deeper solve or automaticdepthextension.",
+      "question": "Validate one-step proof authority and distinguish absolute WDL, relative optimality and history/horizon dependence with actual saved-source controls, existing finite proof checkers and adversarial regressions.",
+      "started_at": "2026-10-26T16:33:47.251909+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T17:17:21.511774+00:00",
+      "evidence": "No deeper graph expansion: finite backwards pass14815record-nodes/14803edges/12initialroots,12808unexpandednonterminalleaves retainedUNKNOWN.77newone-sidedboundsverifiedbyexistingAND/ORchecker(589nodes512edges);earliestply28 four-edge stalemate upperbound[-1,0],notexactDRAW/deadzone.18exactqueryparentDRAWcertificatesgive20ongoingselected-actionQ0exposures(18unique);0strictgap,12initialh2rootsallUNKNOWN. Materialconstraintscan18contexts/1710savedplies,per-rule4infeasibleungatedA=1exactWDLfits;notfitpricesorlearnerbug. ExistingadapterterminalfastpathtestedwithPlayerconstructorforbidden;directterminalgradient0doesnoterasepriorTDcredit.51focusedproof/learner/arithmeticcontrolsPASS;allzeroobservedconstraintcompletion feasible,notfullgameWDLsolution.",
+      "question": "Determine what one-step certified horizon zeros can identify about a fixed-scale material surrogate, using per-rule exact feature constraints and the existing learner's terminal-leaf bypass; distinguish representation limits from actual learning/search behavior without training or new Player calls.",
+      "started_at": "2026-10-26T16:50:11.040935+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T17:34:35.801276+00:00",
+      "evidence": "253final related regressionsPASS(14.68sec). Final77finite-strategy verificationPASS,589nodes/512edges/209terminal occurrences, no graphstateexpansion. Counterfactualmax97: prehorizonfour-edgestalematecertificateexplicitlyreverifiedwhiledefaultcontextINCOMPATIBLE; horizoncertongoingleavesstayUNKNOWNwithoutmissingcontinuations. Actualwitness-deviationatg0526/g0620alsocertifiednonlossviachildproof69e33770...,so singletonwitnessmatchisnotactionaccuracy. Two knownsafeoptionsatply29/31,other10/7UNKNOWN. Reportderivespartial-riskguaranteeversusstrictregret/strength andmaterial/TDlimitations. Samea0UUID sustained, noPlayer/newgames/trainingcampaign/nativebuild/fullgamesolve.",
+      "question": "Determine when a finite source strategy can be explicitly revalidated under a max-ply-only rule counterfactual without importing source labels: contrast horizon-only DRAW certificates with the four-edge pre-horizon stalemate bound using the existing checker, no missing-state expansion.",
+      "started_at": "2026-10-26T17:17:21.795533+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T17:49:16.380139+00:00",
+      "evidence": "Predeclared analytic backup only: existingModel27staticcasesconfirmpredictioninvarianceforpositivekwhenweightsANDscalearedividedbykwithchannelspermuted;24/27mismatchifscaleunchanged. Two actualModelgradientcounterexamples showmappedfixed-unit/fixed-scalelearningtangentfamiliesdiffer;puretype-renamingwithsamephysicalunitisnotthisoperation. NoCore/Playercalls, modelupdatesortraining. Derivationandunit-scale-gauge.json recorded;no furtherfrontier/depth/closureworkafterProstop.",
+      "question": "Derive and check when changing the declared fixed material unit preserves existing Model predictions and comparable conditional targets; distinguish weight ratios, value scale and full-rule truth without new Core frontiers, search or training.",
+      "started_at": "2026-10-26T17:45:46.153983+00:00"
+    }
+  ],
+  "effective_work_minutes": 64.78963596666667,
+  "cost_note": "88.865-minute origin-to-finish window plus actual closing delivery; prior cumulative costs retained. Administrative/transport time is not research credit."
+}

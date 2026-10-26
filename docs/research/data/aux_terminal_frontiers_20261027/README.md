@@ -15,3 +15,6 @@ then scripts.propagate_pvs_terminal_bounds, scripts.verify_terminal_frontier_pro
 and scripts.analyze_frontier_learning_limits with explicit --frontiers/--derived/
 --output paths. Each module has --help. Store regenerated outputs privately.
 No oldH6 solve or state/TT quotient is part of this pipeline.
+
+unit-scale-gauge.json.gz contains 27 synthetic static prediction controls, not a fit.
+session-finish.json records the accepted 64.78964 effective-minute session and actual work intervals.

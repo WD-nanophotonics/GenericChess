@@ -1,6 +1,6 @@
 # Terminal-frontier certificates, conditional zeros and learner targets
 
-Status: ACTIVE DEV_AUX session a0a30c04-7cf8-423d-a413-5725d15eba69. Last closed accounting checkpoint:61.28587effective minutes; no work interval is open during publication. No normal finish is claimed. This round performs new bounded Core counterfactual work and finite proof deductions; it is not a zero-compute reread. No new Player calls, played games, full-game solver, rule generator, training campaign, native build or product default is introduced.
+Status: ENDED DEV_AUX session a0a30c04-7cf8-423d-a413-5725d15eba69. Accepted safe-checkpoint finish at 2026-10-26T17:51:00.247683Z: 3887.378158 confirmed effective seconds = 64.78964 minutes, five closed research intervals and five checkpoints. The duration gate passed and memo synchronization succeeded; [public finish receipt](data/aux_terminal_frontiers_20261027/session-finish.json) preserves actual intervals. This round includes new bounded Core counterfactual work and finite proof deductions. No new Player calls, played games, full-game solver, rule generator, training campaign, native build or product default is introduced.
 
 The new facts are useful conditional truth, but do not identify a strict local WDL preference or a transferable material price. Complete-history finite certificates prove18near-horizon query parents DRAW and77additional one-sided strategy bounds. Twenty recorded actions into ongoing children now have exact Q=0 from a separately verified child certificate. All12initial h2opening values remain UNKNOWN. These are different statements from the24played PVS games ending DRAW.
 
@@ -133,3 +133,23 @@ The next useful AUX route is a genuinely new compatible nonzero/one-sided qualit
 ## New Pro intake at the publication milestone
 
 Latest sandbox4a688eb334463f72f320b0e78521e7abe24e677f adds Pro02:04review, blob8eafba5353ed18e7bdf3fece499e9049cbd357cb, SHA256bbc8c7038c3c305f2e1748bdec30ba593850743b748013900b1182e431b2ab0e. The raw original was saved before assessment; production runtime is still unchanged. Adopt its narrow terminal-bound/denominator task and stopping condition on no distinguishing edges. Initial one-step work already closed at16.87792effective minutes. The partial-graph deductions and explicit finite revalidations above occurred before this intake; their actual Core work/costs are retained, not represented as facts from the untouched source packet. No further frontier expansion, deeper solve, repeat PVS panel or PRIMARY check-hint task follows. User authorization and existing role boundaries remain.
+
+## Analytic backup: declared unit, scale and transfer interpretation
+
+After stopping all further frontier/closure expansion, a predeclared static Model-only check examined material-unit reparameterization. This adds no Core/Player call, model update or fit.
+
+For a positive physical coefficient k=wB, changing the declared unit from A to B can preserve a prediction at the mapped parameter vector only by carrying both the feature permutation and the value scale: w'=w/k and scale'=scale/k. Then tanh((w'·phi')/scale') equals the old prediction. All27synthetic static cases passed. Keeping the old scale despite preserving weight ratios changed24of27predictions.
+
+This is not a failure of pure piece-name equivariance. Renaming pieces while retaining the same physical unit simply permutes the channels. Selecting a DIFFERENT physical unit changes the fixed-unit/fixed-scale modelling constraint. A model handoff must state which operation occurred.
+
+Prediction equivalence at one parameter vector also does not make fixed-scale learning dynamics equivalent. With physical weights(A=1,B=2), old scale10, mapped weights(B=1,A=.5)and mapped scale5, the two models agree initially. At material feature(A=1,B=0), the old free-B gradient is0and the new free-A gradient is0.1980132582. At(A=0,B=1), they are0.0961042983and0. There is no single learning-rate rescaling that identifies those two fixed-scale tangent families. Following a coordinate transformation during updates would also require the coupled scale/Jacobian change, not just resetting the fixed coefficient.
+
+A zero or negative candidate kcannot be normalized into this positive-unit/positive-scale convention by division. This further explains why the earlier algebraic requirements B=0or B=-1are not valid empirical price estimates or an innocuous unit switch.
+
+These are static/synthetic interpretation controls. Actual terminal WDL, rule proofs and full histories are unchanged. Neither static prediction equivalence nor price-ratio agreement establishes equal search work, cancellation, chosen actions, training benefit or strength.
+
+## Accepted closure and consultation follow-through
+
+253 related pytest cases passed, separately from 27 synthetic static gauge assertions. The complete origin-to-finish cost window is 88.865 minutes plus actual closing delivery, with only 64.78964 minutes credited as effective research. Prior cumulative costs above remain carried. The static backup is complete; [gauge data](data/aux_terminal_frontiers_20261027/unit-scale-gauge.json.gz) and its hash are published.
+
+Milestone d4eb948f07b43d2ba787c3701b7f111afa64326b was pushed and its full remote SHA verified before follow-up 1793036639.125799 at 17:43:59.125799 UTC. The one delayed full-thread check at 17:49:46 UTC found no new reply. The question asks whether partial interval/safe-option targets are valid validation assets without singleton-witness action accuracy, and which assumptions or counterexamples matter. It remains pending for the next meaningful intake; no repeat poll, resend or reply gate. Next distinct backups concern declared physical-unit/scale model handoff and interval-target semi-gradient mathematics, without fitting, rollout or further frontier/closure expansion.

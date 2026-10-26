@@ -63,6 +63,11 @@
       "sha256": "ccdc9b4e1ecd718d84a3fc2ab9af937cb118b7a94b6584b62d3af06acb85ffe6",
       "gzip_bytes": 255,
       "uncompressed_bytes": 528
+    },
+    "unit-scale-gauge.json.gz": {
+      "sha256": "a77071e6100a7e848cac1a99aabb008f66ae3f0e9b776f8e2126f6c5c94bb012",
+      "gzip_bytes": 1225,
+      "uncompressed_bytes": 12006
     }
   },
   "code": {
@@ -132,5 +137,10 @@
   "new_training_campaigns": 0,
   "complete_game_solver_calls": 0,
   "new_Core_work": "Explicitly counted one-step counterfactual and finite verification work; see report. Unit/manual Core counts UNKNOWN; not a zero-compute source intake.",
-  "verification": "253relatedtestsPASS; all77newone-sidedstrategies independently checked through existing Core finite checker; same Core authority, not another rules implementation."
+  "verification": "253relatedtestsPASS; all77newone-sidedstrategies independently checked through existing Core finite checker; same Core authority, not another rules implementation.",
+  "session_finish": {
+    "path": "session-finish.json",
+    "sha256": "ebda4668c2445f2f16e45d6cef75cf092736c9943124b228106b935fe9e05c88",
+    "bytes": 5606
+  }
 }
