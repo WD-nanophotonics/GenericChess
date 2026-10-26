@@ -183,3 +183,26 @@ for shorter bounded work remains; AUX files, state and computation were untouche
 Scientific acceptance records66.243effective minutes/1891actual intervals and7
 relevant regression tests. Full delivery time is measured separately; no new
 research credit is added for publishing, messages or the delayed reply check.
+
+## Late consultation and budget-boundary clarification
+
+The opening Dot reply arrived481.635s after sending, later than the single+5min
+check, and was read in full at closing. Its controller/provenance/cost cautions
+are adopted; its concrete PVS OFF/ON ablation is DEFERRED, not executed or
+attributed as the cause of experiments completed before reading it.
+
+Dot correctly identified contradictory live text at6565: an older Current Main
+still described extending representation-sensitivity into a real-controller
+experiment, while the leading review correction and NEXT_WORK selected cross-rule
+strategy design. That paragraph is now explicitly superseded. This study does
+not reverse declarations, test encoding fallback sensitivity, use old geometry
+inputs/results/labels or complete its36failed frontiers. It tests existing root
+information as search-order interventions and a new prospective resource-population
+endpoint. All current preparation/source work/failures/threephases/delivery stay
+in one105/115minute budget. The earlier geometry109.781whole/65.585effective
+minutes and H6 costs are retained, not erased. General controller-source knowledge
+is inherited background; its exact reusable fraction was not separately measured
+and is UNKNOWN, not assigned invented zero minutes. The independent-boundary
+judgment rests on the different intervention/inputs/endpoint, not on a new UUID.
+Any actual continuation of the old encoding question must carry its old cost;
+any expected related>=120minute future run still needs USER assessment.

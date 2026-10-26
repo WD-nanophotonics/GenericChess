@@ -7949,3 +7949,10 @@ evidence, not active flags or idle/admin gaps. Existing original timers bound
 eval/ordering regions but leave77.7%outerwall unassigned; next profiling question
 is proposed, not executed. All current phase/wholecost and source hashes remain
 bound; no history rewrite, product/default change, old16/H6 revival or extra role.
+
+Closing read found the opening Dot reply after481.635s, beyond initial+5min
+check but still valid. Adopt controller/provenance/cost cautions, defer its PVS
+OFF/ON alternative, distinguish read/adopt/executed chronology. Clarified stale
+encoding-Main text and independent intervention/input/endpoint budget boundary;
+prior cost and UNKNOWN shared-source reuse remain explicit. Shared AUX dialogue
+was read for source context only, not treated as authority to assign AUX work.

@@ -49,6 +49,14 @@ No further phase was added after reading them. PRIMARY assigned no new AUX task
 and did not inspect/change its private computation/state. Existing hourly ACTIVE
 schedules remain; each role owns its user-authorized future work.
 
+Late solicited Dot reply1793006689 was read after the one+5min check. Adopt its
+controller/provenance/budget cautions; PVS OFF/ON ablation is a DEFERRED alternative,
+not performed or automatically queued. The old encoding-sensitivity Main paragraph
+was contradictory live text and is explicitly superseded below; any genuine
+continuation still carries old costs. Current study has different interventions,
+new inputs and endpoint; inherited general source-reading reuse fraction remains
+UNKNOWN, not invented as zero. See report and late-adoption evidence.
+
 ## Retained prospective geometry study — CLOSED
 
 
