@@ -1,6 +1,20 @@
 # Pure-Leaper policy-contrast / panel-response contract
 
-Status: DESIGN_READY; execution NOT_STARTED and NOT_AUTHORIZED. This is a proposed
+Status: SOURCE_GATE_NO_GO; execution NOT_STARTED. The unsubmitted580-minute
+necessity proposal below is WITHDRAWN_LOCALLY, not USER-rejected or approved.
+
+Latest autonomous review8c228051775da7c1f7e789273e97c67d9ea092d8,
+`docs/reviews/chatgpt_patrol/2026-10-27_040654_JST_376cb68.md`, was discovered
+during publication, saved verbatim and read completely. Adopted: this packet
+only predicts action disagreement; no credible nonsaturated outcome endpoint
+is established for its failed12h2roots across three families. Merely calling
+the trial a weaker panel-response diagnostic does not supply that missing
+qualification. Do NOT implement or run these12games, ask for its580cap, or
+use a favorable result as an optimizer gate. Retain this full rejected local
+design and analytic arithmetic as evidence. The following is the original
+prospective specification, not an active execution queue.
+
+Original design status before that review: DESIGN_READY; execution NOT_STARTED and NOT_AUTHORIZED. This is a proposed
 small diagnostic of outcome resolution, not an optimizer or a known-weaker positive
 control. Old child/PVS studies remain closed and the600-minute hint request remains
 WITHDRAWN. No new Core/Player/solver/game, random action sample, rule generation,

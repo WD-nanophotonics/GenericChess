@@ -6,45 +6,31 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 policy-contrast diagnostic design
+## Current decision -2026-10-27 endpoint qualification remains first
 
 [Panel-response contract](LEAPER_PANEL_RESPONSE_CONTRACT_20261027.md) is
-DESIGN_READY / NOT_STARTED, awaiting USER cumulative necessity assessment.
-This is a proposed coarse policy/resource contrast, not a known-weaker positive
-control, optimizer acceptance, or revival of the withdrawn600minute hint package.
-No controller/optimizer, Core/Player/solver/game or random episode is newly run.
+SOURCE_GATE_NO_GO / NOT_STARTED. Adopt new independent Patrol8c228051, read in
+full during publication: same-root uniform disagreement is not a credible
+non-saturated cross-family quality endpoint. Its unsubmitted580minute proposal
+is WITHDRAWN_LOCALLY, not USER-denied or granted. Do not implement/run12games.
+The original600hint request remains withdrawn. Preserve source arithmetic,
+fullhistories and all stopped designs as evidence, not an execution queue.
 
-New source/data analysis binds12completeh2frontiers(118Actions) to source OFF
-first decisions. Ideal same-root uniform disagreement averages180809/212160;
-sixn5roots9263/10608. These are exact exposure arithmetic, not error/win rates or
-future outcomes. No declarations/pass under fixed wire/schema defaults; compiled
-scope still requires future qualification. Existing random sampling can be reused,
-but its fresh-root/shared-TT/node-budget benchmark harness cannot serve unchanged.
-Source family/record exposure is retained; this is not a holdout or oracle label.
-
-The cheapest proposed empirical falsifier is ALL6family n5h2 x exchanged S/U seats
-=12games. S is unchanged DEFAULT1s/PVSOFF/Q4hard8/Nativeall; U samples complete
-legalAction identities without tactical filtering. At most564S+564Uselections,
-900s batch, no seed/prefix/time sweep. Uniform is not proved weaker. Actual
-resource use differs, no idle padding; relative/censored outcomes and scope are
-fixed in the contract. A positive response cannot certify sensitivity to small
-ordering changes and never automatically authorizes an optimizer or next trial.
-
-AUX89e1274d published terminal bounds are source-read, not rerun or duplicated:
-all12h2values unknown,0strict action gaps; partial nonloss options do not constrain
-arbitrary future U/S choices. No certificate/TD/unit/training takeover.
-
-Main: is the limited panel-response diagnostic worth its cost? |Present the
-published contract once; after USER grant freeze actual carried total/deadline,
-caller/source scope and raw inputs before qualification/12games |USER necessity
-decision or explicit deferral; no implied grant |Prior470.828912min+actualcurrent
-prep/delivery carries; prospective45-55min, wholecap580PROPOSED only; no reset.
-Backup1: keep [observed-check hint](LEAPER_CHECK_HINT_PROPOSAL_20261027.md)
-SOURCE_GATE_NO_GO/NOT_STARTED; its600request WITHDRAWN, no response required.
-No child/PVS/profile refill, new geometry/extension/cache or product activation.
-Backup2: source-only checks and meaningful new reviews remain possible without
-Dot replies; current request1793040335/+5check18:53:14Z completed, about2m40late.
-Read/adopt/executed distinct; no newworker/schedule or AUX assignment.
+Main: is a further source-only endpoint qualification worth its cost?
+|Present [bounded proposal](LEAPER_ENDPOINT_QUALIFICATION_PROPOSAL_20261027.md)
+once for USER necessity; after grant map all10original4x4rules/controller-source
+provenance and finite outcome controls before any empirical proposal |Decision
+or explicit defer; execution NOT_STARTED |20-30future whole minutes, cumulative
+570PROPOSED only; no new Core/Player/solver/game, no AUX truth/TD duplication.
+New saved-game join binds480oldslots/331records,64ABwins across8of10movement
+families; geometry overlaps failedh2onlyworlds3/8. Old512node/Q0 is notcurrent1s/Q4.
+Backup1: preserve strict Action identities and actual resource/censoring contract;
+all12same-root ideal disagreement180809/212160 and n5mean9263/10608 are exposure
+arithmetic only, not error, winrate, weaker-policy proof or endpoint qualification.
+Backup2: current new-round Dot1793040335/delayedcheck18:53:14Z done (~2m40late).
+Patrol review outranks solicited Dot support; source/read/adopt/executed distinct.
+Own cumulative prior470.828912min+actualcurrent preparation/delivery carries;
+no old grant or discarded580/600request authorizes another experiment.
 
 ## Retained closed child-construction assessment
 
@@ -130,7 +116,7 @@ Prior [root-order/quality study](LEAPER_ROOT_ORDER_QUALITY_20261026.md) is close
 1931returns long2WIN22DRAW, wins one movement family;23eligible games/11pairs
 remain limited development evidence. This diagnostic adds no games.
 
-## Retained prospective geometry study — CLOSED
+## Retained prospective geometry study â€” CLOSED
 
 
 [Prospective geometry/consumer study](LEAPER_PROSPECTIVE_GEOMETRY_20261026.md)
@@ -156,17 +142,17 @@ AUX a475104a's published consumer source audit was read/adopted without rerun;
 its first assignment is complete and later tasks come from user. Both schedules
 remain hourly/ACTIVE. No second assignment or other-checkout write was made.
 
-## Retained compiled-hash judgment —2026-10-26
+## Retained compiled-hash judgment â€”2026-10-26
 
 [Compiled hashing](LEAPER_COMPILED_HASH_20261026.md) produced a scoped exact-runtime
 improvement: 72 fixed-work returns, 33 nonterminal matched pairs, wall cost -5.32%
 and CPU -5.27%, with action/score/PV/work/TT/Native parity. Both tuning switches
 default OFF. The independent Position-hash memo has only incomplete factorial
 cost evidence: 59/96 returns, 37 NOT_RUN after a real zero-UTC ledger rejection;
-no refill. Its isolated 10Ã— component speedup is not a whole-query claim.
+no refill. Its isolated 10Ãƒâ€” component speedup is not a whole-query claim.
 
 38 equal-time returns keep all 19 choices: both match 17 existing optimal labels,
-with no repairs or regressions. The known p49/p53 controls are actually 5Ã—5 and
+with no repairs or regressions. The known p49/p53 controls are actually 5Ãƒâ€”5 and
 remain wrong. This panel is exposed and largely at ceiling, not a strength
 holdout. 248 full-history cases / 76,440 sampled branches and 125 regression tests
 pass exact hashes, TT keys, terminal, collision and undo contracts. No class-wide
@@ -184,7 +170,7 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Historical first-task coordination —2026-10-26
+## Historical first-task coordination â€”2026-10-26
 
 Both existing roles are hourly/ACTIVE. PRIMARY assigned the existing DEV_AUX
 one bounded15minute zero-query consumer/source audit, now completed; later tasks
@@ -197,7 +183,7 @@ and opportunity-cost gate adopted; the study's positive narrow result remains,
 but further H6 syntax iteration is deferred, not an automatic long-term mainline.
 This configuration/delegation adds zero research time to the ended segment.
 
-## Retained H6 syntax candidate — further iterations DEFERRED
+## Retained H6 syntax candidate â€” further iterations DEFERRED
 
 [H6 syntax study](LEAPER_H6_SYNTAX_20261026.md) consumes pinned AUXH6/repeat2
 full RuleSets/records as data; no AUX solver/checkout work.1520 new returns over
@@ -206,7 +192,7 @@ Final within-build300-call screen preserves work/action/value/PV and measures
 constructor+choose -7.11%; shared replay/record costs are not allocated by arm.
 S3-alone has no demonstrated useful net gain; practical Python source-recompile/
 per-position guard route is3.89x slower. Additional traced Python cache memory
-52â€“96KiB; full RAM/Native heap UNKNOWN.18340ordered frontiers,5346attack predicates,
+52Ã¢â‚¬â€œ96KiB; full RAM/Native heap UNKNOWN.18340ordered frontiers,5346attack predicates,
 100synthetic doublechecks and budget/recovery parity support limited correctness,
 not all-class/heldout/strength success. Product/default/installed backend unchanged.
 
@@ -249,7 +235,7 @@ assessment. The 68-call/18-game old plan stays NOT_STARTED_DEFERRED. A new UUID 
 controller label does not reset either cost. Original price profiles stay fixed.
 
 [Native DEFAULT/PVS](LEAPER_NATIVE_DEFAULT_20261025.md): 64 same-rule 50k histories
-cost 839.615â†’519.211s, identical work/actions, 62/64 at 1.5s both, 24 games all DRAW.
+cost 839.615Ã¢â€ â€™519.211s, identical work/actions, 62/64 at 1.5s both, 24 games all DRAW.
 [Ordinary-Q sorting](LEAPER_ORDINARY_QORDER_20261025.md) remains closed negative:
 +0.95% cost and one candidate LOSS among 24 games. LMR/TrueDRAW negative evidence
 also remains closed. Faster/deeper does not monotonically improve decisions.

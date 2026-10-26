@@ -2,7 +2,7 @@
   "S": "Unmodified make_player(c,False) from frozen/current pilot; fresh per game, own TT retained across own turns. No hint map/PVS/extension/cache flags. Nativelegality+availability+check explicitON. D64/500k/Q4hard8,caller1s; constructor/factory inside firstS target.",
   "U": "Complete GameSession.legal_actions list, stable canonical record_value-JSON ordering, rng.randrange(k), no tactical/leaf fallback/filter/dedup; fresh per leg and same pair seed; not an AlphaBetaPlayer call",
   "actual_future_engine_calls": "NOT_STARTED; qualify6replays/frontiers then actual played transitions and saved-PV replay counted, fixture/uninstrumented totals UNKNOWN if not instrumented",
-  "approval": "NOT_RECEIVED; USER cumulative necessity assessment required before implementation/qualification/games. Old460childgrant and withdrawn600hintrequest are NOT authority.",
+  "approval": "580 proposal WITHDRAWN_LOCALLY BEFORE ASKING USER after independent review8c228051; not a USER denial/grant; no implementation/qualification/games.",
   "base_sha": "376cb684519c420c8ebd295e18e23f5a5c9b616d",
   "budget_seconds_per_choice": 1.0,
   "current_preparation_cost_origin": "2026-10-26T18:38:07.380+00:00",
@@ -165,7 +165,8 @@
   "source_case_selection": "ALL6family n5 h2, fixed metadata/cost choice after source exposure; no outcome filter; n6 only analytic context",
   "source_input_gzip_sha256": "dc471719ad6720f97be01b0a052cdc14728dfdab29dbe4b8bdb8a0785fb9dd93",
   "source_inputs": "docs/research/data/leaper_root_order_quality_20261026/prepared-v2/inputs.json.gz",
-  "status": "DESIGN_READY_EXECUTION_NOT_AUTHORIZED",
+  "status": "SOURCE_GATE_NO_GO_NOT_STARTED",
+  "superseding_review": "8c228051775da7c1f7e789273e97c67d9ea092d8:docs/reviews/chatgpt_patrol/2026-10-27_040654_JST_376cb68.md",
   "time_qualification_seconds": 1.1,
   "whole_prior_charged_minutes": 470.8289122
 }
