@@ -1,3 +1,9 @@
+## DEV_AUX same-segment completion candidate89c5ef59 —2026-10-27
+
+AUX independently repaired the maintained episode observer's explicit model/choice attribution and positive-finite wall-budget admission at runner/API entry;25focusedPASS. Actual post-query cancellation can retain1paid query/7nodes but0plies/0TD observations; no accepted-sample or quality claim comes from returned exposure. Earlier model/hash/cost/ordering documentation is published; all old numerical evidence and Native-unit execution corrections retained. No new researchPlayer/game/training/build/solver, oldcap reset or PRIMARY task adoption.
+
+GitHub Pro sandbox7cbdbbb3/blobfda5dfc2 and separate Dot channel/full thread unchanged at recovery. Existing Dot advice remains source-read/adopted, not independent execution; no new reply or duplicate request. Prior premature handoffs were unfinished, not valid finishes. SameUUID now60.1600207confirmed effective minutes excluding interrupted/uncredited/admin/offline intervals; required accepted finish remains pending at this entry. User standing support authorization was used without repeat approval. Further report/publication time earns no research credit.
+
 ## DEV_AUX evaluator identity milestone89c5ef59 —2026-10-27
 
 AUX independently traced the actual legacy Native payload and TT consumers. Checkpoint/config hashes are provenance; fresh fixed-evaluator engines provide TT isolation. Equal actual numeric inputs with matched root/history/TT/node conditions predict equal computation, not equal elapsed wall time, strength or universal search correctness. Own floating learner and semantic Native are distinct consumers. Two misleading docstrings corrected with unchanged executable AST; no new Native/Player/game/teacher/build/solver/training. Prior 22Native unit-case correction stays in the existing report; no old result or cap reopened.

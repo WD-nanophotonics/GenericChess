@@ -683,7 +683,8 @@ def test_runner_charges_opening_time_and_uses_training_deadline(monkeypatch, tmp
     assert saved['missing_evaluation_slots'] + saved['evaluation_slots'] == 4
 
 
-def test_coupled_runner_shares_initial_and_seeds_but_not_profile_budgets(monkeypatch, tmp_path):
+@pytest.mark.parametrize('query_actor_offset, returned_choice', [(0, False), (1, False), (0, True), (1, True)])
+def test_coupled_runner_shares_initial_and_seeds_but_not_profile_budgets(monkeypatch, tmp_path, query_actor_offset, returned_choice):
     import json
     from pathlib import Path
     from types import SimpleNamespace
@@ -707,8 +708,9 @@ def test_coupled_runner_shares_initial_and_seeds_but_not_profile_budgets(monkeyp
         learner = kw['learner']
         calls.append((list(model.weights), kw['seed'], kw['learner_color'],
                       env.record(), kw['seconds'], learner is not None))
-        kw['on_query'](0, kw['learner_color'], Receipt(None, None, None, False,
-            (), kw['max_nodes'], False, 0, .1, 'NODE_CAP_UNKNOWN'))
+        choice = SessionChoice('DECLARATION', declaration_id='returned-only') if returned_choice else None
+        kw['on_query'](0, kw['learner_color'] ^ query_actor_offset, Receipt(choice, None, None, False,
+            (), kw['max_nodes'], returned_choice, 0, .1, 'NODE_CAP_UNKNOWN'))
         clock[0] += .1
         if learner is not None:
             model.weights[1] += learner.lam
@@ -745,3 +747,111 @@ def test_coupled_runner_shares_initial_and_seeds_but_not_profile_budgets(monkeyp
     # Active-time accounting excludes the other profiles' work.
     assert all(0 < value < .2 for value in result['profile_seconds'].values())
     assert result['contrasts']['lambda_b-lambda_a'] == [-2., 2.]
+    # Persist the action-generating parameters, not merely the post-update
+    # episode weights. Query callbacks occur before the episode TD update.
+    queries = [json.loads(s) for s in (args.output / 'queries.jsonl').read_text().splitlines()]
+    assert len(queries) == len(calls)
+    for row, query, call in zip(rows, queries, calls):
+        assert row['before_weights'] == call[0]
+        expected = call[0] if query['actor'] == query['color'] else [1., 1.]
+        assert query['acting_model'] == {'weights': expected, 'fixed': 0, 'scale': 10.}
+        assert query['choice'] == ({'kind': 'DECLARATION', 'action': None,
+            'declaration_id': 'returned-only'} if returned_choice else None)
+        # No returned query choice was committed in this stubbed episode.
+        assert row['final_record'] == row['start_record']
+    assert rows[0]['before_weights'] != rows[0]['weights']
+    assert queries[0]['acting_model']['weights'] != rows[0]['weights']
+
+
+def test_runner_choice_record_preserves_action_and_declaration():
+    from scripts.incremental_learning import _choice_record
+    from generic_chess.learning.incremental import SessionChoice
+    from generic_chess.core.actions import (
+        BoardMove, DropMove, PassAction, SemanticBoardMove, SemanticDropMove,
+        action_from_dict,
+    )
+    from generic_chess.core.coordinates import Square
+    choices = [BoardMove(Square(0, 0), Square(0, 1), 'promoted'),
+               DropMove('A', Square(0, 1)), PassAction(),
+               SemanticBoardMove('pattern-a', 'geometry', 'A', Square(0, 0), Square(0, 1)),
+               SemanticBoardMove('pattern-b', 'geometry', 'A', Square(0, 0), Square(0, 1)),
+               SemanticDropMove('drop', 'geometry', 'A', Square(0, 1))]
+    encoded = [_choice_record(SessionChoice('ACTION', action=move)) for move in choices]
+    for move, record in zip(choices, encoded):
+        assert record['kind'] == 'ACTION'
+        assert action_from_dict(record['action']) == move
+        assert record['declaration_id'] is None
+    # Equal visible coordinates cannot erase semantic binding identity.
+    assert encoded[3] != encoded[4]
+    assert _choice_record(SessionChoice('DECLARATION', declaration_id='owned-win')) == {
+        'kind': 'DECLARATION', 'action': None, 'declaration_id': 'owned-win'}
+    assert _choice_record(None) is None
+
+
+def test_runner_returned_query_can_precede_cancel_without_td_observation(monkeypatch):
+    from generic_chess.learning import mainline_search
+
+    class Env:
+        def terminal(self): return None
+        def player(self): return 0
+        def push(self, choice): pytest.fail('cancelled returned choice was committed')
+
+    model = Model([1., 2.])
+    learner = TDLeafEpisode()
+    events, cancelled = [], [False]
+    returned = Receipt(0, 2., (0., 1.), False, (), 7, True, 0, .01, 'complete', 1, 1)
+    monkeypatch.setattr(mainline_search, 'search', lambda *a, **k: returned)
+    def observed(ply, actor, receipt):
+        events.append(receipt)
+        cancelled[0] = True
+    def guard():
+        if cancelled[0]: raise BudgetEnd('POST_QUERY_STOP')
+    result = play_episode(Env(), model, opponent=Model([1., 1.]), learner=learner,
+        learner_color=0, horizon=2, seconds=10., query_nodes=10, max_nodes=10,
+        on_query=observed, cancel=guard, search_backend='mainline')
+    assert events == [returned] and events[0].complete
+    assert result.ending == 'POST_QUERY_STOP' and result.outcome is None
+    assert result.queries == 1 and result.nodes == 7 and result.plies == 0
+    assert result.update['observed_searches'] == 0
+    assert result.update['samples'] == 0 and not result.update['changed']
+    assert model.weights == [1., 2.]
+
+
+@pytest.mark.parametrize('seconds', ['nan', 'inf', '-inf', '0', '-1'])
+def test_runner_rejects_invalid_total_wall_budget_before_run(monkeypatch, seconds):
+    from scripts import incremental_learning as runner
+    monkeypatch.setattr(runner, 'run', lambda args: pytest.fail('invalid allowance reached runner'))
+    monkeypatch.setattr(runner.sys, 'argv', ['incremental_learning', '--rules', 'not-read.json',
+        '--output', 'not-created', '--seconds=' + seconds])
+    with pytest.raises(SystemExit) as error:
+        runner.main()
+    assert error.value.code == 2
+
+
+@pytest.mark.parametrize('seconds', [float('nan'), float('inf'), -float('inf'), 0., -1.])
+def test_runner_direct_invalid_wall_budget_rejects_before_inputs(seconds):
+    from types import SimpleNamespace
+    from scripts.incremental_learning import run
+    # No rules/output attributes exist: validation must precede even reading
+    # these inputs, compilation, mkdir or any episode work.
+    with pytest.raises(ValueError, match='seconds must be finite and positive'):
+        run(SimpleNamespace(seconds=seconds))
+
+
+@pytest.mark.parametrize('seconds', ['0.25', '1200'])
+def test_runner_finite_wall_budget_reaches_existing_entry(monkeypatch, seconds):
+    from scripts import incremental_learning as runner
+    calls = []
+    monkeypatch.setattr(runner, 'run', lambda args: calls.append(args.seconds))
+    monkeypatch.setattr(runner.sys, 'argv', ['incremental_learning', '--rules', 'not-read.json',
+        '--output', 'not-created', '--seconds=' + seconds])
+    runner.main()
+    assert calls == [float(seconds)]
+
+
+@pytest.mark.parametrize('seconds', [float('nan'), float('inf'), -float('inf'), 0., -1.])
+def test_runner_episode_rejects_invalid_wall_budget_before_environment(seconds):
+    # The public episode API must reject before touching even a placeholder
+    # environment; caller-side CLI validation is not its own admission.
+    with pytest.raises(ValueError, match='invalid episode budget'):
+        play_episode(object(), Model([1., 2.]), opponent=Model([1., 1.]), seconds=seconds)

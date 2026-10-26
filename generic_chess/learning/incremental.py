@@ -636,7 +636,7 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
     An explicit opponent_policy selects a real legal reply without a search.
     Such moves pay time/plies but create no fabricated search receipt or nodes.
     """
-    if learner_color not in (0, 1) or horizon < 1 or query_nodes < 1 or max_nodes < 1 or seconds <= 0:
+    if learner_color not in (0, 1) or horizon < 1 or query_nodes < 1 or max_nodes < 1 or not isfinite(seconds) or seconds <= 0:
         raise ValueError('invalid episode budget or player')
     if search_backend is None:
         search_backend = 'mainline' if isinstance(env, FixedScaleSessionEnv) else 'reference'

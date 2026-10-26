@@ -24,12 +24,31 @@ from generic_chess.learning.incremental import (
     BudgetEnd, FixedScaleSessionEnv, NonScoringTerminal,
     play_episode, TDLeafEpisode, unchanged_model,
 )
+from generic_chess.core.actions import action_to_dict
 from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.rules.schema import ruleset_from_dict
 from generic_chess.session.session import GameSession
 
 
+def _model_snapshot(model):
+    return dict(weights=list(model.weights), fixed=model.fixed, scale=model.scale)
+
+
+def _choice_record(choice):
+    if choice is None:
+        return None
+    return dict(kind=choice.kind,
+                action=None if choice.action is None else action_to_dict(choice.action),
+                declaration_id=choice.declaration_id)
+
+
+def _require_total_wall_budget(seconds):
+    if not 0 < seconds < float('inf'):
+        raise ValueError('seconds must be finite and positive')
+
+
 def run(args):
+    _require_total_wall_budget(args.seconds)
     compiled = compile_ruleset_for_execution(ruleset_from_dict(json.loads(args.rules.read_text(encoding='utf-8-sig'))))
     args.output.mkdir(parents=True, exist_ok=False)
     revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
@@ -103,7 +122,12 @@ def run(args):
             if receipt.complete and receipt.pv_phi is not None:
                 for name, quantity in zip(active['env'].names, receipt.pv_phi):
                     exposure[str(name)] += quantity != 0
-            row = {k: v for k, v in active.items() if k != 'env'}
+            row = {k: v for k, v in active.items()
+                   if k not in ('env', 'candidate_model', 'opponent_model')}
+            row['acting_model'] = active['candidate_model'] if actor == row['color'] else active['opponent_model']
+            # A returned choice can still be discarded by the episode guard;
+            # only final_record establishes what was actually played.
+            row['choice'] = _choice_record(receipt.action)
             row.update(ply=ply, actor=actor, nodes=receipt.nodes, complete=receipt.complete,
                        value=receipt.value, pv_phi=receipt.pv_phi, pv_terminal=receipt.pv_terminal,
                        reason=receipt.reason)
@@ -114,7 +138,9 @@ def run(args):
             trace.flush()
 
         def episode(env, candidate, *, phase, index, color, profile, remaining, seconds, guard=stop):
-            active.update(phase=phase, index=index, color=color, profile=profile, env=env)
+            before = _model_snapshot(candidate)
+            active.update(phase=phase, index=index, color=color, profile=profile, env=env,
+                          candidate_model=before, opponent_model=_model_snapshot(foe))
             start_record = env.record()
             result = play_episode(env, candidate, opponent=foe,
                 learner=TDLeafEpisode(eta=.05, lam=lambdas[profile]) if phase == 'train' else None,
@@ -129,7 +155,7 @@ def run(args):
             env.replay()  # Actual full history/result, not a state-only check.
             row = dict(phase=phase, index=index, color=color, profile=profile,
                        start_record=start_record, final_record=env.record(),
-                       weights=list(candidate.weights), **asdict(result))
+                       before_weights=before['weights'], weights=list(candidate.weights), **asdict(result))
             episodes.write(json.dumps(row, allow_nan=False) + '\n')
             episodes.flush()
             return row
@@ -246,7 +272,8 @@ def run(args):
             if r['outcome'] is not None else 'UNKNOWN' for r in evaluation if r['profile'] == p)) for p in profiles},
         paired_reward_completion_bound=next(iter(contrasts.values())),
         contrasts=contrasts,
-        bound_is_not_a_confidence_interval=True, pv_channel_exposure=dict(exposure))
+        bound_is_not_a_confidence_interval=True, pv_channel_exposure=dict(exposure),
+        pv_channel_exposure_scope='All returned complete nonterminal query PVs across phases and actors, before post-query guard; not accepted TD observations or played decisions.')
     (args.output / 'summary.json').write_text(json.dumps(summary, indent=2, allow_nan=False) + '\n', encoding='utf-8')
     print(json.dumps(summary, indent=2), flush=True)
     return summary
@@ -262,7 +289,8 @@ def main():
     parser.add_argument('--eval-pairs', type=int, default=32)
     parser.add_argument('--train-nodes', type=int, default=1_000_000)
     parser.add_argument('--eval-nodes', type=int, default=1_000_000)
-    parser.add_argument('--seconds', type=float, default=1200.)
+    parser.add_argument('--seconds', type=float, default=1200.,
+                        help='positive finite total wall allowance in seconds')
     parser.add_argument('--horizon', type=int, default=128)
     parser.add_argument('--depth', type=int, default=2)
     parser.add_argument('--td-lambda', type=float, default=.95,
@@ -283,6 +311,10 @@ def main():
     parser.add_argument('--query-nodes', type=int, default=8192)
     parser.add_argument('--game-nodes', type=int, default=100_000)
     args = parser.parse_args()
+    try:
+        _require_total_wall_budget(args.seconds)
+    except ValueError as error:
+        parser.error(str(error))
     if not 0 <= args.td_lambda <= 1:
         parser.error('td-lambda must be finite and in [0,1]')
     if args.compare_lambda is not None and (not 0 <= args.compare_lambda <= 1 or
