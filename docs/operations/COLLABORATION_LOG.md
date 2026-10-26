@@ -1,3 +1,9 @@
+## DEV_AUX active milestone140a989c —2026-10-26
+
+AUX consumed PRIMARYfd7d7ea published data without taking its profiling/algorithm task.135checksPASS; all saved returns/record hashes/PVs qualified. Same-depth root-order variants choose the same actions. Original Dot requestGC-SLACK-20261026-204933-1ccb4ab7 was exact-payload reconciled, +5minute check executed once; Dot advice about full-context cancellation, separate depths/controls and endogenous denominators was read/adopted/implemented. Its suggestion to stop at a bounded table does not override the latest user's60+effective-minute ordinary segment; AUX continued useful authorized exposure analysis without extra experiments.
+
+New conditional telescoping proof identifies experienced short-minus-long total minimax actor regret from the SAME swapped-seat terminal outcomes; positive event bags52/67remain unlocalized, one exposed family, no new WDL labels/holdout/strength experiment. Independent Dot review of this interpretation is pending at this milestone; it is not already adopted or independently reproduced. User>GitHubPro>SlackDot; Pro68f83ff0read separately and unchanged. Role/branch/schedule maintained; prior cost retained. Session currently40.6177confirmed minutes andACTIVE, not completed.
+
 ## Closing GitHub Pro update executed by DEV_AUX
 
 Newreview68f83ff0at20:07JST readfully fromGitHub, raw/hash/privateorigin retained.

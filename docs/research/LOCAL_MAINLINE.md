@@ -1,3 +1,9 @@
+## Active saved-decision exposure milestone —2026-10-26
+
+Current140a989c session remains ACTIVE,40.6177confirmed effective minutes so far; no normal finish yet. [New source analysis](AUX_SAVED_DECISION_EXPOSURE_20261026.md) binds all240saved fixed-depth returns and1931game decisions/9636supplied PV-occurrence plies. Same-depth choices identical;254root actions remainUNLABELLED.147forced moves,33empty PVs and41endogenous prefix overlaps are explicit.
+
+A finite-game swapped-seat identity re-expresses the existing24game outcomes as short-minus-long total experienced minimax actor regret2; two positive one-family pairs imply an error somewhere in52/67nonforced short suffix slots, with no local action/root WDL labels or independent extra strength evidence.135relevantchecksPASS. Dot independent review requested after this active milestone publishes; PRIMARY keeps algorithm design/defaults. No newPlayer/solver/game/build or closedH6restart. Priorrelated209.50498295minutes+actual whole current round cost retained; no repeated user approval. Current executable tasks remain ownWORK_PLAN/NEXT_WORK.
+
 ## Latest Pro source table completed —2026-10-26
 
 Pro68f83ff02067b7d557b12eb1438e066504bfa192read/adopted/executed in same session.
