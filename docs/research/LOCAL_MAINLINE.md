@@ -6,31 +6,38 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 endpoint qualification remains first
+## Current decision -2026-10-27 endpoint source chain NO_GO
 
-[Panel-response contract](LEAPER_PANEL_RESPONSE_CONTRACT_20261027.md) is
-SOURCE_GATE_NO_GO / NOT_STARTED. Adopt new independent Patrol8c228051, read in
-full during publication: same-root uniform disagreement is not a credible
-non-saturated cross-family quality endpoint. Its unsubmitted580minute proposal
-is WITHDRAWN_LOCALLY, not USER-denied or granted. Do not implement/run12games.
-The original600hint request remains withdrawn. Preserve source arithmetic,
-fullhistories and all stopped designs as evidence, not an execution queue.
+Adopt [latest independent review](../reviews/chatgpt_patrol/2026-10-27_080551_JST_7cbdbbb.md)
+at e4dd2f961818f03d3fec71f24128faee4b0f25ad, saved/read in full. Choose its B:
+no more endpoint source expansion or experiment in this chain without the required
+USER necessity decision. The unapproved [20-30minute/cap570source proposal](LEAPER_ENDPOINT_QUALIFICATION_PROPOSAL_20261027.md)
+is WITHDRAWN_LOCALLY / NOT_STARTED. No USER denial/grant is invented; the old
+question needs no answer. No new15-20minute decision exercise replaces it.
+This is a scientific NO_GO for this chain, not project completion, a role stop,
+a schedule pause or authority to take AUX work. Existing hourly patrols remain.
 
-Main: is a further source-only endpoint qualification worth its cost?
-|Present [bounded proposal](LEAPER_ENDPOINT_QUALIFICATION_PROPOSAL_20261027.md)
-once for USER necessity; after grant map all10original4x4rules/controller-source
-provenance and finite outcome controls before any empirical proposal |Decision
-or explicit defer; execution NOT_STARTED |20-30future whole minutes, cumulative
-570PROPOSED only; no new Core/Player/solver/game, no AUX truth/TD duplication.
-New saved-game join binds480oldslots/331records,64ABwins across8of10movement
-families; geometry overlaps failedh2onlyworlds3/8. Old512node/Q0 is notcurrent1s/Q4.
-Backup1: preserve strict Action identities and actual resource/censoring contract;
-all12same-root ideal disagreement180809/212160 and n5mean9263/10608 are exposure
-arithmetic only, not error, winrate, weaker-policy proof or endpoint qualification.
-Backup2: current new-round Dot1793040335/delayedcheck18:53:14Z done (~2m40late).
-Patrol review outranks solicited Dot support; source/read/adopt/executed distinct.
-Own cumulative prior470.828912min+actualcurrent preparation/delivery carries;
-no old grant or discarded580/600request authorizes another experiment.
+Reason:480old4x4slots/331records and64ABwins in8/10movement families establish
+historical large-policy response only. Old512node/Q0/no-time/Native defaults do
+not qualify current1s/Q4/H96 or a new small ordering mechanism. New review's
+secondary-index arithmetic is not independent originalCore replay. All relevant
+semantic histories/clock/TT/terminal and exposure/dependence limits survive.
+[h2Uniform12game](LEAPER_PANEL_RESPONSE_CONTRACT_20261027.md) SOURCE_GATE_NO_GO;
+its580 and earlier600hint requests remain withdrawn. No old grant transfers.
+No source reading/calibration/seed/prefix/threshold refill is an automatic queue.
+
+Main: has compatible new evidence or a direct USER decision changed NO_GO?
+|At existing intake compare genuinely new complete-rule/history/opponent/current
+resource evidence and USER instruction; otherwise retain B |Specific changed
+premise with one falsifiable scoped algorithm question, or unchangedNO_GO |No
+new run, source campaign or repeated budget question on the same old evidence.
+Backup1: preserve old positive/negative/UNKNOWN data and finite search cost limits;
+PVS24DRAW, child1.70percent/missingD6coverage and inclusivepush56.06percent are not
+new gain or sufficient standalone Native engineering premises. PureLeaper only.
+Backup2: review remaining source coverage at meaningful intake; latest autonomous
+GitHub review outranks solicitedDot. Prior ownrequest/delayedcheck completed;
+no duplicate while no new research round. AUX owns its own repairs/consumer work;
+no new assignment, cross-checkout change or claim its fixes are integrated here.
 
 ## Retained closed child-construction assessment
 
