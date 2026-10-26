@@ -1842,3 +1842,24 @@ The next ordinary mailbox report will combine these results with a concrete
 question about the first-threshold invariant/flow premises and the next
 source-matched P0/P1 choice; partner reading/adoption/execution of this result
 remains UNCONFIRMED until a future ordinary probe.
+
+
+## DEV_AUX bounded initial assistance —2026-10-26
+
+User restored existing AUX hourly and assigned at most15min including recovery,
+review and publication. PRIMARY owns quality design; AUX performed independent
+source-only consumer/cost/semantic audit at66a4164 and latest Patrol87df8521.
+[Report](../research/AUX_LEAPER_CONSUMER_AUDIT_20261026.md) distinguishes existing
+Native indices/check-availability handoff/public cache from full syntax reuse,
+frontier S3 trials from terminal availability and selected Python transitions.
+DEFER broader compilation/activation: no exclusive whole-path removable share
+is established. No new production defect or engine/learner speed gain claimed.
+Zero newPlayer/solver/games/build; no1520-return rerun.65own Slack transport
+regressions PASS; current committed shared Dot restoration reused, AUX receipt
+compatibility retained. Request1792993268.610469 delivered/parent verified;
+one delayedcheck05:46:10UTC received Dot1792993458.674609; source-only cost
+boundaries adopted after independent source checks and executed in report only.
+Own prior session remains ENDED; this
+bounded review earns no60minute-segment credit. Related H6 prior99.204min carried;
+completion/delayed-check details in report receipt. Await user assignment after
+this task; old Main is deferred. Hourly heartbeat remains ACTIVE.

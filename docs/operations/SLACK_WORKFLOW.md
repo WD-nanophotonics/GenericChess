@@ -1,5 +1,11 @@
 # GenericChess Slack collaboration workflow —2026-10-24
 
+Current AUX update2026-10-26: latest explicit user restores DEV_AUX ACTIVE at
+60minutes, same binding. Older180minute/pause text is historical. First assigned
+source audit is capped15minutes inclusive; after delivery await user assignment,
+never repeat it or revive the old Main. Current direct Dot contract remains.
+
+
 ## Review sources and current authority
 
 The2026-10-26 user correction adds GitHub ChatGPT Patrol reviews at every work
