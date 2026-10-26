@@ -1,5 +1,16 @@
 # GenericChess local research policy
 
+## Direct user execution correction —2026-10-26
+
+Every scheduled ordinary research run must actually perform at least60 effective
+minutes, continuing toward90. Existing authorized work proceeds without asking
+for approval again. Do not turn the historical120minute consultation text or a
+missing PRIMARY input into an approval gate for already authorized support work.
+Retain cumulative costs and frozen experiment limits; no new scope, worker,
+PRIMARY takeover or relaunch of closed experiments follows. User instructions
+outrank Pro and Dot. Use useful scoped fallback work while a new handoff is absent.
+Configuration/admin/idle/offline time is never research credit.
+
 ## Latest user workflow —2026-10-26
 
 Priority: latest user > ChatGPT Pro/Commands on GitHub > Dot on Slack > local

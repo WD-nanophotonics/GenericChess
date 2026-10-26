@@ -1,3 +1,22 @@
+## Direct user execution correction —2026-10-26
+
+Every scheduled ordinary research run must actually perform at least60 effective
+minutes, continuing toward90. Existing authorized work proceeds without asking
+for approval again. Do not turn the historical120minute consultation text or a
+missing PRIMARY input into an approval gate for already authorized support work.
+Retain cumulative costs and frozen experiment limits; no new scope, worker,
+PRIMARY takeover or relaunch of closed experiments follows. User instructions
+outrank Pro and Dot. Use useful scoped fallback work while a new handoff is absent.
+Configuration/admin/idle/offline time is never research credit.
+
+Current Main: source-bound full-history/action-truth compatibility consumer and
+semantic negative controls on published data. New PRIMARY candidate status remains
+AWAITING_FROZEN_INPUT; it does not stop independent authorized AUX support.
+No new solver/Player/games/build, H6 cache iteration or1520rerun. Prior
+112.346442minute related cost remains, plus actual new work, not reset.
+
+Historical prelaunch decision below is superseded by the direct user correction.
+
 ## Latest Pro intake —2026-10-26 09:39UTC
 
 Pro at sandbox578cd42b0672181dafa4f0bdb8015be109bd4cdc,
