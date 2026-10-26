@@ -1,5 +1,3 @@
-
-Current autonomous review adoption (120668d0b5f313b0f379a1a0f37206674b1a7cc1, docs/reviews/chatgpt_patrol/2026-10-26_155852_JST_264cfed.md): read in full and adopt its priority correction. Closed geometry catalogue is auxiliary, not next mainline. Next: bounded falsifiable cross-rule ordering/PVS quality design with full histories, actual controller settings, non-saturated candidates, equal total budgets and missing-outcome rules; no new Player calls before decision-changing design and whole-chain cost assessment. H6/kernel and deferred16-game routes remain deferred. Next design not yet executed. Latest direct user instruction keeps both existing roles hourly ACTIVE; AUX first task completed and awaits user.
 # Current GenericChess mainline
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
@@ -8,7 +6,51 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current next decision —2026-10-26 prospective geometry study
+## Current decision —2026-10-26 root ordering / quality population
+
+[Root-order and quality report](LEAPER_ROOT_ORDER_QUALITY_20261026.md) closes two
+research-only policies: root-scan-hint reuse (96returns) and previous-complete
+root-child-work ordering (144returns). Completed-depth scores/actions match;
+root-hint saving disappears by D4, root-work benefit is small/mixed (D6 median
+wall ratio0.9978; rule-equal0.9953). Both stop without product/default activation.
+
+A distinct original-Player2s/0.5s resource curve on12development rules reaches
+24actual Core terminals/1931returns. Long policy2WIN22DRAW; both wins one movement
+family on5x5/6x6, not broad independent rule-family success. One frozen-tolerance
+overrun stays ineligible:23eligiblegames and11completepairs, long12points/22paired
+games. Full histories/rawreturns and9636PVplies independently replay. This is
+limited population discrimination, NO-GO for a claimed cross-rule strength gain
+or further acceptance games for either weak optimizer. No solver/AUX work.
+
+New original-D6 timer evidence leaves79.105/101.759outer seconds unassigned;
+evaluation6.8%, ordering1.6%, legal requests13.9%. The residual is not a measured
+removable Native/history/transition share. Do not choose another kernel/cache
+from its name; both prior H6 and full-key-memo routes remain deferred.
+
+Current Main: which original-path consumer explains the remaining cost? | Freeze
+an overhead-controlled matched fixed-work cost allocation test with actual source
+boundaries and a full related-cost assessment before calls | Measured exclusive
+consumer/share and semantic/work parity, or a reasoned stop | Carry reused
+preparation/collection costs; expected related>=120USER; no speculative kernel,
+TT-guard reduction or silent reset of this closed study's actual cost.
+Backup1: can a quality endpoint cover genuinely different rules? | Define a
+prospective full-rule/history/opponent/role sampling protocol before new fitness
+queries | Explicit support/exposure/correlation and actual Core endpoints | No
+outcome-selected family4 expansion disguised as holdout; geometry is no WDL gate.
+Backup2: is a new strategy mechanism justified? | Require a concrete changed
+consumer premise and falsifiable equal-budget quality comparison | Decision-changing
+proposal or defer | No old16/p49p53/LMR/Q-threshold revival or default activation.
+
+Later GitHub reviews c0118089c3cd85b3dfa2068928a6e84347969ca9 and
+578cd42b0672181dafa4f0bdb8015be109bd4cdc were fully read/preserved: adopt their
+specific GO/NO-GO and whole-cost/quality distinctions. Their fixed published
+snapshots precede these current results; no claim of independent Player rerun.
+No further phase was added after reading them. PRIMARY assigned no new AUX task
+and did not inspect/change its private computation/state. Existing hourly ACTIVE
+schedules remain; each role owns its user-authorized future work.
+
+## Retained prospective geometry study — CLOSED
+
 
 [Prospective geometry/consumer study](LEAPER_PROSPECTIVE_GEOMETRY_20261026.md)
 is CLOSED as a finite development directory, not a new standing framework.
@@ -17,13 +59,10 @@ component controls are retained.36 literal-frontier recording failures are
 CLOSED with0completefrontiers, never refilled. No newPlayer/solver/game, strength
 claim, default/backend activation or mixed-rule expansion occurred.
 
-Current Main: does the observed representation sensitivity warrant a consequential
-real-controller experiment? | Use the pinned fallback/scan/iteration map to
-write a specific matched full-history controller/endpoint and necessity/cost
-assessment, rather than more geometry enumeration | A decision-changing test or
-reasoned deferral, not first-ordered-action-as-WDL | No automatic run or old16game/
-H6revival; carry this directory's actual wholecost, forecast105/cap110. A related
-forecast>=120minutes needs USER before further execution, never a newUUID reset.
+The old encoding-sensitivity next-action proposal is superseded by the root-order
+study above. Retain its evidence and full cost: this closed directory forecast
+105/cap110 and delivered at about109.781whole minutes,65.585recorded effective
+minutes. No missing frontier slot is refilled or re-labelled successful.
 
 The observed semantic-frontier and DEFAULT-static controls do not imply identical
 budgeted search. Root fallback, full tactical scan and complete iteration are
@@ -36,7 +75,7 @@ AUX a475104a's published consumer source audit was read/adopted without rerun;
 its first assignment is complete and later tasks come from user. Both schedules
 remain hourly/ACTIVE. No second assignment or other-checkout write was made.
 
-## Current judgment â€” 2026-10-26
+## Retained compiled-hash judgment —2026-10-26
 
 [Compiled hashing](LEAPER_COMPILED_HASH_20261026.md) produced a scoped exact-runtime
 improvement: 72 fixed-work returns, 33 nonterminal matched pairs, wall cost -5.32%
@@ -64,10 +103,11 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Current coordination â€”2026-10-26 user update
+## Historical first-task coordination —2026-10-26
 
-Both existing roles are hourly/ACTIVE. PRIMARY assigns the existing DEV_AUX
-one bounded15minute zero-query consumer/source audit; later tasks are user's.
+Both existing roles are hourly/ACTIVE. PRIMARY assigned the existing DEV_AUX
+one bounded15minute zero-query consumer/source audit, now completed; later tasks
+are user-owned. This is provenance, not a new assignment.
 [Initial assignment](../operations/AUX_INITIAL_CONSUMER_AUDIT_20261026.md).
 AUX owns its report/branch, PRIMARY owns quality-design decisions. No new worker
 or cross-checkout write. Latest14:03JST review at87df8521a7f3826d209c81e5db566fba7746c4eb

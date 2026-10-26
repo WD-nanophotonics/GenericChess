@@ -7920,3 +7920,32 @@ policy, mainline and operating/review/Slack protocols. No AUX checkout/state
 was edited and no research task assigned. Immediate work remains in NEXT_WORK;
 research decisions remain in LOCAL_MAINLINE. Own AGENTS/manual now document
 this division. This configuration work adds no research time or session.
+
+
+## 2026-10-26 root-order and quality-population research
+
+PRIMARY alone implemented two research source copies and froze prospective
+full RuleSets/histories before calls.96scan-hint and144root-work returns preserve
+complete-depth scores/actions;48record-only/original control pairs preserve
+PV/work/TT/PVS. Both optimizer extensions stop on weak/mixed wholecall benefit.
+A separately frozen original-Player resource curve produces24actual Core
+terminals/1931returns:long2WIN22DRAW, decisive only in one family across5/6boards.
+23timing-eligiblegames/11completepairs remain separate; no tolerance repair.
+Literal independent replay checks every source/input/rawreturn/history and
+9636gamePVplies; no solver/AUX execution or claim of independent Player rerun.
+
+Opening Dot AGENT_REQUEST GC-SLACK-20261026-181609-c4e86e13 was delivered and
+exact-payload verified; the one+5minute check at09:22UTC found no reply. Late
+replies remain valid and will be read at meaningful closing interaction.
+Two new autonomous GitHub reviews at578cd42 were fully preserved/read; adopt
+the GO/NO-GO and actual-cost distinctions, retaining their fixed-snapshot/no-run
+limitations. No additional phase or AUX assignment followed those reads.
+AUX's previously published source audit stays attributed, never rerun here.
+
+The24failed pre-registration materializations, reader/API repairs and a rejected
+future ledger endpoint remain explicit; no frozen Player failure was refilled.
+Most effective time is tied to exact returned-query UTC intervals and CPU/wall
+evidence, not active flags or idle/admin gaps. Existing original timers bound
+eval/ordering regions but leave77.7%outerwall unassigned; next profiling question
+is proposed, not executed. All current phase/wholecost and source hashes remain
+bound; no history rewrite, product/default change, old16/H6 revival or extra role.
