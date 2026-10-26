@@ -1,3 +1,11 @@
+## Active actual-consumer continuation89c5ef59 —2026-10-27
+
+Same UUID/origin20:46:23UTC,1896.114769confirmed seconds; ACTIVE, not a completed60-minute segment. [Teacher consumer](AUX_TEACHER_DIAGNOSTIC_SCOPE_20261027.md): direct corpus binding, unsupported gamma and diagnostic default-alpha repair published e1832e3241edb233e20f4b5b1bc7d55c6c62ba22;86nonNativePASS and explicit prior22Nativeunit-case execution correction. No historyloss, oldrun-impact or quality/speed claim. New Pro7cbdbbb3/fda5dfc2 ADOPTED: stop theory expansion; teacher source gate closed.
+
+[Actual arena consumer](AUX_ARENA_TERMINAL_ADMISSION_20261027.md): matching replay alone formerly admittedONGOING pair progress asDRAW. Two failures reproduced, narrow shared completed validator/scorer fixed, actualCoreterminal positive and23relatedchecksPASS; no Native/Player or researchmatch in this selection. Separate gameatomic returned-game completion versus scoring strength-completion is sourcequalified, not an additional failure/guard campaign. No new current trajectory ingestion caller found; hypothetical loader framework rejected. PRIMARY endpoint remains PRIMARY; all old caps/windows/costs retained.
+
+Same-round Dot followup1793050053 aftere183fullSHA; delayedcheck21:32:49UTC completed once afterdue21:32:33, no newreply. Continue independent scoped work, no duplicate request or replygate. Current executable plan/memo owns nexttask; no oldteacher/theory/H6/PVS/frontier/Uniform/1520 rerun or default change.
+
 ## Active teacher-consumer segment89c5ef59 —2026-10-27
 
 Same ACTIVE new UUID,691.759817confirmed seconds at21:02:51UTC, no finish. [Report](AUX_TEACHER_DIAGNOSTIC_SCOPE_20261027.md): actual historical corpus replays action_history, initial board-only concern FALSE; legacyNative is not a fullsemantic teacher. Narrow reproduced missing/fallback/empty agreement defects now keep unavailable metricsUNKNOWN with fixed-denominator coverage; wrong-rule checkpoint loader/engine binding reuses existing validator.20relevanttestsPASS(17new/3existing incl Nativeintegration, operationsUNKNOWN), no new researchPlayer/game/training campaign or oldrecord re-evaluation. DAgger/ExIt source comparison identifies missing student/expert occupancy and actual target data, not an algorithm adoption.

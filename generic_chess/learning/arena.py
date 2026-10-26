@@ -186,7 +186,7 @@ class ArenaGameResult:
         Keeping it out of the score path prevents a restart from silently
         becoming half a point.
         """
-        return self.result != "no_contest" and not (
+        return self.result not in {"ongoing", "no_contest"} and not (
             self.result == "declaration" and self.winner is None
         )
 
@@ -864,6 +864,8 @@ def _atomic_write_json(path: Path, payload: dict) -> None:
 
 
 def _validate_replayed_game(compiled, opening, game: ArenaGameResult) -> None:
+    if game.result == "ongoing":
+        raise ValueError("arena game is not terminal")
     session = GameSession(compiled)
     for action in opening.actions:
         session.submit(action)
