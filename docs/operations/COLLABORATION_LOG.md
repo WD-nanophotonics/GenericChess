@@ -7982,3 +7982,22 @@ exact delivery verified. One delayed check12:48:02Z had no reply, about41seconds
 before exact+5min target; retained as actual timing, no repeated polling.
 Two old autonomous Slack threads and latest sandbox Patrol blobs unchanged.
 Controller opportunity versus quality resolution remains the actual uncertainty.
+
+
+## PRIMARY approved PVS pilot close -2026-10-26T14:32Z
+
+USER directly approved5f134bbd limited24-game OFF/ON pilot and cumulative320min.
+PRIMARY executed24D3qualifiers+2115game calls, all24CoreDRAW;23timingeligible/
+11pairs, oneOFF1.119871call retained. Fixed-slot bounds cannot reach3positive
+families under any affected-pair completion. NO-GO additionalPVS/activation.
+Private/public fullhistory/PV and exactraw source/hash consumers pass;60.611
+effective minutes/2146intervals accepted finish/final-check. Prior221.368881min
+carried; scienceclose299.356839/320, delivery charged separately. No newAUXtask.
+Patrol8edbf21d complete original read midrun; actual USER approval takes priority
+over its preapproval snapshot. Dot boundary advice read/adopted with actual custom
+caller deadline, source/Q/PVS/Native and fixed denominators; it did not approve
+user budget or independently measure results. Single delayed check19minlate is
+explicit deviation. No repeat requests/polls. Follow-on source-only consumer
+check distinguishes existing reverseattack/two-cell features and sharedpacking
+from a new netbenefit. Shape normalization counterexample is not currentbug or
+actualgame evidence. No product/UI/AUXcheckout/schedule/visibility change.

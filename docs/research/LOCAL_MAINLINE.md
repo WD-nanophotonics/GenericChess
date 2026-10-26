@@ -22,16 +22,36 @@ guard to preserve. Default Q lexical sort is outside ordering_seconds; the prior
 1.6% bound applies only to that recorded region. First nominal2700s batch
 overshot55.149s at a dispatch boundary; retain this limit and8NOT_RUN slots.
 
-Main: is the optional PVS OFF/ON pilot worth its cumulative cost? |
-[Quality decision](LEAPER_PVS_QUALITY_DECISION_20261026.md) is ready for USER
-necessity assessment: old curve both ON;12roots have118 nonterminal alternatives,
-but >=3family quality discrimination UNKNOWN | Reviewed design or explicit
-NO-GO | NOT_STARTED; no new Player/profile/game/solver. Related prior whole
-upper200.369/cap200 remains CLOSED; proposal forecast cumulative290-310/cap320,
-not granted. Old16 is a different deferred experiment, not this request.
-Backup1: no further profiling:56.06% inclusive consumer is not a removable share.
-Backup2: lexical-Q immutable semantic keys require exact stable string traversal;
-no full-query benefit measured, so no cache/coordinate rewrite is selected.
+Main: can one certified Semantic selected-step child constructor reduce actual
+net cost without changing Core semantics? | Prepare ONE finite equivalence/cost
+design at existing_transition seam, preserving normalization/cancel/undo/full
+history/TT/terminal and assessing related cost BEFORE any newrun | Concrete
+reviewable proposal or NO-GO | No new experiment/kernel/cache is yet selected.
+Backup1: quality endpoints need a changed, prospective discrimination premise;
+no extra PVSgames, thresholds, family4selection, H6/profiling/old16 or solver gate.
+Backup2: source/shape/real-call validation can reject unsupported claims cheaply;
+reuse existing certs, never call geometry or two-cell hash a new execution model.
+
+[Approved PVS pilot](LEAPER_PVS_QUALITY_PILOT_20261026.md) is CLOSED NO-GO:
+24D3qualifiers+2115game returns,24actual Core DRAW,23eligiblegames/11pairs.
+All10738providedPVplies and2115selectedtwo-cell transitions replayed. Fixed24
+budgeted score bounds[11/24,13/24]; any completion allows at most1positivefamily
+versus3required. D3costratio0.99809/median1.0055,6/12faster; no reliablegain.
+No PVSactivation/class-strength claim; product/AUX/schedule unchanged.
+USER320grant was directly received beforefirstcall, prior200.3688811+21min
+allowance carried. Scientificfinish60.611effectivemin/2146intervals PASS;
+whole299.356839/320 at scienceclose, delivery still charged. No cost reset.
+
+NewPatrol8edbf21d was fully read midrun; its preapproval5f snapshot lacked the
+later direct USER grant. Retain opportunity/endpoint/cap cautions, do not pretend
+it approved/replayed this run. Dot source-only technical advice adopted; one
+replycheck13:40:09Z versusdue13:21:09Z was19minlate, notreplyexpiry. No duplicate
+roundrequest or newcalls. Existing Native check/availability reuse means0extra
+availabilityimports in20.211157Mqueries; replacingcheck alone can move shared
+packing. Existing dead-DROP/two-cellhash cert is not fulltransition equivalence:
+Core normalizes hands/aux/shapes; a source-level explicit5x5shape example retains
+sameboard but changes exactidentity under naiveparentreplace. No currentbug or
+new optimizer demonstrated. Next task is source-bound design, not another run.
 
 User directly approved this diagnostic carrying97.185prior whole minutes,
 forecast180/cap200. Scientific ledger is separately verified at finish; final
@@ -169,7 +189,7 @@ cost 839.615â†’519.211s, identical work/actions, 62/64 at 1.5s both, 24 gam
 also remains closed. Faster/deeper does not monotonically improve decisions.
 
 Historical compiled-hash session state and its closing receipts remain evidence;
-the CURRENT H6 state lives in the own memo/session/transport receipts above.
+the historical H6 state is retained; the current state is in the own memo/session.
 That earlier kernel question forecast was 100 minutes including all source work, validation, failed calls and delivery;
 the scientific checkpoint is at 74.877 wall minutes and 61.944 recorded segment
 minutes (including 71.173026 earlier recorded seconds). Administrative work is
