@@ -102,5 +102,68 @@
     "scripts/leaper_verified_partial_examples.py": "9a92aa62f635834b59c326201ca88cc6e002e05029a698a5145df262a3a240f7"
   },
   "latest_review_commit": "68f83ff02067b7d557b12eb1438e066504bfa192",
-  "production_runtime_delta_from_original_pin": "NONE"
+  "production_runtime_delta_from_original_pin": "NONE",
+  "release_source_binding": {
+    "scripts/leaper_truth_compatibility.py": {
+      "executed_worktree_sha256": "0c88df56dc86989cbdcd3c87d83fe37f193b13716d88cfb9d7f62bfbfaa5db90",
+      "published_content_sha256": "659220677372d9fe253bb33a5e359d03082f690525a7ae87d72cf373214e722b",
+      "git_blob": "9996f8c5dfd14d1ffe7bcf27f2676b6348919579",
+      "only_line_ending_normalization": true
+    },
+    "scripts/leaper_history_strategy_revalidation.py": {
+      "executed_worktree_sha256": "8d9673cc62e951109ce989c4e85681d47c42e653cea740f839c88ecda16ab9af",
+      "published_content_sha256": "f527c8a2b92fc0e2b90edc8c9a4399678c187014a391bf7a74178321f0cbc98f",
+      "git_blob": "d44a45153ef1e127b8fda0568b6291db370d73a9",
+      "only_line_ending_normalization": true
+    },
+    "scripts/leaper_strategy_history_guards.py": {
+      "executed_worktree_sha256": "a4c7085ca21fa2c9e7194ec3efa20c7800ca51689747b926713de8c2079bb3b0",
+      "published_content_sha256": "797677bfffc950cdd4f38a1e9ce8dc73db39cea37d385d39efd20398b2fa2a5b",
+      "git_blob": "d5b5610a54ad06eb0448f618188bdc4093c54e50",
+      "only_line_ending_normalization": true
+    },
+    "scripts/qualify_published_leaper_panel.py": {
+      "executed_worktree_sha256": "9366c721cde6b69d483ffbb843efb52a381331bca5d03b0c9bb4ebee2fed7fdb",
+      "published_content_sha256": "78405d19d955d82d2ceecf4f79f528cd7ad1868cbe81ceba31fea55d3278b508",
+      "git_blob": "b66cd30de148b0e2c1b68c8c31da89405b3b81e6",
+      "only_line_ending_normalization": true
+    },
+    "scripts/qualify_primary_leaper_sources.py": {
+      "executed_worktree_sha256": "3d4eff11f0a1d9df139022041fa1c001245eea9581c10a67961d5899c332f2b9",
+      "published_content_sha256": "acb900578c5c7039a2f97252294d56beced1e19849df7c8169cb379586859ad7",
+      "git_blob": "1284a01cb52eae6e0c64e9260a3314b93ed53149",
+      "only_line_ending_normalization": true
+    },
+    "scripts/qualify_leaper_truth_inputs.py": {
+      "executed_worktree_sha256": "0d61ced915d1127f90463f945561e1050284611448a7768414df2c6393db4737",
+      "published_content_sha256": "983d1a879a84a7f8c5a937146704b638933d763d9e8af64cbb526637250e06fc",
+      "git_blob": "a2ccd771858e22f25c8e77119952816e44bd9f28",
+      "only_line_ending_normalization": true
+    },
+    "scripts/verify_leaper_truth_controls.py": {
+      "executed_worktree_sha256": "8198a9a4885a010bd171904f6775ec40464269c73a4b70c8c28c2d70831150ab",
+      "published_content_sha256": "ea718211d81705d022b5e6bbd40d58571622451677ac6c67d364707639b8b0c7",
+      "git_blob": "e653d57a98167c1030d9d27871017ce24ca3ebf2",
+      "only_line_ending_normalization": true
+    },
+    "scripts/leaper_partial_truth_coverage.py": {
+      "executed_worktree_sha256": "0235975670592de75e3bd983ba438790b243c683769e76bafc76390adc0bec06",
+      "published_content_sha256": "3abce1f869f2ef7f0f58802d9eb204ab1fbf96f5d9b083d99c99a726ac3f3865",
+      "git_blob": "158887d37029b6c1b91a1f58c7926780823f4b0b",
+      "only_line_ending_normalization": true
+    },
+    "scripts/qualify_leaper_candidate_truth.py": {
+      "executed_worktree_sha256": "96aeb7d8193fad59558b0be2ddfbdb8a76488e088ce4a2870e95bc254c1df255",
+      "published_content_sha256": "e3a7955d8a6ab6b0ebc029711c8ffd50e7682f63a15a6b7b86e0e7ecc3bafcad",
+      "git_blob": "e05d0955af36c803b2276f4253408b9ad40565c9",
+      "only_line_ending_normalization": true
+    },
+    "scripts/leaper_verified_partial_examples.py": {
+      "executed_worktree_sha256": "9a92aa62f635834b59c326201ca88cc6e002e05029a698a5145df262a3a240f7",
+      "published_content_sha256": "aff6b4e505eee6fa35b2f61a44cf666d9e643251f1205b2498cb5974d9fe075f",
+      "git_blob": "c17a164d2a98e4a9384a9359abd1fecfe1dccf8a",
+      "only_line_ending_normalization": true
+    }
+  },
+  "release_sources_hash_semantics": "Actual Windows execution worktree bytes. Published Git content may normalize CRLF/LF; each file is checked byte-identical after that sole transformation and both hashes are retained."
 }
