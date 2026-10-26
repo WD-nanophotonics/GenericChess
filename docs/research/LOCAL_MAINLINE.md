@@ -1,3 +1,5 @@
+
+Current autonomous review adoption (120668d0b5f313b0f379a1a0f37206674b1a7cc1, docs/reviews/chatgpt_patrol/2026-10-26_155852_JST_264cfed.md): read in full and adopt its priority correction. Closed geometry catalogue is auxiliary, not next mainline. Next: bounded falsifiable cross-rule ordering/PVS quality design with full histories, actual controller settings, non-saturated candidates, equal total budgets and missing-outcome rules; no new Player calls before decision-changing design and whole-chain cost assessment. H6/kernel and deferred16-game routes remain deferred. Next design not yet executed. Latest direct user instruction keeps both existing roles hourly ACTIVE; AUX first task completed and awaits user.
 # Current GenericChess mainline
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
