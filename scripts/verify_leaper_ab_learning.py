@@ -12,12 +12,21 @@ import random
 from scripts import leaper_design as L
 from scripts.leaper_ab_learner_exposure import restore,write
 from scripts.verify_leaper_frozen_learning import replay_query
-from generic_chess.learning.incremental import FixedScaleSessionEnv,Model
+from generic_chess.learning.incremental import FixedScaleSessionEnv,Model,MATE
 from generic_chess.core.actions import action_to_dict
 
 
 def td_sum(before,receipts,outcome,eta=.05,lam=.95,scale=10.):
-    predictions=[tanh(r['value']/scale)for r in receipts];elig=[0.]*len(before);delta=[0.]*len(before);terms=0;loss=0.;terminal_credit=0.
+    predictions=[]
+    for r in receipts:
+        if r['pv_terminal']:
+            if (r.get('pv_phi') is not None or isinstance(r['value'],bool)
+                    or r['value'] not in (-MATE,0.,MATE)):
+                raise ValueError('terminal arithmetic requires literal MATE*WDL and no features')
+            predictions.append(r['value']/MATE)
+        else:
+            predictions.append(tanh(r['value']/scale))
+    elig=[0.]*len(before);delta=[0.]*len(before);terms=0;loss=0.;terminal_credit=0.
     for i,r in enumerate(receipts):
         target=predictions[i+1]if i+1<len(receipts)else outcome
         if target is None:break

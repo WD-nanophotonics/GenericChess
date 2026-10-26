@@ -1,0 +1,273 @@
+{
+  "kind": "STATIC_DIAGNOSTIC_ON_PREVIOUSLY_QUALIFIED_BOUNDS_NOT_NEW_TRUTH",
+  "source_commit": "a5dbe90d90faf39ab33910f13c3cf317f9aa6d32",
+  "source_files_sha256": {
+    "partial-bounds.json.gz": "3218b8f7d4ff85caac2cba671cc08afe2e0081ff560455594a08c4cba7314664",
+    "learning-limits.json.gz": "498d65127138d32ef5c66123734675fa54b9521404451d948e0361ccca463aa3"
+  },
+  "constant_zero_negative_control": {
+    "unique_contexts": {
+      "total_weight": 1775.0,
+      "a_lower": 0.0,
+      "a_upper": 0.9898591549295774,
+      "b_lower": 0.0,
+      "b_upper": 0.9898591549295774,
+      "paired_lower": 0.0,
+      "paired_upper": 0.0,
+      "meaning": "Weighted same-context scalar-error OUTER bounds; no calibration, sampling or strength claim"
+    },
+    "source_occurrences": {
+      "total_weight": 2115.0,
+      "a_lower": 0.0,
+      "a_upper": 0.9905437352245863,
+      "b_lower": 0.0,
+      "b_upper": 0.9905437352245863,
+      "paired_lower": 0.0,
+      "paired_upper": 0.0,
+      "meaning": "Weighted same-context scalar-error OUTER bounds; no calibration, sampling or strength claim"
+    },
+    "limitation": "All source bounds already admitted zero in the previous report. This applies a new risk diagnostic, not new proof propagation or a full-game zero solution. Zero lower error is compatibility, not measured accuracy."
+  },
+  "18_saved_exact_horizon_contexts": [
+    {
+      "case_id": "n5-f3-h2",
+      "source_context_sha256": "7d922faf3d6b551d86b3cb04fdfe324085663f7a86fcf3faf6116222e0d69d68",
+      "phi": [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.197375320224904,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0389570170338834
+    },
+    {
+      "case_id": "n6-f1-h2",
+      "source_context_sha256": "223ece37442e9567fe4f0520de5f3115f7708d4682f177f0af1236d982d237ea",
+      "phi": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n6-f1-h2",
+      "source_context_sha256": "f2c58ef78dd5a6080f99bcde0cef5f6c0b2900b47cd67ff5c38a957229903b23",
+      "phi": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n6-f5-h2",
+      "source_context_sha256": "7b870661f66d44d0399b0efccf9f4f8944c66d741908553bca7368cb8a0a9b16",
+      "phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    },
+    {
+      "case_id": "n6-f5-h2",
+      "source_context_sha256": "92abe297bf53a4b082f697f9bf2dad7360e4d7d4ff9df4de025803755b0025f1",
+      "phi": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n5-f2-h2",
+      "source_context_sha256": "30bf100f5d135ab1e10df7c0118102e339618987373610a0418577373b6e61e7",
+      "phi": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.197375320224904,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0389570170338834
+    },
+    {
+      "case_id": "n6-f4-h2",
+      "source_context_sha256": "984afa3914e5c38e85316728cb0923c005d0ac41a7eb58d5f00371bbf5fdbacc",
+      "phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    },
+    {
+      "case_id": "n6-f3-h2",
+      "source_context_sha256": "038ba83a484d06740e66a0957caef5549015e314e4ad2b87b87d72ec8a421cdf",
+      "phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    },
+    {
+      "case_id": "n6-f3-h2",
+      "source_context_sha256": "ebbce7123b7a6d40bb2637285f052745013e483822b184bc6178e8db5b6139c0",
+      "phi": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n6-f2-h2",
+      "source_context_sha256": "00f71c7c6e00c1e6493b0889c2a19fcd7ed6eea90e5aa5edf3b75a8c9b53a10a",
+      "phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    },
+    {
+      "case_id": "n6-f2-h2",
+      "source_context_sha256": "a104477f0d31ee8ef8570c70986de3eed8d95c2e274f01ca2bc283cb9c28d592",
+      "phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    },
+    {
+      "case_id": "n6-f0-h2",
+      "source_context_sha256": "80cde14f9433241adf7d34dd47378c2de4a7e3123943f23c885d39f4c308da2a",
+      "phi": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n6-f0-h2",
+      "source_context_sha256": "200889e8fe3a56a5fe07033c6d436fcf0f6efcacf99cd18e8ea58a81b571d158",
+      "phi": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n5-f1-h2",
+      "source_context_sha256": "016a704de067b6dde347e9cb518e9b852168bd67c276583ff60fd44762191ada",
+      "phi": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n5-f1-h2",
+      "source_context_sha256": "064d656030d7f251abb246b1d96acf1399b059f29e719bbe9a1152d934e41f50",
+      "phi": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": -0.09966799462495582,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.009933709152560222
+    },
+    {
+      "case_id": "n5-f4-h2",
+      "source_context_sha256": "804e8844740bdf698fff2a48326aac880eddbb8499d3975859aab71bb0aefaa9",
+      "phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    },
+    {
+      "case_id": "n5-f5-h2",
+      "source_context_sha256": "d737e8953c2a2954180da4cb3f7b95becf79aec936c62060ef4960c9e993f978",
+      "phi": [
+        1,
+        -1,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    },
+    {
+      "case_id": "n5-f5-h2",
+      "source_context_sha256": "0b145fa36d54f5e28d7003e456ff2aff43992e62722c096b9a3def68ca98ec24",
+      "phi": [
+        1,
+        -1,
+        0,
+        0
+      ],
+      "fixed_unit_A_scale10_prediction": 0.0,
+      "conditional_exact_WDL": 0,
+      "squared_scalar_error": 0.0
+    }
+  ],
+  "exact_context_unit_material_mean_squared_error": 0.008743539293791588,
+  "new_Core_calls": 0,
+  "new_Player_calls": 0,
+  "model_updates": 0,
+  "new_bounds_or_proof_propagation": 0,
+  "scope": "No raw PVS score is treated as calibrated WDL. The material tanh output is inspected under an explicit conditional-WDL diagnostic hypothesis only. These exposed ply95 contexts are not holdout or policy strength."
+}

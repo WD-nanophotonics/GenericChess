@@ -1,0 +1,22 @@
+{
+  "previous_evidence_SHA": "a5dbe90d90faf39ab33910f13c3cf317f9aa6d32",
+  "shared_baseline_SHA": "376cb684519c420c8ebd295e18e23f5a5c9b616d",
+  "Pro_blob": "8eafba5353ed18e7bdf3fece499e9049cbd357cb",
+  "session": "1e5f0dfd-3761-49e6-a6b3-22226fdb916e",
+  "state": "ACTIVE_NOT_FINISHED",
+  "confirmed_effective_seconds_at_milestone": 1125.291125,
+  "related_tests_passed": 163,
+  "before_fix_synthetic_failures": 15,
+  "before_fix_controls": 26,
+  "code_bytes_sha256": {
+    "scripts/interval_value_diagnostics.py": "4d3e37cc477f541e9d28f8ff586e3351881c8c552dfa4665834a58b4eafb2a5b",
+    "generic_chess/learning/incremental.py": "5b9a94d8a7928ef7f030813dfd0508169fcdbd06b6bbceb749d183d3cd2adac3",
+    "scripts/verify_leaper_ab_learning.py": "a95c6ff9e5961f7a07daf17457dc7aea0988552a420dfc70c46cf3a6d5ca9755",
+    "tests/development/test_tdleaf_frozen_parameters.py": "ea5d195b92d3932589efdc7a83ff9f9c77b943423e573207d9b322a0b78d1e4e",
+    "tests/development/test_interval_value_diagnostics.py": "9efc49e31c4bd16847c40c40fc1c682edc62dd8c6d9ecb3a3aed76c6ee600cb7"
+  },
+  "data_bytes_sha256": {
+    "risk-negative-controls.json": "fc1ac0fce89b263b69bdabb414b1c498e3bc6d08760ab7a780942664c2763a24"
+  },
+  "counts_scope": "Static research diagnostics: no new Core/Player/game/fit. Existing semantic regression tests execute unit Core/Player/arithmetic updates, totals UNKNOWN; not strength trials."
+}

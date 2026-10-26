@@ -1,0 +1,1 @@
+Existing qualified source data only. New risk diagnostics do not admit truth or select training targets. Constant-zero upper/lower scalar errors are outer bounds, not confidence intervals or measured strength. Source/consumer fixes are pinned by code byte hashes; raw Pro/Slack and before-fix logs remain ignored. Session is ACTIVE at this milestone; no normal finish claimed.

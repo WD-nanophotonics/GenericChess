@@ -286,21 +286,32 @@ class TDLeafEpisode:
     def observe(self, model, receipt):
         if not receipt.complete:
             return dict(samples=0, loss=None, changed=False)
-        current = tuple(model.weights)
+        current = (tuple(model.weights), model.fixed, model.scale)
+        if self.snapshot is not None and current != self.snapshot:
+            raise ValueError('episode weights or fixed/scale changed before TD update')
+        if receipt.pv_terminal:
+            # Both search adapters normalize actual terminal leaves to MATE*v.
+            # A material scale controls an approximation, never literal W/L/D.
+            if (receipt.pv_phi is not None or isinstance(receipt.value, bool)
+                    or receipt.value not in (-MATE, 0., MATE)):
+                raise ValueError('terminal receipt must carry literal MATE*WDL and no features')
+            value = receipt.value / MATE
+            grad = tuple(0.0 for _ in model.weights)
+        else:
+            value = transformed(receipt.value, model.scale)
+            grad = model.gradient(receipt.pv_phi)
+        # Failed receipt validation must not leave a partly frozen observation.
         if self.snapshot is None:
             self.snapshot = current
-        if current != self.snapshot:
-            raise ValueError('episode weights changed before TD update')
-        value = transformed(receipt.value, model.scale)
-        grad = tuple((0.0 for _ in model.weights)) if receipt.pv_terminal else model.gradient(receipt.pv_phi)
         self.rows.append((value, grad))
         return dict(samples=0, loss=None, changed=False)
 
     def finish(self, model, outcome):
         if outcome is not None and outcome not in (-1, 0, 1):
             raise ValueError('actual outcome must be -1, 0, 1 or None')
-        if self.snapshot is not None and tuple(model.weights) != self.snapshot:
-            raise ValueError('episode weights changed')
+        current = (tuple(model.weights), model.fixed, model.scale)
+        if self.snapshot is not None and current != self.snapshot:
+            raise ValueError('episode weights or fixed/scale changed')
         rows = self.rows
         elig = [0.0] * len(model.weights)
         delta = [0.0] * len(elig)
