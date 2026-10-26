@@ -8042,3 +8042,24 @@ review did not independently validate this run. Adopt quality-route opportunity
 cost and full-history/endpoint discipline for a future source-only proposal,
 not a new strategy/run/role grant. No AUX task or research recomputation.
 Only own unpublished result is rebased onto this preserved review-only commit.
+
+
+## PRIMARY source-only route proposal -2026-10-27
+
+Current remote sandbox ec5fc265 and Patrol blob04c08a48 unchanged. Both known
+Slack autonomous comment originals and previous PRIMARY full thread unchanged.
+Opening request GC-SLACK-20261027-014558-a928df1d exact-readback PASS. Sent
+16:46:14.886579UTC; due16:51:14.886579UTC; single delayed read at16:51:14UTC,
+private capture/import completed shortly afterward. Dot1793033403.894139 was
+read/adopted for the absent free binding check bit, TT structural priority,
+post-push observation lifetime and Q/main-extension distinction. It is solicited
+source-only advice, not autonomous review, empirical validation or a budget grant.
+
+PRIMARY selected a subsequently designed observed-check reuse candidate rather
+than Dot's possible new geometry feature. New full prefix24 data join verifies
+six original query digests/six movement signatures and24 old game member hashes;
+no Core/Player/game/solver is newly run. Relative quality resolution remains
+UNKNOWN. One proposal awaits USER cumulative necessity assessment; closed
+420.478498minute chain plus current preparation is not reset. Current AUX request
+1793032035 describes its independent terminal-frontier bounds task: no assignment,
+re-execution, ownership transfer or use as proof of PRIMARY candidate quality.

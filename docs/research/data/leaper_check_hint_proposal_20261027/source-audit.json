@@ -1,0 +1,134 @@
+{
+  "inferences": [
+    {
+      "claim": "No pre-child gives_check field in semantic binding/current Native action decode; orderer has no binding/check-provider parameter.",
+      "consequence": "Reject free existing binding-bit premise; does not prove cheap new Leaper geometry impossible."
+    },
+    {
+      "claim": "Actual push computes check and retains frame.child_in_check; root tactical scan and iterative negamax perform real pushes.",
+      "consequence": "A NEW bounded same-call exact-key/action positive-check hint store could reuse observed results, not a pre-existing cache API; no extra successor/check probe is required by this design."
+    },
+    {
+      "claim": "Current qsearch already expands legal check evasions and aborts at hard Q cap.",
+      "consequence": "Not a new main check extension; defer extension with changed selective-depth/TT target."
+    },
+    {
+      "claim": "Python legality yields action,binding and discards trial child; S4 checks are conditional and distinct actor-check/result-check predicates.",
+      "consequence": "Do not assume all candidates already supply all-opponent check; do not treat own-anchor safety as opponent check."
+    },
+    {
+      "claim": "TTEntry stores one best action, not per-action check flags.",
+      "consequence": "Do not modify TT depth, bounds or keys to smuggle new hint; separate finite map uses existing compatible key only."
+    }
+  ],
+  "method": "stdlib AST/text and lossless old-data joins only; no Core/Player/solver imports or calls",
+  "observed_at": "2026-10-26T16:55:53.447216+00:00",
+  "source_commit": "ec5fc26503493460b28210d72745311b49a750c9",
+  "sources": {
+    "generic_chess/ai/alphabeta/native_legality.py": {
+      "definitions": [
+        {
+          "end_line": 114,
+          "line": 86,
+          "name": "in_check"
+        },
+        {
+          "end_line": 288,
+          "line": 239,
+          "name": "_decode_action"
+        }
+      ],
+      "sha256": "0b50788f8893e57502c8eb966aa52ec7476d50c03cdadb9076f1b5c40f435542"
+    },
+    "generic_chess/ai/alphabeta/ordering.py": {
+      "definitions": [
+        {
+          "end_line": 102,
+          "line": 32,
+          "name": "MoveOrderer"
+        },
+        {
+          "end_line": 102,
+          "line": 70,
+          "name": "order"
+        }
+      ],
+      "sha256": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e"
+    },
+    "generic_chess/ai/alphabeta/search.py": {
+      "definitions": [
+        {
+          "end_line": 625,
+          "line": 325,
+          "name": "negamax"
+        },
+        {
+          "end_line": 1035,
+          "line": 943,
+          "name": "root_tactical_scan"
+        }
+      ],
+      "sha256": "c630a4c05c26235b6f7a89cc97153bc709f27a615e6b18efb9a38bf90491fa76"
+    },
+    "generic_chess/ai/alphabeta/transposition.py": {
+      "definitions": [
+        {
+          "end_line": 35,
+          "line": 18,
+          "name": "TTEntry"
+        }
+      ],
+      "sha256": "120ea3195058c120bfc4d1e9f7166a93c857e57558dba2aafb74bb2c83595a2b"
+    },
+    "generic_chess/core/search_runtime.py": {
+      "definitions": [
+        {
+          "end_line": 306,
+          "line": 298,
+          "name": "RuntimeSearchKey"
+        },
+        {
+          "end_line": 1103,
+          "line": 1094,
+          "name": "search_key"
+        },
+        {
+          "end_line": 1311,
+          "line": 1295,
+          "name": "in_check"
+        },
+        {
+          "end_line": 1621,
+          "line": 1507,
+          "name": "_push_impl"
+        }
+      ],
+      "sha256": "aea58c51513b439cec936735824989333c1b946adc2204a4086249b1c02dfc18"
+    },
+    "generic_chess/core/semantic_executor.py": {
+      "definitions": [
+        {
+          "end_line": 84,
+          "line": 67,
+          "name": "_ActionBinding"
+        },
+        {
+          "end_line": 808,
+          "line": 800,
+          "name": "in_check"
+        },
+        {
+          "end_line": 1577,
+          "line": 1518,
+          "name": "_action_delivers_check"
+        },
+        {
+          "end_line": 1730,
+          "line": 1647,
+          "name": "iter_legal_action_bindings"
+        }
+      ],
+      "sha256": "75c3ea8fb4d5e61ca8ce9e5f78cc377b93dd14a5dc10371ceea565df26d58d9c"
+    }
+  }
+}

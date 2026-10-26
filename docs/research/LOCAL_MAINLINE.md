@@ -6,7 +6,41 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 closed child-construction assessment
+## Current decision -2026-10-27 one proposed quality consumer
+
+[Observed-check hint proposal](LEAPER_CHECK_HINT_PROPOSAL_20261027.md) is
+PROPOSED_NOT_STARTED and awaits USER cumulative necessity assessment. The old
+460-minute grant covered the closed child candidate, not this new strategy.
+Current source intake found no new Patrol blobs or autonomous Slack comment
+edits; fresh Dot source-only advice was read/adopted with its scope retained.
+
+New source finding: no pre-child check bit is exposed by current semantic/Native
+bindings. Reject that free-bit premise. Selected runtime push already computes a
+check fact, so a NEW bounded per-choose exact-existing-key/action store might
+reuse it on later main-search visits with zero extra child/check/key requests.
+Prefer investigating this ordering-only hypothesis over a selective extension;
+no implementation or qualification has occurred. It is not old root leaf/work
+ordering, a geometry kernel, a WDL cache, or a new TT-bound/depth policy.
+
+Six metadata-selected full prefix24 inputs match six original query digests and
+six movement signatures; all24 old game member byte hashes pass. This is new
+source/data derivation only, not new Core execution or independent game solving.
+All old source episodes draw. Future relative outcomes may remain saturated;
+input availability does not establish quality resolution. AUX independently owns
+terminal-frontier/certificate bounds; do not duplicate or assume those results.
+
+Main: is this limited new information consumer worth its cost? |Present the
+one-candidate/36-call/conditional12-game proposal and wait for USER necessity
+assessment before execution |Specific grant/deferral and exact carried costs |
+No new experiment until decision; old420.478498minutes plus actual preparation/
+delivery remain carried; forecast about565-580, proposed whole cap600minutes.
+Backup1: preserve closed child UNKNOWN, all144 slots and cost/semantic limits;
+no refill, retuning, profile/PVS expansion or default activation.
+Backup2: next meaningful intake reads late advice/new autonomous GitHub/Slack
+reviews, records read/adopt/execute separately; no new AUX assignment/worker.
+
+## Retained closed child-construction assessment
+
 
 [Selected child construction](LEAPER_CHILD_CONSTRUCTION_20261027.md) is CLOSED.
 Science is COMPLETE. This marker applies ONLY to the whole USER-approved finite
@@ -23,16 +57,8 @@ saved-data verification; public/private original-byte and numeric parityPASS.
 The certificate is narrower than all pure-Leaper rules; timed pattern coverage,
 binary build identity, total RSS and general/strength benefit remain UNKNOWN.
 
-Main: can a future quality-route experiment have a discriminating multirule
-endpoint? |At the next opening inspect current user/GitHub/Slack then prepare one
-source-only route-choice proposal from existing full histories and existing
-ordering, with >=3family endpoint feasibility and conservative costs |Reviewable
-GO/NO-GO design or explicit source gap |No Player/solver/game/new strategy before
-its own scope and related-budget assessment; no closed-slot refill.
-Backup1: retain the child UNKNOWN and exact finite proof/coverage boundaries;
-no automatic guard-hoisting/kernel/cache/Native extension or activation.
-Backup2: bind future quality claims to complete contexts; no SCC/Position-only
-WDL shortcut, parameter transplant, old-label transfer or AUX assignment.
+The source-only route-choice task is superseded by the current proposal above.
+Its implementation and quality endpoint remain unexecuted.
 
 New autonomous c695161c review, raw036d16ee..., was fully read during delivery.
 Its4f source snapshot lacked this chat's actual USER460grant and new results;
