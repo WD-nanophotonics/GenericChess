@@ -4,7 +4,7 @@ Same UUID/origin20:46:23UTC,1896.114769confirmed seconds; ACTIVE, not a complete
 
 [Actual arena consumer](AUX_ARENA_TERMINAL_ADMISSION_20261027.md): matching replay alone formerly admittedONGOING pair progress asDRAW. Two failures reproduced, narrow shared completed validator/scorer fixed, actualCoreterminal positive and23relatedchecksPASS; no Native/Player or researchmatch in this selection. Separate gameatomic returned-game completion versus scoring strength-completion is sourcequalified, not an additional failure/guard campaign. No new current trajectory ingestion caller found; hypothetical loader framework rejected. PRIMARY endpoint remains PRIMARY; all old caps/windows/costs retained.
 
-Same-round Dot followup1793050053 aftere183fullSHA; delayedcheck21:32:49UTC completed once afterdue21:32:33, no newreply. Continue independent scoped work, no duplicate request or replygate. Current executable plan/memo owns nexttask; no oldteacher/theory/H6/PVS/frontier/Uniform/1520 rerun or default change.
+Same-round Dot followup1793050053 aftere183fullSHA; delayedcheck21:32:54UTC (capture completed21:32:54.208698) completed once afterdue21:32:33, no newreply. Continue independent scoped work, no duplicate request or replygate. Current executable plan/memo owns nexttask; no oldteacher/theory/H6/PVS/frontier/Uniform/1520 rerun or default change.
 
 ## Active teacher-consumer segment89c5ef59 —2026-10-27
 
