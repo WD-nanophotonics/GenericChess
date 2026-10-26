@@ -1,0 +1,52 @@
+{
+  "Core": 0,
+  "at": "2026-10-26T07:32:05.217859+00:00",
+  "claim": "sourceprimitiveflagdifference; notexecutedfullgenerator/promotion/WDL",
+  "rows": [
+    {
+      "base": [
+        [
+          1,
+          1
+        ]
+      ],
+      "derived_promotable_base": true,
+      "derived_promotable_extra": false,
+      "effective_equal": true,
+      "n": 4,
+      "with_offboard": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          -4
+        ]
+      ]
+    },
+    {
+      "base": [
+        [
+          1,
+          1
+        ]
+      ],
+      "derived_promotable_base": true,
+      "derived_promotable_extra": false,
+      "effective_equal": true,
+      "n": 5,
+      "with_offboard": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          -5
+        ]
+      ]
+    }
+  ],
+  "source": "generic_chess/generation/piece_generator.py derive_is_promotable andgenerator.py target_ids/promotiondata"
+}

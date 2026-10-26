@@ -1,0 +1,688 @@
+{
+  "Player": 0,
+  "at": "2026-10-26T07:28:24.294889+00:00",
+  "complete_bound_root_records": 36,
+  "complete_measured_frontiers": 0,
+  "games": 0,
+  "geometric_upper_zero": 5,
+  "input_sha256": "6d59e3603a0a9d1d70ff0a2e83284f1300ce3c3fd3cc28fc0e72b0fc47065090",
+  "movement_groups": 18,
+  "new_Core_queries": 0,
+  "no_measured_frontier_recovery": true,
+  "nonempty_type_geometry_but_zero_opening_upper": [
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "far_inactive",
+      "complete_Core_frontier": false,
+      "fingerprint": "82e4bcc60288d47f72dc99373463a07efa3491db5408b60fc67d800377991edd",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 0,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 0,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    }
+  ],
+  "population": "handdeclared structural developmentcontrols; not currentgamegenerator or heldoutstrengthdata",
+  "recorder_failure_slots": 36,
+  "rows": [
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "far_inactive",
+      "complete_Core_frontier": false,
+      "fingerprint": "8f422bd232ce980f6ef2f2258e7297c4e404f21fb0c6f406e1f1865ab04f4c3d",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": false,
+      "owner0_geometric_upper_by_type": {
+        "A": 0,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 0,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "far_inactive",
+      "complete_Core_frontier": false,
+      "fingerprint": "c67c129093227346d24a4c77428e2fac81cd1daf2555d25a4e90c5ae53490e0b",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": false,
+      "owner0_geometric_upper_by_type": {
+        "A": 0,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 0,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "orthogonal_reversible",
+      "complete_Core_frontier": false,
+      "fingerprint": "8f3aeb8950e4fae30aec88af3eb1b5850c42a1a9fc54e4d695388f0ee9d0e712",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "orthogonal_reversible",
+      "complete_Core_frontier": false,
+      "fingerprint": "03ca5c145f77a35e8818e2ca83ffc67bc10ea4958db927e151ea00e4140cf2f4",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "one_way_turn",
+      "complete_Core_frontier": false,
+      "fingerprint": "0ecd020ec4e5bb415b6dcb44561c248f244d866d9d4bd167b6ac25118d7caa80",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "one_way_turn",
+      "complete_Core_frontier": false,
+      "fingerprint": "757951f22a868a43f6e60dbc8eb76c6f9c30e56616d4b67a7ff98f6b1077cf1c",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 2
+      },
+      "owner0_ordinary_geometric_upper": 4,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "short_opposite",
+      "complete_Core_frontier": false,
+      "fingerprint": "97c6f7f19921f445e0bdb5d71005565d04c57ab70aab7ea9e1bb42123acf9b29",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "short_opposite",
+      "complete_Core_frontier": false,
+      "fingerprint": "18f0dae6053abb2a65048ff9cf048c82622c35b6c4ca68b5183e935abe416b2d",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "finite_cycle_threshold",
+      "complete_Core_frontier": false,
+      "fingerprint": "12d06d1695e4521f22bfb11b83499f9c613dde159b7b2623a54069d721e19a74",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "finite_cycle_threshold",
+      "complete_Core_frontier": false,
+      "fingerprint": "6e50f8766f76fe532eb37bbf0f6e3df61339c42f5c0a0e8e0f938b529474fa17",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "directional_knight_pair",
+      "complete_Core_frontier": false,
+      "fingerprint": "a0ef27d7318026e1a9bf86e4eabdcbe265091b109b218f597625bffc73af22d4",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 4,
+      "case": "directional_knight_pair",
+      "complete_Core_frontier": false,
+      "fingerprint": "92fe39103118213a4993b5c42635baa64e5dea87ca346c1934787d36f81340e6",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "far_inactive",
+      "complete_Core_frontier": false,
+      "fingerprint": "cebd6d187721643a43fb974bbc3a8d1179f5693d65ae7e4a22dbbf36cda69f7b",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": false,
+      "owner0_geometric_upper_by_type": {
+        "A": 0,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 0,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "far_inactive",
+      "complete_Core_frontier": false,
+      "fingerprint": "0a4e796f1f6488b7fd60606faebaaab28f74dc46a19a1e4e93917d5e379f3d7c",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": false,
+      "owner0_geometric_upper_by_type": {
+        "A": 0,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 0,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "orthogonal_reversible",
+      "complete_Core_frontier": false,
+      "fingerprint": "d1b8f093ebc7bf03722f45d7e8e3e46efa1578d92fc03765abf1d0a84234fd1f",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "orthogonal_reversible",
+      "complete_Core_frontier": false,
+      "fingerprint": "bd6001e64fb1f7ccf1f7372711222738b46046573281187388d4b33161b04c46",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "one_way_turn",
+      "complete_Core_frontier": false,
+      "fingerprint": "3ef9988eeec800f965e017976747f2d39d13ce800c236c8abef8d2d7122c62a0",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "one_way_turn",
+      "complete_Core_frontier": false,
+      "fingerprint": "7f4d725e6bffcdb3639f9d5556e887f70bffb2d4c7bf675d52acaacd11738a39",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 2
+      },
+      "owner0_ordinary_geometric_upper": 4,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "short_opposite",
+      "complete_Core_frontier": false,
+      "fingerprint": "2f99f11d0943e7949c422e53c21806cac7855c53570a47f1a9c44c0388504f2d",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "short_opposite",
+      "complete_Core_frontier": false,
+      "fingerprint": "1f14db0a6c8298357faa5404456f23bba018ec3b8343a9f3e66bc018632a3b60",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "finite_cycle_threshold",
+      "complete_Core_frontier": false,
+      "fingerprint": "bff97a7338c4393f0ba0ee37b1fc57039942d8aab2fdd28a8d1d7996faf76ea7",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "finite_cycle_threshold",
+      "complete_Core_frontier": false,
+      "fingerprint": "e66d7d12bc82caea355e4e1db1c411c96ff68d51df01a46c757bde3969464fbc",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "directional_knight_pair",
+      "complete_Core_frontier": false,
+      "fingerprint": "ad9373ad46c284ef940b94280f90a0e912b55fa2c5dd58fee99698a3f80a9562",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 5,
+      "case": "directional_knight_pair",
+      "complete_Core_frontier": false,
+      "fingerprint": "5d32547ef82f009b50dcd960365d36aec087446058a096050234554bc25c6727",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "far_inactive",
+      "complete_Core_frontier": false,
+      "fingerprint": "82e4bcc60288d47f72dc99373463a07efa3491db5408b60fc67d800377991edd",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 0,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 0,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "far_inactive",
+      "complete_Core_frontier": false,
+      "fingerprint": "ec41c19afc058f62861a97d5f91607b84507ef3adffc4e88914768ae05e44943",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 0,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 1,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "orthogonal_reversible",
+      "complete_Core_frontier": false,
+      "fingerprint": "eb3b59623d1f8a63fbd980e1b1175f096bf80954b2d7d90cb5f5e365737425c5",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "orthogonal_reversible",
+      "complete_Core_frontier": false,
+      "fingerprint": "5b813e8b262159e8dc4827e07b6a09c9f1d5f1d3601dd2965888247a37168dde",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "one_way_turn",
+      "complete_Core_frontier": false,
+      "fingerprint": "33b759ac47a8dbd6ac3e6d0c012fffd9512589eb7dd3679b37dfaec1dfa67561",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "one_way_turn",
+      "complete_Core_frontier": false,
+      "fingerprint": "4926e69c2135255133def939bfcec4391cc89666153c6fbf52da97a87af5467c",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 2
+      },
+      "owner0_ordinary_geometric_upper": 4,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "short_opposite",
+      "complete_Core_frontier": false,
+      "fingerprint": "2ff83dc2267bc029315b3811e18b2089c06005a6365c35191de37ca73849024e",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "short_opposite",
+      "complete_Core_frontier": false,
+      "fingerprint": "d53663d1528d7657bace7d8350c9229b5ba21742030b37e7e5e614eeabb5dd32",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "finite_cycle_threshold",
+      "complete_Core_frontier": false,
+      "fingerprint": "ccc7081ab112274a4663a70184038f17aa8e3c90c566bedb51c2689df09b8464",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "finite_cycle_threshold",
+      "complete_Core_frontier": false,
+      "fingerprint": "d4d75f1f68da02ccd5142c0aced20145795d417d4ccf4b8454b0b7cc122e407d",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 1,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "directional_knight_pair",
+      "complete_Core_frontier": false,
+      "fingerprint": "b9fbd3a89dc83267c0c5898923e08e22cb84d6a0416875f30ac00317bb552ccf",
+      "layout": "edge_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 0
+      },
+      "owner0_ordinary_geometric_upper": 2,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    },
+    {
+      "WDL": "UNKNOWN",
+      "board": 6,
+      "case": "directional_knight_pair",
+      "complete_Core_frontier": false,
+      "fingerprint": "a3cb7068fcbc61ed8c53a67002887a6af2896c1a7e8a27194140e2e17839d047",
+      "layout": "offset_mirrored",
+      "legal_count": "UNKNOWN; positive bound is not observedlegal availability",
+      "observed_error": "AttributeError: 'GameState' object has no attribute 'ply'",
+      "ordinary_geometry_nonempty": true,
+      "owner0_geometric_upper_by_type": {
+        "A": 2,
+        "B": 1
+      },
+      "owner0_ordinary_geometric_upper": 3,
+      "retained_child_payloads": 0,
+      "root_record_bound": true
+    }
+  ],
+  "same_movement_groups_with_different_setup_upper": 10,
+  "scheduled_slots": 36,
+  "solver": 0,
+  "source_sha256": "250136e21c33097990c783195e56fe01d61572cc86aec834a3c537dbb3e4d025"
+}

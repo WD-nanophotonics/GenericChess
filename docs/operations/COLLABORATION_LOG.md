@@ -7884,3 +7884,26 @@ of actual execution consumers/cost opportunities/semantic risks, not PRIMARY
 quality-design work. Assignment specification is published here before delivery;
 execution and findings remain unverified until AUX reports. This bounded
 configuration adds zero research time; prior ended UUID/3615.343863s are retained.
+
+## 2026-10-26 prospective directory and real-consumer boundaries
+
+PRIMARY read AUX's source-only consumer audit at a475104a and adopted its H6
+deferral/cost-UNKNOWN conclusion; no AUX work was rerun or reassigned. Current
+Patrol at opening264cfed had no newblob. Slack20roots/three relevant complete
+threads were privately retained; oldercoverage remainsUNKNOWN. Opening Dot
+AGENT_REQUEST ac14da57 was verified and its one delayed check consumed the
+source-only reply1792997317.974379. Scope/role labels, oneglobaltransform and
+rawweights advice were adopted; not a new budget. PRIMARY independently
+executed the disclosed geometry/Core/component controls; no Player/solver/game.
+
+New finite counts and actual operator observations distinguish graph grouping,
+full-rule semantics, rawmetadata and real execution. Positive singleton-order
+controls are retained alongside the multiplicity/encoding sensitivity; no
+strength conclusion. Independent saved-data checks include failures, timestamps,
+perspective and three deliberately rejected falseclaim controls. The36failed
+frontiers remainmissing; recording fixes did not refill them. Report/manifest
+bind all sourceversions and known gaps. Further directorywork stops. Current
+nextaction is a consequential-controller/endpoint and cost-necessity decision,
+not another prototype/flag rotation. Closing fixed-SHA Dot progress follows
+publication; that later receipt lives in own memo/private transport record, not
+a retrospective claim that this log itself proves delivery.

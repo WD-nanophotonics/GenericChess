@@ -1,0 +1,1005 @@
+{
+  "Player": 0,
+  "at": "2026-10-26T07:10:31.465093+00:00",
+  "empty_board_unlabelled_union_same": true,
+  "full_fixed_board_legal_choices_differ": true,
+  "games": 0,
+  "rows": [
+    {
+      "actions": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g6",
+          "pattern_id": "legacy_012",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_016",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "C",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g11",
+          "pattern_id": "sem_00_quiet",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "C",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g12",
+          "pattern_id": "sem_01_capture",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        }
+      ],
+      "ordinary_actions": [
+        {
+          "actor_type_id": "C",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g11",
+          "pattern_id": "sem_00_quiet",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "C",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g12",
+          "pattern_id": "sem_01_capture",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "e7e05d036bcd43fa218d747ddda4127700d2b73d5bea308901369a48566eac00",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "C": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "C",
+            "promotion_target_ids": [],
+            "type_id": "C"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "semantic_actions": [
+          {
+            "aux_state": [],
+            "composition": "replace_legacy",
+            "effects": [
+              {
+                "count": 1,
+                "disposition": null,
+                "from_ref": {
+                  "kind": "source",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "kind": "move",
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "slot_name": null,
+                "square_ref": null,
+                "to_ref": {
+                  "kind": "target",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "type_ref": null,
+                "value": null
+              }
+            ],
+            "explicit_promotion_type": null,
+            "geometry": {
+              "atom_kind": null,
+              "direction": null,
+              "kind": "leap",
+              "max_steps": null,
+              "min_steps": null,
+              "offset": [
+                1,
+                0
+              ],
+              "owner_relative": true
+            },
+            "invariants": [
+              {
+                "kind": "own_anchor_safe",
+                "square_refs": []
+              }
+            ],
+            "name": "quiet",
+            "path_constraints": [],
+            "postconditions": [],
+            "promotion_mode": "none",
+            "replace_selector": {
+              "action_family": "board",
+              "geometry_kind": "leap",
+              "replace_all_matching": true,
+              "target_relation": "empty",
+              "type_ids": [
+                "C"
+              ]
+            },
+            "slot_guards": [],
+            "state_guards": [],
+            "target_relation": "empty",
+            "triggers": [],
+            "type_ids": [
+              "C"
+            ]
+          },
+          {
+            "aux_state": [],
+            "composition": "replace_legacy",
+            "effects": [
+              {
+                "count": 1,
+                "disposition": "remove_from_game",
+                "from_ref": null,
+                "kind": "remove",
+                "piece_owner": "opponent",
+                "piece_type_ref": null,
+                "slot_name": null,
+                "square_ref": {
+                  "kind": "target",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "to_ref": null,
+                "type_ref": null,
+                "value": null
+              },
+              {
+                "count": 1,
+                "disposition": null,
+                "from_ref": {
+                  "kind": "source",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "kind": "move",
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "slot_name": null,
+                "square_ref": null,
+                "to_ref": {
+                  "kind": "target",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "type_ref": null,
+                "value": null
+              }
+            ],
+            "explicit_promotion_type": null,
+            "geometry": {
+              "atom_kind": null,
+              "direction": null,
+              "kind": "leap",
+              "max_steps": null,
+              "min_steps": null,
+              "offset": [
+                0,
+                1
+              ],
+              "owner_relative": true
+            },
+            "invariants": [
+              {
+                "kind": "own_anchor_safe",
+                "square_refs": []
+              }
+            ],
+            "name": "capture",
+            "path_constraints": [],
+            "postconditions": [],
+            "promotion_mode": "none",
+            "replace_selector": {
+              "action_family": "board",
+              "geometry_kind": "leap",
+              "replace_all_matching": true,
+              "target_relation": "enemy",
+              "type_ids": [
+                "C"
+              ]
+            },
+            "slot_guards": [],
+            "state_guards": [],
+            "target_relation": "enemy",
+            "triggers": [],
+            "type_ids": [
+              "C"
+            ]
+          }
+        ],
+        "semantic_dsl_version": 2,
+        "stalemate_result": "draw"
+      },
+      "state": {
+        "history": [
+          {
+            "action_signature": "",
+            "actor": -1,
+            "gave_check": false,
+            "position_key": "a61fce1208b60fc6641b6ef87e6f3eb7d7949f2ba2dfd6a63e1718a30bd69db8"
+          }
+        ],
+        "ply_count": 0,
+        "position": {
+          "aux_state": [],
+          "board": [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          "board_height": null,
+          "board_width": null,
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "ruleset_fingerprint": "e7e05d036bcd43fa218d747ddda4127700d2b73d5bea308901369a48566eac00",
+          "side_to_move": 0
+        },
+        "repetition_counts": [
+          [
+            "a61fce1208b60fc6641b6ef87e6f3eb7d7949f2ba2dfd6a63e1718a30bd69db8",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      "swap": false
+    },
+    {
+      "actions": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g6",
+          "pattern_id": "legacy_012",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_016",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        }
+      ],
+      "ordinary_actions": [],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "4881514515f78547498da1441c58fc6b0d52c98be16df184e794daa8a5100b5b",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "C": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "C",
+            "promotion_target_ids": [],
+            "type_id": "C"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "semantic_actions": [
+          {
+            "aux_state": [],
+            "composition": "replace_legacy",
+            "effects": [
+              {
+                "count": 1,
+                "disposition": null,
+                "from_ref": {
+                  "kind": "source",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "kind": "move",
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "slot_name": null,
+                "square_ref": null,
+                "to_ref": {
+                  "kind": "target",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "type_ref": null,
+                "value": null
+              }
+            ],
+            "explicit_promotion_type": null,
+            "geometry": {
+              "atom_kind": null,
+              "direction": null,
+              "kind": "leap",
+              "max_steps": null,
+              "min_steps": null,
+              "offset": [
+                0,
+                1
+              ],
+              "owner_relative": true
+            },
+            "invariants": [
+              {
+                "kind": "own_anchor_safe",
+                "square_refs": []
+              }
+            ],
+            "name": "quiet",
+            "path_constraints": [],
+            "postconditions": [],
+            "promotion_mode": "none",
+            "replace_selector": {
+              "action_family": "board",
+              "geometry_kind": "leap",
+              "replace_all_matching": true,
+              "target_relation": "empty",
+              "type_ids": [
+                "C"
+              ]
+            },
+            "slot_guards": [],
+            "state_guards": [],
+            "target_relation": "empty",
+            "triggers": [],
+            "type_ids": [
+              "C"
+            ]
+          },
+          {
+            "aux_state": [],
+            "composition": "replace_legacy",
+            "effects": [
+              {
+                "count": 1,
+                "disposition": "remove_from_game",
+                "from_ref": null,
+                "kind": "remove",
+                "piece_owner": "opponent",
+                "piece_type_ref": null,
+                "slot_name": null,
+                "square_ref": {
+                  "kind": "target",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "to_ref": null,
+                "type_ref": null,
+                "value": null
+              },
+              {
+                "count": 1,
+                "disposition": null,
+                "from_ref": {
+                  "kind": "source",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "kind": "move",
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "slot_name": null,
+                "square_ref": null,
+                "to_ref": {
+                  "kind": "target",
+                  "offset": null,
+                  "owner_relative": true,
+                  "slot_name": null,
+                  "square": null,
+                  "step": null
+                },
+                "type_ref": null,
+                "value": null
+              }
+            ],
+            "explicit_promotion_type": null,
+            "geometry": {
+              "atom_kind": null,
+              "direction": null,
+              "kind": "leap",
+              "max_steps": null,
+              "min_steps": null,
+              "offset": [
+                1,
+                0
+              ],
+              "owner_relative": true
+            },
+            "invariants": [
+              {
+                "kind": "own_anchor_safe",
+                "square_refs": []
+              }
+            ],
+            "name": "capture",
+            "path_constraints": [],
+            "postconditions": [],
+            "promotion_mode": "none",
+            "replace_selector": {
+              "action_family": "board",
+              "geometry_kind": "leap",
+              "replace_all_matching": true,
+              "target_relation": "enemy",
+              "type_ids": [
+                "C"
+              ]
+            },
+            "slot_guards": [],
+            "state_guards": [],
+            "target_relation": "enemy",
+            "triggers": [],
+            "type_ids": [
+              "C"
+            ]
+          }
+        ],
+        "semantic_dsl_version": 2,
+        "stalemate_result": "draw"
+      },
+      "state": {
+        "history": [
+          {
+            "action_signature": "",
+            "actor": -1,
+            "gave_check": false,
+            "position_key": "bb5256018e684ab89a8b5707fd44f2b641fb56e638bc17ea96c6e044c3ac032e"
+          }
+        ],
+        "ply_count": 0,
+        "position": {
+          "aux_state": [],
+          "board": [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          "board_height": null,
+          "board_width": null,
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "ruleset_fingerprint": "4881514515f78547498da1441c58fc6b0d52c98be16df184e794daa8a5100b5b",
+          "side_to_move": 0
+        },
+        "repetition_counts": [
+          [
+            "bb5256018e684ab89a8b5707fd44f2b641fb56e638bc17ea96c6e044c3ac032e",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      "swap": true
+    }
+  ],
+  "scope": "negative admissibility witness; not ordinary move/capture-same-direction census",
+  "solver": 0,
+  "source_sha256": "337b31549b1e971b1560c912dbdb5019f6ae67e9a8832058fc2baa2c419c79b3"
+}

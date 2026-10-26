@@ -1,0 +1,997 @@
+{
+  "Knuth_theorem_checks": [
+    {
+      "connected": false,
+      "n": 4,
+      "r": 1,
+      "s": 1
+    },
+    {
+      "connected": true,
+      "n": 4,
+      "r": 1,
+      "s": 2
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 2,
+      "s": 2
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 1,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 2,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 3,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 1,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 2,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 3,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 4,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 1,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 2,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 3,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 4,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 4,
+      "r": 5,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 1,
+      "s": 1
+    },
+    {
+      "connected": true,
+      "n": 5,
+      "r": 1,
+      "s": 2
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 2,
+      "s": 2
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 1,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 2,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 3,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 1,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 2,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 3,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 4,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 1,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 2,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 3,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 4,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 5,
+      "r": 5,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 1,
+      "s": 1
+    },
+    {
+      "connected": true,
+      "n": 6,
+      "r": 1,
+      "s": 2
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 2,
+      "s": 2
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 1,
+      "s": 3
+    },
+    {
+      "connected": true,
+      "n": 6,
+      "r": 2,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 3,
+      "s": 3
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 1,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 2,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 3,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 4,
+      "s": 4
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 1,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 2,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 3,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 4,
+      "s": 5
+    },
+    {
+      "connected": false,
+      "n": 6,
+      "r": 5,
+      "s": 5
+    }
+  ],
+  "Player": 0,
+  "at": "2026-10-26T07:19:48.869524+00:00",
+  "directed_subset_negative": {
+    "conclusion": "single-complete-orbit theorem cannot be applied to a directed subset or as a game-quality filter",
+    "full_knight_components": [
+      16
+    ],
+    "n": 4,
+    "subset_offsets": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "subset_strong": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "subset_weak": [
+      1,
+      1,
+      4,
+      5,
+      5
+    ]
+  },
+  "games": 0,
+  "independent_small_board_checks": [
+    {
+      "explicit_joint_classes": 199,
+      "explicit_pairs": 1369,
+      "explicit_single_classes": 9,
+      "fixed_counts_by_D4": [
+        37,
+        1,
+        5,
+        1,
+        7,
+        7,
+        7,
+        7
+      ],
+      "include_empty": true,
+      "independent_per_type_D4_tuples": 81,
+      "labelled_two_type_common_D4_classes": 199,
+      "n": 2,
+      "single_type_classes": 9
+    },
+    {
+      "explicit_joint_classes": 11567,
+      "explicit_pairs": 90601,
+      "explicit_single_classes": 50,
+      "fixed_counts_by_D4": [
+        301,
+        1,
+        13,
+        1,
+        21,
+        21,
+        21,
+        21
+      ],
+      "include_empty": true,
+      "independent_per_type_D4_tuples": 2500,
+      "labelled_two_type_common_D4_classes": 11567,
+      "n": 3,
+      "single_type_classes": 50
+    }
+  ],
+  "literature": "https://arxiv.org/pdf/math/9411240 Theorem1 pp1-3; source-only theorem application",
+  "main_counts": [
+    {
+      "fixed_counts_by_D4": [
+        1177,
+        1,
+        25,
+        1,
+        43,
+        43,
+        43,
+        43
+      ],
+      "include_empty": true,
+      "independent_per_type_D4_tuples": 29584,
+      "labelled_two_type_common_D4_classes": 174169,
+      "n": 4,
+      "single_type_classes": 172
+    },
+    {
+      "fixed_counts_by_D4": [
+        3241,
+        1,
+        41,
+        1,
+        73,
+        73,
+        73,
+        73
+      ],
+      "include_empty": true,
+      "independent_per_type_D4_tuples": 199809,
+      "labelled_two_type_common_D4_classes": 1315885,
+      "n": 5,
+      "single_type_classes": 447
+    },
+    {
+      "fixed_counts_by_D4": [
+        7260,
+        0,
+        60,
+        0,
+        110,
+        110,
+        110,
+        110
+      ],
+      "include_empty": false,
+      "independent_per_type_D4_tuples": 940900,
+      "labelled_two_type_common_D4_classes": 6594950,
+      "n": 6,
+      "single_type_classes": 970
+    }
+  ],
+  "solver": 0,
+  "union_connected_individual_disconnected": [
+    {
+      "individual_components": [
+        [
+          8,
+          8
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "n": 4,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        2,
+        3
+      ],
+      "union_components": [
+        16
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          12,
+          13
+        ],
+        [
+          1,
+          8,
+          16
+        ]
+      ],
+      "n": 5,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        2,
+        3
+      ],
+      "union_components": [
+        25
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          12,
+          13
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          16
+        ]
+      ],
+      "n": 5,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        1,
+        4
+      ],
+      "union_components": [
+        25
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          12,
+          13
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "n": 5,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        3,
+        4
+      ],
+      "union_components": [
+        25
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          8,
+          16
+        ]
+      ],
+      "n": 5,
+      "orbit1": [
+        2,
+        2
+      ],
+      "orbit2": [
+        2,
+        3
+      ],
+      "union_components": [
+        25
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          32
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        1,
+        4
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3,
+          5,
+          5,
+          5,
+          5
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        3,
+        4
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          5,
+          5,
+          5,
+          5
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        2,
+        5
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        1
+      ],
+      "orbit2": [
+        4,
+        5
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          32
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        2,
+        2
+      ],
+      "orbit2": [
+        1,
+        4
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3,
+          5,
+          5,
+          5,
+          5
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        2,
+        2
+      ],
+      "orbit2": [
+        3,
+        4
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          32
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        3
+      ],
+      "orbit2": [
+        1,
+        4
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3,
+          5,
+          5,
+          5,
+          5
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        3
+      ],
+      "orbit2": [
+        3,
+        4
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          5,
+          5,
+          5,
+          5
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        3
+      ],
+      "orbit2": [
+        2,
+        5
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          18,
+          18
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        1,
+        3
+      ],
+      "orbit2": [
+        4,
+        5
+      ],
+      "union_components": [
+        36
+      ]
+    },
+    {
+      "individual_components": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          32
+        ]
+      ],
+      "n": 6,
+      "orbit1": [
+        3,
+        3
+      ],
+      "orbit2": [
+        1,
+        4
+      ],
+      "union_components": [
+        36
+      ]
+    }
+  ]
+}

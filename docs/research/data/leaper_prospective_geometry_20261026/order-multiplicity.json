@@ -1,0 +1,3455 @@
+{
+  "Player": 0,
+  "at": "2026-10-26T07:23:38.177502+00:00",
+  "claim": "coldquietMoveOrderer only, not finalPlayer/fallback/strength or deploymenttiming",
+  "first_ordered_parity": 8,
+  "frontier_set_parity": 8,
+  "games": 0,
+  "ordered_parity": 4,
+  "rows": [
+    {
+      "actual_physical_order": [
+        [
+          6,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          6,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "order_equivariant": true,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "3925d6694a021cd025c69b7dfefc32b44b360044856bbe002ca593718c545656",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    },
+    {
+      "actual_physical_order": [
+        [
+          10,
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          10,
+          6
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "matrix": [
+        0,
+        -1,
+        1,
+        0
+      ],
+      "order_equivariant": false,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 0
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "c3b05bc1e4d7d56720a05d294e8c2716c16e77cd67d319d29cad4db57c96e6e2",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    },
+    {
+      "actual_physical_order": [
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          15,
+          11
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          9,
+          10
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          15,
+          11
+        ]
+      ],
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1
+      ],
+      "order_equivariant": false,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 2
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 2
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 2
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "9cf8648aa8d9bf0c5cb8023f8a3d49d5c00cedf06e6bf7b21b6c79e8e074184e",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    },
+    {
+      "actual_physical_order": [
+        [
+          5,
+          9
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          5,
+          9
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "matrix": [
+        0,
+        1,
+        -1,
+        0
+      ],
+      "order_equivariant": true,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 2
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 2,
+            "rank": 3
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 2,
+            "rank": 3
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d53c8844bf258fefdc39bf23f7d224a1d8d1a8910a0a79181aef35f3964a5454",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    },
+    {
+      "actual_physical_order": [
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          3,
+          7
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          5,
+          6
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          3,
+          7
+        ]
+      ],
+      "matrix": [
+        -1,
+        0,
+        0,
+        1
+      ],
+      "order_equivariant": false,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 0
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 1
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "709842b19af848242c233bf41fad954191bf80a1238a03f3771b70778dae26b7",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    },
+    {
+      "actual_physical_order": [
+        [
+          10,
+          9
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          12,
+          8
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          10,
+          9
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          12,
+          8
+        ]
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        -1
+      ],
+      "order_equivariant": true,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 2
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d4840d9d173bc6e75fc4ca3d3065756e873962274a43bbff2229a80797953046",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    },
+    {
+      "actual_physical_order": [
+        [
+          9,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          9,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "matrix": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "order_equivariant": true,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 2
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 2
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 2,
+            "rank": 0
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 2,
+            "rank": 0
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "827ce80c43a7ac7eecda3e772cf5f2976832d01fa6db2822f97f2e76287cbeb7",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    },
+    {
+      "actual_physical_order": [
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          15,
+          14
+        ]
+      ],
+      "first_ordered_equivariant": true,
+      "mapped_original_order": [
+        [
+          6,
+          10
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          15,
+          14
+        ]
+      ],
+      "matrix": [
+        0,
+        -1,
+        -1,
+        0
+      ],
+      "order_equivariant": false,
+      "ordered_actions": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 1,
+            "rank": 3
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "B",
+          "from_square": {
+            "file": 1,
+            "rank": 3
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "geometry_id": "g8",
+          "pattern_id": "legacy_020",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 3
+          }
+        }
+      ],
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "28e588109f8c505ff8a0146b615eac38ed2b5e5e7f7d1e7fc4b0352cecfb1208",
+        "schema_version": 1
+      },
+      "ruleset": {
+        "board_size": 4,
+        "capture_disposition": "remove_from_game",
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "B",
+              "current_type_id": "B",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 128,
+        "metadata": {},
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "K",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "A",
+            "promotion_target_ids": [],
+            "type_id": "A"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              }
+            ],
+            "name": "B",
+            "promotion_target_ids": [],
+            "type_id": "B"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "same_legal_frontier": true
+    }
+  ],
+  "slots": 8,
+  "solver": 0,
+  "source_sha256": "bebb8e4301275d5e9cf1513f5eda873f1cdc595cf8eb2ab0397a658b25855d23",
+  "two_actors": true
+}

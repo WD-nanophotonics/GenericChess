@@ -1,4 +1,4 @@
-# GenericChess Slack collaboration workflow —2026-10-24
+# GenericChess Slack collaboration workflow â€”2026-10-24
 
 ## Review sources and current authority
 
@@ -30,7 +30,7 @@ pure-Leaper-first direction or authorize >=120minute runs on the user's behalf.
 
 ## Reading and actual Slack interactions
 
-At each existing180minute patrol/manual work start, read new autonomous ChatGPT
+At each existing60minute patrol/manual work start, read new autonomous ChatGPT
 project comments and complete relevant threads once; retain coverage boundaries
 and any gaps. A direct request for latest messages permits a fresh bounded read.
 User correction2026-10-25: every NEW work round must initiate a fresh mailbox

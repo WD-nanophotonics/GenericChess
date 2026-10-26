@@ -1,0 +1,432 @@
+{
+  "Player": 0,
+  "at": "2026-10-26T07:32:05.228138+00:00",
+  "claim": "declaration-order consumer sensitivity only; notstrength orbug",
+  "fingerprint": "9ec55c0bdc5ebe4d0f312f688d4df347d5032ec7ce9b2ed5a3a66e85e5995f44",
+  "first_ordered_equal": false,
+  "games": 0,
+  "new_Core_roots": 1,
+  "ordered_actions": [
+    {
+      "actor_type_id": "A",
+      "from_square": {
+        "file": 1,
+        "rank": 0
+      },
+      "geometry_id": "g0",
+      "pattern_id": "legacy_000",
+      "promotion_target_id": null,
+      "to_square": {
+        "file": 2,
+        "rank": 0
+      }
+    },
+    {
+      "actor_type_id": "A",
+      "from_square": {
+        "file": 2,
+        "rank": 1
+      },
+      "geometry_id": "g0",
+      "pattern_id": "legacy_000",
+      "promotion_target_id": null,
+      "to_square": {
+        "file": 3,
+        "rank": 1
+      }
+    },
+    {
+      "actor_type_id": "A",
+      "from_square": {
+        "file": 2,
+        "rank": 1
+      },
+      "geometry_id": "g1",
+      "pattern_id": "legacy_002",
+      "promotion_target_id": null,
+      "to_square": {
+        "file": 1,
+        "rank": 1
+      }
+    },
+    {
+      "actor_type_id": "K",
+      "from_square": {
+        "file": 0,
+        "rank": 0
+      },
+      "geometry_id": "g11",
+      "pattern_id": "legacy_006",
+      "promotion_target_id": null,
+      "to_square": {
+        "file": 1,
+        "rank": 1
+      }
+    },
+    {
+      "actor_type_id": "B",
+      "from_square": {
+        "file": 0,
+        "rank": 2
+      },
+      "geometry_id": "g2",
+      "pattern_id": "legacy_008",
+      "promotion_target_id": null,
+      "to_square": {
+        "file": 0,
+        "rank": 1
+      }
+    },
+    {
+      "actor_type_id": "B",
+      "from_square": {
+        "file": 0,
+        "rank": 2
+      },
+      "geometry_id": "g3",
+      "pattern_id": "legacy_010",
+      "promotion_target_id": null,
+      "to_square": {
+        "file": 0,
+        "rank": 3
+      }
+    },
+    {
+      "actor_type_id": "K",
+      "from_square": {
+        "file": 0,
+        "rank": 0
+      },
+      "geometry_id": "g8",
+      "pattern_id": "legacy_020",
+      "promotion_target_id": null,
+      "to_square": {
+        "file": 0,
+        "rank": 1
+      }
+    }
+  ],
+  "physical_order": [
+    [
+      1,
+      2
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "physical_order_equal": false,
+  "record": {
+    "actions": [],
+    "resigned_by": null,
+    "ruleset_fingerprint": "9ec55c0bdc5ebe4d0f312f688d4df347d5032ec7ce9b2ed5a3a66e85e5995f44",
+    "schema_version": 1
+  },
+  "reference_order": [
+    [
+      6,
+      5
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "ruleset": {
+    "board_size": 4,
+    "capture_disposition": "remove_from_game",
+    "drop_allowed": {
+      "A": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "B": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ]
+    },
+    "initial_position": [
+      [
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 0,
+          "promoted": false
+        },
+        {
+          "base_type_id": "A",
+          "current_type_id": "A",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "base_type_id": "A",
+          "current_type_id": "A",
+          "owner": 0,
+          "promoted": false
+        },
+        null
+      ],
+      [
+        {
+          "base_type_id": "B",
+          "current_type_id": "B",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 1,
+          "promoted": false
+        }
+      ]
+    ],
+    "max_ply": 128,
+    "metadata": {},
+    "piece_types": [
+      {
+        "is_anchor": true,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              1
+            ]
+          }
+        ],
+        "name": "K",
+        "promotion_target_ids": [],
+        "type_id": "K"
+      },
+      {
+        "is_anchor": false,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              1,
+              0
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              -1,
+              0
+            ]
+          }
+        ],
+        "name": "A",
+        "promotion_target_ids": [],
+        "type_id": "A"
+      },
+      {
+        "is_anchor": false,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              1
+            ]
+          }
+        ],
+        "name": "B",
+        "promotion_target_ids": [],
+        "type_id": "B"
+      }
+    ],
+    "promotion_allowed": {},
+    "promotion_forced": {},
+    "repetition_limit": 4,
+    "schema_version": 1,
+    "stalemate_result": "draw"
+  },
+  "same_physical_frontier": true,
+  "solver": 0,
+  "source_reference": "scripts/leaper_geometry_order_consumer.py definition/order; onlyA atomreversalvia dataclasses.replace"
+}

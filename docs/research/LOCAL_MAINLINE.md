@@ -6,17 +6,45 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current judgment — 2026-10-26
+## Current next decision —2026-10-26 prospective geometry study
+
+[Prospective geometry/consumer study](LEAPER_PROSPECTIVE_GEOMETRY_20261026.md)
+is CLOSED as a finite development directory, not a new standing framework.
+All21780 raw masks, corrected-derived fields, independent arithmetic and actual
+component controls are retained.36 literal-frontier recording failures are
+CLOSED with0completefrontiers, never refilled. No newPlayer/solver/game, strength
+claim, default/backend activation or mixed-rule expansion occurred.
+
+Current Main: does the observed representation sensitivity warrant a consequential
+real-controller experiment? | Use the pinned fallback/scan/iteration map to
+write a specific matched full-history controller/endpoint and necessity/cost
+assessment, rather than more geometry enumeration | A decision-changing test or
+reasoned deferral, not first-ordered-action-as-WDL | No automatic run or old16game/
+H6revival; carry this directory's actual wholecost, forecast105/cap110. A related
+forecast>=120minutes needs USER before further execution, never a newUUID reset.
+
+The observed semantic-frontier and DEFAULT-static controls do not imply identical
+budgeted search. Root fallback, full tactical scan and complete iteration are
+different consumers; none was executed as a Player in this study. Do not patch
+coordinate/string ties without a real quality/cost goal. Geometric descriptors
+are not mandatory gates before games; solvedWDL/threecertifiederrors are not
+universal requirements for an appropriately designed relative-strength study.
+
+AUX a475104a's published consumer source audit was read/adopted without rerun;
+its first assignment is complete and later tasks come from user. Both schedules
+remain hourly/ACTIVE. No second assignment or other-checkout write was made.
+
+## Current judgment â€” 2026-10-26
 
 [Compiled hashing](LEAPER_COMPILED_HASH_20261026.md) produced a scoped exact-runtime
 improvement: 72 fixed-work returns, 33 nonterminal matched pairs, wall cost -5.32%
 and CPU -5.27%, with action/score/PV/work/TT/Native parity. Both tuning switches
 default OFF. The independent Position-hash memo has only incomplete factorial
 cost evidence: 59/96 returns, 37 NOT_RUN after a real zero-UTC ledger rejection;
-no refill. Its isolated 10× component speedup is not a whole-query claim.
+no refill. Its isolated 10Ã— component speedup is not a whole-query claim.
 
 38 equal-time returns keep all 19 choices: both match 17 existing optimal labels,
-with no repairs or regressions. The known p49/p53 controls are actually 5×5 and
+with no repairs or regressions. The known p49/p53 controls are actually 5Ã—5 and
 remain wrong. This panel is exposed and largely at ceiling, not a strength
 holdout. 248 full-history cases / 76,440 sampled branches and 125 regression tests
 pass exact hashes, TT keys, terminal, collision and undo contracts. No class-wide
@@ -34,7 +62,7 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Current coordination —2026-10-26 user update
+## Current coordination â€”2026-10-26 user update
 
 Both existing roles are hourly/ACTIVE. PRIMARY assigns the existing DEV_AUX
 one bounded15minute zero-query consumer/source audit; later tasks are user's.
@@ -46,7 +74,7 @@ and opportunity-cost gate adopted; the study's positive narrow result remains,
 but further H6 syntax iteration is deferred, not an automatic long-term mainline.
 This configuration/delegation adds zero research time to the ended segment.
 
-## Main: consumer/quality necessity gate before more H6 syntax work
+## Retained H6 syntax candidate — further iterations DEFERRED
 
 [H6 syntax study](LEAPER_H6_SYNTAX_20261026.md) consumes pinned AUXH6/repeat2
 full RuleSets/records as data; no AUX solver/checkout work.1520 new returns over
@@ -55,7 +83,7 @@ Final within-build300-call screen preserves work/action/value/PV and measures
 constructor+choose -7.11%; shared replay/record costs are not allocated by arm.
 S3-alone has no demonstrated useful net gain; practical Python source-recompile/
 per-position guard route is3.89x slower. Additional traced Python cache memory
-52–96KiB; full RAM/Native heap UNKNOWN.18340ordered frontiers,5346attack predicates,
+52â€“96KiB; full RAM/Native heap UNKNOWN.18340ordered frontiers,5346attack predicates,
 100synthetic doublechecks and budget/recovery parity support limited correctness,
 not all-class/heldout/strength success. Product/default/installed backend unchanged.
 
@@ -65,12 +93,10 @@ join, not a new real-time strength claim, a cap-selection target or a fallback
 bug proof. Source0 fallback score is uncertified. Do not invent a successful
 quality experiment from cost parity or select favorable latency thresholds.
 
-Question: is this compiled syntax candidate worth a next quality/consumer test? |
-Evaluate Dot/new autonomous reviews against scoped evidence, define actual consumer,
-full end-to-end goal/exposure/operational risks and cumulative cost BEFORE queries |
-A falsifiable necessity/design decision, not another saturation report |
-Carry the SAME H6 study's90->105minute forecast/all actual costs; any related
-forecast>=120 needs USER before further runs, no UUID reset/default activation.
+Current consequence: retain the positive restricted7.11% cost result, but no
+further H6syntax/bitmap iteration or activation is selected. The consumer audit
+leaves removable whole-path shares UNKNOWN. Prior own99.204minutes plus AUX's
+at-most15minutes remain carried; no source-name/session reset or automatic run.
 
 Backup1: complete-key memo remainsDEFERRED180/cap200, no changed whole-cost/RSS
 premise; no resumed factorial or TT-guard change.
@@ -100,7 +126,7 @@ assessment. The 68-call/18-game old plan stays NOT_STARTED_DEFERRED. A new UUID 
 controller label does not reset either cost. Original price profiles stay fixed.
 
 [Native DEFAULT/PVS](LEAPER_NATIVE_DEFAULT_20261025.md): 64 same-rule 50k histories
-cost 839.615→519.211s, identical work/actions, 62/64 at 1.5s both, 24 games all DRAW.
+cost 839.615â†’519.211s, identical work/actions, 62/64 at 1.5s both, 24 games all DRAW.
 [Ordinary-Q sorting](LEAPER_ORDINARY_QORDER_20261025.md) remains closed negative:
 +0.95% cost and one candidate LOSS among 24 games. LMR/TrueDRAW negative evidence
 also remains closed. Faster/deeper does not monotonically improve decisions.

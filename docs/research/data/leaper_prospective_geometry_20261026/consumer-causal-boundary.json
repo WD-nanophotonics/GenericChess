@@ -1,0 +1,61 @@
+{
+  "Core": 0,
+  "Player": 0,
+  "at": "2026-10-26T07:52:09.295006+00:00",
+  "base_sha": "264cfed3ced86d1c9ef8e3669667713a223542b5",
+  "new_source_inference": {
+    "cold_quiet_equivalence": "recordedMoveOrderer ties equal sorted(actions,key=str), no capture/priorities active",
+    "complete_scan_counterfactual": {
+      "actual_saved_all7childscores": [
+        2998,
+        3006,
+        3003,
+        3026,
+        2998,
+        3003,
+        3012
+      ],
+      "conditional": "If complete root_tactical_scan visits theseongoingchildren withsamestaticvaluator/no declaration/earlierwin, itwouldretainthisunique3026action, noteitherencodingfirst quietaction. This is source/math, not an executedrootsearch.",
+      "score": 3026,
+      "unique_static_argmax": [
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    "fallback_score": "root_fallback action,0,emptyPV is uncertified value; neverDRAWlabel",
+    "negamax_main": "search.py493-521 callsMoveOrdererifuse_ordering&&!use_staged, otherwiseotherroute; emptyTT/killers/history/quiet observedonly",
+    "other_exit_routes": "rootdeclaration, immediatewin, completedrootwin/iteration, partial/fullroot_tactical_scan can selectotheractions; coldcomponent does notidentify finalpath",
+    "pre_iteration_legal_fallback": "search.py1198/1203/1210 sortsactualruntimelegalactionsbystr beforebudgetreturn; conditional sameobservedactionset/branchwouldcarryencodingfirstactiondifference, NOT executedPlayer/cancellation incidence"
+  },
+  "scope": "causal consumer mapping and explicit non-implications, no empiricalstrength/costclaim",
+  "solver": 0,
+  "source_bindings": [
+    {
+      "git_blob": "13bb21ecb70bf4510dfa2d1ed9d2bbc9a311d287",
+      "path": "generic_chess/ai/alphabeta/search.py",
+      "working_sha256": "c630a4c05c26235b6f7a89cc97153bc709f27a615e6b18efb9a38bf90491fa76"
+    },
+    {
+      "git_blob": "7d730183989af81d8b0274e6cc378b4eb064b479",
+      "path": "generic_chess/ai/alphabeta/ordering.py",
+      "working_sha256": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e"
+    },
+    {
+      "git_blob": "a315e263c590927db4234dd9a18398679f152c44",
+      "path": "generic_chess/core/actions.py",
+      "working_sha256": "428b49e8e8b37470f1fce1147fb4f12618d16f27ab35459f124140afea2bf285"
+    },
+    {
+      "git_blob": "eaada3e9c3df9514120802b96af1c608147cc867",
+      "path": "generic_chess/ai/alphabeta/player.py",
+      "working_sha256": "8e6a3477dddd525553b1feabcaa09959e4e2d34fa6561fb12a86c0fd9bd3dce7"
+    },
+    {
+      "git_blob": "da3470f3b9deb2fdec086b8b1a35f8924045facf",
+      "path": "generic_chess/ai/alphabeta/tuning.py",
+      "working_sha256": "3bcee8e6a6b3a45f797e8458a4e63b144ff20127c5a17cfddd691d92c4dfd353"
+    }
+  ]
+}
