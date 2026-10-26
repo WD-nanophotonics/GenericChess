@@ -1893,3 +1893,15 @@ with PRIMARY retaining experiment design. All old chains/caps/UNKNOWNs remain;
 no H6 continuation, experiment or new research session started by this workflow
 edit. Configuration earns zero research credit. Source read/adoption is distinct
 from future research execution. Normal round session accounting/finish remains.
+
+
+## DEV_AUX prelaunch budget/input decision —2026-10-26
+
+Read new GitHub Pro18:12/18:37 originals at578cd42b0672181dafa4f0bdb8015be109bd4cdc
+and relevant complete Dot thread1793006207.390099. Latest Pro assigns limited
+frozen-candidate truth/history compatibility and explicitly preserves112.346min
+H6-related cost. Adopted scope;30min proposed follow-up requires user assessment
+before launch(>=142.346min plus actual intake/delivery). No identified new frozen
+handoff at pinned PRIMARY mainline; record AWAITING_FROZEN_INPUT, no invention.
+This is prelaunch exception handling, not normal research completion or a new
+experiment. Prior ended session/schedule/caps unchanged; no Dot budget waiver.

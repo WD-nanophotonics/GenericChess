@@ -1,3 +1,20 @@
+## Latest Pro intake —2026-10-26 09:39UTC
+
+Pro at sandbox578cd42b0672181dafa4f0bdb8015be109bd4cdc,
+`docs/reviews/chatgpt_patrol/2026-10-26_183742_JST_c011808.md`, explicitly assigns
+AUX only frozen-candidate full-history/truth compatibility and coverage.
+Adopted scope; no candidate generation or PRIMARY quality-design takeover.
+Prelaunch status: AWAITING_FROZEN_INPUT / USER_BUDGET_DECISION_REQUIRED.
+The pinned PRIMARY mainline has no identified new frozen quality handoff;
+historical records are not a replacement. This is bounded discovery, not a
+claim that every old record was audited. Treat as the existing H6 truth-related
+chain112.346min; proposed additional30min implies at least142.346min plus current
+prelaunch/delivery costs. User assessment is required before substantive work.
+Pro and Dot cannot waive that boundary. No new session/Player/solver/game/build,
+60minute completion claim, schedule change or old audit repetition occurred.
+Mutable action and exact evidence are in WORK_PLAN/NEXT_WORK. Earlier executable
+plan below is conditional on this newer scope/budget decision.
+
 # DEV_AUX current plan —2026-10-26
 
 Current status: [DEV_AUX_CURRENT_STATUS.md](../operations/DEV_AUX_CURRENT_STATUS.md).
