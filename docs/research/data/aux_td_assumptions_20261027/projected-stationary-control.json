@@ -1,0 +1,37 @@
+{
+  "scope": "two abstract one-observation histories with aliased material features, not rules/games/training",
+  "K": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "root": [
+    0.5,
+    0.5
+  ],
+  "terminal_payoffs": [
+    1,
+    -1
+  ],
+  "phi_free": [
+    1,
+    1
+  ],
+  "scale": 10,
+  "theta_star": 0,
+  "Bellman_residual": [
+    1,
+    -1
+  ],
+  "drift_at_star": 0.0,
+  "analytic_drift_derivative": -0.01,
+  "actual_Model_gradient_finite_difference": -0.009999999999593667,
+  "nonzero_residual_stationary_point_can_be_locally_stable": true,
+  "no_stochastic_mean_closure_or_policy_claim": true,
+  "model_apply_calls": 0
+}

@@ -1,0 +1,42 @@
+{
+  "analytic": [
+    0.0,
+    -0.0034223598864049683,
+    0.0017111799432024842,
+    0.0
+  ],
+  "finite_difference": [
+    0.0,
+    -0.0034223598871507828,
+    0.0017111799435753914,
+    0.0
+  ],
+  "fixed_gradient_remains_zero": true,
+  "free_phi": [
+    0.0,
+    -2.0,
+    1.0,
+    0.0
+  ],
+  "max_abs_error": 7.458144345162676e-13,
+  "operation_count": "one dot and vector scaling O(k); no measured wholecaller speedup",
+  "phi": [
+    1.0,
+    -2.0,
+    1.0,
+    0.0
+  ],
+  "scope": "Read-only arbitrary-model derivative control, no GTD implementation/apply/search/training",
+  "vector": [
+    0.9,
+    -0.3,
+    0.7,
+    1.1
+  ],
+  "weights": [
+    1.0,
+    0.731,
+    -0.2,
+    0.4
+  ]
+}

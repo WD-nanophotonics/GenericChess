@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "observations": 1,
+      "requested_delta": [
+        0.0,
+        -0.0003629076650527158
+      ],
+      "statistics": {
+        "censored": false,
+        "changed": false,
+        "loss": 0.0026623156851360093,
+        "observed_searches": 1,
+        "samples": 1,
+        "terminal_credit_l1": 0.007258153301054316
+      },
+      "weights_unchanged": [
+        1.0,
+        0.731
+      ]
+    },
+    {
+      "observations": 2,
+      "requested_delta": [
+        0.0,
+        -0.0007076699468527958
+      ],
+      "statistics": {
+        "censored": false,
+        "changed": false,
+        "loss": 0.0013311578425680046,
+        "observed_searches": 2,
+        "samples": 2,
+        "terminal_credit_l1": 0.014153398937055915
+      },
+      "weights_unchanged": [
+        1.0,
+        0.731
+      ]
+    }
+  ],
+  "same_prediction_duplication_ratio": 1.95,
+  "scope": "synthetic receipt multiplicity/actualfinish with interceptedapply; no parameterupdate/Core/search"
+}

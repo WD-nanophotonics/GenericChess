@@ -1,0 +1,28 @@
+{
+  "actual_learner_OPE": "NOT_QUALIFIED; see source/read conditions",
+  "new_returns_recomputed": 0,
+  "rows": [
+    {
+      "complete_match_probability": "1/16",
+      "ideal_binary_target_decisions": 4,
+      "mean": "1",
+      "nonzero_IS_weight": "16",
+      "variance": "15"
+    },
+    {
+      "complete_match_probability": "1/1024",
+      "ideal_binary_target_decisions": 10,
+      "mean": "1",
+      "nonzero_IS_weight": "1024",
+      "variance": "1023"
+    },
+    {
+      "complete_match_probability": "1/1048576",
+      "ideal_binary_target_decisions": 20,
+      "mean": "1",
+      "nonzero_IS_weight": "1048576",
+      "variance": "1048575"
+    }
+  ],
+  "scope": "Closed-form abstract fullsupport IS moment calculation, no policy/game/trajectory sampling; not actual dataset variance"
+}

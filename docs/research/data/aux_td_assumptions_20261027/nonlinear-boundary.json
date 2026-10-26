@@ -1,0 +1,31 @@
+{
+  "local_fixed_process_derivative": {
+    "analytic": -0.049,
+    "numeric": -0.048999999999775674,
+    "policy_claim": "conditional expected drift ODE only, not actual policy or stochastic mean"
+  },
+  "material_saturation": {
+    "gradient": [
+      0.0,
+      0.0
+    ],
+    "positive_real_formula_derivative": 7.219405551381661e-36,
+    "prediction": 1.0,
+    "pv_terminal": false,
+    "raw": 400.0,
+    "rows": [
+      [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ]
+  },
+  "scope": "Read-only Model and observe, no apply/training/Core/Player",
+  "weights_unchanged": [
+    1.0,
+    400.0
+  ]
+}
