@@ -4,9 +4,9 @@ from .common import STATE, LocalFlowError, read_json
 
 CONFIG = STATE / 'advisor.json'
 ADVISORY = """GenericChess collaboration: latest direct user instructions take precedence.
-Independently initiated ChatGPT Slack review comments outrank solicited Dot
-replies/messages; shared accounts or reply TYPE markers do not prove autonomous
-review. Dot is a day-to-day research partner: give evidence, primary-source URLs,
+ChatGPT Pro/Commands on GitHub outranks Dot consultation on Slack. These are
+separate sources: do not look for the latest Pro plan in Slack or a Dot reply
+on GitHub; shared accounts or TYPE markers alone do not establish authority. Dot is a day-to-day research partner: give evidence, primary-source URLs,
 objections, uncertainty and the smallest useful next-step check. Direct bounded
 real-time dialogue is allowed. Do not create workers or impose approval gates.
 Preserve the user's pure-Leaper-first scope. This message's referenced changes

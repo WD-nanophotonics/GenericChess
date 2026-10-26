@@ -1,12 +1,21 @@
-# DEV_AUX current assignment —2026-10-26
+# DEV_AUX current plan —2026-10-26
 
-Use [current status](../operations/DEV_AUX_CURRENT_STATUS.md): ACTIVE/hourly60min,
-original binding. Initial bounded consumer audit COMPLETE, published at
-`a475104a1bcb6c0f7c25465a581ea29bb87d7002`.
-Current action: WAIT_FOR_USER_ASSIGNMENT; hourly intake checks new tasks/reviews.
-No repeated audit, automatic prior Main/backups, new experiment or budget reset.
-[Audit report](AUX_LEAPER_CONSUMER_AUDIT_20261026.md) preserves the source and cost
-boundaries. Earlier research context below is deferred evidence, not a live queue.
+Current status: [DEV_AUX_CURRENT_STATUS.md](../operations/DEV_AUX_CURRENT_STATUS.md).
+Latest user requests a compact hourly bootstrap prompt and an executable temporary
+plan, with authority user > GitHub ChatGPT Pro/Commands > Slack Dot > local.
+Actual mutable plan is `.local_agent/WORK_PLAN.md`; NEXT_WORK is its compact
+recovery pointer. The latest GitHub Pro review at sandbox45711b25bd9d964925635cad83c85616ca769a7b
+supports quality/cost evidence, with no explicit new AUX assignment. User now
+allows scoped fallback planning instead of unconditional waiting.
+
+Selected AUX support plan: source-bound complete-history truth handoff for
+already-published cross-rule candidates, explicit compatibility/UNKNOWN and
+coverage denominators. PRIMARY keeps experiment design/generation/defaults.
+First check source and cumulative-cost eligibility; no new Player/solver/game/
+build, re-solving or1520 rerun. Closed H6 chain112.346min and other old costs
+remain; a related>=120min forecast needs USER before launch, not Dot approval.
+Normal research accumulates60–90effective minutes; this workflow edit earns none.
+Initial audit remains COMPLETE at a475104a; old context below is not automatic work.
 
 # Deferred research context — before the initial assistance task
 

@@ -37,7 +37,7 @@ origin/sandbox. Inspect the fixed fetched commit before importing its files.
 ## GitHub and Slack review intake
 
 At every new round/manual start/heartbeat, read the remote ChatGPT Patrol review
-files and new/edited Slack autonomous comments before selecting research. Follow
+files before selecting research; Slack is the separate Dot consultation source. Follow
 CHATGPT_REVIEW_WORKFLOW.md: discover actual remote path/ref, explicitly update
 needed tracking refs, pin full SHA/path/blob, compare changed files, retain exact
 originals and incomplete-coverage boundaries. No merge/import/execution is needed
@@ -49,7 +49,8 @@ scheduler/session/research state.
 ## Research and timing
 
 Read LOCAL_MAINLINE.md for the current user assignment. The initial audit is
-complete: wait for user assignment, without resuming the deferred P0/P1 queue.
+complete. Follow the temporary WORK_PLAN/NEXT_WORK under latest user direction:
+GitHub Pro plan first, otherwise scoped fallback assistance with Dot consultation.
 Earlier learner-cost, TD and screen-first
 automatic queues are superseded by the2026-10-23/24 direction. Preserve their
 evidence/caps without launching an unstarted price or feature-policy reserve.

@@ -1,9 +1,15 @@
 # ChatGPT review intake: GitHub and Slack
 
+Latest user clarification2026-10-26: ChatGPT Pro/Commands is read from GitHub;
+Dot is consulted on Slack. Priority is user > GitHub Pro > Slack Dot > local.
+Do not search Slack for the latest Pro plan or GitHub for a Dot reply. Preserve
+old Slack reviews as historical evidence. Current tasks live in the temporary
+.local_agent/WORK_PLAN.md and NEXT_WORK.md, not the patrol prompt.
+
 Latest direct user instruction, 2026-10-26: autonomous ChatGPT reviews may be
 written directly into the project GitHub repository, including a dedicated
-ChatGPT Patrol file/directory. Slack is still a review source, but is no longer
-the only source. Both existing roles check both sources before choosing a new
+ChatGPT Patrol file/directory. Latest user names this GitHub source ChatGPT Pro/
+Commands. Slack is the distinct Dot consultation source. Check both before a new
 round's research action. This is an intake change, not a research-scope change.
 
 ## Opening a work round
@@ -31,8 +37,8 @@ round's research action. This is an intake change, not a research-scope change.
    linked context and supersession/correction relevant to this role. A changed
    branch tip alone is not a new review, and an old timestamp does not exclude
    an edited file. Retain deletion/rename observations and previous evidence.
-6. Also check new Slack autonomous ChatGPT comments and complete relevant
-   threads using SLACK_WORKFLOW.md. Existing Dot requests and the single delayed
+6. Separately check Dot Slack messages and complete relevant threads using
+   SLACK_WORKFLOW.md; do not seek GitHub Pro commands there. Existing Dot requests and the single delayed
    five-minute reply check remain in force; GitHub intake does not replace them.
 7. Before research, record read/adopt/defer/reject with reasons and the actual
    next action. Update the own current Main/memo where a review changes the
@@ -48,9 +54,9 @@ previous covered revision, author/source context and coverage gaps. Do not edit
 another role's memo, research state or evidence to record this check. Publication
 copies still exclude personal information, passwords and credentials.
 
-The hierarchy is: latest direct user instructions > independently initiated
-ChatGPT reviews, whether on GitHub or Slack > solicited Dot replies/messages >
-local proposals. Transport does not change authority. A filename, commit author,
+The current hierarchy is: latest user > ChatGPT Pro/Commands on GitHub > Dot on
+Slack > local proposals. Historical Slack ChatGPT messages are retained as
+history, not a substitute for the latest GitHub Pro feed. Transport does not change authority. A filename, commit author,
 account or TYPE marker alone cannot prove autonomous origin. Preserve context;
 unresolved provenance stays unclassified. For conflicting reviews inspect their
 scope, source versions, correction relationship and evidence; surface unresolved

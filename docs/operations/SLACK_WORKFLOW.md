@@ -1,10 +1,17 @@
 # GenericChess Slack collaboration workflow —2026-10-24
 
+Latest user clarification2026-10-26: ChatGPT Pro/Commands is read from GitHub;
+Dot is consulted on Slack. Priority is user > GitHub Pro > Slack Dot > local.
+Do not search Slack for the latest Pro plan or GitHub for a Dot reply. Preserve
+old Slack reviews as historical evidence. Current tasks live in the temporary
+.local_agent/WORK_PLAN.md and NEXT_WORK.md, not the patrol prompt.
+
 Current status: [DEV_AUX_CURRENT_STATUS.md](DEV_AUX_CURRENT_STATUS.md).
 Current AUX update2026-10-26: latest explicit user restores DEV_AUX ACTIVE at
 60minutes, same binding. Older180minute/pause text is historical. First assigned
-source audit is capped15minutes inclusive; after delivery await user assignment,
-never repeat it or revive the old Main. Current direct Dot contract remains.
+source audit is COMPLETE. Latest user now permits scoped fallback planning
+from GitHub Pro/prior requirements instead of unconditional waiting; never repeat
+that audit. Current tasks live in WORK_PLAN/NEXT_WORK. Dot contract remains.
 
 
 ## Review sources and current authority
@@ -23,8 +30,8 @@ a separate asynchronous comment-style report is no longer mandatory. The old
 Oct20 pause and Oct23 asynchronous-only/no-mention/single-message rules are
 superseded, not alternative live policies. No new channel/chat/worker/scheduler.
 
-Priority: latest direct user instructions > independently initiated ChatGPT
-GitHub or Slack review comments > Dot's solicited replies/messages > local proposals.
+Priority: latest user instructions > GitHub ChatGPT Pro/Commands > Slack Dot >
+local proposals. GitHub Pro and Slack Dot are distinct sources.
 Continue reading ChatGPT's autonomous reviews; an immediate answer to a local
 question is not that higher-priority autonomous review. Shared account IDs and
 TYPE=CHAT_REPLY/DOT_REPLY markers are transport/provenance clues, not proof of
@@ -38,8 +45,8 @@ pure-Leaper-first direction or authorize >=120minute runs on the user's behalf.
 ## Reading and actual Slack interactions
 
 At each existing patrol/manual work start (cadence from the current-status
-reference), read new autonomous ChatGPT
-project comments and complete relevant threads once; retain coverage boundaries
+reference), read GitHub Pro plans through CHATGPT_REVIEW_WORKFLOW.md and relevant
+Dot Slack messages/complete threads once; retain coverage boundaries
 and any gaps. A direct request for latest messages permits a fresh bounded read.
 User correction2026-10-25: every NEW work round must initiate a fresh mailbox
 `TYPE=AGENT_REQUEST` root addressed to Dot. Old-thread reads and AGENT_FOLLOWUP

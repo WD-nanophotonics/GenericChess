@@ -1,12 +1,28 @@
 # GenericChess local research policy
 
+## Latest user workflow —2026-10-26
+
+Priority: latest user > ChatGPT Pro/Commands on GitHub > Dot on Slack > local
+proposals. These are distinct sources: GitHub docs/reviews/chatgpt_patrol/ is the
+observed Pro review entry; Slack is Dot consultation, not a substitute Pro feed.
+Keep the existing hourly prompt compact. Mutable tasks, fallback plans, source
+pins and budgets live in .local_agent/WORK_PLAN.md and compact NEXT_WORK.md.
+Use Pro plans first; if no explicit AUX plan, latest user authorizes a scoped
+plan from prior user/PRIMARY/ChatGPT requirements and Dot consultation instead
+of unconditional waiting. Ordinary research requires60–90effective minutes;
+offline/idle/admin are not credit. Preserve actual role/stops/cumulative caps;
+configuration is not a qualifying segment and never resets old experiment costs.
+
+
+
 ## Current status and initial assignment —2026-10-26
 
 Current status: [DEV_AUX_CURRENT_STATUS.md](docs/operations/DEV_AUX_CURRENT_STATUS.md).
 Latest explicit user restores existing DEV_AUX ACTIVE/hourly (60minutes), same
 ID/chat. First task is the bounded15minute consumer source audit pinned in
 sandbox264cfed3ced86d1c9ef8e3669667713a223542b5; carry H6 prior99.204minutes.
-Zero new Player/solver/games/build. After completion/cap wait for user assignment;
+Historical initial-task limit: zero new Player/solver/games/build. The old
+post-completion waiting rule is superseded by the latest planning instruction;
 do not repeat the audit or revive old Main. Old pause/cadence text is historical.
 This bounded review is not a qualifying60minute research session.
 
@@ -30,17 +46,17 @@ medium-term idea, not an automatic new training or engineering task.
 
 ## Current review sources — user2026-10-26
 
-Before selecting research at every new round/manual start/heartbeat, check both
-GitHub remote autonomous ChatGPT reviews (including the dedicated ChatGPT Patrol
-file/directory) and new Slack comments/relevant complete threads. Follow
+Before selecting research at every new round/manual start/heartbeat, read
+GitHub ChatGPT Pro/Commands (including the dedicated ChatGPT Patrol directory)
+and separately check Dot Slack messages/relevant complete threads. Follow
 [docs/operations/CHATGPT_REVIEW_WORKFLOW.md](docs/operations/CHATGPT_REVIEW_WORKFLOW.md).
 Observed review directory: docs/reviews/chatgpt_patrol/ on remote sandbox;
 resolve its latest full SHA at each opening. Discover any moved path/ref;
 pin full commit/path/blob hashes, preserve
 originals and coverage gaps before assessment. No automatic pull/merge/execution,
 new worker or other-role research/state write follows from reading a review.
-Latest direct user > autonomous ChatGPT GitHub/Slack review > solicited Dot >
-local proposals; filename/account/TYPE alone does not prove autonomous origin.
+Latest user > GitHub ChatGPT Pro/Commands > Slack Dot > local proposals.
+Do not substitute a Slack message for the latest GitHub Pro plan.
 Record read/adopt/defer/reject and execution separately in own existing records.
 This replaces Slack-only review intake. Direct Dot contact is restored by the
 user's2026-10-24/25 instructions: a fresh AGENT_REQUEST at a new work round start,
@@ -59,8 +75,8 @@ authorize reverting this latest direct instruction.
 
 ## Current two-way communication
 
-Autonomous ChatGPT reviews may arrive on GitHub or Slack. Daily outbound
-collaboration addresses Dot in the existing project channel. Use the current
+Current ChatGPT Pro/Commands plans are on GitHub; daily outbound consultation
+addresses Dot in the existing Slack project channel. Use the current
 SLACK_WORKFLOW.md and CHATGPT_REVIEW_WORKFLOW.md. The old asynchronous-only,
 Dot-pause and one-message-per-probe policies are superseded, not live options.
 No extra worker/timer; no source reply is a research or publication gate.

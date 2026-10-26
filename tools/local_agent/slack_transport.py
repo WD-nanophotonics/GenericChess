@@ -147,7 +147,7 @@ def consult(question_file, daily=False, code_files=()):
                 raise LocalFlowError('code snapshot contains a Slack fence; use a reviewed attachment instead')
             message += f'\nLOCAL_CODE_SNAPSHOT={entry["path"]}\nSHA256={entry["sha256"]}\n```\n' + entry['text'] + ('' if entry['text'].endswith('\n') else '\n') + '```\n'
         if c.get('direct_dot_enabled'):
-            message += '\nReply in this thread with TYPE=DOT_REPLY and this REQUEST_ID. Direct Dot consultation is restored; bounded real-time follow-up is allowed. State evidence, objections, uncertainty and the next decision. Autonomous ChatGPT reviews outrank this solicited advice. No extra worker or approval gate.'
+            message += '\nReply in this thread with TYPE=DOT_REPLY and this REQUEST_ID. Direct Dot consultation is restored; bounded real-time follow-up is allowed. State evidence, objections, uncertainty and the next decision. GitHub ChatGPT Pro/Commands outranks this Slack Dot consultation. No extra worker or approval gate.'
         else:
             message += '\nFor asynchronous Chat/Claude review, reply in this thread with TYPE=CHAT_REPLY and this REQUEST_ID. State conclusion, sources, objections, uncertainty and independently checked evidence. No extra worker or approval gate.'
         # One tool call / one root. Larger content must be prepared as a reviewed attachment.

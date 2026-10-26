@@ -9,8 +9,13 @@ elsewhere describe the state at that time and do not override it.
   This is scheduler configuration, not proof of a continuously running process.
 - Initial15minute consumer source audit: COMPLETE, published at
   `a475104a1bcb6c0f7c25465a581ea29bb87d7002`.
-- Current action: WAIT_FOR_USER_ASSIGNMENT. Hourly intake checks new tasks and
-  GitHub/Slack reviews; it does not repeat that audit or restart the old Main.
+- Current action: follow the revisable `.local_agent/WORK_PLAN.md` and compact
+  `NEXT_WORK.md`. Latest user authorizes scoped fallback planning when GitHub
+  ChatGPT Pro has no explicit AUX task; unconditional waiting is superseded.
+- Priority/source: user > GitHub ChatGPT Pro/Commands > Slack Dot > local.
+  Pro plans/reviews and Dot consultation are separate inputs.
+- Patrol prompt contains durable bootstrap rules; current tasks and budgets
+  belong in the temporary plan. Do not repeat the completed audit.
 - Previous research session remains ENDED; old Main/backups remain deferred.
 - Future ordinary research retains60–90effective-minute accounting. The completed
   bounded review and this documentation correction are not qualifying segments.

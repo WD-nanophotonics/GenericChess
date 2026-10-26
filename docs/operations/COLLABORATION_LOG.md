@@ -1877,3 +1877,19 @@ change. New Patrol at sandbox120668d0b5f313b0f379a1a0f37206674b1a7cc1 was read
 and retained: consumer/cost cautions accepted as context; optional research
 suggestions deferred pending user assignment. Later opening45711b25bd9d964925635cad83c85616ca769a7b has no review-directory delta.
 This is documentation maintenance, no effective research credit or new session.
+
+
+## DEV_AUX compact patrol and temporary plan —2026-10-26 user update
+
+User requires ordinary60–90effective-minute work, a concise durable patrol
+prompt, and mutable tasks/budgets in a temporary plan rather than repeated
+historical prompt text. Existing dev-aux remains ACTIVE/hourly with unchanged
+ID/chat. App update/readback verified the compact517-character prompt. Current authority is
+user > GitHub ChatGPT Pro/Commands > Slack Dot > local; sources remain separate.
+Latest Pro path at45711b25bd9d964925635cad83c85616ca769a7b was read; no explicit
+new AUX task exists. User authorizes fallback planning, so actual ignored
+WORK_PLAN/NEXT_WORK now hold scoped complete-history truth-input assistance,
+with PRIMARY retaining experiment design. All old chains/caps/UNKNOWNs remain;
+no H6 continuation, experiment or new research session started by this workflow
+edit. Configuration earns zero research credit. Source read/adoption is distinct
+from future research execution. Normal round session accounting/finish remains.
