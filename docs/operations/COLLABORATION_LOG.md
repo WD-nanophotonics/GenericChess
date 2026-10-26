@@ -8018,3 +8018,27 @@ is carried into the proposed one-candidate extension. Only a NOT_STARTED plan
 was written; no candidate implementation, Player/Core/solver/game/build started.
 The related extension requires USER necessity assessment, not Dot budget approval.
 This opening/transport/document preparation adds no effective research time.
+
+## PRIMARY finite child-construction assessment -2026-10-27
+
+USER directly approved the exact limited proposal and cumulative460 cap before
+implementation. PRIMARY checked4f9remotePatrol and complete autonomous/current
+Slack threads, preserved originals and sent freshAGENT_REQUEST1793027310.319669.
+One delayed check15:13:47--15:14:06UTC read source-only Dot1793027470.088669.
+Adopted actual class/factory and snapshot-before-history/failed-push obligations;
+AST inversion fixes transaction tail, candidate-only real factory is recorded,
+28targeted tests and full2115transition qualification support finite contracts.
+Dot did not independently run the candidate or grant budget. AUX untouched.
+All144frozen slots returned;57eligiblepairs, D6coverage7/12 => acceptanceUNKNOWN.
+Eligible1.70%wall saving is below5%, with no strength/default claim. No refill or
+second candidate; all approved stages done. This whole finite-objective completion
+is not project-wide success or an ordinary60minute sample. Ledger excludes
+administration/publication/waits and retains failures, actual cost and provenance.
+
+Delivery fetch found one new autonomous review atc695161c, blob04c08a48,
+raw036d16ee...; exact original preserved/read before assessment. Its4f snapshot
+lacks actual incoming USER460grant/new candidate data. User grant governs;
+review did not independently validate this run. Adopt quality-route opportunity
+cost and full-history/endpoint discipline for a future source-only proposal,
+not a new strategy/run/role grant. No AUX task or research recomputation.
+Only own unpublished result is rebased onto this preserved review-only commit.

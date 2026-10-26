@@ -6,19 +6,47 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-26 measured runtime consumer
+## Current decision -2026-10-27 closed child-construction assessment
 
-[Immutable-child proposal](LEAPER_CHILD_CONSTRUCTION_PROPOSAL_20261026.md) is
-NOT_STARTED pending USER necessity assessment: one guarded Semantic transition
-adapter, exact-state/cancel/undo qualification then at most144 fixed-depth Player
-slots, no games/default activation. Carry final prior whole314.129940 minutes,
-plus actual new opening/proposal overhead. Forecast439.130 with conservative25
-minute opening allowance and100minute extension; proposed cumulative ceiling460.
-The old320grant is not authority for this new extension. No implementation/query
-has begun. Main's next action is the USER cost decision on this reviewable plan,
-not an unapproved run. New session fa6aa28f starts with0effective work; review,
-transport and proposal documentation do not inherit the prior60.611 minutes.
+[Selected child construction](LEAPER_CHILD_CONSTRUCTION_20261027.md) is CLOSED.
+Science is COMPLETE. This marker applies ONLY to the whole USER-approved finite
+single-candidate/144-slot assessment, not to project-wide pure-Leaper optimization
+or proof of class success. Every authorized scientific stage is complete; result
+UNKNOWN, no product/default activation, second candidate or automatic refill.
 
+144original returns:114complete,30caller-cancelled;57eligiblepairs; D3roottriplets
+12/12, D6only7/12versus10required. Eligible charged wallratio0.983007451 fails5%
+gain; CPUratio0.983154671,11/12rootmedians faster do not repair missing coverage.
+2115saved transitions/118root actions and24effect controls qualify exact finite
+state/history/undo behavior.28targeted candidate/reader tests;144return/612PV
+saved-data verification; public/private original-byte and numeric parityPASS.
+The certificate is narrower than all pure-Leaper rules; timed pattern coverage,
+binary build identity, total RSS and general/strength benefit remain UNKNOWN.
+
+Main: can a future quality-route experiment have a discriminating multirule
+endpoint? |At the next opening inspect current user/GitHub/Slack then prepare one
+source-only route-choice proposal from existing full histories and existing
+ordering, with >=3family endpoint feasibility and conservative costs |Reviewable
+GO/NO-GO design or explicit source gap |No Player/solver/game/new strategy before
+its own scope and related-budget assessment; no closed-slot refill.
+Backup1: retain the child UNKNOWN and exact finite proof/coverage boundaries;
+no automatic guard-hoisting/kernel/cache/Native extension or activation.
+Backup2: bind future quality claims to complete contexts; no SCC/Position-only
+WDL shortcut, parameter transplant, old-label transfer or AUX assignment.
+
+New autonomous c695161c review, raw036d16ee..., was fully read during delivery.
+Its4f source snapshot lacked this chat's actual USER460grant and new results;
+direct grant governs. Adopt quality-information priority/opportunity-cost limits,
+not its stale no-approval assertion or independent-validation status. Next route
+is a source-only proposal, not an executed quality strategy or new run grant.
+
+Latest direct USER460grant preceded source gate/implementation. Prior closed
+328.978107min plus1min conservative closing allowance carried; newcostorigin
+15:03:29UTC/cap460/deadline17:13:30.313573UTC. Actual ledger/whole closure replaces
+the100minute forecast, never credits the previous60.611min or admin/idle time.
+Every approved finite stage is done; early whole-current-objective completion
+is separate from a normal60-90minute sample. Long-term pure-Leaper research and
+both hourly roles remain active; this is not a project stop or success claim.
 
 [Cost attribution](LEAPER_COST_ATTRIBUTION_20261026.md) records172new original-Player
 returns,0games/solver/product changes. Complete-work trios preserve all non-timing
@@ -34,15 +62,8 @@ guard to preserve. Default Q lexical sort is outside ordering_seconds; the prior
 1.6% bound applies only to that recorded region. First nominal2700s batch
 overshot55.149s at a dispatch boundary; retain this limit and8NOT_RUN slots.
 
-Main: can one certified Semantic selected-step child constructor reduce actual
-net cost without changing Core semantics? | Prepare ONE finite equivalence/cost
-design at existing_transition seam, preserving normalization/cancel/undo/full
-history/TT/terminal and assessing related cost BEFORE any newrun | Concrete
-reviewable proposal or NO-GO | No new experiment/kernel/cache is yet selected.
-Backup1: quality endpoints need a changed, prospective discrimination premise;
-no extra PVSgames, thresholds, family4selection, H6/profiling/old16 or solver gate.
-Backup2: source/shape/real-call validation can reject unsupported claims cheaply;
-reuse existing certs, never call geometry or two-cell hash a new execution model.
+The earlier source-design Main is superseded by the completed assessment above.
+Its compiled-cost measurements below remain evidence, not a new run queue.
 
 [Approved PVS pilot](LEAPER_PVS_QUALITY_PILOT_20261026.md) is CLOSED NO-GO:
 24D3qualifiers+2115game returns,24actual Core DRAW,23eligiblegames/11pairs.

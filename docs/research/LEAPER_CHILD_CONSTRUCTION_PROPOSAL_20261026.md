@@ -1,7 +1,10 @@
 # Pure-Leaper immutable-child proposal - 2026-10-26
 
-Status: NOT_STARTED, awaiting USER necessity assessment. This is a concrete
-extension proposal, not an execution grant or a successful research segment.
+Status: EXECUTED and CLOSED after USER directly approved this limited plan and
+cumulative460-minute cap. See [final assessment](LEAPER_CHILD_CONSTRUCTION_20261027.md).
+The original4f9f41e1 proposal remains in Git; the frozen execution plan and all144
+returns are preserved. Historical prospective wording below is not a pending
+approval request or authority to rerun.
 PRIMARY owns sandbox; no AUX assignment or other checkout writes.
 
 ## Question and reason
