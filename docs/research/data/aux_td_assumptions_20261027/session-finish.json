@@ -1,0 +1,168 @@
+{
+  "active_work": null,
+  "checkpoints": [
+    {
+      "at": "2026-10-26T20:17:41.236584+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md",
+      "kind": "research",
+      "next_action": "Read original sequential offpolicy evaluation assumptions and inspect whether existing logged ownlearner behavior/target probabilities support any useful offline estimate without new games or Core expansion.",
+      "observation": "No: existing consumer alreadylabels TDresidual diagnostic; zeroimmediateresidual observation can addfutureeligibility, actualclock is onceperowncompleteddecision. No duplicate-call defect or reason to rerun closeddata wasfound.",
+      "question": "Does recorded loss or repeated equal prediction imply the update is redundant?"
+    },
+    {
+      "at": "2026-10-26T20:24:55.856510+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md",
+      "kind": "research",
+      "next_action": "Evaluate the original nonlinear-gradient-TD alternative as a bounded source/method comparison, not a newimplementation; then final scientific consistency review and actualtimeledger toward60+.",
+      "observation": "Not validated from inspectedsource: opponent support doesnot guarantee changedcandidate support, exacttargetpolicy/propensities/initiallaw/censoring/independence need actualbinding. Known Core models couldsupplycounterfactualinformation at realcost; paperhardnessnotblindlytransferred. No newestimator/training/game.",
+      "question": "Can old opponent-Uniform logs replace an independent frozen learner policy evaluation through sequential DR/IS?"
+    },
+    {
+      "at": "2026-10-26T20:28:45.768181+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md",
+      "kind": "research",
+      "next_action": "Perform final scientific consistency/source-boundary review, update actualmainline/collaboration/memo and publish measured evidence; normalfinish onlywhen actualconfirmed>=3600s.",
+      "observation": "No drop-in substitution: new objective/auxstate/timescales/projection and smoothness/data premises; it doesnot create policyquality/coverage. Fixedleaf Hessianvector itself hasO(k)analyticform, verifiedread-only, so no invented dense-cost obstacle. Currentcode unchangedbeyondpublishedfinite-observationguard.",
+      "question": "Does nonlinear gradient-TD remove current learner evaluation/sampling assumptions at negligible scope?"
+    },
+    {
+      "at": "2026-10-26T20:33:43.161770+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md",
+      "kind": "research",
+      "next_action": "Publish scoped evidence and consult existing Dot thread; next useful independent question is conditional second-moment behavior near aliased stationary points without training or games.",
+      "observation": "No: residual Hessian correction can remain smaller than positive occupancy drift; aliased opposite returns have stable projected stationary point despite nonzero residual. This is local deterministic expected drift only, not stochastic mean closure, policy quality or actual experiment evidence.",
+      "question": "Is exact representability necessary for the stated local stability interpretation?"
+    },
+    {
+      "at": "2026-10-26T20:40:59.006442+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md",
+      "kind": "research",
+      "next_action": "Perform the once-due Slack read, then final scientific/source review and useful continuation to60+confirmed seconds; retain sameUUID, then publish acceptedfinish and executable nextconsumer plan.",
+      "observation": "No. Exact nonlinear one-step moment has noise at zero drift; finite ideal constant-step parameter limit is impossible in declared +/-1 alias control without implying unboundedness/actual failure. Per-length normalization changes fixed point (-39/118 versus-19/138 atlambda.95), while complete-path positivity can survive. Actual learner sums unchanged.",
+      "question": "Does stable projected expected drift justify constant-step sample convergence or mere eta rescaling under episode averaging?"
+    },
+    {
+      "at": "2026-10-26T20:42:57.652138+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md",
+      "kind": "research",
+      "next_action": "At scientific safe checkpoint, update executablememo and actual costs, publish inspected documentation/data and accepted sessionfinish; next round freshPro and distinct teacher/committed input consumer, no repeat completed theory or closed studies.",
+      "observation": "Yes after clarification: future-dependent episode weights may alter even tabular target; exact positive weighted path drift remains conditional stable, not original policy value. One-step loss rise concerns fresh independent target, not training diagnostic. Existing learner remains sum-update; numerical guard is sole behavior repair.",
+      "question": "Are final normalization and fluctuation claims bound to the correct target and consumer?"
+    }
+  ],
+  "duration_gate_passed": true,
+  "effective_work_seconds": 3622.882602,
+  "elapsed_minutes": 83.411,
+  "ended_at": "2026-10-26T20:43:35.121706+00:00",
+  "ending_evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md",
+  "id": "f326cb40-92ba-449a-a64c-dda213d4fd31",
+  "memo_synced": true,
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 11,
+  "resumed_at": "2026-10-26T19:23:55.465178+00:00",
+  "started_at": "2026-10-26T19:20:10.481221+00:00",
+  "state": "ended",
+  "thread_id": "01a15880-7263-7e12-a0e0-e42959c0bfb9",
+  "uncredited_work": [
+    {
+      "interrupted_at": "2026-10-26T19:23:55.465178+00:00",
+      "question": "Which untested terminal/history/unit semantic boundaries remain in the actual two receipt adapters, and which original fixed-policy TD assumptions can apply to the frozen nonlinear search-controlled learner without more frontier expansion?",
+      "reason": "resume: unfinished interval unconfirmed",
+      "started_at": "2026-10-26T19:23:07.477756+00:00"
+    }
+  ],
+  "work_accounting_version": 1,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-26T19:26:02.979340+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md: actual reference/public terminal-history-unit compatibility matrix complete, NO_NEW_SIGNAL; original TsitsiklisVanRoy1997 PDF/text pinned and theorem/assumptions pages674-680 read, formulas visually verified. No new Player/solver/games/training/frontier or interval refinement.",
+      "question": "Narrow actual receipt/history/unit compatibility matrix, then original fixed-policy TD theorem assumptions versus nonlinear frozen TDLeaf; no further interval/frontier refinement or new Player/training.",
+      "started_at": "2026-10-26T19:23:55.601521+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:27:52.883675+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md; primaryPDF69c9d759/text4a42dd25: theorem1 assumptions visually checked. Derived finite-fullhistory occupancy energy identity and lambda geometric-kernel balance, pending exact independent path verification. No game/learning expansion.",
+      "question": "Can fixed-policy linear TD stability be qualified for finite full-history episodes, and which algebra survives actual frozen nonlinear TDLeaf without implying convergence or control improvement?",
+      "started_at": "2026-10-26T19:26:43.781579+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:34:29.652764+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md; scripts/verify_td_fixed_policy_algebra.py; docs/research/data/aux_td_assumptions_20261027/exact-algebra.json:344exact abstract specifications/43000energy vectors PASS, wholetoytrajectory versus resolvent expected increments, no engine/training. Original Sutton theorem2 read; constanteta/frozenepisode not blanket invalid.",
+      "question": "Read original Sutton1988 absorbing episodic TD theorem and compare its constant step and feature-rank conditions to actual fixed-policy full-history versus search-controlled nonlinear learner; derive only useful conditional mathematical specification.",
+      "started_at": "2026-10-26T19:28:51.961945+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:38:58.624179+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md: uniform physical-feature bound can replace absent savedtree, but alternate-score gap/fixed actualdepth not supplied. Initial inactivehands need constant offsetc, corrected before publication.6075exact countbox endpoint checksPASS in inventory-bound.json.0newCore/Player/game/training.",
+      "question": "Can global rule-authoritative inventory bounds replace missing complete fixed-depth tree leaves for uniform material perturbation admission, and where do actual deadlines/completed-depth and terminal-distance semantics limit action stability?",
+      "started_at": "2026-10-26T19:34:29.929852+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:44:55.564060+00:00",
+      "evidence": "NewPRIMARY04003a0a proposals read/preserved as context only; no AUXassignment or existingWDLtransfer. Conditional TD mean proof identifies unresolved variance/pathstability qualifier, new independent question selected without new game or learning. Report updated, no claims from partially read408997byteaudit.",
+      "question": "What actual mathematical/source qualification remains for finite-history fixed-policy TD mean stability and material-domain action stability, and do newly published PRIMARY inputs supply a distinct compatible AUX consumer without ownership transfer?",
+      "started_at": "2026-10-26T19:41:56.878909+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:46:53.669328+00:00",
+      "evidence": "Finitefixedpolicy mean-versus-secondmoment distinction derived: rare feature rootphi0/10 withp.99/.01 givesA1 andeta.05meanfactor19/20 butsecondmomentfactor23/20; abstractalgebra only/no training. Pertrajectory lambda operator T=I-(1-lambda)sum(lambda^(k-1)P^k) yieldsnorm<=2, and actual frozen nonlinear lambda-return convexity suggests one-updatebound pendingverification.",
+      "question": "Does fixed-policy linear TD mean convergence imply stable prediction dispersion? Derive mean-square sufficient conditions and verify an exact rare-feature closed-form moment control, without iterative training or engine calls.",
+      "started_at": "2026-10-26T19:45:08.521276+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T19:56:09.096373+00:00",
+      "evidence": "New mean-square distinction and actual frozen lambda-return one-stepbound proved;49newstaticcontrolPASS. Concrete nonfinite observation reproduced4failing-before tests then repaired4lineownlearnerguard; independentreader aligned including censoredlastrow.195relatedPASS(58new/137existing); Core/Player unit totalsUNKNOWN, no new researchcampaign. Report/data source hashes saved.",
+      "question": "Derive and verify actual frozen TDLeaf one-update magnitude bound from convex lambda returns, distinguish mean-square stability from mean drift, and qualify raw guard safety under admitted physical inventory without applying updates.",
+      "started_at": "2026-10-26T19:48:57.440365+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:02:03.284757+00:00",
+      "evidence": "Report modern nonlinearTD boundary: originalOllivier2018theorems1/2 and BrandfonbrenerBruna2020arxivv4sections2-4read/hashpinned; discountedODE/homogeneity/fulltangent-rank versus actuallearner distinct. SourceCoreincrements/GameSessionhistoryappend prove physicalLeapreversibility doesnot establish detailedbalance on positive-mass fullhistories. No newCore/Player/fit, OpenReview403notbypassed.",
+      "question": "When can a fixed-policy nonlinear tanh TD consumer have a finite stable evaluation point, and how do search-selected terminal targets, material saturation and feature aliases limit interpreting converged weights as values? Source/math only; no fitting or new games.",
+      "started_at": "2026-10-26T19:59:32.295008+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:07:52.521787+00:00",
+      "evidence": "Report finite-local-nonlinear drift condition and actualread-only saturation: raw400/p1/g0 stillpv_terminalFalse; no apply. ActualModeltwo-state slope-.049 agreesfinite difference. NewPRIMARYsource packet65cbda6e exactlymatchesalreadyclosedAUXcanonical/explorercoverage, reportblobs pinned;540versus480subset notsilentlymerged. No oldgraph/replay/caprestart or PRIMARYtask.",
+      "question": "Which finite local stability and representability statements apply to fixed-feature tanh TD, and how do exact terminal targets versus floating material saturation constrain interpreting stationary weights? Derive actual-consumer distinctions without any training or model updates.",
+      "started_at": "2026-10-26T20:02:54.420902+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:17:41.084359+00:00",
+      "evidence": "Existinganalyze_leaper_td_signals alreadydisclaims TDlossasoptimization/strengthobjective; no newbug/refit. Actualplay_episode observesonecompleteownturnreceipt, notiterativeprogress. Staticinterceptedapply oneversusduplicateobservation directionratio1.95 atlambda.95 verified/unchangedweights; recordclock/gamma/macrotime qualification documented. No newCore/Player/training.",
+      "question": "Does the actual reported TD residual loss have to decrease under its frozen eligibility update, and do current consumers treat that diagnostic as an optimization or strength objective? Check a direct static derivative counterexample without applying parameters.",
+      "started_at": "2026-10-26T20:10:19.696544+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:24:55.704553+00:00",
+      "evidence": "OriginalJiangLi2016sections3-4/support-independence-variance read/pinned. ActualownUniformproducer randomizesopponentonly, candidatehasnoall-action behavior support; rawlogs lackfrontiersize/propensity. NO_VALIDATED_LOG_ONLY_SHORTCUT, not known-Core impossibility or invalidating oldonpolicyresults. ExactclosedformISvariancecontrols2^H-1 saved, no oldreturns/Core/searchrecomputed. Scientificeta0/nullspace/hashqualifications corrected.",
+      "question": "Can existing frozen trajectories evaluate an own frozen learner policy without new games? Read original sequential off-policy evaluation/support assumptions and qualify actual behavior propensities, target actions, fullhistory/resource state and censoring; no estimator implementation or old return recomputation.",
+      "started_at": "2026-10-26T20:17:41.390207+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:28:45.631978+00:00",
+      "evidence": "OriginalMaei2009 nonlinearGTDsetup/algorithms/theorems read/hashpinned; fixedsampling/discount/smoothness/rank/compactprojection/twotimescales notdropin actualTDLeaf. Actualreadonlymasked tanhHessian-vector centraldifference matches1e-11/O(k)algebra, no methodimplementation/training/Core/search. Report comparison complete, no newbudget/taskpermission gate.",
+      "question": "Would a convergent nonlinear gradient-TD method actually remove the current learner assumptions, and what extra state/Hessian/support/timescale costs would it add? Read original method and compare actual consumer; no new algorithm implementation or training.",
+      "started_at": "2026-10-26T20:24:55.994510+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:33:43.009933+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md final local-stability section; projected-stationary-control.json verifies nonzero-residual stable drift -.01 without apply. Reviewed exact occupancy/lambda proof, fixed inventory and numerical admission against actual producers; finite seeded policy conditional return versus averaged root law distinguished.",
+      "question": "Scientific consistency review: verify occupancy-lambda drift, terminal/censor numerical contract and decision-level conclusions against actual source; resolve unsupported claims before final report.",
+      "started_at": "2026-10-26T20:30:44.903708+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:40:58.853322+00:00",
+      "evidence": "docs/research/AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md: exact conditional nonlinear one-step moments and finite-limit qualification, variable-length normalization corrected with3exact rational controls. New JSON receipts; actual finish/readercallers confirmed sum-update versus averaged diagnostic, no apply or campaign. Closing conclusions remove stale completed questions.",
+      "question": "At a stable aliased nonlinear expected-drift point, what exact finite-step fluctuation and constant-step convergence statements are justified? Derive conditional moment and finite-limit counterexample without iterative training or games.",
+      "started_at": "2026-10-26T20:36:11.902201+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T20:42:57.508236+00:00",
+      "evidence": "Final TD_ASSUMPTIONS report and nonlinear/normalization JSONs: complete-path weighted positivity checked versus terminal anchoring; future-dependent length divisor can alter tabular TD0 root value0 to1/3; fresh independent population loss explicitly separated from training-target and TD diagnostic loss. All abstract versus actual/history/source boundaries reviewed; no source behavior change or extra campaign.",
+      "question": "Final scientific consistency: verify complete-path positivity under positive random length weighting, identify the precise censored/selected-policy boundary, and ensure no analytic counterexample is presented as a historical learner failure.",
+      "started_at": "2026-10-26T20:41:32.467515+00:00"
+    }
+  ]
+}

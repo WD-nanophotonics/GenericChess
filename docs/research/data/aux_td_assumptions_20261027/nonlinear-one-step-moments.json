@@ -1,0 +1,54 @@
+{
+  "scope": "one-step conditional nonlinear alias control, no iterative trajectory, apply, training, Core or games",
+  "eta": 0.05,
+  "scale": 10.0,
+  "checks": [
+    {
+      "theta": -4.0,
+      "p": -0.3799489622552249,
+      "g": 0.08556387860811777,
+      "mean": -3.9983745046558155,
+      "second_moment": 15.987016982424944,
+      "formula_second_moment": 15.987016982424946
+    },
+    {
+      "theta": -1.0,
+      "p": -0.09966799462495582,
+      "g": 0.09900662908474397,
+      "mean": -0.9995066103912273,
+      "second_moment": 0.9990379699972676,
+      "formula_second_moment": 0.9990379699972676
+    },
+    {
+      "theta": 0.0,
+      "p": 0.0,
+      "g": 0.1,
+      "mean": 0.0,
+      "second_moment": 2.500000000000001e-05,
+      "formula_second_moment": 2.5000000000000008e-05
+    },
+    {
+      "theta": 1.0,
+      "p": 0.09966799462495582,
+      "g": 0.09900662908474397,
+      "mean": 0.9995066103912273,
+      "second_moment": 0.9990379699972676,
+      "formula_second_moment": 0.9990379699972676
+    },
+    {
+      "theta": 4.0,
+      "p": 0.3799489622552249,
+      "g": 0.08556387860811777,
+      "mean": 3.9983745046558155,
+      "second_moment": 15.987016982424944,
+      "formula_second_moment": 15.987016982424946
+    }
+  ],
+  "theta0_mean": 0,
+  "theta0_second_moment": 2.5e-05,
+  "expected_squared_payoff_loss_before": 0.5,
+  "expected_squared_payoff_loss_after_one_step": 0.5000001249999791,
+  "finite_parameter_limit": "Impossible in ideal real arithmetic for positive constant eta and these +/-1 targets: every finite L has |p(L)|<1 and g(L)>0, so increments stay bounded away from0 in any neighborhood ofL. This does not prove unboundedness; actual float saturation/rounding may stop updates.",
+  "no_actual_policy_convergence_or_learning_quality_claim": true,
+  "loss_evaluation_law": "population squared loss against fresh independent +/-1 outcome, not just-observed training target or saved TD residual"
+}

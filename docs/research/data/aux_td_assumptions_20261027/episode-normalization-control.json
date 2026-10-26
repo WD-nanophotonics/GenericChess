@@ -1,0 +1,72 @@
+{
+  "scope": "exact two-path abstract fixed-policy frozen-linear TD algebra; no model fit, games or training",
+  "cases": [
+    {
+      "lam": "0",
+      "episode_B": [
+        "1",
+        "3"
+      ],
+      "episode_c": [
+        "1",
+        "-2"
+      ],
+      "sum_A": "2",
+      "sum_b": "-1/2",
+      "sum_fixed_point": "-1/4",
+      "length_normalized_A": "5/4",
+      "length_normalized_b": "0",
+      "length_normalized_fixed_point": "0"
+    },
+    {
+      "lam": "19/20",
+      "episode_B": [
+        "1",
+        "49/10"
+      ],
+      "episode_c": [
+        "1",
+        "-59/20"
+      ],
+      "sum_A": "59/20",
+      "sum_b": "-39/40",
+      "sum_fixed_point": "-39/118",
+      "length_normalized_A": "69/40",
+      "length_normalized_b": "-19/80",
+      "length_normalized_fixed_point": "-19/138"
+    },
+    {
+      "lam": "1",
+      "episode_B": [
+        "1",
+        "5"
+      ],
+      "episode_c": [
+        "1",
+        "-3"
+      ],
+      "sum_A": "3",
+      "sum_b": "-1",
+      "sum_fixed_point": "-1/3",
+      "length_normalized_A": "7/4",
+      "length_normalized_b": "-1/4",
+      "length_normalized_fixed_point": "-1/7"
+    }
+  ],
+  "actual_learner": "episode sum unchanged, no normalization patch",
+  "interpretation": "dividing every episode by one common constant rescales drift; dividing by its own random length generally changes matrix and fixed point",
+  "tabular_same_process": {
+    "ordinary_fixed_point": [
+      "0",
+      "-1"
+    ],
+    "per_episode_length_fixed_point": [
+      "1/3",
+      "-1"
+    ],
+    "root_equation": "(1/2)*(1-v0)+(1/4)*(v1-v0)=0",
+    "child_equation": "(1/4)*(-1-v1)=0",
+    "qualification": "future-dependent divisor changes effective root branch weighting, not only compressed projection",
+    "lambda": "0"
+  }
+}
