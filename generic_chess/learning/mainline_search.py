@@ -24,7 +24,9 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
     """One mainline iterative q0 call; seed does not alter lexical ordering.
 
     Reuse mainline TT and ordering within this call. All captures have equal
-    ordering value: no learned or human material price enters move ordering.
+    ordering value: no direct learned or human material price enters ordering.
+    TT moves and cutoff-derived history still depend on this call's search
+    results; ordering is not invariant to changes in the leaf model.
     Root tactical scans and optional pruning stay off. A new player per call
     prevents stale model epochs and deeper warm scores on shallower requests.
     Mainline terminal distance preferences remain. This is a different search
