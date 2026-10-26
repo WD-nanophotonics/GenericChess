@@ -206,3 +206,10 @@ and is UNKNOWN, not assigned invented zero minutes. The independent-boundary
 judgment rests on the different intervention/inputs/endpoint, not on a new UUID.
 Any actual continuation of the old encoding question must carry its old cost;
 any expected related>=120minute future run still needs USER assessment.
+
+## Follow-up scope correction
+
+[Cost attribution](LEAPER_COST_ATTRIBUTION_20261026.md) separates row/choose scopes
+and confirms default lexical Q sorting is outside ordering_seconds. The earlier
+1.6% bound applies only to that recorded region, not all sorting. Original
+measurements and frozen artifacts are unchanged.

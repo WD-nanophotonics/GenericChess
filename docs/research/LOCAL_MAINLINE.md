@@ -6,56 +6,46 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision —2026-10-26 root ordering / quality population
+## Current decision -2026-10-26 measured runtime consumer
 
-[Root-order and quality report](LEAPER_ROOT_ORDER_QUALITY_20261026.md) closes two
-research-only policies: root-scan-hint reuse (96returns) and previous-complete
-root-child-work ordering (144returns). Completed-depth scores/actions match;
-root-hint saving disappears by D4, root-work benefit is small/mixed (D6 median
-wall ratio0.9978; rule-equal0.9953). Both stop without product/default activation.
+[Cost attribution](LEAPER_COST_ATTRIBUTION_20261026.md) records172new original-Player
+returns,0games/solver/product changes. Complete-work trios preserve all non-timing
+action/value/PV/work. Lower-disturbance push observation:10eligible D8 trios over
+12preselected h2 rules, observed inclusive wall56.06%, median observer/bracket
+1.00936;2incomplete trios retained. Consumer localization is not a removable
+share, optimizer acceptance or strength.
 
-A distinct original-Player2s/0.5s resource curve on12development rules reaches
-24actual Core terminals/1931returns. Long policy2WIN22DRAW; both wins one movement
-family on5x5/6x6, not broad independent rule-family success. One frozen-tolerance
-overrun stays ineligible:23eligiblegames and11completepairs, long12points/22paired
-games. Full histories/rawreturns and9636PVplies independently replay. This is
-limited population discrimination, NO-GO for a claimed cross-rule strength gain
-or further acceptance games for either weak optimizer. No solver/AUX work.
+CPU profiling is4.4x slower, early15.625ms quantized, with generated-method labels
+not class-disambiguated. D6 actual1326308pushes versus549790main+Q visits expose
+classification work absent from node counts. Exact snapshot sort/repr remains a
+guard to preserve. Default Q lexical sort is outside ordering_seconds; the prior
+1.6% bound applies only to that recorded region. First nominal2700s batch
+overshot55.149s at a dispatch boundary; retain this limit and8NOT_RUN slots.
 
-New original-D6 timer evidence leaves79.105/101.759outer seconds unassigned;
-evaluation6.8%, ordering1.6%, legal requests13.9%. The residual is not a measured
-removable Native/history/transition share. Do not choose another kernel/cache
-from its name; both prior H6 and full-key-memo routes remain deferred.
+Main: does the next experiment improve a falsifiable cross-family quality goal? |
+Prepare ONE GO/NO-GO memo comparing saved push localization against equal-wall
+PVS/defaultOFF-vs-ON or another concrete algorithm, with full history/seat/opponent/
+seed, >=3family support and censoring/exposure | Reviewable cost/quality design or
+NO-GO | No more profiling now; carry final costs/current200cap; no old16/H6/
+full-key-memo revival, TT-guard shortcut or automatic games.
+Backup1: is untimed lexical-Q string sorting a better target? | Inspect actual
+immutable-key consumer/preservation requirements using saved evidence | One
+scoped cost/quality proposal | No arbitrary traversal/tie change or threshold hunt.
+Backup2: can quality discrimination cover genuinely different families? |
+Define prospective full-rule/history/opponent/seat sampling for a concrete useful
+candidate | Explicit exposure/correlation and actual endpoints | No selected
+family4 as holdout or universal-solver prerequisite.
 
-Current Main: which original-path consumer explains the remaining cost? | Freeze
-an overhead-controlled matched fixed-work cost allocation test with actual source
-boundaries and a full related-cost assessment before calls | Measured exclusive
-consumer/share and semantic/work parity, or a reasoned stop | Carry reused
-preparation/collection costs; expected related>=120USER; no speculative kernel,
-TT-guard reduction or silent reset of this closed study's actual cost.
-Backup1: can a quality endpoint cover genuinely different rules? | Define a
-prospective full-rule/history/opponent/role sampling protocol before new fitness
-queries | Explicit support/exposure/correlation and actual Core endpoints | No
-outcome-selected family4 expansion disguised as holdout; geometry is no WDL gate.
-Backup2: is a new strategy mechanism justified? | Require a concrete changed
-consumer premise and falsifiable equal-budget quality comparison | Decision-changing
-proposal or defer | No old16/p49p53/LMR/Q-threshold revival or default activation.
+User directly approved this diagnostic carrying97.185prior whole minutes,
+forecast180/cap200. Scientific ledger is separately verified at finish; final
+delivery overhead retained privately. No session reset. Solicited Dot timer
+cautions adopted; smaller-budget recommendation did not override direct approval.
+Both hourly roles ACTIVE, no new PRIMARY AUX assignment.
 
-Later GitHub reviews c0118089c3cd85b3dfa2068928a6e84347969ca9 and
-578cd42b0672181dafa4f0bdb8015be109bd4cdc were fully read/preserved: adopt their
-specific GO/NO-GO and whole-cost/quality distinctions. Their fixed published
-snapshots precede these current results; no claim of independent Player rerun.
-No further phase was added after reading them. PRIMARY assigned no new AUX task
-and did not inspect/change its private computation/state. Existing hourly ACTIVE
-schedules remain; each role owns its user-authorized future work.
-
-Late solicited Dot reply1793006689 was read after the one+5min check. Adopt its
-controller/provenance/budget cautions; PVS OFF/ON ablation is a DEFERRED alternative,
-not performed or automatically queued. The old encoding-sensitivity Main paragraph
-was contradictory live text and is explicitly superseded below; any genuine
-continuation still carries old costs. Current study has different interventions,
-new inputs and endpoint; inherited general source-reading reuse fraction remains
-UNKNOWN, not invented as zero. See report and late-adoption evidence.
+Prior [root-order/quality study](LEAPER_ROOT_ORDER_QUALITY_20261026.md) is closed:
+96hint/144root-work-order returns did not justify activation.24Core games/
+1931returns long2WIN22DRAW, wins one movement family;23eligible games/11pairs
+remain limited development evidence. This diagnostic adds no games.
 
 ## Retained prospective geometry study — CLOSED
 
@@ -195,3 +185,8 @@ that check is 96.84643 minutes versus the 100-minute forecast; closing receipt
 synchronization follows, with zero new experimental work. Late Dot replies are
 read at the next meaningful interaction. The next run must include this related
 cost and final synchronization; no new session resets it.
+
+Late autonomousPatrol68f83ff0 was fully read/preserved at delivery. Its fd7d7eac
+snapshot predates this diagnostic and lacked direct user approval. Adopt the
+quality/algorithm GO/NO-GO priority above; do not retroactively call completed
+experiments review execution. No further Player/profile calls or AUX assignment.

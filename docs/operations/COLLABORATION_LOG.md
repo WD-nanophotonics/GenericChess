@@ -7956,3 +7956,14 @@ OFF/ON alternative, distinguish read/adopt/executed chronology. Clarified stale
 encoding-Main text and independent intervention/input/endpoint budget boundary;
 prior cost and UNKNOWN shared-source reuse remain explicit. Shared AUX dialogue
 was read for source context only, not treated as authority to assign AUX work.
+
+## PRIMARY cost attribution -2026-10-26
+
+User-approved original-Player diagnostic, no AUX task/state change. RemotePatrol
+atfd7d7eac unchanged at opening; Slack originals/threads preserved. Fresh request
+a8119b36 verified; one+5check read solicitedDot1793012471.891069. Adopted clock/
+CPU/scope cautions; direct user180/200approval outranked Dot budget opinion.
+172returns localize complete push and hidden classification work; default Q
+sorting lies outside its counter. Nine controls/full-context literal readers
+pass, not independent WDL or strength. First nominal2700s overshoot55.149s is
+explicit, never refilled. Exact guards and product/defaults unchanged.

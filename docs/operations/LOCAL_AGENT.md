@@ -838,3 +838,13 @@ not to rewrite already-published history, and to correct future identity only.
 The local identity is corrected and verified. Do not amend/force-push delivered
 history to repair this incident; no new per-publication approval is needed for
 ordinary reviewed commits using the correct identity.
+
+## Observed cost-attribution boundaries -2026-10-26
+
+Separate row, constructor, caller choose and internal choose clocks. Default Q
+lexical sorting returns before its timer. ProcessCPU includes Native/thread
+work; instrumented pstats may quantize/collapse generated labels, not yield
+uninstrumented wall/removable fractions. Preserve complete-work controls and
+censored slots. Push attempts/exceptions differ from successful counters. A
+between-call batch check can overrun: preserve it, and define future dispatch/
+in-flight bounds before execution. No metadata repair refills frozen queries.
