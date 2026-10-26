@@ -1,22 +1,27 @@
-# Current user assignment —2026-10-26
+# DEV_AUX current assignment —2026-10-26
 
-DEV_AUX ACTIVE/hourly60min, original binding. First bounded15minute source-only
-consumer audit; task source sandbox264cfed3ced86d1c9ef8e3669667713a223542b5.
-Carry prior H6 chain99.204min;0newPlayer/solver/games/build. After audit/cap wait
-for user assignment; prior Main and backups below DEFERRED, not automatic work.
+Use [current status](../operations/DEV_AUX_CURRENT_STATUS.md): ACTIVE/hourly60min,
+original binding. Initial bounded consumer audit COMPLETE, published at
+`a475104a1bcb6c0f7c25465a581ea29bb87d7002`.
+Current action: WAIT_FOR_USER_ASSIGNMENT; hourly intake checks new tasks/reviews.
+No repeated audit, automatic prior Main/backups, new experiment or budget reset.
+[Audit report](AUX_LEAPER_CONSUMER_AUDIT_20261026.md) preserves the source and cost
+boundaries. Earlier research context below is deferred evidence, not a live queue.
 
-# DEV_AUX current research
+# Deferred research context — before the initial assistance task
 
-P0/P1 structural rule counterfactuals and complete-history truth are the sole
-current Main. Then matched explorer calibration; conditional learning/strong
+Before the latest user assignment, P0/P1 structural counterfactuals and
+complete-history truth were the Main. Later reserves were matched explorer
+calibration, conditional learning/strong
 teachers; long-term inverse design. PRIMARY owns rule generation, common mu,
 forward features/predictions and defaults. AUX owns exact truth, certificates,
 coverage, history/clock semantics and offline matched scoring. Only sidemission.
-Latest heartbeat:120minute patrols; effective work requirement60–90minutes.
+Historical observation:120minute patrols before later cadence changes. Current
+status is only the reference above; ordinary research accounting remains60–90min.
 
 ## Reusable evidence and current bounded question
 
-Latest checked sandbox731709e69007713ac403d60e1218221d1950c8d9 adds structural
+Historical executed baseline sandbox731709e69007713ac403d60e1218221d1950c8d9 adds structural
 research scripts/data/docs afterfcd2021c; no generic_chess or tools runtime delta.
 Shared rules/search/terminal/history/public Session remain reused. The two
 existing AUX learner files are the only package differences. No acceleration

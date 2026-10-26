@@ -1863,3 +1863,17 @@ Own prior session remains ENDED; this
 bounded review earns no60minute-segment credit. Related H6 prior99.204min carried;
 completion/delayed-check details in report receipt. Await user assignment after
 this task; old Main is deferred. Hourly heartbeat remains ACTIVE.
+
+
+## DEV_AUX current-status correction —2026-10-26
+
+Latest direct user heartbeat confirms own ACTIVE/hourly60min, original binding;
+Slack status correction1792999333.106669 is corroborated by that instruction and
+own automation readback. Added [one current-status reference](DEV_AUX_CURRENT_STATUS.md)
+and linked recovery/mainline/Slack/review methods to it. Old180/120minute and
+PAUSED observations are explicitly historical. Initial consumer audit remains
+COMPLETE; WAIT_FOR_USER_ASSIGNMENT, no old Main revival, schedule or experiment
+change. New Patrol at sandbox120668d0b5f313b0f379a1a0f37206674b1a7cc1 was read
+and retained: consumer/cost cautions accepted as context; optional research
+suggestions deferred pending user assignment. Later opening45711b25bd9d964925635cad83c85616ca769a7b has no review-directory delta.
+This is documentation maintenance, no effective research credit or new session.

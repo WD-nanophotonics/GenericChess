@@ -1,6 +1,7 @@
 # DEV_AUX local operations
 
-AGENTS.md is authoritative. This file contains current operating methods;
+AGENTS.md is authoritative. Use [current status](DEV_AUX_CURRENT_STATUS.md)
+for cadence and task ownership. This file contains current operating methods;
 retired priorities, Dot windows and PRIMARY publication commands have been
 removed. Their historical receipts remain in Git.
 
@@ -41,13 +42,15 @@ CHATGPT_REVIEW_WORKFLOW.md: discover actual remote path/ref, explicitly update
 needed tracking refs, pin full SHA/path/blob, compare changed files, retain exact
 originals and incomplete-coverage boundaries. No merge/import/execution is needed
 to read advice. Apply latest user > autonomous GitHub/Slack ChatGPT > Dot > local;
-record adoption and actual execution separately. Current cadence180minutes,
-AUX remains PAUSED; no scheduler, session or research-state mutation here.
+record adoption and actual execution separately. Current cadence/task state
+comes from the status reference above; review intake itself does not mutate
+scheduler/session/research state.
 
 ## Research and timing
 
-Read LOCAL_MAINLINE.md for the current P0/P1 structural counterfactual and
-complete-history truth question. Earlier learner-cost, TD and screen-first
+Read LOCAL_MAINLINE.md for the current user assignment. The initial audit is
+complete: wait for user assignment, without resuming the deferred P0/P1 queue.
+Earlier learner-cost, TD and screen-first
 automatic queues are superseded by the2026-10-23/24 direction. Preserve their
 evidence/caps without launching an unstarted price or feature-policy reserve.
 Later learning/teachers/inverse and search-knowledge compression are conditional

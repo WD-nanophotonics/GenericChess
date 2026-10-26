@@ -1,7 +1,8 @@
 # GenericChess local research policy
 
-## User restore and initial assignment —2026-10-26
+## Current status and initial assignment —2026-10-26
 
+Current status: [DEV_AUX_CURRENT_STATUS.md](docs/operations/DEV_AUX_CURRENT_STATUS.md).
 Latest explicit user restores existing DEV_AUX ACTIVE/hourly (60minutes), same
 ID/chat. First task is the bounded15minute consumer source audit pinned in
 sandbox264cfed3ced86d1c9ef8e3669667713a223542b5; carry H6 prior99.204minutes.
@@ -12,10 +13,10 @@ This bounded review is not a qualifying60minute research session.
 
 ## Current review intake and cadence — 2026-10-26
 
-Latest direct user cadence is180minutes for both existing patrols. PRIMARY is
-ACTIVE and DEV_AUX remains PAUSED, with unchanged IDs/chat bindings. Older60/90/120
-minute receipts below are historical, not live recurrence instructions. Keep role
-boundaries and60–90effective-minute work; this workflow update does not resume AUX.
+Use the current-status reference above: DEV_AUX is user-authorized ACTIVE at
+60minutes. Historical observation before the later restore: the review-intake
+rollout recorded180minutes, PRIMARY ACTIVE and DEV_AUX PAUSED. That observation
+is superseded; it does not describe the current role state or schedule.
 
 The current scientific priority is P0/P1 structural rule counterfactuals and
 complete-history truth, then matched explorer calibration, conditional learning/
@@ -214,7 +215,7 @@ helper synchronizes the memo Segment to ENDED. Full accounting contract and
 limitations: docs/operations/EFFECTIVE_WORK_ACCOUNTING.md.
 
 The two existing patrol prompts are durable role/bootstrap rules at the latest
-user-set cadence (currently180minutes),
+user-set cadence (see the current-status reference above),
 not copies of temporary experiment choices or historical decisions. Recover
 current tasks, scope, communication and budgets from this checkout's current
 records. Only explicit user schedule changes authorize modifying recurrence or

@@ -85,7 +85,9 @@ Initial absence and the later discovery are both retained. Future discovery
 still checks new/modified files, related refs and incomplete coverage; no guessed
 path, placeholder directory, automatic merge or research-state takeover.
 
-Cadence remains 180 minutes. PRIMARY remains ACTIVE and DEV_AUX remains PAUSED;
-existing IDs/chat bindings and the 60–90-minute effective research requirement
-are unchanged. Each role publishes only its own reviewed changes on its existing
-branch; reading a remote review never grants ownership of the review branch.
+Historical rollout observation, before the later2026-10-26 restore: cadence was
+180minutes, PRIMARY ACTIVE and DEV_AUX PAUSED. This is superseded, not current
+status. See [DEV_AUX current status](DEV_AUX_CURRENT_STATUS.md) for the latest
+user-authorized ACTIVE/hourly state and waiting assignment. Existing ID/chat
+bindings and ordinary60–90effective-minute accounting remain. Each role publishes
+only its own changes; reading a review never grants review-branch ownership.

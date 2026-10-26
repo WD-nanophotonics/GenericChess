@@ -1,5 +1,6 @@
 # GenericChess Slack collaboration workflow —2026-10-24
 
+Current status: [DEV_AUX_CURRENT_STATUS.md](DEV_AUX_CURRENT_STATUS.md).
 Current AUX update2026-10-26: latest explicit user restores DEV_AUX ACTIVE at
 60minutes, same binding. Older180minute/pause text is historical. First assigned
 source audit is capped15minutes inclusive; after delivery await user assignment,
@@ -36,7 +37,8 @@ pure-Leaper-first direction or authorize >=120minute runs on the user's behalf.
 
 ## Reading and actual Slack interactions
 
-At each existing180minute patrol/manual work start, read new autonomous ChatGPT
+At each existing patrol/manual work start (cadence from the current-status
+reference), read new autonomous ChatGPT
 project comments and complete relevant threads once; retain coverage boundaries
 and any gaps. A direct request for latest messages permits a fresh bounded read.
 User correction2026-10-25: every NEW work round must initiate a fresh mailbox
