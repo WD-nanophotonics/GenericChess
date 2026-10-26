@@ -1,0 +1,107 @@
+"""Zero-query evidence and conditional design-resolution audit; stdlib only."""
+import gzip,json,hashlib,math,itertools
+from pathlib import Path
+from collections import Counter,defaultdict
+from fractions import Fraction
+ROOT=Path.cwd(); DATA=ROOT/'docs/research/data'; OUT=ROOT/'.local_agent/resolution-97f64b80'
+sources={}
+def load(folder,name):
+ p=DATA/folder/name; b=p.read_bytes(); sources[str(p.relative_to(ROOT)).replace(chr(92),'/')]=hashlib.sha256(b).hexdigest()
+ text=gzip.decompress(b).decode() if name.endswith('.gz') else b.decode()
+ return [json.loads(v) for v in text.splitlines()] if '.jsonl' in name else json.loads(text)
+def key(record):
+ # Structural complete-record join, NOT a Core state identity/TT key.
+ return hashlib.sha256(json.dumps(record,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+def save(name,value):
+ (OUT/name).write_text(json.dumps(value,ensure_ascii=False,sort_keys=True,indent=2)+'\n',encoding='utf-8',newline='\n')
+ni=load('leaper_native_default_20261025','inputs.json.gz')
+nq=load('leaper_native_default_20261025','quality.jsonl.gz')
+na=load('leaper_native_default_20261025','assessment.json.gz')
+hi=load('leaper_compiled_hash_20261026','equal-time.json.gz')
+li=load('leaper_lmr_20261025','lmr-deadline-f538-inputs.json.gz')
+lq=load('leaper_lmr_20261025','lmr-deadline-f538-queries.jsonl.gz')
+qc=load('leaper_quality_controls_20261026','controls-derived-v2.json.gz')
+qa=load('leaper_quality_controls_20261026','calibration-derived-assessment-v2.json.gz')
+pr=load('leaper_quality_controls_20261026','prospective-budget-proposal.json.gz')
+cohorts=[]
+cohorts.append(('Native64',[(c['key'],c['record']) for c in ni['quality']['cases']]))
+cohorts.append(('LMR19',[(c['id'],c['record']) for c in li['cases']]))
+cohorts.append(('Hash19_including_p49_p53',[(c['key'],c['record']) for c in hi['inputs']['cases']]))
+ids={r['slot']['id'] for r in qa['rows']}
+cohorts.append(('Certificates3',[(c['id'],c['record']) for c in qc['cases'] if c['id'] in ids]))
+all_records={};summaries=[]
+for name,cases in cohorts:
+ entries=[]
+ for case,rec in cases:
+  k=key(rec);fp=rec['ruleset_fingerprint'];all_records.setdefault(k,{'fingerprint':fp,'cohorts':[],'cases':[]})
+  all_records[k]['cohorts'].append(name);all_records[k]['cases'].append(case)
+  entries.append({'case':case,'record_join_sha256':k,'full_rule_fingerprint':fp,'absolute_ply':len(rec['actions'])})
+ summaries.append({'name':name,'rows':len(cases),'unique_full_records':len({v['record_join_sha256'] for v in entries}),'rules':len({v['full_rule_fingerprint'] for v in entries}),'entries':entries})
+misses=[]
+for r in nq:
+ if r['slot']['budget']=='fixed1.5' and r['chosen_own_WDL']<r['root_own_WDL']:
+  c=next(c for c in ni['quality']['cases'] if c['key']==r['slot']['case'])
+  misses.append({'dataset':'Native64','case':c['key'],'arm':r['slot']['arm'],'query_id':r['query_id'],'record_join_sha256':key(c['record']),'full_rule_fingerprint':c['record']['ruleset_fingerprint'],'root_own_WDL':r['root_own_WDL'],'chosen_own_WDL':r['chosen_own_WDL'],'label_tier':'SOURCE_GRAPH_NOT_NEW_CERTIFICATE'})
+for r in hi['values']:
+ if r['chosen_own_WDL']<r['root_own_WDL']:
+  c=next(c for c in hi['inputs']['cases'] if c['key']==r['slot']['case'])
+  misses.append({'dataset':'Hash19','case':c['key'],'arm':r['slot']['arm'],'query_id':r['query_id'],'record_join_sha256':key(c['record']),'full_rule_fingerprint':c['record']['ruleset_fingerprint'],'root_own_WDL':r['root_own_WDL'],'chosen_own_WDL':r['chosen_own_WDL'],'label_tier':r['label_tier']})
+assert len(nq)==256 and len(lq)==38 and len(hi['values'])==38 and qa['calls']==6
+assert all(r['source_graph_chosen_WDL']==r['source_graph_root_WDL'] for r in lq)
+assert all(r['certified']['category']=='CERTIFIED_OPTIMAL' for r in qa['rows'])
+miss_roots={r['record_join_sha256'] for r in misses};miss_rules={r['full_rule_fingerprint'] for r in misses}
+assert len(miss_roots)==2 and len(miss_rules)==1
+save('cohort-joins.json',{'cohorts':summaries,'all_unique_full_records':len(all_records),'all_full_fingerprints':len({r['fingerprint'] for r in all_records.values()}),'repeated_records':[dict(record_join_sha256=k,**v) for k,v in all_records.items() if len(v['cohorts'])>1],'target_budget_source_misses':misses,'unique_missed_roots':len(miss_roots),'unique_missed_rules':len(miss_rules),'limits':'Full-record equality is structural, not independent semantic replay. Source labels remain source labels. All exposed; no all-project completeness claim.'})
+# Exact conditional two-sided sign tests. This is a sensitivity illustration,
+# NOT a valid p-value/power claim for the frozen, dependent proposed games.
+def tail(n,k,p):return sum(math.comb(n,j)*p**j*(1-p)**(n-j) for j in range(k,n+1))
+def exact_p(n,k):return min(Fraction(1),2*sum((Fraction(math.comb(n,j),2**n) for j in range(k,n+1)),Fraction(0)))
+resolution=[]
+for n,unit in [(16,'hypothetical IID decisive games'),(8,'hypothetical independent history/color-pair signs'),(4,'hypothetical independent rule-cluster signs')]:
+ threshold=next((k for k in range(n//2+1,n+1) if exact_p(n,k)<=Fraction(1,20)),None)
+ # Independently enumerate all fair sign configurations for each upper tail.
+ for k in range(n//2+1,n+1):
+  count=sum(sum(bits)>=k for bits in itertools.product((0,1),repeat=n))
+  assert exact_p(n,k)==min(Fraction(1),Fraction(2*count,2**n))
+ target=None
+ if threshold:
+  lo,hi_p=.5,1.
+  for _ in range(60):
+   mid=(lo+hi_p)/2
+   if tail(n,threshold,mid)<.8:lo=mid
+   else:hi_p=mid
+  target=(lo+hi_p)/2
+ resolution.append({'units':n,'unit':unit,'two_sided_alpha':.05,'minimum_positive_signs_if_all_units_decisive':threshold,'all_positive_exact_p':str(exact_p(n,n)),'positive_rejection_probability_if_sign_p_point8':tail(n,threshold,.8) if threshold else 0.,'sign_p_for_80percent_positive_rejection_no_draws':target,'not_valid_inference_for_actual_panel':True})
+assert exact_p(8,7)>Fraction(1,20) and exact_p(8,8)<Fraction(1,20)
+assert exact_p(4,4)==Fraction(1,8) and exact_p(16,13)<Fraction(1,20)<exact_p(16,12)
+save('conditional-resolution.json',{'analytical_rows':resolution,'zero_eligible_discordance':'0 decisive signs => no sign test; never assign p=0 or equality. Actual draws are known finite endpoints, not missing.', 'draw_sensitivity':[{'discordant':n,'best_case_all_positive_two_sided_p':str(exact_p(n,n)) if n else None} for n in range(9)],'finite_panel':{'planned_games':16,'history_color_pairs':8,'rule_clusters':4,'signed_utility_single_draw_to_win_step':'1/16','candidate_points_single_draw_to_win_step':'1/32','missing_or_timing_ineligible_m_slots_bound_width':'2*m/16 for signed finite utility','generalization':'UNKNOWN without sampling/randomization assumptions; seeds are not independently sampled worlds'},'MDE':'No actual minimum detectable WDL effect identifiable from current evidence: no outcome/discordance distribution or valid IID design. Conditional sign probability curves are not Elo, actual strength power or a fixed effect promise.'})
+save('source-hashes.json',sources)
+print(json.dumps({'unique_full_records':len(all_records),'unique_fingerprints':len({r['fingerprint'] for r in all_records.values()}),'missed_roots':len(miss_roots),'missed_rules':len(miss_rules),'conditional_resolution':resolution,'new_Player':0,'new_solver':0}))
+
+# Rejoin each Native quality label to the actual raw returned action and full
+# record; do not infer a new proof from this source-graph consistency check.
+nraw=load('leaper_native_default_20261025','fitness-queries.jsonl.gz')
+byid={r['id']:r for r in nraw};ncase={c['key']:c for c in ni['quality']['cases']}
+checks=[]
+for row in nq:
+ raw=byid[row['query_id']];case=ncase[row['slot']['case']]
+ assert raw['label']==row['slot']
+ assert raw['before_record']==case['record']
+ assert raw['state_sha256']==case['state_sha256']
+ assert raw['tuning']['use_pvs'] is True
+ labels={json.dumps(v['action'],sort_keys=True):v['truth']['value']*(1 if case['actor']==0 else -1) for v in case['labelled_actions']}
+ chosen=labels[json.dumps(raw['decision']['action'],sort_keys=True)]
+ assert chosen==row['chosen_own_WDL'] and max(labels.values())==row['root_own_WDL']
+ checks.append({'query_id':raw['id'],'root_join':key(case['record']),'case':case['key'],'budget':row['slot']['budget'],'arm':row['slot']['arm'],'source_chosen_own_WDL':chosen,'source_root_own_WDL':row['root_own_WDL'],'actual_complete_history_and_return_join':True,'PVS':True,'ordinary_qdepth':raw['limits']['quiescence_max_depth'],'qhard':raw['limits']['quiescence_hard_max_depth']})
+assert len(checks)==256
+save('native-raw-binding.json',{'checks':checks,'label_scope':'Published source-graph labels, not independent WDL solving/certification','raw_returns':len(nraw),'joined_quality_returns':len(checks)})
+# No observed repair in either comparison. Same actions can differ in runtime;
+# different actions within a WDL bucket need not differ in finite game strength.
+comp=[]
+for budget in ['fixed1.5','balanced50k']:
+ rows=[r for r in na['pairtable'] if r['budget']==budget]
+ assert len(rows)==64
+ comp.append({'budget':budget,'unique_full_history_roots':len(rows),'repairs':sum(r['baseline_WDL']<r['root_WDL'] and r['candidate_WDL']==r['root_WDL'] for r in rows),'regressions':sum(r['baseline_WDL']==r['root_WDL'] and r['candidate_WDL']<r['root_WDL'] for r in rows),'different_actions':sum(not r['same_action'] for r in rows),'baseline_inferior':sum(r['baseline_WDL']<r['root_WDL'] for r in rows),'candidate_inferior':sum(r['candidate_WDL']<r['root_WDL'] for r in rows)})
+save('controller-comparability.json',{'Native':comp,'LMR19':{'rows':38,'query_kind':'fixed1.5','PVS':all(r['tuning']['use_pvs'] for r in lq),'native':'Recorded source constructs AlphaBetaPlayer without availability/check overrides; existing legality default; not the Native-both controller','matches_Current_Native_both_exactly':False,'baseline_all_source_optimal':True},'Hash19':{'PVS':True,'Native':'both','only_hashflag_difference':True,'baseline_inferior_roots':2,'candidate_inferior_roots':2,'repairs':0,'regressions':0},'Certificates3':{'calls':6,'unique_roots':3,'Native':'both','PVS':True,'certificate_optimal':6,'different_rule_current_inferior':0},'new_Player':0,'new_solver':0})
+save('source-hashes.json',sources)
+print(json.dumps({'raw_binding_checks':len(checks),'comparisons':comp,'new_Player':0,'new_solver':0}))

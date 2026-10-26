@@ -7804,3 +7804,25 @@ span3/directedpureLeaper rules/8fullhistories at0Player/0games and a concrete
 16game Native-service proposal; cumulative270/cap300 needs USER, not Dot.
 AUX state/checkout/solver untouched. All rawreturns/initiallabelassessments and
 executed old scorer retained; new upperbound is a derivedproof, not queryrerun.
+
+
+## 2026-10-26 PRIMARY information-resolution audit
+
+Read remoteac361556bb28db8553316d55c3badd495729fede/08:12JSTPatrol original
+(blobba777cfbc2fd1dd96bf377d7f835bc5131cba0a6), then existingSlackChat fullthread
+and priorDot thread. No newChatroot/reply in those covered threads. Opening
+AGENT_REQUEST GC-SLACK-20261026-091152-0560a468 delivered1792973536.658419;
++5minute due00:17:16UTC, single check00:17:26UTC read Dot1792973675.860299.
+The first local import lacked metadata wrapper; original retained, correct
+wrapper nested actualraw; no reread/resend. Dot is solicited advice/source-only,
+not autonomous review or independent experimental replication.
+
+Adopted remote/Dot recommendation to defer16games; actually executed zero-query
+103record/11rule joins,256raw Native quality bindings and exhaustive hypothetical
+sign-resolution checks. Only2currentbudget miss roots/1rule; no cross3-rule
+signal established. Dot correctly distinguishes oldLMRNative configuration and
+significance/certificate limitations; verified source and adopted without making
+these universalArena gates. No report of AUX execution or new solver/games.
+Budget request270/300is not granted; with real prior87.08836qualitywall and25audit
+forecast totalwouldbe~297.08836. Further same-chain work crossing120needsUSER.
+See LEAPER_QUALITY_RESOLUTION_20261026.md; existing research/defaults retained.

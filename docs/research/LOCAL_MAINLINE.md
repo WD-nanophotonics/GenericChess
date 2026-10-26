@@ -34,35 +34,39 @@ Publication fetch additionally found autonomous review 0aa20c8fd75a98416d29270aa
 admission/whole-cost/quality gates; do not treat it as independent validation of
 new results or an instruction to rerun closed slots. No AUX change.
 
-## Main: quality contrasts are correct but saturated; prospective validation pending
+## Main: current quality signal insufficient; defer the16-game proposal
 
-[Quality controls](LEAPER_QUALITY_CONTROLS_20261026.md):5source-rule controls,
-3strictnamedcontrasts,1620strategy nodes. Scoped4680position/24156edge loneK
-upperbound completes the DRAW proof. Sixfrozen1.5s baselinecalls on3rules all
-choose certifiedoptimal actions;0inferior, no methodcomparison/holdout.12research
-consumer checks pass;7/29sourceproof IDs refer to before a losing move while
-the actual proofrecord starts after it. Fullparent/proof history bindings stay.
-Stop oldcase/depth/budget expansion: these are correctnessguards, not harddata.
+[Zero-query resolution audit](LEAPER_QUALITY_RESOLUTION_20261026.md) adopts the
+new08:12JST autonomous review at ac361556bb28db8553316d55c3badd495729fede.
+103unique complete records/11full rule fingerprints in the selected old/new
+cohorts provide only2current1.5s source-labelled inferior roots, p49/p53 in one
+5x5rule.256raw Native returns rejoin actual actions/fullhistories/labels; the
+3newcertificate rules remain6/6optimal. This is not an exhaustive31390history
+search or a new WDL proof. ExistingLMR19is also1.5s saturated but its actual
+Native legality-only constructor differs from currentNative-both. No newPlayer,
+solver, game, sourcecapsule execution or AUX change.
 
-Question: can the existing Native-service cost gain improve outcomes across
-other frozen pure-Leaper families? | Await USER necessity assessment of the
-prepared4rules/8histories/16colorpairedgames proposal, cumulativeforecast270/
-totalcap300; then source/resource-preflight and strict16D3qualification BEFORE
-any games | Inputs/preflight8/8constructor accepted; actualQA/gamesNOT_STARTED |
-No implicit approval, newworker, solver, NNUE/mixed scope, adaptive rules/caps,
-oldslotrefill or new300minute allowance. PriorNative110planningcharge/current
-quality85forecast/future60batch+15delivery all carried, actualeffective separate.
+Four planned rule groups cannot become16independent rules by color/prefix
+replication. Conditional exact sign-model resolution is not actualMDE/power;
+zero/unknown draws and correlation stay explicit. Games do not universally need
+certificates or statistical significance. This particular16game proposal is
+DEFERRED/NOT_STARTED and not recommended given current information, rather than
+renameddeploymentandrun. Original inputs/plans remain immutable historical
+proposals. Existing12consumer checks remain correct; no productdefaults change.
 
-Backup1: is the complete-key memo worth opportunity cost? | Retain published
-single-use loss/multiuse benefit, wholecost/RSS UNKNOWN and deferred180/cap200
-proposal | No new evidence justifies promotion | USER>=120 gate unchanged;
-new autonomous reviews recommend DEFER, not user budget approval/rejection.
+Question: what next information justifies further cost? | AwaitUSER necessity
+assessment before extending the same quality/Native chain beyond120; propose an
+explicit consequential bounded question before any newPlayer/solver/training |
+Previousqualityactual87.08836wall plus25auditforecast revises old270proposal to
+~297.08836/cap300NOTAPPROVED | No new allowance fromUUID/phase, no automatic16games,
+oldbudgetscan, harderoldrootrefill or general solver; preserve current evidence.
 
-Backup2: what evidence would make future validation interpretable? | Maintain
-fullhistory/seed/color compositekeys, physicalCoreoutcomes and strict-budget
-counterfactual bounds, metadata-only exposuregroups | Currentprospectiveinputs
-are not globally unseen; actualoperation/RSS stillUNKNOWN | No newqueries or
-broad sampling before a new decision-changing premise and cumulativeforecast.
+Backup1: complete-key memo remainsDEFERRED180/cap200 with no changed wholecost/RSS
+premise; fresh08:12review concurs. No resumed factorial or changedTT guards.
+Backup2: evaluate distinct execution-kernel feasibility only with actualconsumer/
+cost premise: currentNativecheck bypasses the Python single-target attack path,
+and Pythonpseudo-map is a separate consumer. No wholesale nested-profile cost
+credit or automatic bitmap prototype. Future full-map acceleration not refuted.
 
 ## Retained decisions and costs
 
