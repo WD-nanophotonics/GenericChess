@@ -1,3 +1,10 @@
+# Current user assignment —2026-10-26
+
+DEV_AUX ACTIVE/hourly60min, original binding. First bounded15minute source-only
+consumer audit; task source sandbox264cfed3ced86d1c9ef8e3669667713a223542b5.
+Carry prior H6 chain99.204min;0newPlayer/solver/games/build. After audit/cap wait
+for user assignment; prior Main and backups below DEFERRED, not automatic work.
+
 # DEV_AUX current research
 
 P0/P1 structural rule counterfactuals and complete-history truth are the sole

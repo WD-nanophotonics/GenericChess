@@ -1,5 +1,15 @@
 # GenericChess local research policy
 
+## User restore and initial assignment —2026-10-26
+
+Latest explicit user restores existing DEV_AUX ACTIVE/hourly (60minutes), same
+ID/chat. First task is the bounded15minute consumer source audit pinned in
+sandbox264cfed3ced86d1c9ef8e3669667713a223542b5; carry H6 prior99.204minutes.
+Zero new Player/solver/games/build. After completion/cap wait for user assignment;
+do not repeat the audit or revive old Main. Old pause/cadence text is historical.
+This bounded review is not a qualifying60minute research session.
+
+
 ## Current review intake and cadence — 2026-10-26
 
 Latest direct user cadence is180minutes for both existing patrols. PRIMARY is

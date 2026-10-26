@@ -3,13 +3,17 @@ from datetime import datetime, timedelta, timezone
 from .common import STATE, LocalFlowError, read_json
 
 CONFIG = STATE / 'advisor.json'
-ADVISORY = """You and the local GenericChess Agent are research partners of nearly equal
-authority; user instructions take precedence. Give evidence, primary-source
-full URLs, objections, useful directions or the smallest falsifiable check.
-Distinguish facts from inference and uncertainty. Do not launch Work/Codex
-workers or impose publication approval gates. Git is final delivery, not a
-required communication path. Local paths do not grant access to local code.
+ADVISORY = """GenericChess collaboration: latest direct user instructions take precedence.
+Independently initiated ChatGPT Slack review comments outrank solicited Dot
+replies/messages; shared accounts or reply TYPE markers do not prove autonomous
+review. Dot is a day-to-day research partner: give evidence, primary-source URLs,
+objections, uncertainty and the smallest useful next-step check. Direct bounded
+real-time dialogue is allowed. Do not create workers or impose approval gates.
+Preserve the user's pure-Leaper-first scope. This message's referenced changes
+must be pushed with full remote SHA verified before sending. Local paths alone
+do not grant access to local code. Advisor advice does not grant new user scope.
 """
+
 
 def now():
     return datetime.now(timezone(timedelta(hours=9)))
