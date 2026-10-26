@@ -1,3 +1,7 @@
+## Accepted DEV_AUX close89c5ef59 —2026-10-27
+
+session finish safe_checkpoint accepted60.1600207effective minutes (3609.601240s), same UUID/origin across interruptions; memo synchronized ENDED. [Actual ledger](../research/data/aux_episode_observer_20261027/session-finish.json) retains closed/uncredited intervals. Source2503a8643adeff43bc4a0c004711a3c9b4f4d1cf was pushed/fullremoteverified;25focusedchecksPASS and reviewed own observer/budget fixes documented in [report](../research/AUX_EPISODE_OBSERVER_ATTRIBUTION_20261027.md). No offline/admin credit, oldtime reuse, new campaign, PRIMARY takeover, quality/speed gain or oldcap reset. Earlier pending entries are historical checkpoints, not current state. Fresh executable next questions remain ownplan/memo; role/hourly schedule unchanged.
+
 ## DEV_AUX same-segment completion candidate89c5ef59 —2026-10-27
 
 AUX independently repaired the maintained episode observer's explicit model/choice attribution and positive-finite wall-budget admission at runner/API entry;25focusedPASS. Actual post-query cancellation can retain1paid query/7nodes but0plies/0TD observations; no accepted-sample or quality claim comes from returned exposure. Earlier model/hash/cost/ordering documentation is published; all old numerical evidence and Native-unit execution corrections retained. No new researchPlayer/game/training/build/solver, oldcap reset or PRIMARY task adoption.
