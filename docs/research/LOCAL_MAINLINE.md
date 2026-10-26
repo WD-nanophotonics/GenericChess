@@ -1,3 +1,9 @@
+## Completed DEV_AUX source-attribution segment140a989c
+
+Accepted session finish: 66.58400effective research minutes,162testsPASS; no newPlayer/solver/game/build/default. [Report](AUX_SAVED_DECISION_EXPOSURE_20261026.md) and data/session-finish.json preserve intervals, the uncredited interrupted interval and source scope. Conditional experienced mean-regret bound is positive; all119candidate action labels remainUNKNOWN. Scientificrevision3bb8e310was pushed/fullremoteverified before followup1793021026.612729; the one delayedcheck13:29:48UTC found no new reply, not independent endorsement.
+
+Read-only closing PVSdesign5f134bbd12roots/118actions matched; no driver/output audit or PRIMARYexecution/budget transfer. Next own task is freshPro/source intake and full-history qualification of any newly published packet, with supplied-certificate and incomplete-endpoint backups in WORK_PLAN/NEXT_WORK. Do not rerun this closed table or oldH6. Prior209.50498295minutes plus current conservative105.402minute origin-to-finish cost window and additional closing delivery retained; only66.584minutes are confirmed research. Cadence/role/stops unchanged.
+
 ## DEV_AUX verified source-attribution correction —2026-10-26
 
 Same140a989c ACTIVE segment, now62.33164confirmed effective minutes; pending closing communication/interpretation check, no premature finish.162relatedchecksPASS and final full1931decision/9636PV replay. [Report](AUX_SAVED_DECISION_EXPOSURE_20261026.md) corrects the overly broad earlier mean limitation: exact aggregate counts bound experienced short-minus-long mean WDLregret per recorded ordinary move to[94/466095,1/483], also positive on11timing-qualified pairs. It is a same-data consequence, not expected policy strength or an equal-time algorithm test.119observed-edge potential completions retain all52/67candidate locations; they are not actual minimax solutions. WDLsum4/gamepointdifference2/actorregret2WDLunits are separated.

@@ -1,0 +1,65 @@
+{
+  "id": "140a989c-1d15-44f0-87ff-a9b344d3a760",
+  "started_at": "2026-10-26T11:45:32.370911+00:00",
+  "ended_at": "2026-10-26T13:30:56.505814+00:00",
+  "state": "ended",
+  "reason": "safe_checkpoint",
+  "effective_work_seconds": 3995.040077,
+  "elapsed_minutes": 105.402,
+  "duration_gate_passed": true,
+  "research_stage_count": 5,
+  "effective_minutes": 66.58400128333334,
+  "tests_passed": 162,
+  "unconfirmed_interval_count": 1,
+  "research_work_intervals": [
+    {
+      "ended_at": "2026-10-26T11:52:04.243234+00:00",
+      "evidence": "Pinned manifest-checked source10files; inspected all240saved returns; phase1 48 and phase2 144same-depth pairwise slots choose identical actions; defined full-context fixed-denominator scoring and separate depth diagnostic. No Player/solver/game.",
+      "question": "Can all saved matched choices be bound to literal full contexts and scored with shared UNKNOWN action variables without new truth?",
+      "started_at": "2026-10-26T11:50:12.074980+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T11:55:19.181942+00:00",
+      "evidence": "Implemented score_published_leaper_choices.py; all24literal contexts/12rules/254actions bound; source manifest frozen hashes verified; all240saved returns processed without Player. Same-depth comparisons0; planned missing-slot bounds retained. Need adversarial controls and provenance/timing qualification refinement.",
+      "question": "Implement full-source matched-choice scoring with exact planned denominators and falsifiable malformed-input controls.",
+      "started_at": "2026-10-26T11:52:43.900994+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T12:09:10.676415+00:00",
+      "evidence": "Full fixed-source adapter40adversarial checksPASS; all1931stored query originals/record hashes/seat/actions and9636PVoccurrence plies checked;147forced/1784multi-action decisions;33empty PVs qualify as no continuation not illegal action.41shared prefix contexts=29same+12first divergences, not IID. No newPlayer/solver/game.",
+      "question": "Validate source-context action identification and separate frozen search limits from actual full-call cost; prevent false source/quality claims.",
+      "started_at": "2026-10-26T11:56:35.436009+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T12:32:45.327702+00:00",
+      "evidence": "Derived finite-game telescoping identity and instantiated it on all12same-context swapped-seat source pairs:short-minus-long total actor regret2; two positive same-family pairs yield existential error bags52/67 without local WDL labels.74targeted semantic testsPASS. Derived41prefix overlap bias,12initial roots10same2changed[-1/3,1/3], actual history alias129/223; primary OPE conditions checked and estimator rejected for these logs. ReportAUX_SAVED_DECISION_EXPOSURE_20261026.md.",
+      "question": "Validate shared-prefix stopping bias and source support: can source outcome or matched moves identify policy strength without a sampled target policy?",
+      "started_at": "2026-10-26T12:09:10.955310+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T12:44:32.633039+00:00",
+      "evidence": "Red-team source/lemma review:7executed-source/input SHA256 claims match frozen declarations; all24source rows H96/repeat4 PREPARED; four symbolic scope controls show different starts invalidate cancellation, allDRAW can hide errors, positive contrast need not mean long optimal, and short error may be only in drawn color mate. No new solver/game/Player; independent-premise-review.json.",
+      "question": "Red-team the signed terminal-regret identity, forced-action exclusions and full-context provenance; examine useful localization limits without solving or new policy runs.",
+      "started_at": "2026-10-26T12:38:43.735101+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T13:18:42.718394+00:00",
+      "evidence": "Final full source replay1931actual decisions/9636PVplies unchanged;162relatedtestsPASS; added exact units and aggregate regret mean bounds allsource[94/466095,1/483], eligible[63/379756,1/436];119observed-edge arithmetic witnesses preserve localizationUNKNOWN;12h2/h3not literalcontinuations. ReportAUX_SAVED_DECISION_EXPOSURE_20261026.md and attribution-limits.json. No newsolver/Player/game/build.",
+      "question": "Can saved terminal contrasts support localization under explicit value intervals, and does the consumer reject forged endpoint/policy/denominator premises without creating new WDL labels?",
+      "started_at": "2026-10-26T13:02:48.779677+00:00"
+    },
+    {
+      "ended_at": "2026-10-26T13:28:27.659792+00:00",
+      "evidence": "Pinned committed PVSdesign5f134bbd docSHA256b9814a94 read without driver/output execution; all12h2roots literal match and118legalactions confirmed UNLABELLED;9terminal endpoint normalizations verified; missing/partial game score remains[0,1], complete-pair regret inference not transferred; actualpackage only two existingAUXlearner differences. Report source-bound boundary section and privatePVS-consumer-contract-analysis.json.",
+      "question": "What exact committed PVS endpoint and failure contract must future AUX source qualification preserve, without adopting PRIMARY execution or reusing old budget-policy attribution?",
+      "started_at": "2026-10-26T13:24:12.518370+00:00"
+    }
+  ],
+  "no_new_Player_solver_games_build": true,
+  "scientific_revision": "3bb8e31033f5a377e16b2d0d3758dffdee25910d",
+  "slack_followup": "1793021026.612729",
+  "delayed_check_utc": "2026-10-26T13:29:48.714034+00:00",
+  "delayed_check_result": "No new reply; followup visible; no independent endorsement or repeated poll",
+  "prior_related_minutes": 209.50498295,
+  "current_cost_scope": "Conservative whole origin-to-finish window105.402minutes retained, separate from66.584confirmed research; additional closing delivery cost retained too. No old cap reset or PRIMARYbudget adoption."
+}

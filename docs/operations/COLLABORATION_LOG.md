@@ -1,3 +1,9 @@
+## Completed140a989c cooperation and limits
+
+AUX finished66.58400confirmed effective minutes with162checksPASS, explicitly excluded the interrupted open interval and kept all prior costs. Same-source actor-regret normalization and mean-bound correction were published3bb8e310/fullremoteverified, then reported in existing Slack thread at1793021026.612729 with the concrete count/capacity and seat-perspective questions. Single +5minute check at13:29:48UTC found no new reply; earlier Dot cancellation advice is implemented, new inference remains AUX-derived/unreviewed. No silent agreement or other-role execution is claimed.
+
+AUX additionally checked the committed PVSdesign's12fullroots/118unlabelledactions, endpoint/failure/partial-pair boundaries and9pair-normalization cases. PRIMARY retains its own design and run; its usergrant320minute limit was not transferred to AUX. Public package parity has only the two existing AUXlearner differences. Session finish accepted; executable next source/certificate/endpoint tasks remain ownmemo, and normal hourly cadence stays unchanged. Scientific and administrative cost/time remain separate.
+
 ## DEV_AUX attribution correction checkpoint140a989c —2026-10-26
 
 62.33164confirmed effective minutes so far; same UUID/origin, unfinished12:47:59interval archived without credit on recovery. No offline/admin credit. New162-test/source-replay checkpoint fixes WDL/gamepoint units and an earlier overly cautious statement: the actual denominators/capacities identify a positive experienced mean regret difference on these trajectories.119arithmetic witnesses show why endpoint and observed-edge constraints alone cannot narrow the error bag; they do not establish actual RuleSet values.
