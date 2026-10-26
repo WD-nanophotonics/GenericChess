@@ -7862,5 +7862,11 @@ are negative. Tiny-node quality remains inferior on some roots in both arms;
 no strength claim, all-domain proof, product/default activation or16-game revival.
 Source/root costs, missing metadata, tracer memory and strict-error-policy scope
 are explicit. Full costs remain one90->105minute logical study, not reset by
-prototype/session names. A published milestone/follow-up to Dot is prepared;
-send/adoption/execution status is recorded separately after actual receipts.
+prototype/session names. The scientific report/evidence were published at028a29a8d083e8c9ad5ad836db98068246f16daf;
+21 relevant tests and anonymous fixed-SHA reads passed. A real Dot FOLLOWUP
+was sent04:43:51UTC and exact payload verified; the single delayed04:49:57check
+found no new reply/comments in covered full threads. Advice is pending,notadopted
+or executed. The original unittypo was corrected by edit with preserved originals
+and readback:53224–97896bytes means52–96KiB. Normal sessionfinish/final-check
+accepted60.256 effective minutes; conservative opening-to-acceptance cost97.606min
+plus final synchronization,kept in the SAME105min forecast. No other-role state changed.

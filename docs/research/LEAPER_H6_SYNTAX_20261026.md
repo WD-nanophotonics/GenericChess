@@ -173,3 +173,11 @@ acceptance are recorded separately after publication/contact.
 [Manifest and raw evidence](data/leaper_h6_syntax_20261026/manifest.json);
 [archive conventions](data/leaper_h6_syntax_20261026/README.md). All new evidence
 is PRIMARY's; AUX's published truth is attributed, not independently rerun.
+
+Closing acceptance: the segment ended normally after60.256 recorded effective
+minutes(25 actual intervals). Matching quality review, session finish and final-check
+passed. The milestone was sent to Dot in the existing thread; one delayed check
+at04:49:57UTC found no new reply. Late replies remain valid and are read at the
+next meaningful interaction. Conservative opening-through-acceptance elapsed
+cost was97.606minutes; final Git synchronization follows and is not credited as
+research. See [closing receipt](data/leaper_h6_syntax_20261026/closing-receipt.json).

@@ -43,7 +43,7 @@ Final within-build300-call screen preserves work/action/value/PV and measures
 constructor+choose -7.11%; shared replay/record costs are not allocated by arm.
 S3-alone has no demonstrated useful net gain; practical Python source-recompile/
 per-position guard route is3.89x slower. Additional traced Python cache memory
-53–98KiB; full RAM/Native heap UNKNOWN.18340ordered frontiers,5346attack predicates,
+52–96KiB; full RAM/Native heap UNKNOWN.18340ordered frontiers,5346attack predicates,
 100synthetic doublechecks and budget/recovery parity support limited correctness,
 not all-class/heldout/strength success. Product/default/installed backend unchanged.
 
