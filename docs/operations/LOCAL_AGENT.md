@@ -808,3 +808,21 @@ unthrottled caller produced capped low-node returns; keep those originals and do
 not attribute its timing to the leaf policy. Fix future capture/control, never
 refill a closed failed/censored slot merely to repair metadata. These instructions
 do not throttle normal product in-memory cancellation events.
+
+
+## Git identity after rewriting unpublished commits —2026-10-26
+
+Before every push inspect author AND committer of every own outgoing commit.
+An explicit identity passed only to `git commit` does not persist into a later
+`git rebase`: rebase obtains a new committer from the then-active Git identity.
+Set/check the project-local generic identity, or explicitly pass both generic
+identity settings to the operation; repeat the check AFTER rebase. Inspect
+outgoing content and metadata before, not after, publication.
+
+Observed incident: the published audit commit had a generic author but retained
+a personal committer identity after rebase. Exact metadata/error is preserved
+privately; do not repeat the address in public reports. The user explicitly chose
+not to rewrite already-published history, and to correct future identity only.
+The local identity is corrected and verified. Do not amend/force-push delivered
+history to repair this incident; no new per-publication approval is needed for
+ordinary reviewed commits using the correct identity.

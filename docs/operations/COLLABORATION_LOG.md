@@ -7826,3 +7826,21 @@ these universalArena gates. No report of AUX execution or new solver/games.
 Budget request270/300is not granted; with real prior87.08836qualitywall and25audit
 forecast totalwouldbe~297.08836. Further same-chain work crossing120needsUSER.
 See LEAPER_QUALITY_RESOLUTION_20261026.md; existing research/defaults retained.
+
+
+## 2026-10-26 direct user dispositions recorded
+
+The user explicitly deferred the prepared16games and declined historical
+metadata rewriting, choosing corrected future Git identity only. Close both
+pending questions; no budget grant, historical amend or force-push. Future
+outgoing author/committer checks occur after rebase and before push. No personal
+address is repeated in publication copies.
+
+This bounded decision record adds zero research time and preserves the ended
+97f64b80 segment (506.261318seconds,3intervals, USER_DECISION; not a normal60minute
+completion). Current180minute recurrence/AUX boundaries stay. Publication intake
+found and fully read autonomous10:09JST review at2b62171f9de528c01958e45dd868cf047cc675f5,
+blob a7e3f25d0399cc370bea26fa29cefdecf3753b9d. Read/adopted its direction to avoid
+repeated saturation reports and consider a genuinely consequential bounded
+quality hypothesis; H6compatibility/ordering suggestions remain NOT_STARTED.
+No new Slack interaction, Player/solver/game, AUX write or review execution.

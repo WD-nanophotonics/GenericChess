@@ -13,6 +13,11 @@ experiments. Adopted: examine actual information resolution before expensive
 validation. Solicited Dot reply1792973675.860299 independently read reports/source
 only and concurs; it did not replay raw experiments or approve a budget.
 
+User disposition2026-10-26: the user explicitly selected defer for the16game
+experiment. The pending budget request is closed without approval. The forecast
+and request discussion below describe the audit-time proposal, not a live
+approval queue or authority to execute. No games have started.
+
 ## New joins and actual decision evidence
 
 Source files are fixed at68fcebf0264b622b0619890534a8d38ca8a89f73.

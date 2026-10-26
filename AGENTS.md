@@ -30,6 +30,18 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-24
 
+- User decisions2026-10-26: explicitly DEFER the prepared16-game Native-service
+  experiment. Its pending270/300-minute (later~297/300) request is closed without
+  a budget grant; preserve inputs/results as NOT_STARTED, do not keep asking for
+  the same approval or relabel it deployment acceptance. This does not stop all
+  independent pure-Leaper research or grant another long experiment.
+- User metadata decision2026-10-26: do NOT rewrite the already-published commit
+  history to repair the committer identity; correct future identity only. Keep
+  the existing remote history and references. Repository-local Git identity is
+  now GenericChess Agent / genericchess-agent@localhost. Before any push, check
+  BOTH author and committer after any rebase; a generic author alone is not
+  sufficient. No historical amend/rebase/force-push is authorized by this fix.
+
 - User scope correction2026-10-24: concentrate search optimization on the PURE
   LEAPER rule class first; extend to other rule classes only after scoped success
   is demonstrated and assessed. This narrows the earlier broad search-first
