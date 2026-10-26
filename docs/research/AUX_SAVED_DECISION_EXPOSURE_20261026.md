@@ -72,7 +72,7 @@ zB = V* - Rshort,B + Rlong,B
 zA-zB = (Rshort,A+Rshort,B) - (Rlong,A+Rlong,B).
 ```
 
-Identical actual prefix moves contribute identical acting regrets but opposite policy credits across the two games, so their contributions also cancel. A positive margin therefore forces at least one nonoptimal short-policy move somewhere in the divergent suffixes; forced one-action decisions can be excluded. This does not identify which move, prove the long policy optimal, compare per-decision averages, or generalize beyond these visited states. Equal terminal outcomes imply equal total policy-attributed regrets, not zero absolute regret.
+Identical actual prefix moves contribute identical acting regrets but opposite policy credits across the two games, so their contributions also cancel. A positive margin therefore forces at least one nonoptimal short-policy move somewhere in the divergent suffixes; forced one-action decisions can be excluded. This does not identify which move, prove the long policy optimal, identify absolute per-decision regrets or generalize beyond these visited states. The recorded-denominator bound below qualifies the earlier overly broad statement about per-decision comparison. Equal terminal outcomes imply equal total policy-attributed regrets, not zero absolute regret.
 
 | Source pair | Fixed-seat0 outcomes A/B | Short-minus-long total actor regret | Known nonoptimal short choices | Possible nonforced short suffix slots |
 |---|---:|---:|---:|---:|
@@ -91,6 +91,40 @@ Identical actual prefix moves contribute identical acting regrets but opposite p
 
 Across all12pairs, total short-minus-long experienced actor regret is exactly2WDLunits; the11complete timing-qualified pairs have the same contrast2. The two positive pairs are both family4, different board sizes. Each contains an existential nonoptimal short-policy decision among52and67candidate slots respectively. No individual member is labelled wrong, no root value is solved, and no family is selected for optimization. The119candidate slots are exposed, correlated source traces, not independent samples or oracle-selected training starts. Actual query timing qualification is1930/1931, game qualification23/24, color qualification11/12; the timing-ineligible pair is retained in the all-source result.
 
+## Red-team result: units and localization limits
+
+These counts have different meanings. Across all24games long earns13game points and short11. Long's terminal WDL sum is2, short's is-2, so the difference between those two policy WDL sums is4. The paired identity above identifies short-minus-long total actor regret2in WDL units; converting the WDL objective to game points halves that regret to1. The long-minus-short game-point score difference is2. On the11timing-qualified pairs the points are12versus10; the regret contrast remains2WDLunits. These are algebraically related views of the same observations, not multiple gains. Exact unit fields are now included in `terminal_outcome_contrasts.payoff_units`; reversing the policy names reverses the sign and preserves the appropriate candidate bags.
+
+A stronger recorded-trajectory mean comparison is possible, correcting the active milestone's statement that no per-decision comparison follows. Let t be long's unknown total WDLregret. The identity gives short's total t+2. There are966short and965long recorded ordinary decisions, including forced ones;872short and912long decisions are nonforced. Since each nonforced regret is in[0,2] and forced regret is0, t is in[0,min(2*912,2*872-2)]=[0,1742]. Therefore:
+
+```text
+short mean - long mean = (t+2)/966 - t/965
+                         in [94/466095, 1/483]
+                         approximately [0.0002017, 0.0020704] WDL units/recorded move.
+```
+
+This outer interval is strictly positive. On the11timing-qualified pairs, the respective counts are872/871ordinary and809/844nonforced, giving[63/379756,1/436]. These are deterministic bounds on experienced mean minimax regret along the observed, different trajectories, with forced moves included in the denominators. They are not confidence intervals, controlled same-state averages, absolute regret estimates, expected policy values, new action labels or additional strength trials. Unobserved Bellman correlations may tighten the bounds. A positive total alone does not order per-decision means under arbitrary unequal denominators; an independent small-count enumeration and a counterexample test verify that the actual counts/capacities are necessary to this inference.
+
+The two positive pairs do **not** force a short error specifically in the decisive losing game. Let v be seat0minimax WDL at the last shared context, just BEFORE the first different moves. Write suffix regrets as LA/SA in gameA and LB/SB in gameB. Since zA=0 and zB=-1:
+
+```text
+SA-LA = -v
+SB-LB = v+1.
+```
+
+If v=-1, all required short error can occur in the drawn A, while decisive B has no error. If v=0, B must contain at least1WDLunit of short regret; if v=1, at least2. With only an attributed interval v in[lo,hi], the guaranteed short-regret lower bounds are max(0,-hi) in A and max(0,lo+1) in B. All these statements are conditional arithmetic: no such compatible minimax bound is supplied by this analysis. A checked seat0nonloss bound v>=0 at this exact shared context would localize a short error to B; an exact seat0LOSS would localize one to A. Seat perspective matters: at both source divergence contexts the actor is seat1, so seat0nonloss is actor nonWIN, not actor nonLOSS.
+
+| Source pair | Shared-context queries A/B | Absolute ply | Candidate slots in drawn A / decisive B | Current bound |
+|---|---:|---:|---:|---|
+| n5-f4-h2 | 689 /774 | 7 | 40 /12 | UNKNOWN |
+| n6-f4-h2 | 1652 /1745 | 3 | 44 /23 | UNKNOWN |
+
+Even an exact value at the original h2root would not by itself supply v: an uncertified common-prefix action can change minimax value before the divergence. The12prepared h3records are not literal one-move extensions of their corresponding h2records; none supplies that missing link merely through its name or prefix length. This is a check of these exact records, not a rejection of possible semantic/symmetry proofs, and neither h2nor h3has gained a minimax certificate here.
+
+An independent observed-edge consistency test constructs119different arithmetic completions, one for each reported candidate occurrence. Each completion has exactly that short move carry regret1and every other observed move regret0, obeys acting-seat Bellman inequalities, forced-move equality, common-state potential equality and the actual terminal values0/-1. In the recorded query set there are1890distinct full GameStates and no extra GameState group containing different full records, so no additional observed-state equality rules out these completions. **These potentials need not satisfy the unobserved alternatives of the actual RuleSet.** They establish that endpoint/observed-edge reasoning alone cannot remove any of the119slots, not that each slot is actually capable of being an error. No witness is a local label, new game, actual minimax solution, independent trial or training target.
+
+Four further symbolic controls retain the assumptions explicitly: different starts can produce different outcomes with no regret; two draws can hide positive errors by both policies; a positive margin allows the long policy to make errors too; and a short error may exist only in the paired draw. The identity requires no deterministic or memoryless controller assumption beyond the deterministic finite game: timed search/TT effects remain bundled in the observed action attribution. It does not infer the expected regret or value of either budget policy under a new distribution. Details, exact record hashes and conditional source queries are in `data/aux_saved_decisions_20261026/attribution-limits.json`.
+
 ## Alternatives examined and current use
 
 An off-policy estimator is not implemented. Dudík, Langford and Li describe contextual-bandit DR using a reward model plus action propensities; Jiang and Li extend the approach to sequential decisions with trajectory likelihood ratios and independence requirements. These source logs supply neither calibrated action-selection probabilities nor a validated target-policy reward/value model. A wall budget or two observed actions is not a propensity. Game contexts are endogenous, and persistent TT state and the whole budget protocol affect later choices. Empirical prefix overlap cannot repair those assumptions. This is a rejection of a log-only DR strength estimate here, not a claim that values are mathematically unidentifiable from a fully known finite RuleSet. [Dudík et al., ICML2011](https://icml.cc/2011/papers/554_icmlpaper.pdf), [Jiang and Li, ICML2016](https://proceedings.mlr.press/v48/jiang16.pdf).
@@ -101,6 +135,6 @@ The other considered shortcut is to reuse H6/H64 truth or treat a terminal game/
 
 Source metadata and gzip hashes are in data/aux_saved_decisions_20261026/sources.json. Results: matched-choices.json.gz and game-exposure.json.gz in the same directory. Scripts: scripts/score_published_leaper_choices.py and scripts/audit_published_leaper_exposure.py. The former reuses the existing bound_same_context_pairs consumer, rather than creating another bound implementation. The latter only replays stored actions/PVs and computes source support and the conditional regret identity.
 
-Targeted controls cover missing/failed slots, strict rotation IDs, malformed/foreign actions and fingerprints, empty PVs, unsupported terminals, original-return corruption, full-record hashes, seat/clock/policy/timing errors, shared-prefix stopping and regret-sign orientation. Test fixtures are explicitly derived published slices, not new trials or independent holdouts. The original adapter refusal and its correction are preserved privately. 135relevant tests pass (74targeted source/exposure/contrast controls plus61shared truth-consumer controls). The actual full-data replay used the current script source. Session/publication receipts will replace this active milestone status at closure.
+Targeted controls cover missing/failed slots, strict rotation IDs, malformed/foreign actions and fingerprints, empty PVs, unsupported terminals, original-return corruption, full-record hashes, seat/clock/policy/timing errors, shared-prefix stopping and regret-sign orientation. Test fixtures are explicitly derived published slices, not new trials or independent holdouts. The original adapter refusal and its correction are preserved privately. 162relevant tests pass across the five source/choice/exposure/contrast/truth-consumer test files, including the additional saved-child-bound controls. The earlier135-test milestone is retained as history; the closing set also covers exact units, policy renaming,119observed-edge witnesses and exhaustive small aggregate-regret arithmetic. The actual full-data replay used the current script source. Session/publication receipts will replace this active milestone status at closure.
 
 Prior related full-chain lower-bound cost209.50498295minutes is retained, plus this round's actual cost; the user's direct continuation authorization is not re-requested. Configuration, communication/publication and idle time do not count as research. No frozen experiment cap or prior failure is reset.

@@ -1,3 +1,9 @@
+## DEV_AUX attribution correction checkpoint140a989c —2026-10-26
+
+62.33164confirmed effective minutes so far; same UUID/origin, unfinished12:47:59interval archived without credit on recovery. No offline/admin credit. New162-test/source-replay checkpoint fixes WDL/gamepoint units and an earlier overly cautious statement: the actual denominators/capacities identify a positive experienced mean regret difference on these trajectories.119arithmetic witnesses show why endpoint and observed-edge constraints alone cannot narrow the error bag; they do not establish actual RuleSet values.
+
+GitHub Pro file remains unchanged at sandbox5f134bbd; own complete Slack thread still has no new independent reply to the regret question. Previous fixed-context advice remains adopted/executed; the new correction is AUX-derived and will be separately reported, not attributed to Dot. PRIMARY PVS experiment stays PRIMARY; no AUX launch or transferred320minute cap follows. Priorrelated209.50498295minutes+actual current cost retained. Publication and transport earn no research credit.
+
 ## DEV_AUX active milestone140a989c —2026-10-26
 
 AUX consumed PRIMARYfd7d7ea published data without taking its profiling/algorithm task.135checksPASS; all saved returns/record hashes/PVs qualified. Same-depth root-order variants choose the same actions. Original Dot requestGC-SLACK-20261026-204933-1ccb4ab7 was exact-payload reconciled, +5minute check executed once; Dot advice about full-context cancellation, separate depths/controls and endogenous denominators was read/adopted/implemented. Its suggestion to stop at a bounded table does not override the latest user's60+effective-minute ordinary segment; AUX continued useful authorized exposure analysis without extra experiments.

@@ -129,8 +129,8 @@
       "git_normalized_blob": "966120c4bc4a51ccb4ad05091eeee0077a55cdcb"
     },
     "scripts/audit_published_leaper_exposure.py": {
-      "executed_worktree_sha256": "cf51a8cfccc2970adf23db30a1dadb8427a14b77e22273a60274490b6650e978",
-      "git_normalized_blob": "76a384fba30cfbf6638d5d975e81279bf44325a1"
+      "executed_worktree_sha256": "ebb224956aaeccdec815bce60e4883948d484d80e28eff63658bee87820f1afc",
+      "git_normalized_blob": "20de4bfbb24751fe1b5e69d653510c17a38850c4"
     },
     "scripts/leaper_truth_compatibility.py": {
       "executed_worktree_sha256": "0c88df56dc86989cbdcd3c87d83fe37f193b13716d88cfb9d7f62bfbfaa5db90",
@@ -140,5 +140,12 @@
   "new_Player": 0,
   "new_solver": 0,
   "new_games": 0,
-  "scope": "Fixed published data only; no source code from executed-source packets is executed. Full-byte originals retained privately."
+  "scope": "Fixed published data only; no source code from executed-source packets is executed. Full-byte originals retained privately.",
+  "resume_review": {
+    "sandbox": "5f134bbdf3fe8e3057cf307b84d0dd3d56310e45",
+    "review_blob": "76d2dad6d0c710cf6ad89db549415b3b3cb63229",
+    "review_delta": "none",
+    "shared_runtime_delta": "none",
+    "decision": "Continue same source-bound scope, not PRIMARY quality-design task"
+  }
 }

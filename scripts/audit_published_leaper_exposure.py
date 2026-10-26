@@ -274,6 +274,26 @@ def history_alias_diagnostics(queries):
                 scope='Observed aliasing only: no WDL difference or permission to merge histories. Conservative record identity can distinguish semantically equivalent histories.')
 
 
+def _experienced_regret_mean_bounds(short_count,long_count,short_nonforced,long_nonforced,margin):
+    """Outer arithmetic bounds, not unknown-state or action-value solving.
+
+    Write long total regret=t and short total regret=t+margin. Forced
+    ordinary actions have zero regret; each other WDL regret lies in[0,2].
+    Correlations imposed by unobserved game alternatives can only tighten.
+    """
+    if not(0<short_count and 0<long_count and 0<=short_nonforced<=short_count and 0<=long_nonforced<=long_count):
+        raise ValueError('invalid observed regret denominators')
+    lower=max(0,-margin)
+    upper=min(2*long_nonforced,2*short_nonforced-margin)
+    if lower>upper:raise ValueError('regret contrast exceeds observed action capacity')
+    endpoints=[Fraction(t+margin,short_count)-Fraction(t,long_count)for t in (lower,upper)]
+    return dict(short_observed_moves=short_count,long_observed_moves=long_count,
+                short_nonforced_moves=short_nonforced,long_nonforced_moves=long_nonforced,
+                feasible_long_total_regret_outer_bounds=[lower,upper],
+                short_minus_long_mean_WDL_regret_outer_bounds=[str(min(endpoints)),str(max(endpoints))],
+                scope='Experienced regret per recorded ordinary decision, forced moves included. Outer aggregate arithmetic only; endogenous visited states, not expected policy value, individual action labels or independent strength evidence.')
+
+
 def terminal_outcome_contrasts(games,prefix_rows,qualified_queries):
     """Conditional finite-game regret lower bound, never a local WDL label.
 
@@ -339,7 +359,29 @@ def terminal_outcome_contrasts(games,prefix_rows,qualified_queries):
                          suffix_query_union=suffixes,local_action_labels=0,root_WDL='UNKNOWN',
                          conclusion='EXISTS_NONOPTIMAL_SUFFIX_DECISION'if difference else'NO_POSITIVE_LOWER_BOUND',
                          scope='Conditional on verified finite deterministic WDL game; mathematical lower bound only. Equal outcomes do not prove zero regret; actors/actions and policy strength are unidentified.'))
-    return dict(rows=rows,planned_color_pairs=len(rows),
+    # WDL(-1,0,1) and game points(0,1/2,1) differ by an affine
+    # transformation. Actor regrets lose the constant and scale by one half;
+    # comparing the two policy WDL sums adds a different factor of two.
+    payoff_units={}
+    for name,selected in (('all_source',rows),('timing_eligible_pairs',[r for r in rows if r['both_games_timing_eligible']])):
+        margin=sum(r['short_minus_long_total_actor_regret']for r in selected)
+        n_games=2*len(selected)
+        selected_game_ids={gid for row in selected for gid in row['game_ids']}
+        selected_queries=[qindex[q['query_id']]for g in games if g['game_id']in selected_game_ids for q in g['queries']]
+        totals=Counter(q['policy']for q in selected_queries)
+        nonforced=Counter(q['policy']for q in selected_queries if not q['forced_action'])
+        mean_bounds=_experienced_regret_mean_bounds(totals['short'],totals['long'],nonforced['short'],nonforced['long'],margin)if selected_queries else None
+        payoff_units[name]=dict(
+            experienced_mean_regret=mean_bounds,
+            games=n_games,color_pairs=len(selected),
+            long_terminal_WDL_sum=margin,short_terminal_WDL_sum=-margin,
+            long_minus_short_terminal_WDL_sums=2*margin,
+            long_game_points=str(Fraction(n_games+margin,2)),
+            short_game_points=str(Fraction(n_games-margin,2)),
+            long_minus_short_game_points=str(Fraction(margin)),
+            short_minus_long_total_actor_WDL_regret=margin,
+            short_minus_long_total_actor_gamepoint_regret=str(Fraction(margin,2)))
+    return dict(rows=rows,planned_color_pairs=len(rows),payoff_units=payoff_units,
                 differing_outcome_pairs=sum(r['absolute_outcome_difference']>0 for r in rows),
                 timing_eligible_color_pairs=sum(r['both_games_timing_eligible']for r in rows),
                 timing_eligible_differing_outcome_pairs=sum(r['both_games_timing_eligible']and r['absolute_outcome_difference']>0 for r in rows),
