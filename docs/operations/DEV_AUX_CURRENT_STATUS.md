@@ -16,11 +16,12 @@ elsewhere describe the state at that time and do not override it.
   Pro plans/reviews and Dot consultation are separate inputs.
 - Patrol prompt contains durable bootstrap rules; current tasks and budgets
   belong in the temporary plan. Do not repeat the completed audit.
-- Previous research session remains ENDED; old Main/backups remain deferred.
-- Future ordinary research retains60–90effective-minute accounting. The completed
+- Current research session68e7b1c3 is ACTIVE, accumulating actual effective work.
+  Earlier session remains ENDED; old experiments/caps remain preserved.
+- Future ordinary research retains60â€“90effective-minute accounting. The completed
   bounded review and this documentation correction are not qualifying segments.
 - Role boundaries, stops and cumulative budgets remain; no scheduler change,
   new worker, experiment, backend activation or PRIMARY state write follows.
 
-[Research/assignment record](../research/LOCAL_MAINLINE.md) ·
+[Research/assignment record](../research/LOCAL_MAINLINE.md) Â·
 [Completed audit](../research/AUX_LEAPER_CONSUMER_AUDIT_20261026.md).

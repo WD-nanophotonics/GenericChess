@@ -1,0 +1,213 @@
+{
+  "format": "aux-truth-input-qualification-v1",
+  "status": "PASS",
+  "sources": {
+    "inputs.json.gz": "75ce22f0ce2b4bc522a8f1e0149d5e68a138eefc45468068779e84146720956b",
+    "truth.json.gz": "56e720c681c4417693758a777c6625485c6fd330f283242c74442c9440a1911c"
+  },
+  "counts": {
+    "legal_actions": 10936,
+    "labelled_actions": 10936,
+    "exact_action_labels": 10936,
+    "unlabelled_actions": 0,
+    "roots": 3616
+  },
+  "distinct_full_states": 3616,
+  "distinct_full_records": 3616,
+  "action_count_histogram": {
+    "3": 1080,
+    "2": 912,
+    "4": 560,
+    "1": 488,
+    "6": 104,
+    "5": 392,
+    "7": 80
+  },
+  "families": [
+    {
+      "family": 0,
+      "status": "UNKNOWN_MISSING_RULE",
+      "source_status": "MU_UNAVAILABLE"
+    },
+    {
+      "family": 1,
+      "fingerprint": "95e7fc851b482ab46b13383a0ff78a305a07f574dcd3b02a0bd4693912f272d1",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 2072,
+        "labelled_actions": 2072,
+        "exact_action_labels": 2072,
+        "unlabelled_actions": 0,
+        "roots": 720
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 2008,
+        "SUBOPTIMAL_SOURCE_CLAIM": 64
+      }
+    },
+    {
+      "family": 2,
+      "fingerprint": "16beb5339ba9b11b4bbc658b0fc43e8189ffe88c5a4e7c0bfe0b9138ca756b52",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 1152,
+        "labelled_actions": 1152,
+        "exact_action_labels": 1152,
+        "unlabelled_actions": 0,
+        "roots": 624
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 1112,
+        "SUBOPTIMAL_SOURCE_CLAIM": 40
+      }
+    },
+    {
+      "family": 3,
+      "fingerprint": "88d8cb46bbd688bfd2f4a9ae4be61d46547e59e43dab3516c5b88ce9ee8c9804",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 2008,
+        "labelled_actions": 2008,
+        "exact_action_labels": 2008,
+        "unlabelled_actions": 0,
+        "roots": 352
+      },
+      "action_classifications": {
+        "SUBOPTIMAL_SOURCE_CLAIM": 824,
+        "OPTIMAL_SOURCE_CLAIM": 1184
+      }
+    },
+    {
+      "family": 4,
+      "fingerprint": "2ddf355ac07d0d8afb8a34f0012b8e17d1a0c4c0c0ccdd487b49beb694d0ffc1",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 456,
+        "labelled_actions": 456,
+        "exact_action_labels": 456,
+        "unlabelled_actions": 0,
+        "roots": 120
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 368,
+        "SUBOPTIMAL_SOURCE_CLAIM": 88
+      }
+    },
+    {
+      "family": 5,
+      "fingerprint": "8cfd27c16ca68171dd03912f067b3f7e4103ea4a1dfd3e2deece2a4921fe113c",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 784,
+        "labelled_actions": 784,
+        "exact_action_labels": 784,
+        "unlabelled_actions": 0,
+        "roots": 176
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 304,
+        "SUBOPTIMAL_SOURCE_CLAIM": 480
+      }
+    },
+    {
+      "family": 6,
+      "fingerprint": "9f511a82a2d9844e6fef25167973061926a24fe7fbbfe566e6f28bc26645937b",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 376,
+        "labelled_actions": 376,
+        "exact_action_labels": 376,
+        "unlabelled_actions": 0,
+        "roots": 136
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 280,
+        "SUBOPTIMAL_SOURCE_CLAIM": 96
+      }
+    },
+    {
+      "family": 7,
+      "fingerprint": "cf4b84b4576e1348e2499943e7e664243bbbb6d008d9d67b9176c4cd2373f1f6",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 72,
+        "labelled_actions": 72,
+        "exact_action_labels": 72,
+        "unlabelled_actions": 0,
+        "roots": 72
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 72
+      }
+    },
+    {
+      "family": 8,
+      "fingerprint": "160c40c8b5950078a28d53a567c3688595d4c84c9419cbb3f35208712e2794e5",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 512,
+        "labelled_actions": 512,
+        "exact_action_labels": 512,
+        "unlabelled_actions": 0,
+        "roots": 160
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 296,
+        "SUBOPTIMAL_SOURCE_CLAIM": 216
+      }
+    },
+    {
+      "family": 9,
+      "fingerprint": "aaa191e5a8f57020742754b53e131993afebd46124669b5972ede33e42aa90da",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 368,
+        "labelled_actions": 368,
+        "exact_action_labels": 368,
+        "unlabelled_actions": 0,
+        "roots": 128
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 256,
+        "SUBOPTIMAL_SOURCE_CLAIM": 112
+      }
+    },
+    {
+      "family": 10,
+      "fingerprint": "3c16c3cd04c03218631cde3b5c2cdee98ac66eaee95ba96dd9170978d1e41474",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 1720,
+        "labelled_actions": 1720,
+        "exact_action_labels": 1720,
+        "unlabelled_actions": 0,
+        "roots": 768
+      },
+      "action_classifications": {
+        "SUBOPTIMAL_SOURCE_CLAIM": 288,
+        "OPTIMAL_SOURCE_CLAIM": 1432
+      }
+    },
+    {
+      "family": 11,
+      "fingerprint": "237eae15a255b0ef0f094315ffb4127e7a1b4907f474dea79b5f4793d18adabb",
+      "status": "COMPATIBLE_SOURCE_CLAIM",
+      "counts": {
+        "legal_actions": 1416,
+        "labelled_actions": 1416,
+        "exact_action_labels": 1416,
+        "unlabelled_actions": 0,
+        "roots": 360
+      },
+      "action_classifications": {
+        "OPTIMAL_SOURCE_CLAIM": 896,
+        "SUBOPTIMAL_SOURCE_CLAIM": 520
+      }
+    }
+  ],
+  "seconds": 40.91870119993109,
+  "scope": "Literal replay and source-bound action coverage only. No independent minimax re-solve, new candidate or holdout.",
+  "new_Player_calls": 0,
+  "new_solver_calls": 0,
+  "new_games": 0
+}

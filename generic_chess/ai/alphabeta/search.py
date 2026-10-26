@@ -1115,6 +1115,8 @@ def run_root_search(
         legal_binding_provider=legal_binding_provider,
         availability_provider=availability_provider,
         check_provider=check_provider,
+        use_plain_leaper_local_hash=tuning.use_plain_leaper_local_hash,
+        use_cached_position_identity_hash=tuning.use_cached_position_identity_hash,
     )
     terminal = runtime.terminal_status
     if terminal.is_terminal:

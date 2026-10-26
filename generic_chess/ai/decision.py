@@ -103,3 +103,6 @@ class PlayerDecision:
     runtime_pushes: int | None = None
     runtime_pops: int | None = None
     runtime_depth_balanced: bool | None = None
+    runtime_semantic_local_hash_updates: int | None = None
+    runtime_position_identity_hash_cached: bool | None = None
+    runtime_semantic_full_diff_fallbacks: int | None = None

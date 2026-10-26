@@ -20,6 +20,7 @@ from .native_legality import NativeSemanticLegalityProvider
 from .statistics import SearchStatistics
 from .transposition import TranspositionTable
 from .tuning import SearchTuning
+from .rule_clock import capped_pure_leaper_limits
 
 
 class AlphaBetaPlayer:
@@ -53,6 +54,8 @@ class AlphaBetaPlayer:
         use_native_semantic_legality: bool = True,
         tuning: SearchTuning = SearchTuning(),
         evaluator_override=None,
+        # Opt-in: stop repeating complete finite-clock trees in admitted pure Leapers.
+        cap_pure_leaper_rule_clock: bool = False,
         # Readonly (position, checkpoint=...) -> bool or None to decline.
         # Caller supplies matching rule semantics; exceptions propagate.
         availability_provider=None,
@@ -105,6 +108,8 @@ class AlphaBetaPlayer:
                 and self._native_legality_provider is not None):
             self._check_provider = self._native_legality_provider.in_check
         self._tuning = tuning
+        self._cap_pure_leaper_rule_clock = bool(cap_pure_leaper_rule_clock)
+        self._last_rule_clock_cap: int | None = None
 
     @property
     def compiled(self) -> CompiledRuleSet:
@@ -137,10 +142,16 @@ class AlphaBetaPlayer:
     def native_legality_provider(self):
         return self._native_legality_provider
 
+    @property
+    def last_rule_clock_cap(self) -> int | None:
+        """Effective requested depth ceiling; it does not certify completion."""
+        return self._last_rule_clock_cap
+
     def reset(self) -> None:
         """Clear search state (e.g., after loading a different RuleSet)."""
         self._tt.clear()
         self._tt_q_depths = None
+        self._last_rule_clock_cap = None
 
     def choose_action(
         self,
@@ -152,6 +163,7 @@ class AlphaBetaPlayer:
         recorder=None,
     ) -> PlayerDecision:
         state = session.state
+        self._last_rule_clock_cap = None
         started = time.perf_counter()
         result = getattr(session, "result", None)
         if result is not None and result.status in (SessionStatus.RESIGNATION, SessionStatus.DECLARATION):
@@ -171,6 +183,12 @@ class AlphaBetaPlayer:
                 termination_reason="terminal_position", choice_kind="TERMINAL",
                 result_source="terminal",
             )
+        if self._cap_pure_leaper_rule_clock:
+            ensure_ruleset_match(state.position, self._compiled)
+            capped = capped_pure_leaper_limits(state, self._compiled, limits)
+            if capped is not limits:
+                self._last_rule_clock_cap = capped.max_depth
+                limits = capped
         stats = SearchStatistics()
         q_depths = (limits.quiescence_max_depth, limits.quiescence_hard_max_depth)
         if self._tt_q_depths != q_depths:
@@ -274,6 +292,15 @@ class AlphaBetaPlayer:
             result_check_hard_qdepth=stats.result_check_hard_qdepth,
             runtime_pushes=stats.runtime_pushes if stats.runtime_root_imports else None,
             runtime_pops=stats.runtime_pops if stats.runtime_root_imports else None,
+            runtime_semantic_local_hash_updates=(
+                stats.runtime_semantic_local_hash_updates if stats.runtime_root_imports else None
+            ),
+            runtime_position_identity_hash_cached=(
+                stats.runtime_position_identity_hash_cached if stats.runtime_root_imports else None
+            ),
+            runtime_semantic_full_diff_fallbacks=(
+                stats.runtime_semantic_full_diff_fallbacks if stats.runtime_root_imports else None
+            ),
             runtime_depth_balanced=(
                 stats.runtime_depth_balanced if stats.runtime_root_imports else None
             ),
