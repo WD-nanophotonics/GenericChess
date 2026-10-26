@@ -16,8 +16,8 @@ elsewhere describe the state at that time and do not override it.
   Pro plans/reviews and Dot consultation are separate inputs.
 - Patrol prompt contains durable bootstrap rules; current tasks and budgets
   belong in the temporary plan. Do not repeat the completed audit.
-- Current research session68e7b1c3 is ACTIVE, accumulating actual effective work.
-  Earlier session remains ENDED; old experiments/caps remain preserved.
+- Research session68e7b1c3 ENDED by accepted safe_checkpoint with69.85413effective
+  minutes and147checks. Role/patrol remains ACTIVE; old costs/caps preserved.
 - Future ordinary research retains60â€“90effective-minute accounting. The completed
   bounded review and this documentation correction are not qualifying segments.
 - Role boundaries, stops and cumulative budgets remain; no scheduler change,

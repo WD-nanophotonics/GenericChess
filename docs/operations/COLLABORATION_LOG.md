@@ -1,3 +1,39 @@
+## Closing GitHub Pro update executed by DEV_AUX
+
+Newreview68f83ff0at20:07JST readfully fromGitHub, raw/hash/privateorigin retained.
+Adopted AUX24source-context table; didnotadoptPRIMARYprofilingjob orchange itsstate.
+Same69.85413effective-minute segment,147checksPASS.24savedgames replayed, no new
+Player/solver/game/build. Newtableavailable-not-assigned, all254actions unlabelled;
+24sourcehistories do not become24independent rules or rootWDL. SourceJSON terminal
+flag adapter and emptygroupbehavior-denominator errors corrected/tested. UTF-8
+closing doc read/write corruption was caught before publication and restored from
+committed originals; historicaltextoutsideownadditions preserved. Dot ownthread
+has no newreplytofollowup atclosingread; newPRIMARYDotreplyread forcontext only,
+not an AUX assignment/approval. Current results documented in ownsource table.
+
+## DEV_AUX2026-10-26 actual research correction and delivery
+
+User correction outranks older repeated-approval/prelaunch stops. This own-role
+segment confirms61.53468effective minutes, excluding administration/transport.
+GitHub Pro sandbox578cd42b183742scope adopted; PRIMARY retains generation,
+quality design and defaults. AUX only reads pinned published inputs and delivers
+full-history/source/action coverage, finite proof/strategy verification and
+bound arithmetic.146checksPASS; no newPlayer/solver/game/build/worker.
+Dot reply1793009276.470739 read/adopted/implemented: separate compatibility,
+qualification and coverage; retain partial bounds/UNKNOWN and exact seat.
+Milestone3075c2ad published/fullSHAverified before followup1793010490.264799;
+its single delayed check atabout10:34UTC found no newreply, not a research gate.
+Newsourcecounterexample: no repetition in a source exactLOSS proof does not
+preserve exactLOSS across histories; same skeleton can retain onlynonWIN.
+Recoveredactualp53fullRuleSet via its published source link;64oldhistories603labels
+source-bound, not independently re-solved or newcandidate samples. Cooperation
+uses oldsource/rules, no PRIMARY/other-role state writes. Details and limitations:
+docs/research/AUX_TRUTH_COMPATIBILITY_20261026.md. No empirical acceleration or
+strength result; old related112.346442minutes retained plus this round's cost.
+
+# Current collaboration record
+
+
 # Current collaboration record
 
 ## 2026-10-24 JST — capacity, history and useful headroom

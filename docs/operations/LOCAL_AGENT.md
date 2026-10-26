@@ -46,6 +46,17 @@ record adoption and actual execution separately. Current cadence/task state
 comes from the status reference above; review intake itself does not mutate
 scheduler/session/research state.
 
+## Latest user execution correction —2026-10-26
+
+Every newly starting scheduled research round must perform actual60+effective
+minutes; a previous ENDED segment or old receipt earns no credit for it. Resume
+the same active segment across interruptions without adding a second writer.
+Proceed within already authorized work without asking for approval again.
+Historical120minute consultation text is not a repeat-approval gate for this
+standing authorization. Preserve real cumulative costs, frozen caps and stops;
+new scope/fees/workers are not authorized by this clarification. User > GitHub
+Pro/Commands > Slack Dot. Pure administration and idle/offline time earn no credit.
+
 ## Research and timing
 
 Read LOCAL_MAINLINE.md for the current user assignment. The initial audit is

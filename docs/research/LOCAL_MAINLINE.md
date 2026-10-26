@@ -1,3 +1,25 @@
+## Latest Pro source table completed —2026-10-26
+
+Pro68f83ff02067b7d557b12eb1438e066504bfa192read/adopted/executed in same session.
+All24published contexts/12rules/6families literalPASS;H6incompatible24/24,
+254actionWDLunlabelled. AVAILABLE_SOURCE_NOT_ASSIGNED; prior waiting observations
+below are dated history.24saved GameRecords1979plies checked, not new games;
+behaviorcovers12/24contexts,23eligiblegames/11eligiblecolorpairs. No minimax
+labels from game outcomes. See AUX_PRIMARY_SOURCE_COMPATIBILITY_20261026.md.
+Finaleffective69.85413minutes/147checks. PRIMARYprofiling/design stay PRIMARY.
+NextMain in ownWORK_PLAN/NEXT_WORK; no repeated closed H6/table audit or approval.
+
+## Completed actual research segment —2026-10-26
+
+61.53468confirmed effective minutes;146headless checksPASS. Source-bound consumer,
+partial WDL bounds/strategy checks, explicit history revalidation and fixed-domain
+sufficient guards are delivered in AUX_TRUTH_COMPATIBILITY_20261026.md. Default
+full-context mismatch stays; no solver/Player/newcandidate or speed/strengthclaim.
+3616oldH6 roots/10936labels and64historicalH64contexts/603labels literally bound;
+source claims and actual finite-proof checks remain distinct. PRIMARY's new
+frozen candidate remainsAWAITING_FROZEN_INPUT. Nextuse currentplan/memo; no closed
+H6 cache/audit repeat. Prior112.346442minutes plus actualthisround cost carried.
+
 ## Direct user execution correction —2026-10-26
 
 Every scheduled ordinary research run must actually perform at least60 effective

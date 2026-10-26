@@ -29,9 +29,78 @@
       "path": "docs/reviews/chatgpt_patrol/2026-10-26_183742_JST_c011808.md",
       "blob": "befa6c55667f99eef418e23c3d8ef224f267ff83",
       "sha256": "392a270f3a4af2fce8e3e34dcad0147bfab49097c1f8a329a494fbcaf3bdcc75"
+    },
+    {
+      "commit": "578cd42b0672181dafa4f0bdb8015be109bd4cdc",
+      "path": "docs/research/data/leaper_ordering_diagnosis_20261025/next-default-panel-inputs.json.gz",
+      "blob": "f26d48445279a394bb2823f4f5a12d401b19a6a6",
+      "sha256": "bc8d2d0daf9f8cd55dedcda1a55863c77fe0b4318a30c5d5c4f503560e74c905"
+    },
+    {
+      "commit": "26d414cce26d44e7d2cfae84a20195fa715f2906",
+      "path": "scripts/leaper_four_actor_history.py",
+      "blob": "8ee92d27e0449b71d51d880d93979e9c3cadd987",
+      "sha256": "377fc42f25a99565ab73220c78e863e2946545fbc1a3b0c06077e445ef1c6dc0"
+    },
+    {
+      "commit": "68f83ff02067b7d557b12eb1438e066504bfa192",
+      "path": "docs/reviews/chatgpt_patrol/2026-10-26_200745_JST_fd7d7ea.md",
+      "blob": "76d2dad6d0c710cf6ad89db549415b3b3cb63229",
+      "sha256": "c2a93094a54ffe041b9de207d237c9b5d750ee8d20fc70eba57b4eddbf5c0f78"
+    },
+    {
+      "commit": "fd7d7eacbdc2741e766f26b67b0f54018a998aa7",
+      "path": "docs/research/data/leaper_root_order_quality_20261026/README.md",
+      "blob": "0d093ab3aad7a8078ac5f7a1c87b64cfd0110c64",
+      "sha256": "d02cbdf4c8d7e3ac71c6d5275ea6cb76f5bae2a908fbc8d447e16f36c86a700f"
+    },
+    {
+      "commit": "fd7d7eacbdc2741e766f26b67b0f54018a998aa7",
+      "path": "docs/research/data/leaper_root_order_quality_20261026/manifest.json",
+      "blob": "caa58d385c2670c77d8b87129d735383d798678f",
+      "sha256": "b093b65db5fc742063237fda234a0c6f42c614ffca799051d0550f6a1afa7747"
+    },
+    {
+      "commit": "fd7d7eacbdc2741e766f26b67b0f54018a998aa7",
+      "path": "docs/research/data/leaper_root_order_quality_20261026/prepared-v2/inputs.json.gz",
+      "blob": "28711f567c32119be9a1b294eee53b0c6ad73289",
+      "sha256": "dc471719ad6720f97be01b0a052cdc14728dfdab29dbe4b8bdb8a0785fb9dd93"
+    },
+    {
+      "commit": "fd7d7eacbdc2741e766f26b67b0f54018a998aa7",
+      "path": "docs/research/data/leaper_root_order_quality_20261026/population-games/games.json.gz",
+      "blob": "be09a00242ff99eb02a025c32d60bd8bd857127c",
+      "sha256": "30ce74efa50e151b3552e5fb88ac5360f3b61d133b8d441e922a1b5e8f539265"
+    },
+    {
+      "commit": "fd7d7eacbdc2741e766f26b67b0f54018a998aa7",
+      "path": "docs/research/data/leaper_root_order_quality_20261026/population-games/summary.json.gz",
+      "blob": "48fe00defd2c130a3a66e3cdb47e9dc67c7c38fa",
+      "sha256": "5d9c1eb6617f2fed0222969150088dd349f0a203083f9a276297ebb972c7dae0"
     }
   ],
   "runtime_source": "578cd42b0672181dafa4f0bdb8015be109bd4cdc",
-  "new_primary_candidate_status": "AWAITING_FROZEN_INPUT",
-  "source_claims_not_resolved": true
+  "new_primary_candidate_status": "AVAILABLE_SOURCE_NOT_ASSIGNED",
+  "source_claims_not_resolved": true,
+  "research_sources": [
+    {
+      "title": "Kishimoto and Muller, A General Solution to the Graph History Interaction Problem, AAAI2004",
+      "url": "https://cdn.aaai.org/AAAI/2004/AAAI04-102.pdf",
+      "read_scope": "paper text, especially proof simulation and draw/UNKNOWN semantics; source performance not locally measured"
+    }
+  ],
+  "release_sources": {
+    "scripts/leaper_truth_compatibility.py": "0c88df56dc86989cbdcd3c87d83fe37f193b13716d88cfb9d7f62bfbfaa5db90",
+    "scripts/leaper_history_strategy_revalidation.py": "8d9673cc62e951109ce989c4e85681d47c42e653cea740f839c88ecda16ab9af",
+    "scripts/leaper_strategy_history_guards.py": "a4c7085ca21fa2c9e7194ec3efa20c7800ca51689747b926713de8c2079bb3b0",
+    "scripts/qualify_published_leaper_panel.py": "9366c721cde6b69d483ffbb843efb52a381331bca5d03b0c9bb4ebee2fed7fdb",
+    "scripts/qualify_primary_leaper_sources.py": "3d4eff11f0a1d9df139022041fa1c001245eea9581c10a67961d5899c332f2b9",
+    "scripts/qualify_leaper_truth_inputs.py": "0d61ced915d1127f90463f945561e1050284611448a7768414df2c6393db4737",
+    "scripts/verify_leaper_truth_controls.py": "8198a9a4885a010bd171904f6775ec40464269c73a4b70c8c28c2d70831150ab",
+    "scripts/leaper_partial_truth_coverage.py": "0235975670592de75e3bd983ba438790b243c683769e76bafc76390adc0bec06",
+    "scripts/qualify_leaper_candidate_truth.py": "96aeb7d8193fad59558b0be2ddfbdb8a76488e088ce4a2870e95bc254c1df255",
+    "scripts/leaper_verified_partial_examples.py": "9a92aa62f635834b59c326201ca88cc6e002e05029a698a5145df262a3a240f7"
+  },
+  "latest_review_commit": "68f83ff02067b7d557b12eb1438e066504bfa192",
+  "production_runtime_delta_from_original_pin": "NONE"
 }

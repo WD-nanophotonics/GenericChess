@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "primary_panel_source_classes": {
+    "SUBOPTIMAL_SOURCE_CLAIM": 94,
+    "OPTIMAL_SOURCE_CLAIM": 509
+  },
+  "primary_panel_actors": {
+    "0": 32,
+    "1": 32
+  },
+  "informative_revalidation": {
+    "NOT_PROVED_BY_THIS_CERTIFICATE": 54,
+    "REVALIDATED_FINITE_STRATEGY_BOUND": 26
+  },
+  "tests": {
+    "tests": 147,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_truth_grade": "ATTRIBUTED unless actual supplied proof was checked; no full-field re-solve",
+  "new_Player": 0,
+  "new_game_solver": 0,
+  "new_games": 0,
+  "named_seat_binding": "Locally certified action labels now carry value_seat; mismatched consumers reject instead of silently changing perspective.",
+  "closing_Pro_table": {
+    "contexts": 24,
+    "rules": 12,
+    "H6_incompatible": 24,
+    "unlabelled_actions": 254,
+    "behavior_contexts": 12,
+    "saved_games_replayed": 24,
+    "availability": "AVAILABLE_SOURCE_NOT_ASSIGNED"
+  }
+}
