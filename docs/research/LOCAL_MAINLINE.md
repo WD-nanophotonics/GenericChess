@@ -6,38 +6,46 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 one proposed quality consumer
+## Current decision -2026-10-27 quality endpoint source gate
 
-[Observed-check hint proposal](LEAPER_CHECK_HINT_PROPOSAL_20261027.md) is
-PROPOSED_NOT_STARTED and awaits USER cumulative necessity assessment. The old
-460-minute grant covered the closed child candidate, not this new strategy.
-Current source intake found no new Patrol blobs or autonomous Slack comment
-edits; fresh Dot source-only advice was read/adopted with its scope retained.
+[Observed-check hint proposal](LEAPER_CHECK_HINT_PROPOSAL_20261027.md) is now
+SOURCE_GATE_NO_GO / NOT_STARTED. PRIMARY withdraws its premature600minute
+execution request; no USER grant/deferral is invented and no repeated question
+is sent. Original plan/inputs remain historical, not an execution queue.
 
-New source finding: no pre-child check bit is exposed by current semantic/Native
-bindings. Reject that free-bit premise. Selected runtime push already computes a
-check fact, so a NEW bounded per-choose exact-existing-key/action store might
-reuse it on later main-search visits with zero extra child/check/key requests.
-Prefer investigating this ordering-only hypothesis over a selective extension;
-no implementation or qualification has occurred. It is not old root leaf/work
-ordering, a geometry kernel, a WDL cache, or a new TT-bound/depth policy.
+New autonomous Patrol4a688eb3 was fully preserved/read; its ec5snapshot predates
+our a927 proposal. Adopt endpoint-before-implementation and no-saturated-panel
+priority, not a claim that it directly reviewed the later hint map. Six source
+prefix24 query hashes and six movement signatures prove input availability only.
+Three-family changed quiet ranks would be mechanism exposure, not quality.
+There is no source evidence yet that these midgames resolve the old24DRAW panel.
+A new prefix name and a technically plausible no-extra-probe hint are insufficient
+changed premises for this trial. No new Core/Player/solver/game is run.
 
-Six metadata-selected full prefix24 inputs match six original query digests and
-six movement signatures; all24 old game member byte hashes pass. This is new
-source/data derivation only, not new Core execution or independent game solving.
-All old source episodes draw. Future relative outcomes may remain saturated;
-input availability does not establish quality resolution. AUX independently owns
-terminal-frontier/certificate bounds; do not duplicate or assume those results.
+Dot1793036815 read the actual a927 proposal and supports NO-GO; no code was run.
+Adopt its specific gaps: D6 rank effects may miss the1s delivered-action window;
+candidate/record-only110% can hide store/observer cost versus ORIGINAL. Existing
+keys still incur dict hash/equality/retention. No repair probe is now authorized.
 
-Main: is this limited new information consumer worth its cost? |Present the
-one-candidate/36-call/conditional12-game proposal and wait for USER necessity
-assessment before execution |Specific grant/deferral and exact carried costs |
-No new experiment until decision; old420.478498minutes plus actual preparation/
-delivery remain carried; forecast about565-580, proposed whole cap600minutes.
-Backup1: preserve closed child UNKNOWN, all144 slots and cost/semantic limits;
-no refill, retuning, profile/PVS expansion or default activation.
-Backup2: next meaningful intake reads late advice/new autonomous GitHub/Slack
-reviews, records read/adopt/execute separately; no new AUX assignment/worker.
+This is a revisable scientific choice, not a universal WDL-oracle requirement.
+Keep observed-check reuse and strict geometry as unimplemented alternatives;
+main selective extension remains deferred. Old child/PVS/profile studies stay
+closed. AUX owns its separate terminal-frontier/truth work; do not duplicate it.
+
+Main: can a prespecified weaker-policy positive control expose panel resolution?
+|At the next research opening read current reviews, then independently design a
+single source-only matched full-history control from published consumers and
+existing evidence; distinguish relative outcome sensitivity from action WDL |
+Concrete prospective endpoint/cheaper falsifier or explicit source gap |No new
+run before its own necessity assessment; no600trial revival, old-slot refill,
+favorable prefix/time scan, H6-to-H96 label transfer or AUX certificate solving.
+New replies are not required to do this design; do not stop merely for silence.
+Backup1: preserve exact complete histories, TT/terminal/clock semantics, prior
+source audits and costs; old420.478498 plus previous prep/delivery454.219537
+and actual current intake/delivery carry forward, never a new cost allowance.
+Backup2: follow genuine late Dot/new autonomous reviews at meaningful intake;
+read/adopt/executed remain distinct. Current review/transport does not reset
+last ENDED_user_decision session or count as a normal60minute segment.
 
 ## Retained closed child-construction assessment
 

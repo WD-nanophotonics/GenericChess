@@ -1,9 +1,62 @@
 # Pure-Leaper observed-check ordering: source decision and proposed experiment
 
-Status: PROPOSED_NOT_STARTED. No new strategy, Player, Core successor, solver or game
-was executed in this preparation. Product defaults and the closed child/PVS studies
-are unchanged. This is ONE new research-only candidate, subject to USER necessity
-assessment; the old460-minute single-child grant does not authorize it.
+Status: SOURCE_GATE_NO_GO / NOT_STARTED, revised after autonomous Patrol4a688eb3.
+The local600-minute execution request is WITHDRAWN AS PREMATURE, not user-deferred
+or user-approved. No response to the superseded request is required. No new
+strategy, Player, Core successor, solver or game has executed. Product defaults
+and closed child/PVS studies remain unchanged. The original proposed stages below
+are retained as history, not an authorized queue or automatic next task.
+
+## Source-gate correction -2026-10-27 02:45JST
+
+New autonomous review4a688eb334463f72f320b0e78521e7abe24e677f, path
+`docs/reviews/chatgpt_patrol/2026-10-27_020414_JST_ec5fc26.md`, was exact-preserved
+and fully read. Its snapshotec5 predates this a927 proposal; it did NOT independently
+inspect this subsequently specified hint map or the six prefix24 inputs. Adopt
+its general endpoint-before-implementation decision rule, not an invented direct
+review or new budget approval. The user has not granted the requested600 cap.
+
+Our own application of that rule exposes a gap: six byte-bound source histories
+and possible quiet-rank changes establish available inputs/mechanism exposure,
+not evidence that these midgames improve relative-outcome resolution over the
+source24draws. Choosing totalply24 from metadata is explicit but does not itself
+supply that premise. The old two-winning resource comparison has positive results
+in only ONE movement family. Thus paying for qualification and then12games could
+still repeat the same information failure. The current expected information gain
+is insufficiently supported; do not implement or launch this plan as written.
+
+This is NOT a rule that relative-strength experiments require perfect WDL truth,
+three certified errors or a universal solver. A well-supported different relative
+comparison could be reasonable. This specific proposal lacks such a source-bound
+changed premise. Its check-reuse hypothesis may be technically viable and the
+geometry alternative may also be viable; neither justifies a paid trial by itself.
+
+Reconsider only when NEW supplied evidence or a genuinely justified different
+endpoint changes that assessment, with exact full contexts and costs. Do not
+prefix-scan/time-scan to manufacture a favorable result, rerun old queries, assume
+AUX pending work provides labels, or assign it a new task. A later direct USER
+instruction will be reconciled explicitly with this scientific gap, not silently
+treated as if already-issued experimental acceptance.
+
+Subsequent solicited Dot reply1793036815.273619 read the actual a927 proposal and
+supports this NO-GO, without running code or granting USER authority. Two additional
+source-design gaps are adopted: rank changes at completedD6 need not occur before
+the1second service decision, so they cannot automatically justify game spend;
+and candidate<=110%record-only ignores a potentially large record-only tax versus
+unmodified original. Inserting/looking up an already existing exact key still pays
+hash/equality and retains objects. A future cost judgment must use ORIGINAL total
+service cost; record-only is a diagnostic arm, not a replacement baseline.
+
+Old draw episodes do not prove the new prefixes must draw. This is an expected
+information-value decision under weak current evidence, not an impossibility
+proof, an oracle prerequisite or a finding of a runtime bug. Preserve the feasible
+seam as unimplemented; do not add another probe now to repair this proposal.
+
+The old600 request and original forecast/stages below remain historical. No budget
+was granted. Closed420.478498minutes plus previous preparation/delivery charged to
+454.219537minutes and actual current review/delivery are preserved; no cost reset.
+This heartbeat is review/transport at the existing user-decision boundary, not a
+new normal60-minute research sample or evidence of continuous work.
 
 ## What changed the premise
 
@@ -34,7 +87,7 @@ selective depth and TT reuse targets and has no new quality evidence justifying
 that additional risk. No extension, geometry kernel or continuation-history second
 candidate is queued under this proposal.
 
-## Exact candidate boundary, if approved
+## Retained unimplemented candidate description
 
 Only main negamax runtime child_search is observed. Reuse its ALREADY COMPUTED
 compatible parent key; no extra search_key(), child construction, legal generation,
@@ -87,7 +140,7 @@ assignment, solver reconstruction or claim that its pending bounds certify these
 choices. This proposal instead uses literal paired game outcomes as a RELATIVE
 exploratory endpoint; it does not require a universal optimal-action oracle.
 
-## Frozen prospective stages and stop rules
+## Historical proposed stages - WITHDRAWN, not executable
 
 1. Implement this one research-only candidate and a record-only arm. Qualification
    checks exact map provenance/context separation/collision guards, action-set and
@@ -129,7 +182,7 @@ this specific information consumer. It cannot establish all pure-Leaper success,
 heldout strength, action optimality or optimal extension policy. The decision can
 stop at source/qualification; maximum slots are ceilings, never a fill obligation.
 
-## Cumulative cost and required decision
+## Historical cost estimate and superseded request
 
 Prior related chain closed at420.47849756666665whole minutes. Carry it unchanged.
 Charge15minutes opening allowance plus this session's actual source preparation,
@@ -145,14 +198,14 @@ approval, retain at least15min delivery reserve, stop if whole cost will not fit
 CPU wall work, additional Python memory and UNKNOWN Native/RSS are separate.
 
 AGENTS.md requires USER necessity assessment when a single logical experiment's
-expected cumulative duration is>=120min. This proposal has NOT been approved or
-started. The requested decision is whether this one hint/36-call/conditional12-game
-experiment is worth its extra~100-110min and total600-minute ceiling despite the
-real chance of no useful hint exposure or another saturated outcome. Declining
-leaves this proposal NOT_STARTED; it does not revive closed studies or stop all
-independent pure-Leaper research.
+expected cumulative duration is>=120min. No USER grant was received and no trial
+started. The prior600-minute question is superseded and WITHDRAWN; it does not
+remain an approval queue. The figures above preserve the previous forecast only.
+A future genuinely changed experiment would need a fresh reviewable design and
+its own actual cumulative assessment; neither old forecasts nor this correction
+revives closed studies or stops independent pure-Leaper work.
 
-## Review and actual execution
+## Original preparation provenance - before the source-gate correction
 
 Current sandbox Patrol blobs are unchanged at ec5fc265. Both relevant autonomous
 Slack roots are unchanged; prior PRIMARY closing FOLLOWUP has no new answer.

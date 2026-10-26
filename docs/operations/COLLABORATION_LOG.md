@@ -8063,3 +8063,31 @@ UNKNOWN. One proposal awaits USER cumulative necessity assessment; closed
 420.478498minute chain plus current preparation is not reset. Current AUX request
 1793032035 describes its independent terminal-frontier bounds task: no assignment,
 re-execution, ownership transfer or use as proof of PRIMARY candidate quality.
+
+
+## PRIMARY pending-plan review follow-through -2026-10-27
+
+At the next existing heartbeat, fetched sandbox4a688eb334463f72f320b0e78521e7abe24e677f
+and preserved/read the new autonomous Patrol2026-10-27_020414_JST_ec5fc26.md,
+blob8eafba5353ed18e7bdf3fece499e9049cbd357cb, rawbbc8c703... . Its ec5 snapshot
+predates a927; adopted the endpoint-first/no-saturated-panel priority without
+claiming it reviewed the later proposal or independently replayed any gzip/Core.
+Slack current channel and complete current PRIMARY/AUX and two autonomous roots
+were preserved. Autonomous originals and own previous Dot thread are unchanged;
+AUX's solicited method reply is its own lane, not PRIMARY labels/ownership.
+
+Fresh request GC-SLACK-20261027-024254-cf4507a1, root1793036588.933979,
+sent17:43:08.933979UTC/due17:48:08.933979UTC, exact payload readback PASS. The ONE
+about-five-minute check completed17:48:34.308362UTC; Dot1793036815.273619 read
+actual a927 and supported the already selected NO-GO. Its concrete D6-to-1s exposure
+and record-only-versus-original cost gaps are adopted. No USER budget approval,
+new algorithm, Player/Core/solver/game, empirical replication or AUX assignment.
+
+PRIMARY withdrew its premature600minute request, preserving the original stages
+and inputs as unexecuted history. This is not a USER deferral or a claim the new
+prefixes must draw. No universal WDL oracle is required for relative experiments.
+This heartbeat is review/transport at the existing ended user-decision boundary,
+not a new60minute research sample; no offline gap or review/administration time
+was added to the8.722minute ledger. Next independent source-only design remains
+possible without a new message, but new experimental runs need their own concrete
+scope and cumulative necessity assessment. Existing hourly schedules unchanged.
