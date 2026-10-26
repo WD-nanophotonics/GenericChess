@@ -7967,3 +7967,18 @@ CPU/scope cautions; direct user180/200approval outranked Dot budget opinion.
 sorting lies outside its counter. Nine controls/full-context literal readers
 pass, not independent WDL or strength. First nominal2700s overshoot55.149s is
 explicit, never refilled. Exact guards and product/defaults unchanged.
+
+
+## PRIMARY quality GO/NO-GO - 2026-10-26T12:54Z
+
+PRIMARY source/zero-query analysis separates old PVS-ON resource games from the
+product PVS-OFF causal question. All12 existing h2 roots have118 nonterminal
+legal alternatives; this is not WDL discrimination. Published plan proposes a
+conditional same-budget24-game OFF/ON pilot only after cumulative user necessity
+assessment; no Player/game/solver or activation. Prior200.369/200cost retained.
+AUX new1793018301 milestone read as selfreport, no rerun/task/checkout change.
+Patrol68f83 priority adopted; Dot fresh request GC-SLACK-20261026-214324-581f62d1
+exact delivery verified. One delayed check12:48:02Z had no reply, about41seconds
+before exact+5min target; retained as actual timing, no repeated polling.
+Two old autonomous Slack threads and latest sandbox Patrol blobs unchanged.
+Controller opportunity versus quality resolution remains the actual uncertainty.

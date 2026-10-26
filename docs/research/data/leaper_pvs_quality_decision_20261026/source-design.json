@@ -1,0 +1,17 @@
+{
+  "PVS": "OFF by product tuning default; main later child uses scout then full re-search only if alpha < null_score < beta. No PVS branch in Q. TT/ordering runtime source guards preserved. Changed ties/PV/depth are not WDL labels.",
+  "TT": "Separate Player per arm/seat/game, fresh TT per game and retained within own policy; never toggle same Player tuning or share entries across experimental arms.",
+  "at": "2026-10-26T12:51:18.165731+00:00",
+  "budget": "SearchLimits deterministic is unused metadata, not a random-seed guarantee. Internal budget constructed inside run_root_search after caller entry. Outer call must be separately recorded; cooperative atomic overrun stays censored.",
+  "decision": "NO-GO further profiling or activation; a fully specified PVS OFF/ON exploratory relative-play pilot could answer a different causal question, but no execution before cumulative necessity assessment.",
+  "key_alternative": "Default Q lexical sorting untimed; immutable semantic actions carry pattern/geometry even with same coordinates. Full action key required; no numeric coordinate tie rewrite or full history/key memo. Benefit not measured, do not add cache on profile attribution alone.",
+  "old_control": "Both long/short original Players explicit use_pvs=True, so resource outcomes do not identify PVS effect.",
+  "sources": {
+    "generic_chess/ai/alphabeta/player.py": "8e6a3477dddd525553b1feabcaa09959e4e2d34fa6561fb12a86c0fd9bd3dce7",
+    "generic_chess/ai/alphabeta/search.py": "c630a4c05c26235b6f7a89cc97153bc709f27a615e6b18efb9a38bf90491fa76",
+    "generic_chess/ai/alphabeta/tuning.py": "3bcee8e6a6b3a45f797e8458a4e63b144ff20127c5a17cfddd691d92c4dfd353",
+    "generic_chess/ai/limits.py": "d001f7942ace3c6fa75b8196ca09a80a834ec0b177ec86e97171a957a2010059",
+    "generic_chess/core/actions.py": "428b49e8e8b37470f1fce1147fb4f12618d16f27ab35459f124140afea2bf285",
+    "scripts/leaper_population_budget_games.py": "ec31fc251000085d6388db2f0ae751cfdbaa0962346441375eee9db9036a19c6"
+  }
+}

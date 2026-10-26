@@ -1,0 +1,48 @@
+{
+  "decision_rule": "Only exploratory signal if timing-qualified positive rule-pair score in >=3 families with all negative/missing outcomes preserved; otherwise no follow-on. Never class-wide strength or significance.",
+  "extra_games_or_default_activation": false,
+  "games": {
+    "Q": 4,
+    "Qhard": 8,
+    "TT": "Separate per seat/game, retained within game",
+    "compute_recording_reservation_seconds": 2700,
+    "full_roots": 12,
+    "max_Player_game_attempts": 2256,
+    "max_depth": 64,
+    "max_nodes": 500000,
+    "max_turns_per_game": 94,
+    "movement_families": 6,
+    "on_seats": [
+      0,
+      1
+    ],
+    "per_call_seconds_both": 1,
+    "same_backend_both": "Native legality/availability/check True; actual service recorded",
+    "seed": "No consumed search RNG. All existing deterministic h2 roots, unselected metadata order, no samples by outcome.",
+    "slots": 24,
+    "timing_eligibility_outer_seconds": 1.1
+  },
+  "is_execution_authorization": false,
+  "no_reply_or_timing_incomplete": "Retain UNKNOWN; no response gate, no missing outcome as DRAW",
+  "prior_cap_minutes": 200,
+  "prior_chain": "CLOSED; overshoot retained",
+  "prior_related_whole_upper_minutes": 200.3688811,
+  "proposed_cumulative_ceiling_minutes": 320,
+  "proposed_cumulative_forecast_minutes": [
+    290,
+    310
+  ],
+  "qualification": {
+    "arms": [
+      "PVS_OFF",
+      "PVS_ON"
+    ],
+    "batch_seconds_including_reserve": 90,
+    "calls": 24,
+    "depth": 3,
+    "max_nodes": 50000,
+    "roots": 12,
+    "seconds_per_call": 3
+  },
+  "state": "NOT_STARTED"
+}

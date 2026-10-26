@@ -22,19 +22,16 @@ guard to preserve. Default Q lexical sort is outside ordering_seconds; the prior
 1.6% bound applies only to that recorded region. First nominal2700s batch
 overshot55.149s at a dispatch boundary; retain this limit and8NOT_RUN slots.
 
-Main: does the next experiment improve a falsifiable cross-family quality goal? |
-Prepare ONE GO/NO-GO memo comparing saved push localization against equal-wall
-PVS/defaultOFF-vs-ON or another concrete algorithm, with full history/seat/opponent/
-seed, >=3family support and censoring/exposure | Reviewable cost/quality design or
-NO-GO | No more profiling now; carry final costs/current200cap; no old16/H6/
-full-key-memo revival, TT-guard shortcut or automatic games.
-Backup1: is untimed lexical-Q string sorting a better target? | Inspect actual
-immutable-key consumer/preservation requirements using saved evidence | One
-scoped cost/quality proposal | No arbitrary traversal/tie change or threshold hunt.
-Backup2: can quality discrimination cover genuinely different families? |
-Define prospective full-rule/history/opponent/seat sampling for a concrete useful
-candidate | Explicit exposure/correlation and actual endpoints | No selected
-family4 as holdout or universal-solver prerequisite.
+Main: is the optional PVS OFF/ON pilot worth its cumulative cost? |
+[Quality decision](LEAPER_PVS_QUALITY_DECISION_20261026.md) is ready for USER
+necessity assessment: old curve both ON;12roots have118 nonterminal alternatives,
+but >=3family quality discrimination UNKNOWN | Reviewed design or explicit
+NO-GO | NOT_STARTED; no new Player/profile/game/solver. Related prior whole
+upper200.369/cap200 remains CLOSED; proposal forecast cumulative290-310/cap320,
+not granted. Old16 is a different deferred experiment, not this request.
+Backup1: no further profiling:56.06% inclusive consumer is not a removable share.
+Backup2: lexical-Q immutable semantic keys require exact stable string traversal;
+no full-query benefit measured, so no cache/coordinate rewrite is selected.
 
 User directly approved this diagnostic carrying97.185prior whole minutes,
 forecast180/cap200. Scientific ledger is separately verified at finish; final
