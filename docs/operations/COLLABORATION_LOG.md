@@ -8009,7 +8009,10 @@ and the unchanged Patrol tree, both complete autonomous Slack threads and
 current PRIMARY/AUX threads. No new review was found in that covered scope.
 No AUX work was assigned or rerun. A fresh opening AGENT_REQUEST at
 1793026379.737969 asks a real adapter-cost question using the published pilot;
-its exact payload readback is verified and one +5-minute check is due.
+its exact payload readback is verified. The single +5-minute check at14:58UTC
+read source-only reply1793026582.948239; baseline/canonicalization/rollback
+cautions and a cheap source equation gate were adopted before execution.
+No independent advisor rerun, implementation or budget approval is claimed.
 The 24-draw PVS pilot remains closed; its actual delivery cost314.129940 minutes
 is carried into the proposed one-candidate extension. Only a NOT_STARTED plan
 was written; no candidate implementation, Player/Core/solver/game/build started.

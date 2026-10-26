@@ -46,6 +46,12 @@ No product default, installed backend or UI change is included.
 
 ## Frozen prospective stages if approved
 
+0. First spend at most15 minutes of the proposed50-minute implementation/control
+   allocation on a source-only field-by-field construction equation and exact
+   selected-consumer seam. No candidate code or query precedes this gate. Reject
+   if admission needs a generic child already built, canonicalization cannot be
+   guaranteed, or checkpoint/rollback semantics require broad changes. A source
+   NO-GO ends the remaining stages; the100-minute estimate is not a spending target.
 1. Bind existing 12 complete h2 roots (six movement families, two board sizes)
    and the 2115 saved selected transitions by the pilot manifest and full source
    hashes. These are exposed development data, not holdout or class coverage.
@@ -123,3 +129,30 @@ DEFERRED 16-game Native-service proposal, which remains NOT_STARTED.
 Alternative: reject this extension and retain the candidate as unimplemented.
 Do not substitute another long experiment, extra PVS games, a solver gate or an
 AUX task. Future decisions require a changed premise and fresh budget assessment.
+
+## Solicited Dot review incorporated before execution
+
+The single +5-minute check at14:58:01--14:58:19UTC read reply1793026582.948239.
+Its review inspected pinned e055 source; no validation or full-repository search
+was executed. Adopted: the main baseline is the UNMODIFIED generic path, with no
+artificial adapter guard added for symmetry. Candidate timing includes all real
+certification, dispatch, state checks and fallback costs; one-time certification
+and per-state cost are distinguished and actually amortized. No third arm is added.
+
+An explicit unsupported branch must return before observable side effects; it
+must not catch arbitrary exceptions and retry generic after cancellation, invalid
+binding or constructor failure. Preserve the existing outer push rollback. The
+single consumer remains after validated action/binding and rollback-frame setup,
+before identity/history/terminal; do not globally replace other transition callers
+or silently change optional written_squares observation. Unsupported observation
+modes use the original route. Exact Piece owner/base/current/promoted, support
+fingerprint, canonical hands/aux and support-derived shape belong in the source
+construction equation. Sharing immutable objects needs equal field representation,
+not identical Python object addresses. Existing footprint alone proves none of this.
+
+Preserve effect-boundary cancellation semantics and rollback, while allowing a
+faster implementation to finish more work before a real deadline. Equal wall
+termination at an identical node is not a required equivalence. No implementation,
+extra experiment, budget grant or claim of demonstrated net benefit follows from
+this solicited review. The cheap source gate is part of, not additional to, the
+same100-minute proposed allocation and cumulative460-minute ceiling request.
