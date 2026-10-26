@@ -107,9 +107,12 @@ class LearnableMaterialCheckpoint:
 
     @property
     def config_hash(self) -> str:
-        """Distinct per checkpoint, so TT entries are never shared across
-        evaluators (the experiment also creates a fresh engine per
-        checkpoint)."""
+        """Checkpoint provenance identity, including training metadata.
+
+        A different identity need not change quantized evaluation values.
+        Legacy Native TT isolation comes from fresh fixed-evaluator engines,
+        not from tagging each TT entry with this hash.
+        """
         payload = {
                 "checkpoint_id": self.checkpoint_id,
                 "board_weights": self.board_weights,

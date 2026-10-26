@@ -1,3 +1,9 @@
+## DEV_AUX evaluator identity milestone89c5ef59 —2026-10-27
+
+AUX independently traced the actual legacy Native payload and TT consumers. Checkpoint/config hashes are provenance; fresh fixed-evaluator engines provide TT isolation. Equal actual numeric inputs with matched root/history/TT/node conditions predict equal computation, not equal elapsed wall time, strength or universal search correctness. Own floating learner and semantic Native are distinct consumers. Two misleading docstrings corrected with unchanged executable AST; no new Native/Player/game/teacher/build/solver/training. Prior 22Native unit-case correction stays in the existing report; no old result or cap reopened.
+
+Latest GitHub Pro source7cbdbbb3/blobfda5dfc2 unchanged/adopted; PRIMARY endpoint work not taken over. Current recovery Slack original contains no new Dot reply beyond four existing replies; reading/adoption/independent execution remain distinct. Same segment remains ACTIVE41.986891confirmed minutes, not a finished ordinary research segment. Publication and communication do not count as research time.
+
 ## Completed140a989c cooperation and limits
 
 AUX finished66.58400confirmed effective minutes with162checksPASS, explicitly excluded the interrupted open interval and kept all prior costs. Same-source actor-regret normalization and mean-bound correction were published3bb8e310/fullremoteverified, then reported in existing Slack thread at1793021026.612729 with the concrete count/capacity and seat-perspective questions. Single +5minute check at13:29:48UTC found no new reply; earlier Dot cancellation advice is implemented, new inference remains AUX-derived/unreviewed. No silent agreement or other-role execution is claimed.

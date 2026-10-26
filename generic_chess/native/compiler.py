@@ -587,17 +587,19 @@ def compile_native_evaluation(
     """Compile the rule-derived evaluation profile into native tables.
 
     The same RuleSet may be paired with different ``EvaluationConfig`` objects,
-    so the tables are a separate object keyed by ``config_hash``; they are
+    so the tables are a separate object carrying ``config_hash`` metadata; they are
     never folded into :class:`NativeCompiledRules`.
 
     ``material_override`` (optional) supplies per-type board/hand material
     weights (e.g. a learnable checkpoint).  It must expose:
     ``quantized_board(type_ids) -> list[int]``,
     ``quantized_hand(type_ids) -> list[int]`` and ``config_hash``.  Anchor
-    entries are forced to 0 and are never overridden.  The resulting
-    ``config_hash`` differs per checkpoint, so TT entries are never shared
-    across evaluators (and callers should create a fresh engine per
-    checkpoint).
+    entries are forced to 0 and are never overridden.  ``config_hash``
+    identifies the checkpoint; the legacy C TT does not include it in its
+    keys.  Each NativeSearchEngine binds one evaluation object and owns its
+    TT, so callers must create a fresh engine for a different checkpoint.
+    Different checkpoint hashes alone need not imply different numeric tables
+    or different search results.
     """
     if not native_available():
         raise NativeUnsupportedRuleError(

@@ -1,3 +1,9 @@
+## Active evaluator-consumer checkpoint89c5ef59 —2026-10-27
+
+Same UUID/origin20:46:23UTC remains ACTIVE,2519.213460confirmed seconds=41.986891minutes; ordinary60-minute requirement UNMET. [Actual evaluator identity](AUX_EVALUATOR_IDENTITY_SCOPE_20261027.md) traces legacy integer payload, fixed engine/TT lifetime and metadata-only differences. Equal payload/full root/fresh TT/node budgets predict equal computation without time/cancel/failure differences; this is source inference, not executed action/quality/speed evidence. Own mainline floating override is a distinct consumer. Two misleading docstrings corrected; executable AST unchanged. No Native/Player/game/training/solver/build in this source question; all prior execution corrections/caps retained.
+
+Explicit milestone fetch sandbox7cbdbbb3 unchanged, latest Pro stop-theory/close-teacher direction retained. Recovery complete Slack thread contains no new advice; no duplicate request or delayed check. Teacher/arena/material-projection/identity seams are closed; use new real consumer/input or distinct scoped support, not more hypothetical guard/theory expansion or PRIMARY endpoint ownership. No normal finish is claimed.
+
 ## Active actual-consumer continuation89c5ef59 —2026-10-27
 
 Same UUID/origin20:46:23UTC,1896.114769confirmed seconds; ACTIVE, not a completed60-minute segment. [Teacher consumer](AUX_TEACHER_DIAGNOSTIC_SCOPE_20261027.md): direct corpus binding, unsupported gamma and diagnostic default-alpha repair published e1832e3241edb233e20f4b5b1bc7d55c6c62ba22;86nonNativePASS and explicit prior22Nativeunit-case execution correction. No historyloss, oldrun-impact or quality/speed claim. New Pro7cbdbbb3/fda5dfc2 ADOPTED: stop theory expansion; teacher source gate closed.
