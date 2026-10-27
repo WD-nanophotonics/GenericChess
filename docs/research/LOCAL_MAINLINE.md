@@ -6,22 +6,29 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 quality route after finite negative results
+## Current decision -2026-10-27 cross-rule endpoint discernibility
 
-Science is OPEN. [Next proposal](LEAPER_COUNTERMOVE_QUALITY_PROPOSAL_20261027.md)
-selects one existing query-local countermove priority for a true equal-service
-quality comparison;no queries/games for it yet. Source GO and full-sort exposure
-metric repair are complete. Main: Does it improve actual pure-Leaper quality? |
-At next normal opening inspect reviews,freeze complete12roots/24slots and driver
-from this proposal before dispatch |Core WDL,source/work/cost/provenance |One
-95forecast/110cap prospective run,not historical costs;no defaults/refill.
-Backup1: Root proof versus depth gate? |Use explicit source+Core proof validation
-for future controls |Verified q10 mate and legal fallback distinctions |Do not
-change stopped relative-history slots or treat a reported score as WDL.
-Backup2: Execution alternative? |Preserve Q stalemate counterexample and profile
-component derivations |Concrete future changed premise required |No check-only
-Qskip,old Boolean retiming or automatic fused Native rewrite;small material-scan
-route deferred because only3-5% old observed CPU and added verification cost.
+Science is OPEN. New autonomous review5e200256/Patrol140444,blob17bcce6d,
+fully read/adopted. The proposed4x4countermove24game trial is DEFERRED before
+any query:complete sources do not yet establish a useful near-strength endpoint.
+Its95forecast/110cap is not an active run or approval queue. Keep the source and
+exposure fix default OFF;do not dispatch or refill its proposed panel.
+Main: Is there a non-ceiling multirule quality endpoint? |Audit old full5x5/6x6
+histories,terminal records and actual controller/source conditions for15-25min,
+0newPlayer/solver/game |>=3rule families with coherent decision/endgame evidence
+or explicitNO_GO |Then select a justified new finite question,not automaticgames.
+Backup1: No compatible endpoint? |Define a fixed,prospective resource-response
+calibration on changed pure-Leaper rules/boards,complete histories and actual
+Core outcomes |Actual budget sensitivity or honestNO_SIGNAL |No outcome-based
+resampling,p49/p53 fitting,random-as-near-strength or oldpanel refill.
+Backup2: Compiled execution alternative? |Use only new independent causal/source
+inference to bound removable work |UNKNOWN if no bound |NoBoolean retiming,
+wholeNative rewrite,or inclusivepush fraction claimed removable.
+Review reports external AUXpause versus local latest directUSER ACTIVE/hourly;
+record provenance conflict but do not change its state,task,checkout or schedule.
+Latest directUSER single prospective>=120minute threshold controls;completed
+historical tasks never create a gate. Slack autonomous/old request threads read
+unchanged;fresh openingDotAGENT_REQUEST precedes research.
 
 [Boolean finite pilot](LEAPER_BOOLEAN_COST_20261027.md) CLOSED_NO_GO for this
 Python implementation.48D6returns,46D6complete,two candidate D5 cancellations;
