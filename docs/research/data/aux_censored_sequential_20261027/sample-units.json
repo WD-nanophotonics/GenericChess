@@ -1,0 +1,13 @@
+{
+  "scope": "exact abstract probability laws; no project records/hashes read or recomputed",
+  "iid_outcomes": {
+    "outcome_equal_probability": "1/2",
+    "covariance": "0"
+  },
+  "shared_coin_outcomes": {
+    "outcome_equal_probability": "1",
+    "covariance": "1/4"
+  },
+  "unique_record_counterexample": "append deterministic trial index to each shared-coin outcome: all record bytes differ while covariance stays1/4",
+  "implication": "record duplication/uniqueness alone neither disproves nor establishes sample independence; actual randomization and target conditionings govern"
+}

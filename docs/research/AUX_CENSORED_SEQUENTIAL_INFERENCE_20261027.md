@@ -1,14 +1,14 @@
-# Censored paired evidence and sequential inference â€”2026-10-27
+# Censored paired evidence and sequential inference —2026-10-27
 
 The maintained runner correctly reports finite missing-result completion bounds, not confidence intervals. Optional-stopping-valid inference can preserve UNKNOWN, but requires a specified sampling/filtration/target contract that current output alone does not establish. No existing result is upgraded and no inference module or new experiment follows.
 
-This is a distinct literature fallback after the Pro-requested legacy handoff and runner source questions closed. Its concrete consumer is interpretation of scripts/incremental_learning.py:241â€“277, baseline35c9d091757d2ccb0db7eecb38d6208ea369f254. It does not reopen TD theory, teacher/configuration checks, PRIMARY algorithm work, or frozen studies. Costs/caps remain.
+This is a distinct literature fallback after the Pro-requested legacy handoff and runner source questions closed. Its concrete consumer is interpretation of scripts/incremental_learning.py:241–277, baseline35c9d091757d2ccb0db7eecb38d6208ea369f254. It does not reopen TD theory, teacher/configuration checks, PRIMARY algorithm work, or frozen studies. Costs/caps remain.
 
 ## Primary sources read
 
 [Howard et al., version6,2021](https://arxiv.org/html/1810.08240v6), section2/theorem4: uniform bounds may target averages of conditional means of adapted bounded observations, without independent observations or a common mean. The prediction/variance conditions matter. This does not turn exposed records into estimates of a fixed population mean.
 
-[Waudby-Smith and Ramdas, version7,2022](https://arxiv.org/html/2010.09686v7), sections4/4.3/5 and propositions2â€“3: predictable nonnegative betting products require conditional-mean conditions; a marginal mean alone is insufficient. Their finite-population model randomizes observation order. A fixed panel alone does not establish that model. Publisher access failed once; versioned original arXiv was the successful fallback. Source simulations/packages were not executed.
+[Waudby-Smith and Ramdas, version7,2022](https://arxiv.org/html/2010.09686v7), sections4/4.3/5 and propositions2–3: predictable nonnegative betting products require conditional-mean conditions; a marginal mean alone is insufficient. Their finite-population model randomizes observation order. A fixed panel alone does not establish that model. Publisher access failed once; versioned original arXiv was the successful fallback. Source simulations/packages were not executed.
 
 ## Own application and limits
 
@@ -39,3 +39,11 @@ Keep existing completion bounds and counters unchanged. Before a future statisti
 Statistics cannot remove censoring's identification gap. In the special case where fraction q of whole families is entirely unresolved and the rest have observed mean contrast delta, the finite lower completion endpoint is(1-q)*delta-2*q. For positive delta it is positive only if q<delta/(delta+2), before sampling uncertainty. This is an identity for that completion pattern, not a missingness assumption or a forecast.
 
 Outcome: feasible caller-specific inference under explicit premises, but NO_CURRENT_STATISTICAL_UPGRADE of exploratory results. Independent critique should address the envelope/latent-policy distinction and filtration, not launch a general theory or inference framework. No new corpus, game or historical artifact was read/replayed. Token cost UNKNOWN; all prior costs retained.
+
+## Sample-unit qualification from actual source
+
+The maintained runner fixes opening seeds per family, uses index=2*family+color, and shares each index's search seed across profiles. Profile order is rotated/reversed. Its current mainline adapter explicitly does not use that seed to randomize lexical ordering; the reference backend is a different randomization policy. These are source facts, not evidence of independent rule draws, equal realized work, or a measured variance reduction.
+
+Record-hash duplication alone does not establish dependence, and unique hashes alone do not establish independence. In a two-trial iid Bernoulli law, outcomes coincide with probability1/2 while covariance is0. A single shared coin gives coincidence probability1 and covariance1/4. Adding a deterministic trial-index tag makes every record distinct without changing that dependence. These exact abstract laws read no project record or hash. They do not dispute Pro's design-based caution about shared families, seats and policies; they prevent treating a de-duplication count as a statistical sample-size calculation.
+
+Likewise, conditioning on a fixed root can differ from inference over randomized roots. The reporting unit and conditioning must be stated rather than inferred from equal input histories. Shared seeds and roots can be useful pairing, but a narrower variance is not automatic. No new independence gate is added to exploratory work: absent a sampling contract, finite observed-sample completion bounds remain valid in their stated scope. No project outcome or record count is recomputed.
