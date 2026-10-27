@@ -1,0 +1,149 @@
+{
+  "id": "942bc7a8-2250-4e4e-b29a-4f8752cc49bf",
+  "started_at": "2026-10-27T00:06:25.459125+00:00",
+  "resumed_at": "2026-10-27T02:01:21.521906+00:00",
+  "ended_at": "2026-10-27T03:11:36.835184+00:00",
+  "state": "ended",
+  "reason": "safe_checkpoint",
+  "duration_gate_passed": true,
+  "memo_synced": true,
+  "effective_work_seconds": 3618.501711,
+  "work_accounting_version": 1,
+  "research_stage_count": 12,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-27T00:10:38.858768+00:00",
+      "evidence": "docs/research/AUX_CONSUMER_PUBLICATION_HANDOFF_20261027.md",
+      "question": "Finish source-bound current consumer handoff without expanding closed teacher or arena seams",
+      "started_at": "2026-10-27T00:09:48.270479+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T00:11:52.772216+00:00",
+      "evidence": "scripts/incremental_learning.py:229-277; generic_chess/learning/incremental.py:613-744; INCREMENTAL_TDLEAF.md coupled/public-mainline closed interpretation",
+      "question": "Does maintained incremental runner summary and published reader preserve candidate-seat, fixed missing-slot and actual terminal semantics?",
+      "started_at": "2026-10-27T00:11:01.854434+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T00:14:50.945896+00:00",
+      "evidence": "docs/research/AUX_RUNNER_OUTPUT_INTERPRETATION_20261027.md",
+      "question": "Does an actual maintained consumer claim interrupted incremental runner output is complete or resumable, and what evidence survives?",
+      "started_at": "2026-10-27T00:13:42.417019+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T00:24:46.552310+00:00",
+      "evidence": "docs/research/AUX_CENSORED_SEQUENTIAL_INFERENCE_20261027.md",
+      "question": "Can bounded paired runner outcomes with outcome-dependent censoring support optional-stopping-valid quality inference without UNKNOWN imputation?",
+      "started_at": "2026-10-27T00:17:46.683046+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T00:30:49.930608+00:00",
+      "evidence": "docs/research/AUX_CENSORED_SEQUENTIAL_INFERENCE_20261027.md",
+      "question": "Do duplicated record hashes, reused roots or common seeds establish an independent sample unit for the actual evidence interpretation?",
+      "started_at": "2026-10-27T00:28:21.989188+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T01:14:14.192242+00:00",
+      "evidence": "docs/research/AUX_MODERN_LEARNER_USEFULNESS_20261027.md; private learning-use-942bc7a8-4f91a2-source-rows.json; source-only actual consumer analysis",
+      "question": "Pro0943: can an actual maintained modern learner consume sealed H128/repeat4 inputs and define one falsifiable learning-gain comparison?",
+      "started_at": "2026-10-27T01:07:41.897590+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T01:23:09.323219+00:00",
+      "evidence": "docs/research/AUX_MODERN_LEARNER_USEFULNESS_20261027.md actual-input mechanism; data/aux_modern_learner_usefulness_20261027/material-signatures.json teninputs/ninesignatures/threepositivecrossings/324exactpairchecks",
+      "question": "Does the actual modern material consumer have a structurally zero-gradient start on these full original rule inputs, and which current observations could falsify that mechanism without claiming strength?",
+      "started_at": "2026-10-27T01:18:32.185411+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T02:08:02.142699+00:00",
+      "evidence": "Sourcecompiler898/2130, compiled.py51, semantic_executor117/169 and fixed92f51dd1 PVSdriver: default raw-wire helper remainslegacy, explicitsharedcompile_legacy_ruleset_for_semantic_execution suppliesIR; helper already used by maintained PRIMARYdriver. No new implementation/runtime mismatch proved.",
+      "question": "Does the actual original H128 RuleSet compile path supply executable semantic IR required by the newly published quiet-attack proposal, and can fail-closed admission distinguish it without a second rules implementation?",
+      "started_at": "2026-10-27T02:04:45.915480+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T02:31:15.640010+00:00",
+      "evidence": "docs/research/AUX_MATERIAL_CHAMBER_CHECK_20261027.md;120calls7976nodes;120PV280plies;semanticPositionmatch120/historykeymatch0;no training/fullgames",
+      "question": "Can actual current learner q0 search falsify material-chamber action equivalence on full original H128 inputs under a fixed bounded 120-call design?",
+      "started_at": "2026-10-27T02:14:57.328004+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T02:49:46.881501+00:00",
+      "evidence": "docs/research/data/aux_one_full_history_20261027/result.json: first frozen record rawSemanticBoardMove rejected by defaultlegacyCore, first action legacy_014:g15:a1-b2; no slot swap/Player/newplay",
+      "question": "Can one preselected complete H128 GameRecord and its proper prefix yield matched current terminal facts through shared legacy and semantic Core despite different history namespaces?",
+      "started_at": "2026-10-27T02:42:38.918910+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T03:02:00.371623+00:00",
+      "evidence": "docs/research/AUX_ONE_FULL_HISTORY_20261027.md; originallegacyfailure retained, remaining3replays/383plies; semantic128DRAW/prefix127ONGOING;129Position/87rekey matches",
+      "question": "Diagnose the same archived semantic record through the existing correct adapter and an explicitly projected legacy control, preserving the first failure and original four-replay/time cap",
+      "started_at": "2026-10-27T02:54:39.710806+00:00"
+    },
+    {
+      "ended_at": "2026-10-27T03:08:21.244240+00:00",
+      "evidence": "docs/research/AUX_ONE_FULL_HISTORY_20261027.md final-edge derivation; semantic_executor635/1799/1890-1968, incremental402-406. Four-replay cap unchanged; no new execution. Incidental2.5s branch/diff verification conservatively excluded separately from reported research credit.",
+      "question": "What strategic bound follows from the already verified final draw edge, and does current adjudication precedence permit a stronger label without further replay or search?",
+      "started_at": "2026-10-27T03:05:33.183254+00:00"
+    }
+  ],
+  "uncredited_work": [
+    {
+      "interrupted_at": "2026-10-27T00:09:30.130061+00:00",
+      "question": "Pro consumer handoff: which current consumers actually invoke repaired teacher/arena entrypoints, and which remain unsupported/public-only?",
+      "reason": "resume: unfinished interval unconfirmed",
+      "started_at": "2026-10-27T00:07:44.796532+00:00"
+    }
+  ],
+  "checkpoints": [
+    {
+      "at": "2026-10-27T01:23:09.472505+00:00",
+      "evidence": "docs/research/AUX_MODERN_LEARNER_USEFULNESS_20261027.md; docs/research/data/aux_modern_learner_usefulness_20261027/material-signatures.json",
+      "kind": "research",
+      "next_action": "Perform one due Dot reply check, assess a concrete new input/question if present, otherwise examine distinct useful fallback without repeated source/theory/guard checks or idlepadding. SameUUID remains below60.",
+      "observation": "All ten original inputs reduce to one trainable boardB coordinate; zero trainable gradient for balanced-B accepted leaves; exact positive leaf-ranking crossings at1/2,1,2. Restricted fixed-tree minimax implication derived, no live search/cost/strength equivalence claimed; no new training or source audit campaign.",
+      "question": "Can actual sparse material support explain why weight movement alone is not a promising strength endpoint?"
+    },
+    {
+      "at": "2026-10-27T02:08:02.272455+00:00",
+      "evidence": "generic_chess/rules/compiler.py:898,2130; generic_chess/core/semantic_executor.py:169; sandbox92f51dd1:scripts/leaper_pvs_quality_pilot.py",
+      "kind": "research",
+      "next_action": "Resolve newly reported external USERpause provenance from trusted app message context if available before selecting further own research; never infer pause or modify schedule from Pro assertion alone.",
+      "observation": "YES via existing explicitcompile_legacy_ruleset_for_semantic_execution, already used in publishedPVSdriver; defaultlearner helper islegacy for emptysemantic_actions. Samefingerprint is not action/historykeyidentity; overlappinglegacycoordinate actions failclosed onambiguity. No need inventedadapter or sourcefix; no empiricalgain claimed.",
+      "question": "Does a real shared adapter connect these original rules to the new proposal's executable IR requirement?"
+    },
+    {
+      "at": "2026-10-27T02:31:15.782456+00:00",
+      "evidence": "docs/research/AUX_MATERIAL_CHAMBER_CHECK_20261027.md;docs/research/data/aux_material_chamber_check_20261027",
+      "kind": "research",
+      "next_action": "Review/publish finite evidence, consult Dot on actual next consumer/resource question, no refill or PRIMARY budget transfer; continue sameUUID toward60 actual minutes.",
+      "observation": "120complete calls;30same-chamber action/PV/node matches;crossboundary4rootchanges2families;16nonzeroB returnedPVs notTD.120PV280ply independentverificationPASS;semanticreplay Position/records120match but0historykeymatches. No speed/strength/training claim.",
+      "question": "Does actual modern learner material-chamber behavior agree, and are saved PVs portable through shared semantic execution?"
+    },
+    {
+      "at": "2026-10-27T02:49:47.025582+00:00",
+      "evidence": "docs/research/data/aux_one_full_history_20261027/result.json; .local_agent/one-history-942bc7a8-input.json",
+      "kind": "research",
+      "next_action": "One due Dotcheck, then explicitdiagnostic amendment at most3remainingreplays on SAMEinput; no newslot/calls/training or sourcecampaign.",
+      "observation": "Original firstslot0/world0 recovered128ply record is semantic-typed; defaultcompile_ruleset_for_execution returnslegacy and first action rejected. Original crossrepresentation rawreplay hypothesis is NO_GO, not evidence oldgameillegal or controllerfalse. Stop first attempt, preserve failure, diagnose using existing explicitsemantic adapter within same20min/4replay cap.",
+      "question": "Does the first frozen complete H128 record enter defaultlegacy and semantic products without an explicit representation contract?"
+    },
+    {
+      "at": "2026-10-27T03:02:00.517758+00:00",
+      "evidence": "docs/research/AUX_ONE_FULL_HISTORY_20261027.md;docs/research/data/aux_one_full_history_20261027",
+      "kind": "research",
+      "next_action": "Assess what one-sided strategic statement, if any, follows from the already verified final draw edge without relabelling actualprefix None, enumerating alternatives or reopening a frontier; then finish only after60 confirmed minutes.",
+      "observation": "Raw semanticrecord/defaultlegacy NO_GO preserved. Correctsemantic full128 MAX_PLY -> learner0; prefix127 ONGOING -> None. Explicitlegacyprojection matches129Positions/87mapped repetitionkeys, not same record/history identity.4total attempts inclfailed; no newPlayer/game/train/solver or other slot.",
+      "question": "What current terminal fact survives the archived semantic-action representation mismatch?"
+    },
+    {
+      "at": "2026-10-27T03:08:21.388925+00:00",
+      "evidence": "docs/research/AUX_ONE_FULL_HISTORY_20261027.md",
+      "kind": "research",
+      "next_action": "Publish completed finite results and actual ledger; at next opening select new Pro concrete history/quality input, otherwise an independently scoped useful support question with Dot; do not repeat the120queries/fourreplays or reopen H6/frontier.",
+      "observation": "No: owner1-to-move has a verified nonloss action; V0 in[-1,0], V1 in[0,1]. Mate/stalemate precede clock; no alternate action checked. Actual127ply reader staysNone. Scientific case closed; publication whole-task overrun recorded.",
+      "question": "Can the verified final draw edge license exact prefix/root WDL or a terminal training label?"
+    }
+  ],
+  "ending_evidence": "Completed120queries and one frozen four-attempt history plus source-grounded final-edge bound; docs/research/AUX_MATERIAL_CHAMBER_CHECK_20261027.md and AUX_ONE_FULL_HISTORY_20261027.md; published fbd29b04346f846bb1155c8db8fa9455afc55231 fullremoteverified. Ledger3618.501711s; conservative3613.501711s after5s verification reserve. Casesclosed, exactDRAW/strength/speed remainunproved. Executable memo refilled; no idle/admin credit or oldcapreset.",
+  "conservative_incidental_verification_reserve_seconds": 5,
+  "conservative_research_seconds": 3613.501711,
+  "qualification": "Evidence-backed declared work intervals, not independent cognitive activity telemetry. No offline/idle/publication credit; reserve5s for incidental2.5s final branch/diff check. Safe bounded checkpoint after closed cases; not overall scientific completion or90minute claim."
+}
