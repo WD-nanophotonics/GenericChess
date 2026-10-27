@@ -1,3 +1,20 @@
+## Actual-input material mechanism942bc7a8 -2026-10-27
+
+AUX source-algebra follow-up of the maintained learner finds one trainable boardB
+coordinate for all ten original oneA/oneB-per-owner rules. Nine signature superset
+and324exact rational pair-order checks give positive crossings1/2,1,2; these are
+not reachable states, search calls, WDL labels or training evidence. Specific
+zero-gradient and restricted complete-tree ranking consequences are documented
+in the modern-learner usefulness report, with live-wall/float/history limits.
+Source task closes NO_NEW_SIGNAL; no more general theory/legacy/guard expansion.
+
+First result7d3a322ebb0950880bb48aa72a88e05f72ca0582/fullremoteverified was sent
+in existing Slack thread at1793063878.748149. Single delayedcheck01:23:23UTC
+saved full parent+3replies, no newDotreply. Earlier advice read/adopted/executed
+remains distinct; new direction question pending, no response gate or expiry.
+SameUUID ACTIVE1407.278092confirmed seconds=23.4546348667minutes, NO accepted
+normal finish. Administrative delivery/offline time is not research credit.
+
 ## Modern learner usefulness milestone942bc7a8 -2026-10-27
 
 [Source decision](../research/AUX_MODERN_LEARNER_USEFULNESS_20261027.md): a maintained

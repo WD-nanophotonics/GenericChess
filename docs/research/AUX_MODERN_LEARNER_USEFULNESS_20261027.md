@@ -84,3 +84,57 @@ resolution/cost UNKNOWN; experiment decision NO_NEW_SIGNAL. Next useful input
 must name a current executable comparison with honest resource conditions or
 supply new matched full-history observations. More source hashes, generic
 TD/statistics theory or repeated teacher/Arena/runner checks cannot supply it.
+
+
+## Actual-input mechanism: one trainable coordinate, sparse policy changes
+
+A finite source-algebra follow-up checks a question specific to this consumer,
+not another TD convergence/inference theory. Each of the ten selected initial
+wires/states has exactly one A and one B per owner. Remove-from-game, no drops,
+no promotion or semantic creation means subsequent material signatures lie in
+phi=(a,b,0,0), a,b in {-1,0,1}. This is a SUPERSET of legal reachable features;
+no state was enumerated or assigned WDL. Fixed boardA and zero hand features
+leave only boardB trainable: raw(phi)=a+wB*b. Initial phi is zero in all ten
+inputs; random opening/PV capture exposure is unmeasured, not assumed absent.
+
+The actual gradient source makes the mechanism precise. A nonterminal accepted
+PV with b=0 supplies zero gradient to every trainable coordinate, even if A is
+imbalanced and its prediction is nonzero. A terminal PV also supplies zero own
+gradient. If ALL accepted observations have zero gradient, an actual terminal
+payoff cannot change this model; earlier nonzero eligibility would be necessary.
+This is not an instruction to filter starts, demand a leaf-crossing quota,
+exclude censored episodes or replace the learner. Accepted search PV B-imbalance
+is distinct from an already played B capture, and returned exposure still does
+not prove admission. No actual exposure rate is inferred from rule geometry.
+
+[Exact arithmetic](data/aux_modern_learner_usefulness_20261027/material-signatures.json)
+checks the nine possible signatures and all pair intersections. The only
+positive wB crossings are 1/2,1,2: solving
+(a-c)+wB*(b-d)=0 gives the complete finite list.324 pair-order checks at eight
+rational representatives confirm the four positive open chambers. This count
+is arithmetic, not324 games, tests of the engine or observations of a learner.
+At boundaries additional ties occur; in particular the uniform-material foe
+wB=1 lies on a boundary. The initial random B weight can lie on either side.
+
+Within a chamber all material leaf orderings/ties remain unchanged under exact
+comparison arithmetic, although scalar values and TD gradients change. Min/max
+and sign reversal preserve this order. On a fixed complete full-width q0 tree,
+with identical terminal-distance values and deterministic tie policy, the
+selected minimax action therefore stays unchanged. The actual adapter disables
+PVS, aspiration, mate-distance pruning and root tactical scans; uses equal
+capture ordering prices; and its TT retains material scores without integer
+rounding. These source facts make the restricted mechanism relevant. They do
+NOT certify identical live executions: history/runtime admission is unexecuted,
+floating comparisons near crossings need care, live wall/cancellation can change
+completed depth or receipt admission, and altered tuning/score clipping or a
+different feature domain invalidates the argument. No search was run to extend
+this ideal fixed-tree statement to current capped whole-call behavior.
+
+Consequently weight movement alone is especially weak evidence on this actual
+family. Crossing a threshold can permit a changed static ranking but guarantees
+neither a changed chosen action nor a better terminal result; remaining in a
+chamber establishes neither absence of learning nor identical equal-wall calls.
+Keep EVERY planned before/after slot and its actual depth/admission/cost, rather
+than selecting only changed weights or changed actions. This source mechanism
+sharpens the NO_NEW_SIGNAL decision; it does not reopen the task, grant a new
+training run or establish a speed/strength claim.
