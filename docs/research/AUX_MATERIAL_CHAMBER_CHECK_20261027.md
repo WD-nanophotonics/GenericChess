@@ -97,3 +97,11 @@ Decision: close this120call check. Finite same-chamber behavior is supported;
 cross-boundary root exposure exists in two families. No price selection, query
 refill, equal-wall cache/quantization permission or stronger quality claim follows.
 Ordinary research-session duration is separate and is not declared complete here.
+
+
+Publication correction:96aac962 normalized raw CRLF and source-capsule endings
+through Git text conversion. Numeric content was unchanged but its published
+bytes did not match the declared executed/raw hashes. Exact local originals
+were retained; a scoped -text attribute now preserves this study directory.
+The correction does not rewrite history or claim96aac962 had exact-byte parity.
+No research call or PV verification was rerun for this publication repair.
