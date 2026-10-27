@@ -69,7 +69,7 @@ Actual loaded binary: _native_core.cp312-win_amd64.pyd,459264bytes,SHA256
 a2e1b0bae4e1e1910334572f862f347298da9d82546d18ec7563372016010208,
 Python3.12.14/Windows AMD64. This pins the executed binary,not proof of which
 source revision built it. Peak RSS is process-wide and cannot isolate candidate
-allocation. Whole timings include common source/binary checks;no subtraction.
+allocation. Whole timings include common binary-identity checks;no subtraction.
 
 Public original-derived records and copy/hash manifest are in
 [data](data/leaper_boolean_cost_20261027/manifest.json). Only absolute project
