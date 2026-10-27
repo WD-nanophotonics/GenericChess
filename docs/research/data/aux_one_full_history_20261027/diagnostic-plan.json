@@ -1,0 +1,15 @@
+{
+  "Player": false,
+  "already_failed_attempts": 1,
+  "amendment": "Diagnostic only, same input, no alternative slot: semantic full, semantic properprefix, mechanically projected legacy full. Original rawlegacy failure remains a failure, not replaced with pass.",
+  "at": "2026-10-27T02:54:39.565200+00:00",
+  "cap_reset": false,
+  "cause": "RuleSet is legacy-shaped but archived GameRecord uses lossless SemanticBoardMove identities",
+  "maximum_total_replay_attempts": 4,
+  "original_hypothesis": "NO_GO: raw semantic actions do not enter defaultlegacy Core",
+  "original_result_sha256": "86dd85ff1a74bc360c3de742c0d117d1692c9cd378e1961bd941bb6d3015d580",
+  "original_whole20minute_origin": "2026-10-27T02:42:38.746479+00:00",
+  "projection": "Explicit finite control using BoardMove coordinates; validate existing narrow footprint and geometry uniqueness. Not a public/general adapter, not semantic pattern erasure in production.",
+  "remaining_attempts": 3,
+  "training": false
+}

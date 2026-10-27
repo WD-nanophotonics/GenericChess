@@ -1,0 +1,75 @@
+{
+  "first_rawlegacy_attempt": "FAILED/retained result.json; no original hypothesis pass",
+  "total_replay_attempts_including_failure": 4,
+  "maximum_original_attempts": 4,
+  "original_cap_reset": false,
+  "input_sha256": "62541ed42c093b8ce420131f364ef40c863a80cd8b3058e6da5e85e66b24a2aa",
+  "driver_sha256": "6d63f038346bd050b6de7900647ce6a8649abd7d531518bb16b61914e6c84f71",
+  "wall": 0.09666929999366403,
+  "cpu": 0.09375,
+  "rows": [
+    {
+      "case": "semantic_full",
+      "actions": 128,
+      "Core_status": "max_ply",
+      "Core_winner": null,
+      "Session_status": "max_ply",
+      "learner_terminal": 0,
+      "record_matches_its_own_input": true,
+      "ply": 128,
+      "history_entries": 129,
+      "repetition_entries": 87,
+      "maximum_repetition_count": 3,
+      "current_repetition_count": 3,
+      "wall": 0.023010200122371316,
+      "cpu": 0.03125
+    },
+    {
+      "case": "semantic_prefix",
+      "actions": 127,
+      "Core_status": "ongoing",
+      "Core_winner": null,
+      "Session_status": "ongoing",
+      "learner_terminal": null,
+      "record_matches_its_own_input": true,
+      "ply": 127,
+      "history_entries": 128,
+      "repetition_entries": 87,
+      "maximum_repetition_count": 3,
+      "current_repetition_count": 2,
+      "wall": 0.022175300167873502,
+      "cpu": 0.015625
+    },
+    {
+      "case": "projected_legacy_full",
+      "actions": 128,
+      "Core_status": "max_ply",
+      "Core_winner": null,
+      "Session_status": "max_ply",
+      "learner_terminal": 0,
+      "record_matches_its_own_input": true,
+      "ply": 128,
+      "history_entries": 129,
+      "repetition_entries": 87,
+      "maximum_repetition_count": 3,
+      "current_repetition_count": 3,
+      "wall": 0.01110879983752966,
+      "cpu": 0.015625
+    }
+  ],
+  "summary": {
+    "geometry_uniqueness_checks": 192,
+    "source_action_types": {
+      "SemanticBoardMove": 128
+    },
+    "physical_final_equal": true,
+    "all129_positions_equal": 129,
+    "original_vs_projected_record_equal": false,
+    "raw_repetition_maps_equal": false,
+    "observed_rekey_map_size": 87,
+    "observed_rekeyed_counts_equal": true,
+    "namespace_map_scope": "Only the129observed positions of this one trace, not a general key converter/TT quotient",
+    "position_witness_api": "Core-owned GameSession._search_witnesses readonly verifier use; not new learning/runtime API"
+  },
+  "failure": null
+}

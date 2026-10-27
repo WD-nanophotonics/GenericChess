@@ -1,0 +1,42 @@
+{
+  "scope": "Exactly one preselected original complete GameRecord and its one-move-shorter prefix; four current replays, no new play/search/training or other-slot analysis",
+  "input_sha256": "62541ed42c093b8ce420131f364ef40c863a80cd8b3058e6da5e85e66b24a2aa",
+  "driver_sha256": "07707408dbfed284477c8d6fd16f4b4bce36666917c1b6212c20026c4d1ca7a6",
+  "whole_wall": 0.04806790011934936,
+  "whole_cpu": 0.046875,
+  "stored_terminal": {
+    "declaration_id": null,
+    "declaration_outcome": null,
+    "declaration_score": null,
+    "declared_by": null,
+    "resigned_by": null,
+    "status": "max_ply",
+    "winner": null
+  },
+  "stored_status": "finished",
+  "stored_utility": [
+    0,
+    0
+  ],
+  "original_slot_status": "failed",
+  "recovered_status": "finished",
+  "results": [
+    {
+      "kind": "compile",
+      "backend": "legacy",
+      "type": "CompiledRuleSet",
+      "wall": 0.0007164999842643738
+    },
+    {
+      "kind": "compile",
+      "backend": "semantic",
+      "type": "ExecutableSemanticRuleset",
+      "wall": 0.042990799993276596
+    }
+  ],
+  "comparisons": [],
+  "failure": {
+    "type": "SessionRecordError",
+    "message": "record contains an illegal action: action is not legal in the current state: legacy_014:g15:a1-b2"
+  }
+}

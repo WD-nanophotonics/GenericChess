@@ -1,3 +1,15 @@
+## Single complete-history consumer check942bc7a8 -2026-10-27
+
+[One fixed H128 record](../research/AUX_ONE_FULL_HISTORY_20261027.md) exposes raw
+SemanticBoardMove/defaultlegacy rejection; original failure retained. Correct
+sharedsemantic full128replay gives MAX_PLY/learner0, properprefix127 gives
+ONGOING/None. Explicitly projectedlegacy control matches129Positions/87rekeyed
+counts, not raw action/history identity.4total attempts inclfailure, no new
+Player/game/training/solver or other-slot campaign. A disabled-drop assertion
+in the verifier was repaired before further replay, within original cap.
+This validates one current path, not historical controller or root/action WDL.
+SameUUID3450.440725confirmed seconds=57.5073454minutes; normalfinish not yet met.
+
 ## Actual consumer mechanism, same segment942bc7a8 -2026-10-27
 
 [Bounded check](../research/AUX_MATERIAL_CHAMBER_CHECK_20261027.md) executed
