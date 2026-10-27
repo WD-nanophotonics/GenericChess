@@ -1,0 +1,393 @@
+{
+  "scope": "Actual modern learner search feasibility; no training update/full game/solver/rule generation/old-game analysis",
+  "source_input_sha256": "afcb9bff540a56ac27c03951ecbb4e94a34c62fdb20c80e9d7ce2698f03bc88c",
+  "driver_sha256": "42eda663890f8ed1a97a035d69efb9b2aa3c4947b734511b48a6e24e559980cb",
+  "actual_queries": 120,
+  "expected_queries": 120,
+  "missing_queries": 0,
+  "wall": 1.0981684001162648,
+  "cpu": 1.09375,
+  "failure": null,
+  "admissions": [
+    {
+      "world": 0,
+      "fingerprint": "966bd67596b08c28d2a5191d959d6c5054eb3a241c62ecdb2d010e6e259630de",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "966bd67596b08c28d2a5191d959d6c5054eb3a241c62ecdb2d010e6e259630de",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.000897000078111887,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 1,
+      "fingerprint": "05be37dd8bcbf1b1328ea19ecb80ada0b8e8a13b28250e93bc28bc0a4dd08b62",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "05be37dd8bcbf1b1328ea19ecb80ada0b8e8a13b28250e93bc28bc0a4dd08b62",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.0008196001872420311,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 2,
+      "fingerprint": "3b5a71030ae81b6aef54ec9026f05aa26d9ccdd3e0298cc48e94880c667c0366",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "3b5a71030ae81b6aef54ec9026f05aa26d9ccdd3e0298cc48e94880c667c0366",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.0007023999933153391,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 3,
+      "fingerprint": "762751630e93502a1b9c99598e567f6bd8a92929212d2963906890f918eaf8a1",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "762751630e93502a1b9c99598e567f6bd8a92929212d2963906890f918eaf8a1",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.0007342998869717121,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 4,
+      "fingerprint": "fdebc3d13b5e4b70094187dfd0e43675f662cd472abadc072830c9eb81728f05",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "fdebc3d13b5e4b70094187dfd0e43675f662cd472abadc072830c9eb81728f05",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.0007396000437438488,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 5,
+      "fingerprint": "afa86fe58d3e842962208916173e6487fe21412ef347fbdc851b6f633590d039",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "afa86fe58d3e842962208916173e6487fe21412ef347fbdc851b6f633590d039",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.0006923000328242779,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 6,
+      "fingerprint": "7f4cb0bcfd6f0ac6012898a58340d9206c6a6e392105a8ae09af93126a0a478f",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "7f4cb0bcfd6f0ac6012898a58340d9206c6a6e392105a8ae09af93126a0a478f",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.000766499899327755,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 7,
+      "fingerprint": "a22ee4be24f13c6867269caebaa12bf7ef2e20f94946097a37d68ed4de6eca87",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a22ee4be24f13c6867269caebaa12bf7ef2e20f94946097a37d68ed4de6eca87",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.0007752999663352966,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 8,
+      "fingerprint": "98ceae22341b030510f17e90eeaad9cad8ebfbdbea88b3b0d3c4e83d98c5dd52",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "98ceae22341b030510f17e90eeaad9cad8ebfbdbea88b3b0d3c4e83d98c5dd52",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.00073640001937747,
+      "setup_cpu": 0.0
+    },
+    {
+      "world": 9,
+      "fingerprint": "bfd08fce9c256ee3a4e97c0645a1667d6c3bd01478385198d9a6e920e8759280",
+      "compiled_type": "CompiledRuleSet",
+      "has_ir": false,
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ]
+      ],
+      "initial_record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "bfd08fce9c256ee3a4e97c0645a1667d6c3bd01478385198d9a6e920e8759280",
+        "schema_version": 1
+      },
+      "initial_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "setup_wall": 0.0008817000780254602,
+      "setup_cpu": 0.0
+    }
+  ]
+}

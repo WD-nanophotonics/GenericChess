@@ -1,3 +1,27 @@
+## Actual consumer mechanism, same segment942bc7a8 -2026-10-27
+
+[Bounded check](../research/AUX_MATERIAL_CHAMBER_CHECK_20261027.md) executed
+120current learner q0 calls/7976nodes on all10original H128/repeat4 empty-record
+roots, depths1/2/4, four frozen B coefficients.30same-chamber pairs agree on
+action/PV/nodes; crossing1 changes4root actions in2families.120PV/280plies replay
+and manual features PASS;16returned nonzeroB PVs are not accepted TD. No training,
+full game, solver, new rule, Native build, price selection or strength/speed gain.
+
+Shared semantic adapter replays the same120PVs with equal Position/record/result
+but different history/repetition namespaces in all120. Fingerprint equality is
+not permission to copy keys. Default learner path is legacy; explicit shared IR
+adapter is already maintained. This is current finite execution evidence, not
+historical controller reproduction or long-history/Native qualification.
+One verifier Enum-serialization failure was repaired with saved-PV recheck only,
+no query rerun. Old costs/caps and PRIMARY budgets remain untouched.
+
+New Pro1018 at sandbox92f51dd1/blobde34fefb read/adopted on opportunity cost/
+closed seams. Its external AUXpause assertion lacks a new direct user instruction
+in this chat; visible Pro chat context supplies no such new pause, embedded
+scheduled context not exposed. Preserve current direct ACTIVE/hourly and role
+boundaries, no schedule mutation. Own Dot priorroot still3replies/no new answer.
+SameUUID now2581.817317confirmed seconds=43.0302886minutes; not finished.
+
 ## Actual-input material mechanism942bc7a8 -2026-10-27
 
 AUX source-algebra follow-up of the maintained learner finds one trainable boardB
