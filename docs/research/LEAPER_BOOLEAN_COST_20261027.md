@@ -49,3 +49,39 @@ Relative history:11original qualifiers returned,13NOT_RUN,24gamesNOT_STARTED.
 Qualifier11 is a legitimate immediate-win root,depth0,and fails frozen D2
 qualification. No bug/strength conclusion or new games. Its first query's
 zero-duration UTC ledger failure was metadata-only;original reused without replay.
+
+## Result — candidate rejected
+48 original D6 returns:46 reach D6;two candidate calls on n6-f4-h2 cancel at
+D5,while both baseline calls reach D6. All48D8 slots remain NOT_RUN under the
+frozen coverage stop. No query was retried. All11 complete four-call groups
+have identical non-timing action/value/PV/work signatures. All11 are slower in
+both wall and CPU. Aggregate candidate/baseline wall1.1049709942,CPU1.1039852204;
+these are descriptive complete-group ratios,not an acceptance over missing work.
+Core preflight:24 roots,2299 state/child checks,zero predicate fallback. All48
+returns have zero Native full-legality fallback/operational failures;candidate
+Boolean fallback0. Counter joins confirm candidate check/availability invocations
+replace baseline invocations on complete work. Native imports disappeared but
+whole cost rose. Python source scans/builds both owners' unions and per-source
+exclusion maps on each physical child;this is a plausible replacement cost,not
+an independently measured causal CPU breakdown. Do not retune within this run.
+
+Actual loaded binary: _native_core.cp312-win_amd64.pyd,459264bytes,SHA256
+a2e1b0bae4e1e1910334572f862f347298da9d82546d18ec7563372016010208,
+Python3.12.14/Windows AMD64. This pins the executed binary,not proof of which
+source revision built it. Peak RSS is process-wide and cannot isolate candidate
+allocation. Whole timings include common source/binary checks;no subtraction.
+
+Public original-derived records and copy/hash manifest are in
+[data](data/leaper_boolean_cost_20261027/manifest.json). Only absolute project
+path prefixes are normalized;all numeric/action/source payload is retained.
+Private originals remain unchanged. No games,Native builds or default changes.
+
+## Next source decision
+Do not claim that large reserved Native history arrays are copied at each
+Boolean import: current native_module.c and native_semantic_state.c explicitly
+clear/copy only prefixes and supplied history,while availability copies a
+prefix and uses an early-stop candidate visitor. These optimizations already
+exist. A fused Native kernel is a separate unproved candidate,not automatically
+justified by this Python loss or by adding inclusive parent-profile timings.
+Next compare concrete removable work/dependencies against a genuinely useful
+quality endpoint;preserve the failed relative-history panel rather than refill it.

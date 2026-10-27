@@ -8219,3 +8219,18 @@ All original returns/export parity checked; no strength or independent transfer.
 USERsingle-run threshold and continuation supersede our misleading historical
 cumulative approval. Early finite STOP closes this candidate, not research
 as a whole;no refill or new consent queue. No AUX contribution rerun/takeover.
+
+## PRIMARY relative-history and Boolean tests —2026-10-27
+Opening Dot request12c8aaed and one delayed reply read adopted independent S/A,
+actual entered parent-edge/PVS-once semantics,query-local scope and a smaller
+24game freeze before dispatch. Source/tests implement those distinctions;Dot
+did not independently run them. The fixed relative-history qualification stopped
+on a legitimate depth0 immediate-root proof:11returns,13NOT_RUN,24gamesunstarted.
+No refill. New autonomous a6823de1 review's compiled execution-cost alternative
+was adopted via a new strict Boolean mathematical candidate,not broad fusion.
+Core found an Anchor-capture omission;corrected against source,not expected output.
+48costreturns reject this Python implementation:11eligible groups allslower,
+two candidate cancellations block48D8 slots. Source/Native/fallback/copy evidence
+are retained. Latest channel and relevant full threads rechecked after results;
+no new autonomous root/reply. Existing AUX work/state was neither edited nor rerun.
+User single-run120minute threshold governs;closed tasks did not create a gate.

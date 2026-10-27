@@ -6,30 +6,36 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 exact Boolean Leaper cost pilot
+## Current decision -2026-10-27 post-Boolean route assessment
 
-Science is OPEN. Main: Can exact compiled check/availability projection reduce
-whole-query cost? |One strict caller-supplied Boolean candidate;Native full
-legality and Core transitions/history/clocks/TT unchanged |Frozen96cold D6/D8
-slots over12existing full-history roots |Stop on contract/coverage/cost reserve;
-no refill/default activation/games or strength claim.
-[Protocol](LEAPER_BOOLEAN_COST_20261027.md) includes source/math/prototype and
-queries in one85minute forecast/95minute cap from03:11UTC;finished relative-history
-work is NOT carried. Source-derived sibling check+availability region is about
-9-11% instrumented CPU,NOT removable wall time. Availability already shares its
-state import with check;no claim of two imports saved.
-Backup1: Semantic mismatch? |Preserve original return and diagnose Core contract |
-Exact counterexample or supported fallback |No expected-value patch/refill.
-Backup2: Cost coverage fails? |Retain censored fixedslots and analyze mechanism |
-Finite limitation and next genuine question |No rerun/threshold relaxation.
+Science is OPEN. Main: Which next step has a concrete removable-cost or quality
+premise? |Compare source-only Native handoff/copy boundaries with the failed
+quality-panel qualification,without a second candidate/query |Executable next
+question and honest remaining uncertainty |No timing refill,scope expansion or
+historical-cost approval gate;do not alter current product defaults.
+Backup1: Native fusion justified? |Join non-overlapping work and existing prefix/
+handoff optimizations |Specific unimplemented benefit and contract dependencies |
+No claim that reserved history arrays are always copied or that import savings
+are whole savings;no Native build in this source step.
+Backup2: Quality endpoint coherent? |Diagnose root-immediate-proof versus frozen
+D2 resolution requirement |A future predeclared input/endpoint rule |Do not
+relabel/refill the stopped relative-history experiment or invent WDL truth.
 
-Relative-history pilot is STOP_NO_GAMES:11original qualifier returns,13NOT_RUN,
-24games NOT_STARTED. The11th returned legitimate root_immediate_win at depth0,
-violating frozen D2 panel qualification;not a search bug or negative strength
-result. First zero-duration ledger metadata failure repaired without replaying
-its query;all originals preserved. Default remains OFF;usefulness UNKNOWN.
-New Boolean route follows autonomous a6823de1 source-cost recommendation and a
-new explicit mathematical premise,not continued relative-history experiments.
+[Boolean finite pilot](LEAPER_BOOLEAN_COST_20261027.md) CLOSED_NO_GO for this
+Python implementation.48D6returns,46D6complete,two candidate D5 cancellations;
+11complete groups exact action/value/PV/work,all11slower. Wallratio1.104971,
+CPU1.103985.48D8NOT_RUN as frozen;zero provider failures/fallbacks,0games/builds.
+24fullhistory roots/2299Corepreflight comparisons pass. No default activation,
+class/strength claim or automatic retuning. Own85forecast/95cap from03:11UTC
+included source/prototype/validation;historical completed tasks never carried.
+
+Relative-history panel CLOSED_STOP_NO_GAMES:11original qualifier returns,
+13NOT_RUN,24gamesNOT_STARTED. The11th is legitimate root_immediate_win atdepth0,
+failing frozen D2 qualification;not a search bug or negative strength result.
+Zero-duration ledger metadata failure repaired without replaying original query.
+Default OFF;usefulness UNKNOWN. Its independent S/A and PVS/TT/parent-side
+contracts remain tested. New source direction follows autonomous a6823de1's
+cost/quality alternatives,not another source archive campaign or AUX assignment.
 
 ## Retained quiet-geometry finite assessment CLOSED
 
