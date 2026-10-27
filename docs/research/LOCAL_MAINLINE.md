@@ -6,7 +6,29 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 quiet-geometry finite assessment CLOSED
+## Current decision -2026-10-27 relative-history quality pilot
+
+Science is OPEN. This ordinary round tests one genuinely new dynamic ranking,
+not a refill of quiet geometry. [Frozen protocol](LEAPER_RELATIVE_HISTORY_20261027.md)
+uses query-local independent cutoff/entered-action counts,(S+1)/(A+2),main quiet
+slots only. Legacy/Q/eval/TT/Core semantics unchanged;default OFF. Primary paper
+motivates opportunity normalization but does not establish Leaper usefulness.
+Main: Does normalized history improve actual equal-service-time quality? |24D2
+semantic qualifiers then fixed24near-AB games on6old+6unplayed rules,two colors |
+Core outcomes/costs and full source/history/Native provenance |No tuning/refill;
+stop on contract/batch/whole reserve,report missing honestly.
+Backup1: All draws/no exposure/no signal? |Analyze new trajectories/counter/work
+observations for a decision-changing next step,not old-report padding |Explicit
+finite conclusions/limits |No default/class-strength or unplayed=blind claim.
+Backup2: Dot/source objections? |Adopt actual counting and24slot pre-run revision;
+keep exact originals |Current USER single-run rule controls |No AUX task/worker
+or historical-cost approval gate.
+Independent105min forecast/110cap from02:47:33.917952UTC includes this whole run;
+65min game batch and15min delivery reserve.24games nominal51.2min service.
+Normal60–90recorded effective-work rule remains separate;no prior time credited.
+
+## Retained quiet-geometry finite assessment CLOSED
+
 
 [Finite result](LEAPER_QUIET_GEOMETRY_GATE_20261027.md): STOP_NO_GAMES,
 INCONCLUSIVE_COST. Science is COMPLETE. This applies ONLY to the entire frozen

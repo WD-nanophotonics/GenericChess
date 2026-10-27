@@ -42,11 +42,17 @@ class MoveOrderer:
         self._geometry_compiled = compiled
         self._geometry_ready = False
         self._geometry_stats = stats
+        self._relative_allowed = None
+        self._relative_attempts = None
+        self._relative_cutoffs = None
 
     def clear(self) -> None:
         self._killers.clear()
         self._history.clear()
         self._countermoves.clear()
+        if self._relative_attempts is not None:
+            self._relative_attempts.clear()
+            self._relative_cutoffs.clear()
 
     def record_killer(self, depth: int, action: Action) -> None:
         killers = self._killers.setdefault(depth, [])
@@ -60,6 +66,26 @@ class MoveOrderer:
     ) -> None:
         key = (player, action)
         self._history[key] = min(self._history.get(key, 0) + 1, tuning.history_max)
+        if tuning.use_relative_history and self._relative_allowed:
+            self._relative_cutoffs[key] = self._relative_cutoffs.get(key, 0) + 1
+            if self._geometry_stats is not None:
+                self._geometry_stats.relative_history_cutoffs += 1
+
+    def record_attempt(self, player, action):
+        """One entered main-node action, not each PVS re-search or Q visit."""
+        if not self._relative_allowed:
+            return
+        key = player, action
+        self._relative_attempts[key] = self._relative_attempts.get(key, 0) + 1
+        if self._geometry_stats is not None:
+            self._geometry_stats.relative_history_attempts += 1
+            self._geometry_stats.relative_history_entries = len(self._relative_attempts)
+
+    def relative_history_value(self, player, action):
+        key = player, action
+        if self._relative_attempts is None:
+            return 0.5
+        return (self._relative_cutoffs.get(key, 0) + 1) / (self._relative_attempts.get(key, 0) + 2)
 
     def record_countermove(self, previous_action: Action, response: Action) -> None:
         """Remember the reply to ``previous_action`` that caused a beta cutoff."""
@@ -108,13 +134,32 @@ class MoveOrderer:
 
         # TT priority is structural: evaluator capture values have no fixed scale.
         ordered = sorted(actions, key=lambda a: (a != tt_move, priority(a), str(a)))
-        if (not tuning.use_quiet_geometric_coverage or depth <= 0):
+        if depth <= 0 or not (tuning.use_quiet_geometric_coverage or tuning.use_relative_history):
             return ordered
+        if tuning.use_relative_history and self._relative_allowed is None:
+            from ...core.search_runtime import _plain_leaper_hash_patterns
+            if checkpoint is not None:
+                checkpoint()
+            self._relative_allowed = (self._geometry_compiled is not None
+                and _plain_leaper_hash_patterns(self._geometry_compiled) is not None)
+            if self._relative_allowed:
+                self._relative_attempts = {}
+                self._relative_cutoffs = {}
         slots = [i for i, a in enumerate(ordered)
                  if a != tt_move and a != counter and a not in killers
                  and action_is_board(a) and action_promotion_target_id(a) is None
                  and state.position.board[square_to_index(action_target_square(a), n)] is None]
         if len(slots) < 2:
+            return ordered
+        if tuning.use_relative_history:
+            if not self._relative_allowed:
+                return ordered
+            quiet = [ordered[i] for i in slots]
+            replacement = sorted(quiet, key=lambda a: -self.relative_history_value(side, a))
+            if self._geometry_stats is not None:
+                self._geometry_stats.relative_history_reorders += replacement != quiet
+            for i, action in zip(slots, replacement):
+                ordered[i] = action
             return ordered
         # Build inside the main-search abort boundary, never in _Context's
         # constructor (which precedes the root fallback/abort handlers).

@@ -24,6 +24,8 @@ class SearchTuning:
     # Experimental: stable quiet-slot preference for unconditional enemy leap
     # geometry. Main search only; no legality/pruning/evaluation shortcut.
     use_quiet_geometric_coverage: bool = False
+    # Experimental opportunity-normalized history, main quiet slots only.
+    use_relative_history: bool = False
     use_countermove: bool = False
     use_mate_distance_pruning: bool = False
     use_root_tactical: bool = True
