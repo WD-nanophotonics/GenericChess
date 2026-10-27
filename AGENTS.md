@@ -1,3 +1,8 @@
+## Latest direct cadence -2026-10-27
+
+User changed both existing patrols to every180minutes, ACTIVE/originalbindings.
+This supersedes hourly text; ordinary60-90effective-minute work and stops remain.
+
 # GenericChess local research policy
 
 ## Direct user execution correction —2026-10-26

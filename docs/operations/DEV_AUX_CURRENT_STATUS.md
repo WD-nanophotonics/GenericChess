@@ -1,11 +1,11 @@
 # DEV_AUX current status
 
-Latest direct user instruction:2026-10-26, reaffirmed by the current heartbeat.
+Latest direct user cadence instruction:2026-10-27, reaffirmed by the current heartbeat.
 This is the shared current-status reference for this checkout; dated observations
 elsewhere describe the state at that time and do not override it.
 
 - Role/branch: DEV_AUX / sidemission, own independent checkout only.
-- Existing dev-aux patrol: ACTIVE, every60minutes, original ID/chat binding.
+- Existing dev-aux patrol: ACTIVE, every180minutes, original ID/chat binding.
   This is scheduler configuration, not proof of a continuously running process.
 - Initial15minute consumer source audit: COMPLETE, published at
   `a475104a1bcb6c0f7c25465a581ea29bb87d7002`.

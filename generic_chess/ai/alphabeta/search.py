@@ -158,7 +158,8 @@ class _Context:
         self.tt = tt
         self.stats = stats
         self.budget = budget
-        self.orderer = MoveOrderer()
+        self.orderer = MoveOrderer(
+            compiled if (tuning.use_quiet_geometric_coverage or tuning.use_relative_history) else None, stats)
         self.tuning = tuning
         self.recorder = recorder or NullAuditRecorder()
         self.use_tt = use_tt
@@ -511,6 +512,8 @@ def negamax(
                     entry.best_action if entry else None,
                     prev_action,
                     ctx.tuning,
+                    checkpoint=(lambda: ctx.budget.check(ctx.stats, force=True))
+                    if (ctx.tuning.use_quiet_geometric_coverage or ctx.tuning.use_relative_history) else None,
                 )
         ctx.budget.check(ctx.stats, force=True)
         ctx.stats.ordering_calls += 1
@@ -524,6 +527,7 @@ def negamax(
     best_action: Action | None = None
     best_pv: tuple[Action, ...] = ()
 
+    history_side = state.position.side_to_move
     for move_index, action in enumerate(ordered_actions):
         if ctx.runtime is not None:
             child = ctx.runtime.state
@@ -547,13 +551,21 @@ def negamax(
             child = child_by_action[action]
             child_key = None
             ctx.budget.check(ctx.stats, force=True)
+        attempt_recorded = False
         def child_search(window_alpha, window_beta, child_pv):
+            nonlocal attempt_recorded
             if ctx.runtime is not None:
                 with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
+                    if ctx.tuning.use_relative_history and not attempt_recorded:
+                        ctx.orderer.record_attempt(history_side, action)
+                        attempt_recorded = True
                     return negamax(
                         ctx.runtime.state, depth - 1, window_alpha, window_beta,
                         ply + 1, ctx, prev_action=action, pv_node=child_pv,
                     )
+            if ctx.tuning.use_relative_history and not attempt_recorded:
+                ctx.orderer.record_attempt(history_side, action)
+                attempt_recorded = True
             return negamax(
                 child, depth - 1, window_alpha, window_beta, ply + 1, ctx,
                 prev_action=action, node_key=child_key, pv_node=child_pv,

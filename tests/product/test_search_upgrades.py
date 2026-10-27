@@ -429,3 +429,30 @@ def test_root_immediate_proof_keeps_result_but_observes_post_push_control(monkey
     session.submit(decision.action)
     assert session.state.terminal_status.is_terminal
     assert session.state.terminal_status.winner == before[0].position.side_to_move
+
+
+def test_full_sort_counter_exposure_is_reported_without_staged_picker():
+    compiled = build_4x4_rooks()
+    evaluator = _evaluator(compiled)
+    state = GameSession(compiled).state
+    actions = legal_actions(state, compiled)
+    counter = sorted(actions, key=str)[-1]
+    previous = BoardMove(sq(0, 1), sq(0, 2))
+    stats = SearchStatistics()
+    orderer = MoveOrderer(stats=stats)
+    orderer.record_countermove(previous, counter)
+    off = orderer.order(state, actions, evaluator, 1, None, previous, SearchTuning())
+    assert stats.countermove_hits == 0
+    on = orderer.order(state, actions, evaluator, 1, None, previous,
+                       SearchTuning(use_countermove=True))
+    assert on[0] == counter and on != off
+    assert set(on) == set(off) == set(actions)
+    assert stats.countermove_hits == 1
+    # A counter that is already the TT move is credited to TT,not counter.
+    orderer.order(state, actions, evaluator, 1, counter, previous,
+                  SearchTuning(use_countermove=True))
+    assert stats.countermove_hits == 1
+    orderer.clear()
+    orderer.order(state, actions, evaluator, 1, None, previous,
+                  SearchTuning(use_countermove=True))
+    assert stats.countermove_hits == 1
