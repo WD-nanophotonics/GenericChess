@@ -4,6 +4,8 @@
   "fixed_depth_max_calls": 40,
   "future_estimate_minutes": 170,
   "game_batch_seconds": 3900,
+  "historical_cost_not_approval_gate": 550.8653386166666,
+  "historical_cumulative_cap_superseded": 770,
   "max_game_plies": 128,
   "max_game_queries": 3072,
   "near_baseline_games": 20,
@@ -11,7 +13,6 @@
   "new_implementation_this_round": false,
   "packet_sha256": "65cbda6e861249f04914511f5bcdd1e83233879c276236df7caac1f7d5c0b761",
   "preparation_started_utc": "2026-10-27T01:43:43.995000+00:00",
-  "prior_conservative_minutes": 550.8653386166666,
   "product_sources": {
     "generic_chess/ai/alphabeta/ordering.py": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e",
     "generic_chess/ai/alphabeta/player.py": "8e6a3477dddd525553b1feabcaa09959e4e2d34fa6561fb12a86c0fd9bd3dce7",
@@ -23,7 +24,6 @@
     "generic_chess/rules/ir.py": "9aac52fe848446430c4b4118702331a5d9d10863d8eaf7266df739199c90bbeb",
     "scripts/leaper_pvs_quality_pilot.py": "b7c834e8014224d1ef6cb8acd68c823583d368dadc64a42d518afcf6191ce2e9"
   },
-  "proposed_cumulative_cap_minutes": 770,
   "query_service_seconds": 1,
   "review_commit": "21d9e06893c787b6e58d95c5c8a9fde94fea70dc",
   "rules": [
@@ -362,7 +362,9 @@
       "world": 9
     }
   ],
+  "single_prospective_run_cap_minutes": 180,
   "source_base_commit": "56a19a5f91a562b7684334c4b3b2a171732d5707",
-  "status": "PROPOSED_NOT_STARTED_REQUIRES_USER_ASSESSMENT",
+  "status": "USER_DIRECTED_CONTINUATION_AFTER_BUDGET_CORRECTION",
+  "user_direction": "2026-10-27: no cumulative completed-task approval;withdraw misleading deferral and continue finite work.",
   "weak_control_games": 4
 }

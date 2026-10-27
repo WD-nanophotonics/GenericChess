@@ -1,7 +1,9 @@
 # One pure-Leaper quiet-ordering proposal — 2026-10-27
 
-Status: SOURCE GO TO NECESSITY ASSESSMENT; implementation and every empirical
-stage NOT_STARTED. This is a falsifiable development pilot, not a qualified
+Status: USER DIRECTED CONTINUATION after correcting cumulative accounting.
+The user withdrew the just-given deferral as based on our misleading historical
+cost gate. Implementation/validation proceeds within the stated finite scope;
+empirical stages remain NOT_STARTED until their preceding gates pass. This is a falsifiable development pilot, not a qualified
 optimizer, product activation, independent holdout or class-wide success.
 The completed USER570 source audit supplies candidate inputs only. It supplies
 no unspent grant for this proposal. No Player/Core/solver/game/build was run.
@@ -156,23 +158,29 @@ success. No class-wide strength or Elo claim from this dependent exposed panel.
 Even a pass only motivates a separately budgeted, independently held-out rule
 study; no such study is included or automatically queued here.
 
-## Cost, authority and stop
+## Cost, authority and stop — corrected by USER2026-10-27
 
-Prior conservative related-chain carry550.8653386167min plus this actual window
-from01:43:43.995UTC, excluding offline gap. Preparation/delivery are counted in
-whole cost, not automatically in effective research. Future estimate170min:
-70 implementation/necessary validation,15 fixed-call/admission work,65 bounded
-game batch,20 analysis/delivery. Expected cumulative roughly735–755min depending
-on this preparation, proposed hard cumulative cap770min. This is a conservative
-forecast, not an extra170min entitlement after any cap. Stop at earliest scoped
-stop, failed gate, exhausted stage reserve or770 cumulative; retain partials.
+The previous cumulative737/770minute approval premise was WRONG. The USER
+explicitly corrected it: completed tasks are finished; do not add their time to
+a new task's approval threshold. That proposed historical-chain cap is withdrawn.
+Historical records remain unchanged as evidence of what was said, not a live gate.
+The USER then withdrew the resulting deferral and directly instructed continuing
+this already-described finite work. This is the current execution direction.
 
-AGENTS requires direct USER necessity assessment for related expected>=120min.
-The old570 review is CLOSED, not borrowed. Dot and Patrol cannot grant this run.
-Until USER decides, no implementation or empirical stages start. The question is
-whether this uncertain exploratory signal is worth the additional cost, not
-whether old provenance can be made perfect. No AUX assignment/checkout/state,
-worker, scheduler, fee, product-default or UI change.
+The prospective complete implementation/validation/trial remains conservatively
+estimated170minutes, excluding finished tasks, and bounded by180minutes of
+actual work/cost for THIS prospective run. Do not spend that amount automatically.
+Retain70implementation/validation,15admission/cost,65gamebatch and20analysis/
+delivery estimates. Fixed40call/24game caps and every failure stop remain. If
+required work would exceed this single-run scope or resource cap, stop safely
+and explain the new facts. No closed-task minutes,770gate, repeated necessity
+request based on old costs, artificial task splitting or allowance reset.
+
+Single-run >=120minute confirmation remains the general rule. The latest USER
+continuation instruction follows this fully reviewable limited proposal and
+supersedes the mistaken deferral; it is not unlimited approval for other runs.
+No AUX assignment/checkout/state, worker, scheduler, fee, product-default or UI
+change follows. Normal session effective-work accounting is separate.
 
 The10:18 review reports an AUX pause in its external prompt, conflicting with the
 latest trusted direct USER direction here (both existing roles ACTIVE hourly).

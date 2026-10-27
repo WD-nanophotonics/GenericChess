@@ -6,36 +6,28 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 one quiet-attack ordering proposal
+## Current decision -2026-10-27 corrected single-run accounting and continuation
 
-New autonomous09:43/10:18 GitHubPatrols at21d9e068 plus matching Slack09:48
-comment1793062136 fully read/adopted: stop historical-source campaigns; design
-ONE finite new algorithm with current quality endpoints and explicit cost.
-[Quiet-attack proposal](LEAPER_QUIET_ATTACK_PROPOSAL_20261027.md) is SOURCE GO
-TO USER NECESSITY ASSESSMENT, not optimizer/implementation/experiment GO.
-Stable-partition only eligible baseline quiet slots using parent enemy IR leap
-geometry; preserve nonquiet slots, legal action identities, Q/eval/PVS/TT rules.
-No per-child attack probes or product default changes. Benefit and actual cost
-UNKNOWN; pinned/sacrificial quiets and ordering overhead may invalidate it.
+USER corrected our erroneous historical cumulative approval gate: only ONE
+prospective run >=120min requires assessment; completed work does not carry.
+The user withdrew the quiet-ordering deferral as induced by that error and
+explicitly instructed continuation. No historical737/770gate or pending question
+remains. Preserve old receipts as evidence of the error, not current instructions.
 
-Main: Is this finite current-AB quality trial worth its cost? |Publish source
-proposal and ask USER necessity assessment |One explicit decision on staged
-implementation/40costcalls/24games and cumulative770cap |No empirical work before
-authorization; old570source grant CLOSED, no reset or residual transfer.
-Backup1: Unsupported IR, insufficient exposure or >5% whole-call overhead means
-NO_GO; no threshold/prefix/seed/cap refill. All20 near-baseline games need honest
-qualification;4uniform controls only playability. Ten exposed rules are a
-development panel; even a pass does not establish independent transfer/strength.
-Backup2: Use new autonomous reviews and one due Dot check to correct design,
-not to confer budgets. Latest trusted direct USER dual ACTIVE/hourly remains;
-review-reported external AUXpause is uncertain provenance, no state change here.
-
-Closed source review retains GO_INPUTS ten full4x4H128rules/480slots/331records;
-old full execution UNKNOWN and current1sQ4resolution UNKNOWN. Old64wins across
-8families are not current optimizer acceptance. No further provenance campaign.
-Prior conservative carry550.865339min plus actual current preparation/delivery;
-future estimate170min, total roughly735-755min, proposed cap770 awaits USER.
-No implementation/Core/Player/game/solver/Nativebuild/newAUXtask this round.
+Main: Does parent enemy geometric coverage improve quiet ordering? |Implement
+ONE opt-in guarded slot partition, validate contracts then frozen cost gate |
+Correct actions/slots/Q/cancellation and affordable actual whole-call overhead |
+Only passed gates permit bounded20near-baseline+4weak games; no default change.
+[Finite proposal](LEAPER_QUIET_ATTACK_PROPOSAL_20261027.md) controls inputs/stops.
+Prospective170min estimate/180min single-run cap excludes finished work. No
+artificial splitting, refill or spending cap as quota. Normal session60–90min
+recorded effective-work rule remains independent of approval accounting.
+Backup1: Semantic failure/no exposure/>5% cost/incomplete gates => close candidate
+with failures/UNKNOWN; do not retune or add seeds/prefixes/Native/AUX work.
+Backup2: Read new autonomous GitHub/Slack reviews and opening Dot as required;
+USER correction outranks previous cumulative advice. No schedule/role changes.
+Ten H128/repeat4 development rules remain exposed; outcomes cannot prove
+independent cross-rule strength. Closed source audit does not reopen.
 
 ## Retained closed child-construction assessment
 

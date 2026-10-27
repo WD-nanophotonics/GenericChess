@@ -8194,3 +8194,13 @@ full original preserved/imported, no repeat poll. Adopt geometry-invariance proo
 owner/type/atom guards, slot permutation and costs; Dot source-only, no rerun/grant.
 Actual _Context creates orderer per query, so proposal corrected preprocessing
 lifetime/charges; no fictitious once-per-Player optimization.
+
+## USER correction of misleading cumulative approval -2026-10-27
+
+Our historical-chain737/770minute necessity premise was wrong. USER clarified
+ONE prospective run threshold; completed-task minutes do not carry. USER then
+withdrew the induced quiet-ordering deferral and instructed work continuation.
+Active policies/manual/review/Slack workflow/Main/plan corrected consistently;
+old exact requests/receipts retained as evidence, no repeated cumulative gate.
+Finite proposal170min future/180min prospective cap and frozen stage gates
+remain, no unrelated scope/default/AUX/schedule expansion.

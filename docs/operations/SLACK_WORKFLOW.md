@@ -149,3 +149,7 @@ checks and preserve its exact receipt; never silently change the parent payload.
 Follow unresolved questions during relevant dialogue or the next original patrol;
 reading, adopting and executing are distinct. No reply is a research/publication
 gate. >=120minute runs still need the user's confirmation, not Dot approval.
+
+User correction2026-10-27: >=120minute assessment concerns ONE planned run, not
+cumulative completed tasks. Never ask Dot/user for a historical-chain budget
+gate. Preserve old raw requests as history; do not revive their invalid premise.

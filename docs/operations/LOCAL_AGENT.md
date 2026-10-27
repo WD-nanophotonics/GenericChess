@@ -198,6 +198,10 @@ engineering overhead. Development limits are cost checkpoints, while permissions
 machine safety and frozen fair-comparison caps remain hard boundaries. Do not
 extend a frozen experiment or erase its failure by renaming seeds/phases.
 Use existing recorders/atomic writes; no new framework merely for receipts.
+User correction2026-10-27: apply this threshold to ONE prospective run only.
+Do not add completed tasks or historical research-chain minutes. Keep those as
+optional cost records, not approval gates; do not split an unfinished run to
+evade its actual duration. A new session alone does not split an ongoing run.
 Small training is authorized. Estimate the single experiment/run BEFORE starting:
 expected duration <120 minutes needs no prior assessment; >=120 minutes (including
 exactly two hours) requires the user's necessity assessment before starting. A real necessity question may accompany the single authorized asynchronous

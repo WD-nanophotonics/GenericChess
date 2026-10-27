@@ -56,7 +56,9 @@ unresolved provenance stays unclassified. For conflicting reviews inspect their
 scope, source versions, correction relationship and evidence; surface unresolved
 conflicts rather than treating the newest commit timestamp as automatic truth.
 No review silently expands role/scope/fees, clears a stop or replaces a separately
-required user confirmation for a >=120-minute logical experiment.
+required user confirmation for ONE prospective >=120-minute experiment/run.
+Latest USER2026-10-27 rejects summing completed historical tasks to trigger
+this threshold; old review advice about cumulative approval is superseded.
 
 If the directory is absent, access fails, a ref is stale or a thread is partial,
 record exactly what was covered and what is UNKNOWN. Do not mark all GitHub

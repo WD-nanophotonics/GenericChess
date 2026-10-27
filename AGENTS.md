@@ -165,6 +165,16 @@ Five minutes is the single delayed-check target, NOT a response expiry: retain
 late replies and read them at the next meaningful interaction. No missing reply
 creates a research/publication gate or permission to poll repeatedly.
 
+User correction2026-10-27: the >=120minute necessity threshold applies to
+ONE prospective experiment/run, not cumulative project/research-chain history.
+Completed tasks do not carry their minutes into a new task's approval threshold.
+Historical costs may be reported separately, never used to manufacture a new
+approval gate. Do not split one unfinished run to evade its actual expected
+single-run duration. Session effective-work requirements remain independent.
+The user withdrew the just-given quiet-ordering deferral as based on misleading
+cumulative accounting and directly instructed continuing the stated finite work.
+No historical770minute cap or closed-task balance is an active authorization gate.
+
 ## Continuing authority and actual boundaries
 
 The user authorizes reasonable work directly serving GenericChess and its final
