@@ -6,20 +6,22 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 post-Boolean route assessment
+## Current decision -2026-10-27 quality route after finite negative results
 
-Science is OPEN. Main: Which next step has a concrete removable-cost or quality
-premise? |Compare source-only Native handoff/copy boundaries with the failed
-quality-panel qualification,without a second candidate/query |Executable next
-question and honest remaining uncertainty |No timing refill,scope expansion or
-historical-cost approval gate;do not alter current product defaults.
-Backup1: Native fusion justified? |Join non-overlapping work and existing prefix/
-handoff optimizations |Specific unimplemented benefit and contract dependencies |
-No claim that reserved history arrays are always copied or that import savings
-are whole savings;no Native build in this source step.
-Backup2: Quality endpoint coherent? |Diagnose root-immediate-proof versus frozen
-D2 resolution requirement |A future predeclared input/endpoint rule |Do not
-relabel/refill the stopped relative-history experiment or invent WDL truth.
+Science is OPEN. [Next proposal](LEAPER_COUNTERMOVE_QUALITY_PROPOSAL_20261027.md)
+selects one existing query-local countermove priority for a true equal-service
+quality comparison;no queries/games for it yet. Source GO and full-sort exposure
+metric repair are complete. Main: Does it improve actual pure-Leaper quality? |
+At next normal opening inspect reviews,freeze complete12roots/24slots and driver
+from this proposal before dispatch |Core WDL,source/work/cost/provenance |One
+95forecast/110cap prospective run,not historical costs;no defaults/refill.
+Backup1: Root proof versus depth gate? |Use explicit source+Core proof validation
+for future controls |Verified q10 mate and legal fallback distinctions |Do not
+change stopped relative-history slots or treat a reported score as WDL.
+Backup2: Execution alternative? |Preserve Q stalemate counterexample and profile
+component derivations |Concrete future changed premise required |No check-only
+Qskip,old Boolean retiming or automatic fused Native rewrite;small material-scan
+route deferred because only3-5% old observed CPU and added verification cost.
 
 [Boolean finite pilot](LEAPER_BOOLEAN_COST_20261027.md) CLOSED_NO_GO for this
 Python implementation.48D6returns,46D6complete,two candidate D5 cancellations;

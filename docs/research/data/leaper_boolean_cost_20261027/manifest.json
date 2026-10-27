@@ -23,6 +23,13 @@
     },
     {
       "category": "boolean-experiment",
+      "file": "boolean-experiment--replacement-cost-description.json.gz",
+      "private_original_sha256": "a555d98e8cd0aef22c3e6c679d801a60609bff772bc9f68ca311f4d05c56622d",
+      "publication_sha256": "eed87b377ae2bd2a368f0a9690c01578e51d956fdb0a3bc63680250cef0aff9d",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "boolean-experiment",
       "file": "boolean-experiment--return-000.json.gz",
       "private_original_sha256": "34126065c5fb8895c9ff82b92d9475e4916355439cfdb6d71973ffde2b5ccc51",
       "publication_sha256": "bd8f28a4819602b407bf80895cdf2cb529ef73a7359389c660dc2446440c8e12",
@@ -393,6 +400,20 @@
       "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
     },
     {
+      "category": "boolean-source",
+      "file": "boolean-source--transport-exclusive-route.json.gz",
+      "private_original_sha256": "2201b366814029da06d5b4f88e20981205104e27b55b94a6d9785ef6b1f9a58e",
+      "publication_sha256": "daff6b962021102fc421fbbf82b818fa0635322628b59bd95ead50c25f64d591",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--failures--q00.json.gz",
+      "private_original_sha256": "f19e93454945cdf175a9fa489f797fa88c9b550475f976bfd60efb0e302fd010",
+      "publication_sha256": "76e18be2d3eb770cdf3cb9170314b39ffcf6e269dcbbd4c8c98426cddcc3d63a",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
       "category": "experiment",
       "file": "experiment--frozen-execution.json.gz",
       "private_original_sha256": "ab49daf20befc822367ccdbbddba50580e36c5f9d6162474e13bff3a645f6fcc",
@@ -429,6 +450,83 @@
     },
     {
       "category": "experiment",
+      "file": "experiment--returns--q00.json.gz",
+      "private_original_sha256": "f28c17e3ac4c2e1ddc054bb411c5980149056a37e12f736f14621ca12d6fb1c2",
+      "publication_sha256": "9d72933270515ce0db215140e3aadf4f9997826a6ab4af8cbdafae1b780cb690",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q01.json.gz",
+      "private_original_sha256": "887b06d9c7175a5f1313ddcb71aea49564a629664b7b43d80d6d882aeb539997",
+      "publication_sha256": "9ee428b3f7789e57e6e4fed0c1dec403a5ffea1a41caa394388e289f0b8a0828",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q02.json.gz",
+      "private_original_sha256": "5f4341efde668745bc8141bf78ed3bd1d88f17d81a92db56071f25469df9b210",
+      "publication_sha256": "5df5c581ac0105bf5783ce1610a7aa997bc1d1ec316db52e6b038d9a85649cb1",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q03.json.gz",
+      "private_original_sha256": "5441ad8e6d47058c226c125658983a4a5b18113fdd0032a4671c547aabe2adbf",
+      "publication_sha256": "0dcf5ffaf614ca26b20e7c4c1c46ad1932c5167da0cd2a9d3f514e1bfb1d4e39",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q04.json.gz",
+      "private_original_sha256": "6d8db2a4db7f0cb2e9dde58675c14cdaf1cd944069996414028ffffe3f39316f",
+      "publication_sha256": "c558356aace88251ee9d44871f068abe8efa1652cbdcb64828319c5c68c07389",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q05.json.gz",
+      "private_original_sha256": "b3f8b027c9749c78b521bc56ee9a8cc803b325270585cdde48c059629167cc0e",
+      "publication_sha256": "df15006adc337a0b2e19522f23e30594176d0c432cd19ff059dacb4bb239022d",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q06.json.gz",
+      "private_original_sha256": "af816e37d63128f86dd11b13475a468d807fb917e327d02c8d0df91b6d4339d3",
+      "publication_sha256": "9354b51c20ee5d50c748344d3c98372e1562698749e8f51ca2c9187d9ad2afd8",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q07.json.gz",
+      "private_original_sha256": "15e2e895a3cb73837193c9d5e026c704498db5b6a553158a28992d3f26670481",
+      "publication_sha256": "fd18cbdff7432402bca9cbb72940090e810f985c11e77ac1262461b50120873d",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q08.json.gz",
+      "private_original_sha256": "e4500626350f31de33c1b4e1a3ddbddad9cef09e9589d75c03eac9ab65f8234c",
+      "publication_sha256": "5a008feb2767f32984ccfd236b5099e72c13cd539c362821ba90aa9bda9bb421",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q09.json.gz",
+      "private_original_sha256": "8780847a3ab3a4d073f5dfbf2290c997c693552e3c23f5681d56d761faed409e",
+      "publication_sha256": "2ed29fd2d12d6d333c12cdd069d34a5aea9c2e8b9fcee17704a4d6280e8df80f",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
+      "file": "experiment--returns--q10.json.gz",
+      "private_original_sha256": "e5cd6c245d7a422f7260fcc31581b1bf899992dfb8fb61e5dc104acb4c969168",
+      "publication_sha256": "0ec04ab0bd083f5803c880078d975479c8ceb994be497e70e9c47e493622f06a",
+      "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "experiment",
       "file": "experiment--summary.json.gz",
       "private_original_sha256": "38c6573699cfefceb7e16f387c250d7f65aadff62d00c445af43ae37dc35dde7",
       "publication_sha256": "8b2b8454ae9f5f40bf66781bc949d1438bc1bd400805ae362e6ce46f6d3d3da5",
@@ -440,9 +538,51 @@
       "private_original_sha256": "b765ae19ec9b308fdfee1f07ac9e2a644630f29e252db4209762a29cb41c9b28",
       "publication_sha256": "c4e58b5fc0c1fdbc0e8862f15ec9ee92877fb182b24ea3bedcda3ca9252fd906",
       "change": "Only project absolute-path prefix normalized when present;numeric/action/source payload unchanged"
+    },
+    {
+      "category": "route",
+      "file": "route--qfilter-counterexample-plan.json.gz",
+      "private_original_sha256": "da6ef3353455f66c688568ce48a29715faa21fc2cb71dacf6e46ef5369bc83bd",
+      "publication_sha256": "f080b6a7f5750f86582437cd14bcfc67de591d9a1605600391d14489b5ce6d75",
+      "change": "Only project absolute-path prefixes normalized when present"
+    },
+    {
+      "category": "route",
+      "file": "route--qfilter-terminal-counterexample.json.gz",
+      "private_original_sha256": "0a2895680fe74e32e307eb50e3cb424572e58421eb625d1891d6a783af7787c2",
+      "publication_sha256": "e23f394d57c78f27039dbfcddd3c054fb38ddbd367cdf74ca7f0b680a6856461",
+      "change": "Only project absolute-path prefixes normalized when present"
+    },
+    {
+      "category": "route",
+      "file": "route--qmetadata-source-plan.json.gz",
+      "private_original_sha256": "d640f0ffdbb56147c32b0e842e61cd26f06bf5b11ad07ff096625b8e6f8e2cea",
+      "publication_sha256": "81168c087219b2ffeaeab8cdbc754c4924b62ff59fcaf5acad52fe46428f37f1",
+      "change": "Only project absolute-path prefixes normalized when present"
+    },
+    {
+      "category": "route",
+      "file": "route--qmetadata-source-region.json.gz",
+      "private_original_sha256": "cbcdc902c5c8e35795f677c035f4d2b59b2fcbce49a30972f692752cf777849e",
+      "publication_sha256": "0c173609b26e576fd2c26c70cfdef3660785d21308713f03cc46d9f0365043c7",
+      "change": "Only project absolute-path prefixes normalized when present"
+    },
+    {
+      "category": "route",
+      "file": "route--relative-root-proof-verification.json.gz",
+      "private_original_sha256": "ed4a366f3c55396406260634f7ebdcf90bb9bab15d5dc655583bba776d52a701",
+      "publication_sha256": "4d37ecb46b75aeb9a15fb2d7fc5c1f20acdb0dd7ecc2d036fae3b617a817d9e0",
+      "change": "Only project absolute-path prefixes normalized when present"
+    },
+    {
+      "category": "route",
+      "file": "route--relative-exposure-analysis.json.gz",
+      "private_original_sha256": "f5c5eb8a30d219085885b1e0c04ba9de7a38297af2f7fb0b7f2685da66daf85b",
+      "publication_sha256": "2c74ec64df9e79b0bb21ca73eb280d375dcd4a2ec4de05b5910aae52d4ea6672",
+      "change": "Only project absolute-path prefixes normalized when present"
     }
   ],
-  "verified_copies": 63,
+  "verified_copies": 83,
   "source_checkpoint": "97a5420351b4e56fe3fdbc29a252308600d93c61",
   "private_originals_preserved": true
 }

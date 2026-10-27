@@ -126,3 +126,13 @@ latest USER permits independent single-run<120min work, and this full run remain
 permission. Its recommended Native-cost alternative is deferred this round to
 avoid two mechanisms. Review-reported external AUXpause is not direct local
 USER authority;no AUX/state/schedule action is taken.
+
+## Finite closure and independent saved-data analysis
+CLOSED_STOP_NO_GAMES:11original qualifiers,13NOT_RUN,24gamesNOT_STARTED.
+q10 is a legitimate complete immediate root goal atdepth0 and fails the frozen
+D2-resolution condition. An independent current Core replay confirms checkmate
+winner0 and score MATE_SCORE-1;this does not change any old slot or launch games.
+Of five complete D2 pairs,only prospective1 and dev4 reorder(3/2calls). Root
+actions,PV and scores match in allfive;one pair increases work(54+275 versus
+53+204 main+Q),the other reduces it(21+17 versus23+39). Neither is a quality or
+speed trial. All originals and new derivations are in the Boolean data manifest.

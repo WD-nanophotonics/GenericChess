@@ -8234,3 +8234,14 @@ two candidate cancellations block48D8 slots. Source/Native/fallback/copy evidenc
 are retained. Latest channel and relevant full threads rechecked after results;
 no new autonomous root/reply. Existing AUX work/state was neither edited nor rerun.
 User single-run120minute threshold governs;closed tasks did not create a gate.
+
+Same-round meaningful AGENT_FOLLOWUP1793073172.580869 sent03:52:52.580869UTC
+from fullremote d83ca2fb2e7befaf1de49517d2e27000dc5dd526. One+5minute
+channel/thread check preserved;no newer Dot reply,not a gate or expiry.
+A fresh Core counterexample falsifies check-only Q skipping:quietA12to8 gives
+stalemate without check/material change. Selected Q scan region4.72%/3.18%
+old observedCPU is not removable wall. Independent replay confirms oldq10mate,
+without modifying its failed D2panel. Full-sort counter priority existed but
+reported no counter hits;fixed only that exposure metric and tested TT/clear/
+action behavior. Eligibility is not rank change or strength. Next actual-quality
+proposal uses an existing single flag,not another Native/Boolean timing refill.

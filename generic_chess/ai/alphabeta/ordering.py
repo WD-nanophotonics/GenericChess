@@ -127,6 +127,11 @@ class MoveOrderer:
                 if action_promotion_target_id(action) is not None:
                     return -60
             if counter is not None and action == counter:
+                # Match staged-picker exposure semantics: an eligible quiet
+                # counter received priority, not necessarily a changed rank.
+                # TT/capture/promotion branches above must not earn this hit.
+                if self._geometry_stats is not None:
+                    self._geometry_stats.countermove_hits += 1
                 return -40
             if action in killers:
                 return -30
