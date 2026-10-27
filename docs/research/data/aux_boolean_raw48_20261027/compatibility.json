@@ -1,0 +1,20 @@
+{
+  "shared_source": "5e2002561f81892018c2076c13cf6eeaa26d84b9",
+  "headless_pass": 230,
+  "native_builds": 0,
+  "research_Player_queries": 0,
+  "research_games": 0,
+  "unit_fixture_Player_Core_counts": "UNKNOWN;existingtests executed search/Core fixtures",
+  "uncovered": [
+    "Qt-dependent broad product collection",
+    "test_search_upgrades importing test_ai_match/Qt",
+    "Native loaded extension behavior unavailable locally"
+  ],
+  "failures_preserved": [
+    "BundledPython lacks pytest;existing ownvenv used",
+    "PySide6 absent;no installation",
+    "systemTemp permission;fresh basetemp inside owncheckout used"
+  ],
+  "own_ledger_preserved": true,
+  "producer_only_copies_removed": 6
+}

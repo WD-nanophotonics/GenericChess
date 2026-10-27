@@ -1,0 +1,77 @@
+{
+  "case": "n5-f0-h2",
+  "constructed_actions": [
+    {
+      "kind": "semantic_board",
+      "pattern_id": "legacy_002",
+      "geometry_id": "g1",
+      "actor_type_id": "A",
+      "from": [
+        3,
+        0
+      ],
+      "to": [
+        1,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "legacy_028",
+      "geometry_id": "g4",
+      "actor_type_id": "A",
+      "from": [
+        4,
+        1
+      ],
+      "to": [
+        3,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "legacy_032",
+      "geometry_id": "g6",
+      "actor_type_id": "A",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        3,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "legacy_026",
+      "geometry_id": "g3",
+      "actor_type_id": "A",
+      "from": [
+        3,
+        3
+      ],
+      "to": [
+        4,
+        1
+      ],
+      "promotion_target_id": null
+    }
+  ],
+  "constructed_plies": 4,
+  "failure": null,
+  "same_Position": true,
+  "before_ply": 2,
+  "after_ply": 6,
+  "before_history_entries": 3,
+  "after_history_entries": 7,
+  "same_full_state": false,
+  "same_repetition_map": false,
+  "before_terminal": "ongoing",
+  "after_terminal": "ongoing",
+  "scope": "One predetermined4ply counterexample to Position/fingerprint-only record binding. Not a new game, search, policy trajectory, root WDL or new sample; not old H6 experiment."
+}
