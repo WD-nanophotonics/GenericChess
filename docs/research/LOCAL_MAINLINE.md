@@ -1,3 +1,16 @@
+## Final strategic interpretation942bc7a8 -2026-10-27
+
+[Single-history report](../research/AUX_ONE_FULL_HISTORY_20261027.md) now derives
+only V0(h127) in[-1,0]: owner1 can select the verified terminal draw. Core tests
+mate/stalemate before max-ply; unexamined alternatives prevent exact DRAW or
+root-WDL claims. Actual ongoing prefix still yields None, no accepted TD.
+No more execution;120query/four-replay studies remain closed. One-history
+whole-check delivery overran20min by~29s despite replay stopping before deadline.
+Ledger3618.501711s; conservatively exclude5s incidental verification reserve:
+3613.501711s=60.2250285 effective minutes. Safe finish and final ledger pending;
+previous below60 entries are historical checkpoints. No quality/speed gain,
+PRIMARY takeover, oldcap reset or schedule change. Fresh executable tasks in memo.
+
 ## Single complete-history consumer check942bc7a8 -2026-10-27
 
 [One fixed H128 record](../research/AUX_ONE_FULL_HISTORY_20261027.md) exposes raw

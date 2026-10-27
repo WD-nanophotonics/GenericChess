@@ -93,3 +93,44 @@ Drivers: scripts/replay_leaper_first_history.py and
 scripts/diagnose_leaper_first_history.py; exact executed copies, initial static
 diagnostic failure and immutable plans accompany the data. Timing is small
 in-driver work, not complete invocation/research cost or a backend benchmark.
+
+## Final-edge strategic interpretation (no further execution)
+
+A separate interpretation of the already closed four-attempt evidence uses no
+additional replay, action enumeration, search or sample. Core constructs initial
+side0 (semantic_executor.py:635), and each board transition flips side
+(:1799); the127ply prefix is therefore owner1-to-move.
+The verified128th action is K from(3,2) to(3,1), semantic pattern legacy_008/g12.
+For owner0 payoff {-1,0,+1}, this available terminal-draw edge gives V0(h127)<=0
+(and V1(h127)>=0) under ordinary adversarial play. Owner1 can choose that edge
+and guarantee a draw; another legal action might instead win. The verified
+edge therefore certifies a non-losing option, not optimality or exact DRAW.
+
+The max-ply clock alone cannot strengthen this to equality. Both semantic
+executor terminal_result (semantic_executor.py:1890-1968) and legacy
+_terminal_from_parts (terminal.py:244-312) test absence of legal actions and
+checkmate/stalemate before max-ply. A different final action could change that
+earlier adjudication; none was examined. We do not assert that such an action
+exists in this particular prefix. Exact equality would need the missing lower
+bound for owner0, which the recorded draw edge does not supply.
+
+The bound is history-and-clock-specific. It cannot be propagated to the initial
+root along the single observed path: an ancestor's other actions and opponent
+choices remain unexamined. Physical Position equality alone cannot transplant
+it to another history, clock or repetition rule. FixedScaleSessionEnv's actual
+terminal reader (incremental.py:402-406) still returns None at the ongoing
+prefix; a mathematical bound is neither a terminal observation nor an accepted
+TD target. No oracle-selected training start or learner modification follows.
+
+Cost qualification: scientific replay/diagnosis stopped03:02:00UTC before the
+original02:42:38+20minute boundary. Git publication completed03:03:07UTC, about
+29seconds beyond that whole-task deadline. The nominal20minute whole-check
+promise was therefore not met for delivery; this overrun is retained, with
+publication administrative and excluded from effective research credit. The
+interpretation above does not reset or extend the closed four-attempt budget.
+
+Explicit inference: V0(h127)=min over legal choices of owner0 terminal payoff;
+the known choice has payoff0, so V0 is in[-1,0], while V1 is in[0,1]. The
+observation supplies no inequality forcing V0>=0. This is a bound on strategic
+value, not an interval estimate with sampling confidence. No independence,
+population generalization or empirical strength follows from this single trace.
