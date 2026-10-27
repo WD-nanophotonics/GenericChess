@@ -1,4 +1,6 @@
 {
+  "actual_games": 0,
+  "actual_original_calls": 40,
   "candidate": "parent_geometric_attack_quiet_subsequence",
   "fixed_depth_call_seconds": 3,
   "fixed_depth_max_calls": 40,
@@ -25,6 +27,7 @@
     "scripts/leaper_pvs_quality_pilot.py": "b7c834e8014224d1ef6cb8acd68c823583d368dadc64a42d518afcf6191ce2e9"
   },
   "query_service_seconds": 1,
+  "refill_authorized": false,
   "review_commit": "21d9e06893c787b6e58d95c5c8a9fde94fea70dc",
   "rules": [
     {
@@ -364,7 +367,7 @@
   ],
   "single_prospective_run_cap_minutes": 180,
   "source_base_commit": "56a19a5f91a562b7684334c4b3b2a171732d5707",
-  "status": "USER_DIRECTED_CONTINUATION_AFTER_BUDGET_CORRECTION",
+  "status": "CLOSED_STOP_NO_GAMES_INCONCLUSIVE_COST",
   "user_direction": "2026-10-27: no cumulative completed-task approval;withdraw misleading deferral and continue finite work.",
   "weak_control_games": 4
 }

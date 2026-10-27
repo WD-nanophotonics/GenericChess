@@ -15,6 +15,8 @@ which is too expensive for the generic hot path.
 
 from __future__ import annotations
 
+import time
+
 from ...core.actions import (
     Action,
     action_is_board,
@@ -32,10 +34,14 @@ from .tuning import SearchTuning
 class MoveOrderer:
     """TT move, captures, promotions, killers, history, canonical tie-break."""
 
-    def __init__(self) -> None:
+    def __init__(self, compiled=None, stats=None) -> None:
         self._killers: dict[int, list[Action]] = {}
         self._history: dict[tuple[int, Action], int] = {}
         self._countermoves: dict[Action, Action] = {}
+        self._geometry_targets = None
+        self._geometry_compiled = compiled
+        self._geometry_ready = False
+        self._geometry_stats = stats
 
     def clear(self) -> None:
         self._killers.clear()
@@ -76,6 +82,8 @@ class MoveOrderer:
         tt_move: Action | None,
         prev_action: Action | None,
         tuning: SearchTuning,
+        *,
+        checkpoint=None,
     ) -> list[Action]:
         n = state.position.board_shape
         side = state.position.side_to_move
@@ -99,7 +107,86 @@ class MoveOrderer:
             return -min(self.history_value(side, action), 20)
 
         # TT priority is structural: evaluator capture values have no fixed scale.
-        return sorted(actions, key=lambda a: (a != tt_move, priority(a), str(a)))
+        ordered = sorted(actions, key=lambda a: (a != tt_move, priority(a), str(a)))
+        if (not tuning.use_quiet_geometric_coverage or depth <= 0):
+            return ordered
+        slots = [i for i, a in enumerate(ordered)
+                 if a != tt_move and a != counter and a not in killers
+                 and action_is_board(a) and action_promotion_target_id(a) is None
+                 and state.position.board[square_to_index(action_target_square(a), n)] is None]
+        if len(slots) < 2:
+            return ordered
+        # Build inside the main-search abort boundary, never in _Context's
+        # constructor (which precedes the root fallback/abort handlers).
+        if not self._geometry_ready:
+            begin = time.perf_counter()
+            try:
+                table = (_quiet_geometry_targets(self._geometry_compiled, checkpoint)
+                         if self._geometry_compiled is not None else None)
+            finally:
+                if self._geometry_stats is not None:
+                    self._geometry_stats.quiet_geometry_build_seconds += time.perf_counter() - begin
+            self._geometry_targets = table  # publish only a complete table
+            self._geometry_ready = True
+            if self._geometry_stats is not None and table is not None:
+                self._geometry_stats.quiet_geometry_target_entries = sum(len(v) for v in table.values())
+        if self._geometry_targets is None:
+            return ordered
+        if checkpoint is not None:
+            checkpoint()
+        # Enemy source/current type are unchanged by the admitted quiet move.
+        # This is geometry, not a set of legal captures or safe destinations.
+        covered = set()
+        for source, piece in enumerate(state.position.board):
+            if checkpoint is not None:
+                checkpoint()
+            if piece is not None and piece.owner != side:
+                covered.update(self._geometry_targets.get(
+                    (piece.owner, piece.current_type_id, source), ()))
+        quiet = [ordered[i] for i in slots]
+        flags = [square_to_index(action_target_square(a), n) in covered for a in quiet]
+        replacement = [a for a, flag in zip(quiet, flags) if not flag]
+        replacement.extend(a for a, flag in zip(quiet, flags) if flag)
+        if self._geometry_stats is not None:
+            self._geometry_stats.quiet_geometry_calls += 1
+            self._geometry_stats.quiet_geometry_reorders += replacement != quiet
+        for i, action in zip(slots, replacement):
+            ordered[i] = action
+        return ordered
+
+
+def _quiet_geometry_targets(compiled, checkpoint=None):
+    """Query-owned bounded geometry table, admitted from executable IR only."""
+    from ...core.search_runtime import _plain_leaper_hash_patterns
+
+    # Keep opt-in preprocessing interruptible in practice; unsupported larger
+    # boards retain the baseline rather than allocating an unbounded table.
+    shape = getattr(compiled, 'board_shape', None)
+    if shape is None or shape.area > 64:
+        return None
+    if checkpoint is not None:
+        checkpoint()
+    if _plain_leaper_hash_patterns(compiled) is None:
+        return None
+    targets = {}
+    ir = compiled.ir
+    for pattern in ir.patterns:
+        if checkpoint is not None:
+            checkpoint()
+        if pattern.target.kind != "target_enemy":
+            continue
+        for tid in pattern.type_ids:
+            for gid in pattern.geometry_ids:
+                geometry = ir.geometry[gid]
+                if geometry.atom_source is not None and geometry.atom_source[0] != tid:
+                    continue
+                for owner in (0, 1):
+                    for source, path in geometry.paths.get(str(owner), {}).items():
+                        if checkpoint is not None:
+                            checkpoint()
+                        if path:
+                            targets.setdefault((owner, tid, source), set()).add(path[0])
+    return {key: frozenset(value) for key, value in targets.items()}
 
 
 class StagedMovePicker:

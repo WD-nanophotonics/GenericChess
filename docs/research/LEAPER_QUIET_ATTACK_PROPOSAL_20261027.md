@@ -1,12 +1,10 @@
 # One pure-Leaper quiet-ordering proposal — 2026-10-27
 
-Status: USER DIRECTED CONTINUATION after correcting cumulative accounting.
-The user withdrew the just-given deferral as based on our misleading historical
-cost gate. Implementation/validation proceeds within the stated finite scope;
-empirical stages remain NOT_STARTED until their preceding gates pass. This is a falsifiable development pilot, not a qualified
-optimizer, product activation, independent holdout or class-wide success.
-The completed USER570 source audit supplies candidate inputs only. It supplies
-no unspent grant for this proposal. No Player/Core/solver/game/build was run.
+Status: COMPLETE finite conditional assessment; STOP_NO_GAMES / INCONCLUSIVE_COST.
+See [actual gate result](LEAPER_QUIET_GEOMETRY_GATE_20261027.md).40original calls
+ran once;24games NOT_STARTED under the frozen stop rule. Default remains OFF.
+The remaining text preserves the approved design and subsequent corrections,
+not a pending launch or repeating experiment queue.
 
 ## Decision and changed premise
 
@@ -205,3 +203,10 @@ again. Actual SemanticExecutor.attacked_squares filtering was read as reference.
 This is not a new measured speed or quality result. No Dot grant is attributed.
 Source inspection additionally corrected construction lifetime: orderer is fresh
 in _Context each query, so planned geometry preprocessing is charged per query.
+
+Implementation refinement from Dot/source validation: precompute lazily at the
+FIRST eligible main-ordering call inside the existing SearchAborted handler,
+not in _Context construction. Still once per query and fully charged. Poll
+existing controls during construction/node coverage, publish only complete
+tables. OFF/Q bypass never build. Candidate conservatively declines boards
+over64cells; all ten planned4x4roots remain within this implementation scope.

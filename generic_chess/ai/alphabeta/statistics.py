@@ -59,6 +59,10 @@ class SearchStatistics:
     ordering_calls: int = 0
     ordered_moves: int = 0
     ordering_seconds: float = 0.0
+    quiet_geometry_build_seconds: float = 0.0
+    quiet_geometry_target_entries: int = 0
+    quiet_geometry_calls: int = 0
+    quiet_geometry_reorders: int = 0
     legal_generation_calls: int = 0
     # Explicit search requests (root/main/qsearch/TT-PV), including cached
     # boundaries and aborted attempts. perf_counter duration; runtime-internal

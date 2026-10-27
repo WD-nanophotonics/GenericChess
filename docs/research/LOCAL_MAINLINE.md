@@ -6,28 +6,30 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 corrected single-run accounting and continuation
+## Current decision -2026-10-27 quiet-geometry finite assessment CLOSED
 
-USER corrected our erroneous historical cumulative approval gate: only ONE
-prospective run >=120min requires assessment; completed work does not carry.
-The user withdrew the quiet-ordering deferral as induced by that error and
-explicitly instructed continuation. No historical737/770gate or pending question
-remains. Preserve old receipts as evidence of the error, not current instructions.
+[Finite result](LEAPER_QUIET_GEOMETRY_GATE_20261027.md): STOP_NO_GAMES,
+INCONCLUSIVE_COST. Science is COMPLETE. This applies ONLY to the entire frozen
+one-candidate conditional40call/24game assessment, not pure-Leaper research.
+All40original D3 returns qualify semantic/source/provider checks;10families
+reorder. Aggregate wallratio0.896161/CPU0.825 do not pass the full cost gate:
+world8 CPU pair0/0 UNKNOWN. Summary-only zero-division fix preserves all returns,
+no refill.24conditional games remain NOT_STARTED because the gate is incomplete.
+Native loaded binary identity/RSS unrecorded are additional qualification limits.
+Default OFF code and tests retained; no deployment/strength/generalization claim.
 
-Main: Does parent enemy geometric coverage improve quiet ordering? |Implement
-ONE opt-in guarded slot partition, validate contracts then frozen cost gate |
-Correct actions/slots/Q/cancellation and affordable actual whole-call overhead |
-Only passed gates permit bounded20near-baseline+4weak games; no default change.
-[Finite proposal](LEAPER_QUIET_ATTACK_PROPOSAL_20261027.md) controls inputs/stops.
-Prospective170min estimate/180min single-run cap excludes finished work. No
-artificial splitting, refill or spending cap as quota. Normal session60–90min
-recorded effective-work rule remains independent of approval accounting.
-Backup1: Semantic failure/no exposure/>5% cost/incomplete gates => close candidate
-with failures/UNKNOWN; do not retune or add seeds/prefixes/Native/AUX work.
-Backup2: Read new autonomous GitHub/Slack reviews and opening Dot as required;
-USER correction outranks previous cumulative advice. No schedule/role changes.
-Ten H128/repeat4 development rules remain exposed; outcomes cannot prove
-independent cross-rule strength. Closed source audit does not reopen.
+USER corrected single-run approval: completed tasks do NOT carry. Historical
+737/770gate invalid and removed; USER withdrew induced deferral and directed
+this finite work. Prospective170estimate/180cap was not a quota. No additional
+necessity question, timing retry or experiment is queued by this closure.
+Main: New useful pure-Leaper question? |At next normal round inspect latest
+GitHub/Slack reviews and current evidence for a genuinely new mechanism or
+independent compatible consumer |Explicit decision-changing question and its
+OWN prospective cost |No automatic CPU rerun/clock swap/threshold or seed refill.
+Backup1: Preserve exact40returns/UNKNOWN/default OFF; do not relabel aggregate
+cost as quality, binary provenance as captured, or NOT_STARTED games as draws.
+Backup2: Latest direct USER single-run rule outranks old cumulative review advice;
+Dot cancellation observations adopted. No AUX/worker/schedule/scope changes.
 
 ## Retained closed child-construction assessment
 

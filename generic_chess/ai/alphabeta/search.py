@@ -158,7 +158,8 @@ class _Context:
         self.tt = tt
         self.stats = stats
         self.budget = budget
-        self.orderer = MoveOrderer()
+        self.orderer = MoveOrderer(
+            compiled if tuning.use_quiet_geometric_coverage else None, stats)
         self.tuning = tuning
         self.recorder = recorder or NullAuditRecorder()
         self.use_tt = use_tt
@@ -511,6 +512,8 @@ def negamax(
                     entry.best_action if entry else None,
                     prev_action,
                     ctx.tuning,
+                    checkpoint=(lambda: ctx.budget.check(ctx.stats, force=True))
+                    if ctx.tuning.use_quiet_geometric_coverage else None,
                 )
         ctx.budget.check(ctx.stats, force=True)
         ctx.stats.ordering_calls += 1

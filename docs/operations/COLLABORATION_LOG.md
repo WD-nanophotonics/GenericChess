@@ -8204,3 +8204,18 @@ Active policies/manual/review/Slack workflow/Main/plan corrected consistently;
 old exact requests/receipts retained as evidence, no repeated cumulative gate.
 Finite proposal170min future/180min prospective cap and frozen stage gates
 remain, no unrelated scope/default/AUX/schedule expansion.
+
+## PRIMARY quiet-geometry finite gate CLOSED -2026-10-27
+
+Implemented one default-OFF IR-geometric quiet-slot preference. Dot source
+consultation found constructor cancellation boundary risk; actual implementation
+uses first main-ordering lazy build and explicit budget checks. During/after
+build cancellation and action/Q/unsupported/source/type contracts tested.
+40originalD3calls all complete,10families reorder;world8CPU0/0 makes frozen
+costqualification UNKNOWN despite favorable aggregate ratios. Reader-only
+zero-division repair, no rerun;24games NOT_STARTED. Loaded Native binary hash
+and RSS missing are additional limits, not silently supplied after execution.
+All original returns/export parity checked; no strength or independent transfer.
+USERsingle-run threshold and continuation supersede our misleading historical
+cumulative approval. Early finite STOP closes this candidate, not research
+as a whole;no refill or new consent queue. No AUX contribution rerun/takeover.
