@@ -13,17 +13,24 @@ fully read/adopted. The proposed4x4countermove24game trial is DEFERRED before
 any query:complete sources do not yet establish a useful near-strength endpoint.
 Its95forecast/110cap is not an active run or approval queue. Keep the source and
 exposure fix default OFF;do not dispatch or refill its proposed panel.
-Main: Is there a non-ceiling multirule quality endpoint? |Audit old full5x5/6x6
-histories,terminal records and actual controller/source conditions for15-25min,
-0newPlayer/solver/game |>=3rule families with coherent decision/endgame evidence
-or explicitNO_GO |Then select a justified new finite question,not automaticgames.
-Backup1: No compatible endpoint? |Define a fixed,prospective resource-response
-calibration on changed pure-Leaper rules/boards,complete histories and actual
-Core outcomes |Actual budget sensitivity or honestNO_SIGNAL |No outcome-based
-resampling,p49/p53 fitting,random-as-near-strength or oldpanel refill.
-Backup2: Compiled execution alternative? |Use only new independent causal/source
-inference to bound removable work |UNKNOWN if no bound |NoBoolean retiming,
-wholeNative rewrite,or inclusivepush fraction claimed removable.
+Main: Does a changed dense pure-Leaper panel expose useful outcomes? |Finish
+only previously unstarted11slots of the amended12slot resource calibration,
+then literal saved Core/PV verification |Fixed12denominator and all6family
+outcomes,not root/action/depth proxy |Originalslot0FAILED after3savedreturns;
+no replay/refill;originalall12PASS impossible. Originalbatch07:19:25UTC and
+whole08:18:09UTC remain,not reset after recorder repair.
+[Protocol](LEAPER_DENSE_RESOURCE_PROTOCOL_20261027.md):six fixed5x5families,
+12pieces/4types/H128/h0;old8pieces/3types/H96/h2 contrasted. SamecurrentPVS
+engine2s/0.5s swappedseats,construction/packing-inclusive service deadlines;
+0solver/Nativebuild/defaultactivation. Frozenforecast90min/cap110min includes
+this task's source/engineering/recording;completed historical tasks excluded.
+Backup1: Oldendpoint audit CLOSED_NO_GO |106exact cross-study histories,
+24actiondivergences;3root-action-diversefamilies,only1decisivefamily |0newsearch
+|Oldpopulation lacksofmultifamilysignal isnot proofnewrules saturated or all
+algorithmqualitytrials needknownWDL. Botholdresourcewinroots chose samefirstmove.
+Backup2: Preserve failedcapture |Three originalreturns and first2associated
+moves retained;validate third asorphan withoutpromoting failedgame |Uncredited
+equalUTC intervals,strictnegative time validation preserved |NoAUXchanges.
 Review reports external AUXpause versus local latest directUSER ACTIVE/hourly;
 record provenance conflict but do not change its state,task,checkout or schedule.
 Latest directUSER single prospective>=120minute threshold controls;completed
