@@ -1,0 +1,34 @@
+{
+  "scope": "exact synthetic finite randomization control; not actual games, performance or historical inference",
+  "rows": [
+    {
+      "latent": -2,
+      "lower": -2,
+      "censored": true,
+      "robust_factor": "1/2",
+      "complete_case_factor": null
+    },
+    {
+      "latent": 2,
+      "lower": 2,
+      "censored": false,
+      "robust_factor": "3/2",
+      "complete_case_factor": "3/2"
+    }
+  ],
+  "robust_one_step_expectation": "1",
+  "reused_root_post_first_color_bet_expectation": "5/4",
+  "one_factor_per_family_expectation": "1",
+  "independent_families": 12,
+  "paths": 4096,
+  "threshold": "5",
+  "robust_crossing_probability": "57/512",
+  "completecase_skipping_crossing_probability": "3797/4096",
+  "alpha": "1/5",
+  "warnings": [
+    "synthetic independent root premise not established by current runner",
+    "grouping colors does not itself create independence",
+    "no historical p-value or CI computed",
+    "unknown bounds not imputed game outcomes"
+  ]
+}
