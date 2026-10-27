@@ -6,31 +6,30 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 relative-history quality pilot
+## Current decision -2026-10-27 exact Boolean Leaper cost pilot
 
-Science is OPEN. This ordinary round tests one genuinely new dynamic ranking,
-not a refill of quiet geometry. [Frozen protocol](LEAPER_RELATIVE_HISTORY_20261027.md)
-uses query-local independent cutoff/entered-action counts,(S+1)/(A+2),main quiet
-slots only. Legacy/Q/eval/TT/Core semantics unchanged;default OFF. Primary paper
-motivates opportunity normalization but does not establish Leaper usefulness.
-Main: Does normalized history improve actual equal-service-time quality? |24D2
-semantic qualifiers then fixed24near-AB games on6old+6unplayed rules,two colors |
-Core outcomes/costs and full source/history/Native provenance |No tuning/refill;
-stop on contract/batch/whole reserve,report missing honestly.
-Backup1: All draws/no exposure/no signal? |Analyze new trajectories/counter/work
-observations for a decision-changing next step,not old-report padding |Explicit
-finite conclusions/limits |No default/class-strength or unplayed=blind claim.
-Backup2: Dot/source objections? |Adopt actual counting and24slot pre-run revision;
-keep exact originals |Current USER single-run rule controls |No AUX task/worker
-or historical-cost approval gate.
-Independent105min forecast/110cap from02:47:33.917952UTC includes this whole run;
-65min game batch and15min delivery reserve.24games nominal51.2min service.
-Normal60–90recorded effective-work rule remains separate;no prior time credited.
+Science is OPEN. Main: Can exact compiled check/availability projection reduce
+whole-query cost? |One strict caller-supplied Boolean candidate;Native full
+legality and Core transitions/history/clocks/TT unchanged |Frozen96cold D6/D8
+slots over12existing full-history roots |Stop on contract/coverage/cost reserve;
+no refill/default activation/games or strength claim.
+[Protocol](LEAPER_BOOLEAN_COST_20261027.md) includes source/math/prototype and
+queries in one85minute forecast/95minute cap from03:11UTC;finished relative-history
+work is NOT carried. Source-derived sibling check+availability region is about
+9-11% instrumented CPU,NOT removable wall time. Availability already shares its
+state import with check;no claim of two imports saved.
+Backup1: Semantic mismatch? |Preserve original return and diagnose Core contract |
+Exact counterexample or supported fallback |No expected-value patch/refill.
+Backup2: Cost coverage fails? |Retain censored fixedslots and analyze mechanism |
+Finite limitation and next genuine question |No rerun/threshold relaxation.
 
-Pre-dispatch new autonomous a6823de1Patrol read;adopt quality/novel-rule/opponent
-constraints,retain unknown resolution and no oldtiming refill. It saw older
-e0c4snapshot,not this protocol. Its lack of grant does not supersede direct USER
-standing<120single-run authority. No separate Native-cost route or AUXchange.
+Relative-history pilot is STOP_NO_GAMES:11original qualifier returns,13NOT_RUN,
+24games NOT_STARTED. The11th returned legitimate root_immediate_win at depth0,
+violating frozen D2 panel qualification;not a search bug or negative strength
+result. First zero-duration ledger metadata failure repaired without replaying
+its query;all originals preserved. Default remains OFF;usefulness UNKNOWN.
+New Boolean route follows autonomous a6823de1 source-cost recommendation and a
+new explicit mathematical premise,not continued relative-history experiments.
 
 ## Retained quiet-geometry finite assessment CLOSED
 
