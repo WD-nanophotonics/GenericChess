@@ -1,3 +1,18 @@
+## Modern learner usefulness milestone942bc7a8 -2026-10-27
+
+[Source decision](../research/AUX_MODERN_LEARNER_USEFULNESS_20261027.md): a maintained
+modern learner consumes full RuleSet wires with explicit unitA and a NEW random
+opening law; the CLI does not import sealed historical GameRecord prefixes.
+Actual query return, accepted TD, committed move and literal Core result are
+separate. Source capability YES; current execution/signal/cost UNKNOWN;
+NO_NEW_SIGNAL, zero new Player/solver/training/game/build. Pro0943 at fixed
+sandbox864bc217/blob026ef68b adopted/executed as a finite source task; old
+teacher/Arena/runner/statistics seams stay closed, PRIMARY task/budget not adopted.
+Same session remains ACTIVE below60 effective minutes, not normally finished.
+No old receipt, offline or publication time is new research credit. Dot's earlier
+advice remains distinct from this AUX-derived judgment; follow-up will report
+unknowns and seek a genuinely new useful scoped direction.
+
 ## Accepted DEV_AUX close89c5ef59 —2026-10-27
 
 session finish safe_checkpoint accepted60.1600207effective minutes (3609.601240s), same UUID/origin across interruptions; memo synchronized ENDED. [Actual ledger](../research/data/aux_episode_observer_20261027/session-finish.json) retains closed/uncredited intervals. Source2503a8643adeff43bc4a0c004711a3c9b4f4d1cf was pushed/fullremoteverified;25focusedchecksPASS and reviewed own observer/budget fixes documented in [report](../research/AUX_EPISODE_OBSERVER_ATTRIBUTION_20261027.md). No offline/admin credit, oldtime reuse, new campaign, PRIMARY takeover, quality/speed gain or oldcap reset. Earlier pending entries are historical checkpoints, not current state. Fresh executable next questions remain ownplan/memo; role/hourly schedule unchanged.
