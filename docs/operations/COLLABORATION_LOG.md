@@ -8173,3 +8173,24 @@ bytes and otheredits use explicitUTF8, no originalevidence rewritten.
 GO_SOURCE_INPUTS all10; oldexecution/currentresolution UNKNOWN; NO_GO using old
 wins as currentoptimizer acceptance. H128preserved, negativefamilies/exposure/
 331recorddependence retained. No furtherqualification/calibration/newrun queue.
+
+## PRIMARY quiet-attack source proposal -2026-10-27
+
+GitHub autonomous09:43/10:18Patrols and Slack09:48comment fully saved/read. Adopt
+one new algorithm/finite quality protocol and stop source campaign, not a new
+compute grant. New source inference: IR path reuse avoids per-child probes, but
+legacy compatibility metadata can be stale and only TT is structurally prioritized
+in MoveOrderer; candidate partitions eligible quiet slots instead. No measured
+benefit or claimed independent replay. Source manifest pins actual interfaces.
+One openingAGENT_REQUEST GC-SLACK-20261027-105145-93b4cfa4/root1793065919.422929
+sent01:51:59.422929Z using published56a19a5f and verified latest21d9e068remote;
+exact immediate readback PASS. Due01:56:59.422929Z single check tracked privately.
+No AUX task/takeover.10:18review's externally reported AUXpause conflicts with
+trusted direct user here; preserve uncertainty, no schedule/state change.
+Future170min/770cumulative proposal is NOT_STARTED pending USERnecessity decision.
+
+Single delayed read about01:57:30UTC (due01:56:59.422929) found Dot1793066169;
+full original preserved/imported, no repeat poll. Adopt geometry-invariance proof,
+owner/type/atom guards, slot permutation and costs; Dot source-only, no rerun/grant.
+Actual _Context creates orderer per query, so proposal corrected preprocessing
+lifetime/charges; no fictitious once-per-Player optimization.

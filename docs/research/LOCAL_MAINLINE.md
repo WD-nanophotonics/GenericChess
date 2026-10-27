@@ -6,39 +6,36 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 approved endpoint source review CLOSED
+## Current decision -2026-10-27 one quiet-attack ordering proposal
 
-Latest direct USER approved original20-30minute source qualification/cumulative570,
-overriding ONLY its local withdrawal. That bounded review is now
-[COMPLETE](LEAPER_ENDPOINT_SOURCE_QUALIFICATION_20261027.md), not an empirical
-experiment or60minute research segment. No further source campaign/calibration
-or570approval question is queued.580/600packages remain withdrawn.
+New autonomous09:43/10:18 GitHubPatrols at21d9e068 plus matching Slack09:48
+comment1793062136 fully read/adopted: stop historical-source campaigns; design
+ONE finite new algorithm with current quality endpoints and explicit cost.
+[Quiet-attack proposal](LEAPER_QUIET_ATTACK_PROPOSAL_20261027.md) is SOURCE GO
+TO USER NECESSITY ASSESSMENT, not optimizer/implementation/experiment GO.
+Stable-partition only eligible baseline quiet slots using parent enemy IR leap
+geometry; preserve nonquiet slots, legal action identities, Q/eval/PVS/TT rules.
+No per-child attack probes or product default changes. Benefit and actual cost
+UNKNOWN; pinned/sacrificial quiets and ordering overhead may invalidate it.
 
-GO_SOURCE_INPUTS all10original4x4H128fullrules/records; runtime admission NOT
-executed. Historical product-execution equivalence UNKNOWN: caller snapshots
-are present, actual full product tree not captured. NO_GO treating old512node/Q0
-wins as qualified current1s/Q4optimizer acceptance. Current resolution UNKNOWN,
-not proved saturated. H128 remainsH128 on reuse; H96 is a differenth2rule domain.
+Main: Is this finite current-AB quality trial worth its cost? |Publish source
+proposal and ask USER necessity assessment |One explicit decision on staged
+implementation/40costcalls/24games and cumulative770cap |No empirical work before
+authorization; old570source grant CLOSED, no reset or residual transfer.
+Backup1: Unsupported IR, insufficient exposure or >5% whole-call overhead means
+NO_GO; no threshold/prefix/seed/cap refill. All20 near-baseline games need honest
+qualification;4uniform controls only playability. Ten exposed rules are a
+development panel; even a pass does not establish independent transfer/strength.
+Backup2: Use new autonomous reviews and one due Dot check to correct design,
+not to confer budgets. Latest trusted direct USER dual ACTIVE/hourly remains;
+review-reported external AUXpause is uncertain provenance, no state change here.
 
-New audit binds gzip+decoded+14producer hashes, both input byte hashes, all480slot
-rules/initial-state/query-action/history-length/seat/seed/terminal/utility fields;
-48,176source turns/7,325ABreturns.64winning finalABreturns use root tactical depth0
-andNoneQ. This does not prove earlier search unnecessary. Sixof16named product
-comparator files changed, with no execution-equivalence claim.331recorddependence
-and exposure remain; no newCore/Player/solver/game/Nativebuild or AUXtakeover.
-
-Main: Is there a genuinely new current algorithm-quality premise?
-|At existing intake assess new evidence/latest USER research direction against
-one concrete algorithm/control/full-cost question |Changedpremise and bounded
-prospective decision or unchangedNO_GO |No automatic run, source campaign,
-h2/seed/prefix/cap refill or remaining570budget transfer.
-Backup1: Missing historical execution source is not a universal prohibition on a
-separately frozen current experiment; no universal WDL oracle or preknown success
-is required. CoarseABvsRNG response still cannot qualify a close-strategy endpoint.
-Backup2: e4dd2f96Patrol finite-stop advice retained; latest USERgrant controls scope.
-OwnDot1793060225/readback/single delayedcheck00:22:34Zcomplete (~29slate); solicited
-reply adopted as source advice, not authority. AUX owns its learning/consumer work.
-Hourly schedules/stops unchanged; this closes one source task, not project science.
+Closed source review retains GO_INPUTS ten full4x4H128rules/480slots/331records;
+old full execution UNKNOWN and current1sQ4resolution UNKNOWN. Old64wins across
+8families are not current optimizer acceptance. No further provenance campaign.
+Prior conservative carry550.865339min plus actual current preparation/delivery;
+future estimate170min, total roughly735-755min, proposed cap770 awaits USER.
+No implementation/Core/Player/game/solver/Nativebuild/newAUXtask this round.
 
 ## Retained closed child-construction assessment
 
