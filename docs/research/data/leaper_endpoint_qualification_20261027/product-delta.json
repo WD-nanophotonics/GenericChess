@@ -1,0 +1,25 @@
+{
+  "generic_chess/ai/alphabeta/player.py": {
+    "changed_or_added_top_level": [
+      "AlphaBetaPlayer"
+    ],
+    "removed_top_level": []
+  },
+  "generic_chess/ai/alphabeta/search.py": {
+    "changed_or_added_top_level": [
+      "run_root_search"
+    ],
+    "removed_top_level": []
+  },
+  "generic_chess/ai/alphabeta/tuning.py": {
+    "added_default_expressions": {
+      "use_cached_position_identity_hash": "False",
+      "use_plain_leaper_local_hash": "False"
+    },
+    "changed_or_added_top_level": [
+      "SearchTuning"
+    ],
+    "existing_default_expression_changes": {},
+    "removed_top_level": []
+  }
+}

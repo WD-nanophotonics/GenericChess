@@ -1,26 +1,20 @@
 # Pure-Leaper endpoint qualification: source-only proposal
 
-Status: WITHDRAWN_LOCALLY / NOT_STARTED. No USER denial or grant is inferred.
+Status: USER_APPROVED_SOURCE_REVIEW_COMPLETE; no empirical run authorized.
 
-Latest autonomous review e4dd2f961818f03d3fec71f24128faee4b0f25ad,
-`docs/reviews/chatgpt_patrol/2026-10-27_080551_JST_7cbdbbb.md`, is saved and
-read in full. Adopt its option B: without the required USER budget assessment,
-do not extend this source-qualification chain or replace it with another proposal
-loop. The existing20-30minute/cap570 request is withdrawn locally; no response
-is needed to that old question. This is not a user rejection or a project/schedule
-stop. No new source audit, controller implementation or experiment is started.
+Latest direct USER reply approved the original20-30minute source qualification
+and cumulative570minute cap. It superseded the later local withdrawal ONLY for
+this bounded task;580/600packages and subsequent experiments were not granted.
+The [completed result](LEAPER_ENDPOINT_SOURCE_QUALIFICATION_20261027.md) contains
+GO_SOURCE_INPUTS, historical execution UNKNOWN and NO_GO for using oldoutcomes
+as currentoptimizer acceptance. This ONE source review is closed; no further
+version hunting/calibration or repeated approval queue.
 
-Reconsider only on new compatible complete-rule/history/opponent evidence with
-a credible nonsaturated current-quality endpoint, or a latest direct USER
-research decision. Old64wins/8families are development context, not such new
-evidence by themselves. A later algorithm mechanism would need one concrete
-prospective variable, equal whole-call resources, scope/censor controls and its
-own cumulative necessity assessment; this document grants none.
-
-Original proposal retained below as historical evidence, not an execution queue.
-Original status: PROPOSED / NOT_STARTED. No new game, Core/Native compilation, Player,
-solver, training, product/default change or AUX assignment is included. This is
-not the withdrawn580minute twelve-game proposal or600minute hint package.
+Input reuse is source-qualified, runtime admission remains unexecuted. Missing
+old execution version is not an intrinsic ban on a separately frozen current
+experiment; nor does the old coarse response qualify close-strategy resolution.
+The proposal below is preserved as historical approvedscope, not an active
+execution queue or new experimental authority.
 
 ## Decision-changing source finding
 

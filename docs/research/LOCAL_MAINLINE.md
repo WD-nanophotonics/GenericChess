@@ -6,38 +6,39 @@ PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
 PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 endpoint source chain NO_GO
+## Current decision -2026-10-27 approved endpoint source review CLOSED
 
-Adopt [latest independent review](../reviews/chatgpt_patrol/2026-10-27_080551_JST_7cbdbbb.md)
-at e4dd2f961818f03d3fec71f24128faee4b0f25ad, saved/read in full. Choose its B:
-no more endpoint source expansion or experiment in this chain without the required
-USER necessity decision. The unapproved [20-30minute/cap570source proposal](LEAPER_ENDPOINT_QUALIFICATION_PROPOSAL_20261027.md)
-is WITHDRAWN_LOCALLY / NOT_STARTED. No USER denial/grant is invented; the old
-question needs no answer. No new15-20minute decision exercise replaces it.
-This is a scientific NO_GO for this chain, not project completion, a role stop,
-a schedule pause or authority to take AUX work. Existing hourly patrols remain.
+Latest direct USER approved original20-30minute source qualification/cumulative570,
+overriding ONLY its local withdrawal. That bounded review is now
+[COMPLETE](LEAPER_ENDPOINT_SOURCE_QUALIFICATION_20261027.md), not an empirical
+experiment or60minute research segment. No further source campaign/calibration
+or570approval question is queued.580/600packages remain withdrawn.
 
-Reason:480old4x4slots/331records and64ABwins in8/10movement families establish
-historical large-policy response only. Old512node/Q0/no-time/Native defaults do
-not qualify current1s/Q4/H96 or a new small ordering mechanism. New review's
-secondary-index arithmetic is not independent originalCore replay. All relevant
-semantic histories/clock/TT/terminal and exposure/dependence limits survive.
-[h2Uniform12game](LEAPER_PANEL_RESPONSE_CONTRACT_20261027.md) SOURCE_GATE_NO_GO;
-its580 and earlier600hint requests remain withdrawn. No old grant transfers.
-No source reading/calibration/seed/prefix/threshold refill is an automatic queue.
+GO_SOURCE_INPUTS all10original4x4H128fullrules/records; runtime admission NOT
+executed. Historical product-execution equivalence UNKNOWN: caller snapshots
+are present, actual full product tree not captured. NO_GO treating old512node/Q0
+wins as qualified current1s/Q4optimizer acceptance. Current resolution UNKNOWN,
+not proved saturated. H128 remainsH128 on reuse; H96 is a differenth2rule domain.
 
-Main: has compatible new evidence or a direct USER decision changed NO_GO?
-|At existing intake compare genuinely new complete-rule/history/opponent/current
-resource evidence and USER instruction; otherwise retain B |Specific changed
-premise with one falsifiable scoped algorithm question, or unchangedNO_GO |No
-new run, source campaign or repeated budget question on the same old evidence.
-Backup1: preserve old positive/negative/UNKNOWN data and finite search cost limits;
-PVS24DRAW, child1.70percent/missingD6coverage and inclusivepush56.06percent are not
-new gain or sufficient standalone Native engineering premises. PureLeaper only.
-Backup2: review remaining source coverage at meaningful intake; latest autonomous
-GitHub review outranks solicitedDot. Prior ownrequest/delayedcheck completed;
-no duplicate while no new research round. AUX owns its own repairs/consumer work;
-no new assignment, cross-checkout change or claim its fixes are integrated here.
+New audit binds gzip+decoded+14producer hashes, both input byte hashes, all480slot
+rules/initial-state/query-action/history-length/seat/seed/terminal/utility fields;
+48,176source turns/7,325ABreturns.64winning finalABreturns use root tactical depth0
+andNoneQ. This does not prove earlier search unnecessary. Sixof16named product
+comparator files changed, with no execution-equivalence claim.331recorddependence
+and exposure remain; no newCore/Player/solver/game/Nativebuild or AUXtakeover.
+
+Main: Is there a genuinely new current algorithm-quality premise?
+|At existing intake assess new evidence/latest USER research direction against
+one concrete algorithm/control/full-cost question |Changedpremise and bounded
+prospective decision or unchangedNO_GO |No automatic run, source campaign,
+h2/seed/prefix/cap refill or remaining570budget transfer.
+Backup1: Missing historical execution source is not a universal prohibition on a
+separately frozen current experiment; no universal WDL oracle or preknown success
+is required. CoarseABvsRNG response still cannot qualify a close-strategy endpoint.
+Backup2: e4dd2f96Patrol finite-stop advice retained; latest USERgrant controls scope.
+OwnDot1793060225/readback/single delayedcheck00:22:34Zcomplete (~29slate); solicited
+reply adopted as source advice, not authority. AUX owns its learning/consumer work.
+Hourly schedules/stops unchanged; this closes one source task, not project science.
 
 ## Retained closed child-construction assessment
 
