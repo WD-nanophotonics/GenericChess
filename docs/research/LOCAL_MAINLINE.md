@@ -27,6 +27,11 @@ Independent105min forecast/110cap from02:47:33.917952UTC includes this whole run
 65min game batch and15min delivery reserve.24games nominal51.2min service.
 Normal60–90recorded effective-work rule remains separate;no prior time credited.
 
+Pre-dispatch new autonomous a6823de1Patrol read;adopt quality/novel-rule/opponent
+constraints,retain unknown resolution and no oldtiming refill. It saw older
+e0c4snapshot,not this protocol. Its lack of grant does not supersede direct USER
+standing<120single-run authority. No separate Native-cost route or AUXchange.
+
 ## Retained quiet-geometry finite assessment CLOSED
 
 

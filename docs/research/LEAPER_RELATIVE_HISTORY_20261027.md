@@ -107,3 +107,22 @@ for it. Dot1793069550 source-only advice read/adopted: unclipped counters, paren
 edge/TT/abort semantics and pre-execution24slot revision. No repeated poll.
 No source treats Dot as user budget authority. No AUX task/state/checkout,
 worker/fee/schedule or mixed-rule/default extension.
+
+## Pre-dispatch autonomous review received during publication
+
+Publisher found new sandbox a6823de1/Patrol2026-10-27_115659_JST_e0c4ec9.md;
+exact16028bytes privately saved/read before empirical dispatch. Its inspected
+snapshot predates this relative-history protocol. Adopt: close old geometric
+CPU repair, actual quality/near-strength opponents,>=3new rule classes, explicit
+complete histories and actual terminal/missing outcomes;no fused-Native rewrite
+or LMR/source-label patch without a concrete causal premise. This protocol has
+6prospective unplayed outcome rules, fixed current AB opponent and24color games.
+Current resolution still UNKNOWN, not asserted prequalified;all-draw/no signal
+will be retained. A source filter cannot guarantee future decisive quality;the
+small exploratory trial answers that uncertainty rather than preselecting wins.
+The review's own lack of an execution grant is not a new user-approval gate:
+latest USER permits independent single-run<120min work, and this full run remains
+105forecast/110cap. No historical minutes or reviewer suggestion creates extra
+permission. Its recommended Native-cost alternative is deferred this round to
+avoid two mechanisms. Review-reported external AUXpause is not direct local
+USER authority;no AUX/state/schedule action is taken.
