@@ -16,8 +16,10 @@ elsewhere describe the state at that time and do not override it.
   Pro plans/reviews and Dot consultation are separate inputs.
 - Patrol prompt contains durable bootstrap rules; current tasks and budgets
   belong in the temporary plan. Do not repeat the completed audit.
-- Research session68e7b1c3 ENDED by accepted safe_checkpoint with69.85413effective
-  minutes and147checks. Role/patrol remains ACTIVE; old costs/caps preserved.
+- Latest research session942bc7a8 ENDED by accepted safe_checkpoint on2026-10-27,
+  with60.22503conservative effective minutes (3618.501711ledger seconds minus
+  5second verification reserve). Role/patrol remains ACTIVE; old costs/caps preserved.
+  [Accepted ledger](../research/data/aux_segment_942bc7a8_20261027/session-finish.json).
 - Future ordinary research retains60â€“90effective-minute accounting. The completed
   bounded review and this documentation correction are not qualifying segments.
 - Role boundaries, stops and cumulative budgets remain; no scheduler change,
