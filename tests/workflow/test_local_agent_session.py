@@ -1,5 +1,6 @@
 from datetime import datetime, timezone, timedelta
 import json
+from pathlib import Path
 
 import pytest
 
@@ -232,7 +233,7 @@ def test_open_mainline_cannot_be_closed_by_completion_label(workspace):
     assert session.status()['state'] == 'active'
 
 
-def test_local_milestone_rejected_but_real_whole_completion_can_end_early(workspace):
+def test_whole_completion_label_still_requires_duration_and_matching_quality(workspace):
     path, _ = workspace
     current = session.start()
     session.checkpoint('whole objective', 'objective evidence examined', 'report', 'deliver')
@@ -249,8 +250,19 @@ def test_local_milestone_rejected_but_real_whole_completion_can_end_early(worksp
         session.finish('scientific_complete', str(target))
     report['remaining_work'] = []
     target.write_text(json.dumps(report), encoding='utf-8')
+    worked(workspace, 24.87)
+    with pytest.raises(LocalFlowError, match='before60 effective'):
+        session.finish('scientific_complete', str(target))
+    assert session.status()['state'] == 'active'
+    worked(workspace, 36)
+    with pytest.raises(LocalFlowError, match='quality'):
+        session.finish('scientific_complete', str(target))
+    review = json.loads(Path(quality(workspace, 'scientific_complete')).read_text())
+    review.update(report)
+    target.write_text(json.dumps(review), encoding='utf-8')
     result = session.finish('scientific_complete', str(target))
-    assert result['state'] == 'ended' and not result['duration_gate_passed']
+    assert result['duration_gate_passed'] and result['quality_review_passed']
+    assert session.final_check()['research_completed']
 
 
 def test_missing_memo_must_be_rebuilt_before_start(workspace):
@@ -498,3 +510,45 @@ def test_cli_bounded_interrupt_reports_incomplete_and_preserves_stops(workspace,
     assert cli.main(['session', 'final-check', '--mode', 'bounded']) == 0
     assert json.loads(capsys.readouterr().out)['research_completed'] is False
     assert (path/'rollout.json').read_bytes() == flags
+
+
+@pytest.mark.parametrize('mode', ['research', 'bounded'])
+def test_legacy_early_scientific_finish_is_rejected_and_auto_resumed(workspace, mode):
+    path, moment = workspace
+    first = session.start()
+    worked(workspace, 24.87)
+    before = json.loads((path/'session.json').read_text())
+    old = dict(before, state='ended', reason='scientific_complete',
+               ended_at=moment[0].isoformat(), ending_evidence='old finite-subtask claim',
+               duration_gate_passed=False, quality_review_passed=False)
+    (path/'session.json').write_text(json.dumps(old))
+    with pytest.raises(LocalFlowError, match='premature'):
+        session.final_check(mode)
+    moment[0] += timedelta(hours=3)
+    resumed = session.start()
+    assert resumed['id'] == first['id'] and resumed['started_at'] == first['started_at']
+    assert resumed['effective_seconds'] == 24.87*60
+    assert resumed['work_intervals'] == before['work_intervals']
+    assert len(resumed['superseded_endings']) == 1 and resumed['state'] == 'active'
+    assert 'ended_at' not in resumed and 'reason' not in resumed
+    assert resumed['resumed_at'] == moment[0].isoformat()
+    with pytest.raises(LocalFlowError, match='active'):
+        session.final_check(mode)
+
+
+def test_auto_recovery_cannot_clear_stop_or_take_foreign_segment(workspace):
+    path, moment = workspace
+    session.start()
+    old = json.loads((path/'session.json').read_text())
+    old.update(state='ended',reason='scientific_complete',ended_at=moment[0].isoformat(),
+               duration_gate_passed=False,quality_review_passed=False)
+    (path/'session.json').write_text(json.dumps(old))
+    (path/'advisor.json').write_text(json.dumps(dict(stopped=True)))
+    with pytest.raises(LocalFlowError, match='stop'):
+        session.start()
+    assert json.loads((path/'session.json').read_text()) == old
+    (path/'advisor.json').write_text('{}')
+    old['thread_id']='other-chat';(path/'session.json').write_text(json.dumps(old))
+    with pytest.raises(LocalFlowError, match='another chat'):
+        session.start()
+    assert json.loads((path/'session.json').read_text()) == old

@@ -6,39 +6,36 @@ PRIMARY publishes sandbox only. Prior user intent was ACTIVE/hourly for both;
 latest observed own scheduler is ACTIVE/180minutes, not changed by this resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-28 transient import finite result
+## Current decision -2026-10-28 autonomous continuation correction
 
-Science is COMPLETE. This marker closes ONLY the whole frozen one-candidate
-source/implementation/semantic/conditional96slot/verification assessment, not
-project-wide pure-Leaper optimization. [Result](LEAPER_TRANSIENT_IMPORT_20261028.md).
-11completeD6groups exact decision/work and all faster; aggregatewall0.959540,
-CPU0.959694,rootmedian0.962067 fail frozen5%gate.48D6returns,47complete;
-slot43OFFn6-f4-h2 cappedD5;48conditionalD8NOT_RUN,no refill.39testsPASS;
-independent public-data reader48returns/287legalPVplies. Oneprivatebinary,
-installedunchanged/defaultOFF;no games,solver,strength oractivationclaim.
-SkippedfreshSHA AND emptyauxnormalization;otherpayload/Native/Corehistorycosts
-remain. Botharmsusecurrentprivatebinary/commonadapter,notoldproductioncontrol.
-SourceCRLFsupplement matchesPRE-queryrawhash;originals retained,no rerun.
-LatestUSERresume supersedesoldpause;ownmatchedstops clearedonly. AUX/recurrence
-unchanged;observedACTIVE180min is not a new schedulechange.
-Latest autonomous c70d9f2a was read in full after publication and adopted:
-[New endpoint audit](LEAPER_QUALITY_ENDPOINTS_20261028.md) closes the second finite
-source-only objective.824nonimmediateH6forkroots/9families are exposed diagnostics,
-not currentnear-strength resolution.420completeD6savedreturns0inferior;abortcaps
-areseparate. Dense6terminalDRAWlabels+6unknown yield729completions/rawsigned
-[-.5,.5],0-4possiblepositivefamilies;no independentCoreterminalreplay. Current
-ready-madequalitypanelNO_GO,notallfuturequalityimpossible. No newCore/Player/
-solver/game/build in this sourceaudit. Originaldensegatefailed,oldslotsnotrefilled.
-Main: Useful equal-time pureLeaper quality? |Freeze a concrete current-policy
-contrast (existingPVS is a candidate) and new-family sampling/outerwall contract
-before any outcomes;assess bounded setup feasibility |>=3distinctgeometryfamilies,
-bothseats/fullhistories,newunexposed evaluation and ownprospectivecost |No old
-panel/PVS refill or execution until its new contract and costs are explicit.
-Backup1: Existingdense evidence |Preserve613originals andmissingexpiredgames |
-Partialoutcomes remainunverified/nostrengthclaim |No refill or budgetreset.
-Backup2: Lowpriority fusion |Require a new exclusive removable boundary and
-consumer beyond baseline/recentnegative gates |No established netgainbound |
-No automatic wrapper variant,attack-table rebuild or AUX source duplication.
+Science is OPEN. The USER rejects our24.871minute finite-subtask ending. Its
+claim is superseded, not a successful round; originalUUID/start/1492.285151seconds
+are preserved and the gap/repair excluded. scientific_complete now obeys60minute
+and matching-quality gates;48workflow regressions pass,legacybadending auto-resumes.
+[Guard diagnosis](../operations/CONTINUATION_GUARD_20261028.md).
+
+Main: Can PVS improve equal-outer-wall play on new pure-Leaper rules? |Execute
+[pre-query frozen protocol](LEAPER_NEW_FAMILY_PVS_PROTOCOL_20261028.md):ALL12new
+7x7/18pieceH128rootsD2qualify,then24swapseatgames |6fixednewgeometryfamilies,
+exactfullrules/history,actualbinary/profile/PV/work/timing/terminal/missingbounds |
+90minforecast/110capfrom05:52:32UTC;noextension/refill/defaultchange.
+Backup1: Contract failure |Diagnose exact Core/provider/recording cause and
+preserve every slot;select an independent useful action if stopped |Concrete
+causal evidence,not output-fitting expectations |No cap reset orfailed-slot replay.
+Backup2: New quality evidence |Verify all saved full-history outcomes and
+finite24slot uncertainty,assess new policy/consumer |Do not equate draws/NPS/
+rootactionchanges with strength |Continue same round toward60-90effective.
+
+c70d9f2a quality-priority review adopted, not another packaging microvariant.
+[Transient result](LEAPER_TRANSIENT_IMPORT_20261028.md):48D6returns,11complete
+groups allfaster~4.05%below5%gate;48D8NOT_RUN;39tests/publicPVreaderPASS;defaultOFF.
+[Endpoint audit](LEAPER_QUALITY_ENDPOINTS_20261028.md):824nonimmediateH6forkroots
+in9exposedfamilies,not near-strengthH128resolution.420completeD6savedreturns
+already optimal;aborterrors separate. Dense6DRAWlabels+6unknown produce729
+completions/net[-.5,.5];original12gatefailed,oldslotsnotrefilled. The new premise
+is prospectively fixed7x7geometry/density and a current near-strengthsingleflag
+contrast, not reuse of old saturated outcomes or oracle-selected roots.
+AUX/actualrecurrence unchanged; no new worker/solver/build/training or scopeexpansion.
 
 Fully read newPatrol160253/180108/200005 at13aacdd97fbc5cc50362f1d2bf1cf7525e3f8ffd.
 Adopt exclusive-cost/semantic-closure advice;their earlier stop predates latest

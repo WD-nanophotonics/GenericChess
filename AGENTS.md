@@ -33,6 +33,18 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-24
 
+- User correction2026-10-28: a completed finite experiment/report/qualification is
+  a milestone, not completion of a normal patrol. Continue independently to the
+  next useful pure-Leaper action without waiting for another user start. The
+  normal round MUST accumulate >=60 real recorded effective minutes, continuing
+  toward90. Self-declared scientific_complete, narrowed finite scope, COMPLETE
+  markers, publication or bounded final mode cannot waive this minimum or the
+  matching quality review. Actual user stops, necessary user decisions and real
+  tool/quota/runtime limits retain their evidenced exception scope. The rejected
+  24.871-minute ending is superseded, not successful research: automatically
+  reopen the same owned UUID/start/ledger, preserve the old ending and exclude
+  the gap. No AUX/schedule changes; repair/documentation time adds no research.
+
 - Latest direct user2026-10-28: "现在开启工作" explicitly resumes this PRIMARY
   research after the prior shared-account Slack pause. Clear only the matching
   own conservative stops; no AUX, other project, worker or schedule changes.
@@ -283,14 +295,14 @@ work records are unverified, not automatically credited. Model switches and
 compaction preserve UUID/start and recorded intervals, never credit the gap.
 
 Before60 minutes no normal/no-next-action finish. Early reasons: explicit stop,
-actual tool/quota/runtime limit, genuinely necessary user decision, or supported
-completion of the whole scientific objective. A missing hypothesis is not a
+actual tool/quota/runtime limit or genuinely necessary user decision.
+Scientific completion is not an early-duration exception for ordinary patrols. A missing hypothesis is not a
 user-decision blocker. After60 continue useful work toward90, then end safely.
 No idle padding, irrelevant proofs, old conclusions or infrastructure filler.
 Before final RESEARCH reply use session finish with evidence; refusal means
 continue, not bypass. no_viable_action after60 needs fresh substantive examination
 of two alternatives. Refill executable memo; record actual time and ending cause.
-Normal finish requires>=60 RECORDED effective minutes AND a matching current
+Normal finish, INCLUDING scientific_complete, requires>=60 RECORDED effective minutes AND a matching current
 quality-review file, then `session final-check`. Do not issue a final reply early
 and leave active with a promise to continue next heartbeat. Progress belongs in
 commentary; a real platform interruption remains incomplete. A direct user

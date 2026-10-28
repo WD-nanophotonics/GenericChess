@@ -1,5 +1,9 @@
 # Pure-Leaper quality endpoints: source-only resolution audit
 
+Execution correction2026-10-28: these finite results remain valid, but their
+completion did NOT justify ending the research round before60effective minutes.
+The prior early round ending is superseded; see current LOCAL_MAINLINE/AGENTS.
+
 The finite audit is COMPLETE: **NO_GO for declaring an already qualified current
 near-strength, equal-outer-time, three-family acceptance panel from these saved
 records.** This is a current evidence gap, not a prohibition on new quality

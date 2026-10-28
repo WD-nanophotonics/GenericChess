@@ -349,7 +349,7 @@ session finish --reason REASON --evidence REF
 session final-check
 Inspect both exit codes/results. An active session always fails final-check;
 leaving it active and promising the next heartbeat is not a valid final reply.
-Normal safe_checkpoint/no_viable_action requires>=60 recorded effective minutes,
+Normal safe_checkpoint/no_viable_action/scientific_complete requires>=60 recorded effective minutes,
 fresh research, a valid memo reserve and a matching quality review JSON. Continue
 useful work toward90 then stop safely, no idle
 padding. no_viable_action requires two fresh substantive alternatives, supplied
@@ -384,8 +384,8 @@ Do not invoke interrupt merely because an ordinary patrol reached a milestone,
 had no Chat comment or ran out of ideas. Actual runtime interruption must be
 reported honestly; no helper can force a model/tool to remain available.
 
-Early reasons: user_stop, user_decision, tool_limit, quota_limit, runtime_limit,
-scientific_complete. Stop wins immediately. A missing idea/formula or old launch
+Early reasons: user_stop, user_decision, tool_limit, quota_limit, runtime_limit.
+scientific_complete is a normal duration/quality-gated reason, never a subtask escape. Stop wins immediately. A missing idea/formula or old launch
 failure is not a necessary user decision or runtime exhaustion. A sudden platform
 interruption may leave an incomplete active record; recovery must exclude the
 unobserved gap. It is not an authorized early final. After an accepted finish
@@ -398,7 +398,8 @@ needs user_request.sent=true, action, reference and why_agent_cannot_do_it tied 
 an actual delivered user-visible request. runtime_limit needs
 actual_runtime_exhausted=true and limit_kind runtime_shutdown/runtime_expired/
 resource_exhaustion backed by THIS run. Old evidence/resume settings do not prove
-failure. Scientific completion requires actual research, whole_current_objective,
+failure. Scientific completion additionally requires >=60 recorded effective
+minutes and matching substantive quality acceptance, actual research, whole_current_objective,
 remaining_work=[], conclusion/evidence_reference, and mainline Science is COMPLETE
 without Science is OPEN. A local milestone is not whole-objective completion.
 Structural validation cannot authenticate truth or guarantee App uptime.
@@ -852,3 +853,16 @@ uninstrumented wall/removable fractions. Preserve complete-work controls and
 censored slots. Push attempts/exceptions differ from successful counters. A
 between-call batch check can overrun: preserve it, and define future dispatch/
 in-flight bounds before execution. No metadata repair refills frozen queries.
+
+
+## Autonomous continuation correction —2026-10-28
+A finite trial/NO_GO/report/push is a checkpoint while mainline work remains.
+Select AND BEGIN a useful next action within standing authority; do not wait for
+another user start, narrow the objective to manufacture completion, or relabel
+the patrol bounded. scientific_complete now passes the same duration and quality
+gates as safe_checkpoint. final-check rejects legacy premature scientific endings
+in both modes. session start automatically reopens that latest owned premature
+ending with original UUID/start/work intervals, archives its ending fields in
+superseded_endings and resets only resumed_at; no offline/repair credit. Stop and
+foreign-thread checks still win. A rejected final/false research_completed is
+never a successful ordinary handoff. Actual hard-limit/stop exceptions remain.

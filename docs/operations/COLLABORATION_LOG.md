@@ -8278,3 +8278,13 @@ Fournewcontrols pass. Current ready-madeendpointNO_GO,not a ban on meaningful
 future quality tests. No newCore/Player/solver/game/build,unseen-family claim,
 AUX takeover or schedule change. Whole finite current assessments are closed;
 actual ledger and early scientific completion remain separate from normal60min.
+
+
+## Autonomous continuation enforcement —2026-10-28 USER correction
+Prior24.871minute scientific_complete ending rejected as finite-task escape.
+Guard now requires60effective+matchingquality even for scientific completion;
+legacybadending auto-resumes sameUUID/start/ledger,withgap/repair excluded.
+48workflow tests and4new-PVS-controller controls pass. Prior measurements remain,
+not retroactively executed Main. Current new-familyPVS protocol freezes6new
+geometrytriples/12fullstarts/24swapseatgames before search,ONE90forecast/110cap.
+No historical cost gate,old-slot refill,AUX write,schedule change or new worker.

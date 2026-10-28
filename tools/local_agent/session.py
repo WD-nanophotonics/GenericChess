@@ -7,7 +7,7 @@ from .common import STATE, LocalFlowError, read_json, write_json
 
 
 HARD_REASONS = {'user_stop', 'user_decision', 'tool_limit', 'quota_limit',
-                'runtime_limit', 'scientific_complete'}
+                'runtime_limit'}
 MAINLINE = STATE.parent / 'docs/research/LOCAL_MAINLINE.md'
 EFFECTIVE_ACTIVITIES = {'research', 'analysis', 'validation'}
 ACTIVITIES = EFFECTIVE_ACTIVITIES | {'documentation', 'transport', 'administration'}
@@ -141,6 +141,24 @@ def start():
     thread = read_json(STATE/'rollout.json').get('thread_id')
     if not thread:
         raise LocalFlowError('calling chat identity missing from rollout')
+    premature = (current.get('state') == 'ended'
+                 and current.get('reason') == 'scientific_complete'
+                 and (not current.get('duration_gate_passed')
+                      or not current.get('quality_review_passed')))
+    if premature:
+        if current.get('thread_id') != thread:
+            raise LocalFlowError('premature segment belongs to another chat')
+        # Preserve the rejected ending as history; never erase work or credit gaps.
+        current.setdefault('superseded_endings', []).append({
+            key: current.get(key) for key in
+            ('ended_at', 'reason', 'ending_evidence', 'duration_gate_passed',
+             'quality_review_required', 'quality_review_passed')})
+        for key in ('ended_at', 'reason', 'ending_evidence', 'wall_minutes',
+                    'effective_seconds', 'effective_minutes', 'duration_gate_passed',
+                    'quality_review_required', 'quality_review_passed'):
+            current.pop(key, None)
+        current.update(state='interrupted',
+                       recovery_reason='reject premature scientific_complete; continue same round')
     if current.get('state') in {'active', 'interrupted'}:
         if current['thread_id'] != thread:
             raise LocalFlowError('active segment belongs to another chat')
@@ -186,7 +204,7 @@ def finish(reason, evidence, alternatives=()):
     current = _owned()
     if current.get('state') != 'active':
         raise LocalFlowError('no active segment to finish')
-    if reason not in HARD_REASONS | {'safe_checkpoint', 'no_viable_action'}:
+    if reason not in HARD_REASONS | {'safe_checkpoint', 'no_viable_action', 'scientific_complete'}:
         raise LocalFlowError('soft blockage/publication/inspection is not an ending reason')
     if not evidence.strip():
         raise LocalFlowError('ending evidence required')
@@ -299,6 +317,9 @@ def final_check(mode='research'):
         raise LocalFlowError('interrupted is not a completed research segment')
     if mode not in {'research', 'bounded'}:
         raise LocalFlowError('unknown final mode')
+    if (current.get('reason') == 'scientific_complete'
+            and not (current.get('duration_gate_passed') and current.get('quality_review_passed'))):
+        raise LocalFlowError('premature scientific_complete rejected; session start resumes same round')
     if (mode == 'research' and current.get('reason') not in HARD_REASONS
             and not (current.get('duration_gate_passed')
                      and current.get('quality_review_passed'))):
@@ -342,7 +363,7 @@ def _validate_block_report(reason, evidence, current):
 
 
 def _validate_scientific_completion(evidence, current):
-    """Retain genuine early completion, without accepting a local milestone."""
+    """Completion of science is not an exemption from duration and quality acceptance."""
     if not current['research_stage_count']:
         raise LocalFlowError('scientific completion requires actual research evidence')
     path = Path(evidence)

@@ -1,5 +1,9 @@
 # Pure-Leaper transient Native import: finite assessment
 
+Execution correction2026-10-28: these finite results remain valid, but their
+completion did NOT justify ending the research round before60effective minutes.
+The prior early round ending is superseded; see current LOCAL_MAINLINE/AGENTS.
+
 The one-candidate assessment is CLOSED_NO_GO for the frozen 5% cost gate.
 Eleven complete D6 ABBA groups were all faster, but aggregate whole-call wall
 ON/OFF was 0.9595399855 (4.046% reduction), CPU 0.9596944152 and median root wall
