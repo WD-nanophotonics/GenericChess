@@ -7,7 +7,8 @@ notcredited. [Accepted receipt](../research/data/aux_leaper_projection_20261028/
 and [actual ledger](../research/data/aux_leaper_projection_20261028/session-ledger.json).
 Memo synchronizedENDED; scientific revisionc1a44b35b5e85101f75068e87b2e6fa7f9bd8be0
 was pushed/fullremoteverified before substantiveDot1793165101. Its05:30:01UTC
-single delayedcheck is pending in this receipt; closingadministration isnotresearch.
+single delayedcheck completed05:30:34UTC on the complete thread; no newreply.
+Closingadministration isnotresearch, and late replies remain readable nextintake.
 No role/schedule/othercheckoutchange. Next ownmemo has executablefresh-source
 quality,projection-objection andchanged-interfacecompatibilityquestions;closed
 studies and frozenlimits are not reopened.
