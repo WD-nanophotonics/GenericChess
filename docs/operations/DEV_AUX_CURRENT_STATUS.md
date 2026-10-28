@@ -12,6 +12,8 @@ elsewhere describe the state at that time and do not override it.
 - Manual user resume2026-10-28: df3b4b74 now ENDED, same origin/confirmed work;
   scientific checkpoint now3746.464897declared seconds;120secondreserve gives
  60.44108conservative minutes. Accepted safe_checkpoint finish05:25:25UTC; memo synchronizedENDED.
+- Latest heartbeat fea09fcc ENDED15:34:58UTC;64.1663206conservative effective minutes.
+  55tests+2source controls PASS; closed partial cancellation cap overrun retained.
 - Current action: follow the revisable `.local_agent/WORK_PLAN.md` and compact
   `NEXT_WORK.md`. Latest user authorizes scoped fallback planning when GitHub
   ChatGPT Pro has no explicit AUX task; unconditional waiting is superseded.

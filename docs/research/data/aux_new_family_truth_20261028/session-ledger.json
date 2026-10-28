@@ -1,0 +1,108 @@
+{
+  "active_work": null,
+  "checkpoints": [
+    {
+      "at": "2026-10-28T14:00:43.721240+00:00",
+      "evidence": ".local_agent/fea09-replay; scripts/verify_published_new_family_games.py",
+      "kind": "research",
+      "next_action": "Singleopening+5mincheck then capture savedgame/PV forest and qualify partialWDL bounds/actionexposure, no newtree expansion.",
+      "observation": "All24game complete histories/PVs replayed in independentAUXreader;9checkmate/15draw, several swappedpairs have samewinner/path.20archive hashes verified. Rawreturn has three postvalidationfields absent, independently checked. Sharedruntime no delta vs76da.",
+      "question": "Does new7x7PVS source contain real nonsaturated terminal quality?"
+    },
+    {
+      "at": "2026-10-28T14:12:28.455409+00:00",
+      "evidence": ".local_agent/fea09-augmented.json;.local_agent/fea09-one-step/census.json;.local_agent/fea09-qualifications.json",
+      "kind": "research",
+      "next_action": "Independentaugmentedcertificateverification,real-sourcecorruptioncontrols andcheckedmilestonepublish/Dotreport; then concretecompatibilityorqualityboundary question,notrepeatedclosedtotals.",
+      "observation": "NOstrictmistake fromsavedforestorallactualone-stepterminalactions;229newterminalfacts strengthen71oldnodes and45selectedzero-regret exposures,othersUNKNOWN. FullpaircontrastOFFminusONregret1is sameoutcomealgebra,notnewstrength. Source240capsulehashesPASS;CRLFcomparisonfixed;actualsharedruntimeunchanged.",
+      "question": "Does new nonsaturated quality evidence localize any strict search mistake?"
+    },
+    {
+      "at": "2026-10-28T14:37:41.284555+00:00",
+      "evidence": "docs/research/AUX_NEW_FAMILY_TRUTH_20261028.md;.local_agent/fea09-milestone-send.json",
+      "kind": "research",
+      "next_action": "Bounded distinctsourceaudit of Pro-cited2010df-pn primarypapers: exact source and applicability to existingAUXcomplete-historyfinitecertificates,notPRIMARYalgorithmorold2004repeat.",
+      "observation": "Published70bbc33b fullremoteverified.24terminals/1787returns/5467PV/99strategybounds;no strictselectederror. PartialNativecancelwholechaincap is KNOWNEXCEEDED min100001 notmerelyUNKNOWNcompliance; exacttotalUNKNOWN,closed. Dotmilestone1793198239sent14:37:19/due14:42:19singlecheckpending. No60minuteclaim.",
+      "question": "Are new7x7 quality and local truth claims independently supported?"
+    },
+    {
+      "at": "2026-10-28T14:51:13.658251+00:00",
+      "evidence": "docs/research/AUX_MATE_DISPROOF_SCOPE_20261028.md;tests/fixtures/mate_disproof_not_draw.json.gz",
+      "kind": "research",
+      "next_action": "Resolve newlyobserved manuscript/default reviewbranch coverage before selectnextAUXsource question; no reread/expandclosedpaper or censuses, no PRIMARYtakeover.",
+      "observation": "NO. StrongerfullgamecannotWIN holdsforactualLOSSandDRAWcontexts underseparateexactrules/histories; namedseat1proofs independentlyverify. Papers7534/7551 are realdistinctscopedmethods, notstandaloneGHI/WDLcertificateauthority.32testsPASS;no productchange.",
+      "question": "Can mate-disproof substitute for full-game DRAW truth?"
+    },
+    {
+      "at": "2026-10-28T15:16:45.491791+00:00",
+      "evidence": "scripts/verify_published_new_family_games.py;docs/research/AUX_NEW_FAMILY_TRUTH_20261028.md;.local_agent/fea09-qualification-regression.json",
+      "kind": "research",
+      "next_action": "Publish checkedpaper/consumerrepair/fullSHA and askDot one specific resource-identity versus exacttruth question; preserve+5due; analyze existingAPIclaimscopewithoutnewlabel/solver/cancelwork.",
+      "observation": "YES actualdataunchanged; threepriorfalseacceptsreproducedandfixed;55regressions+2sourcecontrolsPASS; sourceCLIallphasesintegrated. FreshProadopted0morelabelmining. Segmentcontinue with claim-specific distinction between game-truthcertificate and resource-dependentsearchtarget; no PRIMARYimplementation.",
+      "question": "Is the independent fixed historical qualification contract now enforced?"
+    }
+  ],
+  "duration_gate_passed": true,
+  "effective_work_seconds": 3969.979237,
+  "elapsed_minutes": 100.625,
+  "ended_at": "2026-10-28T15:34:58.883854+00:00",
+  "ending_evidence": "Researchclosed64.16632conservativeeffective minutes(3969.979237confirmedsecminus120reserve);55pytest+2sourcecontrolsPASS;reports AUX_NEW_FAMILY_TRUTH_20261028 and AUX_MATE_DISPROOF_SCOPE_20261028;exactsourcePro c4d1cdcaADOPTEDstopmorelabels/no refill. Explicitnativecancelcapoverrunretained;3qualifierfalseacceptsrepaired,actualsourcevalid. .local_agent/fea09-closing-evidence.json hasfresh3alternatives,claimscope,communicationactualtimes andexecutablememo. Scientific9265ba33fullremoteverified;finaldeliveryadministrativeonly.",
+  "id": "fea09fcc-a3a6-49c9-9422-eb7759d8d4e9",
+  "memo_synced": true,
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 5,
+  "started_at": "2026-10-28T13:54:21.372835+00:00",
+  "state": "ended",
+  "work_accounting_version": 1,
+  "work_intervals": [
+    {
+      "ended_at": "2026-10-28T14:00:01.131493+00:00",
+      "evidence": "scripts/verify_published_new_family_games.py; .local_agent/fea09-replay/game-00.json through game-23.json; .local_agent/fea09-pvs-published/hash-checks.json; source c42f0066 quality24packet hashes bound, separate raw return from three postvalidation fields, independent Core game/PV replay completed; finite observed-forest capture next.",
+      "question": "Does the newly published six-family PVS packet provide independently valid complete-history terminal quality and shared-history decision evidence?",
+      "started_at": "2026-10-28T13:56:35.442789+00:00"
+    },
+    {
+      "ended_at": "2026-10-28T14:01:32.871001+00:00",
+      "evidence": "Current independent24game replay PASS:1763game transitions/5464 gamePVplies plus qualifications pending. Sourcefrozen has full declared execution source inventory; new forest capture running Core only in ownprocess. Fresh complete path/exposure planned, no graph expansion.",
+      "question": "Which local action-value bounds and informative policy divergences are actually supported by the new complete saved game/PV forest?",
+      "started_at": "2026-10-28T14:00:43.889910+00:00"
+    },
+    {
+      "ended_at": "2026-10-28T14:12:28.309855+00:00",
+      "evidence": "NEW source qualifications24/44PV and games1763/5423PV allverified; prior5464 intermediatecount corrected. Finite savedforest2902nodes/2890edges gives28independentCorestrategybounds; no strictlocalerror. Newone-stepcensus COMPLETE1763decisions1598contexts25615Corechildren4.27s;229terminalfacts222DRAW7WIN. Augment3105nodes203newterminaledges71oldbounds tightened;45zero-regret exposures0strict errors. NoPlayer/search/solver/newgames/build.",
+      "question": "Derive strictly source-bound WDL interval certificates from the new saved game/PV forest and qualify policy-attributed decision exposure.",
+      "started_at": "2026-10-28T14:02:05.836223+00:00"
+    },
+    {
+      "ended_at": "2026-10-28T14:29:46.383214+00:00",
+      "evidence": "27real-sourcecorruption/certificatecontrolsPASS; independently recomputed12defaultprofiles and1787rawcontracts/240capsulehashesPASS; onlyPVSfieldvaries. ActualNativeoldera2bea2 !=publisheda2e1b0. Runtimecontract publishedrunPARTIAL771histories100000failedpushes cap, Core96049/Native3951; earlier technicalentryattemptsnotdurablycounted so wholelogicalcancel-countcapcomplianceUNKNOWN; nofill/extension. Completequalitytruthtask readyformilestonepublication; no newPlayer/build/search.",
+      "question": "Do the independent new-source evidence reader and finite-certificate claims fail closed under real corrupted histories, raw returns, resource identities and omitted defenses?",
+      "started_at": "2026-10-28T14:15:30.851096+00:00"
+    },
+    {
+      "ended_at": "2026-10-28T14:42:09.577628+00:00",
+      "evidence": "PrimaryAAAI2010 sources7534/7551 verified/read; PDF hashes719cfd19/89f76fe1 privately pinned. 7534TCA/SNDA estimates/scheduling; completenessofgeneralDCGleftopen,2004cycleTTusednotreproved.7551parallelpaper explicitly separatesGHI, no workergrant. All12actualsource rules max128/noautomaticPENDING/noextras verified, so actualfullclockevidenceforestacyclic. Next actualLOSSvsDRAWcertificate counterexample to mate-disproof->DRAW, nonewsolver.",
+      "question": "Do the exact Pro-cited 2010 df-pn primary sources justify transferring repeated-graph proof claims to this project's full-history finite certificates?",
+      "started_at": "2026-10-28T14:37:41.444523+00:00"
+    },
+    {
+      "ended_at": "2026-10-28T14:51:13.521535+00:00",
+      "evidence": "AUX_MATE_DISPROOF_SCOPE_20261028.md;2exactprimaryPDFs pinned; actual LOSSseat1ply15two-edge and DRAWseat1ply127all18choices existingcertificates independentlycheck.5newrealcontextcontrols+27previous=32PASS. No dfpn/Player/newgame/worker; no newGHI theorem or PRIMARYalgorithm. H128scopeguards verified; source questionclosed.",
+      "question": "Can two actual full-history certificates distinguish LOSS from DRAW despite the same no-forced-WIN predicate, showing why a mating-search disproof is not a DRAW label?",
+      "started_at": "2026-10-28T14:43:08.247776+00:00"
+    },
+    {
+      "ended_at": "2026-10-28T15:16:45.348308+00:00",
+      "evidence": "Concretequalificationconsumerfix: old70bbc33b accepts3coherentbadcontracts,newrejects.55testsPASS+2actualsourcecorruptioncontrols; finalqualCLI24/19reuse/5new44PV PASS; allCLI integration24games/1787returns. SourcearchiveCLI manifests anchored toc42. Actualshared165 metadata146sameDepth/equalScore(oneD4tieDifferentaction). FreshPro c4d1c/blob140ba069 read/adopt STOP further samepacketlabelmining/closedcancellationrefill; productsharedunchanged. Reportsupdated,no newPlayer/search/solver/game/build.",
+      "question": "Does the independent qualification consumer enforce the original and amended protocol's exact slot, paired-score, immediate-win and unchanged resource contracts, rather than only legal outcomes?",
+      "started_at": "2026-10-28T14:55:49.980305+00:00"
+    },
+    {
+      "ended_at": "2026-10-28T15:28:15.518924+00:00",
+      "evidence": "AUX_MATE_DISPROOF_SCOPE_20261028 claim-specific identity/handoff section: existingverify_bound_tree no searchresourceinputs andactualCoreterminalleaves; TTscorepolicyresourceidentity distinct, trueRuleauxresources stillstate. Actualnegamaxdepth<=0Qentry precedesTT; effectiveordinaryQ0 firstiterationphase mustbe captured; PVnotQ-entrytrace. No newlabels/algorithm/tests. Awaitoneidentity-question+5check thenadopt/rejectcritiqueandfinalsafecheckpoint.",
+      "question": "Which identity belongs to full-game Core WDL certificates versus resource-dependent heuristic search targets, and what evidence actually establishes a Q-entry or root-choice claim?",
+      "started_at": "2026-10-28T15:24:26.990099+00:00"
+    }
+  ]
+}

@@ -88,3 +88,60 @@ progress. Current AUX proof admission needs no product change. This finite sourc
 question is CLOSED; do not re-read the same papers or expand the witness merely
 to occupy a work interval. The ordinary session remains governed by its actual
 confirmed work ledger and proceeds to a distinct useful question.
+
+## Claim-specific identity and the next AUX handoff
+
+This is a source/API clarification, not another label expansion or a new
+framework. Current source c4d1cdca has no product delta from c42f0066. In
+scripts/leaper_truth_compatibility.py, Context is explicitly a replay summary,
+not a TT key. verify_bound_tree quantifies real legal moves and accepts actual
+Core-terminal WDL leaves only. It has no evaluator, search depth, extension
+allowance or heuristic TT argument. Once a complete supplied strategy proves a
+WDL bound under the same admitted full rule/history/clock and named payoff seat,
+changing the computational allowance that discovered it does not change that
+fact. The discovery cost and limit remain provenance, and incomplete discovery
+still supplies no certificate. This does not waive scope: declarations remain
+outside this move-certificate format.
+
+By contrast, a heuristic TT score is a claim about a particular search target.
+Current TTEntry carries key/depth/score/bound/best_action/generation; negamax uses
+sufficient stored depth before score/bound reuse. If a future path-dependent
+extension allowance or strategy changes the searched tree, its score identity
+must be isolated or reuse restricted. That requirement does not add a search
+extension field to the game's true WDL state. A resource actually defined by the
+rules (stock/energy/auxiliary state) is different and already belongs in the full
+Position/RuleSet identity. Likewise a bounded mate-distance objective is not the
+same claim as unrestricted terminal WDL. Changed Core semantics/source versions
+must be requalified rather than silently inheriting old implementation evidence.
+
+A future frozen handoff can support different claims with different evidence:
+
+| Claim | Minimum relevant evidence | What remains unproved |
+|---|---|---|
+| A legal extra quiet response exists | Full rule/history/clock, typed action and actual configured noisy classifier/Core child | That the real search reached or excluded it |
+| The actual Q call missed that response | Actual Q-entry event, original alpha/beta, qdepth, effective ordinary/hard limits, evaluator/tuning, live budget/cancellation and visited branches | Root action or true-value improvement |
+| A policy changed the root choice | Exact root and declared comparable resource/controller state, baseline/variant returned choices and causal trace or controlled replay | Which action has higher game value |
+| A strict action-WDL improvement occurred | Compatible independent terminal/strategy bounds showing a strict gap | Generalized playing strength |
+
+These are claim qualifications, not admission gates for exploratory experiments.
+A bounded paired-game strength test can use real outcomes without first solving
+all action WDL. Nor does every legal-line check need a full engine snapshot.
+For isolated current Q semantics, Q itself has no TT probe: negamax's depth<=0
+branch enters Q before its later main-search TT lookup. Ancestor TT/orderer state
+can still determine whether that call is reached, and full warm-root replay needs
+the relevant internal state or an explicitly different fresh-state control.
+
+There is one concrete input absent from a generic “Q4/hard8” description:
+_ordinary_qdepth_limit returns0 while first_main_iteration_complete is False,
+then the configured ordinary depth after a completed iteration. In-check evasions
+follow their separate hard limit. An actual entry must retain this effective
+phase, not only configured max depths. Source stand-pat can exit before action
+classification, and returned Q scores can be window bounds. A played state or
+legal saved PV alone proves neither actual Q-entry nor a missed branch; the
+existing returned PV/score packet therefore cannot fill those unknowns.
+
+No new Q/TT algorithm, experiments, resource field, labels or tests were added
+for this clarification. The existing55 tests and literal source reading are the
+relevant evidence. Dot independent review was requested in the existing thread
+at1793201002.298149 after publishing9265ba33; its reply/read/adoption status is
+recorded separately in closing communication, not presumed here.
