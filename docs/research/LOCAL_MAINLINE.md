@@ -1,3 +1,22 @@
+## DEV_AUX current source checkpoint fea09fcc —2026-10-29
+
+Same active UUID/origin13:54:21UTC;3741.450412confirmed research seconds at15:16:45,
+minus120s conservative mixed-entry reserve =60.3575effective minutes. Continue
+one claim-specific consumer identity question toward90; no idle/admin credit.
+[AUX new truth](AUX_NEW_FAMILY_TRUTH_20261028.md): independent24actual terminals,
+1787returns/5467PV;99finite bounds,45zero-regret exposures,0strictselectederrors.
+Latest Pro c4d1cdca/blob140ba069 read/ADOPTED: no more same-packetlabel mining,
+no cancellation refill; PRIMARY keeps quiet-defense implementation/design.
+Own qualification reader repaired three demonstrated falseaccepts;55tests+2
+source-integrity controls PASS. Actual dataset remains unchanged/PASS; no new
+Player/search/solver/game/training/build or default. Runtime sample PARTIAL;
+wholechain cancellation capEXCEEDED(min100001,totalUNKNOWN),closed,not aproductbug.
+[Source scope](AUX_MATE_DISPROOF_SCOPE_20261028.md): actualseat1 LOSS vs DRAW
+certificates show no-forced-WIN is not DRAW; distinct2010papers don't grantWDL
+or GHI authority. Next ownquestion: truegamecertificate identity versus bounded
+search policy/resource identity, no new labels/TTimplementation/approvalgate.
+Session finish/closing actualledger still follows; earlier ended credit not reused.
+
 ## Accepted segment close df3b4b74 -2026-10-28
 
 Own session finish safe_checkpoint accepted05:25:25.335615UTC, same UUID/origin,

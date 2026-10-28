@@ -7,9 +7,10 @@ three-positive-family gate FAILS. This supports neither activation nor an Elo,
 class-generalization or matched-state speedup claim. The original D2-only gate
 remains FAILED; its pre-game amendment is retained.
 
-This scientific consumer task is closed at a checkpoint. The ordinary AUX
-session fea09fcc-a3a6-49c9-9422-eb7759d8d4e9 remains ACTIVE and below60 confirmed
-minutes; this report is not a normal research-session finish. Earlier ended
+This scientific consumer task is closed at a checkpoint. At initial publication70bbc33b the ordinary AUX
+session fea09fcc-a3a6-49c9-9422-eb7759d8d4e9 was ACTIVE below60 confirmed
+minutes. It continued through concrete reader repairs; final session closure
+is governed by its later actual ledger, not this early checkpoint. Earlier ended
 segments, transport and idle time earn no credit. PRIMARY retains its algorithm,
 new-family/pool generation and defaults. No new Player, search, played game,
 training or Native build was launched by these consumer checks.
@@ -155,3 +156,59 @@ scripts/analyze_new_family_evidence.py, scripts/census_new_family_terminal_choic
 scripts/augment_new_family_terminal_facts.py and scripts/check_new_family_certificates.py.
 The consumer source must first be obtained from the fixed Git revision above;
 all public derived byte hashes are in data/aux_new_family_truth_20261028/manifest.json.
+
+## Qualification-consumer repair at the later checkpoint
+
+A specific defect in AUX's initial reader did not alter these actual results,
+but underchecked frozen eligibility. Against own committed70bbc33b reader,
+three coherent mutations were accepted: paired D2 scores made unequal,
+both immediate-win scores changed from the required MATE_SCORE-1, and the
+amended whole-task cap changed. The repaired reader rejects all three. This
+is a consumer defect and counterfactual copied-data control, not evidence that
+the original experiment changed those values or that its actual games are invalid.
+
+The current consumer binds the original input to both plans, exact case/arm/query
+slots,19 reused UTF8 hashes, original FAILED/NOT_RUN statuses and original
+registration journal. It enforces the disclosed90s-to-30s qualification amendment,
+unchanged other resource/success/game/whole-deadline fields, the same binary,
+unchanged source-file set with only the disclosed caller hash changing, valid
+paired scores and the actual Core immediate-win contract. Boolean seat/clock
+aliases, failed returns and altered limits cannot qualify. No new registration
+or approval gate was added for research; these are checks of this one fixed
+historical protocol.
+
+The archive reader now anchors both manifest bytes directly to fixed source
+c42f0066 before its20 gzip/raw digest checks; private corrupted-file and coherently
+re-signed local-manifest controls both reject. It does not trust a manifest's
+self-declared local identity. The reproducible entry is:
+
+```text
+python scripts/verify_published_new_family_games.py --phase all --source SOURCE_FOLDER --output OWN_OUTPUT
+```
+
+The explicit phases archives/qualification/cohort/games allow separate coverage;
+all combines them. It does not rerun Player, games, Native cancellation or builds.
+Current55 relevant tests pass, plus the two source-integrity copied-data controls.
+The complete phase integration and final qualification CLI pass the real packet.
+Original paper/qualification chronology is consistent with commit
+46186182c8b9c0a2a564a5d3e549e38e06a052b7 dated06:06:44UTC and first saved game
+start06:07:42UTC. Git timestamps/source logs are not independent trusted-clock
+observations of the historical process or proof of unsaved warm TT contents.
+
+The complete shared-history metadata table has146 equal-completed-depth
+observations, all with equal returned scores;145 also choose the same action.
+The remaining tied D4/score0 context is new7-f2-h1 ply45, g1215/g1105, with
+different actions. Nineteen other shared contexts have different depths; eight
+of those are first divergences. This is a descriptive165-context table of the
+same games, not a new fixed-depth PVS test, a numeric WDL label or independent
+quality gain. Actual matched-action equality implies zero one-choice difference;
+score equality for different actions does not.
+
+Latest Pro c4d1cdcaef5542485fe415679c06a13d42df04d7/path
+2026-10-29_000115_JST_c42f0066.md/blob140ba0692731ad43820b3c2a8ac69ef1080f23fa
+was privately saved/read. ADOPT its stop on further same-packet label mining and
+closed cancellation refill; PRIMARY retains its quiet-defense mechanism. The
+consumer fixes above repair concrete checks; they do not add labels or searches.
+The default master and separately observed manuscript branch were also inspected
+for review path names; neither supplied a new Pro/AUX plan. An old fork lacking
+the Patrol directory is not a deletion instruction for current sandbox.
