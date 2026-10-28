@@ -1,6 +1,6 @@
 # Atomic plain-Leaper: cost decision and source-occupancy witness
 
-The existing receipts do **not identify a positive exclusive removable whole-call
+At the initial13aacdd9 checkpoint, the existing receipts do **not identify a positive exclusive removable whole-call
 fraction** for a fused plain-Leaper executor. The decision is **NO_GO for
 implementation justified by these timings**; speed and engineering cost remain
 UNKNOWN. This is a decision about evidence, not proof that a future implementation
@@ -10,6 +10,11 @@ A distinct offline semantic witness is positive: static reverse attack sources
 intersected with owner/current-type occupancy match Core on the retained paths,
 and the two-cell update has an exact algebraic inverse. This is not a provider,
 cache, full executor, new speed measurement or strength result.
+
+A later newly published narrow intervention at76da1ff8 is independently reviewed
+in [AUX_TRANSIENT_IMPORT_REVIEW_20261028.md](AUX_TRANSIENT_IMPORT_REVIEW_20261028.md).
+Its positive4.046% matched whole-call observation fails its own5% gate and does
+not identify an old inclusive-region decomposition or justify a fused executor.
 
 ## Source and scope
 
@@ -214,3 +219,177 @@ slots, old Boolean improvement, WDL expansion or strength claim follows. Dot's
 single delayed check at04:31:21UTC found no new reply to the04:26:04 follow-up;
 the private complete original is retained. Lack of reply is not an execution
 gate. The ordinary AUX session remains active at this milestone.
+
+## Counts versus source sets: a separate information question
+
+The exact source witness does not imply that a dynamic source-bitset cache is
+necessary. With typed occupancy O and immutable incidence R retained, sources
+are recoverable on demand as O intersect R. Define C[p,t] as the population count
+of S[p,t]. For a mover of owner p/type c, the exact count change at target x is
+
+    delta C[p,x] = -[x in F[p,c,s]] + [x in F[p,c,t]],
+
+where F is the existing forward capture-target relation. A capture additionally
+subtracts [x in F[1-p,d,t]] from the opponent's count, with d the victim type.
+Repeated pattern/geometry paths to the same endpoint contribute ONE per actual
+source, not multiplicity. Typed groups are disjoint because an admitted source
+contains one piece/current type. Thus C=sum_c popcount(O[p,c] intersect R[p,c,x]).
+The formulas preserve nonnegative counts on valid transitions; Boolean attack is
+C>0. They do not provide public action syntax or history/terminal state.
+
+Counts alone are not a source list. On the actual retained n5-f0-h2 K move
+(0,0) to(1,1), nine owner/target source sets change, only seven counts change,
+and only six union bits change. Opposite incidence edits cancel numerically
+while the origin changes. With O+R still available this is not lost information;
+without those inputs a consumer must not treat an unchanged count as an
+unchanged source identity. No automatic source-cache necessity follows.
+
+The distinct scratch census script
+[measure_leaper_incidence_obligations.py](../../scripts/measure_leaper_incidence_obligations.py)
+uses the same286 literal path occurrences, which collapse to76 distinct
+(parent Position, full public action, child Position) transitions. This quotient
+is used ONLY to avoid calling repeated data independent; full history is not
+quotiented for search or terminal authority.
+
+| Logical quantity |286 occurrences |76 distinct transitions |
+|---|---:|---:|
+| Mover/victim source-contribution edits |612 |163 |
+| Sequential endpoint incidence additions/removals |2,916 |781 |
+| Nonzero net count rows |2,260 |605 |
+| Changed source-set rows |2,588 |693 |
+| Changed Boolean attack bits |1,576 |418 |
+
+These are mathematical edit obligations, not measured operations, stores,
+checkpoint counts, time or speedup. Combining opposite count deltas, iterating
+outgoing endpoints, recomputing O intersect R, maintaining source sets and using
+architecture-specific bit operations have different real costs. No choice wins
+from these counts. The count derivation is not an optimization/continuation of
+the closed Boolean implementation, and no new availability provider is made.
+
+For at most64 cells and T types, unpadded fixed-width conceptual storage would
+be2T eight-byte occupancy words; an optional source cache adds2N eight-byte
+words, whereas optional per-owner/target counts can use2N one-byte values
+(count<=N<=64). For T=3 and N=25/36 these are48bytes of occupancy plus400/576bytes
+of source sets, or plus50/72bytes of counts. These exclude all containers,
+alignment, static tables, board/Piece carriers, frames, history, undo, allocation
+and consumer overhead. They are not actual C/Python object sizes or RSS savings;
+keeping the existing Core/Native position makes this additional storage. Both
+owner-specific incidence tables must remain authoritative; symmetry compression
+cannot be assumed for arbitrary admitted owner-relative/absolute geometry.
+
+Changes to a scratch array are unobservable until its conceptual commit. The
+census may combine commuting owner/type contributions in an arithmetic order;
+it does not prescribe Core's remove-before-move checkpoint order. A real mutable
+consumer would need exception-safe partial-update rollback and the existing
+transaction's occurrence/snapshot/history/bridge recovery. That integration is
+NOT tested by the algebraic inverse, and is not undertaken here.
+
+## Terminal history is a different information boundary
+
+A separate source-bound question examines the current continuous-check predicate,
+not a new runtime/history cache or another replay of closed game studies. In the
+admitted domain, full Core precedence is: no-action mate/stalemate first, then
+continuous-check adjudication where enabled, ordinary repetition, and absolute
+max-ply. The footprint excludes the additional automatic/consecutive/progress/
+repeated-target policies; it does not remove ordinary repetition or
+continuous-check responsibility. Attack counts supply only state-local facts.
+
+For canonical exact current identity q, let its occurrence indices be I, and let
+L be the configured repeat limit. When there are at least L occurrences, the
+runtime predicate inspects the event interval (I[-L], I[-1]]. An event describes
+the move INTO its recorded child; including the event at the first occurrence
+would charge a move before the interval.
+
+Define prefix M_p(j) as moves by actor p through record j, and B_p(j) as those
+moves whose gave_check is false. For a=I[-L], b=I[-1], define
+
+    m_p = M_p(b) - M_p(a)
+    b_p = B_p(b) - B_p(a).
+
+The predicate identifies a checker exactly when both actors participated
+(m_0>0 and m_1>0) and exactly one actor has b_p=0. Its opponent wins the
+continuous-check adjudication. Both actors always checking, neither always
+checking, a one-sided event interval, incomplete history or an empty interval
+produce no such actor-specific result. No-result here is not a draw label:
+Core still applies its remaining terminal precedence. For L=1 the runtime's
+queried interval is empty. That observation is not a new game or a finding of
+reachable public/runtime disagreement.
+
+Proof: subtraction removes every record through a, leaving precisely (a,b].
+Each record contributes once to its actor's M and once to B if it was not a
+check. Thus m_p counts participation and b_p=0 is equivalent to every one of that
+actor's participating moves being a check. These are exactly the source's list
+predicates. Identity matching must use Core's exact canonical equivalence and
+alias resolution, never only a 128-bit hash or occupancy mask.
+
+One can describe a pure sufficient-statistic fold for THIS predicate: keep the
+current global M/B, exact occurrence counts, and for every exact identity the
+last L prefix snapshots taken at its occurrences. Appending an event updates
+the actor's M/B, the new identity's count and its snapshot list. Induction on
+append shows these agree with batch recomputation, and the prefix formula above
+then gives the same current-window result. This does not supply the actual
+Position transition, legal public actions, serialization, opaque import/bridge
+validation, abort/undo or a production TT integration.
+
+[Event checker](../../scripts/verify_terminal_event_projection.py) uses opaque
+abstract record tokens and calls only the existing Core history predicate.
+[Results](data/aux_leaper_projection_20261028/events.json):174,764 predicate
+comparisons through8abstract plies;10,924 summary-fold and87,392 one-event
+extension comparisons through6plies; six targeted participation/completeness
+controls. These are algebraic/source-contract checks, **not** legal histories,
+RuleSets, actual game states, WDL facts or independent samples. No RuleSet,
+Position, SearchPathRuntime, Player, solver or Native object is constructed.
+The supplied global-count counterexample is likewise ABSTRACT_EVENT_MODEL_ONLY;
+physical reachability is unproved and is not used as an engine defect claim.
+
+There is a useful negative cost result. In a legally played ONGOING history under
+this strict domain, EVERY identity has appeared fewer than L times. Otherwise
+its Lth occurrence would already have ended play by repetition (possibly after
+an earlier mate/stalemate/continuous-check result). Therefore retaining the last
+L occurrence snapshots per identity retains **all n+1 occurrence records** at
+such an ongoing state:
+
+    sum_q min(count(q), L) = n + 1.
+
+So this proposed event statistic is still linear in history length before
+termination, with additional prefix integers and grouping overhead. It does not
+establish asymptotic history compression, lower heap/RSS, cheaper equality or a
+net whole-call gain. Some action syntax is absent from it, so it is also not a
+GameRecord replacement. The existing persistent exact history context already
+avoids whole-path copying on every append; that asset is part of the baseline.
+No product cache, key weakening or compressed-history implementation follows.
+
+A further actual carrier control uses the same published root with its square
+shape represented as explicit N/N instead of None/None. Typed occupancy, side,
+physical shape and the authoritative external key agree, while the current
+RuntimePositionIdentity exact guard distinguishes the Position fields. This
+is not a rules change or a product bug; it demonstrates that a physical
+projection must not silently redefine the existing exact runtime guard.
+The added regression passes. Future algebra must preserve carrier/canonical
+identity conventions as well as physical movement.
+
+For external context, Kishimoto and Muller's
+[A General Solution to the Graph History Interaction Problem, AAAI2004](https://cdn.aaai.org/AAAI/2004/AAAI04-102.pdf)
+separates path-dependent entries and revalidates proof transfer rather than
+blindly reusing a positional result. Its correctness result assumes retained
+proven/disproven entries; its treatment of intermediate heuristic values is not
+a guarantee for this bounded-TT heuristic engine. This supports keeping the
+local exact-history contract, not importing that algorithm or its performance
+claims. The six-page primary paper was read; private PDF SHA256 is
+565ff24b5f6bb812726f8ae44ccce75a267b1154e6bbd5a942d2952f016fbfed.
+The first publisher/author-host fetches failed; the publisher CDN succeeded.
+
+The accepted conclusion remains narrow: board attacks and one history predicate
+have explicit sufficient information, but neither the existing timings nor this
+functional summary justifies replacing Core execution or exact TT guards. The
+new information helps reject an unsupported compression claim before engineering.
+
+
+Final witness guard correction: an implicit square Position can contain26cells
+while its inferred shape reports5x5. The scratch reader originally accepted a
+trailing empty cell as the same occupancy. It now explicitly requires actual
+board length equal to compiled area, with a negative regression. The prepared
+source positions all satisfy the condition; the final recheck retains the same
+6144attack comparisons/286deltas. All17 current projection tests pass. This
+corrects the research reader, not a claimed product engine defect or a change
+to the frozen rules/input records.

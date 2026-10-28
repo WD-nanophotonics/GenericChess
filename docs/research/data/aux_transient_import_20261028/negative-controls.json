@@ -1,0 +1,88 @@
+{
+  "controls": [
+    {
+      "case": "wrong_input",
+      "check": "assert digest(inputs.read_bytes()) == frozen[\"input_sha256\"] == frozen[\"plan\"][\"input_sha256\"]",
+      "error": "AssertionError",
+      "line": 47,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "frozen_slot_binding",
+      "check": "assert old[key] == final[key], (index, key)",
+      "error": "AssertionError",
+      "line": 61,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "candidate_flag",
+      "check": "assert raw[\"transient_imports_active\"] is raw[\"on\"]",
+      "error": "AssertionError",
+      "line": 89,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "censored_completion",
+      "check": "assert slot[\"complete\"] == (d[\"completed_depth\"] == 6)",
+      "error": "AssertionError",
+      "line": 92,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "empty_retained_PV",
+      "check": "assert pv and pv[0] == chosen",
+      "error": "AssertionError",
+      "line": 106,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "illegal_chosen",
+      "check": "assert chosen in session.legal_actions()",
+      "error": "AssertionError",
+      "line": 104,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "orphan_return",
+      "check": "assert observed == [f\"return-{i:03d}.json.gz\" for i in range(48)]",
+      "error": "AssertionError",
+      "line": 81,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "archive_hash",
+      "check": "assert digest(raw) == entry[\"compressed_sha256\"], entry[\"path\"]",
+      "error": "AssertionError",
+      "line": 43,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "work_parity",
+      "check": "assert parity",
+      "error": "AssertionError",
+      "line": 125,
+      "rejected": true,
+      "source": "verify_published_transient_returns.py"
+    },
+    {
+      "case": "profile_cache_work_flag",
+      "check": "assert parity",
+      "line": 131,
+      "reader_sha256": "55a48ce65bbb88bd9f0ece80dc8b0dfbb1b13d0a69ce7a7a563b8a4c51787ab7",
+      "rejected": true
+    }
+  ],
+  "count": 10,
+  "reader_sha256_at_first_nine_controls": "c1e76ca0da66b42c26e4a2137f1ddc875d73bf53b521586374daca4d281cba3a",
+  "scope": "Corrupted copies of the newly published transient returns only; no Player/search/game/build or original experiment rerun.",
+  "source_archive_unchanged": true,
+  "status": "PASS"
+}

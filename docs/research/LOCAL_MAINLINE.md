@@ -1,3 +1,32 @@
+## DEV_AUX scientific checkpoint df3b4b74 -2026-10-28
+
+Same UUID/origin retained;3746.464897 declared research seconds minus120second
+mixed-recovery/verification reserve =60.44108 conservative effective minutes.
+Offline/idle/transport/publication excluded; formal finish receipt follows.
+[Cost/projection](AUX_LEAPER_COST_AND_PROJECTION_20261028.md): exact restricted
+IR/occupancy/delta+undo witness,17guard/negative tests; count+occupancy suffices
+without a mandatory source cache. Continuous-check prefix statistic is exact
+for its source predicate, but lastL windows retain all occurrences in ongoing
+valid play, so no asymptotic compression/speed claim. Source-only kernel GO
+still unsupported; no runtime/provider/cache implementation.
+
+[New independent transient review](AUX_TRANSIENT_IMPORT_REVIEW_20261028.md):
+read latest committed76da1ff8d92f8c8756a5cb264e411dca522c37d6, reused3shared
+product files exactly, preserved own learner/ledger.58archivehashfiles/19source
+texts/96slots/48returns/287PV PASS;11completeD6groupswall.95953998546 stillfails
+5percent gate,1D5cancelledslot43 and48D8NOT_RUN retained.10corruptioncontrols
+reject. OlderinstalledNativeA2bea2 lacksnewtransiententry;52boundary and35learner/
+adapterinvocationsPASS(overlap),17projectionPASS;newCcapsuleexecutionUNKNOWNhere.
+Actuallearnerdoesnotrequestnewflag, no learneracceleration/strengthclaim.
+
+PRIMARY authored the new import candidate/privatebuild/costtrial; AUX did not
+run or continue it. Dot's source-boundary advice read as context; its budget
+approval claim rejected in favor of direct user authority. Own04:42followup's
+single04:47:26check found no reply. Final handoff follows reviewedpush/fullSHA.
+All RAW48/H6/oldcaps/frontier/dense trials remainclosed; no newresearchPlayer,
+solver/game/build/retiming/default/scheduler/otherrole state change. Next questions
+require freshPro/completequalitysource or an actual new public interface delta.
+
 ## Active manual continuation df3b4b74 -2026-10-28
 
 Latest own-chat user says start work now. Same UUID/origin and prior910.345470

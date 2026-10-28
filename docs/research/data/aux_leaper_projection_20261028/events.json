@@ -1,0 +1,51 @@
+{
+  "controls": {
+    "checker0": 0,
+    "checker1": 1,
+    "incomplete": null,
+    "mutual_all_checks": null,
+    "neither_all_checks": null,
+    "only_actor0": null
+  },
+  "counts": {
+    "abstract_predicate_comparisons": 174764,
+    "summary_extension_comparisons": 87392,
+    "summary_fold_comparisons": 10924
+  },
+  "global_count_counterexample": {
+    "checker_a": 0,
+    "checker_b": null,
+    "limit": 2,
+    "q_occurrences": [
+      0,
+      2,
+      6
+    ],
+    "same_global_actor_move_check_counts": [
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "same_identity_multiplicities": true,
+    "scope": "ABSTRACT_EVENT_MODEL_ONLY"
+  },
+  "limits": [
+    "No RuleSet, Position, legal game, runtime, search or Native execution.",
+    "Abstract histories do not establish physical reachability, WDL or a product defect.",
+    "Prefix predicate and abstract append closure are checked; no physical continuation or TT implementation is certified.",
+    "The functional summary is a research data model; no production history cache/replacement or cost gain is implemented."
+  ],
+  "max_abstract_plies": 8,
+  "predicate_results": {
+    "0": 21549,
+    "1": 17001,
+    "None": 136214
+  },
+  "script_sha256": "d37705a6b3cd3dd9e2ddce01fcbbd6623a610a3b9df08f80dbb49898c0c1b20b",
+  "status": "PASS"
+}

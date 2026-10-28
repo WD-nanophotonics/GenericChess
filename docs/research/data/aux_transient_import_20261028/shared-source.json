@@ -1,0 +1,24 @@
+{
+  "excluded": "PRIMARY producer/ledger/dev tests depending on privatebinary and producer helpers; portable adapter checks adapted locally instead.",
+  "files": [
+    {
+      "blob": "7e8ee4b0193d241735d8c5ebb3864914414a0e10",
+      "identical": true,
+      "path": "generic_chess/_native/native_module.c",
+      "sha256": "117730fb363e3e750199423294943c0baa388148adb38ea1e68747241130c91a"
+    },
+    {
+      "blob": "6e3379d0856d11bf1aec53b8a0f1efc226be3b9d",
+      "identical": true,
+      "path": "generic_chess/ai/alphabeta/native_legality.py",
+      "sha256": "2dae35686c6f5639787e9ae7b0ec7f20cabcaa49c1c23a9c3b3935384f3451d4"
+    },
+    {
+      "blob": "6a8032aa531edfd876f225b988dd4e64351d35a2",
+      "identical": true,
+      "path": "generic_chess/ai/alphabeta/player.py",
+      "sha256": "24a2df46727a15ef59a939525f82b2e5ba1bbec51f44e2302e7c9600c858be72"
+    }
+  ],
+  "source": "76da1ff8d92f8c8756a5cb264e411dca522c37d6"
+}

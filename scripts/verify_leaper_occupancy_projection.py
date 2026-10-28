@@ -87,6 +87,7 @@ def incidence(compiled):
 
 def occupation(position, compiled, types):
     assert position.ruleset_fingerprint == compiled.ruleset_fingerprint
+    assert len(position.board) == compiled.board_shape.area
     assert position.board_shape == compiled.board_shape
     assert not position.aux_state and not any(h.counts for h in position.hands)
     assert type(position.side_to_move) is int and position.side_to_move in (0, 1)

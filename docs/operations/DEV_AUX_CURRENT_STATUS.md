@@ -10,7 +10,8 @@ elsewhere describe the state at that time and do not override it.
 - Initial15minute consumer source audit: COMPLETE, published at
   `a475104a1bcb6c0f7c25465a581ea29bb87d7002`.
 - Manual user resume2026-10-28: df3b4b74 ACTIVE, same origin/confirmed work;
-  cost/projection milestone is published below60, no normal finish claimed.
+  scientific checkpoint now3746.464897declared seconds;120secondreserve gives
+ 60.44108conservative minutes. Formal accepted finish receipt pending.
 - Current action: follow the revisable `.local_agent/WORK_PLAN.md` and compact
   `NEXT_WORK.md`. Latest user authorizes scoped fallback planning when GitHub
   ChatGPT Pro has no explicit AUX task; unconditional waiting is superseded.
