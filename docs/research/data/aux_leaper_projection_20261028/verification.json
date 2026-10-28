@@ -1,0 +1,163 @@
+{
+  "counts": {
+    "capture_deltas": 40,
+    "core_attack_comparisons": 6144,
+    "delta_source_comparisons": 17424,
+    "delta_undo_transitions": 286,
+    "empty_target_comparisons": 4708,
+    "friendly_target_comparisons": 718,
+    "input_histories": 24,
+    "literal_path_plies": 286,
+    "quiet_deltas": 246,
+    "rollback_prefixes": 612,
+    "saved_returns": 48
+  },
+  "distinct_positions": 100,
+  "elapsed_seconds": 0.2720909002237022,
+  "incidence": [
+    {
+      "board_area": 25,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "a128c21afbb9acf4ab5f89f904e0681638107112b7924f8d6a794a66a6131371",
+      "forward_incidence_bits": 640,
+      "nonempty_forward_rows": 150,
+      "reverse_incidence_bits": 640,
+      "reverse_rows": 150,
+      "types": 3
+    },
+    {
+      "board_area": 25,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "b89e761e48b59db19c6a8435895cbab2bb9d74f9d7bed842cf5dedb8b934adbd",
+      "forward_incidence_bits": 512,
+      "nonempty_forward_rows": 148,
+      "reverse_incidence_bits": 512,
+      "reverse_rows": 150,
+      "types": 3
+    },
+    {
+      "board_area": 25,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "5f740d4f738d871cde1e60ac1429b6e8f4a2991a0faaaccb53cd62053158a492",
+      "forward_incidence_bits": 536,
+      "nonempty_forward_rows": 148,
+      "reverse_incidence_bits": 536,
+      "reverse_rows": 150,
+      "types": 3
+    },
+    {
+      "board_area": 25,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "0124129c47e1994cdb11eede27c1e2f1da2cd16eb11dac8d73a1fd7d8b9b3cec",
+      "forward_incidence_bits": 552,
+      "nonempty_forward_rows": 150,
+      "reverse_incidence_bits": 552,
+      "reverse_rows": 150,
+      "types": 3
+    },
+    {
+      "board_area": 25,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "d49090df675dcf30540d8180eed80d75af9eb53129b613b3e0dd2cacdb9e2e8b",
+      "forward_incidence_bits": 768,
+      "nonempty_forward_rows": 150,
+      "reverse_incidence_bits": 768,
+      "reverse_rows": 150,
+      "types": 3
+    },
+    {
+      "board_area": 25,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "f4a2909c4d4f05a5c5d26dc7becbd4e5d3bba7aa806fa8f1964c614f7c5735f9",
+      "forward_incidence_bits": 580,
+      "nonempty_forward_rows": 150,
+      "reverse_incidence_bits": 580,
+      "reverse_rows": 150,
+      "types": 3
+    },
+    {
+      "board_area": 36,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "b8090954446f05e1baba8acfe4ae111c1917cf6bd454056f79b57010a2df0b17",
+      "forward_incidence_bits": 1000,
+      "nonempty_forward_rows": 216,
+      "reverse_incidence_bits": 1000,
+      "reverse_rows": 216,
+      "types": 3
+    },
+    {
+      "board_area": 36,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "1fa3be1f32ab16e8fb6aa8ba25db6fc33eca736457fefc7ab5f79515166beaae",
+      "forward_incidence_bits": 832,
+      "nonempty_forward_rows": 216,
+      "reverse_incidence_bits": 832,
+      "reverse_rows": 216,
+      "types": 3
+    },
+    {
+      "board_area": 36,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "9f8014d59c1aef3a03430214a86ed742a60be7d4c912f129e9f74f53822b2506",
+      "forward_incidence_bits": 872,
+      "nonempty_forward_rows": 216,
+      "reverse_incidence_bits": 872,
+      "reverse_rows": 216,
+      "types": 3
+    },
+    {
+      "board_area": 36,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "8e86cf36ccb9ef6a6f6bb3527e4e25af20ff5c60f70dbbb5f161d900119e75d9",
+      "forward_incidence_bits": 888,
+      "nonempty_forward_rows": 216,
+      "reverse_incidence_bits": 888,
+      "reverse_rows": 216,
+      "types": 3
+    },
+    {
+      "board_area": 36,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "7024b32f70dda3d87fd755478e63c176b877d04c008b0253333538dd9729e8dd",
+      "forward_incidence_bits": 1200,
+      "nonempty_forward_rows": 216,
+      "reverse_incidence_bits": 1200,
+      "reverse_rows": 216,
+      "types": 3
+    },
+    {
+      "board_area": 36,
+      "duplicate_incoming_sources": 0,
+      "fingerprint": "3a5e3fb20deca86169e0264c998e4cb639da900e677724b41f198077b203a830",
+      "forward_incidence_bits": 896,
+      "nonempty_forward_rows": 216,
+      "reverse_incidence_bits": 896,
+      "reverse_rows": 216,
+      "types": 3
+    }
+  ],
+  "limits": [
+    "Finite relative-to-current-Core witness, not independent WDL or strength.",
+    "Scratch Python dictionaries are not an implemented runtime/provider/cache.",
+    "No whole-call benchmark, Player, search, game production or Native build.",
+    "Pseudo-attacks include empty/friendly targets and pinned actors; not legal captures.",
+    "Projection alone omits side/rule binding/history/clock/public action identity; base/current and promoted fields are fixed by admission.",
+    "Undo prefixes establish algebra only; no integrated runtime exception claim."
+  ],
+  "rules": 12,
+  "script_sha256": "6584db9e1fdeb818cca336a28e8d483599b955e98c4a98c00f2ba375fc694137",
+  "source_input_sha256": "dc471719ad6720f97be01b0a052cdc14728dfdab29dbe4b8bdb8a0785fb9dd93",
+  "status": "PASS",
+  "witnesses": {
+    "overlap": {
+      "correct_says_attacked": true,
+      "naive_xor_says_attacked": false,
+      "owner": 0,
+      "position_repr": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='A', current_type_id='A', promoted=False), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, Piece(owner=1, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, Piece(owner=1, base_type_id='A', current_type_id='A', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=0, ruleset_fingerprint='a128c21afbb9acf4ab5f89f904e0681638107112b7924f8d6a794a66a6131371', aux_state=(), board_width=None, board_height=None)",
+      "remaining_sources": 1028,
+      "removed_source": 0,
+      "sources": 1029,
+      "target": 5
+    }
+  }
+}

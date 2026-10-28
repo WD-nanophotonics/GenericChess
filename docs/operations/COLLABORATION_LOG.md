@@ -1,3 +1,25 @@
+## Active manual continuation df3b4b74 -2026-10-28
+
+Latest own-chat user says start work now. Same UUID/origin and prior910.345470
+confirmed seconds retained; scheduler state is not inferred from this manual
+resume. GitHub Pro at13aacdd97fbc5cc50362f1d2bf1cf7525e3f8ffd and separate
+Slack Dot intake completed. Earlier pause premise is superseded for this own work.
+
+[New cost/projection milestone](../research/AUX_LEAPER_COST_AND_PROJECTION_20261028.md):
+no positive exclusive removable whole-call fraction identified; implementation
+GO from the old inclusive timings is refused, speed/cost UNKNOWN. Distinct
+finite IR source-occupancy witness:12rules/24input histories/100positions,
+6144Core attacks,286two-cell delta/undo occurrences,612rollback prefixes and
+12focused tests PASS. Overlapping-source XOR counterexample is actual saved
+input; Boolean parity alone does not prove source identity. No provider/backend,
+Player/search/game/build/profile or PRIMARY work; RAW48 and old caps stay closed.
+
+Session remains ACTIVE at1649.806314confirmed seconds, below60; no finish claimed.
+Next scoped question is information retained by source/count/union and action/
+history interfaces; use own mutable plan, not completed experiment relaunch.
+Dot followup1793161564 sent04:26:04UTC, delayed full-thread check04:31:21 found
+no new reply; old response adoption/execution stays distinct from endorsement.
+
 ## RAW48 independent validation df3b4b74 -2026-10-27
 
 [Result](../research/AUX_BOOLEAN_RAW48_20261027.md):12fullhistory roots/48retainedPV286plies
