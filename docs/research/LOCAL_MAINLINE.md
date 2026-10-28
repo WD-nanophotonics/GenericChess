@@ -33,6 +33,12 @@ semantic/escaped/history gaps;neither establishes global unexposed rules. New
 capture-only IR and iterator-yield cancellation counterexamples strengthen
 admission/measurement contracts,not product bug/quality claims. Same current
 normal session/ledger remains in own memo;no AUX/schedule change or new worker.
+New public AUX670bae91 reports an unreachable-UNUSED-type representation/price
+boundary,not a mask defect;PRIMARY has not rerun its proof/normalizer work.
+Before any future novelty claim,record actually initialized/creatable types;
+raw declared-type signatures alone cannot certify fresh reachable games.
+The new constructor uses each selected type twice but this does not discharge
+all historical-source reachability gaps. AUX owns its independent consumer/control.
 
 Normal manual/heartbeat rounds still require>=60real recorded effective minutes,
 continuing toward90;finite milestones/publication never waive the floor.

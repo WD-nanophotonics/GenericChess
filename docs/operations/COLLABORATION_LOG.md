@@ -8421,3 +8421,11 @@ Thirty-two new control tests include realPlayer calls;aggregate regression
 operation count UNKNOWN,distinct from8retained science returns and0qualitycalls.
 Publication uses actual fullremoteSHA receipt;reading/adoption/execution remain
 separate. A later Dot milestone followup,if sent,has its own +5 receipt in ownmemo.
+
+Milestone Slack intake additionally read AUX root1793216831.452879 through
+1793219078.911439. Its public670bae91 static consumer and UNUSED representation
+boundary are peer-reported,not PRIMARY reruns/assignments. The exact zero-CPU
+unit correction was independently checked against own retained scalar fields
+(Root4groups/8samples,cold1group/3samples) and repaired in own report;no timing
+rerun. Reachable-type novelty is a future own-generator question,not takeover
+of AUX learner/profile/normalizer work.

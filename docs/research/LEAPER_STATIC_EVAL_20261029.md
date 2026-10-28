@@ -12,8 +12,8 @@ relaxed and no expired slot was replaced.
 | Full cProfile Q-count/inventory attribution |9/18 planned Root-entry calls; active30000-node baseline~7.6s, profiler cancelled at30s with different work; zero-Q immediate wins also occurred |NO_GO/UNKNOWN;9 remaining NOT_RUN |
 | Exact per-call static memo shadow |17414 calls,4692 repeated-position hits,26.9438%; every hit also recomputed raw; same work,~3.65% overhead |FAIL frozen50% reuse gate;48 cost calls NOT_RUN;8192 capacity not retuned |
 | Integer-mask static aggregation shadow |17414/17414 raw values equal, same work,~4.14% overhead |Conditional cost stage admitted |
-| Root-entry cost, ALL12 histories, OFF/ON/ON/OFF |All12 groups preserve actions/scores/PVs/full untimed stats; wall ratio0.9193949831, CPU0.9192009875;6 family CPU aggregates lower |Original gate INCONCLUSIVE:4 tiny OFF CPU cells zero |
-| Cold Player lifecycle, same ALL12/ABBA |48 actual Player objects/calls; all decisions/work/Core undo/PV/Native checks match; wall ratio0.9321362285, CPU0.9326912308;6 family CPU aggregates lower |Original gate INCONCLUSIVE:one tiny OFF CPU cell zero |
+| Root-entry cost, ALL12 histories, OFF/ON/ON/OFF |All12 groups preserve actions/scores/PVs/full untimed stats; wall ratio0.9193949831, CPU0.9192009875;6 family CPU aggregates lower |Original gate INCONCLUSIVE:4 groups have zero SUM of their two OFF CPU samples;8 individual OFF samples zero |
+| Cold Player lifecycle, same ALL12/ABBA |48 actual Player objects/calls; all decisions/work/Core undo/PV/Native checks match; wall ratio0.9321362285, CPU0.9326912308;6 family CPU aggregates lower |Original gate INCONCLUSIVE:one group has zero SUM of its two OFF CPU samples;3 individual OFF samples zero |
 
 The lifecycle experiment is a separately frozen measurement of constructor,
 rule-derived evaluation profile, Native provider, mask setup and choose_action.
@@ -95,3 +95,9 @@ change. Adopt its priority: fresh-motion-family fixed-service decision quality,
 not more exposed extension/LMR/PVS tuning, one-hop label mining or timing-cell
 refill. The mask result stays a bounded backup. A precision probe is deferred,
 not a publication/work gate. [Next protocol](LEAPER_THREAT_ORDER_PROTOCOL_20261029.md).
+
+2026-10-29 wording correction after public AUX670bae91 pointed out the unit:
+retained raw fields were recomputed without new queries. The fixed resolution
+gate checks the two-OFF SUM per group,not every individual sample. Root starts
+after three census records;cold starts at its own slot0. Ratios/gates/defaults
+are unchanged;this is not a timing rerun or independent hardware reproduction.
