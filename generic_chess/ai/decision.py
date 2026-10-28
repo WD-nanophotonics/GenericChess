@@ -114,3 +114,8 @@ class PlayerDecision:
     runtime_semantic_local_hash_updates: int | None = None
     runtime_position_identity_hash_cached: bool | None = None
     runtime_semantic_full_diff_fallbacks: int | None = None
+
+    # Appended: preserve all existing positional constructor fields.
+    main_check_extensions: int = 0
+    main_extension_max_path: int = 0
+    main_search_max_ply: int = 0

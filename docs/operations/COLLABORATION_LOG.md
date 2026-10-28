@@ -1,3 +1,20 @@
+## AUX admitted-extension evidence checkpoint 0737a0b6 —2026-10-29
+
+Active session: same origin16:47:11UTC;2080.786933 confirmed seconds at17:28:01.
+Not a completed60minute segment; continue independent useful work after delivery.
+[New consumer](../research/AUX_ADMITTED_EXTENSION_CONSUMER_20261029.md) verifies2160returns,
+2130Coremoves/7523PV,64sourcepairs/15profiles andall64admissioncandidates.
+Actual30terminals ON1W24D5L/13points/0positivefamilies;gateFAIL unchanged.
+117distinct relevant controlsPASS. Source e9d4f253 five product files reused;
+no default activation. Four coldD1 qualification counters only later attempts;
+new perpair algebra implies ON>=3strictdecisions somewhere,none localized.
+No new WDL label,game,solver/training/build or historicalNative reproduction.
+Latest Pro605cacb8/blobbb0def60 ADOPTED stoprepeat/tuning/mining;PRIMARY
+keeps producers/quiet mechanism/kernel. Dot1793206501 distinctions executed.
+Next: meaningful peer critique of new claim boundaries, then role-local source
+question without extending closed packets or taking over PRIMARY. Normal finish
+still needs>=60effective minutes, executable memo and acceptedsessionfinish.
+
 ## Accepted segment close fea09fcc -2026-10-29
 
 Session safe_checkpoint finish accepted15:34:58.883854UTC, same UUID/origin.
@@ -207,17 +224,17 @@ No old receipt, offline or publication time is new research credit. Dot's earlie
 advice remains distinct from this AUX-derived judgment; follow-up will report
 unknowns and seek a genuinely new useful scoped direction.
 
-## Accepted DEV_AUX close89c5ef59 —2026-10-27
+## Accepted DEV_AUX close89c5ef59 â€”2026-10-27
 
 session finish safe_checkpoint accepted60.1600207effective minutes (3609.601240s), same UUID/origin across interruptions; memo synchronized ENDED. [Actual ledger](../research/data/aux_episode_observer_20261027/session-finish.json) retains closed/uncredited intervals. Source2503a8643adeff43bc4a0c004711a3c9b4f4d1cf was pushed/fullremoteverified;25focusedchecksPASS and reviewed own observer/budget fixes documented in [report](../research/AUX_EPISODE_OBSERVER_ATTRIBUTION_20261027.md). No offline/admin credit, oldtime reuse, new campaign, PRIMARY takeover, quality/speed gain or oldcap reset. Earlier pending entries are historical checkpoints, not current state. Fresh executable next questions remain ownplan/memo; role/hourly schedule unchanged.
 
-## DEV_AUX same-segment completion candidate89c5ef59 —2026-10-27
+## DEV_AUX same-segment completion candidate89c5ef59 â€”2026-10-27
 
 AUX independently repaired the maintained episode observer's explicit model/choice attribution and positive-finite wall-budget admission at runner/API entry;25focusedPASS. Actual post-query cancellation can retain1paid query/7nodes but0plies/0TD observations; no accepted-sample or quality claim comes from returned exposure. Earlier model/hash/cost/ordering documentation is published; all old numerical evidence and Native-unit execution corrections retained. No new researchPlayer/game/training/build/solver, oldcap reset or PRIMARY task adoption.
 
 GitHub Pro sandbox7cbdbbb3/blobfda5dfc2 and separate Dot channel/full thread unchanged at recovery. Existing Dot advice remains source-read/adopted, not independent execution; no new reply or duplicate request. Prior premature handoffs were unfinished, not valid finishes. SameUUID now60.1600207confirmed effective minutes excluding interrupted/uncredited/admin/offline intervals; required accepted finish remains pending at this entry. User standing support authorization was used without repeat approval. Further report/publication time earns no research credit.
 
-## DEV_AUX evaluator identity milestone89c5ef59 —2026-10-27
+## DEV_AUX evaluator identity milestone89c5ef59 â€”2026-10-27
 
 AUX independently traced the actual legacy Native payload and TT consumers. Checkpoint/config hashes are provenance; fresh fixed-evaluator engines provide TT isolation. Equal actual numeric inputs with matched root/history/TT/node conditions predict equal computation, not equal elapsed wall time, strength or universal search correctness. Own floating learner and semantic Native are distinct consumers. Two misleading docstrings corrected with unchanged executable AST; no new Native/Player/game/teacher/build/solver/training. Prior 22Native unit-case correction stays in the existing report; no old result or cap reopened.
 
@@ -229,13 +246,13 @@ AUX finished66.58400confirmed effective minutes with162checksPASS, explicitly ex
 
 AUX additionally checked the committed PVSdesign's12fullroots/118unlabelledactions, endpoint/failure/partial-pair boundaries and9pair-normalization cases. PRIMARY retains its own design and run; its usergrant320minute limit was not transferred to AUX. Public package parity has only the two existing AUXlearner differences. Session finish accepted; executable next source/certificate/endpoint tasks remain ownmemo, and normal hourly cadence stays unchanged. Scientific and administrative cost/time remain separate.
 
-## DEV_AUX attribution correction checkpoint140a989c —2026-10-26
+## DEV_AUX attribution correction checkpoint140a989c â€”2026-10-26
 
 62.33164confirmed effective minutes so far; same UUID/origin, unfinished12:47:59interval archived without credit on recovery. No offline/admin credit. New162-test/source-replay checkpoint fixes WDL/gamepoint units and an earlier overly cautious statement: the actual denominators/capacities identify a positive experienced mean regret difference on these trajectories.119arithmetic witnesses show why endpoint and observed-edge constraints alone cannot narrow the error bag; they do not establish actual RuleSet values.
 
 GitHub Pro file remains unchanged at sandbox5f134bbd; own complete Slack thread still has no new independent reply to the regret question. Previous fixed-context advice remains adopted/executed; the new correction is AUX-derived and will be separately reported, not attributed to Dot. PRIMARY PVS experiment stays PRIMARY; no AUX launch or transferred320minute cap follows. Priorrelated209.50498295minutes+actual current cost retained. Publication and transport earn no research credit.
 
-## DEV_AUX active milestone140a989c —2026-10-26
+## DEV_AUX active milestone140a989c â€”2026-10-26
 
 AUX consumed PRIMARYfd7d7ea published data without taking its profiling/algorithm task.135checksPASS; all saved returns/record hashes/PVs qualified. Same-depth root-order variants choose the same actions. Original Dot requestGC-SLACK-20261026-204933-1ccb4ab7 was exact-payload reconciled, +5minute check executed once; Dot advice about full-context cancellation, separate depths/controls and endogenous denominators was read/adopted/implemented. Its suggestion to stop at a bounded table does not override the latest user's60+effective-minute ordinary segment; AUX continued useful authorized exposure analysis without extra experiments.
 
@@ -279,7 +296,7 @@ strength result; old related112.346442minutes retained plus this round's cost.
 
 # Current collaboration record
 
-## 2026-10-24 JST — capacity, history and useful headroom
+## 2026-10-24 JST â€” capacity, history and useful headroom
 
 PRIMARY808a6d58e9fc6c3a5f5f2c861645255f00e09df2 supplies committed interfaces,
 tests and frozen two-A full records. AUX reuses19 scientific paths exactly;
@@ -324,7 +341,7 @@ reviewed push/fullremoteSHA. Partner receipt/adoption/execution is not assumed.
 
 Report: docs/research/LEAPER_SCOPE_AND_HEADROOM_20261024.md.
 
-## 2026-10-24 JST — frozen truth, actual learner, zero matched gain
+## 2026-10-24 JST â€” frozen truth, actual learner, zero matched gain
 
 PRIMARY committed b66566c3647918b4c2f40993869ff0c46fb75e9b supplies the
 24 stratified edges, common eight-root mu per board and1,152 actual Native
@@ -373,7 +390,7 @@ backup work. The combined mailbox report/question follows reviewed own-branch
 push and full SHA verification; recipient reading/adoption/execution remains
 unconfirmed, with no realtime wait or extra worker.
 
-## 2026-10-23 UTC — natural starts, free priors and fixed TD budget
+## 2026-10-23 UTC â€” natural starts, free priors and fixed TD budget
 
 PRIMARY supplies committed1ac full6x6 inputs and typed5x5 histories. Closing
 8f1f9e5f977e1baba0e5a3cd14d74b7ea0351130 is read; all25new paths are docs/data,
@@ -406,7 +423,7 @@ new committed5x5 histories for a bounded SAME-learner free-prior transfer check,
 not more unchanged6x6 TD escalation. Reading/adoption is distinguished from
 Chat's unverified reading or execution of this new AUX report.
 
-## 2026-10-23 JST / 2026-10-22 UTC — canonical history truth and cheap priors
+## 2026-10-23 JST / 2026-10-22 UTC â€” canonical history truth and cheap priors
 
 PRIMARY supplied the e8f4 canonical Leaper rules, full frozen trajectories and
 public helpers. DEV_AUX consumed them without generating rules, running the
@@ -439,7 +456,7 @@ Mailbox SEND_UNCERTAIN is not resent; existing ACTIVE60minute heartbeat unchange
 administrative delivery adds no credit. Next: bounded literal argmax on17shared
 D4failures,not another generator or unchanged training campaign.
 
-## 2026-10-22 — prior-plus-TD, signed coefficients and horizon obstruction
+## 2026-10-22 â€” prior-plus-TD, signed coefficients and horizon obstruction
 
 DEV_AUX saved and reviewed the latest Claude comment1792659091.173909. Adopted
 the missing mobility-initialized TD control and whole-region comparison; rejected
@@ -482,7 +499,7 @@ mailbox SEND_UNCERTAIN was re-read and remains unconfirmed; no duplicate report
 was sent. Next is bounded matched ABC/ABA transfer of already frozen parameters,
 not another learning run. Both existing patrols retain ACTIVE60minute cadence.
 
-## 2026-10-22 — actual-history learning controls and depth costs
+## 2026-10-22 â€” actual-history learning controls and depth costs
 
 DEV_AUX read/saved Claude1792608525.770219 and adopted uniform-tie evaluation
 and nonuniform initialization controls. The twelve-chamber baseline had already
@@ -521,7 +538,7 @@ The segment records3675.233721effective seconds;publication administration is
 excluded. The next declared control rotates C in the legal occupancy witness,
 not a new default,training sweep or automatic higher-depth census.
 
-## 2026-10-22 — full parameter regions and matched composition mechanisms
+## 2026-10-22 â€” full parameter regions and matched composition mechanisms
 
 DEV_AUX read the new Claude mailbox comment1792601379.333259 and adopted the
 broader Position-domain/explicit-supervised comparison with limits. Complete
@@ -558,7 +575,7 @@ actual-history labels/decisions are NOTCOMPUTED. The old SEND_UNCERTAIN
 Slack report is not resent;this role's same-chat ACTIVE90minute cadence remains.
 Details: docs/research/LEAPER_PARAMETER_REGIONS_20261022.md.
 
-## 2026-10-22 — layout, conditional contribution and actual learning limits
+## 2026-10-22 â€” layout, conditional contribution and actual learning limits
 
 DEV_AUX reused committed sandbox07b4b4a2,including the semantic caller/test.
 All238shared package files have matching Git content;only working line endings
@@ -595,7 +612,7 @@ stay closed. Large generated payloads remain ignored;maintained code,compact dat
 and scientific findings are the delivery. Existing ACTIVE90-minute recurrence,
 role stops,budgets and writer boundaries are unchanged.
 
-## 2026-10-21 — existing ordering and three-seed direct evidence
+## 2026-10-21 â€” existing ordering and three-seed direct evidence
 
 DEV_AUX adopted Claude1792579793's shared-search,material-independent ordering
 and seed-variation concerns. Its advice targeted an older randomized caller;
@@ -631,7 +648,7 @@ New Slack advice was saved/reviewed;the old SEND_UNCERTAIN probe remains without
 matching readback,so no message was duplicated or claimed delivered. Git is
 the completed evidence delivery;other roles own their own research and logs.
 
-## 2026-10-21 — public mainline search and coupled lambda control
+## 2026-10-21 â€” public mainline search and coupled lambda control
 
 DEV_AUX fetched sandboxd2da9705 and retained all238shared package files unchanged.
 PRIMARY supplies rules/history/terminal/runtime and public AlphaBeta/full-PV;
@@ -669,10 +686,10 @@ Closed effective-work intervals total3821.886773s(63.698minutes) in session
 fe638a93-2641-4693-8d43-587bf6b5d554;administration/publication is excluded.
 All three experiment producers and the full test process have actual exit0.
 
-## 2026-10-21 — completed-depth decisions and natural-rule learning
+## 2026-10-21 â€” completed-depth decisions and natural-rule learning
 
 DEV_AUX reused the same fixed-scale vanilla episode TDLeaf path. An opt-in
-D1→D2 decision shares a query budget, pays partial deeper work and retains only
+D1â†’D2 decision shares a query budget, pays partial deeper work and retains only
 the last complete target; cancellation/non-scoring branches reject fallback.
 84 focused/related cases pass, including stop-after-receipt-before-commit.
 The live empty-channel Slack rendering needed one small parser correction.
@@ -706,7 +723,7 @@ private. The old uncertain send was not resent. PRIMARY/DEEPSEEK work, sessions,
 branches and all hourly recurrences remain independent and untouched. Full
 configuration, local cost limits and finite results are in INCREMENTAL_TDLEAF.md.
 
-## 2026-10-21 — decision regions, real history costs and known winning choices
+## 2026-10-21 â€” decision regions, real history costs and known winning choices
 
 DEV_AUX completed research in session a2e02c6a-9815-4ba0-82ef-9703818f63e6:
 3964.743 confirmed seconds (66.079 minutes), excluding publication and recovery
@@ -761,7 +778,7 @@ Chat reading or execution. PRIMARY/DEEPSEEK contributions are referenced only
 through their existing published work/advice; their state and hourly recurrence
 were not modified. Next: the bounded depth/target contract on a fresh episode.
 
-## 2026-10-21 — reusable learner and actual semantic play
+## 2026-10-21 â€” reusable learner and actual semantic play
 
 DEV_AUX resumed session19c0e61b-b8d5-4c1c-a5bb-57d74f44569b without resetting
 its origin or previous work. The completed segment confirms4050.907s
@@ -794,7 +811,7 @@ not resent. PRIMARY/DEEPSEEK state and all hourly recurrences remain untouched.
 Next: one explicitly post-hoc mechanism diagnosis using existing paired logs;
 only a decision-changing finding warrants a separately validated new study.
 
-## 2026-10-21 — return to the learning task
+## 2026-10-21 â€” return to the learning task
 
 The user asked DEV_AUX to reassess its own project against Slack and delete
 overengineered work. Claude's #generic-chess comment at TS1792546475.322549
@@ -828,7 +845,7 @@ retains its original start and1505.826558 confirmed seconds; its unconfirmed
 open interval was discarded by supported resume, preserving interruption
 evidence. The memo was corrected to ACTIVE.
 
-## Committed infrastructure reuse — 2026-10-21
+## Committed infrastructure reuse â€” 2026-10-21
 
 The user corrected DEV_AUX to use committed sandbox infrastructure by default,
 not maintain parallel rule/search versions. Claude's latest Slack branch
@@ -842,8 +859,8 @@ the learner is the only AUX-only package file. No PRIMARY uncommitted work,
 operational state, producers or results were imported or edited.
 
 Actual learner-path comparisons preserve full D2 actions/targets/samples/nodes
-on three histories. One natural552node query changes1.039→.215s; two actual
-no-progress histories reduce per-query public replay calls150/210→8 root
+on three histories. One natural552node query changes1.039â†’.215s; two actual
+no-progress histories reduce per-query public replay calls150/210â†’8 root
 admission calls. These are local cost observations, not portable speed or
 strength claims. The complete integration suite passes3953tests with1skip;
 the initial environment failures and obsolete prototype admission expectation
@@ -868,7 +885,7 @@ mixes, paid partial work and all24full-replayed outcomes. The next second-rule
 run uses fresh initialization and D2 opposition; rule and opponent both change,
 so no isolated opponent-treatment claim follows.
 
-## This DEV_AUX research segment — 2026-10-21
+## This DEV_AUX research segment â€” 2026-10-21
 
 The user's committed-mainline requirement was implemented before subsequent
 learning work. Latest remote sandboxd2da9705 was fetched during this segment;
@@ -897,7 +914,7 @@ executed experiment or a registration/audit queue. Current results and compact
 next actions are in LOCAL_MAINLINE; raw evidence stays ignored. Publication
 is own sidemission only; Slack's old uncertain delivery is not resent.
 
-## Direct Leaper redirection and first actual results — 2026-10-21
+## Direct Leaper redirection and first actual results â€” 2026-10-21
 
 The user supplied the formal Leaper instruction directly. DEV_AUX stopped its
 own opponent-control producer through the existing cooperative flag and saved
@@ -939,7 +956,7 @@ user schedule change. This turn preserved it and made no scheduler mutation.
 95unique related tests pass across scoped runs;large raw logs remain ignored.
 Detailed science/limits:LEAPER_FOUNDATION_20261021.md. Science remains OPEN.
 
-## 2026-10-22 — clock, history and composition boundaries
+## 2026-10-22 â€” clock, history and composition boundaries
 
 DEV_AUX read Claude1792594110 and adopted the H6 scope objection. Reusing
 PRIMARY's committed3ddbf998 infrastructure (all238shared files identical),
@@ -1107,7 +1124,7 @@ leaper_opponent_returns_20261022.json. ExistingACTIVE90minute recurrence and
 same-chat binding were preserved without a scheduler mutation.
 
 
-## DEV_AUX — 2026-10-22: experience and value interference
+## DEV_AUX â€” 2026-10-22: experience and value interference
 
 PRIMARY contribution reused: sandbox 60e1b23c87002f81f19994bd68f9ffa20437a57b
 adds post-proof cancellation/deadline reporting and tested semantic cost-probe
@@ -1294,7 +1311,7 @@ backups use existing PV gradients/ranks without new queries or old-cap refill.
 Report: [Natural decision mechanisms](../research/LEAPER_NATURAL_DECISION_MECHANISMS_20261022.md).
 
 
-## 2026-10-23 JST — DEV_AUX argmax/exposure and actual consumer
+## 2026-10-23 JST â€” DEV_AUX argmax/exposure and actual consumer
 
 PRIMARY supplied frozen44d complete trajectories and later committed e3/06c
 public controls. DEV_AUX reused the3Leaper helpers/2tests byte-for-byte;
@@ -1334,7 +1351,7 @@ are excluded. Next is a NEWlabel-blind16episode cost/exposurecohort through
 maintainedplay_episode,not an oldcap extension or oracle-selectedtraining.
 Report:[Argmax/exposure](../research/LEAPER_ARGMAX_EXPOSURE_20261023.md).
 
-## DEV_AUX learning and mating support — 2026-10-23
+## DEV_AUX learning and mating support â€” 2026-10-23
 
 PRIMARY supplied committed06c7 infrastructure and its frozen224-game opening
 packet; AUX changed no shared engine, opening, sampler, default or other-role
@@ -1368,7 +1385,7 @@ seconds (68.889 minutes), preserving its 2026-10-22T19:57:38Z origin. Administra
 publication is excluded. Closing compatibility is78 passed; the serialized
 lift independently verifies16nodes. No other-role computation or cadence changes.
 
-## 2026-10-23 — prices, depth, local critic and a new rule-clock tail
+## 2026-10-23 â€” prices, depth, local critic and a new rule-clock tail
 
 PRIMARY supplies the committed 24-world AB/AAB/ABC histories at 55ab and the
 new connected-proposal packet at edda38828d970cb6a1669ffa3ac95aa93167ce71.
@@ -1414,7 +1431,7 @@ Next is a bounded float-deployment check near the proved local critic; no TD
 expansion or strength claim is authorized merely by parameter exposure.
 
 
-## DEV_AUX — natural-history WDL and tied-PV mechanism, 2026-10-23
+## DEV_AUX â€” natural-history WDL and tied-PV mechanism, 2026-10-23
 
 PRIMARY supplies the frozen55abf3de histories and committed shared infrastructure;
 its rule generation, openings, forward screen and inverse proposals stay its own.
@@ -1465,7 +1482,7 @@ at the scientific safe checkpoint. Delivery time is excluded;own sidemission
 publication,fullremoteSHA and session finish are checked before final reply.
 
 
-## DEV_AUX — 2026-10-23 natural price capacity and prospective ABC validation
+## DEV_AUX â€” 2026-10-23 natural price capacity and prospective ABC validation
 
 PRIMARY's committed ff72649685c21a37bdbe147c930e4b2070934f77 supplies the latest
 public forecast/staircase interface and newer frozen ABC inputs; these source/tests
@@ -1505,7 +1522,7 @@ SEND_UNCERTAIN remains unresent; no schedule/Agent/Goal/worker changes.
 Report: docs/research/LEAPER_NATURAL_PRICE_CAPACITY_20261023.md.
 
 
-## DEV_AUX — 2026-10-23: prior transfer, gradients and role-safe controls
+## DEV_AUX â€” 2026-10-23: prior transfer, gradients and role-safe controls
 
 PRIMARY supplied committed ABC prefixes/opponent controls at
 bf725532ea38deb5242538575c4065a63615b8c2. AUX reused its complete infrastructure
@@ -1521,15 +1538,15 @@ first-action effect. Finite D6 bounds remain UNKNOWN for their six-actor roots.
 
 Five new complete components qualify history-WDL gaps; an actual count3 root
 has all DRAW actions while its selected Unit PV derivative is outside the exact
-local critic gradient set.64 new dyadic public calls verify C−1. This is a
+local critic gradient set.64 new dyadic public calls verify Câˆ’1. This is a
 surrogate-derivative qualification, not a demonstrated strength defect or learner
 replacement. Public/private replay scopes are explicit; raw ledgers/full graphs
 stay ignored. Detached TD arithmetic and 16 diagnostic queries begin the next
 feasibility step;no TD-updated policy plays a game.
 
 Claude1792716661 advice to compare actual free priors and reduce repeated audits
-is adopted. The CI-includes-zero→no-learning inference and universal64-game power
-claim are rejected. PRIMARY’s search ladders, label protocol and rule proposals
+is adopted. The CI-includes-zeroâ†’no-learning inference and universal64-game power
+claim are rejected. PRIMARYâ€™s search ladders, label protocol and rule proposals
 remain PRIMARY work. Existing uncertain Slack delivery is not resent;no claim
 that Chat/PRIMARY read, adopted or independently executed this result is made.
 
@@ -1539,7 +1556,7 @@ crosses the usual role boundary;no other-role research/state ownership changes.
 Administrative configuration/transport earns no research credit. Report and
 curated evidence: docs/research/LEAPER_PRIOR_TRANSFER_AND_TD_GRADIENT_20261023.md.
 
-## DEV_AUX — 2026-10-23: prospective TD, useful forks and history certificates
+## DEV_AUX â€” 2026-10-23: prospective TD, useful forks and history certificates
 
 PRIMARY supplied the committed structural/horizon/quantity packet at
 7c0d3e55d6424945ab166b06351e16823cda9b70. AUX checked that shared rules,Core,
@@ -1585,7 +1602,7 @@ All68 relevant publication regressions pass in the project .venv. Curated report
 docs/research/LEAPER_PROSPECTIVE_TD_AND_TRUTH_COST_20261023.md. Five compact packets
 and source-bound readers preserve the results,negative controls and actual errors.
 
-## 2026-10-23 — AUX tie/truth closure and actual free-prior pilot
+## 2026-10-23 â€” AUX tie/truth closure and actual free-prior pilot
 
 PRIMARY supplies committed sandbox1ac1f97a rules, complete strong-foe histories
 and unchanged shared Core/Session/search;it owns generation,quality/inverse
@@ -1626,7 +1643,7 @@ Current view favors cheap prefix/initialization evidence before more proof or
 training. Report delivery,Chat reading,adoption and execution remain distinct;
 no live wait,Dot mention,old uncertain resend or other-role takeover.
 
-## 2026-10-23 — AUX explorer truth/calibration handoff
+## 2026-10-23 â€” AUX explorer truth/calibration handoff
 
 PRIMARY supplies the committed canonical rules/full trajectories and shared
 Core/Session/search through sandbox8f1f9e5(code unchanged from1ac). It retains
@@ -1667,7 +1684,7 @@ Same session b489e776-0281-49a3-a2f6-ebba215414b6 finishes successfully with
 Report:docs/research/LEAPER_EXPLORER_TRUTH_CALIBRATION_20261023.md. Own sidemission
 only;both existing hourly patrols and all other-role state remain unchanged.
 
-## 2026-10-23 — AUX initial truth and local certificates
+## 2026-10-23 â€” AUX initial truth and local certificates
 
 PRIMARY supplies the committed canonical records and Core/Session/search.
 Latest fetched source c7e7b84101ee286a4d3bc98a19a33463afd2809d changes no shared
@@ -1811,7 +1828,7 @@ and sensitive/hostname-bearing originals remain private. Science staysOPEN;
 nextAUXdualreplay existingpaircertificateprefixes,PRIMARYownsnextfreeze.
 
 
-## 2026-10-24 JST — DEV_AUX paired-history mechanisms
+## 2026-10-24 JST â€” DEV_AUX paired-history mechanisms
 
 PRIMARY contribution consumed from committed0815ac6cb8268266c215c0cd8a24bce12bf52a66:
 unchanged H6 full inputs/actual forecasts and earlier H64 selected controls.
@@ -1941,7 +1958,7 @@ private and repaired errors are not current blockers. Research is OPEN; next
 consume PRIMARY's frozen A/B input or one bounded natural-prefix tie diagnostic.
 
 
-## 2026-10-24 — A/B natural learning and rank-qualified depth mechanism
+## 2026-10-24 â€” A/B natural learning and rank-qualified depth mechanism
 
 PRIMARY supplied committed quiet/contact full inputs, original unfiltered roots,
 profiles and records ataaa325e4286197ee731c7e61df5106251661f687. AUX reused12
@@ -1975,7 +1992,7 @@ file. Publication and transport are not research credit. Research remainsOPEN;
 next original probe follows replies and measures one bounded deeper-episode cost
 before choosing any new learning budget. No extra worker or recurrence change.
 
-## 2026-10-24 — deeper targets, conditional price effect and odd component
+## 2026-10-24 â€” deeper targets, conditional price effect and odd component
 
 PRIMARY published56560fb3e24102792f72a005c5c5bdb52526943f with complete default
 interventions/fresh inputs and bounded atomic-writer repair. AUX reuses13paths
@@ -2020,7 +2037,7 @@ receipt absence failed closed. Initial mixed158.415870s is uncredited, original
 session evidence retained. Final accepted accounting is in the data directory;
 publication and transport are excluded. Research remainsOPEN at a safe checkpoint.
 
-## 2026-10-24 — four-actor signal, history barriers and expectation cost
+## 2026-10-24 â€” four-actor signal, history barriers and expectation cost
 
 DEV_AUX consumed PRIMARY's fixed eight-root 5x5 A3/B10 law and checked latest
 committed sandboxfcd2021c; changes since56560fb3 are documentation only. Shared
@@ -2069,7 +2086,7 @@ One asynchronous combined report/question, no Dot wake, realtime wait, extra
 worker/timer or other-role summary/publication. Standing hourly schedule unchanged.
 
 
-## DEV_AUX — 2026-10-24 history context segment29cb5613
+## DEV_AUX â€” 2026-10-24 history context segment29cb5613
 
 PRIMARY's committed731709e69007713ac403d60e1218221d1950c8d9 legal-entry/capture
 work and source replies were read. PRIMARY retains rule generation, common
@@ -2123,7 +2140,7 @@ source-matched P0/P1 choice; partner reading/adoption/execution of this result
 remains UNCONFIRMED until a future ordinary probe.
 
 
-## DEV_AUX bounded initial assistance —2026-10-26
+## DEV_AUX bounded initial assistance â€”2026-10-26
 
 User restored existing AUX hourly and assigned at most15min including recovery,
 review and publication. PRIMARY owns quality design; AUX performed independent
@@ -2144,7 +2161,7 @@ completion/delayed-check details in report receipt. Await user assignment after
 this task; old Main is deferred. Hourly heartbeat remains ACTIVE.
 
 
-## DEV_AUX current-status correction —2026-10-26
+## DEV_AUX current-status correction â€”2026-10-26
 
 Latest direct user heartbeat confirms own ACTIVE/hourly60min, original binding;
 Slack status correction1792999333.106669 is corroborated by that instruction and
@@ -2158,9 +2175,9 @@ suggestions deferred pending user assignment. Later opening45711b25bd9d964925635
 This is documentation maintenance, no effective research credit or new session.
 
 
-## DEV_AUX compact patrol and temporary plan —2026-10-26 user update
+## DEV_AUX compact patrol and temporary plan â€”2026-10-26 user update
 
-User requires ordinary60–90effective-minute work, a concise durable patrol
+User requires ordinary60â€“90effective-minute work, a concise durable patrol
 prompt, and mutable tasks/budgets in a temporary plan rather than repeated
 historical prompt text. Existing dev-aux remains ACTIVE/hourly with unchanged
 ID/chat. App update/readback verified the compact517-character prompt. Current authority is
@@ -2174,7 +2191,7 @@ edit. Configuration earns zero research credit. Source read/adoption is distinct
 from future research execution. Normal round session accounting/finish remains.
 
 
-## DEV_AUX prelaunch budget/input decision —2026-10-26
+## DEV_AUX prelaunch budget/input decision â€”2026-10-26
 
 Read new GitHub Pro18:12/18:37 originals at578cd42b0672181dafa4f0bdb8015be109bd4cdc
 and relevant complete Dot thread1793006207.390099. Latest Pro assigns limited
@@ -2185,13 +2202,13 @@ handoff at pinned PRIMARY mainline; record AWAITING_FROZEN_INPUT, no invention.
 This is prelaunch exception handling, not normal research completion or a new
 experiment. Prior ended session/schedule/caps unchanged; no Dot budget waiver.
 
-## DEV_AUX censored-path and new Pro PVS intake —2026-10-26
+## DEV_AUX censored-path and new Pro PVS intake â€”2026-10-26
 
 Own f34f609f ACTIVE checkpoint68.70282effective minutes,200regressionsPASS plus3negative-source controls. PRIMARY provided fixed old resource records and a newly published PVS packet; AUX independently checked endpoint/root algebra,24new actual Core records and2115original query-prefix bindings without newPlayer/solver/game/build. GitHub Pro c695161c task was read/adopted/executed separately from pending Slack Dot request. Old cut census cannot add positive families; newPVS allDRAW does not label actions. Search cancellation vs episode completion, frozen pair vs single-slot completion and unknown live TTmemory remain distinct. New overtimeg1184has3choices; oldq371forced exemption does not apply. No PRIMARY algorithm/default/budget authority transferred; no measured speedup claimed. Full report and sources under AUX_CENSORED_PATH_BOUNDS_20261026. Next substantive Dot question asks whether a supplied local certificate could add a quality endpoint on these exact histories without another saturated-outcome panel; no reply is an execution gate.
 
 Closing f34f609f: accepted finish71.98539effective minutes/4319.123103seconds,99.084minute conservative whole-window plus actual delivery costs retained. Root-choice union16/118with0completefrontiers is an exposure diagnostic, not a universal proof/play gate; one newchoice onlyD3qualification, anotheractualPVS, no causalquality claim. LateDotreply1793023931privatelyread/adopted after independent implementation, not numerical replication. Milestone3befdd2cdcb2fb0175e6f9107be3cd5e5ca18c0apushed/fullSHAverified then followup1793028676sent15:31:16Z;one delayedfullthreadcheck15:36:55Zdone/no newreply. Concrete suppliedcertificate/qualityendpoint question pending for nextmeaningfulintake. Memo executable and automaticallyENDED; no other role/schedule modified.
 
-## DEV_AUX terminal-frontier/partial-certificate milestone —2026-10-27
+## DEV_AUX terminal-frontier/partial-certificate milestone â€”2026-10-27
 
 Samea0a30c04 ACTIVE,61.28587confirmed effective minutes,253relevantregressionsPASS. PRIMARY's fixedPVSrecords provideinputs;AUXgenerates/costs14803one-stepcounterfactualchildren(noPlayer/newgames/fullgamesolve/trainingcampaign),usesexistingCore/checkers,thenonlyalgebraicclosureonalreadycheckededges.232terminalDRAWfacts,18exactnearhorizonqueryparents,75one-sidedoptions;77additionalboundsindependentlyrecheckedthroughsameCoreauthority. No strictlocalWDLgap/cross-rulegain. Safe4edgeply28stalematewitnessisconditionalstrategy,notdeadzone;actualdifferentactionsalsohavecertifiednonlosscontinuations,so singletonwitnessmatchisnotaccuracy. Materialfixed-scaleexactfitinfeasibilitydoesnotmeansearch/TDbug;static/adaptedterminalandcreditcontractsseparate.
 
@@ -2199,7 +2216,7 @@ GitHubProopening04c08a48taskalreadycompletedatprevious8c6417;new8eafba53read/ado
 
 Closing a0a30c04: accepted ENDED at17:51:00UTC with64.78964 effective minutes, five closed research intervals;88.865-minute complete window plus actual closing delivery retained.253 related tests and27 separate static gauge assertions PASS. Gauge appendix distinguishes ratio/prediction invariance from fixed-scale learning dynamics; no fit or strength claim. Published d4eb948f fullSHA verified before Dot followup1793036639; one delayed complete-thread check17:49:46UTC found no new reply. Question about partial safe-option/interval validation remains pending, not adopted/executed advice or a work gate. GitHub Pro stop on further frontier/depth/closure remains adopted. Executable next tasks are fresh compatible evidence or distinct unit/scale handoff and interval-gradient analysis; no repeat of completed source panel.
 
-## DEV_AUX active interval-validation/model-unit milestone —2026-10-27
+## DEV_AUX active interval-validation/model-unit milestone â€”2026-10-27
 
 New1e5f0dfd segment follows unchanged GitHubPro8eafba53stop, separate from Dotroot1793037535(singleabout5mincheck0reply). AUX derives same-target error/regret cancellation and interval-risk limitations, then repairs two ownlearnercontract counterexamples (literalterminalnormalization;freezeallmodelparameters);163relatedregressionsPASS. No PRIMARY algorithm/state/budget ownership or new source WDL. Old qualifiedbounds reused as diagnostics, not expanded. Source-level pastscale10semantics unchanged; no numericalreplication or strengthimprovement claim. All prior costs retained; session ACTIVE and unpublishedfinishpending.
 
@@ -2207,7 +2224,7 @@ Closing-science1e5f0dfd remainsACTIVE58.01789effective minutes,178relatedPASS. A
 
 Closing1e5f0dfd: accepted ENDED19:14:34UTC,3752.021972seconds=62.53370effective minutes;179relatedPASS. Real78.433469-minute window plusactualclosingdelivery andallpriorcostscarried. Finalpointwise-error/control-regretcounterexample preventsdiagnosticstrengthoverclaim. Threeownlearnerfixes andexactriskarithmeticcomplete; fixed404oldrecordnegativeimpactcheck finds182actualchanges/0flagmismatch,notpastgainretraction. Finalreport1493969465166b44772d8e604fab63ada1684711pushed/fullSHAverified beforefollowup1793041659;single+5completecheck19:13:50no newanswer. Dotadvice/math/read/adopt/execution distinctions retained; PRIMARYpolicycontrol remains PRIMARY. MemoautoENDED withfreshsource/fixedtreeperturbation/fixedpolicytheorem continuations. No schedule/role/worker/PRIMARYstate changes.
 
-## DEV_AUX TD assumption and numerical-boundary milestone —2026-10-27
+## DEV_AUX TD assumption and numerical-boundary milestone â€”2026-10-27
 
 Same f326cb40 ACTIVE,54.18151effective minutes; no early finish. GitHubPro8c228051/blob47ea62ed adopted stop on interval/frontier expansion and narrow actual-consumer checks, now completeNO_NEW_SIGNAL. Separate own source/math review derives conditional occupancy/lambda mean identity, distinguishes variance/localODE/actualcontrol, and uses original offpolicy/nonlinearGTD papers to reject a drop-in/no-cost shortcut rather than change algorithms. Narrow finite-observation defect reproduced/fixed in own learner and independent reader;195relatedPASS. No pastscale10impact/strength/speed claim. Existing H128AUXtruth coverage reused as a pointer only; PRIMARY endpoint/controller task remains PRIMARY. No new campaigns or workers; all costs/caps carried.
 
@@ -2215,14 +2232,14 @@ Dot1793042752 source-read/adopted theorem qualifications, no execution replicati
 
 Closing f326cb40: accepted ENDED20:43:35UTC,60.3813767effective minutes/3622.882602seconds, all intervalsclosed/memosynced.195relatedtestsPASS remain unchanged after54684e57behaviorfix. Finalsource/mathreview corrects future-length normalization and independent population-loss interpretation; no newactualexperiment/qualityclaim. Milestone6174be9acba157755f78a54bbde184fbeae45787 pushed/fullremoteverified beforefollowup1793046954; one delayedcompletecheck20:41:19UTC(+5due20:40:54) payloadverified/no newDotanswer. Proofcritique pending, not adopted/executed/expired. Conservative83.411wholeminutes plusactualclosingdelivery/allpriorcosts retained, Token/unitcountsUNKNOWN. Scientific safe checkpoint, no padding/additionalcampaign/PRIMARYstate. Executable next tasks in ownmemo; stop on repeating completedtheory/source matrix/frontier.
 
-## DEV_AUX teacher-consumer milestone89c5ef59 —2026-10-27
+## DEV_AUX teacher-consumer milestone89c5ef59 â€”2026-10-27
 
 New ordinary segment ACTIVE,11.52933confirmed effective minutes, priorendedsegmentneverreused. AUX independently falsified initial board-onlycorpus concern and reproduced actual None/fallback/empty teacher statistics plus wrong-rule checkpoint acceptance. Narrow fixes reuseexistingvalidator and makeunavailablecomparisonUNKNOWN;20relevantPASS including oneexistingNativeintegration(no researchcampaign). Source-level legacy/fullsemantic separation and DAgger/ExIt target/distribution comparison are conditional support, not productionteacher or quality evidence. PRIMARY endpoint/controller remainsPRIMARY.
 
 Dot1793047948 independentlysource-read73a69f37only, noexecution; readat one+5fullthreadcheck20:54:45UTCafterdue20:54:14, exactpayloadreconciled/COMPLETED. Adopted history/domain/no-smoke cautions, fixesnotattributedtoindependentreplication. User60+stillcontrols; no stopgate/repeatedapproval. Pro47ea62ed/04003a0a unchanged; priorcosts/caps preserved and newactualcostcarried. Nextactualconsumerspecific unit/representation question, no oldgraph/training/Uniform/PVS/1520restart.
 
 
-## DEV_AUX actual-consumer repairs89c5ef59 —2026-10-27 continued
+## DEV_AUX actual-consumer repairs89c5ef59 â€”2026-10-27 continued
 
 Same ACTIVE segment, currently1896.114769confirmed seconds; no60-minute finish or old-credit reuse. Pro at sandbox7cbdbbb3 / blobfda5dfc2 ADOPTED: close generic TD theory expansion and finish actual consumer admission. Teacher direct entry now reuses corpus validation; wrong-rule but legal-action agreement and key/side/ply negatives rejected. Config rejects ignored discount settings; diagnostic shares trainer's original default-alpha resolver, fixing the reproduced200fold raw-update discrepancy for missing-reference metadata.86nonNative related checksPASS. Initial historyloss suspicion remainsFALSE. Earlier75/97selections each executed11existingNative/selfplay cases; that22-case execution correction is explicit, native/Core operation totalsUNKNOWN, no newresearchcampaign. Published e1832e3241edb233e20f4b5b1bc7d55c6c62ba22/fullremote verified before followup1793050053.851079; one delayedcompletecheck21:32:54UTC (capture completed21:32:54.208698) afterdue21:32:33 found only the verified outgoing message, no newDotreply. Pendingdirection question is not expired or a gate.
 
@@ -2231,25 +2248,25 @@ Distinct scoped existing evaluation consumer: pair-level resumable arena accepte
 
 Continuation source qualification: own current `mainline_search` and `FixedScaleSessionEnv` share the current-board/base-hand material extractor; full Session/aux/history remain authoritative and history/witness tuples are reassigned, not shared mutable lists. No feature-semantics failure reproduced, no new encoder/tests/engine. This is a source-level NO_NEW_SIGNAL, not general value quality or dynamic-rule empirical coverage. Same session now2185.109914confirmedseconds=36.4184986effective minutes; still ACTIVE, ordinary60minute requirementUNMET/no finish. Latest arena followup1793051362.612299 sent21:49:22.612299UTC/due21:54:22.612299; ONEcompletecapture21:54:36.817247UTC afterdue found5messages through ownoutgoing/no newDotreply. Rawprivate originals retained; nextdirectionquestionpendingnotgate, no duplicate request/repeatedpoll. All old/current costs preserved, TokenUNKNOWN; unchangedhourlyrole and no otherrolewrites.
 
-## DEV_AUX Pro consumer handoff —2026-10-27
+## DEV_AUX Pro consumer handoff â€”2026-10-27
 
 Adopted GitHubPro080551 at sandboxe924e17d/blob5cac1c58 after separately reading Dot's channel/full prior thread; no newDotreply at opening. [Consumer/publication handoff](../research/AUX_CONSUMER_PUBLICATION_HANDOFF_20261027.md) closes legacy teacher/arena expansion: maintained teacher callers are legacy Native, Semantic teacher UNSUPPORTED, resumers PUBLIC_ONLY in bounded source search, old impact UNKNOWN. Source reachability is not deployment or historical damage. No cross-port to sandbox or code/default/test/campaign change. PRIMARY endpoint withdrawal/NO_GO read as context only.
 
 Current942bc7a8 remains ACTIVE with only101.506071confirmed seconds at this checkpoint; prior89c5ef59 accepted60.1600207minutes not reused. Mixed administrative open interval was discarded uncredited via sameUUID resume after source verification resolved an automatic-review concern; no secondwriter/reset. New Dot requestGC-SLACK-20261027-090709-121c196a delivered from verified35c9checkpoint. It asks for a named current AUX input instead of legacy expansion; reply/adoption/execution still pending, no gate. Runner candidate-seat/fixed-missing summary source check found no concrete defect; interruption interpretation is next. All costs/caps retained; not an ordinary60minute completion.
 
-## DEV_AUX runner interpretation and bounded inference fallback —2026-10-27
+## DEV_AUX runner interpretation and bounded inference fallback â€”2026-10-27
 
 Same942bc7a8 ACTIVE,589.904212seconds=9.831737effective minutes at checkpoint, not an ordinary segment finish. Pro handoff remains closed. Dot1793059839.548369 source-only reply saved/read/reconciled at the ONE delayedcheck; exact parent payload verified. Adopted wiring-versus-run separation and summary/interruption cautions; optional extra fixture deferred without a concrete defect. No new higher-priority AUX input supplied. [Runner interpretation](../research/AUX_RUNNER_OUTPUT_INTERPRETATION_20261027.md) closes sign/denominator and interruption seams without code/tests or old record replay.
 
 A distinct standing-authorized literature fallback asks whether current finite completion envelopes could support optional-stopping-valid evidence. [Scoped result](../research/AUX_CENSORED_SEQUENTIAL_INFERENCE_20261027.md) reads versioned primary sources, derives explicit conditional-mean/envelope qualifications and exact4096synthetic rational paths. It does not upgrade old games or add an inference framework. Source agreement is not runtime replication, and math does not waive frozen budgets or60minutes. Pending independent-review question concerns target/filtration, not approval or PRIMARY design. All costs/caps retained; no newCore/Native/Player/solver/game/training/build.
 
-## DEV_AUX sample-unit qualification checkpoint —2026-10-27
+## DEV_AUX sample-unit qualification checkpoint â€”2026-10-27
 
 Same942bc7a8 remains ACTIVE with737.845632confirmed seconds=12.2974272effective minutes; [actual active ledger](../research/data/aux_censored_sequential_20261027/active-session-checkpoint.json) is not a finish receipt. Sample-unit addendum distinguishes duplicate hashes from dependence using exact two-trial laws, and source-checks paired opening seeds versus unused mainline searchseed. No oldrecord count or outcome recomputed, no statistical upgrade or new implementation. This is additional scoped evidence, not compliant60minute completion.
 
 Followup1793060812 sent only after6774fullremoteverification. ONEdelayedcheck at00:32UTC saved/read parent+2replies through ownfollowup; no newDotreply. Question remains pending/late-compatible, not an approval gate. Current Pro source unchangede924/5cac; newPRIMARY source-review discussion read only as reported context, no ownership or approval transferred. No duplicate request, extra poll/worker/timer, code/test/default/campaign change or oldcap reset. Plans retain sameUUID/current credit and fresh-source/specific-critique nextsteps without repeating closed seams.
 
-## DEV_AUX fea09fcc checkpoint —2026-10-28
+## DEV_AUX fea09fcc checkpoint â€”2026-10-28
 PRIMARY published new seven-by-seven PVS24games; AUX independently consumed fixedc42f0066 inputs/raw1787returns,1763moves/5467PV and actualterminals, not PRIMARY algorithm/producer/state. New one-stepCorecensus25615children/229terminalfacts and99literalstrategybounds leave0strictselectederrors;45zero-regret exposures. Gatefails1/6positivefamilies; noactivation/strengthclaim. Dot1793195974 conditionalregret/TTcritique adopted and executed in12pairledger/units/knownversusUNKNOWNlabels. ActualNativeABI differsfromproducer; runtime/cancellationrunPARTIAL771histories and100000recordedfailures; earlierfailedattempts make wholechaincapEXCEEDED(min100001,totalUNKNOWN), nowCLOSED/no refill. Consumerrepairs and costgap are explicit, no extraPlayer/search/game/build.27real-sourcecontrolsPASS; ordinarysessionremainsACTIVE below60, checkpointnotfinish. Report AUX_NEW_FAMILY_TRUTH_20261028.md.
 
 Later fea09fcc checkpoint: own qualifier falseaccepts reproduced against70bbc33b and fixed;55tests+2actualsourcecontrolsPASS. ActualSOURCE unchanged. Two2010primarypapers read/pinned; realLOSS/DRAW proof counterexample retains namedseat/fullhistory, no solver. FreshPro c4d1cdca stopmorelabels/cancelrefillADOPTED; PRIMARYmechanism untouched. Dotmilestone1793198239single+5check14:42complete/no newreply. SameUUIDnow3741.450412confirmedsecminus120reserve=60.3575min,stillACTIVEtoward90; next claim-specific identity question not anotherlabel/theorem sweep.

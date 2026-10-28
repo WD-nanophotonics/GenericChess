@@ -1,0 +1,85 @@
+{
+  "source_sha": "e9d4f253bf96ce302cdcd8ded86bf049802ac301",
+  "Pro_previous_covered_sha": "c4d1cdcaef5542485fe415679c06a13d42df04d7",
+  "Pro_files": 32,
+  "Pro_changed_blobs": 0,
+  "latest_Pro_blob": "140ba0692731ad43820b3c2a8ac69ef1080f23fa",
+  "exact_imports": [
+    {
+      "path": "generic_chess/ai/alphabeta/player.py",
+      "sha256": "9ea26d8b412231784c93b6375c988e4e40fd9d03fb5f2d0458b230351e19add9",
+      "exact_upstream_bytes": true
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/search.py",
+      "sha256": "6772a11fb27f23c7d9db603277b75e4d18ebeed60817cd642fd234771512eb08",
+      "exact_upstream_bytes": true
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/statistics.py",
+      "sha256": "5b7b0c3dcb442756b3507c66ea89c5a970c70722e4f8cb4442f44f1e775b1477",
+      "exact_upstream_bytes": true
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/tuning.py",
+      "sha256": "6056e7db46bf4902d0712deb44cc61aacf16efdd808f8cc2c097472b476a8681",
+      "exact_upstream_bytes": true
+    },
+    {
+      "path": "generic_chess/ai/decision.py",
+      "sha256": "c6e106f27b44a9634ba561915e9f7576aa733a66229d0ce84d04abdaf4729e8f",
+      "exact_upstream_bytes": true
+    },
+    {
+      "path": "tests/development/test_one_check_extension.py",
+      "sha256": "182e13d4f37ae7172192ffb9265e33c52d86e066da5f2a1431fd19b29936f2a5",
+      "exact_upstream_bytes": true
+    }
+  ],
+  "Core_test_adaptation": "Only import/replay helper adapted to own existing bind_context. All substantive upstream test bodies unchanged. Three original fixtures copied verbatim; see hashes below.",
+  "fixtures": [
+    {
+      "path": "docs/research/data/leaper_check_extension_20261028/core-witness/witnesses.json.gz",
+      "sha256": "658bb9c53c8c1336daa6dc328626ef40031e0de683c590fc129c85fec2722af1",
+      "bytes": 7387
+    },
+    {
+      "path": "docs/research/data/leaper_new_family_pvs_20261028/inputs.json.gz",
+      "sha256": "632f5aebd568745a7976b33bcf0819e6ff20f3b50a61caae0068a2547ef06bf2",
+      "bytes": 3617
+    },
+    {
+      "path": "docs/research/data/leaper_new_family_pvs_20261028/results/games.json.gz",
+      "sha256": "b0e77fcc4508055a313a4914e8ff37ede3736f9217f96863234f7ddb85743c24",
+      "bytes": 795332
+    }
+  ],
+  "historical_Native": {
+    "module": "_native_core.cp312-win_amd64.pyd",
+    "sha256": "a2e1b0bae4e1e1910334572f862f347298da9d82546d18ec7563372016010208",
+    "bytes": 459264,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32"
+  },
+  "own_Native": {
+    "module": "_native_core.cp312-win_amd64.pyd",
+    "sha256": "a2bea2dacad7943c2dad10cdf145cc33d26a84d5f0e181c3d71f84f1075688a0",
+    "bytes": 459264
+  },
+  "source_capture_scope": "All64gzip/raw pairs and nine declared UTF8 capsules verified; these are not a complete executable/environment dependency closure or authentication of the historical process. Core replay uses the shared project implementation, not an independent rules oracle.",
+  "opening_Dot_reply": "1793206501.229979 ADOPTED; exact qualification slots, retained phase, full profiles/source and soft service threshold executed.",
+  "earlier_own_reader_corrections": [
+    "Initial action helper/CompiledRuleset property naming repaired before acceptance.",
+    "Wrong nonalternating seat assumption failed at game2, not game0; corrected from bound producer root-parity schedule, no data rewrite. Prior compact work-stop wording was imprecise."
+  ],
+  "latest_milestone_Pro": {
+    "source": "605cacb8980fcde3b3ca219a02c843ce0b6ec9a3",
+    "path": "docs/reviews/chatgpt_patrol/2026-10-29_020006_JST_e9d4f253.md",
+    "blob": "bb0def60b6a4a1baf1832c58091c3c6d890dbcf8",
+    "previous_covered": "e9d4f253bf96ce302cdcd8ded86bf049802ac301",
+    "coverage": "Onlynewreviewfile;no productdelta;33Patrolfiles,prior32unchanged",
+    "decision": "ADOPT: no repeated extension/LMR/PVS tuning oronehopmining;freshunexposedfamilies andwhole-callcost matter. Suggestions target PRIMARY future source/controller/kernels;AUX consumes publishedpacket,doesnotimplementproducer orstart new experiment.",
+    "execution": "Currentnew30consumer/scopedderivedanalysis closing,no newlabels/training/games. Regretboundsare sameoutcomealgebra,explicitlynotnewindependentWDL.",
+    "timing": "First displayedimmutablegitdiff before durableblob save;exactfullblob nowprivatelysavedbeforeadoption. No originalbyteslost."
+  }
+}

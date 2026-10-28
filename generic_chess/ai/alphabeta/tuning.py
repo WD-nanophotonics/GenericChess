@@ -72,3 +72,7 @@ class SearchTuning:
     # Opt-in lazy Python identity-hash memo for the same admitted Leaper scope.
     # Exact position/history equality is unchanged; external identities stay SHA.
     use_cached_position_identity_hash: bool = False
+
+    # Experimental: spend at most one main-search ply on a positive-depth
+    # checked node per path; qsearch policy is unchanged. Default OFF.
+    use_one_check_extension: bool = False

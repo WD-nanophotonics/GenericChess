@@ -143,3 +143,8 @@ class SearchStatistics:
     result_source: str = "unknown"
     result_ordinary_qdepth: int | None = None
     result_check_hard_qdepth: int | None = None
+
+    # Appended: preserve all existing positional constructor fields.
+    main_check_extensions: int = 0
+    main_extension_max_path: int = 0
+    main_search_max_ply: int = 0
