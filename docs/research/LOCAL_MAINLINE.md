@@ -2,35 +2,41 @@
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
 CHATGPT_REVIEW_WORKFLOW.md adds current GitHub ChatGPT Patrol intake to Slack.
-PRIMARY publishes sandbox only. Both existing schedules now run60minutes;
-PRIMARY ACTIVE, AUX ACTIVE by direct2026-10-26 user resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
+PRIMARY publishes sandbox only. Prior user intent was ACTIVE/hourly for both;
+latest observed own scheduler is ACTIVE/180minutes, not changed by this resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-27 cross-rule endpoint discernibility
+## Current decision -2026-10-28 transient import finite result
 
-Science is OPEN. New autonomous review5e200256/Patrol140444,blob17bcce6d,
-fully read/adopted. The proposed4x4countermove24game trial is DEFERRED before
-any query:complete sources do not yet establish a useful near-strength endpoint.
-Its95forecast/110cap is not an active run or approval queue. Keep the source and
-exposure fix default OFF;do not dispatch or refill its proposed panel.
-Main: Does a changed dense pure-Leaper panel expose useful outcomes? |Finish
-only previously unstarted11slots of the amended12slot resource calibration,
-then literal saved Core/PV verification |Fixed12denominator and all6family
-outcomes,not root/action/depth proxy |Originalslot0FAILED after3savedreturns;
-no replay/refill;originalall12PASS impossible. Originalbatch07:19:25UTC and
-whole08:18:09UTC remain,not reset after recorder repair.
-[Protocol](LEAPER_DENSE_RESOURCE_PROTOCOL_20261027.md):six fixed5x5families,
-12pieces/4types/H128/h0;old8pieces/3types/H96/h2 contrasted. SamecurrentPVS
-engine2s/0.5s swappedseats,construction/packing-inclusive service deadlines;
-0solver/Nativebuild/defaultactivation. Frozenforecast90min/cap110min includes
-this task's source/engineering/recording;completed historical tasks excluded.
-Backup1: Oldendpoint audit CLOSED_NO_GO |106exact cross-study histories,
-24actiondivergences;3root-action-diversefamilies,only1decisivefamily |0newsearch
-|Oldpopulation lacksofmultifamilysignal isnot proofnewrules saturated or all
-algorithmqualitytrials needknownWDL. Botholdresourcewinroots chose samefirstmove.
-Backup2: Preserve failedcapture |Three originalreturns and first2associated
-moves retained;validate third asorphan withoutpromoting failedgame |Uncredited
-equalUTC intervals,strictnegative time validation preserved |NoAUXchanges.
+Science is COMPLETE. This marker closes ONLY the whole frozen one-candidate
+source/implementation/semantic/conditional96slot/verification assessment, not
+project-wide pure-Leaper optimization. [Result](LEAPER_TRANSIENT_IMPORT_20261028.md).
+11completeD6groups exact decision/work and all faster; aggregatewall0.959540,
+CPU0.959694,rootmedian0.962067 fail frozen5%gate.48D6returns,47complete;
+slot43OFFn6-f4-h2 cappedD5;48conditionalD8NOT_RUN,no refill.39testsPASS;
+independent public-data reader48returns/287legalPVplies. Oneprivatebinary,
+installedunchanged/defaultOFF;no games,solver,strength oractivationclaim.
+SkippedfreshSHA AND emptyauxnormalization;otherpayload/Native/Corehistorycosts
+remain. Botharmsusecurrentprivatebinary/commonadapter,notoldproductioncontrol.
+SourceCRLFsupplement matchesPRE-queryrawhash;originals retained,no rerun.
+LatestUSERresume supersedesoldpause;ownmatchedstops clearedonly. AUX/recurrence
+unchanged;observedACTIVE180min is not a new schedulechange.
+Main: Next genuine pure-Leaper mechanism? |At next round read currentGitHub/Slack
+and assess a new exclusive-cost or independent consumer premise |Own prospective
+cost and quality evidence |No automatic secondcandidate,thresholdretune orD8refill.
+Backup1: Existingdense evidence |Preserve613originals andmissingexpiredgames |
+Partialoutcomes remainunverified/nostrengthclaim |No refill or budgetreset.
+Backup2: Interpretation |Keep4%scoped andfailed5%gate distinct |No holdout,
+classsuccess orsoleSHAcausality |DefaultOFF;newexperiment requiresnew premise.
+
+Fully read newPatrol160253/180108/200005 at13aacdd97fbc5cc50362f1d2bf1cf7525e3f8ffd.
+Adopt exclusive-cost/semantic-closure advice;their earlier stop predates latest
+USERresume anddoes notreactivate it. Existing compiled targets/incomingindices,
+Native legality/check/availability,two-cellhash/undo and shared packing reuse are
+BASELINE. Do not rebuild them as newoptimizations. Old4x4countermove staysdeferred.
+Dense old producer stopped with1FAILED/6TERMINAL/1UNFINISHED/4NOT_STARTED and
+613savedreturns;no finalCore verification yet,nostrength ornewqualityclaim.
+Its originalall12gatefailed;partial salvagewasamended,never preregisteredPASS.
 Review reports external AUXpause versus local latest directUSER ACTIVE/hourly;
 record provenance conflict but do not change its state,task,checkout or schedule.
 Latest directUSER single prospective>=120minute threshold controls;completed

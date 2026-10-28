@@ -44,7 +44,7 @@ class NativeSemanticLegalityProvider:
     excludes them so the caller uses Core instead of accepting an empty set.
     """
 
-    def __init__(self, compiled, engine, native_rules, *, strict: bool = False):
+    def __init__(self, compiled, engine, native_rules, *, strict: bool = False, transient_imports: bool = False):
         self.compiled = compiled
         self.engine = engine
         self.native_rules = native_rules
@@ -67,6 +67,14 @@ class NativeSemanticLegalityProvider:
         self._metrics_local = threading.local()
         # Older installed kernels remain fully usable through the Python builder.
         self._payload_builder = getattr(native_rules.backend_module, "semantic_core_payload", None)
+        self.transient_imports = False
+        if transient_imports:
+            from ...core.search_runtime import _plain_leaper_hash_patterns
+            self.transient_imports = (
+                getattr(compiled, "piece_types", None) is not None
+                and _plain_leaper_hash_patterns(compiled) is not None
+                and hasattr(native_rules.backend_module, "semantic_pack_transient_position")
+            )
         self.compile_seconds = 0.0
 
     @property
@@ -104,7 +112,7 @@ class NativeSemanticLegalityProvider:
             metrics = dict(calls=0, imports=0, queries=0)
             self._metrics_local.check = metrics
         metrics["calls"] += 1
-        packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+        packed = self._pack_position(position, 0)
         metrics["imports"] += 1
         value = in_check(self.native_rules, packed, side)
         metrics["queries"] += 1
@@ -143,7 +151,7 @@ class NativeSemanticLegalityProvider:
             packed = handoff[1]
             metrics["reused_imports"] = metrics.get("reused_imports", 0) + 1
         else:
-            packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+            packed = self._pack_position(position, 0)
             metrics["imports"] += 1
         value = has_legal_action(self.native_rules, packed)
         metrics["queries"] += 1
@@ -160,7 +168,7 @@ class NativeSemanticLegalityProvider:
         return ply_count < self._max_supported_ply
 
     @classmethod
-    def try_create(cls, compiled, *, strict: bool = False):
+    def try_create(cls, compiled, *, strict: bool = False, transient_imports: bool = False):
         """Create an active provider or return ``None`` for normal fallback."""
         if not isinstance(compiled, CompiledSemanticRuleset):
             return None
@@ -189,9 +197,23 @@ class NativeSemanticLegalityProvider:
                 return None
         except Exception:
             return None
-        provider = cls(compiled, engine, native_rules, strict=strict)
+        provider = cls(compiled, engine, native_rules, strict=strict, transient_imports=transient_imports)
         provider.compile_seconds = time.perf_counter() - started
         return provider
+
+    def _pack_payload(self, payload):
+        from ...native.semantic import pack_position
+        if self.transient_imports:
+            # Certified rules have no aux slots. Keep transport validation and
+            # ordinary pack API unchanged; only the capsule's authority differs.
+            if payload["aux_state"]:
+                raise ValueError("plain transient import unexpectedly contains aux state")
+            return self.native_rules.backend_module.semantic_pack_transient_position(
+                self.native_rules.capsule, payload)
+        return pack_position(self.native_rules, payload)
+
+    def _pack_position(self, position, ply_count):
+        return self._pack_payload(self._state_only_payload(position, ply_count))
 
     def _state_only_payload(self, position, ply_count):
         """Build exactly the F20 state-only payload; never read history/SHA."""
@@ -295,7 +317,7 @@ class NativeSemanticLegalityProvider:
             checkpoint()
         payload_started = time.perf_counter()
         payload = self._state_only_payload(position, ply_count)
-        native_position = pack_position(self.native_rules, payload)
+        native_position = self._pack_payload(payload)
         payload_seconds = time.perf_counter() - payload_started
         if checkpoint is not None:
             checkpoint()

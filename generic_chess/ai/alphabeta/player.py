@@ -65,6 +65,8 @@ class AlphaBetaPlayer:
         # one readonly state import. Defaults and UI policy stay unchanged.
         use_native_semantic_check: bool = False,
         check_provider=None,
+        # Experimental strict plain-Leaper state-only imports; default OFF.
+        use_native_transient_imports: bool = False,
     ) -> None:
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
@@ -92,7 +94,8 @@ class AlphaBetaPlayer:
         self._use_native_semantic_availability = bool(use_native_semantic_availability)
         self._use_native_semantic_check = bool(use_native_semantic_check)
         self._native_legality_provider = (
-            NativeSemanticLegalityProvider.try_create(compiled)
+            (NativeSemanticLegalityProvider.try_create(compiled, transient_imports=True)
+             if use_native_transient_imports else NativeSemanticLegalityProvider.try_create(compiled))
             if (self._use_native_semantic_legality or self._use_native_semantic_availability
                 or self._use_native_semantic_check)
             else None

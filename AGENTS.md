@@ -33,6 +33,15 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-24
 
+- Latest direct user2026-10-28: "现在开启工作" explicitly resumes this PRIMARY
+  research after the prior shared-account Slack pause. Clear only the matching
+  own conservative stops; no AUX, other project, worker or schedule changes.
+  The historical pause and questions retain their original provenance, but do
+  not block this newer direct instruction. Preserve all incomplete dense results;
+  its expired frozen game slots are NOT permission to refill or reset a cap.
+  Actual recurrence was observed ACTIVE/180minutes; this manual resume does
+  not change it or claim old60minute text is the current scheduler state.
+
 - User decisions2026-10-26: explicitly DEFER the prepared16-game Native-service
   experiment. Its pending270/300-minute (later~297/300) request is closed without
   a budget grant; preserve inputs/results as NOT_STARTED, do not keep asking for

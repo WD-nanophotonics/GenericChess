@@ -8245,3 +8245,20 @@ without modifying its failed D2panel. Full-sort counter priority existed but
 reported no counter hits;fixed only that exposure metric and tested TT/clear/
 action behavior. Eligibility is not rank change or strength. Next actual-quality
 proposal uses an existing single flag,not another Native/Boolean timing refill.
+
+
+## PRIMARY transient state-only import finite result —2026-10-28
+Latest direct USER resume superseded old unverified shared-account pause; only
+own matched stops cleared. Three current remote Patrol originals fully read at
+13aacdd9; exclusive removable cost and semantic closure advice adopted through
+one distinct readonly-capsule prototype. Existing Native/reuse/hash paths remain
+baseline. Opening Dot request GC-SLACK-20261028-132553-fa9c30fe sent before science;
+one delayed check had no reply, not a gate. New39tests and48originalcostreturns:
+11eligiblegroups exact decision/work,allfaster~4%aggregate,belowfrozen5%gate.
+48D8NOT_RUN;defaultOFF,no games/activation/strength claim. Savedreader independently
+replays287PVplies and public-copy hashes/ratios. CRLF presentation discrepancy
+resolved with PRE-query raw-hash-bound byte supplement, without rewriting originals
+or refilling calls. Oneprivatebuild; installed unchanged. No AUX contribution
+rerun,files changed,task assigned or scheduler altered. Historical completed-task
+minutes were not carried into a new approval gate. Whole finite candidate closed;
+long-term pure-Leaper work remains open.

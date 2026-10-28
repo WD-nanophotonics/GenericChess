@@ -37,6 +37,7 @@
 #define GC_CANCEL_CAPSULE "generic_chess._native_core.gc_cancel"
 #define GC_SEM_RULES_CAPSULE "generic_chess._native_core.gc_semantic_rules"
 #define GC_SEM_POSITION_CAPSULE "generic_chess._native_core.gc_semantic_position"
+#define GC_SEM_TRANSIENT_CAPSULE "generic_chess._native_core.gc_semantic_transient_position"
 #define GC_SEM_ENGINE_CAPSULE "generic_chess._native_core.gc_semantic_engine"
 #define GC_SEM_TT_CAPSULE "generic_chess._native_core.gc_semantic_tt"
 #define GC_SEM_DECL_ACTION_TAG UINT64_C(0x8000000000000000)
@@ -176,6 +177,18 @@ static void gc_semantic_position_capsule_free(PyObject *capsule) {
     GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(
         capsule, GC_SEM_POSITION_CAPSULE);
     if (pos != NULL) free(pos);
+}
+
+/* No history/TT/terminal authority. Only the three state-only query adapters
+ * below accept this separate capsule type; all persistent APIs still reject it. */
+static void gc_semantic_transient_capsule_free(PyObject *capsule) {
+    GCSemanticPosition *pos = PyCapsule_GetPointer(capsule, GC_SEM_TRANSIENT_CAPSULE);
+    if (pos) free(pos);
+}
+static GCSemanticPosition *gc_semantic_readonly_position(PyObject *capsule) {
+    if (PyCapsule_IsValid(capsule, GC_SEM_TRANSIENT_CAPSULE))
+        return PyCapsule_GetPointer(capsule, GC_SEM_TRANSIENT_CAPSULE);
+    return PyCapsule_GetPointer(capsule, GC_SEM_POSITION_CAPSULE);
 }
 
 static uint64_t gc_py_long_as_u64(PyObject *obj, int *ok) {
@@ -2197,7 +2210,7 @@ cleanup:
 
 /* ------------------------------------------------------- semantic payload */
 
-static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
+static PyObject *gc_semantic_pack_position_impl(PyObject *self, PyObject *args, int transient) {
     (void)self;
     PyObject *rules_capsule, *payload;
     if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &payload)) return NULL;
@@ -2206,6 +2219,11 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
     if (rules == NULL || !PyDict_Check(payload)) {
         if (rules == NULL) return NULL;
         PyErr_SetString(PyExc_TypeError, "semantic_pack_position expects dict payload");
+        return NULL;
+    }
+    if (transient && (PyDict_GetItemString(payload, "history") ||
+                      PyDict_GetItemString(payload, "history_events"))) {
+        PyErr_SetString(PyExc_ValueError, "transient import cannot carry history authority");
         return NULL;
     }
     PyObject *board = PyDict_GetItemString(payload, "board");
@@ -2390,6 +2408,12 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
     if (!gc_semantic_position_pack(pos, rules, &bp)) {
         free(pos); PyErr_SetString(PyExc_ValueError, "semantic position pack rejected payload"); return NULL;
     }
+    if (transient) {
+        pos->history_len = 0;
+        pos->history_exact = 0;
+        pos->history_events_exact = 0;
+        return PyCapsule_New(pos, GC_SEM_TRANSIENT_CAPSULE, gc_semantic_transient_capsule_free);
+    }
     if (pos->history_len == 0) {
         char digest[65];
         if (!gc_semantic_position_key_digest(rules, pos, digest)) {
@@ -2410,6 +2434,13 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
         pos->history_events_exact = 1;
     }
     return PyCapsule_New(pos, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
+}
+
+static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
+    return gc_semantic_pack_position_impl(self, args, 0);
+}
+static PyObject *gc_semantic_pack_transient_position(PyObject *self, PyObject *args) {
+    return gc_semantic_pack_position_impl(self, args, 1);
 }
 
 /* Read-only actual post-transition counts for the existing Python q policy.
@@ -2959,7 +2990,7 @@ static PyObject *gc_semantic_in_check(PyObject *self, PyObject *args) {
     int side;
     if (!PyArg_ParseTuple(args, "OOi", &rules_capsule, &pos_capsule, &side)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
-    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    GCSemanticPosition *position = gc_semantic_readonly_position(pos_capsule);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     if (side < 0 || side > 1) {
@@ -3121,7 +3152,7 @@ static PyObject *gc_semantic_transient_legal_actions_impl(
     PyObject *rules_capsule, *position_capsule;
     if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
-    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    GCSemanticPosition *position = gc_semantic_readonly_position(position_capsule);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     GCSemanticActionBuffer candidates;
@@ -3310,7 +3341,7 @@ static PyObject *gc_semantic_has_legal_action(PyObject *self, PyObject *args) {
     PyObject *rules_capsule, *pos_capsule;
     if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
-    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    GCSemanticPosition *position = gc_semantic_readonly_position(pos_capsule);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     int ok = 1;
@@ -3327,7 +3358,7 @@ static PyObject *gc_semantic_has_legal_action_audit(PyObject *self, PyObject *ar
     PyObject *rules_capsule, *pos_capsule;
     if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
-    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    GCSemanticPosition *position = gc_semantic_readonly_position(pos_capsule);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     GCSemanticRuntimeAudit audit = {0};
@@ -7965,6 +7996,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_rules_info(capsule) -> reconstructed normalized payload dict"},
     {"semantic_action_layout", gc_semantic_action_layout, METH_NOARGS,
      "semantic_action_layout() -> exact 64-bit semantic action identity layout"},
+    {"semantic_pack_transient_position", gc_semantic_pack_transient_position, METH_VARARGS,
+     "State-only capsule for check/availability/transient actions; no history or search authority"},
     {"semantic_pack_position", gc_semantic_pack_position, METH_VARARGS,
      "semantic_pack_position(rules, payload) -> semantic position capsule"},
     {"semantic_material_summary", gc_semantic_material_summary, METH_VARARGS,
