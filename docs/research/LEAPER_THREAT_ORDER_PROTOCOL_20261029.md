@@ -48,7 +48,10 @@ coverage/history flags remain OFF; this is not silently reusing their failed gat
    default-OFF and unsupported-rule fallback tests. No unsafe geometry pruning.
 2. Exactly8 families x2 roots x4 ABBA outer-service calls =64 qualification calls.
    Actual1.5s constructor+packing+choose boundary, D64/500k/Q4/hard8 and real first
-   Q0. PVS/extension/LMR and mask evaluator remain OFF in both arms. Predeclare
+   Q0 scheduling. This metadata is NOT a uniform finite-horizon certificate:
+   warm same-policy deeper TT entries can contribute to retained scores. Keep
+   actual cold/warm table/source/depth provenance; do not make Q0 teacher labels.
+   PVS/extension/LMR and mask evaluator remain OFF in both arms. Predeclare
    D2 completion; root immediate-WIN is retained as such, never relabeled D2 PASS.
    Require actual verified ordering/schedule change in at least4 families;
    node/time differences alone do not establish mechanism activity. Otherwise
