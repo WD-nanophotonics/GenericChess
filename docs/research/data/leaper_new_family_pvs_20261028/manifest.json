@@ -1,5 +1,5 @@
 {
-  "status": "FROZEN_BEFORE_FIRST_SEARCH",
+  "status": "ORIGINAL_QUALIFICATION_FAILED;EXPLICIT_SEMANTIC_AMENDMENT_BEFORE_FIRST_GAME",
   "files": {
     "plan.json.gz": {
       "raw_sha256": "2e774689b73e4f0941b7cfd0ece14f3e75852a705963123b62bb6fc66ab18fbb",
@@ -12,6 +12,22 @@
     "metadata-before-Core.json.gz": {
       "raw_sha256": "42ff3c63fc0bacb316984379b04aa08d5af2d482c211a7bd5304fc4444e7bcb3",
       "gzip_sha256": "348027f1530f018e7e549d51becc16ae7927827d48535071c647a5dd98fa610e"
+    },
+    "amended-plan.json.gz": {
+      "raw_sha256": "3bc144bd3cf2cfd50c9b08d4b6ef70e34aa2176a82c10f3e8951d37fdebc45b4",
+      "gzip_sha256": "4e75aaef2cdb5db40769eb6b030cd65dffbcee102dcfc994b881b1ec3496f455"
+    },
+    "independent-immediate-proof.json.gz": {
+      "raw_sha256": "49c398620d6f5cb617c3a2130038dab004813128becbe62efb6947f000f34f23",
+      "gzip_sha256": "b3f9fd851c779e546f6cba5090c6e0e66d2c5a8fce91b2a4b3f5c87c01a8d039"
+    },
+    "original-failed-qualification.json.gz": {
+      "raw_sha256": "ae7252fca377f56f88ea3dc93ca2c395645031d116c5e0186201a06f7c9d6abd",
+      "gzip_sha256": "e22e54ad0ab946abc9968f724300cc13420b6538afa0ed549c0f70fb8df888d2"
+    },
+    "original-stopped-summary.json.gz": {
+      "raw_sha256": "57c6162a08a0c2c7583be326253c14fb06b6d32a86b99073faa8867aee78981b",
+      "gzip_sha256": "85703503669b2999d7bcff2d182a603b5be1e26b41c4e719e3ad5bb2e9a17dc2"
     }
   }
 }

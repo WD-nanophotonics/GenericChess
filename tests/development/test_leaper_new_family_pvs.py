@@ -41,3 +41,10 @@ def test_player_construction_is_inside_service_deadline(tmp_path,monkeypatch):
   p.choose(None,root,{},0,True,1,'controlled',tmp_path,64)
  failure=p.read_json(tmp_path/'failure-controlled.json')
  assert failure['wall']==2 and failure['error_type']=='AssertionError'
+
+
+def test_depth_zero_is_not_silently_promoted_to_completed_depth():
+ q=dict(decision=dict(completed_depth=0,result_source='legal_fallback',score=0))
+ with pytest.raises(AssertionError,match='neither completeD2'):
+  p.accept_qualification(q,None,{})
+ assert p.accept_qualification(dict(decision=dict(completed_depth=2)),None,{})=='completed_D2'

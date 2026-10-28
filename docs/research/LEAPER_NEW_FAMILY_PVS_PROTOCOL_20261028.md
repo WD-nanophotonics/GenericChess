@@ -59,3 +59,26 @@ scoped-stop admission,zero-UTC noncredit and construction-inside-service budget.
 The current research round continues autonomously across milestones until >=60
 real effective minutes and substantive acceptance; finite task closure is not a
 reason to stop that round early.
+
+
+## Explicit semantic qualification amendment before the first game
+The original run is CLOSED_FAILED:18D2 returns,slot18 FAILED because its legitimate
+root_immediate_win returneddepth0,fivequalification slots NOT_RUN,and ALL24games
+NOT_STARTED. These original files/slot statuses remain unchanged. Independent
+full-Core replay of q0018 confirms checkmate for seat0,zero legal replies; existing
+search.py returns MATE_SCORE-1 before iteration1 by design. This is source-contract
+and terminal-witness diagnosis, not an output-fitted score expectation.
+
+The original90second qualification stage remains closed; it is not restarted or
+called a preregistration PASS. A new bounded amendment stage admits ONLY the five
+never-started qualification calls,with30seconds maximum,within the SAME original
+whole110minute deadline (07:42:32.702172UTC). All19 raw returns are reused byte-
+identically by pinned hashes,no new Player/search for them. Qualification accepts
+completeD2 OR existing root_immediate_win provenance/MATE_SCORE-1 plus an actual
+full-history Core terminal win witness; it does not accept depth0 fallback or
+arbitrary numerical values. Pair scores still must agree. Root/layout/policy,
+all24game slots,opponent,gamebatch/whole deadlines and outcome gates are unchanged.
+All new or amended-goal results are explicitly exploratory under this disclosed
+amendment,not evidence that the originalD2-only gate passed. Immediate-win roots
+remain in the full population and may be uninformative;none is filtered/replaced.
+First actual games still follow only after all amended semantic checks pass.
