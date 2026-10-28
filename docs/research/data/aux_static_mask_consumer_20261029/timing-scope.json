@@ -1,0 +1,328 @@
+{
+  "mask-evaluator": {
+    "OFF": {
+      "wall": 139.4025761000812,
+      "cpu": 139.234375,
+      "evaluation_timed_wall": 12.08316642860882,
+      "constructor_timed_wall": 0,
+      "work_nodes": 480076,
+      "zero_cpu_calls": 8
+    },
+    "ON": {
+      "wall": 128.16602909984067,
+      "cpu": 127.984375,
+      "evaluation_timed_wall": 2.625103790080175,
+      "constructor_timed_wall": 0,
+      "work_nodes": 480076,
+      "zero_cpu_calls": 8
+    },
+    "pooled_wall_ratio": 0.9193949831158537,
+    "equal_root_mean_wall_ratio": 0.9441765326924072,
+    "groups": [
+      {
+        "id": "ce7-f0-h0",
+        "family": 0,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 12,
+        "wall_ratio": 0.9823320504773276,
+        "cpu_ratio": null,
+        "weight_in_pooled_wall": 5.322857102647886e-05
+      },
+      {
+        "id": "ce7-f0-h1",
+        "family": 0,
+        "reason": "node_limit",
+        "retained_depth": 3,
+        "work_nodes": 30000,
+        "wall_ratio": 0.931931295614399,
+        "cpu_ratio": 0.9330357142857143,
+        "weight_in_pooled_wall": 0.12604819861626193
+      },
+      {
+        "id": "ce7-f1-h0",
+        "family": 1,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 11,
+        "wall_ratio": 1.0003490849734784,
+        "cpu_ratio": null,
+        "weight_in_pooled_wall": 5.342871148879724e-05
+      },
+      {
+        "id": "ce7-f1-h1",
+        "family": 1,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9115485034178479,
+        "cpu_ratio": 0.912621359223301,
+        "weight_in_pooled_wall": 0.12711898729511414
+      },
+      {
+        "id": "ce7-f2-h0",
+        "family": 2,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9300558184911847,
+        "cpu_ratio": 0.9293756397134084,
+        "weight_in_pooled_wall": 0.10948712876792037
+      },
+      {
+        "id": "ce7-f2-h1",
+        "family": 2,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9118961998931786,
+        "cpu_ratio": 0.9137760158572844,
+        "weight_in_pooled_wall": 0.1133207788696346
+      },
+      {
+        "id": "ce7-f3-h0",
+        "family": 3,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 4,
+        "wall_ratio": 1.0377562885858629,
+        "cpu_ratio": null,
+        "weight_in_pooled_wall": 4.240667575934914e-05
+      },
+      {
+        "id": "ce7-f3-h1",
+        "family": 3,
+        "reason": "node_limit",
+        "retained_depth": 3,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9308743002140288,
+        "cpu_ratio": 0.9298245614035088,
+        "weight_in_pooled_wall": 0.13419005389585012
+      },
+      {
+        "id": "ce7-f4-h0",
+        "family": 4,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 11,
+        "wall_ratio": 0.9540454024992714,
+        "cpu_ratio": null,
+        "weight_in_pooled_wall": 5.2496161823161296e-05
+      },
+      {
+        "id": "ce7-f4-h1",
+        "family": 4,
+        "reason": "node_limit",
+        "retained_depth": 3,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9145874212926697,
+        "cpu_ratio": 0.9124809741248098,
+        "weight_in_pooled_wall": 0.14724443101514403
+      },
+      {
+        "id": "ce7-f5-h0",
+        "family": 5,
+        "reason": "node_limit",
+        "retained_depth": 2,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9161254089373859,
+        "cpu_ratio": 0.9162609542356378,
+        "weight_in_pooled_wall": 0.11524081440449642
+      },
+      {
+        "id": "ce7-f5-h1",
+        "family": 5,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9086166179122518,
+        "cpu_ratio": 0.9074074074074074,
+        "weight_in_pooled_wall": 0.12714804701548063
+      }
+    ],
+    "recorded_wall_difference": 11.236547000240535,
+    "recorded_evaluation_timer_difference": 9.458062638528645,
+    "recorded_constructor_timer_difference": 0,
+    "residual_difference_by_bookkeeping": 1.7784843617118895,
+    "baseline_evaluation_timer_fraction": 0.08667821475504126,
+    "all_recorded_CPU_multiples_of_1over64": true,
+    "conditional_CPU_error_model": {
+      "assumption": "Each recorded CPU interval differs from its target by at most epsilon seconds. This bound is hypothetical, not established by API units or observed quantization. No sampling or clock calibration inference.",
+      "epsilon": "1/64",
+      "ratio_bounds": [
+        "8167/8935",
+        "8215/8887"
+      ],
+      "ratio_bound_values": [
+        0.9140458869613878,
+        0.924383931585462
+      ],
+      "epsilon_supremum_for_ratio_below_1": "15/64",
+      "epsilon_supremum_for_ratio_below_frozen_095": "5489/59904"
+    },
+    "scope": "Separate fixed measurements. Pooled ratio weights by recorded OFF service. Equal-root mean is a different descriptive statistic, not replacement gate. Timer differences/residual do not identify causal exclusive savings or prove unchanged hardware conditions. CPU-model bounds are conditional algebra, not CIs, measured error bars or repairs of the failed group-resolution gate."
+  },
+  "cold-lifecycle": {
+    "OFF": {
+      "wall": 139.78131910040975,
+      "cpu": 139.515625,
+      "evaluation_timed_wall": 12.181106400908902,
+      "constructor_timed_wall": 0.1899515998084098,
+      "work_nodes": 480076,
+      "zero_cpu_calls": 3
+    },
+    "ON": {
+      "wall": 130.2952316000592,
+      "cpu": 130.125,
+      "evaluation_timed_wall": 2.7685859324410558,
+      "constructor_timed_wall": 0.18487749970518053,
+      "work_nodes": 480076,
+      "zero_cpu_calls": 3
+    },
+    "pooled_wall_ratio": 0.9321362284931911,
+    "equal_root_mean_wall_ratio": 0.89769565846573,
+    "groups": [
+      {
+        "id": "ce7-f0-h0",
+        "family": 0,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 12,
+        "wall_ratio": 0.6683723976301413,
+        "cpu_ratio": 1.0,
+        "weight_in_pooled_wall": 0.00021012464472566772
+      },
+      {
+        "id": "ce7-f0-h1",
+        "family": 0,
+        "reason": "node_limit",
+        "retained_depth": 3,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9343213908521615,
+        "cpu_ratio": 0.9343971631205674,
+        "weight_in_pooled_wall": 0.12634916177416386
+      },
+      {
+        "id": "ce7-f1-h0",
+        "family": 1,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 11,
+        "wall_ratio": 0.9682279000978015,
+        "cpu_ratio": 2.0,
+        "weight_in_pooled_wall": 0.00015680636082506845
+      },
+      {
+        "id": "ce7-f1-h1",
+        "family": 1,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9268882814274764,
+        "cpu_ratio": 0.9273049645390071,
+        "weight_in_pooled_wall": 0.12640602058787126
+      },
+      {
+        "id": "ce7-f2-h0",
+        "family": 2,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9627776181896419,
+        "cpu_ratio": 0.9645833333333333,
+        "weight_in_pooled_wall": 0.10747039874005829
+      },
+      {
+        "id": "ce7-f2-h1",
+        "family": 2,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9266581804579156,
+        "cpu_ratio": 0.9270216962524654,
+        "weight_in_pooled_wall": 0.11350244369007324
+      },
+      {
+        "id": "ce7-f3-h0",
+        "family": 3,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 4,
+        "wall_ratio": 0.6941217682533447,
+        "cpu_ratio": 0.0,
+        "weight_in_pooled_wall": 0.00020995151750383408
+      },
+      {
+        "id": "ce7-f3-h1",
+        "family": 3,
+        "reason": "node_limit",
+        "retained_depth": 3,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9318351638798706,
+        "cpu_ratio": 0.9312913907284768,
+        "weight_in_pooled_wall": 0.13531859780508773
+      },
+      {
+        "id": "ce7-f4-h0",
+        "family": 4,
+        "reason": "root_immediate_win",
+        "retained_depth": 0,
+        "work_nodes": 11,
+        "wall_ratio": 0.981301496781677,
+        "cpu_ratio": null,
+        "weight_in_pooled_wall": 0.00015082058265679352
+      },
+      {
+        "id": "ce7-f4-h1",
+        "family": 4,
+        "reason": "node_limit",
+        "retained_depth": 3,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9335474433263605,
+        "cpu_ratio": 0.9349470499243571,
+        "weight_in_pooled_wall": 0.1481308828206064
+      },
+      {
+        "id": "ce7-f5-h0",
+        "family": 5,
+        "reason": "node_limit",
+        "retained_depth": 2,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9164049173010909,
+        "cpu_ratio": 0.9152215799614644,
+        "weight_in_pooled_wall": 0.11599011659260614
+      },
+      {
+        "id": "ce7-f5-h1",
+        "family": 5,
+        "reason": "node_limit",
+        "retained_depth": 4,
+        "work_nodes": 30000,
+        "wall_ratio": 0.9278913433912771,
+        "cpu_ratio": 0.9289520426287744,
+        "weight_in_pooled_wall": 0.1261046748838217
+      }
+    ],
+    "recorded_wall_difference": 9.48608750035055,
+    "recorded_evaluation_timer_difference": 9.412520468467847,
+    "recorded_constructor_timer_difference": 0.005074100103229284,
+    "residual_difference_by_bookkeeping": 0.06849293177947402,
+    "baseline_evaluation_timer_fraction": 0.08714402238655934,
+    "all_recorded_CPU_multiples_of_1over64": true,
+    "conditional_CPU_error_model": {
+      "assumption": "Each recorded CPU interval differs from its target by at most epsilon seconds. This bound is hypothetical, not established by API units or observed quantization. No sampling or clock calibration inference.",
+      "epsilon": "1/64",
+      "ratio_bounds": [
+        "8304/8953",
+        "8352/8905"
+      ],
+      "ratio_bound_values": [
+        0.9275103317323802,
+        0.9379000561482314
+      ],
+      "epsilon_supremum_for_ratio_below_1": "601/3072",
+      "epsilon_supremum_for_ratio_below_frozen_095": "3091/59904"
+    },
+    "scope": "Separate fixed measurements. Pooled ratio weights by recorded OFF service. Equal-root mean is a different descriptive statistic, not replacement gate. Timer differences/residual do not identify causal exclusive savings or prove unchanged hardware conditions. CPU-model bounds are conditional algebra, not CIs, measured error bars or repairs of the failed group-resolution gate."
+  }
+}

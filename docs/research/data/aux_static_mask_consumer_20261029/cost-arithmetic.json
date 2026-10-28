@@ -1,0 +1,297 @@
+{
+  "root": {
+    "groups": [
+      {
+        "id": "ce7-f0-h0",
+        "family": 0,
+        "parity": true,
+        "wall_OFF": 0.007420199923217297,
+        "wall_ON": 0.007289100205525756,
+        "cpu_OFF": 0.0,
+        "cpu_ON": 0.0
+      },
+      {
+        "id": "ce7-f0-h1",
+        "family": 0,
+        "parity": true,
+        "wall_OFF": 17.571443599881604,
+        "wall_ON": 16.375378199853003,
+        "cpu_OFF": 17.5,
+        "cpu_ON": 16.328125
+      },
+      {
+        "id": "ce7-f1-h0",
+        "family": 1,
+        "parity": true,
+        "wall_OFF": 0.00744810001924634,
+        "wall_ON": 0.0074507000390440226,
+        "cpu_OFF": 0.0,
+        "cpu_ON": 0.0
+      },
+      {
+        "id": "ce7-f1-h1",
+        "family": 1,
+        "parity": true,
+        "wall_OFF": 17.720714300172403,
+        "wall_ON": 16.15329059981741,
+        "cpu_OFF": 17.703125,
+        "cpu_ON": 16.15625
+      },
+      {
+        "id": "ce7-f2-h0",
+        "family": 2,
+        "parity": true,
+        "wall_OFF": 15.26278780004941,
+        "wall_ON": 14.195244599832222,
+        "cpu_OFF": 15.265625,
+        "cpu_ON": 14.1875
+      },
+      {
+        "id": "ce7-f2-h1",
+        "family": 2,
+        "parity": true,
+        "wall_OFF": 15.797208500094712,
+        "wall_ON": 14.405414400156587,
+        "cpu_OFF": 15.765625,
+        "cpu_ON": 14.40625
+      },
+      {
+        "id": "ce7-f3-h0",
+        "family": 3,
+        "parity": true,
+        "wall_OFF": 0.005911599844694138,
+        "wall_ON": 0.006134799914434552,
+        "cpu_OFF": 0.0,
+        "cpu_ON": 0.0
+      },
+      {
+        "id": "ce7-f3-h1",
+        "family": 3,
+        "parity": true,
+        "wall_OFF": 18.706439200090244,
+        "wall_ON": 17.413343499880284,
+        "cpu_OFF": 18.703125,
+        "cpu_ON": 17.390625
+      },
+      {
+        "id": "ce7-f4-h0",
+        "family": 4,
+        "parity": true,
+        "wall_OFF": 0.00731810019351542,
+        "wall_ON": 0.006981799844652414,
+        "cpu_OFF": 0.0,
+        "cpu_ON": 0.0
+      },
+      {
+        "id": "ce7-f4-h1",
+        "family": 4,
+        "parity": true,
+        "wall_OFF": 20.52625299990177,
+        "wall_ON": 18.773052799981087,
+        "cpu_OFF": 20.53125,
+        "cpu_ON": 18.734375
+      },
+      {
+        "id": "ce7-f5-h0",
+        "family": 5,
+        "parity": true,
+        "wall_OFF": 16.064866399858147,
+        "wall_ON": 14.717432300094515,
+        "cpu_OFF": 16.046875,
+        "cpu_ON": 14.703125
+      },
+      {
+        "id": "ce7-f5-h1",
+        "family": 5,
+        "parity": true,
+        "wall_OFF": 17.72476530005224,
+        "wall_ON": 16.105016300221905,
+        "cpu_OFF": 17.71875,
+        "cpu_ON": 16.078125
+      }
+    ],
+    "wall_ratio": 0.9193949831158537,
+    "cpu_ratio": 0.9192009875434856,
+    "zero_OFF_CPU_groups": [
+      "ce7-f0-h0",
+      "ce7-f1-h0",
+      "ce7-f3-h0",
+      "ce7-f4-h0"
+    ],
+    "family_cpu": {
+      "0": [
+        16.328125,
+        17.5
+      ],
+      "1": [
+        16.15625,
+        17.703125
+      ],
+      "2": [
+        28.59375,
+        31.03125
+      ],
+      "3": [
+        17.390625,
+        18.703125
+      ],
+      "4": [
+        18.734375,
+        20.53125
+      ],
+      "5": [
+        30.78125,
+        33.765625
+      ]
+    },
+    "faster_families": 6,
+    "original_gate": "NO_GO_OR_INCONCLUSIVE_COST"
+  },
+  "cold": {
+    "groups": [
+      {
+        "id": "ce7-f0-h0",
+        "family": 0,
+        "parity": true,
+        "wall_OFF": 0.02937150001525879,
+        "wall_ON": 0.01963109988719225,
+        "cpu_OFF": 0.03125,
+        "cpu_ON": 0.03125
+      },
+      {
+        "id": "ce7-f0-h1",
+        "family": 0,
+        "parity": true,
+        "wall_OFF": 17.661252500023693,
+        "wall_ON": 16.50128600001335,
+        "cpu_OFF": 17.625,
+        "cpu_ON": 16.46875
+      },
+      {
+        "id": "ce7-f1-h0",
+        "family": 1,
+        "parity": true,
+        "wall_OFF": 0.02191859995946288,
+        "wall_ON": 0.021222200011834502,
+        "cpu_OFF": 0.015625,
+        "cpu_ON": 0.03125
+      },
+      {
+        "id": "ce7-f1-h1",
+        "family": 1,
+        "parity": true,
+        "wall_OFF": 17.669200300006196,
+        "wall_ON": 16.377374700270593,
+        "cpu_OFF": 17.625,
+        "cpu_ON": 16.34375
+      },
+      {
+        "id": "ce7-f2-h0",
+        "family": 2,
+        "parity": true,
+        "wall_OFF": 15.022354100132361,
+        "wall_ON": 14.463186300126836,
+        "cpu_OFF": 15.0,
+        "cpu_ON": 14.46875
+      },
+      {
+        "id": "ce7-f2-h1",
+        "family": 2,
+        "parity": true,
+        "wall_OFF": 15.865521300118417,
+        "wall_ON": 14.701915099984035,
+        "cpu_OFF": 15.84375,
+        "cpu_ON": 14.6875
+      },
+      {
+        "id": "ce7-f3-h0",
+        "family": 3,
+        "parity": true,
+        "wall_OFF": 0.029347300063818693,
+        "wall_ON": 0.020370599813759327,
+        "cpu_OFF": 0.03125,
+        "cpu_ON": 0.0
+      },
+      {
+        "id": "ce7-f3-h1",
+        "family": 3,
+        "parity": true,
+        "wall_OFF": 18.915012100012973,
+        "wall_ON": 17.625673400005326,
+        "cpu_OFF": 18.875,
+        "cpu_ON": 17.578125
+      },
+      {
+        "id": "ce7-f4-h0",
+        "family": 4,
+        "parity": true,
+        "wall_OFF": 0.02108189999125898,
+        "wall_ON": 0.02068770001642406,
+        "cpu_OFF": 0.0,
+        "cpu_ON": 0.015625
+      },
+      {
+        "id": "ce7-f4-h1",
+        "family": 4,
+        "parity": true,
+        "wall_OFF": 20.70593020017259,
+        "wall_ON": 19.329968200065196,
+        "cpu_OFF": 20.65625,
+        "cpu_ON": 19.3125
+      },
+      {
+        "id": "ce7-f5-h0",
+        "family": 5,
+        "parity": true,
+        "wall_OFF": 16.21325149992481,
+        "wall_ON": 14.857903399970382,
+        "cpu_OFF": 16.21875,
+        "cpu_ON": 14.84375
+      },
+      {
+        "id": "ce7-f5-h1",
+        "family": 5,
+        "parity": true,
+        "wall_OFF": 17.62707779998891,
+        "wall_ON": 16.356012899894267,
+        "cpu_OFF": 17.59375,
+        "cpu_ON": 16.34375
+      }
+    ],
+    "wall_ratio": 0.9321362284931911,
+    "cpu_ratio": 0.9326912308209206,
+    "zero_OFF_CPU_groups": [
+      "ce7-f4-h0"
+    ],
+    "family_cpu": {
+      "0": [
+        16.5,
+        17.65625
+      ],
+      "1": [
+        16.375,
+        17.640625
+      ],
+      "2": [
+        29.15625,
+        30.84375
+      ],
+      "3": [
+        17.578125,
+        18.90625
+      ],
+      "4": [
+        19.328125,
+        20.65625
+      ],
+      "5": [
+        31.1875,
+        33.8125
+      ]
+    },
+    "faster_families": 6,
+    "original_gate": "NO_GO_OR_INCONCLUSIVE_LIFECYCLE"
+  },
+  "memo_hit_fraction": 0.26943838291030203,
+  "scope": "Producer recorded timings only; no remeasurement, CI, generalization, slot refill or changed gates."
+}
