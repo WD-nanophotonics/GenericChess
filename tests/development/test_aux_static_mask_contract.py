@@ -128,3 +128,45 @@ def test_bool_arm_cannot_be_replaced_by_numeric_one(data):
 def test_coherent_family_annotation_must_still_bind_source(data):
     root=data['input'];row=copy.deepcopy(data['root_cost'][0]);row['family']+=1
     with pytest.raises(AssertionError):V.bind_call_families([row],[root])
+
+
+def test_existing_profile_control_is_explicit_and_raw_equal(data):
+    from generic_chess.rules.compiler import compile_ruleset
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    r=data['dormant_counterexample'];new=r['augmented_RuleSet'];old=copy.deepcopy(new);old['piece_types']=[x for x in old['piece_types'] if x['type_id']!='UNUSED'];old['drop_allowed'].pop('UNUSED')
+    raw=[]
+    for definition,record in [(old,r['witness']['original_record']),(new,r['witness']['augmented_record'])]:
+        definition=ruleset_from_dict(definition);assert not definition.semantic_actions
+        c=compile_legacy_ruleset_for_semantic_execution(definition);legacy=compile_ruleset(definition);profile=build_ruleset_profile(legacy,EvaluationConfig());base,mask=evaluators(c,EvaluationConfig(),profile);s=GameSession.replay(c,deserialize_game_record(json.dumps(record)))
+        raw.extend([base.evaluate(s.state),mask.evaluate(s.state)])
+    assert raw==[-444]*4
+
+def test_real_creation_invalidates_zero_inventory_induction(data):
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.core.search_runtime import _plain_leaper_hash_patterns
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    v=data['profile_control']['creation_negative'];c=compile_ruleset_for_execution(ruleset_from_dict(v['RuleSet']));assert _plain_leaper_hash_patterns(c) is None
+    initial=GameSession(c);assert not any(p and p.current_type_id=='UNUSED' for p in initial.state.position.board)
+    played=GameSession.replay(c,deserialize_game_record(json.dumps(v['record'])));assert sum(p is not None and p.current_type_id=='UNUSED' for p in played.state.position.board)==1
+    cfg=EvaluationConfig();base=Evaluator(c,build_ruleset_profile(c,cfg),cfg)
+    with pytest.raises(ValueError):PureLeaperMaskEvaluator(c,base)
+
+def test_plain_footprint_does_not_certify_inspection_legacy_profile(data):
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.core.search_runtime import _plain_leaper_hash_patterns
+    from generic_chess.session.session import GameSession
+    from scripts.verify_published_boolean_returns import diagnostic_action
+    v=data['profile_control']['augmented_move_negative'];c=compile_ruleset_for_execution(ruleset_from_dict(v['RuleSet']));assert _plain_leaper_hash_patterns(c) is not None
+    cfg=EvaluationConfig();actual=build_ruleset_profile(c,cfg);inspection=build_ruleset_profile(c._legacy_compiled,cfg)
+    assert actual.piece_profiles['A'].raw_capability_score!=inspection.piece_profiles['A'].raw_capability_score
+    s=GameSession(c);action=diagnostic_action(v['new_legal_action'],c.ruleset_fingerprint);assert action in s.legal_actions();s.submit(action)
+    base=Evaluator(c,actual,cfg);mask=PureLeaperMaskEvaluator(c,base);assert mask.evaluate(s.state)==base.evaluate(s.state)
+
+
+def test_actual_completed_depth_can_select_worse_defined_toy_terminal():
+    from scripts.aux_depth_quality_counterexample import control
+    d=control();assert [x['returned'][0] for x in d['outputs']]==['A','B','A']
+    assert [x['declared_terminal_winner_after_selected_forced_chain'] for x in d['outputs']]==[0,1,0]
+    assert all(x['stats']['result_source']=='main_iteration' and x['stats']['qnodes']==0 for x in d['outputs'])

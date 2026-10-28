@@ -1,3 +1,28 @@
+## Accepted AUX static-mask segment close e0b982d3 —2026-10-29
+
+Session safe_checkpoint accepted at 2026-10-28T21:03:40.963402+00:00;
+3895.876227 confirmed seconds minus 120 reserve = **62.93127 effective minutes**.
+52 distinct tests PASS. Ledger/finish/accounting are in
+docs/research/data/aux_static_mask_consumer_20261029/.
+Independent150-member packet:99 Core actions/260 PV plies,5096 table rows,
+273 raw equalities; original CPU-zero cost gates stay INCONCLUSIVE.
+Actual inert-type counterexample preserves mapped reachable play/history but
+changes default reference/mask raw value -444 to -615. Existing-profile
+restoration is scoped to the known lowering route; real semantic negatives
+exclude blanket reuse. No product defaults, cache or TT patch.
+Finite score bound2721 and6 actual abstract root calls clarify value/depth versus
+quality; no Leaper strength or learner acceleration claim. Latest source
+31060392c62f051aeb851ccf3ee96365ea177c20 has no product/Pro delta;
+new94-member packet and19+19 Core action/reply records verify, two UNKNOWN
+contexts remain UNKNOWN;64 qualifiers NOT_RUN/32 games NOT_STARTED.
+GitHub Pro009a/blob06d4c460 adopted; Dot opening advice adopted and executed
+in table/first-anchor/census-offset controls. Later normalization question stays
+open after one delayed check; silence is not approval. PRIMARY's new static-cost
+report cites AUX670bae91 and corrects group/individual wording: observed
+documentary effect only, no fresh timing. PRIMARY owns all new producer studies.
+Next: independent new published literal-input/return consumer or late substantive
+critique; no old Native/H6/timing relaunch, slot refill, new worker or schedule change.
+
 ## Accepted AUX segment close 0737a0b6 —2026-10-29
 
 Session finish safe_checkpoint accepted2026-10-28T18:13:39.323633+00:00; memo synchronizedENDED.

@@ -1,0 +1,44 @@
+{
+  "source": "31060392c62f051aeb851ccf3ee96365ea177c20",
+  "manifest_sha256": "8ac5fcddf9940283233534bab52cda3570917a00550d27b94456905c869ddfa3",
+  "bundle_sha256": "181432a0a0ced7efc0dcc5f4d92876847303a7120da4c6d3d3ac9aa2bbe5f259",
+  "byte_bound_members": 94,
+  "cases": [
+    {
+      "id": "ordinary",
+      "fingerprint": "806a50356d12724fde3b639beecc4f16b429be83b390ce7bb048cc3e552aa3df",
+      "status": "SUFFICIENT_ONE_PLY_REPLY",
+      "saved_first_moves": 8,
+      "max_ply": 96,
+      "repetition_limit": 4
+    },
+    {
+      "id": "mixed-far",
+      "fingerprint": "af6bc535b405d879876227e26d13e029711b66bc918fe545e00f25511c28dfaa",
+      "status": "SUFFICIENT_ONE_PLY_REPLY",
+      "saved_first_moves": 11,
+      "max_ply": 96,
+      "repetition_limit": 4
+    },
+    {
+      "id": "mixed-mate",
+      "fingerprint": "3cb807b8b65a3ecdbc0f66c94c4022bf3e055cbe1e3e0313313506441ff73eeb",
+      "status": "UNKNOWN",
+      "saved_first_moves": 0,
+      "max_ply": 96,
+      "repetition_limit": 4
+    },
+    {
+      "id": "clock-one",
+      "fingerprint": "00b0ae120c0de8401119b049c2224fa600522dde2299697fa48c9bb8bc90a86d",
+      "status": "UNKNOWN",
+      "saved_first_moves": 0,
+      "max_ply": 1,
+      "repetition_limit": 4
+    }
+  ],
+  "actual_saved_first_moves_replayed": 19,
+  "actual_saved_anchor_replies_replayed": 19,
+  "publisher_original_quality_status": "STOP_BEFORE_QUALIFICATION;64NOT_RUN/32NOT_STARTED",
+  "scope": "New frozen reader only. All19actual legal first actions in the2sufficient cases and19claimed replies/full records independently replayed under sharedCore;2UNKNOWN controls stayUNKNOWN. No independent proof of all future positions/compiler families, no exposure census rerun, no64qualification/32game dispatch or completedWDL label. Earlier8Playerreturns/atlas only byte-bound here,not rerun or newly strength-validated."
+}

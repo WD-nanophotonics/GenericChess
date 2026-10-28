@@ -71,7 +71,7 @@ def history_transport(output):
     from generic_chess.rules.compiler import compile_legacy_ruleset_for_semantic_execution
     from generic_chess.session.session import GameSession
     from generic_chess.core.identity import repetition_identity_key,search_state_identity
-    r=json.loads((output/'dormant-type-counterexample.json').read_bytes());rule=r['augmented_RuleSet'];old=copy.deepcopy(rule);old['piece_types']=[t for t in old['piece_types'] if t['type_id']!='UNUSED'];old['drop_allowed'].pop('UNUSED')
+    r=json.loads((output/'dormant-type-counterexample.json').read_bytes());rule=r['augmented_RuleSet'];old=copy.deepcopy(rule);old['piece_types']=[t for t in old['piece_types'] if t['type_id']!='UNUSED'];old['drop_allowed'].pop('UNUSED');assert encode(old)==encode(bound_inputs(output)[1]['RuleSet'])
     ca=compile_legacy_ruleset_for_semantic_execution(ruleset_from_dict(old));cb=compile_legacy_ruleset_for_semantic_execution(ruleset_from_dict(rule));sa,sb=GameSession(ca),GameSession(cb);initial_a,initial_b=sa.state,sb.state
     cycle=[((2,1),(4,1)),((4,5),(2,5)),((4,1),(2,1)),((2,5),(4,5))]
     assert ca.repetition_limit==cb.repetition_limit==4
@@ -95,6 +95,69 @@ def history_transport(output):
     result=dict(source=SOURCE,kind='Paired finite full-Core repetition contract trace, not engine gameplay or minimax label',literal_plies_per_rule=4*(ca.repetition_limit-1),distinct_mapped_repetition_keys=len(mapping),repeat_entries=entry_counts,full_count_maps_preserved_under_bijection=True,board_return_does_not_equal_search_state=True,source_record=record_value(sa.to_record()),target_record=record_value(sb.to_record()),trace=trace,limits='No TT bank/key reuse across fingerprints. Numeric profile equivalence was not assumed. This one concrete repetition path plus structural induction supports the declared transport only, not arbitrary trigger/perpetual/aux semantic rules.')
     save(output/'history-transport.json',result);return {k:v for k,v in result.items() if k not in ('trace','source_record','target_record')}
 
+def existing_profile_control(source,output):
+    """Reuse a committed component under an explicit source-owned compiler route.
+
+    This is not a product default, cache substitution or new normalizer.
+    """
+    from generic_chess.rules.schema import (ruleset_from_dict,RuleSemanticAction,RuleGeometrySpec,RuleActionEffect,RuleSquareRef,RuleTypeRef,RuleInvariant,ruleset_to_dict)
+    from generic_chess.rules.compiler import compile_ruleset,compile_legacy_ruleset_for_semantic_execution,compile_ruleset_for_execution
+    from generic_chess.ai.evaluation.config import EvaluationConfig,config_hash
+    from generic_chess.ai.evaluation.profile import build_ruleset_profile
+    from generic_chess.ai.evaluation.evaluator import Evaluator
+    from generic_chess.core.search_runtime import _plain_leaper_hash_patterns
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    from scripts.leaper_mask_evaluator import PureLeaperMaskEvaluator
+    archive(source);d=json.loads((output/'dormant-type-counterexample.json').read_bytes());aug=ruleset_from_dict(d['augmented_RuleSet']);orig=copy.deepcopy(d['augmented_RuleSet']);orig['piece_types']=[t for t in orig['piece_types'] if t['type_id']!='UNUSED'];orig['drop_allowed'].pop('UNUSED');assert encode(orig)==encode(bound_inputs(output)[1]['RuleSet']);orig=ruleset_from_dict(orig);cfg=EvaluationConfig()
+    assert not orig.semantic_actions and not aug.semantic_actions
+    ca=compile_legacy_ruleset_for_semantic_execution(orig);cb=compile_legacy_ruleset_for_semantic_execution(aug)
+    # Scope is known from the exact declarative input and compiler call above.
+    # A plain footprint or inspection handle alone is NOT this certificate.
+    pa=build_ruleset_profile(compile_ruleset(orig),cfg);pb=build_ruleset_profile(compile_ruleset(aug),cfg)
+    assert pa.ruleset_fingerprint==ca.ruleset_fingerprint and pb.ruleset_fingerprint==cb.ruleset_fingerprint
+    assert pa.config_hash==pb.config_hash==config_hash(cfg)
+    assert all(pa.board_value_by_type[k]==pb.board_value_by_type[k] for k in ca.types_by_id)
+    ea=Evaluator(ca,pa,cfg);eb=Evaluator(cb,pb,cfg);fa=PureLeaperMaskEvaluator(ca,ea);fb=PureLeaperMaskEvaluator(cb,eb)
+    sa=GameSession.replay(ca,deserialize_game_record(json.dumps(d['witness']['original_record'])));sb=GameSession.replay(cb,deserialize_game_record(json.dumps(d['witness']['augmented_record'])))
+    restored=[ea.evaluate(sa.state),eb.evaluate(sb.state),fa.evaluate(sa.state),fb.evaluate(sb.state)];assert restored==[-444]*4
+    create=RuleSemanticAction(name='create_UNUSED',type_ids=('A',),geometry=RuleGeometrySpec(kind='leap',offset=(0,1)),target_relation='empty',composition='augment',effects=(RuleActionEffect('place',to_ref=RuleSquareRef('target'),piece_type_ref=RuleTypeRef('explicit',type_id='UNUSED'),piece_owner='self'),),invariants=(RuleInvariant('own_anchor_safe'),))
+    created_rules=replace(aug,semantic_actions=(create,));created=compile_ruleset_for_execution(created_rules);s=GameSession(created);assert _plain_leaper_hash_patterns(created) is None
+    new_action=next(x for x in s.legal_actions() if x.pattern_id.startswith('sem_') and (x.from_square.file,x.from_square.rank)==(1,0))
+    s.submit(new_action);new_count=sum(p is not None and p.current_type_id=='UNUSED' for p in s.state.position.board);assert new_count==1
+    # More subtle negative: footprint is still plain but the actual profile's
+    # movement projection legitimately includes a newly augmented geometry.
+    move=RuleSemanticAction(name='new_A_quiet',type_ids=('A',),geometry=RuleGeometrySpec(kind='leap',offset=(0,2)),target_relation='empty',composition='augment',effects=(RuleActionEffect('move',from_ref=RuleSquareRef('source'),to_ref=RuleSquareRef('target')),),invariants=(RuleInvariant('own_anchor_safe'),))
+    changed_rules=replace(aug,semantic_actions=(move,));changed=compile_ruleset_for_execution(changed_rules);assert _plain_leaper_hash_patterns(changed) is not None
+    actual_profile=build_ruleset_profile(changed,cfg);legacy_hint=build_ruleset_profile(changed._legacy_compiled,cfg)
+    raw_new=actual_profile.piece_profiles['A'].raw_capability_score;raw_legacy=legacy_hint.piece_profiles['A'].raw_capability_score;assert raw_new!=raw_legacy
+    s2=GameSession(changed);new_move=next(x for x in s2.legal_actions() if x.pattern_id.startswith('sem_'));assert new_move not in GameSession(cb).legal_actions()
+    result=dict(source=SOURCE,control='Explicit existing legacy-reachable profile supplied to Evaluator only for known legacy-lowered definitions; not production/cache/default',restored_source_augmented_reference_mask_values=restored,legacy_profile_values_original=dict(pa.board_value_by_type),legacy_profile_values_augmented=dict(pb.board_value_by_type),creation_negative=dict(plain_admission=False,actual_new_UNUSED_count=new_count,action=record_value(new_action),RuleSet=ruleset_to_dict(created_rules),record=record_value(s.to_record())),augmented_move_negative=dict(plain_admission=True,new_legal_action=record_value(new_move),semantic_A_raw_capability=raw_new,inspection_legacy_A_raw_capability=raw_legacy,RuleSet=ruleset_to_dict(changed_rules)),limits='No generic reachability/type-price theorem, no semantic-only/creation/guarded rule profile substitution, no cache namespace change or default profile adoption. Existing conservative semantic-all-types remains default. This control restores the observed dormant-declaration equality, not true material values or strategic quality.')
+    save(output/'existing-profile-control.json',result);return {k:v for k,v in result.items() if k not in ('creation_negative','augmented_move_negative')}
+
+def inventory_bound(output):
+    """A structural bound, with a finite count-box arithmetic cross-check."""
+    from itertools import product
+    from collections import Counter
+    from generic_chess.rules.schema import ruleset_from_dict
+    from generic_chess.rules.compiler import compile_legacy_ruleset_for_semantic_execution
+    from generic_chess.ai.evaluation.profile import build_ruleset_profile
+    from generic_chess.ai.evaluation.config import EvaluationConfig
+    from generic_chess.core.search_runtime import _plain_leaper_hash_patterns
+    d=json.loads((output/'dormant-type-counterexample.json').read_bytes());original=bound_inputs(output)[1]['RuleSet'];new=d['augmented_RuleSet'];ca=compile_legacy_ruleset_for_semantic_execution(ruleset_from_dict(original));cb=compile_legacy_ruleset_for_semantic_execution(ruleset_from_dict(new))
+    assert _plain_leaper_hash_patterns(ca)is not None and _plain_leaper_hash_patterns(cb)is not None
+    assert ca.capture_disposition==cb.capture_disposition=='remove_from_game'
+    assert not any(h.counts for h in ca.initial_position.hands)
+    pa,pb=(build_ruleset_profile(c,EvaluationConfig()) for c in (ca,cb));counts=[Counter(p.current_type_id for p in ca.initial_position.board if p is not None and p.owner==owner) for owner in (0,1)]
+    delta={t:pb.board_value_by_type[t]-pa.board_value_by_type[t] for t in ca.types_by_id};types=[t for t in ca.types_by_id if not ca.types_by_id[t].is_anchor]
+    positive=sum(max(0,delta[t])*counts[0][t]+max(0,-delta[t])*counts[1][t] for t in types);negative=sum(max(0,delta[t])*counts[1][t]+max(0,-delta[t])*counts[0][t] for t in types);epsilon=max(positive,negative)
+    alternatives=[[(x,y) for x in range(counts[0][t]+1) for y in range(counts[1][t]+1)] for t in types];values=[]
+    for allocation in product(*alternatives):values.append(sum(delta[t]*(x-y) for t,(x,y) in zip(types,allocation)))
+    assert max(values)==positive and min(values)==-negative and epsilon==2721
+    witness=d['witness'];difference=abs(witness['augmented_value']-witness['original_value']);assert difference==171 and difference<=epsilon
+    result=dict(source=SOURCE,assumptions='Only the exact source/UNUSED game pair. Actor owner/type preserved on move; enemies removed, no hand creation/drop/promotion/place/aux/triggers. Dynamic geometry and config coincide under state transport; UNUSED remains absent. No global all-rules error assumption.',initial_counts_by_owner=[dict(x) for x in counts],board_price_deltas=delta,raw_value_absolute_difference_bound=epsilon,material_count_box_allocations_checked=len(values),box_min=min(values),box_max=max(values),actual_witness_absolute_difference=difference,same_fixed_tree_backed_up_value_bound=epsilon,sufficient_old_action_gap_for_unchanged_unique_argmax='strictly greater than2epsilon=5442',old_surrogate_regret_bound_if_argmax_changes=2*epsilon,proof='Per-owner ordinary inventories only decrease. Thus signed material difference lies in[-negative,positive], dynamic terms cancel and actor sign preserves absolute value. Clamping is1-Lipschitz. On the SAME finite tree/frontier with identical terminal payoffs, min/max backup is nonexpansive in sup norm by induction. Triangle inequality gives2epsilon old-surrogate regret and unique-argmax stability above2epsilon.',limits='Count-box allocations are not solved or necessarily reachable game states. Bound attainability is not claimed. These are score-unit bounds relative to the old surrogate, NOT WDL/regret/Elo or root error labels. No saved all-root-action gap permits applying the argmax criterion here. Fixed-frontier theorem does not cover changed depth, cancellations, unmatched qpolicy/extension, incompatible warmTT or incomplete bound returns. It creates no mandatory calibration or game-admission gate.')
+    save(output/'uniform-value-bound.json',result);return result
+
 def timing_scope(source,output):
     from fractions import Fraction
     members,_=archive(source);get=lambda n:json.loads(members[n]);results={}
@@ -115,5 +178,5 @@ def timing_scope(source,output):
     save(output/'timing-scope.json',results);return {k:{f:v[f] for f in ('pooled_wall_ratio','equal_root_mean_wall_ratio','recorded_wall_difference','recorded_evaluation_timer_difference','residual_difference_by_bookkeeping','baseline_evaluation_timer_fraction','conditional_CPU_error_model')} for k,v in results.items()}
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--source',required=True,type=Path);p.add_argument('--output',required=True,type=Path);p.add_argument('--phase',choices=['dormant','timing','history'],default='dormant');a=p.parse_args();print(json.dumps(history_transport(a.output) if a.phase=='history' else (dormant_type if a.phase=='dormant' else timing_scope)(a.source,a.output),indent=2))
+    p=argparse.ArgumentParser();p.add_argument('--source',required=True,type=Path);p.add_argument('--output',required=True,type=Path);p.add_argument('--phase',choices=['dormant','timing','history','profile','bound'],default='dormant');a=p.parse_args();print(json.dumps(inventory_bound(a.output) if a.phase=='bound' else history_transport(a.output) if a.phase=='history' else (existing_profile_control if a.phase=='profile' else dormant_type if a.phase=='dormant' else timing_scope)(a.source,a.output),indent=2))
 if __name__=='__main__':main()

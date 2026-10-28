@@ -1,7 +1,13 @@
 # AUX independent static-mask consumer and representation boundary
 
-Status: active research checkpoint, not an ended 60-minute segment. Defaults,
-closed timing slots and PRIMARY's new ordering study are unchanged.
+Status: accepted safe-checkpoint close, session e0b982d3. Confirmed work
+3895.876227 seconds minus 120 seconds conservative reserve gives **62.93127
+effective minutes**. Session finish accepted, duration gate passed and memo ENDED.
+52 distinct checks PASS (20 targeted/method and 32 existing evaluator tests).
+See [ledger](data/aux_static_mask_consumer_20261029/session-ledger.json),
+[finish](data/aux_static_mask_consumer_20261029/session-finish.json) and
+[accounting](data/aux_static_mask_consumer_20261029/work-accounting.json).
+Defaults, closed timing slots and PRIMARY ownership remain unchanged.
 
 The newly published static-cost packet supports its finite matched-work timing
 arithmetic and the exact default-evaluator transformation. Its original gates
@@ -35,7 +41,7 @@ memberships.273 raw reference/mask comparisons at those roots and saved PV
 states agree. This is full finite table coverage for these contexts, not a
 proof that geometric coverage equals legal moves, WDL or a universal evaluator.
 
-Sixteen targeted controls and32 relevant existing evaluator controls pass.
+Twenty targeted/method controls and32 relevant existing evaluator controls pass.
 Concrete falsifications include wrong census offset, arm/work/raw identity,
 first-anchor choice, overlapping attacks, fingerprint errors, hand/base values,
 raw versus clipped equality and explicit pattern-ID transport.
@@ -170,6 +176,49 @@ not part of this result. Inactive stock/type features are not automatically
 assigned a true price of zero. Existing material-learner unitA and actual model
 receipts remain a separate policy, not repaired by this static counterfactual.
 
+## Existing-profile control and two real exclusion boundaries
+
+An additional default-OFF control reuses the committed legacy-reachable profile
+builder, then explicitly supplies that table to the reference Evaluator for the
+known legacy-lowered source and UNUSED definitions. No replacement normalizer
+or price fitting is written. Both rule fingerprints/config hashes are bound.
+Reference and mask values are all-444 at the transported nonterminal witness.
+This restores the observed representation equality under that explicit profile
+choice; it does not show true material values, stronger decisions or a faster
+learner. Current default semantic profiles and all historical results remain.
+
+The scope comes from the actual declarative definitions having no semantic
+DSL actions and being compiled through the existing legacy-to-IR adapter. A
+legacy inspection handle or the plain two-cell footprint alone is insufficient:
+
+* A real create_UNUSED semantic place action changes initial UNUSED0 to1 in
+  one legal Core step. The footprint guard rejects it. Zero initial inventory
+  alone cannot justify an unreachability induction for arbitrary semantic IR.
+* A real A quiet Leap(0,2) augmentation still passes the plain footprint and has
+  a new legal action. Its semantic movement raw capability differs from the
+  inspection legacy projection. The mask still equals its CURRENT reference
+  evaluator, but replacing the profile by that handle would discard a real
+  rule input. The first illustrative Leap(2,0) had occupied initial destinations;
+  the explicit(0,2) witness uses an available empty target. This is constructive
+  scope falsification, not a tuned game policy or replacement performance slot.
+
+Existing promotion-reachability controls also preserve enabled target types and
+avoid chaining promotion from already-promoted targets. They are reused, not
+reimplemented. All declared initial setups matter; a type present in another
+allowed setup is not globally unreachable just because this root lacks it.
+The positive counterexample has no such extra setup or arbitrary effects.
+
+The existing profile cache already separates legacy-reachable and semantic-all-
+types namespaces. This control does not alias those namespaces, overwrite a
+cache entry or relabel one table as the current default. A different numeric
+profile also requires a separate compatible search/TT lifetime if ever queried;
+exact mask wrapping and changing the profile are different operations. No warm
+Player evaluator was replaced here. The maintained material learner remains
+its own explicit evaluator/scale/receipt policy.
+
+These controls close the narrow restoration question. They do not authorize a
+general semantic profile patch, enabling the mask or reopening closed timings.
+
 [Evidence](data/aux_static_mask_consumer_20261029/source-and-coverage.json),
 [raw cost arithmetic](data/aux_static_mask_consumer_20261029/cost-arithmetic.json),
 [table/Core checks](data/aux_static_mask_consumer_20261029/Core-and-tables.json),
@@ -177,3 +226,42 @@ receipts remain a separate policy, not repaired by this static counterfactual.
 Reproduce the packet/static checks with scripts.verify_aux_static_mask_packet,
 then scripts.analyze_aux_static_mask_scope for dormant/timing phases. Inputs are
 fixed public Git objects; no archived producer is executed.
+
+The distinct [fixed-frontier/depth method note](AUX_STATIC_VALUE_AND_DEPTH_SCOPE_20261029.md) derives a source-specific2721score-unit perturbation bound and an actual abstract mainline completed-depth counterexample. Neither supplies new Leaper WDL labels or a performance measurement.
+
+## Closing intake of the genuinely new31060392 publication
+
+Before closing, sandbox advanced to31060392c62f051aeb851ccf3ee96365ea177c20.
+No ChatGPT Patrol or generic_chess product change occurred. Its static-cost
+report explicitly incorporated AUX670bae91's group-versus-individual CPU wording;
+we observe that documentary execution, not an additional timing result.
+
+The new threat preflight is STOP_BEFORE_QUALIFICATION:64calls NOT_RUN and32games
+NOT_STARTED. Its replacement constructive premise is not an admitted new panel.
+AUX did not run its generator,exposure census,qualifiers,8Player controls or atlas.
+A bounded independent reader byte-binds the new94-member packet and consumes
+only its four already-frozen opening-capacity inputs/observations. All8ordinary
+and11mixed-far legal first actions,then their19claimed anchor replies/full
+records,replay through current shared Core. Mixed-mate and max-ply1 cases retain
+UNKNOWN;the latter really has clock1. These are19+19receipt transitions,not
+19games,new WDL or an all-rule proof.
+
+The new ordinary guard checks BOTH executable empty/capture geometry against
+metadata and typed support. This is stronger than the old two-cell footprint.
+The capacity argument also requires exact initial position/history/counts and
+one-ply clock safety. Under those conditions,initially empty/unattacked escape
+squares cannot be occupied by the first mover:every candidate landing was in
+its parent's geometric attack union. Unmoved Leap actors retain their attacks;
+a surviving square outside the relocated actor's attacks therefore supports a
+legal anchor reply. This reasoning does not extend to rays,creation,type change,
+guards or stale histories. UNKNOWN is not mate,a draw or a rejected game label.
+
+We agree with that CONDITIONAL source argument and the19concrete replies,not
+with a machine-checked theorem for every compiler output or a promise of useful
+longer play. A clock can end play before the geometrically available reply;
+initial non-check alone failed the closed draft. A future quality panel still
+needs its own complete frozen inputs. PRIMARY owns that construction.
+
+[New independent reader receipt](data/aux_static_mask_consumer_20261029/latest-capacity-consumer.json)
+pins the new manifest and exact scope. This was a new-source consumer step,
+not a rerun/refill of the older static or stopped threat study.
