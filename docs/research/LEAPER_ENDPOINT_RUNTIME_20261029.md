@@ -42,7 +42,10 @@ This does not fill the older stopped th7 64/32 slots.
 The observer preserves original iterators, checks, exceptions, ordering, evaluation
 and TT operations. It separates pre-budget abort, actual child entry, normal
 return, TT return, iteration acceptance and completed-root-win provenance.
-Eight queries truncated bounded witness detail; full causal graphs remain UNKNOWN.
+Eight queries truncated bounded witness detail. Complete parent paths and every
+parent baseline/candidate ordering sequence were not serialized. Thus full causal
+graphs remain UNKNOWN for this capture; the direct entries are source-observed
+events, not independently reconstructed ordering-to-root causal proofs.
 Positive retained witnesses are literal events, not proof that ordering improves
 decisions. Initial fixed-work tests exposed two omitted time_to_* clock fields
 in the comparison helper; source contracts were checked, the filter fixed and
