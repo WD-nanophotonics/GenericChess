@@ -14,17 +14,21 @@ are preserved and the gap/repair excluded. scientific_complete now obeys60minute
 and matching-quality gates;48workflow regressions pass,legacybadending auto-resumes.
 [Guard diagnosis](../operations/CONTINUATION_GUARD_20261028.md).
 
-Main: Can PVS improve equal-outer-wall play on new pure-Leaper rules? |Execute
-[pre-query frozen protocol](LEAPER_NEW_FAMILY_PVS_PROTOCOL_20261028.md):ALL12new
-7x7/18pieceH128rootsD2qualify,then24swapseatgames |6fixednewgeometryfamilies,
-exactfullrules/history,actualbinary/profile/PV/work/timing/terminal/missingbounds |
-90minforecast/110capfrom05:52:32UTC;noextension/refill/defaultchange.
-Backup1: Contract failure |Diagnose exact Core/provider/recording cause and
-preserve every slot;select an independent useful action if stopped |Concrete
-causal evidence,not output-fitting expectations |No cap reset orfailed-slot replay.
-Backup2: New quality evidence |Verify all saved full-history outcomes and
-finite24slot uncertainty,assess new policy/consumer |Do not equate draws/NPS/
-rootactionchanges with strength |Continue same round toward60-90effective.
+Main: Complete transport fusion useful? |Map producer/packer validation and
+error-order closure before a bounded prospective pilot |Fresh19178181checkimports;
+availabilityreuse alreadyBASELINE;exclusive netcostUNKNOWN |Preserve ordinary
+capsule/SHA/history/absoluteply/Core/TT;NO_GO allowed.
+Backup1: New quality evidence |Retain shared-prefix witness,do not expand games
+without changed premise |[New-family result](LEAPER_NEW_FAMILY_PVS_RESULT_20261028.md):
+ON5W15D4L,all24timingeligible,only1/6positive;amendedscreenFAIL |DefaultOFF.
+Backup2: Seam infeasible |Evaluate independent pure-Leaper cost/quality consumer
+from fresh evidence |No existing Native/hash/reuse/table work relabeled new |
+Finite result is a checkpoint;next patrol executes Main without user restart.
+
+OriginalD2gateFAILED;explicitpublishedamendment reused19+5newqualifications,
+20D2+4CoreWIN;all24gamesended06:39:42UTCinsideunchangedwhole110mincap.
+Independent1787returns/1763transitions/5467PV/PublicarchivePASS.
+SameUUID resumed,>=60effective recorded;normalquality/final-check required.
 
 c70d9f2a quality-priority review adopted, not another packaging microvariant.
 [Transient result](LEAPER_TRANSIENT_IMPORT_20261028.md):48D6returns,11complete

@@ -8288,3 +8288,15 @@ legacybadending auto-resumes sameUUID/start/ledger,withgap/repair excluded.
 not retroactively executed Main. Current new-familyPVS protocol freezes6new
 geometrytriples/12fullstarts/24swapseatgames before search,ONE90forecast/110cap.
 No historical cost gate,old-slot refill,AUX write,schedule change or new worker.
+
+
+## Autonomous continuation and new-family PVS -2026-10-28
+
+PRIMARY corrected its rejected24.871minute early ending, preserving UUID/start/
+ledger and excluding gaps/repair.48 workflow controls cover duration/quality and
+legacy recovery. Continued new6family/24game equal-wall PVS:ON5W15D4L,only1/6
+positive;amended screenFAIL/defaultOFF. OriginalD2gateFAILED and explicit19reuse/
+5new qualification amendment remain separate. Independent full-Core/PV/public
+archive PASS;shared-prefix divergence located but warmTT causalityUNKNOWN. Dot
+source-only transport advice considered,not claimed independently benchmarked;
+new consumer counts support feasibility review,not assumed savings. AUX untouched.
