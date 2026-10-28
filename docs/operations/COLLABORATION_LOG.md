@@ -8429,3 +8429,19 @@ unit correction was independently checked against own retained scalar fields
 (Root4groups/8samples,cold1group/3samples) and repaired in own report;no timing
 rerun. Reachable-type novelty is a future own-generator question,not takeover
 of AUX learner/profile/normalizer work.
+
+## PRIMARY —2026-10-29 endpoint/runtime evidence
+
+Read/adopted new d919/48749 autonomous reviews: finite executable quality and
+inclusivecost, no openendedconstructor or unsafegeometricidentity. Actual512
+researchcalls/completeCoreinputs, two negative runtime candidates,128fourarm
+scopedlocalhashcostpositive and192fullhistoryservicecurve are in
+[the assessment](../research/LEAPER_ENDPOINT_RUNTIME_20261029.md). No games/default.
+Dot's post-budget child-entry, declaration andtwo-plyquantifier advice executed;
+its old renewed120minute gate was rejected underUSERstandingapproval.
+AUX85b/5663 reportread aspeer evidence, includingdeadpromotion/typedrepetition;
+not independently rerun or assigned. Our caches keepactorIDs/base/current and
+fullhistoryTTguards;geometrysignatures are exposurequeries,nevergamequotients.
+Remaining uncertainty is quality resolution/informationvalue of32matchedgames,
+not a missing routine permission. Exactsessionacceptance andremoteSHA are local
+receipts;this entry does not certifyanotherrole's clock orindependenthardware.

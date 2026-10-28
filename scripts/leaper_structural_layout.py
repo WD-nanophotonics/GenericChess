@@ -9,7 +9,8 @@ from itertools import product
 
 KING=frozenset((x,y) for x in (-1,0,1) for y in (-1,0,1) if (x,y)!=(0,0))
 
-def layout(piece_types,n=8,copies=2,*,parity_only=False):
+def layout(piece_types,n=8,copies=2,*,parity_only=False,scan="row"):
+    if scan not in {"row","column"}:raise ValueError("fixed row or column scan required")
     if n!=8 or copies!=2:return {'status':'UNSUPPORTED','reason':'fixed prototype n8/two copies per nonanchor'}
     if not piece_types or len(piece_types)>4:return {'status':'UNSUPPORTED','reason':'at most one anchor and three nonanchors'}
     parsed={};anchors=[]
@@ -31,7 +32,7 @@ def layout(piece_types,n=8,copies=2,*,parity_only=False):
         for copy_index in range(copies):
             chosen=None;rejections=[]
             for y,x in product(range(n),range(n)):
-                sq=(x,y);mirror=(7-x,7-y)
+                sq=(x,y) if scan=="row" else (y,x);x,y=sq;mirror=(7-x,7-y)
                 if sq==mirror or sq in blocked or mirror in blocked or sq in taken or mirror in taken:rejections.append({'square':list(sq),'reason':'reserved/occupied'});continue
                 # Legacy owner-relative frame rotates offsets for owner1.
                 a0={(x+dx,y+dy) for dx,dy in parsed[tid]};a1={(mirror[0]-dx,mirror[1]-dy) for dx,dy in parsed[tid]}
@@ -40,4 +41,4 @@ def layout(piece_types,n=8,copies=2,*,parity_only=False):
             ledger.append({'type':tid,'copy':copy_index,'rejections':rejections,'selected':chosen})
             if chosen is None:return {'status':'NO_LAYOUT','placements':placements,'ledger':ledger,'reason':'deterministic fixed order infeasible;no random or outcome retry'}
             for owner,sq in enumerate(chosen):placements.append({'owner':owner,'type':tid,'square':list(sq)});taken.add(sq)
-    return {'status':'GEOMETRY_LAYOUT_ONLY','board':n,'placements':placements,'reserved':{str(o):sorted(reserve[o]) for o in reserve},'ledger':ledger,'claim':'Prospective ordinary all-Leap domain;parity specialcase optional;not complete typedRuleSet/Core admission/holdout/quality. No frozen-panel replacement is dispatched.'}
+    return {'status':'GEOMETRY_LAYOUT_ONLY','board':n,'scan':scan,'placements':placements,'reserved':{str(o):sorted(reserve[o]) for o in reserve},'ledger':ledger,'claim':'Prospective ordinary all-Leap domain;parity specialcase optional;not complete typedRuleSet/Core admission/holdout/quality. No frozen-panel replacement is dispatched.'}

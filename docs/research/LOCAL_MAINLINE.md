@@ -6,39 +6,37 @@ PRIMARY publishes sandbox only. Prior user intent was ACTIVE/hourly for both;
 latest observed own scheduler is ACTIVE/180minutes, not changed by this resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision —2026-10-29 structural initialization after preflight NO_GO
+## Current decision —2026-10-29 scoped runtime cost, decision quality still open
 
-Main: Can geometry-first ordinary-Leap initialization produce a useful genuinely
-new-family endpoint without outcome-selected replacement? |Use the new strict
-IR/complete-history escape-capacity argument and deterministic metadata recipe
-to freeze ONE prospective generator study before any new compiler/query campaign |
-[structural source/finite evidence](LEAPER_OPENING_STRUCTURE_20261029.md),exact
-inputs/rejection and exposure ledger |No new quality panel is dispatched;metadata
-321/324 and19+19 Core witness moves are NOT strength/admission/holdout success.
-Backup1: Preserve the fixed threat-ordering NO_GO |Firstroot A(b2-e4) is immediate
-Core mate;64qual/32games remain NOT_STARTED |[closure](LEAPER_THREAT_ADMISSION_20261029.md) |
-No root/seed/cap refill or threshold/default change. Static D1 engineeredtie benefit
-vanishes atD2 and actualdefault;52one-rule atlas controls show0strict beststatic gain.
-Backup2: Preserve static-mask limited cost positive/INCONCLUSIVE and quiet-H6
-NO_GO evidence |No new timingcells,oldlabel mining/LMR/extension/PVS retuning |
-[static report](LEAPER_STATIC_EVAL_20261029.md),[quiet report](LEAPER_QUIET_WITNESS_20261029.md) |
-DefaultOFF and fullsemantic/history boundaries remain;no classwide/strength claim.
+Main: Does local-only hash economy justify a finite matched-seat quality pilot? |
+Assess ONE proposal using all16 already-fixed full three-ply records, exact
+Native/cold-controller service and complete typed histories; freeze necessity,
+opponents/seats,32-game fixed denominator, UNKNOWN and whole caps BEFORE dispatch |
+[512-return assessment](LEAPER_ENDPOINT_RUNTIME_20261029.md),192-call behaviorcurve |
+No new game/default/old-slot refill;changed action/depth is not accuracy.
+Backup1: Preserve prospective threat qualification NO_GO |64newcalls,
+13eligiblegroups/all8 actualretainedactivity/0eligiblestablechoicefamilies;
+32gamesNOT_STARTED |same report |No rule/layout replacement or threshold change.
+Backup2: Preserve two runtime negatives |incrementalroyal1.36%,bindingmemo1.33%
+wall savings below5%;14completegroups each |same report |No retuning/default;
+Nativea2e lacks transientAPI, so do not pretend that flag is active.
 
-009a827138cb1f49ba1e84c3f8a092c7400a260f is the newest fully read GitHub
-review at this opening;one exact doc-only FF safely integrated under USER standing
-approval. Adopt fullarchive exposure/preflight first and quality priority. Dot's
-new round request/+5 check supplied actorwise target and source/observer controls,
-now executed. Raw strict324 versus finiteempty435 signatures have explicit
-semantic/escaped/history gaps;neither establishes global unexposed rules. New
-capture-only IR and iterator-yield cancellation counterexamples strengthen
-admission/measurement contracts,not product bug/quality claims. Same current
-normal session/ledger remains in own memo;no AUX/schedule change or new worker.
-New public AUX670bae91 reports an unreachable-UNUSED-type representation/price
-boundary,not a mask defect;PRIMARY has not rerun its proof/normalizer work.
-Before any future novelty claim,record actually initialized/creatable types;
-raw declared-type signatures alone cannot certify fresh reachable games.
-The new constructor uses each selected type twice but this does not discharge
-all historical-source reachability gaps. AUX owns its independent consumer/control.
+New128-call four-arm composition:14completegroups/all8families;combined charged
+wall.93757467/CPU.93568282 pass5% scoped gate. Local-only.93485852/.93421439;
+Positionhashmemo adds no demonstrated benefit, so simpler local-only is the next
+controller. Old37missingfactorial slots remainNOT_RUN. No class/strength success,
+mixed/legacy expansion, Nativebuild or productdefault activation is claimed.
+Full-history equalservice192calls at.25/1/3s:stable changedchoices/higherretained
+iteration only in families2,6 at1s. Independent512return/1210CorePV readerPASS;
+48nonzerohistories/192branches andforcedhash+digestcollision preserveTT/undo.
+
+Reviews d91928c5/48749ec3 fullyread/private-preserved/doc-onlyFF safelyintegrated:
+quality/fullservicepriority adopted, constructor only prerequisite. Eight exact
+new-formula families/two literal layouts predateCore;16180Core2plytransitionsPASS.
+Raw/empty/active signatures haveexplicit global/IR/history gaps, NOT holdout or
+bisimulation. AUX5663 published dead-promotion/colored-repetition report read,
+notrerun/assigned;typed identities remainexact. Game/evaluator/cachelifetime
+contracts stay separate. No AUX/schedule/role changes or approval queue.
 
 Normal manual/heartbeat rounds still require>=60real recorded effective minutes,
 continuing toward90;finite milestones/publication never waive the floor.
