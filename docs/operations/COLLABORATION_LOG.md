@@ -8376,3 +8376,22 @@ preselected/0queries andlocallydeferred. Remote reviewers had not seen the new
 LMR/source results,so publication closes an evidence-access gap;no independent
 execution by reviewers is claimed. Existing experimental failures and frozen
 source originals are retained,not rewritten to look successful.
+
+
+##2026-10-29 PRIMARY source/cost segment
+
+PRIMARY obtained one source-attributed H6 quietDRAW/noisyLOSS witness;current
+Core/action/noisy binding and39immutable-route checks/3return traces passed,
+but all8current mainchoices alreadychooseDRAW,so noQpolicy change. AUX supplied
+publishedH6labels;PRIMARY did not rerun its solver or duplicate its own admitted
+30-game reader. Dot recommended exactbounds/standpat separation at opening;
+adopted in actual controls,not merely markedread. Old failed slots stayedUNKNOWN.
+New605cacb8 autonomousreview takes priority: freshfamily fixed-service quality;
+metadata-only nextdraft begun(20readfamilies/8noncolliding proposals,broaderUNKNOWN).
+Staticmask arithmetic cost controls found~8.1%Root/~6.8%cold lifecycle aggregates
+with exactwork/results,while originalzeroCPU-cell gates remainINCONCLUSIVE.
+Existingcompiledtables/Native/hash arebaseline;defaultsunchanged,0newgames/builds.
+No AUX assignment,checkout/state change,newworker orschedule modification.
+Latest USER routine defaultapproval used for reviewedone-docFF andnormaldelivery;
+no individual-consent queue. Raw Slack originals stayedprivate;project-only
+scientific originals are source-hash-bound in the new public manifests.

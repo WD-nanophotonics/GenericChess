@@ -6,26 +6,37 @@ PRIMARY publishes sandbox only. Prior user intent was ACTIVE/hourly for both;
 latest observed own scheduler is ACTIVE/180minutes, not changed by this resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision -2026-10-28 autonomous continuation correction
+## Current decision —2026-10-29 source closure and605cacb8 priority
 
-Science is OPEN. The USER rejects our24.871minute finite-subtask ending. Its
-claim is superseded, not a successful round; originalUUID/start/1492.285151seconds
-are preserved and the gap/repair excluded. scientific_complete now obeys60minute
-and matching-quality gates;48workflow regressions pass,legacybadending auto-resumes.
-[Guard diagnosis](../operations/CONTINUATION_GUARD_20261028.md).
+Main: Can threat-related legal quiet ordering improve fixed-service decisions on
+new motion families? |Complete broader exposure audit and exact source contract,
+then freeze one pure-Leaper candidate/8families/2roots before Core/search |
+[metadata draft](LEAPER_THREAT_ORDER_PROTOCOL_20261029.md),rejection ledger and
+permutation/undo proof |20read families/8noncolliding proposals is LIMITED coverage,
+not global holdout;no automatic qualifiers/games/AUX assignments/default changes.
+Backup1: Exact static aggregation has positive cost but INCONCLUSIVE gates |
+[assessment](LEAPER_STATIC_EVAL_20261029.md) preserves51Root+48coldPlayercalls,
+all12equalwork,~8.1%/~6.8% aggregate gains,zeroCPUcells |No cell refill/threshold
+relaxation or enabled default;metrology is backup,not current priority.
+Backup2: Legal quiet coverage is real but no current root error |
+[one H6 witness](LEAPER_QUIET_WITNESS_20261029.md),23retained+16scalar+39immutable+
+3observed contexts;all8mainchoicesalreadysourceDRAW |NO_GO Qpolicy change;
+firstlostQ0slotUNKNOWN;no new label-mining/oldfailedcertificate/9rootpanel refill.
 
-Main: Can one legal non-check quiet continuation change a Q bound and parent
-ranking rather than merely survive? | Follow newc4d review:source-only legal
-chain,standpat/entry-window/finite-parent-tree falsification;freeze exact input,
-extra-node budget andTT/history identity before queries | legalcausaltrace or
-NO_GO/UNKNOWN | No newPlayer/game/controller/general solver/LMRretuning;
-original failed frozen certificate is retained,not silently retried/refilled.
-Backup1: Why two-ply quiet source is limited? |128fixed negative children,
-120checking/2terminal;one deeperchild diagnostic FAILED serialization,no proof/
-refill;2record-boundary regressionsPASS | RetainUNKNOWN,not deeper quiet refutation.
-Backup2: Finite-clock source CLOSED_NO_GOimplementation |16actualH-1/H-2roots,
-64directqueries,0suboptimalD1choices despite numeric mismatches | Do not revive
-old clock caps or TT fixes without an observed decision-changing defect.
+605cacb8980fcde3b3ca219a02c843ce0b6ec9a3 reviewed/private-preserved and integrated
+as ONE exact doc-only safeFF under latest USER standing approval. ADOPT fresh
+families/equalfullservicequality priority;defer newfullkernel and clock-loop.
+No exposed extension/LMR/PVS retuning. Existing tables/hash/Native remain baseline.
+Current mask wrapper changes static arithmetic only,not prices/Core/TT/tree.
+Memo reuse26.94% failed50%gate;fullprofiler4x disturbance failed attribution.
+All finite caps/results and unsupported scopes stay explicit;no new game/build.
+
+Normal manual/heartbeat rounds still require>=60real recorded effective minutes,
+continuing toward90;finite milestones/publication never waive the floor.
+[Continuation guard](../operations/CONTINUATION_GUARD_20261028.md). The current
+ownedUUID/ledger is in NEXT_WORK/session.json;closed prior intervals are not carried.
+USER default approval removes routine consent queues,not resource/cap/role rules.
+AUX and actual schedule unchanged. Full outgoing SHA comes from publication receipt.
 
 LMR CLOSED:16timingeligible Core terminals,16DRAW/ON8points/0positivefamilies;
 frozen gateFAIL. Independent1360originals/1360Core/5188PVstepsPASS,no finalorphans.
