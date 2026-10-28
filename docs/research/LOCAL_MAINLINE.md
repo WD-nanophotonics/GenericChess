@@ -207,23 +207,23 @@ No old receipt, offline or publication time is new research credit. Dot's earlie
 advice remains distinct from this AUX-derived judgment; follow-up will report
 unknowns and seek a genuinely new useful scoped direction.
 
-## Accepted DEV_AUX close89c5ef59 â€”2026-10-27
+## Accepted DEV_AUX close89c5ef59 —2026-10-27
 
 session finish safe_checkpoint accepted60.1600207effective minutes (3609.601240s), same UUID/origin across interruptions; memo synchronized ENDED. [Actual ledger](../research/data/aux_episode_observer_20261027/session-finish.json) retains closed/uncredited intervals. Source2503a8643adeff43bc4a0c004711a3c9b4f4d1cf was pushed/fullremoteverified;25focusedchecksPASS and reviewed own observer/budget fixes documented in [report](../research/AUX_EPISODE_OBSERVER_ATTRIBUTION_20261027.md). No offline/admin credit, oldtime reuse, new campaign, PRIMARY takeover, quality/speed gain or oldcap reset. Earlier pending entries are historical checkpoints, not current state. Fresh executable next questions remain ownplan/memo; role/hourly schedule unchanged.
 
-## DEV_AUX observer/budget milestone89c5ef59 â€”2026-10-27
+## DEV_AUX observer/budget milestone89c5ef59 —2026-10-27
 
 Same UUID now3609.601240confirmed seconds=60.1600207effective minutes, with actual evidence-bearing intervals and no offline/admin credit; work closed, accepted finish still pending. [Observer attribution](AUX_EPISODE_OBSERVER_ATTRIBUTION_20261027.md) adds only actual acting-model/returned-choice and pre-update weights to the maintained runner, labels aggregate exposure, and reproduces complete-return/0TD/0plies under the actual post-query guard. Two actual finite-budget entry gaps each admittedNaN/+inf; runner/direct episode now reject before I/O/environment.25focusedPASS, AST proves unchanged finite-input learner arithmetic and unchanged runner learner/model/episode call arguments. No new researchPlayer/game/training/solver/build; test Core-operation totalsUNKNOWN. No measured quality/speed or historical failure claim.
 
 Latest explicit sandbox7cbdbbb3/Problobfda5dfc2 unchanged; no shared runtime delta. Separate Slack recovery channel/full existing thread unchanged, no duplicate request. PRIMARY endpoint/generator/default ownership and closed H6/PVS/Uniform/1520/frontier caps remain. Current executable next source/summary-unit/interruption questions stay in own memo/plan, not patrol prompt. This is a segment checkpoint, not overall scientific completion or permission to repeat closed consumer seams.
 
-## Active evaluator-consumer checkpoint89c5ef59 â€”2026-10-27
+## Active evaluator-consumer checkpoint89c5ef59 —2026-10-27
 
 Same UUID/origin20:46:23UTC remains ACTIVE,2519.213460confirmed seconds=41.986891minutes; ordinary60-minute requirement UNMET. [Actual evaluator identity](AUX_EVALUATOR_IDENTITY_SCOPE_20261027.md) traces legacy integer payload, fixed engine/TT lifetime and metadata-only differences. Equal payload/full root/fresh TT/node budgets predict equal computation without time/cancel/failure differences; this is source inference, not executed action/quality/speed evidence. Own mainline floating override is a distinct consumer. Two misleading docstrings corrected; executable AST unchanged. No Native/Player/game/training/solver/build in this source question; all prior execution corrections/caps retained.
 
 Explicit milestone fetch sandbox7cbdbbb3 unchanged, latest Pro stop-theory/close-teacher direction retained. Recovery complete Slack thread contains no new advice; no duplicate request or delayed check. Teacher/arena/material-projection/identity seams are closed; use new real consumer/input or distinct scoped support, not more hypothetical guard/theory expansion or PRIMARY endpoint ownership. No normal finish is claimed.
 
-## Active actual-consumer continuation89c5ef59 â€”2026-10-27
+## Active actual-consumer continuation89c5ef59 —2026-10-27
 
 Same UUID/origin20:46:23UTC,1896.114769confirmed seconds; ACTIVE, not a completed60-minute segment. [Teacher consumer](AUX_TEACHER_DIAGNOSTIC_SCOPE_20261027.md): direct corpus binding, unsupported gamma and diagnostic default-alpha repair published e1832e3241edb233e20f4b5b1bc7d55c6c62ba22;86nonNativePASS and explicit prior22Nativeunit-case execution correction. No historyloss, oldrun-impact or quality/speed claim. New Pro7cbdbbb3/fda5dfc2 ADOPTED: stop theory expansion; teacher source gate closed.
 
@@ -231,13 +231,13 @@ Same UUID/origin20:46:23UTC,1896.114769confirmed seconds; ACTIVE, not a complete
 
 Same-round Dot followup1793050053 aftere183fullSHA; delayedcheck21:32:54UTC (capture completed21:32:54.208698) completed once afterdue21:32:33, no newreply. Continue independent scoped work, no duplicate request or replygate. Current executable plan/memo owns nexttask; no oldteacher/theory/H6/PVS/frontier/Uniform/1520 rerun or default change.
 
-## Active teacher-consumer segment89c5ef59 â€”2026-10-27
+## Active teacher-consumer segment89c5ef59 —2026-10-27
 
 Same ACTIVE new UUID,691.759817confirmed seconds at21:02:51UTC, no finish. [Report](AUX_TEACHER_DIAGNOSTIC_SCOPE_20261027.md): actual historical corpus replays action_history, initial board-only concern FALSE; legacyNative is not a fullsemantic teacher. Narrow reproduced missing/fallback/empty agreement defects now keep unavailable metricsUNKNOWN with fixed-denominator coverage; wrong-rule checkpoint loader/engine binding reuses existing validator.20relevanttestsPASS(17new/3existing incl Nativeintegration, operationsUNKNOWN), no new researchPlayer/game/training campaign or oldrecord re-evaluation. DAgger/ExIt source comparison identifies missing student/expert occupancy and actual target data, not an algorithm adoption.
 
 Pro47ea62ed/remote04003a0a unchanged ADOPTED, no sharedruntime delta. Dot1793047948 source-only read of73a69f37 adopted history/domain/caller cautions; not execution/test replication. New request1793047754 payloadverified/COMPLETED after one+5check, no repeatrequest. Currentbackup checks actual evaluator/checkpoint physical units/representation before any claimed transfer; no new framework or PRIMARYendpoint takeover. Allpriorwindows/delivery/caps retained plusactualcurrentcost, TokenUNKNOWN. Normalfinish still requires60+actualminutes.
 
-## Completed TD assumptions/consumer segment f326cb40 â€”2026-10-27
+## Completed TD assumptions/consumer segment f326cb40 —2026-10-27
 
 Accepted safe_checkpoint20:43:35UTC,3622.882602confirmed seconds=60.3813767minutes; [ledger](data/aux_td_assumptions_20261027/session-finish.json). [Report](AUX_TD_ASSUMPTIONS_AND_CONSUMER_SCOPE_20261027.md) completes Pro consumer matrix(NO_NEW_SIGNAL), conditional complete-history fixed-policy TD mean algebra(344exact specifications/43000energy checks), inventory admission(6075boxes), and actual frozen one-update bound. Narrow nonfinite-observation guard rejects invalid rows before mutation; independent reader aligned.195relatedtestsPASS(58new/137existing), no new strength/speed result. Core/Player unit totals UNKNOWN; no research game/training/solver/frontier campaign.
 
@@ -271,19 +271,19 @@ Accepted session finish: 66.58400effective research minutes,162testsPASS; no new
 
 Read-only closing PVSdesign5f134bbd12roots/118actions matched; no driver/output audit or PRIMARYexecution/budget transfer. Next own task is freshPro/source intake and full-history qualification of any newly published packet, with supplied-certificate and incomplete-endpoint backups in WORK_PLAN/NEXT_WORK. Do not rerun this closed table or oldH6. Prior209.50498295minutes plus current conservative105.402minute origin-to-finish cost window and additional closing delivery retained; only66.584minutes are confirmed research. Cadence/role/stops unchanged.
 
-## DEV_AUX verified source-attribution correction â€”2026-10-26
+## DEV_AUX verified source-attribution correction —2026-10-26
 
 Same140a989c ACTIVE segment, now62.33164confirmed effective minutes; pending closing communication/interpretation check, no premature finish.162relatedchecksPASS and final full1931decision/9636PV replay. [Report](AUX_SAVED_DECISION_EXPOSURE_20261026.md) corrects the overly broad earlier mean limitation: exact aggregate counts bound experienced short-minus-long mean WDLregret per recorded ordinary move to[94/466095,1/483], also positive on11timing-qualified pairs. It is a same-data consequence, not expected policy strength or an equal-time algorithm test.119observed-edge potential completions retain all52/67candidate locations; they are not actual minimax solutions. WDLsum4/gamepointdifference2/actorregret2WDLunits are separated.
 
 GitHub sandbox5f134bbd fetched: Patrol blob76d2dad6 and shared runtime unchanged; Slack own thread still has no reply to the interpretation question. New PRIMARY PVS request is context only, not an AUX assignment or transfer of its budget. No newPlayer/solver/game/build/default or oldcap reset. Next scoped work remains source qualification/partial-history truth; mutable tasks in ownWORK_PLAN/NEXT_WORK.
 
-## Active saved-decision exposure milestone â€”2026-10-26
+## Active saved-decision exposure milestone —2026-10-26
 
 Current140a989c session remains ACTIVE,40.6177confirmed effective minutes so far; no normal finish yet. [New source analysis](AUX_SAVED_DECISION_EXPOSURE_20261026.md) binds all240saved fixed-depth returns and1931game decisions/9636supplied PV-occurrence plies. Same-depth choices identical;254root actions remainUNLABELLED.147forced moves,33empty PVs and41endogenous prefix overlaps are explicit.
 
 A finite-game swapped-seat identity re-expresses the existing24game outcomes as short-minus-long total experienced minimax actor regret2; two positive one-family pairs imply an error somewhere in52/67nonforced short suffix slots, with no local action/root WDL labels or independent extra strength evidence.135relevantchecksPASS. Dot independent review requested after this active milestone publishes; PRIMARY keeps algorithm design/defaults. No newPlayer/solver/game/build or closedH6restart. Priorrelated209.50498295minutes+actual whole current round cost retained; no repeated user approval. Current executable tasks remain ownWORK_PLAN/NEXT_WORK.
 
-## Latest Pro source table completed â€”2026-10-26
+## Latest Pro source table completed —2026-10-26
 
 Pro68f83ff02067b7d557b12eb1438e066504bfa192read/adopted/executed in same session.
 All24published contexts/12rules/6families literalPASS;H6incompatible24/24,
@@ -294,7 +294,7 @@ labels from game outcomes. See AUX_PRIMARY_SOURCE_COMPATIBILITY_20261026.md.
 Finaleffective69.85413minutes/147checks. PRIMARYprofiling/design stay PRIMARY.
 NextMain in ownWORK_PLAN/NEXT_WORK; no repeated closed H6/table audit or approval.
 
-## Completed actual research segment â€”2026-10-26
+## Completed actual research segment —2026-10-26
 
 61.53468confirmed effective minutes;146headless checksPASS. Source-bound consumer,
 partial WDL bounds/strategy checks, explicit history revalidation and fixed-domain
@@ -305,7 +305,7 @@ source claims and actual finite-proof checks remain distinct. PRIMARY's new
 frozen candidate remainsAWAITING_FROZEN_INPUT. Nextuse currentplan/memo; no closed
 H6 cache/audit repeat. Prior112.346442minutes plus actualthisround cost carried.
 
-## Direct user execution correction â€”2026-10-26
+## Direct user execution correction —2026-10-26
 
 Every scheduled ordinary research run must actually perform at least60 effective
 minutes, continuing toward90. Existing authorized work proceeds without asking
@@ -324,7 +324,7 @@ No new solver/Player/games/build, H6 cache iteration or1520rerun. Prior
 
 Historical prelaunch decision below is superseded by the direct user correction.
 
-## Latest Pro intake â€”2026-10-26 09:39UTC
+## Latest Pro intake —2026-10-26 09:39UTC
 
 Pro at sandbox578cd42b0672181dafa4f0bdb8015be109bd4cdc,
 `docs/reviews/chatgpt_patrol/2026-10-26_183742_JST_c011808.md`, explicitly assigns
@@ -341,7 +341,7 @@ Pro and Dot cannot waive that boundary. No new session/Player/solver/game/build,
 Mutable action and exact evidence are in WORK_PLAN/NEXT_WORK. Earlier executable
 plan below is conditional on this newer scope/budget decision.
 
-# DEV_AUX current plan â€”2026-10-26
+# DEV_AUX current plan —2026-10-26
 
 Current status: [DEV_AUX_CURRENT_STATUS.md](../operations/DEV_AUX_CURRENT_STATUS.md).
 Latest user requests a compact hourly bootstrap prompt and an executable temporary
@@ -357,10 +357,10 @@ coverage denominators. PRIMARY keeps experiment design/generation/defaults.
 First check source and cumulative-cost eligibility; no new Player/solver/game/
 build, re-solving or1520 rerun. Closed H6 chain112.346min and other old costs
 remain; a related>=120min forecast needs USER before launch, not Dot approval.
-Normal research accumulates60â€“90effective minutes; this workflow edit earns none.
+Normal research accumulates60–90effective minutes; this workflow edit earns none.
 Initial audit remains COMPLETE at a475104a; old context below is not automatic work.
 
-# Deferred research context â€” before the initial assistance task
+# Deferred research context — before the initial assistance task
 
 Before the latest user assignment, P0/P1 structural counterfactuals and
 complete-history truth were the Main. Later reserves were matched explorer
@@ -369,7 +369,7 @@ teachers; long-term inverse design. PRIMARY owns rule generation, common mu,
 forward features/predictions and defaults. AUX owns exact truth, certificates,
 coverage, history/clock semantics and offline matched scoring. Only sidemission.
 Historical observation:120minute patrols before later cadence changes. Current
-status is only the reference above; ordinary research accounting remains60â€“90min.
+status is only the reference above; ordinary research accounting remains60–90min.
 
 ## Reusable evidence and current bounded question
 
