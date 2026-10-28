@@ -393,3 +393,10 @@ source positions all satisfy the condition; the final recheck retains the same
 6144attack comparisons/286deltas. All17 current projection tests pass. This
 corrects the research reader, not a claimed product engine defect or a change
 to the frozen rules/input records.
+
+
+Accepted segment close: own session finish safe_checkpoint at05:25:25UTC;
+3746.464897declared seconds minus120second conservative reserve gives60.44108
+effective minutes. [Receipt](data/aux_leaper_projection_20261028/session-finish.json).
+No further research credit after that close; final communication/publication is
+administrative. Scientific results and UNKNOWNs above are unchanged.

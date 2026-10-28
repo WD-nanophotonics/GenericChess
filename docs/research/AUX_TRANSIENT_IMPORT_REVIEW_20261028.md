@@ -163,3 +163,10 @@ contribution is full-history/return qualification and local shared-interface
 compatibility, not a second implementation or an extension of the closed trial.
 Future work requires a genuinely distinct question or new committed endpoint;
 none of the missing D8 slots becomes an automatic task.
+
+
+Accepted segment close: own session finish safe_checkpoint at05:25:25UTC;
+3746.464897declared seconds minus120second conservative reserve gives60.44108
+effective minutes. [Receipt](data/aux_leaper_projection_20261028/session-finish.json).
+No further research credit after that close; final communication/publication is
+administrative. Scientific results and UNKNOWNs above are unchanged.

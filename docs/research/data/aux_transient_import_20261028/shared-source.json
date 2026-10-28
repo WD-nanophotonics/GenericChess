@@ -20,5 +20,12 @@
       "sha256": "24a2df46727a15ef59a939525f82b2e5ba1bbec51f44e2302e7c9600c858be72"
     }
   ],
+  "other_package_differences": "Seven learning modules are AUX research/learner differences, unchanged by this import.",
+  "retained_nonlearning_path_difference": {
+    "decision": "Preserve accurate learner-specific documentation; no alternate compiler implementation.",
+    "kind": "Own learner-checkpoint/TT docstring clarification only",
+    "path": "generic_chess/native/compiler.py",
+    "runtime_ast_equal_to_source": true
+  },
   "source": "76da1ff8d92f8c8756a5cb264e411dca522c37d6"
 }

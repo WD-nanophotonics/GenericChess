@@ -9,9 +9,9 @@ elsewhere describe the state at that time and do not override it.
   Current manual start does not query or change scheduler state.
 - Initial15minute consumer source audit: COMPLETE, published at
   `a475104a1bcb6c0f7c25465a581ea29bb87d7002`.
-- Manual user resume2026-10-28: df3b4b74 ACTIVE, same origin/confirmed work;
+- Manual user resume2026-10-28: df3b4b74 now ENDED, same origin/confirmed work;
   scientific checkpoint now3746.464897declared seconds;120secondreserve gives
- 60.44108conservative minutes. Formal accepted finish receipt pending.
+ 60.44108conservative minutes. Accepted safe_checkpoint finish05:25:25UTC; memo synchronizedENDED.
 - Current action: follow the revisable `.local_agent/WORK_PLAN.md` and compact
   `NEXT_WORK.md`. Latest user authorizes scoped fallback planning when GitHub
   ChatGPT Pro has no explicit AUX task; unconditional waiting is superseded.

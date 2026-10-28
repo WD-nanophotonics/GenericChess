@@ -1,3 +1,17 @@
+## Accepted segment close df3b4b74 -2026-10-28
+
+Own session finish safe_checkpoint accepted05:25:25.335615UTC, same UUID/origin,
+3746.464897confirmed declared seconds. A120second conservative mixed-recovery
+reserve leaves60.4410816effective minutes; offline/idle/publication/transport
+notcredited. [Accepted receipt](../research/data/aux_leaper_projection_20261028/session-finish.json)
+and [actual ledger](../research/data/aux_leaper_projection_20261028/session-ledger.json).
+Memo synchronizedENDED; scientific revisionc1a44b35b5e85101f75068e87b2e6fa7f9bd8be0
+was pushed/fullremoteverified before substantiveDot1793165101. Its05:30:01UTC
+single delayedcheck is pending in this receipt; closingadministration isnotresearch.
+No role/schedule/othercheckoutchange. Next ownmemo has executablefresh-source
+quality,projection-objection andchanged-interfacecompatibilityquestions;closed
+studies and frozenlimits are not reopened.
+
 ## DEV_AUX scientific checkpoint df3b4b74 -2026-10-28
 
 Same UUID/origin retained;3746.464897 declared research seconds minus120second
