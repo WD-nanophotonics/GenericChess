@@ -14,8 +14,10 @@ are preserved and the gap/repair excluded. scientific_complete now obeys60minute
 and matching-quality gates;48workflow regressions pass,legacybadending auto-resumes.
 [Guard diagnosis](../operations/CONTINUATION_GUARD_20261028.md).
 
-Main: Complete transport fusion useful? |Map producer/packer validation and
-error-order closure before a bounded prospective pilot |Fresh19178181checkimports;
+Main: Conditional transport fusion worth a bounded pilot? |Freeze one complete
+implementation/semantic/cost study after current review;include unfinished prep |
+[Closure](LEAPER_TRANSPORT_CLOSURE_20261028.md):unconditional fusionNO_GO;
+explicit certified input/stagederrors and oldfallback required;Fresh19178181checkimports;
 availabilityreuse alreadyBASELINE;exclusive netcostUNKNOWN |Preserve ordinary
 capsule/SHA/history/absoluteply/Core/TT;NO_GO allowed.
 Backup1: New quality evidence |Retain shared-prefix witness,do not expand games
