@@ -1,8 +1,12 @@
 # Dense pure-Leaper resource-response protocol — 2026-10-27
 
-Status: RUNNING with an explicit recorder-recovery amendment. Original slot0 is
-FAILED, not a loss or draw; no started game or saved query is repeated. This is
-an exploratory screen, not an algorithm improvement or deployment claim.
+Current status (2026-10-28): CLOSED_STOPPED, not running. Original slot0 FAILED;
+continuation retained six terminal labels (all draws), one UNFINISHED and four
+NOT_STARTED,613 saved returns. Original all12 eligibility is impossible; original
+deadlines expired and no slots may be refilled. Terminal labels have not received
+a new independent Core replay. See [current endpoint qualification](LEAPER_QUALITY_ENDPOINTS_20261028.md).
+The following is the preserved historical protocol and recorder-recovery amendment,
+not a live continuation instruction or new quality/strength claim.
 
 ## Why change the endpoint
 

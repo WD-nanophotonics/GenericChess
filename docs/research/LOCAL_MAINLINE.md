@@ -21,13 +21,24 @@ remain. Botharmsusecurrentprivatebinary/commonadapter,notoldproductioncontrol.
 SourceCRLFsupplement matchesPRE-queryrawhash;originals retained,no rerun.
 LatestUSERresume supersedesoldpause;ownmatchedstops clearedonly. AUX/recurrence
 unchanged;observedACTIVE180min is not a new schedulechange.
-Main: Next genuine pure-Leaper mechanism? |At next round read currentGitHub/Slack
-and assess a new exclusive-cost or independent consumer premise |Own prospective
-cost and quality evidence |No automatic secondcandidate,thresholdretune orD8refill.
+Latest autonomous c70d9f2a was read in full after publication and adopted:
+[New endpoint audit](LEAPER_QUALITY_ENDPOINTS_20261028.md) closes the second finite
+source-only objective.824nonimmediateH6forkroots/9families are exposed diagnostics,
+not currentnear-strength resolution.420completeD6savedreturns0inferior;abortcaps
+areseparate. Dense6terminalDRAWlabels+6unknown yield729completions/rawsigned
+[-.5,.5],0-4possiblepositivefamilies;no independentCoreterminalreplay. Current
+ready-madequalitypanelNO_GO,notallfuturequalityimpossible. No newCore/Player/
+solver/game/build in this sourceaudit. Originaldensegatefailed,oldslotsnotrefilled.
+Main: Useful equal-time pureLeaper quality? |Freeze a concrete current-policy
+contrast (existingPVS is a candidate) and new-family sampling/outerwall contract
+before any outcomes;assess bounded setup feasibility |>=3distinctgeometryfamilies,
+bothseats/fullhistories,newunexposed evaluation and ownprospectivecost |No old
+panel/PVS refill or execution until its new contract and costs are explicit.
 Backup1: Existingdense evidence |Preserve613originals andmissingexpiredgames |
 Partialoutcomes remainunverified/nostrengthclaim |No refill or budgetreset.
-Backup2: Interpretation |Keep4%scoped andfailed5%gate distinct |No holdout,
-classsuccess orsoleSHAcausality |DefaultOFF;newexperiment requiresnew premise.
+Backup2: Lowpriority fusion |Require a new exclusive removable boundary and
+consumer beyond baseline/recentnegative gates |No established netgainbound |
+No automatic wrapper variant,attack-table rebuild or AUX source duplication.
 
 Fully read newPatrol160253/180108/200005 at13aacdd97fbc5cc50362f1d2bf1cf7525e3f8ffd.
 Adopt exclusive-cost/semantic-closure advice;their earlier stop predates latest

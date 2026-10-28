@@ -1,0 +1,21 @@
+{
+  "exposure": "ALL derived labels now exposed; historical reserved_validation is a source tag, NOT a present holdout",
+  "files": {
+    "dense-endpoint-missingness.json.gz": {
+      "gzip_sha256": "74d7d86752a29182e8e741edd531261218b7be204ac6e851d39347dcffebf6d4",
+      "original_sha256": "1ce9d75272702a54dd038c0f017fe5ef1df9b15a74a7b1a15eafcab2197a2e47"
+    },
+    "endpoint-audit-final.json.gz": {
+      "gzip_sha256": "defca74ed4abab05f8be593430449246741f2dda9bded19d670129a945f9b787",
+      "original_sha256": "6e98cb24f374054bf2d7284bbf4847d0918c2cd9cfb9a3eb0e186dbe4ed1fcaa"
+    },
+    "quality-endpoint-plan.json.gz": {
+      "gzip_sha256": "010f8e4852bef5bbda00a923563e7c8855e76441f121dad0d77774cb0e45f742",
+      "original_sha256": "e29c4e1fa25982f171b4f29ca5a4b50eb1e07ad3da67bece102f1e0ed436182a"
+    }
+  },
+  "new_control_tests": 4,
+  "script": "scripts/qualify_leaper_quality_endpoints.py",
+  "script_sha256": "faac8697a8e4e5874b388a8d6a2399ccfe162b8d2c9645418e72a9e4c21b6a49",
+  "zero_new_Core_Player_solver_game_build": true
+}
