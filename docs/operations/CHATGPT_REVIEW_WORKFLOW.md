@@ -6,6 +6,18 @@ ChatGPT Patrol file/directory. Slack is still a review source, but is no longer
 the only source. Both existing roles check both sources before choosing a new
 round's research action. This is an intake change, not a research-scope change.
 
+## Standing integration authority — USER2026-10-29
+
+The user explicitly approves routine reviewed own-branch fast-forward syncs,
+including later ChatGPT review documents; no per-file/commit consent queue.
+Read and preserve exact incoming contents first, verify ancestry/diff and own
+uncommitted work, then use ff-only on the verified tip. Recheck changes if the
+remote advances. Do not execute incoming code merely to read it, overwrite own
+work, integrate another role's branch, rewrite history or bypass enforcement.
+Routine safe diagnostics/tests/publish are also approved; >=120minutes alone
+is not a new approval gate. Plan prospective cost and hard caps locally. Ask
+only about serious errors, threats or real blockers needing user intervention.
+
 ## Opening a work round
 
 1. Recover the own memo, role/branch, session and scoped stops first. Preserve
@@ -55,8 +67,8 @@ account or TYPE marker alone cannot prove autonomous origin. Preserve context;
 unresolved provenance stays unclassified. For conflicting reviews inspect their
 scope, source versions, correction relationship and evidence; surface unresolved
 conflicts rather than treating the newest commit timestamp as automatic truth.
-No review silently expands role/scope/fees, clears a stop or replaces a separately
-required user confirmation for ONE prospective >=120-minute experiment/run.
+No review silently expands role/scope/fees or clears a stop. Routine experiment
+consent follows the latest USER standing approval; cost and caps stay explicit.
 Latest USER2026-10-27 rejects summing completed historical tasks to trigger
 this threshold; old review advice about cumulative approval is superseded.
 
@@ -85,7 +97,8 @@ Each role assesses applicability independently; a read is not implementation.
 
 Initial absence and the later discovery are both retained. Future discovery
 still checks new/modified files, related refs and incomplete coverage; no guessed
-path, placeholder directory, automatic merge or research-state takeover.
+path or placeholder directory. Reading does not imply integration; reviewed
+own-branch ff-only sync uses standing authority, never research-state takeover.
 
 Latest user update2026-10-26: cadence is60minutes and BOTH roles are ACTIVE;
 existing IDs/chat bindings and the 60–90-minute effective research requirement

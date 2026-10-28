@@ -33,6 +33,21 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-24
 
+- Latest USER2026-10-29: routine authorized GenericChess work is approved by
+  default. Do not interrupt the user for individual safe syncs, diagnostics,
+  tests, bounded experiments, repairs, saves, commits, pushes or project messages.
+  A single-run duration >=120minutes alone is no longer a renewed consent gate;
+  still assess necessity, full prospective cost, resource limits and stopping
+  conditions locally. This supersedes older per-run necessity-confirmation text
+  and the mistaken per-review-document fast-forward approval queue. Reviewed
+  fast-forward updates of this role's existing branch, including ChatGPT review
+  documents, may be integrated without asking again after checking exact diff,
+  ancestry, own uncommitted work and content. Reading alone does not integrate
+  or execute anything. Contact the user only for serious errors, safety threats
+  or a genuine project blocker that requires their intervention. No new fees,
+  workers, cross-role writes, history rewriting, uncontrolled jobs or removal of
+  existing experiment caps; platform enforcement still applies.
+
 - User correction2026-10-28: a completed finite experiment/report/qualification is
   a milestone, not completion of a normal patrol. Continue independently to the
   next useful pure-Leaper action without waiting for another user start. The
@@ -95,7 +110,8 @@ workers may be created.
   docs/reviews/chatgpt_patrol/ on remote sandbox; resolve its latest SHA each
   opening, never freeze to the discovery commit. Locate a moved path/ref from
   remote trees; pin full commit/blob hashes and preserve originals before
-  assessment. No automatic pull/merge/execution or other-role state changes.
+  assessment. Reading does not imply integration/execution; reviewed own-branch
+  fast-forwards use the latest USER standing authority. No other-role changes.
   Follow docs/operations/CHATGPT_REVIEW_WORKFLOW.md; record coverage gaps and
   read/adopt/defer/reject separately. GitHub and Slack autonomous reviews share
   the same authority below latest direct user instructions and above Dot advice.
@@ -132,7 +148,8 @@ workers may be created.
   extra worker, new channel or schedule. Preserve old requests/receipts; uncertain
   sends require reconciliation, not automatic resend. Each send still requires
   reviewed project-only content, prior push and full remote SHA verification.
-  >=120minute run confirmation, pure-Leaper scope and role boundaries stay intact.
+  Local cost/cap planning, pure-Leaper scope and role boundaries stay intact;
+  routine consent follows the latest USER default-approval instruction.
 - PRIMARY_SANDBOX independently researches, implements, tests and publishes its
   mainline work; DEV_AUX owns its own sidemission checkout. Each role owns its
   checkout, branch/index, memo, session clock, stop flags and outputs. Never write
@@ -186,15 +203,11 @@ Five minutes is the single delayed-check target, NOT a response expiry: retain
 late replies and read them at the next meaningful interaction. No missing reply
 creates a research/publication gate or permission to poll repeatedly.
 
-User correction2026-10-27: the >=120minute necessity threshold applies to
-ONE prospective experiment/run, not cumulative project/research-chain history.
-Completed tasks do not carry their minutes into a new task's approval threshold.
-Historical costs may be reported separately, never used to manufacture a new
-approval gate. Do not split one unfinished run to evade its actual expected
-single-run duration. Session effective-work requirements remain independent.
-The user withdrew the just-given quiet-ordering deferral as based on misleading
-cumulative accounting and directly instructed continuing the stated finite work.
-No historical770minute cap or closed-task balance is an active authorization gate.
+User cost correction2026-10-27 remains: never sum completed historical tasks
+into a new run's prospective cost, or split an unfinished run to hide its cost.
+The former >=120minute confirmation gate is superseded by USER2026-10-29
+standing default approval above. Record actual prospective costs and hard caps;
+no historical770minute balance or new per-experiment consent queue is active.
 
 ## Continuing authority and actual boundaries
 
@@ -238,7 +251,7 @@ mismatched role/branch operation.
 PRIMARY delivers tested backend changes on sandbox. DEV_AUX independently owns
 its solver/verifier/cursor/runtime/learning work on sidemission; read pinned
 source/results for dependencies, do not edit its checkout, session, stop flags,
-memo, computation or unpublished work. No automatic merge or competing solver.
+memo, computation or unpublished work. No other-role merge or competing solver.
 Neither Agent maintains/publishes UI Test; the user maintains it elsewhere.
 Backend activation/compatibility: docs/operations/BACKEND_HANDOFF.md.
 
@@ -341,15 +354,15 @@ context dependence alone does not refute averaging under an explicit distributio
 Use information per total cost (including engineering/recording overhead), not
 universal development caps. Choose a falsifiable decision-changing question;
 record changed premise, potential outcomes, incremental cost and scope. Small
-local training is authorized. A single project experiment/run expected to take
-LESS THAN TWO HOURS needs no prior assessment. If expected duration is TWO HOURS
-OR MORE (>=120 minutes, including exactly 120), wait for the user's necessity
-assessment in an incoming project Chat message or direct confirmation here
-before starting. Continue shorter independent work meanwhile; do not split to
-evade the threshold.
-Restored Dot advice does not substitute for the user confirmation required for
->=120minute runs, change segment duration or authorize uncontrolled jobs. Machine
-safety and frozen caps still apply.
+local training is authorized. Estimate each prospective experiment/run, including
+preparation, engineering, validation and analysis, and choose bounded resource
+caps before starting. USER2026-10-29 grants default approval for routine in-scope
+work; >=120minutes does not by itself require another question. Completed tasks
+never carry costs into a new run's approval threshold. Do not split, rename or
+reset a frozen run to hide cost or erase failures. Serious errors, safety threats
+or actual blockers needing human intervention are the escalation conditions.
+Dot advice does not change user scope, work-segment duration, fees, worker or
+machine-safety boundaries. Existing frozen caps remain hard boundaries.
 
 Preserve frozen conditions, failures, missing planned slots and UNKNOWN; never
 extend a frozen cap because of results, relabel exposure as holdout, or replace

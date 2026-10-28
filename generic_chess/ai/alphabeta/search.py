@@ -291,7 +291,34 @@ def _runtime_legal_actions(ctx: _Context, checkpoint):
         ctx.stats.legal_generation_seconds += time.perf_counter() - started
 
 
-def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=None):
+def _extension_bank(ctx, remaining):
+    if remaining is None:
+        return int(ctx.tuning.use_one_check_extension)
+    if type(remaining) is not int or remaining not in (0, 1):
+        raise ValueError("main check extension bank must be 0 or 1")
+    return remaining
+
+
+def _policy_tt_key(key, ctx, remaining):
+    # Never infer numeric compatibility from additional extension capacity.
+    return ("main-check-extension/v1", remaining, key) if ctx.tuning.use_one_check_extension else key
+
+
+def _check_extension_delta(state, depth, remaining, ctx):
+    if not ctx.tuning.use_one_check_extension or depth <= 0 or remaining == 0:
+        return 0
+    side = state.position.side_to_move
+    if ctx.runtime is not None:
+        checked = ctx.runtime.in_check(side, checkpoint=ctx.checkpoint)
+    else:
+        engine = semantic_engine_for(ctx.compiled)
+        checked = (engine.in_check(state.position, side, checkpoint=ctx.checkpoint)
+                   if engine is not None else is_in_check(state.position, side, ctx.compiled))
+    return int(checked)
+
+
+def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=None,
+                       remaining_extensions: int | None = None):
     """Validate a sufficient-depth line in the existing path-aware table.
 
     A missing/bounded/mismatched child is not a truncated explanation: the
@@ -300,6 +327,8 @@ def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=No
     """
     if ctx.runtime is None:
         return None
+    remaining_extensions = (_extension_bank(ctx, remaining_extensions)
+                            if ctx.tuning.use_one_check_extension else 0)
     ctx.budget.check(ctx.stats, force=True)
     if ctx.runtime.terminal_status.is_terminal:
         return () if terminal_score(ctx.runtime.terminal_status,
@@ -309,7 +338,10 @@ def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=No
     if entry is None:
         ctx.stats.position_keys_computed += 1
         ctx.stats.tt_probes += 1
-        entry = ctx.tt.probe(ctx.runtime.search_key())
+        key = ctx.runtime.search_key()
+        if ctx.tuning.use_one_check_extension:
+            key = _policy_tt_key(key, ctx, remaining_extensions)
+        entry = ctx.tt.probe(key)
         if entry is not None:
             ctx.stats.tt_hits += 1
     if (entry is None or entry.depth < depth or entry.bound is not BoundType.EXACT
@@ -318,8 +350,11 @@ def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=No
     actions = _runtime_legal_actions(ctx, ctx.checkpoint)
     if entry.best_action not in actions:
         return None
+    delta = (_check_extension_delta(ctx.runtime.state, depth, remaining_extensions, ctx)
+             if ctx.tuning.use_one_check_extension else 0)
     with ctx.runtime.pushed(entry.best_action, checkpoint=ctx.checkpoint):
-        suffix = _tt_principal_line(ctx, depth - 1, ply + 1, -score)
+        suffix = _tt_principal_line(ctx, depth + delta - 1, ply + 1, -score,
+                                    remaining_extensions=remaining_extensions - delta)
     return None if suffix is None else (entry.best_action,) + suffix
 
 
@@ -333,10 +368,16 @@ def negamax(
     prev_action: Action | None = None,
     node_key: str | None = None,
     pv_node: bool = True,
+    remaining_extensions: int | None = None,
 ) -> SearchResult:
     if ctx.runtime is not None:
         state = ctx.runtime.state
     ctx.stats.nodes += 1
+    remaining_extensions = (_extension_bank(ctx, remaining_extensions)
+                            if ctx.tuning.use_one_check_extension else 0)
+    if ctx.tuning.use_one_check_extension:
+        ctx.stats.main_search_max_ply = max(ctx.stats.main_search_max_ply, ply)
+        ctx.stats.main_extension_max_path = max(ctx.stats.main_extension_max_path, 1 - remaining_extensions)
     ctx.budget.check(ctx.stats)
 
     terminal = state.terminal_status
@@ -361,6 +402,11 @@ def negamax(
             score = _evaluate(state, ctx.evaluator, ctx)
         ctx.budget.check(ctx.stats, force=True)
         return SearchResult(max(score, 0) if neutral is not None else score, None, ())
+
+    extension_delta = (_check_extension_delta(state, depth, remaining_extensions, ctx)
+                       if ctx.tuning.use_one_check_extension else 0)
+    child_depth = depth + extension_delta - 1
+    child_extensions = remaining_extensions - extension_delta
 
     if ctx.tuning.use_mate_distance_pruning:
         alpha = max(alpha, -MATE_SCORE + ply)
@@ -403,6 +449,8 @@ def negamax(
             ctx.stats.position_keys_computed += 1
             with ctx.recorder.time_block(AuditMetric.TT_KEY):
                 key = _tt_key(state, ctx.compiled)
+    if tt_compatible and ctx.tuning.use_one_check_extension:
+        key = _policy_tt_key(key, ctx, remaining_extensions)
     entry = None
     if tt_compatible:
         ctx.stats.tt_probes += 1
@@ -412,7 +460,8 @@ def negamax(
             ctx.stats.tt_hits += 1
             if ctx.tuning.require_full_pv and pv_node and entry.bound is BoundType.EXACT:
                 cached_score = score_from_tt(entry.score, ply)
-                cached_line = _tt_principal_line(ctx, depth, ply, cached_score, entry)
+                cached_line = _tt_principal_line(ctx, depth, ply, cached_score, entry,
+                                                  remaining_extensions=remaining_extensions)
                 if cached_line is not None:
                     return SearchResult(cached_score, entry.best_action, cached_line)
             if entry.depth >= depth and not (ctx.tuning.require_full_pv and pv_node):
@@ -450,6 +499,10 @@ def negamax(
                             score, entry.best_action, (), cached_declaration
                         )
 
+    # Count an extension admitted to actual node expansion, not a TT return.
+    if extension_delta:
+        ctx.stats.main_check_extensions += 1
+        ctx.stats.main_extension_max_path = max(ctx.stats.main_extension_max_path, 1)
     lazy = False
     child_by_action = {}
     handle_by_action = {}
@@ -560,15 +613,17 @@ def negamax(
                         ctx.orderer.record_attempt(history_side, action)
                         attempt_recorded = True
                     return negamax(
-                        ctx.runtime.state, depth - 1, window_alpha, window_beta,
+                        ctx.runtime.state, child_depth, window_alpha, window_beta,
                         ply + 1, ctx, prev_action=action, pv_node=child_pv,
+                        remaining_extensions=child_extensions,
                     )
             if ctx.tuning.use_relative_history and not attempt_recorded:
                 ctx.orderer.record_attempt(history_side, action)
                 attempt_recorded = True
             return negamax(
-                child, depth - 1, window_alpha, window_beta, ply + 1, ctx,
+                child, child_depth, window_alpha, window_beta, ply + 1, ctx,
                 prev_action=action, node_key=child_key, pv_node=child_pv,
+                remaining_extensions=child_extensions,
             )
 
         if ctx.tuning.use_pvs and move_index > 0:

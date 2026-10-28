@@ -14,23 +14,51 @@ are preserved and the gap/repair excluded. scientific_complete now obeys60minute
 and matching-quality gates;48workflow regressions pass,legacybadending auto-resumes.
 [Guard diagnosis](../operations/CONTINUATION_GUARD_20261028.md).
 
-Main: Conditional transport fusion worth a bounded pilot? |Freeze one complete
-implementation/semantic/cost study after current review;include unfinished prep |
-[Closure](LEAPER_TRANSPORT_CLOSURE_20261028.md):unconditional fusionNO_GO;
-explicit certified input/stagederrors and oldfallback required;Fresh19178181checkimports;
-availabilityreuse alreadyBASELINE;exclusive netcostUNKNOWN |Preserve ordinary
-capsule/SHA/history/absoluteply/Core/TT;NO_GO allowed.
-Backup1: New quality evidence |Retain shared-prefix witness,do not expand games
-without changed premise |[New-family result](LEAPER_NEW_FAMILY_PVS_RESULT_20261028.md):
-ON5W15D4L,all24timingeligible,only1/6positive;amendedscreenFAIL |DefaultOFF.
-Backup2: Seam infeasible |Evaluate independent pure-Leaper cost/quality consumer
-from fresh evidence |No existing Native/hash/reuse/table work relabeled new |
-Finite result is a checkpoint;next patrol executes Main without user restart.
+Main: Can one legal non-check quiet continuation change a Q bound and parent
+ranking rather than merely survive? | Follow newc4d review:source-only legal
+chain,standpat/entry-window/finite-parent-tree falsification;freeze exact input,
+extra-node budget andTT/history identity before queries | legalcausaltrace or
+NO_GO/UNKNOWN | No newPlayer/game/controller/general solver/LMRretuning;
+original failed frozen certificate is retained,not silently retried/refilled.
+Backup1: Why two-ply quiet source is limited? |128fixed negative children,
+120checking/2terminal;one deeperchild diagnostic FAILED serialization,no proof/
+refill;2record-boundary regressionsPASS | RetainUNKNOWN,not deeper quiet refutation.
+Backup2: Finite-clock source CLOSED_NO_GOimplementation |16actualH-1/H-2roots,
+64directqueries,0suboptimalD1choices despite numeric mismatches | Do not revive
+old clock caps or TT fixes without an observed decision-changing defect.
 
-OriginalD2gateFAILED;explicitpublishedamendment reused19+5newqualifications,
-20D2+4CoreWIN;all24gamesended06:39:42UTCinsideunchangedwhole110mincap.
-Independent1787returns/1763transitions/5467PV/PublicarchivePASS.
-SameUUID resumed,>=60effective recorded;normalquality/final-check required.
+LMR CLOSED:16timingeligible Core terminals,16DRAW/ON8points/0positivefamilies;
+frozen gateFAIL. Independent1360originals/1360Core/5188PVstepsPASS,no finalorphans.
+33092reductionattempts/1115fullretries confirm actual activity;no default enable.
+24observerqueries/8exacttriads and8newD4qualifiers/16reusedreferences passed.
+Ratio.941899 is historical feasibility only;all8D4scores/actions/PVs matched.
+Coldoriginalrootactions8/8matched;later game histories forbid total-time speedup.
+Wholedeadline15:29:25UTC respected;producerended14:49:47UTC;no refill/retuning.
+
+Quiet source CLOSED:2130histories/881eligible/0witnesses/5716newreplies,
+independent16270CorePASS. All have a noisy local survivor;not a deeper defense
+refutation. Prior extension30terminals1W24D5L/13points/0positive remainsgateFAIL.
+TT48auditFAILED/45NOT_RUN and6call depth explanation retained,not productionfix.
+Prior frontier162/192complete/30NOT_RUN remainsclosed,not refilled.
+
+New c4d1cdca review read/private-saved in the bounded delivery repair;adopt
+source-causality first. Its remote view predates local LMR/source results.
+Nine labelledH6forks remainPRESELECTED/0queries;locallyDEFERRED under this latest
+review priority,not a user stop/permission gate. Do not repeat broad old-label
+qualification or automatically begin that baseline panel.
+USER2026-10-29 removes routine consent queues,including reviewed ownbranchFF;
+cost/caps remain local engineering judgment,not historical-duration prompts.
+Reviewed four-docFFtoc4dDONE;reviewed research delivery proceeds with required
+publisher/tests/fullSHA verification. No pending individual-sync question remains.
+Same-round Dotrequest/+5DONE,routefollowup/+5DONE;no routine extra pings.
+AUX/actualschedule unchanged. Publication outcome is recorded by actual remote
+receipt and own memo,not an assumed success from local commit.
+
+Previous [extension evidence](LEAPER_CHECK_EXTENSION_20261028.md) remains
+closed:12actualquietpaths/6families;old48+24gamesNOT_STARTED. Previous
+[resource control](LEAPER_RESOURCE_RESOLUTION_20261028.md) closed:24terminals,
+2s6W12D6L,not featuregain. Its37second administrative deadline miss remains
+recorded,not credited or erased. No oldcost creates a >=120minute gate.
 
 c70d9f2a quality-priority review adopted, not another packaging microvariant.
 [Transient result](LEAPER_TRANSIENT_IMPORT_20261028.md):48D6returns,11complete

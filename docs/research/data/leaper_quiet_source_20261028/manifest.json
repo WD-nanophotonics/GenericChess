@@ -1,0 +1,45 @@
+{
+  "schema": "pure-leaper-source-lmr-evidence/v1",
+  "sealed_at": "2026-10-28T15:00:29.865447+00:00",
+  "publication_state_at_seal": "LOCAL_ONLY;not pushed",
+  "files": [
+    {
+      "name": "inputs.json.gz",
+      "sha256": "c5b8f65dd90918230807c0be1cc17a22234c2d10a9cbc8bc6f91a0a92b81d107",
+      "compressed_bytes": 10836,
+      "members": 0
+    },
+    {
+      "name": "lmr-evidence.json.gz",
+      "sha256": "7b3131c2c48a6c65795b4e93d2dc6065b17f36ca86014e1e26cdbef9d410235e",
+      "compressed_bytes": 2529350,
+      "members": 1469
+    },
+    {
+      "name": "source-caveats-and-next.json.gz",
+      "sha256": "3192370b5f1a9b3375bae47e4ed0b241e36384053ed2f29f19c31c4630fdbcab",
+      "compressed_bytes": 80376,
+      "members": 16
+    },
+    {
+      "name": "source-dependencies.json.gz",
+      "sha256": "743971478be42fd8cfe79fc5a37e352953a88be28fcc36748d7203499476f253",
+      "compressed_bytes": 42038,
+      "members": 2
+    },
+    {
+      "name": "source-evidence.json.gz",
+      "sha256": "81bbae53c01bafd8ea1534b4d0fa5fae79f926907af47ab682ba84282f125462",
+      "compressed_bytes": 2482182,
+      "members": 31
+    }
+  ],
+  "source_acceptance": "2130histories/881certificates/1249skipreasons/16270CorePASS",
+  "lmr_acceptance": "16Coreterminals/1360originals/5188PVstepsPASS",
+  "lmr_quality": "16DRAW/8points/0positivefamilies;gateFAIL/defaultunchanged",
+  "failed_diagnostic": "One deeper local certificate FAILED GameRecord/JSON;no tree proof/refill. Original/source retained;corrected boundary2controlsPASS.",
+  "next_diagnostic": "9source-labelledH6forks preselected;no new queries;strict admission/reuse audit pending",
+  "original_format": "Each literal map member contains original UTF8 text,byte length,SHA256. No newline normalization. Inputs packet uses ordinary JSON rows.",
+  "privacy": "Explicit technical allowlist and actual UTF8 content inspected;no Slack/account wrappers,credentials,personal absolute paths or session ledger. Generic project routing/provenance only.",
+  "limits": "Source-attributed labels and shared-Core readers;not a separate WDL engine,unseen holdout or class-wide strength. Timinghistorical/descriptive;no matched speedup claim."
+}

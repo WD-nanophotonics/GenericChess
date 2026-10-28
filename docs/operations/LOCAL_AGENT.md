@@ -62,7 +62,8 @@ At each existing60minute patrol/manual work start, inspect remote GitHub
 ChatGPT Patrol reviews using CHATGPT_REVIEW_WORKFLOW.md, then read newly
 available autonomous Slack review comments and complete relevant threads.
 Pin remote refs/paths/blob hashes, preserve originals and record coverage gaps;
-no automatic merge, execution or import is implied by a review read.
+reading does not imply integration/execution. After review, own-branch ff-only
+sync is authorized by USER2026-10-29; no per-review approval question.
 The2026-10-24 direct user correction restores direct Dot consultation, including
 bounded real-time thread exchanges; it supersedes the old pause, asynchronous-
 only route and one-message-per-probe cap for that dialogue. User correction
@@ -105,9 +106,9 @@ Record adopt/defer/reject with evidence; neither remote source expands authority
 For every send review content, commit/push first and verify full remote SHA.
 Preserve exact raw reads/receipts before evaluation. Reconcile uncertain old sends
 without automatic retry; keep old PENDING requests and later reply association.
->=120minute runs still require user necessity assessment/direct confirmation;
-Dot's opinion alone is not that confirmation. Continue independent short work
-without a reply. Details: SLACK_WORKFLOW.md.
+Routine runs use USER2026-10-29 standing approval, with local necessity/cap
+planning. Dot cannot expand scope. Continue independent work without a reply.
+Details: SLACK_WORKFLOW.md.
 
 User clarification2026-10-25: TYPE=AGENT_REQUEST requires a Dot reply. Other
 message types, including AGENT_FOLLOWUP, allow a discretionary reply: neither
@@ -198,16 +199,15 @@ engineering overhead. Development limits are cost checkpoints, while permissions
 machine safety and frozen fair-comparison caps remain hard boundaries. Do not
 extend a frozen experiment or erase its failure by renaming seeds/phases.
 Use existing recorders/atomic writes; no new framework merely for receipts.
-User correction2026-10-27: apply this threshold to ONE prospective run only.
-Do not add completed tasks or historical research-chain minutes. Keep those as
-optional cost records, not approval gates; do not split an unfinished run to
-evade its actual duration. A new session alone does not split an ongoing run.
-Small training is authorized. Estimate the single experiment/run BEFORE starting:
-expected duration <120 minutes needs no prior assessment; >=120 minutes (including
-exactly two hours) requires the user's necessity assessment before starting. A real necessity question may accompany the single authorized asynchronous
-report, but execute only after the user assessment/direct confirmation; continue
-shorter independent work meanwhile. Do not split a run to evade this rule or confuse it
-with segment duration. The user's 2026-10-20 direction replaces the former live-review route; the older >1hour threshold is superseded.
+User cost correction2026-10-27: estimate ONE prospective run, not completed
+historical tasks; do not split an unfinished run to hide cost or reset its cap.
+USER2026-10-29 supersedes the old >=120minute confirmation gate: routine bounded
+project work is approved by default. Record necessity, alternatives, preparation,
+validation, resource limits and stopping conditions locally, then execute.
+Contact the user only for serious errors, safety threats or genuine blockers
+requiring intervention. Do not ask again for routine commands/files/messages,
+reviewed own-branch fast-forwards or ordinary experiment necessity. Existing
+worker/fee/scope boundaries and actual platform controls are unchanged.
 
 Persist each newly returned decision or timing batch atomically BEFORE downstream
 validation/assertions; preserve the return even when its interpretation fails.
@@ -230,8 +230,8 @@ or qsearch. Charge full import/generation time and preserve existing frozen caps
 When OS pytest temp/cache access is refused, retain the actual setup errors and
 use supported cache_dir/--basetemp options in a fresh ignored project directory;
 verify the target before reuse, never alter machine security/ACLs or live flags.
-Keep units explicit:120seconds is2minutes; the single-run consultation threshold
-is7200seconds. This does not change the60–90minute Agent work-segment rule.
+Keep units explicit:120seconds is2minutes. The former7200second consent gate
+is superseded; the60–90minute effective-work segment rule is unchanged.
 
 For sub-millisecond caller measurements use perf_counter; a sub-resolution zero
 is not zero cost. Restored Python-S drivers need their declared external vendor
@@ -255,8 +255,8 @@ not safe across days/resumes. Read new project Chat messages/comments and releva
 at existing60minute patrol/manual starts AND each logical Slack opening; preserve exact raw output before
 assessment. For active direct Dot dialogue, bounded relevant thread follow-ups
 are allowed. Apply the hierarchy and sender/provenance checks in SLACK_WORKFLOW.
-The old no-Dot/no-live/single-comment rule is superseded. A >=120minute run still
-needs the user's necessity assessment/direct confirmation; Dot cannot grant it.
+The old no-Dot/no-live/single-comment rule is superseded. Routine runs use the
+USER's standing default approval; Dot cannot enlarge its scope or remove caps.
 
 Coordinate with the existing DEV_AUX only for concrete dependencies, blockers or
 useful findings. Do not edit its checkout/state or duplicate its solver/learning
@@ -603,7 +603,7 @@ original cap; never resume/refill it. For any NEW empirical override bind actual
 comparable full-game records, executed source, controller/history/clock conditions,
 scaling/reserve and total preparation/preflight/validation/analysis cost. If that
 basis is absent, stop at cost feasibility or redesign a smaller genuinely new
-question before fitness. Do not split the old scope or bypass the120minute rule.
+question before fitness. Never split the old scope or bypass its frozen caps.
 
 
 ## Observed Q0 and counter contracts —2026-10-24
@@ -651,8 +651,8 @@ edit an executing source/cap or rerun frozen games to repair wording.
 Keep point forecasts, reserves and hard/cooperative caps distinct. The observed
 4096.86s point fits4800s with17.16percent reserve; a20percent forecast4916.23s
 does not fit that loop cap. Preserve that mismatch and all UNKNOWN, rather than
-increasing the frozen cap or promising coverage. Existing user>=120minute
-necessity assessment remains required for such long single runs.
+increasing the frozen cap or promising coverage. USER2026-10-29 standing approval
+replaces the old duration-based question; actual frozen limits still apply.
 
 A generic CLOSED producer marker is not scientific acceptance: check failures,
 missing slots and literal terminal/record qualification. Some append snapshots

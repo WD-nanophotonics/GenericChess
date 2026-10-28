@@ -26,7 +26,8 @@ and uncertainty. Unknown origin stays unclassified. Record adopt/defer/reject,
 reasons and execution effects. If evidence challenges advice, surface the conflict
 instead of silently treating speculation as fact. Neither advisor expands user
 scope, budgets, AUX authority or platform permissions. Dot cannot override the
-pure-Leaper-first direction or authorize >=120minute runs on the user's behalf.
+pure-Leaper-first direction or expand fees/workers/scope. Routine run consent
+comes from USER2026-10-29 standing approval, never from Dot.
 
 ## Reading and actual Slack interactions
 
@@ -148,8 +149,9 @@ resend. Reply in the known thread for a genuine follow-up after content/push/SHA
 checks and preserve its exact receipt; never silently change the parent payload.
 Follow unresolved questions during relevant dialogue or the next original patrol;
 reading, adopting and executing are distinct. No reply is a research/publication
-gate. >=120minute runs still need the user's confirmation, not Dot approval.
+gate. Routine bounded runs use USER2026-10-29 standing default approval;
+necessity/caps are recorded locally, not another user-confirmation queue.
 
-User correction2026-10-27: >=120minute assessment concerns ONE planned run, not
+Historical cost correction2026-10-27: prospective cost concerns ONE planned run, not
 cumulative completed tasks. Never ask Dot/user for a historical-chain budget
 gate. Preserve old raw requests as history; do not revive their invalid premise.

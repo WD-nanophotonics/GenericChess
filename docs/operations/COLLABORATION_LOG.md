@@ -8300,3 +8300,79 @@ positive;amended screenFAIL/defaultOFF. OriginalD2gateFAILED and explicit19reuse
 archive PASS;shared-prefix divergence located but warmTT causalityUNKNOWN. Dot
 source-only transport advice considered,not claimed independently benchmarked;
 new consumer counts support feasibility review,not assumed savings. AUX untouched.
+
+
+## PRIMARY conditional starts, TT contract and quiet source review —2026-10-28
+
+PRIMARY independently freezes64literal candidates,retains25compiler rejections,
+39valid/36eligible starts and all missing slots;15selected roots/30swapped equal
+1.5second games yield extensionON1W24D5L,0positive families.2160raw returns,
+2130Core transitions and7523PV steps independently replay privately/public-format.
+The original new-geometry TT equality control stops after3calls/45NOT_RUN;
+a separate identical-clone depth-admissibility intervention restores cold31from
+warm21 without a product edit. This diagnoses an overstrong validation contract,
+not an observed bank collision or all-domain safety proof.
+
+ChatGPT18:05and20:07remote reviews read at pinned8b14d2eb/4ca7045a;adopt search
+quality and noncheck quiet-defense source priority. Their published source view
+excludes newLOCAL_ONLY work. Dot opening request1793182413.929399 receives
+1793182537;+5read done,full originals private. Adopt full-stratum/denominator/
+UNKNOWN distinctions;Dot did not execute/verify new evidence. Oldautonomouspause
+has no new replies and predates latestdirectUSERresume;AUX state untouched.
+
+The next source step checks8actual earlyquiet histories/180root actions/3949
+Core replies;0forcing coverage candidates,NO_GOimplementation. Descriptor census
+162of192complete/30NOT_RUN stops on zeroUTC recording rejection,0credit;shared
+handler reproducer preserves that. Newpost-exchange source design begun,not a
+refill or new controller/solver/game. No AUX contribution is claimed independently
+rerun. Reviewed local files wait on the previously refused review-only ff sync;
+no push or integration workaround is claimed. Completed prior7d4b74.699minutes
+remain separate;current ledger excludes110ambiguousseconds,offline/admin gaps.
+
+
+## PRIMARY source/LMR continuation —2026-10-28,72bf6d79
+
+PRIMARY adopted autonomous GitHubc42 quality/source-first advice and Dot's
+standpat/quantifier cautions. Raw roots and full threads were privately saved
+before assessment. The opening AGENT_REQUEST and single+5check completed;
+route FOLLOWUP/+5check and one later meaningful full-thread read found no new
+reply. No response was a work gate. A later AUX request is observed coordination
+context only; its source-attribution/experienced-regret work was not rerun,
+claimed as adopted, assigned anew or modified.
+
+New881eligible source certificates yielded no two-ply necessity witness;
+independent16270Core checks passed. Sixteen original-clock endpoints exposed
+numeric boundary shifts but no inferior D1 root choice. LMR then ran a single
+frozen research-process candidate:16games allDRAW,8points,0positivefamilies,
+gateFAIL/defaultunchanged;independent1360originals/5188PVstepsPASS. Its33092
+reductions establish activation,not benefit. Reused timing references qualified
+feasibility only;no matched speedup or unseen-strength claim is made.
+
+A fixed128negative-child check found120checking states. The next one-child
+certificate diagnostic FAILED a GameRecord/JSON boundary;original retained,
+no tree proof/refill,0credit for its unsaved interval. The corrected interface
+passes2focused regressions. Nine existing labelledH6forks are now preselected
+for a baseline service diagnostic;strict admission/reuse checks and all new
+queries remain pending. This changes source resolution,not product scope.
+
+The user-authorized exact6b review-only fast-forward completed. Three subsequent
+review documents await the separately requested integration decision;new
+scientific work remainsLOCAL_ONLY with literal technical bundles. No history
+rewrite,automatic integration,AUX state change,newworker/build/training/schedule.
+
+
+## Standing routine approval and delivery repair — USER2026-10-29
+
+The user rejects individual safe-sync/ordinary-work consent queues and grants
+default approval,with contact reserved for serious errors,threats or real blockers
+requiring intervention. PRIMARY reconciled AGENTS,LOCAL_AGENT,review intake and
+Slack rules;old duration-only necessity questions no longer gate routine bounded
+runs. Prospective cost,hard caps,scope,worker/fee limits and platform controls
+remain. This bounded repair adds no research time and changes no recurrence/AUX.
+
+All four added review documents6b..c4d were read before an exact ff-only sync.
+The newc4d review's source-causality priority is adopted;the nineH6forks stay
+preselected/0queries andlocallydeferred. Remote reviewers had not seen the new
+LMR/source results,so publication closes an evidence-access gap;no independent
+execution by reviewers is claimed. Existing experimental failures and frozen
+source originals are retained,not rewritten to look successful.

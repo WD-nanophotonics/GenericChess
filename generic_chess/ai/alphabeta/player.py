@@ -68,6 +68,10 @@ class AlphaBetaPlayer:
         # Experimental strict plain-Leaper state-only imports; default OFF.
         use_native_transient_imports: bool = False,
     ) -> None:
+        if tuning.use_one_check_extension:
+            from ...core.search_runtime import _plain_leaper_hash_patterns
+            if _plain_leaper_hash_patterns(compiled) is None:
+                raise ValueError("main check extension requires certified pure-Leaper executable IR")
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
         self._profile = None
@@ -256,6 +260,9 @@ class AlphaBetaPlayer:
             checking_move_qactions=stats.checking_move_qactions,
             checking_drop_qactions=stats.checking_drop_qactions,
             nonchecking_drop_excluded=stats.nonchecking_drop_excluded,
+            main_check_extensions=stats.main_check_extensions,
+            main_extension_max_path=stats.main_extension_max_path,
+            main_search_max_ply=stats.main_search_max_ply,
             pvs_null_window_searches=stats.pvs_null_window_searches,
             pvs_researches=stats.pvs_researches,
             aspiration_fail_low=stats.aspiration_fail_low,
