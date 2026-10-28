@@ -42,3 +42,40 @@ def test_identical_mover_label_quotient_does_not_preserve_repetition_adjudicatio
         assert last["colored_status"]["status"]=="ongoing"
         assert (last["source_current_count"],last["colored_current_count"])==(4,2)
         assert d["all_prefix_raw_values_equal"]
+
+
+def test_ordinal_minimax_contract_does_not_claim_mean_or_learning_invariance(tmp_path):
+    from fractions import Fraction
+    from scripts import aux_representation_expectation as E
+    frozen=tmp_path/"expectation-frozen.json";observed=tmp_path/"expectation-observed.json"
+    E.freeze(frozen);v=E.run(frozen,observed)
+    for route in v["routes"].values():
+        assert Fraction(route["expectations"]["old"]["raw_difference"])==Fraction(365,48)
+        assert Fraction(route["expectations"]["new"]["raw_difference"])==Fraction(-11,8)
+        for row in route["legal_prefixes"].values():
+            assert row["final_ply"]==4 and row["terminal"]["status"]=="ongoing"
+            assert all(all(g==0 for g in x["gradient"]) for x in row["learner_readonly"])
+
+
+def test_promotion_frame_covariance_attribution_with_full_Core_map(tmp_path):
+    from scripts import aux_promotion_frame_contract as F
+    frozen=tmp_path/"rotation.json";out=tmp_path/"rotation-out.json";F.freeze(frozen)
+    v=F.run(frozen,out)
+    for d in v["routes"].values():
+        assert d["root"]["board_values"]=={"K":0,"P":273,"G":1727}
+        assert (d["root"]["old_value"],d["root"]["rotated_value"])==(271,270)
+        assert d["root"]["old_promotion_OFF"]==d["root"]["rotated_promotion_OFF"]==270
+        assert d["compiled_owner_type_source_rows"]==96 and d["actual_Session_submit_calls"]==48
+
+def test_movement_table_rotation_does_not_replace_promotion_mask_mapping(tmp_path):
+    from scripts import aux_promotion_frame_contract as F
+    from dataclasses import replace
+    from generic_chess.rules.schema import ruleset_to_dict
+    from generic_chess.core.coordinates import Square
+    frozen=tmp_path/"rotation.json";F.freeze(frozen);v=json.loads(frozen.read_bytes())
+    _,rotated=F.definitions()
+    # Same movement/stock/profile support, but root promotion transition differs.
+    owners=rotated.promotion_allowed["P"]
+    bad=replace(rotated,promotion_allowed={"P":(frozenset({(Square(2,2),Square(1,2))}),owners[1])})
+    v["literal_rules"][1]=ruleset_to_dict(bad);frozen.write_bytes(json.dumps(v).encode())
+    with pytest.raises(AssertionError):F.run(frozen,tmp_path/"bad.json")

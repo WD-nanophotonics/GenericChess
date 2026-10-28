@@ -149,3 +149,156 @@ panel. Current ordinary session still needs its own60+effective-minute ledger.
 
 [Promotion observations](data/aux_representation_contract_20261029/promotion-observed.json.gz)
 and [history observations](data/aux_representation_contract_20261029/history-observed.json.gz).
+
+
+## A stronger but narrower decision statement for THIS one-P pair
+
+A further decision-changing check asks whether the new dead-promotion raw
+difference can alter an exact complete finite-backup preference at all.
+There is at most one owner0 P, no ownership change or hand production, and two
+preserved K actors. Its current inventory count c is0 or1. Let d be the common
+seat0 dynamic contribution; old/new values are1000c+d and569c+d.
+
+A source-derived conservative envelope is |d|<=122:
+mobility<=16*2=32; escape difference<=8*5=40; and the two check indicator terms
+combine to at most50, not100. All promotion zones are empty, and hands remain
+empty. Thus the nonterminal value supports lie in:
+old [-122,122] or[878,1122], new [-122,122] or[447,691].
+These bands are disjoint in the SAME order. Raw static clamping is inactive.
+Actual matched terminal scores are0 or +/- (MATE_SCORE-ply); maxply32 leaves
+their nonzero magnitude at least999999968, outside both bands.
+
+One common STRICTLY INCREASING seat0 function f is identity on the low band
+and terminal bands, and subtracts431 on the high old band; positive linear
+pieces connect the gaps. Exact Fraction arithmetic checks all556 overapproximated
+integer static/terminal values and555 adjacent order relations, not556 game
+states or labels. Because min and max commute with a strictly increasing
+function, every node's value on the SAME finite complete tree/frontier maps
+by f. Root argmax sets AND ties therefore remain identical by induction.
+Actor-centric negamax must first be interpreted as seat0 min/max; f is not
+assumed odd.
+
+A separate exhaustive finite static input check evaluates all7200 assignments
+of K0,K1 and optionalP0, including both actors, PER compiler route.
+Across the two corresponding evaluators this is14400 calls per route,28800
+total. Many assignments are unreachable or illegal game positions; this is a
+position-only evaluator envelope check, not Core/game/WDL enumeration.
+Observed dynamic ranges are[-35,35] without P and[-40,87] with P; the proof
+keeps the conservative122 bound and does not claim these as reachable extrema.
+All paired raw values differ by exactly-431c.
+
+Practical consequence: the raw invariance counterexample is real, but this
+particular one-P pair cannot by itself demonstrate a changed exact complete
+fixed-frontier choice. A paid complete-tree root comparison merely seeking
+such a difference is unnecessary. This DOES NOT establish equal actual
+fixed-service retained Player decisions: setup cost, ordering, selective
+margins, visited frontier, Q policy, TT lifetime and cancellation can differ.
+It does not apply to the prior A/B/C counterexample or type-merging pair.
+No new Player/root search was used to prove this statement.
+
+[Order embedding](data/aux_representation_contract_20261029/order-embedding.json.gz)
+and [finite static envelope](data/aux_representation_contract_20261029/static-envelope.json.gz).
+
+
+## Averaged heuristic signals are a different contract
+
+The monotone min/max result does not imply invariance of expectation.
+Three fixed actual4-ply histories from the SAME original/decorated game pair
+supply final seat0 surrogate values -21/-21, -35/-35 and1002/571.
+Both compiler routes replay all prefixes, preserving full repetition counts,
+and every final state remains ONGOING atply4. These48 Session.submit calls
+are literal contract trajectories, not engine matches or terminal labels.
+
+Compare a deterministic specified continuation with value-21 against a
+DELIBERATELY specified mixture:47/48 of the -35 continuation and1/48 of the
+1002/571 continuation. These two branch protocols use legal histories from the
+same root; they are not an observed uniform or optimal opponent distribution,
+and they do not cover all root choices. The probability is a constructive
+mathematical choice, not an estimate or tuned training policy.
+
+| Surrogate | Deterministic | Mixture expectation | Mixture minus deterministic |
+|---|---:|---:|---:|
+| Original |-21|-643/48|365/48 >0|
+| Dead-promotion |-21|-179/8|-11/8 <0|
+
+For an explicitly ILLUSTRATIVE tanh(score/1000), the same ordering flip occurs:
+original mixture -0.01837283 beats -0.02099691; decorated mixture -0.02350490
+does not. This scale is not the maintained learner's configured scale.
+A strictly increasing non-affine transform commutes with min/max, but generally
+not averaging. Positive affine transforms preserve arbitrary expected-utility
+orders; arbitrary ordinal transforms do not. This changes a truncated
+heuristic-expectation objective, not expected actual W/L/D. Matched terminal
+payoffs/distributions remain unchanged under the exact game relation.
+
+The actual maintained AUX learner was separately checked at its REAL consumer:
+incremental.compile_channels uses board CURRENT/hand BASE features and a fixed
+declared board unit; Model.raw and prediction use explicit model weights and
+scale. mainline_search.Material supplies an override and equal capture priority,
+not the default generic-v5 profile. At these same histories the P-unit feature
+is1 or0, all hand features are0, and the added X board/hand channels are0.
+Mapped explicit models therefore give identical material raw values/predictions.
+The checked scale10 model returns tanh(0.1)=0.09966799 when P remains.
+
+More strongly, THIS one-P fixture offers zero free material gradient to this
+fixed-P-unit model: the only nonzero board feature is the fixed unit, whose
+gradient is explicitly0; every free feature stays0 by the same inventory
+induction. All traced read-only gradients are0 in both representations.
+TDLeafEpisode's eligibility sum would remain0 for any such episode, including
+actual constant terminal leaves or censored final UNKNOWN, provided the declared
+fixed model/feature contract is retained. No observe, finish, apply or training
+function was called to establish that algebra. This is not a statement that
+all value classes or other games cannot learn. It is a concrete reason NOT to
+use this normalization fixture as a relative-material-learning success test.
+
+Neither the generic surrogate expectation flip nor zero-extension identity is
+a demonstrated learner bug, model improvement, actual root-choice flip or
+permission to train on labels. Existing model/unit/scale metadata remains the
+authority; matching seeds alone would not certify matched explicit controllers.
+
+[Fixed legal mixture inputs](data/aux_representation_contract_20261029/expectation-inputs.json.gz)
+and [actual prefixes/read-only learner observations](data/aux_representation_contract_20261029/expectation-observed.json.gz).
+
+
+## A separate coordinate-frame policy, with equal material profiles
+
+One additional restricted4x4 input uses K's eight-neighbor Leap, P's
+Leap(0,1), and promotion target G with K-like mobility but non-royal status.
+K0=(0,0), K1=(3,3), P0=(1,1). Only P0(1,1)->(1,2) and the owner1 counterpart
+are promotion-enabled; none forced. Drops are false, captures remove, fourfold,
+maxply32, no effects/aux/pass/claims/setups. The second rule rotates EVERY board
+square R(x,y)=(3-y,x), relative movement vector(-dy,dx), and actual promotion
+mask pair. Owner identity stays fixed. R commutes with owner1's180-degree frame.
+
+The literal inputs were frozen before execution at SHA256
+4da324c62dd492cd38e4873cfd570d9d98c8dd6f577ef54913b3fa3bb23ebac7.
+All96 owner/type/source mobility rows per route map exactly. Semantic pattern
+bodies and complete geometry paths are explicitly rotated and rebound.
+The first own comparison omitted path-table reindexing, failed, and was fixed;
+the frozen rule pair was not replaced. Two-ply Core action/count/terminal
+bijection covers15 prefixes/14 paired edges per route:56 direct submissions
+plus40 prefix replays,96 Session.submit calls over legacy+semantic.
+
+Both profile tables are IDENTICAL: P273, G1727, K0; promotion gain1454.
+Yet actual root value is271 versus270. With promotion_potential_weight=0 both
+are270. The source P has a rank-forward approach to its real promotion zone
+and bonus1; the rotated west-moving P has no rank-forward destination and
+bonus0. The zone itself and legal promotion option were rotated correctly.
+All other raw terms match in this control.
+
+The code explicitly defines owner0 forward as +rank and owner1 as -rank.
+It does not promise90-degree evaluator covariance. We therefore report an
+additional POLICY distinction, not a violation of an existing product promise,
+unsafe legality, material-price mismatch, root-choice loss or a fix request.
+A full game-coordinate isomorphism need not preserve a heuristic feature tied
+to a preferred coordinate axis. Existing180-degree owner-swap symmetry tests
+are a different property. No normalizer, canonicalizer or production feature
+was changed.
+
+One positive regression and one corrupted-promotion-mask negative control
+ensure that equal rotated movement tables cannot substitute for the actual
+promotion/action/history relation. The corrupted mask leaves stock/movement
+and normalization support unchanged but fails the Core action mapping.
+The total relevant regression set now has13 distinct passing cases.
+
+[Rotated literal inputs](data/aux_representation_contract_20261029/rotation-inputs.json.gz)
+and [Core/profile/feature observations](data/aux_representation_contract_20261029/rotation-observed.json.gz).
