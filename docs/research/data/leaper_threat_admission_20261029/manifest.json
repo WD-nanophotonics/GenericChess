@@ -1,0 +1,679 @@
+{
+  "schema": 1,
+  "status": "SEALED_PENDING_GIT_DELIVERY",
+  "bundle": {
+    "path": "bundle.json.gz",
+    "sha256": "181432a0a0ced7efc0dcc5f4d92876847303a7120da4c6d3d3ac9aa2bbe5f259",
+    "bytes": 89377,
+    "members": 94
+  },
+  "members": [
+    {
+      "path": "panel/admission.json",
+      "sha256": "0d02be6fd6915c61ecbc6a49bf0dfe172e91af1e0ad0bea64d9059f81ce06605",
+      "bytes": 2640,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "panel/closure.json",
+      "sha256": "808052c9db9b41bc0bbae6c929df474446789e01291600c916e261d32a92cb83",
+      "bytes": 256,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "panel/current-child-records.json",
+      "sha256": "ee5ed796d6c1d1ea1b3cd855887693ed9db6891ab9b90da003deff1166e9d2f2",
+      "bytes": 905,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "panel/inputs.json",
+      "sha256": "a63ab4a1f76f4af5812dac47c16541048ceec749521c10d6da14936518cb9dcd",
+      "bytes": 291532,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "panel/terminal-cause.json",
+      "sha256": "65086933de329dedc43d60724c21a6857fec0ea4e22439daf3d7fae1f8090d89",
+      "bytes": 1006,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/arm-0.json",
+      "sha256": "12d5453fde0ccc3aa2991472f0b30f1863ae138cf332402d830497394afa1cd9",
+      "bytes": 10927,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/arm-1.json",
+      "sha256": "e581595cc569c5bc44a3ffa67492e3251093d728c02c9ff0640da851a98af0c4",
+      "bytes": 11263,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/default-control-freeze.json",
+      "sha256": "4a5a7bbc5103573bdc4f619477cf65b72d885ad99d459f6a1af604bcaa19af0b",
+      "bytes": 415,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/default-control.json",
+      "sha256": "25d96fb564bfa27e92a1ec9c47be49b5ecf39a66b86b66c29a8c277cbd854181",
+      "bytes": 15763,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/default-search-0.json",
+      "sha256": "82c6df9444367d49e837b18f9b59f5f97f570cb94cf4dc4da3f70e875919fb5b",
+      "bytes": 3407,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/default-search-1.json",
+      "sha256": "428abdc8c24308d38a89140275d235edab015f920a76916ddf3c6d99e1e859dd",
+      "bytes": 3620,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/default-search-2.json",
+      "sha256": "ffc2751b9179fc1820586536786b361c9f2829295a04bf4c7fdb25c4471d4818",
+      "bytes": 3725,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/default-search-3.json",
+      "sha256": "c6d897d41f29b212fa490d28152de33beb80bde4c3eae6f19ada80d2764da570",
+      "bytes": 3950,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/four-search-freeze.json",
+      "sha256": "1712d2ec53a104cdcf8879ebc3162d3b35f3071d64c9090eda8a5f0625bf457c",
+      "bytes": 1050,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/four-search-summary.json",
+      "sha256": "9961b0425a78423afa7111ad76afc4fd7045da59a20f1de0bbb0e0c5c2279aff",
+      "bytes": 1746,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/input-before-Core.json",
+      "sha256": "c4264e27bf8dda3f04e07ae2f7ae2c4e22da9807f08b3fcb2a23198f19c5856b",
+      "bytes": 15030,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/search-0.json",
+      "sha256": "656c9d0a7be8200a9d7893ba8b9caabba5254da405ed7ed4cb77346c985f5dcc",
+      "bytes": 3440,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/search-1.json",
+      "sha256": "4d30c08cfd895d5a76c42ece8d639be724d6f99df8105302969af4bd0a9c21af",
+      "bytes": 4280,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/search-2.json",
+      "sha256": "450ce8f3883154238c4cf604098ab4ac131b8037a202919103babf7ebc2a458d",
+      "bytes": 3756,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/search-3.json",
+      "sha256": "443ef3f52b2799d1fd4045d3068f49059188e3cea8628d80e229c8197057c3bd",
+      "bytes": 8368,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-witness/summary.json",
+      "sha256": "a003e4648e769b1a0b1ce36446d95cfc8ea7856dd3778fe76c321d25770b2dc3",
+      "bytes": 1227,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "tactical-atlas/contrasts.json",
+      "sha256": "9044ea9312ec9fd864a998b4f3153f446da4535a1b6f969a1f476d1ac6f218bb",
+      "bytes": 8623,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "tactical-atlas/frozen.json",
+      "sha256": "37b0182127164fc622a8665a4d73212aa0a54b32152eb51231e79713c3a4169a",
+      "bytes": 14993,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "tactical-atlas/raw-checkpoint-amendment.json",
+      "sha256": "a3f19270dd4883d998af476386aba83995674af5430b8f9e4bb8b2f3c60eaff4",
+      "bytes": 570,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "tactical-atlas/slots.json",
+      "sha256": "04f7871067991f876d13e7704929c2d2a08145bf10f34eab03298451854f0e7b",
+      "bytes": 78260,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "tactical-atlas/summary.json",
+      "sha256": "d4775784fcc7aa407d33f7c31f249b057aa65cfdc6900cdc61b4733ed919ffb9",
+      "bytes": 484,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/clock-one-input.json",
+      "sha256": "87d1db9405fd28da33001a97d80496e11297738819c0faefd37cd4611fe44e64",
+      "bytes": 6278,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/clock-one-observed.json",
+      "sha256": "ef5346d5f68b5d82988912477ac90df90ab234cf11fd2e83bf8dfc595748d071",
+      "bytes": 263,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/frozen.json",
+      "sha256": "d0d6a5d2a008ba4264fd7969197b6dc89765c8db61267cb7998728e45a554abd",
+      "bytes": 4793,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/mixed-far-input.json",
+      "sha256": "8f59ddcf263f9e73df00d81e2662aa4146e4c22cafe1bf38a9b394567d40db7a",
+      "bytes": 15070,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/mixed-far-observed.json",
+      "sha256": "4cfaf997d24904b9dfef47b8566cda935370213c4d7338b06e8e12b03d95ab7d",
+      "bytes": 25858,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/mixed-mate-input.json",
+      "sha256": "5c059fcd572bdc0fa0cd37c17d92c300c8307c86dc63b6e4a6cd5da2bece3886",
+      "bytes": 15071,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/mixed-mate-observed.json",
+      "sha256": "1364b4de7994dc6794ac543c2e803be4298334fd8f04765900df1ad816a3fd88",
+      "bytes": 382,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/ordinary-input.json",
+      "sha256": "731b5f0b3fe665b754629fae8544b56f48f420e362826b4f44bc2479b6d565e1",
+      "bytes": 6278,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/ordinary-observed.json",
+      "sha256": "67e977813aef2efca14d979071836f1efc04984fd903a2887bc7af7cdaf6f987",
+      "bytes": 19064,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-reader/summary.json",
+      "sha256": "9b4bfed3956801f836277952dcf6ff17b7070fdff1929e5699a9336d123ab3c8",
+      "bytes": 605,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-control/closure.json",
+      "sha256": "52acdfdf77a5eb01fef023b4476c20dce445c8b6958fbe901e259bfe2121eeb2",
+      "bytes": 489,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-control/dispatch.json",
+      "sha256": "c5b514d94bd3c0bd5968645487c0af8e0ed0194e854661b9a88821c4c63b5d7b",
+      "bytes": 1001,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-control/first-consumer-failure.json",
+      "sha256": "2603098228749c3901af39990b48db2057b577dc333139269184bae1b258a2d5",
+      "bytes": 271,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-control/frozen.json",
+      "sha256": "b8c27f35b2dfc06302138255db948d102e7c792506a96db7b7d89ea98a357c51",
+      "bytes": 1001,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-control/progress.json",
+      "sha256": "c263b5050fabe03bf3466d03d09ec7b7bd7281ef8ff115877e4dd0922650004c",
+      "bytes": 353,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-control/rule-n3-c0.json",
+      "sha256": "b900e89de9df0accab86a7110782de8c15faa5ab84186f57bbdf27bedb440506",
+      "bytes": 2900,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-control/rule-n3-c1.json",
+      "sha256": "decda2a653f84e76b8d9614b7274447cd2b27d078f32f2a9f26547328687ced1",
+      "bytes": 2902,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "exposure-assessment.json",
+      "sha256": "3511db647df395be4f541f91d4518e6d8d62717a6d8443bcbb94c327d90c124f",
+      "bytes": 301,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "layout-feasibility.json",
+      "sha256": "ce8d58e5fdbf9e45726cc0ff042c77ff58e60ddb49b4c6b89f345b8d2dfb5a1c",
+      "bytes": 540472,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "escape-guard-counterexample.json",
+      "sha256": "26bed4a441528e9ce69ae0240bdb603aebafeba749ff8181eb3e488adaa4985f",
+      "bytes": 438,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "support-pass-test-diagnosis.json",
+      "sha256": "4da710d710a58241f99171eadace4c4f4d12a67d7f831fc42c13e6d1e1b55015",
+      "bytes": 403,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "capacity-source-argument.json",
+      "sha256": "5c77a8cd2350ed2787a1f52136f21b27e012a5668ff95607e5c51d62d0b342c7",
+      "bytes": 1652,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "iterator-observation-amendment.json",
+      "sha256": "39f55b7925143a04f535f608046596dd346997d7985477df43ec0d088959bdbf",
+      "bytes": 744,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "mechanism-original-reader.json",
+      "sha256": "209d21952fde304befc9d61ee3be1a0d16523b7fba59768372007ce7bae8c228",
+      "bytes": 2210,
+      "encoding": "utf-8-literal",
+      "status": "RETAINED_OBSERVATION_OR_EXPLICIT_AMENDMENT"
+    },
+    {
+      "path": "scripts/leaper_empty_geometry_signature.py",
+      "sha256": "47291a44e5e11efd06ba0f5e0931eb45327512d012fd302857e5092ee9ececbf",
+      "bytes": 1364,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_exposure_inventory.py",
+      "sha256": "0a1440a87feb40a37af812fd3d322305c62786159781ede84cb15990886c2c3c",
+      "bytes": 4690,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_exposure_stream.py",
+      "sha256": "92b05a79cefae0564f7528311790cae4d5b0a5e901453bf4bae9f95e26af6f46",
+      "bytes": 2452,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_opening_capacity.py",
+      "sha256": "1a17072933feb417995028f0d3cb40180751b78813bff7dabe80c921af63f571",
+      "bytes": 3786,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_opening_structure.py",
+      "sha256": "23c29381ea232455b08e57a111cd9ff640f0f8d63a365f1b45615f6155365371",
+      "bytes": 3794,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_ordinary_geometry.py",
+      "sha256": "c8585b53fd791a269da513bd2b1b54f14d49e1fcd0867d31be2c20b7dc0baff9",
+      "bytes": 3752,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_royal_escape.py",
+      "sha256": "3f71a35a8a9bd8ce28340d843de6f11d312e2007e2f440c924ce9a3897cb667e",
+      "bytes": 2128,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_structural_layout.py",
+      "sha256": "005248a9718bc5b5f9946ee588849d169c9fc0a7f950bfcc68d47f19a0fedd54",
+      "bytes": 3502,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_threat_atlas.py",
+      "sha256": "1ab333d4979cc7fb2c48e06c194dc117c5a21cce73a0420aa11fa2702f356dbe",
+      "bytes": 5229,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_threat_mechanism_witness.py",
+      "sha256": "f77933ff2ed78501c431f7c2c8f615221bbb37036d984975b4258a2ccb972e51",
+      "bytes": 4350,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_threat_ordering.py",
+      "sha256": "644291568ab337a44661e900183a7d2fe4057891605cc9ce7259a6631f0300de",
+      "bytes": 6764,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_threat_policy.py",
+      "sha256": "ec0624e32e675e729eab8cfa0fd360d3631c4416b3bb6aebfb1f701cf861bee3",
+      "bytes": 897,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/leaper_threat_prepare.py",
+      "sha256": "e12d7cd451855f409c1287f567d5136c5d76d814c87297cdba5bdc8a54c3bc4c",
+      "bytes": 2156,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "scripts/verify_leaper_opening_capacity.py",
+      "sha256": "528de446aaa548cda0a5286f676c87364a0431d59e21eb6af07adc3a30e286f1",
+      "bytes": 3493,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_empty_geometry_signature.py",
+      "sha256": "19097478944046cbb5be853b8a05b874783e6a9baa5710278120eab824e7883a",
+      "bytes": 2138,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_exposure_inventory.py",
+      "sha256": "97254686692334572efe1349c586e2c2dc407703d5610bb07f783513ab6d9e2c",
+      "bytes": 1459,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_exposure_stream.py",
+      "sha256": "67aeee364b9f797bfadcc3a3b276a1fe0db5863a839347eb4c78017534e03f70",
+      "bytes": 795,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_opening_capacity.py",
+      "sha256": "6e49e2adbf25259e4bfd47b57035acd40810d5e6a1abd884d7bc5e4d85109d40",
+      "bytes": 2290,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_opening_structure.py",
+      "sha256": "5899fcd7fb1edbb9363815e55bb1fdb98dcf2fbded4d46066477180d2aa62fa6",
+      "bytes": 4154,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_ordinary_geometry.py",
+      "sha256": "378606108edd20786ae92a70fccc616e269ed92e7e4a78e44f886f3bdbf04ec1",
+      "bytes": 2622,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_structural_layout.py",
+      "sha256": "3a4960a740cbc69b16aefa3c6f5fd93af9cce7fa0122eb87fdc7610d0551178c",
+      "bytes": 2152,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "tests/development/test_leaper_threat_ordering.py",
+      "sha256": "55f2bdff40a7ebaeaff086d2e853ef830a094f37f0b72ef6d336cbffe715cb32",
+      "bytes": 8646,
+      "encoding": "utf-8-literal",
+      "status": "CURRENT_REPRODUCTION_SOURCE_NOT_HISTORICAL_EXECUTED_BYTE_PROOF"
+    },
+    {
+      "path": "published-source/scripts/leaper_empty_geometry_signature.py",
+      "sha256": "5cfc6706c61222f95ec991040a29238296c6f76a7443b91d5a35e59f4123b81b",
+      "bytes": 1363,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_exposure_inventory.py",
+      "sha256": "0a1440a87feb40a37af812fd3d322305c62786159781ede84cb15990886c2c3c",
+      "bytes": 4690,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_exposure_stream.py",
+      "sha256": "92b05a79cefae0564f7528311790cae4d5b0a5e901453bf4bae9f95e26af6f46",
+      "bytes": 2452,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_opening_capacity.py",
+      "sha256": "1a17072933feb417995028f0d3cb40180751b78813bff7dabe80c921af63f571",
+      "bytes": 3786,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_opening_structure.py",
+      "sha256": "23c29381ea232455b08e57a111cd9ff640f0f8d63a365f1b45615f6155365371",
+      "bytes": 3794,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_ordinary_geometry.py",
+      "sha256": "c8585b53fd791a269da513bd2b1b54f14d49e1fcd0867d31be2c20b7dc0baff9",
+      "bytes": 3752,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_royal_escape.py",
+      "sha256": "3f71a35a8a9bd8ce28340d843de6f11d312e2007e2f440c924ce9a3897cb667e",
+      "bytes": 2128,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_structural_layout.py",
+      "sha256": "005248a9718bc5b5f9946ee588849d169c9fc0a7f950bfcc68d47f19a0fedd54",
+      "bytes": 3502,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_threat_atlas.py",
+      "sha256": "1ab333d4979cc7fb2c48e06c194dc117c5a21cce73a0420aa11fa2702f356dbe",
+      "bytes": 5229,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_threat_mechanism_witness.py",
+      "sha256": "f77933ff2ed78501c431f7c2c8f615221bbb37036d984975b4258a2ccb972e51",
+      "bytes": 4350,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_threat_ordering.py",
+      "sha256": "644291568ab337a44661e900183a7d2fe4057891605cc9ce7259a6631f0300de",
+      "bytes": 6764,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_threat_policy.py",
+      "sha256": "0828a74e0054646546e0551286bb1926ef55bf9e947eeb6111303da2e6c4bf2c",
+      "bytes": 896,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/leaper_threat_prepare.py",
+      "sha256": "15c18005d38cf8a89122bb9e6a5bd1027a9948d7f00f4cea5fda0e097a68deb5",
+      "bytes": 2155,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/scripts/verify_leaper_opening_capacity.py",
+      "sha256": "07863eeac3aa48076d828b0ef962bd2442a94ecefa79bddd31ca356370381294",
+      "bytes": 3492,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_empty_geometry_signature.py",
+      "sha256": "0a7d805698408121d48b90e75bd7bff00f4de5e5dae9005e99b8129887f59174",
+      "bytes": 2137,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_exposure_inventory.py",
+      "sha256": "cac7c321abfb0ed1983a6163920a753b2e06645ab8c70b1e18d01114d54f1dba",
+      "bytes": 1458,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_exposure_stream.py",
+      "sha256": "79039e2f56af08b80ee3c5b1d1cda23cec221070e1c3b6f3e5b6562efb6a9c7e",
+      "bytes": 794,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_opening_capacity.py",
+      "sha256": "6e49e2adbf25259e4bfd47b57035acd40810d5e6a1abd884d7bc5e4d85109d40",
+      "bytes": 2290,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_opening_structure.py",
+      "sha256": "5899fcd7fb1edbb9363815e55bb1fdb98dcf2fbded4d46066477180d2aa62fa6",
+      "bytes": 4154,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_ordinary_geometry.py",
+      "sha256": "410b98c09cb28e607dedf50f8b101939c75953e4028c2e1d997f6ef72305f78b",
+      "bytes": 2620,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_structural_layout.py",
+      "sha256": "3a4960a740cbc69b16aefa3c6f5fd93af9cce7fa0122eb87fdc7610d0551178c",
+      "bytes": 2152,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    },
+    {
+      "path": "published-source/tests/development/test_leaper_threat_ordering.py",
+      "sha256": "f4b44b1678eb31550e0d68de2b9d0ed9d47adbae3ae6676ec75759a22c99fccc",
+      "bytes": 8643,
+      "encoding": "utf-8-literal",
+      "status": "PUBLICATION_SOURCE_LF_ONLY_NORMALIZED;NOT_RETROACTIVE_ORIGINAL_CALL_HASH"
+    }
+  ],
+  "original_quality_status": "STOP_BEFORE_QUALIFICATION;64NOT_RUN/32NOT_STARTED",
+  "controls": "8retainedPlayercontrols+repeatedregressionPlayercalls aggregateUNKNOWN;0games;one-rule52completeCoreatlas,1243producerreplychecks;19+19newcapacityreaderCoremoves",
+  "limits": [
+    "No newstrength/defaultenable/holdout orsemanticIR-all-domain proof",
+    "Interrupted finite enumeration: only last persisted11776-position prefix is verified; remaining states NOT_RUN; source counterexample invalidates its original admission premise",
+    "rawatlas63slots vsproducer64:unqueriedoccupiedslot63 derivedamendment,not replayed",
+    "originalexecuted sourcebytehashes not comprehensivelycaptured;current source is reproductionversion",
+    "captured iteratorcounts yieldonly,not recursivechild/retainediteration activity"
+  ]
+}

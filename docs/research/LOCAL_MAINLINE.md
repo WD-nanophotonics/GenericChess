@@ -6,30 +6,33 @@ PRIMARY publishes sandbox only. Prior user intent was ACTIVE/hourly for both;
 latest observed own scheduler is ACTIVE/180minutes, not changed by this resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
 optimization remains deferred. All admitted semantics, histories and clocks stay.
 
-## Current decision —2026-10-29 source closure and605cacb8 priority
+## Current decision —2026-10-29 structural initialization after preflight NO_GO
 
-Main: Can threat-related legal quiet ordering improve fixed-service decisions on
-new motion families? |Complete broader exposure audit and exact source contract,
-then freeze one pure-Leaper candidate/8families/2roots before Core/search |
-[metadata draft](LEAPER_THREAT_ORDER_PROTOCOL_20261029.md),rejection ledger and
-permutation/undo proof |20read families/8noncolliding proposals is LIMITED coverage,
-not global holdout;no automatic qualifiers/games/AUX assignments/default changes.
-Backup1: Exact static aggregation has positive cost but INCONCLUSIVE gates |
-[assessment](LEAPER_STATIC_EVAL_20261029.md) preserves51Root+48coldPlayercalls,
-all12equalwork,~8.1%/~6.8% aggregate gains,zeroCPUcells |No cell refill/threshold
-relaxation or enabled default;metrology is backup,not current priority.
-Backup2: Legal quiet coverage is real but no current root error |
-[one H6 witness](LEAPER_QUIET_WITNESS_20261029.md),23retained+16scalar+39immutable+
-3observed contexts;all8mainchoicesalreadysourceDRAW |NO_GO Qpolicy change;
-firstlostQ0slotUNKNOWN;no new label-mining/oldfailedcertificate/9rootpanel refill.
+Main: Can geometry-first ordinary-Leap initialization produce a useful genuinely
+new-family endpoint without outcome-selected replacement? |Use the new strict
+IR/complete-history escape-capacity argument and deterministic metadata recipe
+to freeze ONE prospective generator study before any new compiler/query campaign |
+[structural source/finite evidence](LEAPER_OPENING_STRUCTURE_20261029.md),exact
+inputs/rejection and exposure ledger |No new quality panel is dispatched;metadata
+321/324 and19+19 Core witness moves are NOT strength/admission/holdout success.
+Backup1: Preserve the fixed threat-ordering NO_GO |Firstroot A(b2-e4) is immediate
+Core mate;64qual/32games remain NOT_STARTED |[closure](LEAPER_THREAT_ADMISSION_20261029.md) |
+No root/seed/cap refill or threshold/default change. Static D1 engineeredtie benefit
+vanishes atD2 and actualdefault;52one-rule atlas controls show0strict beststatic gain.
+Backup2: Preserve static-mask limited cost positive/INCONCLUSIVE and quiet-H6
+NO_GO evidence |No new timingcells,oldlabel mining/LMR/extension/PVS retuning |
+[static report](LEAPER_STATIC_EVAL_20261029.md),[quiet report](LEAPER_QUIET_WITNESS_20261029.md) |
+DefaultOFF and fullsemantic/history boundaries remain;no classwide/strength claim.
 
-605cacb8980fcde3b3ca219a02c843ce0b6ec9a3 reviewed/private-preserved and integrated
-as ONE exact doc-only safeFF under latest USER standing approval. ADOPT fresh
-families/equalfullservicequality priority;defer newfullkernel and clock-loop.
-No exposed extension/LMR/PVS retuning. Existing tables/hash/Native remain baseline.
-Current mask wrapper changes static arithmetic only,not prices/Core/TT/tree.
-Memo reuse26.94% failed50%gate;fullprofiler4x disturbance failed attribution.
-All finite caps/results and unsupported scopes stay explicit;no new game/build.
+009a827138cb1f49ba1e84c3f8a092c7400a260f is the newest fully read GitHub
+review at this opening;one exact doc-only FF safely integrated under USER standing
+approval. Adopt fullarchive exposure/preflight first and quality priority. Dot's
+new round request/+5 check supplied actorwise target and source/observer controls,
+now executed. Raw strict324 versus finiteempty435 signatures have explicit
+semantic/escaped/history gaps;neither establishes global unexposed rules. New
+capture-only IR and iterator-yield cancellation counterexamples strengthen
+admission/measurement contracts,not product bug/quality claims. Same current
+normal session/ledger remains in own memo;no AUX/schedule change or new worker.
 
 Normal manual/heartbeat rounds still require>=60real recorded effective minutes,
 continuing toward90;finite milestones/publication never waive the floor.
@@ -129,7 +132,7 @@ USER corrected single-run approval: completed tasks do NOT carry. Historical
 737/770gate invalid and removed; USER withdrew induced deferral and directed
 this finite work. Prospective170estimate/180cap was not a quota. No additional
 necessity question, timing retry or experiment is queued by this closure.
-Main: New useful pure-Leaper question? |At next normal round inspect latest
+Historical next-action, superseded: New useful pure-Leaper question? |At next normal round inspect latest
 GitHub/Slack reviews and current evidence for a genuinely new mechanism or
 independent compatible consumer |Explicit decision-changing question and its
 OWN prospective cost |No automatic CPU rerun/clock swap/threshold or seed refill.

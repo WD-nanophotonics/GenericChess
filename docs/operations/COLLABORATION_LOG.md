@@ -8404,3 +8404,20 @@ reruns. Preserve its independent abstract-counterexample lane. Added retained
 phase-versus-uniform-horizon caution to the future protocol;no TT product fix,
 new label mining,AUX assignment or duplication. No new autonomous Slack review
 was found in covered new roots/known relevant threads;GitHub605takespriority.
+
+## PRIMARY2026-10-29 preflight/structural closure
+
+Read/preserved/integrated autonomous009a8271 exactdoc review;Dot opening request
+GC-SLACK-20261029-040759-cdab49a4 root1793214497.112729,+5 check completed with
+reply. Adopted per-actor intersection,realCore negativecontrols and iterator/
+retained-activity distinctions. New reply is solicited advice,below autonomous
+reviews/latestUSER;not a budget gate. Eightfamily preflight stopped before64/32
+at first realCore mate. Scope/UNKNOWN and current source-byte limits are public.
+New source/finite structural-capacity method addresses that cause without
+replacing the closed panel. Exposure reads include pinned public AUX048a metadata;
+AUX's report/warm-Q result is peer-reported,not rerun or newly assigned. No cross-
+checkout state write,schedule change,new worker,solver,training or Native build.
+Thirty-two new control tests include realPlayer calls;aggregate regression
+operation count UNKNOWN,distinct from8retained science returns and0qualitycalls.
+Publication uses actual fullremoteSHA receipt;reading/adoption/execution remain
+separate. A later Dot milestone followup,if sent,has its own +5 receipt in ownmemo.

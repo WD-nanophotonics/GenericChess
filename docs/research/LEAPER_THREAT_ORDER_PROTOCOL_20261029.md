@@ -1,3 +1,14 @@
+# Frozen threat-ordering preflight CLOSED —2026-10-29
+
+Status: STOP_BEFORE_QUALIFICATION. First literal root has a Core verified
+immediate WIN;64 qualification slots NOT_RUN/32 games NOT_STARTED. No replacement,
+seed refill,default change or automated next-stage dispatch. See
+[closure and bounded mechanism evidence](LEAPER_THREAT_ADMISSION_20261029.md).
+The later [constructive source premise](LEAPER_OPENING_STRUCTURE_20261029.md)
+is not a new quality panel. Current Main lives in LOCAL_MAINLINE/NEXT_WORK.
+
+## Archived metadata draft — not an executable plan
+
 # Next pure-Leaper threat-ordering protocol — metadata draft
 
 Status: DRAFT_METADATA_ONLY;0 new Core compiles,0 Player/search/game calls.
