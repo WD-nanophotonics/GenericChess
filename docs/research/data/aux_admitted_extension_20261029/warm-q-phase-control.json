@@ -1,0 +1,50 @@
+{
+  "scope": "Declared abstract tree control of existing public state machine, not a legal Leaper witness, real historical trace or new controller experiment.",
+  "test_file": "tests/development/test_aux_admitted_extension_contract.py",
+  "passed_consumer_tests": 14,
+  "total_distinct_controls": 120,
+  "prior_Q4_D2_score": -11,
+  "cold_D1": {
+    "score": -17,
+    "depth": 1,
+    "result_ordinary_qdepth": 0,
+    "Q_events": [
+      [
+        "C",
+        0
+      ]
+    ],
+    "PV": [
+      "a"
+    ]
+  },
+  "warm_D1_normalPV": {
+    "score": -11,
+    "depth": 1,
+    "result_ordinary_qdepth": 0,
+    "Q_events": [],
+    "PV": []
+  },
+  "warm_D1_fullPV": {
+    "score": -11,
+    "depth": 1,
+    "result_ordinary_qdepth": 0,
+    "Q_events": [],
+    "PV": [
+      "a"
+    ],
+    "corresponding_short_leaf_root_value": -17
+  },
+  "configured_Q_guard": [
+    [
+      4,
+      "marker retained"
+    ],
+    [
+      0,
+      "marker cleared"
+    ]
+  ],
+  "production_changes": 0,
+  "existing_learner_guard": "Fresh configuredQ0/hard0 + literal PV numeric equality; existing mismatch regression already passes."
+}

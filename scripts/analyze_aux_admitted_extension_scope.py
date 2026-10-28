@@ -8,7 +8,7 @@ import argparse,json
 from collections import Counter,defaultdict
 from fractions import Fraction
 from pathlib import Path
-from scripts.verify_aux_admitted_extension_packet import load,raw_return,SOURCE
+from scripts.verify_aux_admitted_extension_packet import load,raw_return,verify_archives,SOURCE
 
 def fraction(x):
     q=Fraction(x);return {'rational':str(q),'value':float(q)}
@@ -77,7 +77,63 @@ def analyze(source, replay, output):
     output.mkdir(parents=True,exist_ok=True);(output/'exposure-and-coverage.json').write_text(json.dumps(result,indent=2)+'\n')
     return result
 
+def feature_exposure(source,output):
+    """Read maintained material channels at ALREADY SAVED qualification actions/PVs.
+
+    No new alternative, label, solver, Player, training or fitted price is added.
+    Main PV endpoints are not assumed to be actual Q leaves or TD targets.
+    """
+    from generic_chess.learning.incremental import compile_channels,_material_features
+    from generic_chess.learning.features import material_features
+    verify_archives(source)
+    from generic_chess.rules.schema import ruleset_from_dict
+    from generic_chess.rules.compiler import compile_legacy_ruleset_for_semantic_execution
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    from scripts.verify_published_boolean_returns import diagnostic_action
+    from scripts.research_record import record_value
+    roots={r['id']:r for r in load(source/'comparison-prepared/inputs.json')['rows']}
+    returns=load(source/'comparison-run/returns.json');quals=load(source/'comparison-run/qualification.json')
+    cases=[];pv_steps=0
+    for rid,root in roots.items():
+        c=compile_legacy_ruleset_for_semantic_execution(ruleset_from_dict(root['RuleSet']))
+        names=compile_channels(c,unit_type='A');session=GameSession.replay(c,deserialize_game_record(json.dumps(root['record'])))
+        assert c.ruleset_fingerprint==root['fingerprint']
+        rootphi=_material_features(session.state.position,c,names);assert not any(rootphi)
+        assert list(rootphi)==material_features(session.state.position,('A','B','C'),perspective=0).array()
+        arms={}
+        for slot in (q for q in quals if q['case_id']==rid):
+            raw=raw_return(slot['query_id'],returns);d=raw['decision'];first=d['action']
+            child=GameSession.replay(c,session.to_record());child.submit(diagnostic_action(first,root['fingerprint']))
+            childphi=_material_features(child.state.position,c,names)
+            assert list(childphi)==material_features(child.state.position,('A','B','C'),perspective=0).array()
+            pv=GameSession.replay(c,session.to_record())
+            for a in d['principal_variation']:pv.submit(diagnostic_action(a,root['fingerprint']));pv_steps+=1
+            phi=_material_features(pv.state.position,c,names)
+            assert list(phi)==material_features(pv.state.position,('A','B','C'),perspective=0).array()
+            assert all(v==0 for v,(kind,_) in zip(phi,names) if kind=='hand')
+            leaf_actor=pv.state.position.side_to_move
+            actor_phi=[v*(1 if leaf_actor==0 else -1) for v in phi]
+            assert actor_phi==material_features(pv.state.position,('A','B','C'),perspective=leaf_actor).array()
+            arms[str(raw['on'])]={'qid':raw['query_id'],'action':first,'selected_child_phi':list(childphi),'literal_main_PV_phi':list(phi),'main_PV_player':leaf_actor,'literal_main_PV_actor_phi':actor_phi,'main_PV_terminal':pv.state.terminal_status.is_terminal,'main_PV_length':len(d['principal_variation']),'completed_depth':d['completed_depth'],'result_qphase':d['result_ordinary_qdepth'],'raw_default_score':d['score']}
+        assert set(arms)=={'False','True'}
+        off,on=arms['False'],arms['True']
+        cases.append({'case_id':rid,'family':root['family'],'fingerprint':root['fingerprint'],'channels':list(map(list,names)),'root_phi':list(rootphi),'arms':arms,'different_selected_action':off['action']!=on['action'],'different_selected_child_material':off['selected_child_phi']!=on['selected_child_phi'],'different_main_PV_material':off['literal_main_PV_phi']!=on['literal_main_PV_phi'],'different_default_score':off['raw_default_score']!=on['raw_default_score']})
+    result={'source':SOURCE,'cases':cases,'roots':len(cases),'saved_qualification_returns':30,'saved_main_PV_steps':pv_steps,'root_zero_vectors':sum(not any(x['root_phi']) for x in cases),'action_difference_pairs':sum(x['different_selected_action'] for x in cases),'action_differences_with_equal_child_material':sum(x['different_selected_action'] and not x['different_selected_child_material'] for x in cases),'main_PV_material_difference_pairs':sum(x['different_main_PV_material'] for x in cases),'nonzero_ongoing_main_PV_endpoints':sum(any(a['literal_main_PV_phi']) and not a['main_PV_terminal'] for x in cases for a in x['arms'].values()),'scope':'Diagnostic material-feature support only. No actual learner call/gradient/fit, new labels or WDL inference. Different families have different A/B/C movements; type names are not pooled parameter identity. Default-v5 Q4 search scores cannot be paired with these exported MAIN-PV material features as exact TDLeaf targets. Current maintained learner deliberately uses fresh configuredQ0/fullPV/numeric match. Zero root vector does not imply no deeper learning signal; unreachable hand features do not imply true hand price zero.'}
+    result['declared_fixed_unit']='board:A index0, declared before extraction; no alternative-unit scan'
+    result['nonzero_trainable_feature_main_PV_returns']=sum(any(a['literal_main_PV_phi'][1:]) for row in cases for a in row['arms'].values())
+    result['trainable_feature_rows']=[{'case_id':row['case_id'],'on':arm=='True','qid':a['qid'],'phi':a['literal_main_PV_phi']} for row in cases for arm,a in row['arms'].items() if any(a['literal_main_PV_phi'][1:])]
+    result['same_main_PV_material_but_different_default_score_pairs']=[row['case_id'] for row in cases if row['different_default_score'] and not row['different_main_PV_material']]
+    result['zero_ongoing_material_nonzero_raw_score_returns']=[{'case_id':row['case_id'],'on':arm=='True','qid':a['qid'],'raw_score':a['raw_default_score']} for row in cases for arm,a in row['arms'].items() if not a['main_PV_terminal'] and not any(a['literal_main_PV_phi']) and a['raw_default_score']!=0]
+    result['independent_existing_feature_interface_checks']=75
+    result['explicit_leaf_actor_perspective_checks']=30
+    result['nonzero_endpoints_with_actor1']=sum(a['main_PV_player']==1 and any(a['literal_main_PV_phi']) for row in cases for a in row['arms'].values())
+    result['gradient_scope']='Only2of30vectors have any nonzero freecoordinate, both B in the samefamily6/density9RuleSet. This is input support, not observed nonzero gradients/updates; tanh scaling, target error and receipt admissibility were not measured. C andhandchannelsare unexposed at these exportedendpoints,notzero-valued pieces or zero-valued stock.'
+    output.mkdir(parents=True,exist_ok=True);(output/'feature-exposure.json').write_bytes((json.dumps(result,indent=2)+'\n').encode('utf8'));return result
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--replay',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();r=analyze(a.source,a.replay,a.output)
+    p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--replay',type=Path);p.add_argument('--phase',choices=['derived','features'],default='derived');p.add_argument('--output',type=Path,required=True);a=p.parse_args();r=feature_exposure(a.source,a.output) if a.phase=='features' else analyze(a.source,a.replay,a.output)
+    if a.phase=='features':
+        print(json.dumps({k:v for k,v in r.items() if k!='cases'},indent=2));return
     summary={'extension':{k:v for k,v in r['extension_count_scope'].items() if k!='rows'},'coverage':r['finite_coverage_envelopes'],'regret':{k:v for k,v in r['experienced_regret_bounds'].items() if k!='pairs'},'clock':{k:v for k,v in r['clock_and_service_scope'].items() if k!='rows'}};print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()

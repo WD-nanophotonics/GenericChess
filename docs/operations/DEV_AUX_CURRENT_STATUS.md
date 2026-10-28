@@ -14,6 +14,8 @@ elsewhere describe the state at that time and do not override it.
  60.44108conservative minutes. Accepted safe_checkpoint finish05:25:25UTC; memo synchronizedENDED.
 - Latest heartbeat fea09fcc ENDED15:34:58UTC;64.1663206conservative effective minutes.
   55tests+2source controls PASS; closed partial cancellation cap overrun retained.
+- Latest session0737a0b6 ENDED2026-10-28T18:13:39.323633+00:00;63.722759 conservative minutes.
+  120controls+75material/30actorchecksPASS;new30packetgateFAILED;futurememoexecutable.
 - Current action: follow the revisable `.local_agent/WORK_PLAN.md` and compact
   `NEXT_WORK.md`. Latest user authorizes scoped fallback planning when GitHub
   ChatGPT Pro has no explicit AUX task; unconditional waiting is superseded.

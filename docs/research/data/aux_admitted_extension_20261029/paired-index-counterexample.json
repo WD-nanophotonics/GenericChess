@@ -1,0 +1,42 @@
+{
+  "scope": "Exact finite index arithmetic, not a fitted bootstrap, empirical CI, engine result or claim of actual run variance.",
+  "observed_family0_root_pair_ON_fractions": [
+    "1/4",
+    "3/4"
+  ],
+  "corresponding_OFF": [
+    "3/4",
+    "1/4"
+  ],
+  "paired_single_draw_differences": [
+    "-1/2",
+    "1/2"
+  ],
+  "independent_axes_single_draw_differences": [
+    "-1/2",
+    "0",
+    "0",
+    "1/2"
+  ],
+  "paired_variance": "1/4",
+  "independent_axes_variance": "1/8",
+  "complement_violations": 2,
+  "independent_axis_combinations": 4,
+  "perfect_family_block_counterexample": {
+    "games_per_family": [
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "sum_squares": 116,
+    "total_games": 30,
+    "variance_inflation_vs_flat_IID": "58/15",
+    "assumption": "Illustrative independent family latent variables with perfect within-family correlation, not a fitted model of the observed outcomes."
+  },
+  "N1_case": "One observation per task gives identical within-task bootstrap draws, not evidence of zero future-run uncertainty."
+}

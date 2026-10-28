@@ -21,12 +21,13 @@
     "prior_collection_failure": "Missing scripts.verify_leaper_pvs_quality_pilot; original failure retained privately, no test failure reclassified as passing."
   },
   "consumer": {
-    "passed_tests": 11,
+    "passed_tests": 14,
     "fixture_sha256": "ef77d35378288c66d1c09c6dde0fe1aa7b709275f6d564ee52eada3e8dc20c0a",
     "source": "Literal public new-packet first root/returns and exact qualification schedule.",
-    "initial_abstract_control_failure": "First-Q0 can still enter in-check Q; test corrected to permit that before aborting the later extension. No product change."
+    "initial_abstract_control_failure": "First-Q0 can still enter in-check Q; test corrected to permit that before aborting the later extension. No product change.",
+    "warm_phase_controls": "Actual abstract root state machine with normal/full-PV variants; public caller configured-Q clear verified with abstract return stub."
   },
-  "total_distinct_tests": 117,
+  "total_distinct_tests": 120,
   "scope": "Finite compatibility/control tests execute existing Player/search paths. Exact aggregate root-call count across tests was not recorded (UNKNOWN), not zero. No new research Player comparison, games, solver, training, Native build or closed cancellation batch.",
   "compressed_only_replay": "PASS2160returns/2130moves/7523PV after compressed-loader and stricter source-budget changes; actual producer data unchanged."
 }

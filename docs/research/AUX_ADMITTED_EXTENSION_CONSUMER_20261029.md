@@ -226,5 +226,113 @@ no closed-slot refill or one-hop label mining, and no independent-WDL claim from
 outcome algebra. Its proposed new-family producer/kernel studies remain PRIMARY's;
 this AUX consumer introduces none of those studies or budgets.
 
-This is a scientific milestone within active session0737a0b6; final work ledger,
-full publication SHA, communication effects and accepted session finish follow.
+This session later finished with accepted safe_checkpoint at2026-10-28T18:13:39.323633+00:00,
+63.722759 conservative effective minutes after120second reserve.
+See the linked actual ledger and finish receipt; publication is separately verified.
+
+## Warm TT makes first-Q0 a phase label, not a numeric target
+
+A second finite source control tests the actual public return state machine,
+with an explicitly abstract R-C-L-T tree and no real Leaper/game claim. The
+same declared root/history and extension bank are used throughout. A completed
+Q4-context D2 call stores a sufficient-depth EXACT root score of -11. A fresh
+D1 call returns -17; a new D1 call with that warm table returns -11.
+
+| Case | Retained depth / reported ordinary Q | Returned score | New Q events | Literal PV |
+|---|---|---:|---|---|
+| Cold D1 | 1 / 0 | -17 | C at phase0 | a |
+| Warm D1, ordinary PV | 1 / 0 | -11 | none | empty |
+| Warm D1, require_full_pv | 1 / 0 | -11 | none | a |
+
+Both warm controls use a real stored deeper EXACT entry produced by actual
+`negamax` over the declared tree, not an arbitrary fabricated TT number. In the
+full-PV case the one-step line is legal, but its short leaf's value corresponds
+to -17, not the deeper cached -11. Sufficient-depth PV validation returns at
+depth0 without evaluating that leaf. Therefore legal/full-length PV is not,
+by itself, proof that its leaf generates the reused numeric score.
+
+This matches the existing depth>=d contract and the explicit docstring of
+`_set_result_provenance`: it is policy metadata rather than a uniform-horizon
+certificate. Player's table guard clears on changed configured ordinary/hard Q
+limits; another control verifies a configured4-to0 change clears its sentinel.
+The internal first-iteration phase changes inside an otherwise configuredQ4
+call and is not that configuration change. No production TT alteration follows.
+
+This also explains why the earlier cold-qualification argument is deliberately
+limited. Warm within-game state could import deeper earlier work even when the
+current returned metadata says D1/Q0. The abstract control does not identify any
+particular historical Leaper call that did so, any real wrong root action, or
+an actual performance loss caused by TT reuse.
+
+The maintained AUX TDLeaf adapter already has the appropriate narrow consumer
+boundary: a fresh Player per query, configuredQ0/hard0, default extensionOFF,
+`require_full_pv=True`, and independent literal PV replay plus an exact
+signed-score/material-leaf comparison. Its existing
+`test_nonliteral_public_score_is_rejected_without_a_fitted_leaf` rejects mismatch
+as `PV_VALUE_MISMATCH`; that test passed in the baseline run. This new source
+finding does not show current learner corruption or call for another repair.
+Those safeguards also do not certify minimax WDL or convergence.
+
+Acceptance is now **120 distinct controls**: the earlier96+10, plus14 consumer
+controls including both full-PV modes and the configured-Q guard. There were no
+additional real research games, Native builds, training or injected-Native-failure
+batches. Actual finite unit controls invoke existing search/caller code, as
+previously disclosed. The count117 above accurately describes the first published
+milestone;120 is the later total, not117 plus14.
+
+## Actual material-feature support is sparse, not a training result
+
+A final bounded feasibility check uses the maintained fixed-scale learner's
+actual `compile_channels` and `_material_features` on all15 already-selected
+roots and the30 already-saved qualification actions/main PVs. Unit `board:A`
+was declared before extraction. No alternative root, new continuation, model,
+price fit, update or action-WDL label was generated. The existing public material
+feature interface independently agrees at all75 root/selected-child/PV-endpoint
+checks, with30 additional leaf-actor perspective checks. Exactly69 saved PV steps are reused.
+
+All15 initial signed material vectors are zero, as expected for symmetric
+inventories. Of seven ON/OFF qualification action differences, six have the same
+selected-child material vector. Only one of the15 pairs changes the exported
+main-PV material vector. Among30 ongoing main-PV endpoints,25 vectors are zero
+and five are nonzero. Only two vectors have a nonzero **free** coordinate after
+fixing A: q0024/q0025, both `[0,1,0,0,0,0]` in the same family6/density9 RuleSet.
+The other three nonzero vectors change only the fixed A coordinate. Both B-bearing endpoints have actor1: their fixed-seat0 vector is +B and their actor-centric vector is -B. The extractor keeps those perspectives explicit; it does not negate the named-seat training input accidentally. No C or
+hand coordinate is exposed at these endpoints.
+
+This identifies, at most, one free feature direction in this diagnostic set.
+It does not measure a nonzero gradient or update: model weights, tanh saturation,
+target error and receipt admissibility were not evaluated. In particular it
+cannot identify a B/A price, still less C/A, conditional piece value or a gain
+from learning. Different families' type A/B/C labels denote different movement
+rules; those labels are not shared parameter identity across rules.
+
+Twenty-three ongoing zero-vector endpoints nevertheless have nonzero raw default
+search scores. Six within-root pairs share their exported material vector but
+have different returned scores; for example the first pair has scores26/18 with
+two zero vectors. A homogeneous linear material model predicts0 at that vector
+for every choice of prices. This rules out the shortcut of pairing those default
+scores with these main-PV vectors as exact current-model TDLeaf targets. It does
+not diagnose the default evaluator: those are its own positional/Q4 search
+results, and the exported main PV need not reach the actual Q leaf. This evidence
+does not attribute any specific score to one positional term or missing branch.
+
+Even a coincident zero score would not validate the other receipt conditions.
+The maintained learner instead creates its own configuredQ0/material-override
+query and checks signed score against the literal leaf before admitting a
+receipt. The new benchmark packet remains evaluation evidence, not a replacement
+experiential training corpus. No actual learner/gradient/training was run here.
+
+Zero initial vectors and sparse exported endpoints do not ban later learning:
+lookahead can reach other material contexts, and actual episodes can expose
+other free coordinates. Nor does an unreachable hand feature imply its true
+price or default coefficient is zero. Full GameSession rules/history remain
+terminal and legal authority; material vectors are approximations, not a state
+quotient permitting WDL or TT label transfers. No new experiment or admission
+gate follows this bounded feature-support question.
+
+The distinct source-method note
+[paired-panel inference](AUX_PAIRED_PANEL_INFERENCE_20261029.md) also records why
+independent-arm resampling breaks the observed paired complement, why a
+25%-trimmed mean hides all six decisive outcomes here, and why those quantities
+cannot substitute for the frozen gate or minimax action regret. No empirical CI
+or changed metric was added.
