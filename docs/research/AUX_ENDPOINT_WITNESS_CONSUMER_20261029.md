@@ -113,12 +113,13 @@ These are still whole-policy equal-service effects, not isolated Q/depth ablatio
 Different printed scores use different horizons and cannot be compared as a
 common truth label. Source scores have no inferred material-price interpretation.
 
-Actual submissions for this curve consumer:348 PV edges +988 prefix replays
-+104 selected/reply edges =1440. The separate qualification reader adds126PV
-edges+412root-event edges=538 (zero-length root replay). The final logical outputs together contain1978 public Core submissions. The
+Actual submissions for this curve consumer:348 PV edges +1036 prefix replays
++104 selected/reply edges =1488. The1036 includes48initial root-replay submissions
+omitted from the first counter; its raw output is retained with cost-correction.json. The separate qualification reader adds126PV
+edges+412root-event edges=538 (zero-length root replay). The final logical outputs together contain2026 public Core submissions. The
 qualification reader had TWO successful executions (538 each), the curve reader
-one (1440); both are actual cost. Adding the two eight-submission history reads
-below gives2532 public submissions across those executions, before tests.
+one (1488); both are actual cost. Adding the two eight-submission history reads
+below gives2580 public submissions across those executions, before tests.
 This is not a session-wide total for earlier representation controls.
 No parent-path, counterfactual order or full-tree cost is inferred from these
 public submission counts; internal legality probes are not included.
@@ -231,3 +232,8 @@ full512-reader claim remains its own evidence, not adopted as an AUX execution.
 Final related suite:27distinct cases PASS, including6witness-reader boundary cases.
 Sessionfinish accepted; see companion ledger/accounting for60.294989conservative
 effective minutes. Transport/publication time is excluded.
+
+Delivery accounting amendment: original curve-consumer.json.gz retains its
+988prefix counter unchanged; cost-correction.json explicitly adds48initial
+root-replay submissions. Source counter is fixed for future use. No consumer,
+search or experiment was rerun for this bookkeeping correction.

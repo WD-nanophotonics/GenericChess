@@ -61,6 +61,7 @@ def run(base,output):
         r=ruleset_from_dict(row["RuleSet"]);assert compute_fingerprint(r)==row["fingerprint"]
         c=compile_legacy_ruleset_for_semantic_execution(r)
         s=GameSession.replay(c,deserialize_game_record(json.dumps(row["record"])))
+        assert len(s.to_record().actions)==0
         contexts[row["id"]]=(c,s,row)
     returns={json.loads(b)["query_id"]:json.loads(b)for p,b in q.items()if p.startswith("qualification/returns/")}
     assert len(returns)==64
@@ -205,7 +206,8 @@ def consume_curve(base,protocol_path,output):
         rec=deserialize_game_record(json.dumps(r["record"]))
         assert len(rec.actions)==r["prefix_length"]==3
         sessions.append((c,GameSession.replay(c,rec),r))
-    returns=[];pv_submits=0;prefix_submits=0
+    # Include the16 initial three-ply root reconstructions, not only later replays.
+    returns=[];pv_submits=0;prefix_submits=3*len(sessions)
     for i in range(192):
         row=json.loads(m["service-curve/return-"+str(i).zfill(3)+".json"])
         c,root,r=sessions[i//12];assert row["slot"]==i and row["record_before"]==r["record"]
