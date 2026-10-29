@@ -1,3 +1,28 @@
+## Accepted AUX4baedcf3 —2026-10-29
+
+Session safe_checkpoint accepted at00:14:45UTC, same22:42:58UTC origin.
+3737.699354confirmed seconds minus120reserve = **60.294989 effective minutes**;
+all intervals closed, memo ENDED,27distinct relevant checks PASS. No old time
+credited to this segment; administrative/offline/transport time excluded.
+Two prospectively frozen coldD1Player calls completed and cap2 is EXHAUSTED:
+literal renamed tie choice differs, both in17-wayargmax; not quality regression.
+New captured-stock/Core history and actuallearnergradient/terminal-alias controls
+separate BASE/currentfeatures and zero-update conditions; no training.
+Independent new PRIMARY025c packet:608byte-bound members;64qualifier selected/PV
+and412actualrootwitnessentries,128fixedworkhashcostarithmetic,192fullhistorycurve
+returns and100complete opponentreplies. All100ONGOING, fullWDL UNKNOWN.
+Retained Q0->Q4 accompanies D1->D2; nominal-Q or depth-only attribution rejected.
+Finite pooledcost6.51%wall/6.58%CPU matches originalarithmetic, not fresh timing,
+generic speed guarantee, learner acceleration or strength. All4existingruntime
+arms preserve sameboard/clock-but-different-history keys and exact undo.
+Pro48749/0802 direction adopted, PRIMARY producer/next32gameproposal stays theirs.
+Latest mainline025c adds researchsources/data only; shared product/tests reused.
+Next: consume genuinely new frozen quality/outcome/UNKNOWN records, else ONE
+falsifiable learner feature/terminal transport boundary; no repeatedclosedmatrix,
+oldH6/Native/64/32 refill, new worker or schedule change.
+Reports: AUX_REPRESENTATION_CONTRACT_20261029 and AUX_ENDPOINT_WITNESS_CONSUMER_20261029.
+Ledger/finish/accounting: data/aux_representation_contract_20261029/.
+
 ## Accepted AUX static-mask segment close e0b982d3 —2026-10-29
 
 Session safe_checkpoint accepted at 2026-10-28T21:03:40.963402+00:00;

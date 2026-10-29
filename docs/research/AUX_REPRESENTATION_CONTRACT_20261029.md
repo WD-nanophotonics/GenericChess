@@ -1,10 +1,12 @@
 # Representation invariance needs separate game and evaluator contracts
 
-Status: active scientific checkpoint; this is not an ended60-minute segment.
+Status: segment4baedcf3 ENDED; session finish accepted2026-10-29T00:14:45UTC.
+3737.699354confirmed seconds minus120reserve=60.294989effective minutes;27distincttestsPASS. Earlier statements below describe their checkpoint scope.
 Source sandbox d91928c548d3a69c83260adfd4198447c69125a4; new Pro0605JST,
 blob84a17d95ccce5f1b2648d900995a2b1e8add8a3f, read and adopted. Shared
 rules/search/terminal/history/product tests have no delta from31060392.
-No Player, engine root search, WDL solver, game campaign, training or build.
+Initial source-only subquestions used no Player/search. The separately prospective
+two-call control below later ran exactly twice; no WDL solver, game campaign, training or build.
 No new normalizer, default profile, cache or TT change.
 
 The new result is a limitation of the EXISTING legacy-reachable profile
@@ -302,3 +304,134 @@ The total relevant regression set now has13 distinct passing cases.
 
 [Rotated literal inputs](data/aux_representation_contract_20261029/rotation-inputs.json.gz)
 and [Core/profile/feature observations](data/aux_representation_contract_20261029/rotation-observed.json.gz).
+
+
+## Captured stock: equivalent restricted play does not mean identical learner channels
+
+Source remains sandbox48749ec334c9eb42955a844f06e1d101bb2a02e2.
+The separate frozen stock input SHA256 is
+815837e0a1e70ca9ef2aef9ad6bb10e491bddf275838b60291837f02a88e8f4f.
+Change ONLY capture removal to capture-to-hand on the earlier4x4 one-P game;
+all drop masks remain false, no promotion/creation/owner changes/DSL/declarations
+or alternate setups. This is a scoped game relation, not general stock deletion.
+
+Let B_i(t) count surviving BOARD actors of BASE type t owned by i, N_i their
+initial counts, and H_i(t) their hand counts, initially zero. With ordinary
+opponent capture-to-hand, no drops, creation, base-type or owner changes:
+H_0=N_1-B_1 and H_1=N_0-B_0. An ordinary move changes none; promotion preserves
+base and owner; a capture removes one opponent base actor and adds that same
+base to the capturer's hand. Induction proves the relation. In signed features,
+h=H_0-H_1=(B_0-B_1)-(N_0-N_1). This is an AFFINE reachable-domain relation.
+It is not a claim about arbitrary externally supplied hands. With a drop by
+seat s, signed h decreases s while signed B increases s; h-B changes by -2s.
+Hand readers, resource claims/effects, owner/base changes or arbitrary initial
+stock require a different proof. Promotion is allowed in the base-count identity
+but not in a substitution of CURRENT-type board features for base counts.
+
+For the frozen one-P game, h_P=p-1, p in{0,1}. The full typed board uniquely
+determines the extra hand, so the projection is injective on this reachable
+domain. Root clocks/side and every later clock match. Ordinary move/capture
+authority and royal safety cannot read this inert stock; typed repetition keys
+correspond bijectively. Thus entire repetition-count maps transport, not just
+the current board. A16-ply actual capture-plus-three-cycle trace per rule and
+compiler route checks17 prefixes and an8-key map, ending in literal fourfold
+DRAW at ply16 on both.64 Session.submit calls total. It is one trace, not
+solved WDL or proof by finite enumeration. No Core/TT identity was replaced.
+
+The actual maintained learner uses CURRENT board type counts and BASE hand
+counts. With fixedP=1, scale10 and initial free hand weight w=0, feature vectors
+are(p,0) for removal and(p,p-1) for retention. At ongoing ply4 after capture,
+both predict0, but free-hand gradients are0 and-0.1 respectively.
+No-drop therefore does not imply a zero free gradient. Terminal observations
+are literal WLD constants with zero gradients; the final trace DRAW does not
+become a material label. No observe/finish/apply/training was called.
+
+Nor does the affine relation establish redundant parameters in this model.
+The retained model has raw p+w(p-1)=(1+w)p-w. Its fixedP anchor and lack of a
+free intercept mean w changes the missing-P baseline while keeping p=1 pinned.
+The one free feature varies across p=0/1 and is not identically zero; calling
+this two-channel fixed-anchor model rank deficient would be wrong. An added
+intercept or separately free board coefficient would define a different
+parameterization. Any fitted w would conflate this board/baseline relationship
+with stock; it would not identify an independently manipulated causal hand price.
+
+A useful negative consequence follows WITHOUT training: on the literal recorded
+current-state sequence, every p=1 observation has zero free gradient, every p=0
+observation has prediction0, and after capture p never returns to1. All later
+current-state predictions and the literal final DRAW target are0. The frozen
+TD(lambda) sum therefore has zero update for any eta/lambda: transitions that
+can have nonzero errors have zero accumulated eligibility, while transitions
+with nonzero eligibility have zero error. This is an algebraic CURRENT-STATE
+trace control, NOT an actual search/PV training run. A different sequence with
+nonzero terminal WLD, different PV features, nonzero initialization, or additional
+free types can change the conclusion. Nonzero gradient alone is not a reason
+to launch a training campaign on this fixture.
+
+The promotion boundary uses the existing P->G rule, capture-to-hand, and four
+actual legal moves: P(1,1)->(1,2)=G, enemyK(3,3)->(3,2),
+G(1,2)->(2,2), enemyK captures at(2,2). Both compiler routes agree: after
+promotion CURRENT P=0, BASE P=1, handP=0; after capture handP=-1 and handG=0.
+Thus hP=currentP-1 already fails at the promotion prefix although the base
+conservation identity remains true.8 actual submissions in this new boundary.
+Inputs, records and exact feature rows are in stock-promotion-boundary.json.gz.
+The scoped admission test rejects even one enabled drop square, including a
+configuration whose root happens to have no current stock.
+
+## Actual two-call tie control, now CLOSED
+
+The prospective protocol was published at987598df443f4ef922093b1d8e6183c06dc6e17c
+before dispatch. Frozen input SHA256
+e205b644743d73a0c4e3ddd840122660068793eb4aeba40cd6053aebe6d210dd.
+Exactly TWO cold public AlphaBetaPlayer calls ran once; the lifetime cap is
+EXHAUSTED. Both returned complete main_iteration D1/Q0 score2000,18nodes,
+0qnodes,17evaluations and balanced17push/pop. Each had3s whole-call allowance,
+including compile/constructor/choose/pack; observed walls0.0078719/0.0071813s.
+The whole experiment wall0.142707s and CPU0.15625s include preflight; clock
+granularity and one exposed control forbid speed comparisons.
+
+The bijective type rename K->K,A->Z,B->A preserves the game, completeD1 values
+and17-way argmax. Original picked A(2,2)->(1,1); renamed picked A(3,2)->(2,1).
+The mapped original would be Z(2,2)->(1,1). Both actual choices belong to the
+mapped argmax, but literal returned-action equality is false. Existing ordering
+sorts str(action); root best replacement requires strict score improvement.
+This explains a representation-dependent tie choice, not quality regression.
+The game/history preflight checked65prefixes/64paired edges/222submissions;
+a separate pre-dispatch preflight also ran and is additional cost, not hidden
+inside that count. Postdecision PV checking adds2submissions.
+
+The offline reader verifies frozen/dispatch/result binding, both distinct slots,
+complete metadata, mapped argmax membership and the computed equality flag.
+Tests NEVER call the exhausted producer. Four corruption cases reject false
+bindings, duplicated slots, unmatched actions and fabricated equality. Three
+new stock tests and this reader's five cases PASS:8new cases,21distinct cases
+across this round including13earlier cases, not21independent experiments.
+The two raw returns and dispatch receipt are packaged in the manifest.
+No product, model weights, defaults, new game campaign, solver or training changed.
+
+Receipt correction: the executed producer left its legacy remaining_slots field
+as NOT_RUN even after both successful calls. Preserve that exact raw field;
+COMPLETE plus the two distinct call receipts establish exhausted slots. The
+offline reader reports the stale field explicitly, rather than silently
+rewriting the original or treating it as an unexecuted slot. The executed
+producer source remains pinned in987598df; no producer rerun was made.
+
+
+### Why the stock affine relation is not a free monotone-search theorem
+
+The exact retained-stock trace has the same material features(0,-1) at ongoing
+ply4 and terminal fourfold-DRAW ply16. The underlying typed board/hand/actor
+returns after each four-ply cycle; history/counts and clock differ. The learner's
+terminal authority overrides material and returns literal0 at the latter,
+with zero gradient. For a symbolic nonzero hand coefficient w, the ongoing
+material raw value is -w while the terminal draw stays0.
+
+Even when w>-1 preserves the ordering of the two NONTERMINAL inventory bands
+(p=1 raw1 versus p=0 raw-w), that alone does not supply a single strictly
+increasing transformation of the OLD complete-frontier values. The old missing-P
+nonterminal value and terminal-DRAW value both equal0; their proposed images
+-w and0 differ unless w=0. A function cannot map the same argument to two
+different outputs. This blocks an attempted reuse of the earlier dead-promotion
+minimax embedding. It does not establish an actual changed root decision:
+no common decision frontier containing both histories has been shown or queried.
+The distinction is terminal calibration/history aliasing, not an independently
+identified hand price. We did not initialize, fit or tune w in any real learner.
