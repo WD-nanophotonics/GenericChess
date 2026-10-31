@@ -8445,3 +8445,20 @@ fullhistoryTTguards;geometrysignatures are exposurequeries,nevergamequotients.
 Remaining uncertainty is quality resolution/informationvalue of32matchedgames,
 not a missing routine permission. Exactsessionacceptance andremoteSHA are local
 receipts;this entry does not certifyanotherrole's clock orindependenthardware.
+
+
+## 2026-10-31 PRIMARY resume and finite runtime mechanism
+
+Latest direct USER resumed both existing hourly patrols; PRIMARY cleared only its
+own matching stop and retained the ended previous session/no gap credit. Read
+autonomous e4565fa3 full review and the complete prior PRIMARY/AUX Slack threads.
+Adopted deferred hash-only games and explicit full-kernel cost/semantics gates.
+Solicited Dot1793428622 (AGENT_REQUEST GC-SLACK-20261031-153308-22f54e32) was read
+once after+5minutes: adopted separate availability/frontier, nonrecursive paid
+children, failure-inclusive observation and instrumented-union limitations.
+Kernel96returns do not prove a15% removable share; exact-signature64D4calls
+pass scoped~5.95%wall/5.83%CPU gate with complete-work parity on15groups/all8.
+AUX published finite consumer observations were read, not independently rerun
+or assigned new work. No AUX checkout/state/default or new worker changed.
+Persistent-controller transfer remains conditional at this checkpoint; costs,
+uncertainties and publication receipts are maintained in the current report/memo.

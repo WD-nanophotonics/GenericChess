@@ -60,14 +60,14 @@ workers may be created.
   reopen the same owned UUID/start/ledger, preserve the old ending and exclude
   the gap. No AUX/schedule changes; repair/documentation time adds no research.
 
-- Latest direct user2026-10-28: "现在开启工作" explicitly resumes this PRIMARY
-  research after the prior shared-account Slack pause. Clear only the matching
-  own conservative stops; no AUX, other project, worker or schedule changes.
-  The historical pause and questions retain their original provenance, but do
-  not block this newer direct instruction. Preserve all incomplete dense results;
-  its expired frozen game slots are NOT permission to refill or reset a cap.
-  Actual recurrence was observed ACTIVE/180minutes; this manual resume does
-  not change it or claim old60minute text is the current scheduler state.
+- Latest direct USER2026-10-31: "重启一小时巡检，包括primary和aux", then
+  "重启" and "开始", explicitly resumes both existing hourly patrols and this
+  PRIMARY work after the Oct29 stop. Both existing automation IDs were confirmed
+  ACTIVE/60minutes with original chat bindings. Clear only each role's matching
+  own stop; do not edit the other checkout/state or create another writer. The
+  prior stop remains historical evidence, not a live barrier to this direct
+  resume. Preserve all incomplete results and expired frozen slots/caps; no
+  refill, old work credit or product/default change follows from resumption.
 
 - User decisions2026-10-26: explicitly DEFER the prepared16-game Native-service
   experiment. Its pending270/300-minute (later~297/300) request is closed without

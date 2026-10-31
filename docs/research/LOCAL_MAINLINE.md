@@ -2,18 +2,33 @@
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
 CHATGPT_REVIEW_WORKFLOW.md adds current GitHub ChatGPT Patrol intake to Slack.
-PRIMARY publishes sandbox only. Prior user intent was ACTIVE/hourly for both;
-latest observed own scheduler is ACTIVE/180minutes, not changed by this resume. Pure Leaper first; mixed/legacy/promotion/drop/NNUE
-optimization remains deferred. All admitted semantics, histories and clocks stay.
+PRIMARY publishes sandbox only. USER2026-10-31 explicitly resumed both existing
+hourly patrols and PRIMARY work after the Oct29 stop. Pure Leaper first;
+mixed/legacy/promotion/drop/NNUE optimization remains deferred. Complete admitted
+semantics, typed histories and clocks stay authoritative.
 
-## Current decision —2026-10-29 scoped runtime cost, decision quality still open
+## Current decision —2026-10-31 exact signature cost, lifecycle pending
 
-Main: Does local-only hash economy justify a finite matched-seat quality pilot? |
-Assess ONE proposal using all16 already-fixed full three-ply records, exact
-Native/cold-controller service and complete typed histories; freeze necessity,
-opponents/seats,32-game fixed denominator, UNKNOWN and whole caps BEFORE dispatch |
-[512-return assessment](LEAPER_ENDPOINT_RUNTIME_20261029.md),192-call behaviorcurve |
-No new game/default/old-slot refill;changed action/depth is not accuracy.
+Main: Does the cold exact-signature gain survive persistentPlayer/TT? |Execute
+conditional frozen128calls only after literal64prefixpaths are saved, isolated
+TTs/fullhistories and all originalcaps;no games |[current report](LEAPER_KERNEL_SIGNATURE_20261031.md) |Warm workload parity/coverage/cost decide next optional integration;defaultOFF.
+
+Cold64D4ABBA CLOSED PASS:15completegroups/all8families, wall.9405192694 and
+CPU.9416727025 versus existinglocalhashON baseline;onegroupcensoredretained.
+Complete action/value/PV/nonclockwork/Native counters match. Runtime qualification
+4613pairedchildren/9482directpushes/36pairedaborts passes. Query-local4096entry
+strong-reference syntax memo preserves exact canonical history strings; no TT
+identity quotient. Scoped developmentcost only,notstrength/holdout/classsuccess.
+
+Kernel diagnostic96calls CLOSED:16D3groups/all8,12D5groups/7families;observed
+union~74% with~13%observerdisturbance is not removable/uninstrumentedbound.
+Fullkernel implementation NO_GO fromthisevidence.561actual maxply predicate
+disagreements and4duplicate-atom roots require separate availability/frontier,
+fullactionidentity andcompletehistory.605directCore transitions,not games.
+Latest autonomous e4565fa3 and solicitedDot1793428622 are read/adopted;old32hash
+games remainDEFERRED,old16Nativegames/expiredslots NOT_STARTED/NOT_RUN.
+USER2026-10-31 resume/hourly controls;no old work credit/newapprovalqueue.
+
 Backup1: Preserve prospective threat qualification NO_GO |64newcalls,
 13eligiblegroups/all8 actualretainedactivity/0eligiblestablechoicefamilies;
 32gamesNOT_STARTED |same report |No rule/layout replacement or threshold change.
