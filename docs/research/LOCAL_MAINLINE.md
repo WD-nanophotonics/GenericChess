@@ -7,9 +7,37 @@ hourly patrols and PRIMARY work after the Oct29 stop. Pure Leaper first;
 mixed/legacy/promotion/drop/NNUE optimization remains deferred. Complete admitted
 semantics, typed histories and clocks stay authoritative.
 
-## Current decision —2026-10-31 signature assessment closed
+## Current decision —2026-10-31 finite quality assessments closed
 
-Main: Is there already a public full-service proof/continuation chooser? |Read pinned AUX62ca report and actual normal_search/public AlphaBetaPlayer consumers; compare typed fallback and inclusive deadline |Source-bound integration map and one prospective quality hypothesis |Reuse existing solver; no new cache matrix, warm-slot refill or default activation.
+USER latest“继续”resumes BOTH existing hourly patrols. Same PRIMARY research
+UUID cd2081f3 resumed with preserved31.498minutes;pause gap gets0credit.
+Latest autonomous7a812fd1/blobaa482c23 fullyread/adopted;cache/identity/kernel
+and separate chooser expansion STOPPED. Reviewed ownbranchdoc-onlyFF integrated.
+
+[PNselection](LEAPER_FULLSERVICE_PROOF_20261031.md):32returns/16pairs,
+9verifiedWINs already immediateWINs forbaseline;7otherpairs samefullaction;
+all16relativevalues exactly0. [Forced-evasion](LEAPER_FORCED_EVASION_20261031.md):
+0qualifiedroots/0Player;5179completeparents/94806savedchildren replayed,73original
+partialtailreturns UNKNOWN. [Rootschedule](LEAPER_ROOT_STABILITY_20261031.md):
+32returns/16samechoicepairs;only3stablefamilies versus4required;noPNqualification.
+Allfinitecaps/negativegates closed,no retuning/refills/games/defaultactivation.
+Unused prototypes retired after exact source preservation;production restored.
+
+Main: Can value-informed continuation allocation avoid a new chooser/TT framework? |
+Use pinnedStockfish singular/excluded-search source and actualnegamax/root paths
+to specify one bounded alternative-verification policy and its numerical-phase
+contract |Source-bound falsifier/cost plus concrete complete-history action-bound
+endpoint |Only then consider ONE <=32call/<=1s actualPlayer comparison on4–8
+newfamilies;no parameter-copying,cacheaudit,regret-free claim or quietpartial
+result promotion from shallowheuristic scores.
+Backup1: Need an informative quality witness? |Read pinned currentAUX full-history
+threat result and compare actualselected-action bounds,not only badalternatives |
+A real counterexample/witness with UNKNOWN kept |Do not rerun AUX or infer baseline
+error when it already avoids the losingmove;no newassignment.
+Backup2: Numerical portability of continuation tests? |Falsify whether ordinal
+zero-margin shallow comparisons inherit depth/evaluation-bias assumptions |
+Explicit analyticcounterexample or scopedinvariance |No new empiricalmatrix until
+mechanism and independently checkable endpoint are decision-changing.
 
 Persistent lifecycle CLOSED INCONCLUSIVE:63/128 returns,65NOT_RUN,31complete
 pairs plus1unpaired;23qualifiedwarm pairs onlyfamilies0–3. Descriptive wall
