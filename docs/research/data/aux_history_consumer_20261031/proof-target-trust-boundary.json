@@ -1,0 +1,32 @@
+{
+  "scope": "Synthetic source-interface observation only, not an actual current producer bug or supervised/training run.",
+  "input": {
+    "raw_value": 1000000.0,
+    "phi": [
+      0.0,
+      1.0
+    ],
+    "pv_terminal": false,
+    "source": "synthetic ongoing root WIN incorrectly cast as nonterminal prediction"
+  },
+  "observed": {
+    "stored_prediction": 1.0,
+    "stored_gradient": [
+      0.0,
+      0.099511596233468
+    ],
+    "actual_model_prediction": 0.06988589031642897,
+    "actual_model_raw": 0.7,
+    "parameters_unchanged": true
+  },
+  "judgment": "TDLeafEpisode trusts the nonterminal producer score/phi relation. Current mainline adapter checks literal PV/value and rejects nonliteral completed_root_win. No current external proof-bank->TDLeaf caller was found. A future proof bridge must keep target versus prediction and logical proof versus actual terminal distinct.",
+  "bad_downstream_consequence": "If a proof-derived constant1 is installed as this row prediction and a later1 is its target, its TD error is0 although the model predicts tanh(.07). This is a typed-semantic mismatch, not an experiment showing harmful learning. No finish/update was executed.",
+  "no_patch": "Existing arithmetic unit fixtures intentionally allow independently supplied values/gradients. Adding a new implicit admission gate would change that trust contract; no active wrong caller justifies it here.",
+  "new_Player": 0,
+  "new_solver": 0,
+  "new_game": 0,
+  "new_training": 0,
+  "observe_calls": 1,
+  "finish_calls": 0,
+  "apply_calls": 0
+}

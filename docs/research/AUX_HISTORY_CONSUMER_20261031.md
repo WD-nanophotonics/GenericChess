@@ -106,3 +106,69 @@ safety strategy itself supplies a common optimal full policy for these two speci
 do not infer this merely from the common root action. Derive the structural fixed-unit
 gradient limit separately from the value-alias claim and state what would change a future
 learner experiment decision. No additional Player/solver/game/training or product defaults.
+
+## Stronger stationary-policy and learning-scope deductions
+
+The supplied safety graph has150defender and108attacker vertices, each keyed by
+one injective physical Position. At every defender row the saved certificate selects
+one original Core successor. This defines a stationary Position-based defender policy
+on that set; fix any legal Position-based extension elsewhere. Legality is Position-local
+in the exact admitted ongoing plain-Leap rule. From the DRAW record all attacker moves
+remain in the invariant or meet an actual prior-count3 future-arrival draw barrier.
+Additional repeats and the finite64ply clock add safe draw exits; mate precedence
+was already checked on every supplied edge. The bare King cannot win.
+This policy therefore guarantees the DRAW root's optimum. The WIN certificate proves
+a loss against EVERY defender policy, including this same extension, within rank12
+and remaining53. Thus one common stationary defender policy is optimal at BOTH
+specific complete roots. This is stronger than a common root action, but says nothing
+about one optimal stationary policy on ALL possible incoming histories. It uses full
+physical Position, not just a constant material vector, and is not learned/held out.
+Exact search values still need history; this deduction never authorizes a state-only TT.
+
+The actual model has only boardA(fixed1) and handA(free beta) channels. Initial hands
+are empty, A cannot promote/change owner/type/spawn, captures remove from game and
+there are no drops. Induction on supported effects gives phi=(d,0) at EVERY reachable
+leaf, with d in{0,1} here. Hence every nonterminal gradient is(0,0); actual terminal
+observations also have zero gradient. TD eligibility and every update remain0 for
+any valid lambda/eta, even with nonzero TD errors. No training or update was executed
+to establish this. Randomizing beta cannot alter the evaluator or a fixed-work cold
+search on this domain. Timing/censoring/RNG changes are separate experimental effects.
+
+The abstract nonzero-hand and second-ordinary-type controls do have nonzero free
+gradients, so the conclusion is deliberately narrow. Disabled drops alone would NOT
+prove an empty hand if initial stock were supplied. Promotion/new executable types
+or hand transfer invalidate the induction; the intended A/B learning domain remains
+open. Nonzero free-feature exposure is necessary, not sufficient for useful learning:
+target/error variation, noncancelling TD updates, behavior and terminal quality remain
+separate requirements. Changing the fixed unit/scale or introducing history/positional
+features is a different model choice, not an automatic consequence of this example.
+
+For a GIVEN mixture with probability p on WIN_for0 and1-p on DRAW, a common scalar c
+has risk (c-p)^2+p(1-p). Equal weights give the earlier minimum0.25. This algebra does
+not identify the natural visitation mixture or the behavior-policy return targeted by
+the real episodic learner. TDLeaf learns search-to-search/actual terminal signals under
+its own controller, not the supplied-root minimax-label regression by definition.
+
+## New Pro STOP applied at07:14UTC
+
+The complete newly committed Pro review596837f94d5002875e2bb7730956c00178827af4,
+path docs/reviews/chatgpt_patrol/20261031155737_JST_e4565fa3.md,
+blob72d5df6729bf0ae6182b34484ded1819e3f5493f was saved/read before assessment.
+ADOPT and EXECUTE: close this existing-alias consumer line. The exact-value claim
+misuse was not found in an active producer; existing q0/Session/bank safeguards
+are already present. No additional alias, classifier, check framework or search
+call is justified. Earlier derivations above are retained as scoped evidence,
+not a continuation queue. The four-call q0 probe's actual5call failure remains closed.
+
+Four persisted typed PVs were independently replayed by the offline reader:
+52public submissions, with no Player/prover call. Fourteen offline checks passed,
+including twelve corruption refusals and the closed-producer refusal.
+The root/perspective/selected semantic action/PV-prefix joins, literal terminal
+versus material values and cumulative first+second dispatch accounting all pass.
+This replay validates the preserved observations, not the failed experimental protocol
+or a new full WDL solution. Tests block Player/prover entry rather than refill calls.
+
+The later independent fallback is the distinct source-only PN mechanism assessment
+in AUX_PN_MECHANISM_SCOPE_20261031.md. It does not reopen this old example or implement
+PRIMARY's proposed algorithm. Duration is measured in the active role-local ledger;
+this checkpoint is not itself a finish or an assertion of60effective minutes.

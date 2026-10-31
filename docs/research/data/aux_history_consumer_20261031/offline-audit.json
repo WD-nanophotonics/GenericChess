@@ -1,0 +1,51 @@
+{
+  "rows": [
+    {
+      "history": "DRAW",
+      "depth": 1,
+      "actor1_regret": 1,
+      "literal_leaf_terminal": null,
+      "terminal_status": "ongoing",
+      "pv_plies": 1,
+      "paid_nodes": 5
+    },
+    {
+      "history": "WIN",
+      "depth": 1,
+      "actor1_regret": 0,
+      "literal_leaf_terminal": null,
+      "terminal_status": "ongoing",
+      "pv_plies": 1,
+      "paid_nodes": 5
+    },
+    {
+      "history": "DRAW",
+      "depth": 3,
+      "actor1_regret": 0,
+      "literal_leaf_terminal": 0,
+      "terminal_status": "repetition",
+      "pv_plies": 3,
+      "paid_nodes": 69
+    },
+    {
+      "history": "WIN",
+      "depth": 3,
+      "actor1_regret": 0,
+      "literal_leaf_terminal": null,
+      "terminal_status": "ongoing",
+      "pv_plies": 3,
+      "paid_nodes": 57
+    }
+  ],
+  "actual_Player_calls_all_dispatches": 5,
+  "planned_Player_calls": 4,
+  "budget_compliant": false,
+  "claim_level": "DESCRIPTIVE_PROTOCOL_FAILURE",
+  "total_paid_nodes": "UNKNOWN_FIRST_RETURN_LOST",
+  "persisted_nodes_lower_bound": 136,
+  "actual_offline_GameSession_submit_calls": 52,
+  "new_Player_calls": 0,
+  "new_solver_calls": 0,
+  "proof_scope": "Joins already executed saved proof checks; does not independently re-prove WIN/DRAW.",
+  "quality_scope": "Constructed exposed roots only; no training, strength, speed or general depth conclusion."
+}

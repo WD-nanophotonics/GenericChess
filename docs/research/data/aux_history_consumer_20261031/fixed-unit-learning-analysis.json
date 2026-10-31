@@ -1,0 +1,171 @@
+{
+  "question": "Can any free material coefficient update alter this entire exact single-fixed-A/no-hand/remove-only subdomain?",
+  "scope": "Analytic invariant qualified to this exact supplied rule and its initial/continuation inventory, not a new generic rule classifier.",
+  "checks": [
+    {
+      "free_hand_weight": -1000000.0,
+      "phi": [
+        0,
+        0
+      ],
+      "raw": 0.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": -1000000.0,
+      "phi": [
+        1,
+        0
+      ],
+      "raw": 1.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": -1.0,
+      "phi": [
+        0,
+        0
+      ],
+      "raw": 0.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": -1.0,
+      "phi": [
+        1,
+        0
+      ],
+      "raw": 1.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": 0.0,
+      "phi": [
+        0,
+        0
+      ],
+      "raw": 0.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": 0.0,
+      "phi": [
+        1,
+        0
+      ],
+      "raw": 1.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": 0.731,
+      "phi": [
+        0,
+        0
+      ],
+      "raw": 0.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": 0.731,
+      "phi": [
+        1,
+        0
+      ],
+      "raw": 1.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": 1000000.0,
+      "phi": [
+        0,
+        0
+      ],
+      "raw": 0.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "free_hand_weight": 1000000.0,
+      "phi": [
+        1,
+        0
+      ],
+      "raw": 1.0,
+      "gradient": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "induction": [
+    "Initial hands are empty; initial only nonroyal type A, fixed unit boardA.",
+    "Admitted plain Leap effects move the same actor and optionally remove an opponent from game. No type/owner changes, promotion, drops, spawn, transfer-to-hand or additional ordinary types.",
+    "Therefore every reachable material feature has form(d,0), d either1or0 here. Different histories/geometry do not introduce another free feature coordinate.",
+    "Model.gradient fixes boardA derivative0; hand derivative proportional0. Every accepted nonterminal gradient is0; every actual terminal gradient is0 by existing TDLeaf convention.",
+    "Frozen TD eligibility starts0 and remains0 for any admitted lambda. All finite errors multiply0; delta and eta-scaled updates remain0. No training run is necessary to establish this.",
+    "For any finite unused hand coefficient beta, all material raw leaves and literal terminal utilities coincide. Under same fixed work, root/history, fresh search state/order/seed, active q0 search decisions cannot change through this coefficient. Wall-time censoring and external randomness are separate resource effects."
+  ],
+  "consequence": "Do not run material-coefficient learning on this one-unit remove-only example to fix the shallow policy error. It has no learnable material ratio under current fixed-unit model. This does not reject learning in the intended A/B, promotion/hand or richer-feature domain.",
+  "not_sufficient": "A free nonzero feature is necessary for a nonzero material gradient, but not sufficient for informative TD errors, noncancelling updates, changed actions or improved WDL.",
+  "negative_assumptions": {
+    "synthetic_nonzero_hand_phi": [
+      1,
+      1
+    ],
+    "synthetic_nonzero_hand_gradient": [
+      0.0,
+      0.09706249286905658
+    ],
+    "synthetic_second_type_phi": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "synthetic_second_type_gradient": [
+      0.0,
+      0.09706249286905658,
+      0.0,
+      0.0
+    ],
+    "meaning": "These abstract feature controls show why nonempty hand or another free current-type feature defeats the zero-gradient proof. They are not newly played Generic states/training. Existing real captured-stock report is separate source evidence."
+  },
+  "conditional_value_projection": {
+    "fixed_prediction": 0.09966799462495582,
+    "equal_weight_risk": 0.4102657145276044,
+    "unrestricted_equal_weight_minimum_risk": 0.25,
+    "general_formula": "For arbitrary GIVEN mixture p of the two minimax labels0/1, risk(c)=p*(1-c)^2+(1-p)*c^2=(c-p)^2+p*(1-p). This is a mathematical supplied-root mixture, not measured occupation, behavior-policy return or actual TD objective.",
+    "decision": "Do not infer an intrinsic material value, convergence failure, a necessary history-feature redesign, or a training benefit from this exact-value alias alone."
+  },
+  "new_Player": 0,
+  "new_solver": 0,
+  "new_games": 0,
+  "new_training": 0,
+  "synthetic_model_gradient_calls": 12
+}
