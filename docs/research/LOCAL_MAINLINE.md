@@ -1,3 +1,29 @@
+## Accepted manual DEV_AUX389af24c — 2026-10-31
+
+Session safe_checkpoint accepted08:04:45UTC with memo ENDED, same06:31:01UTC
+origin/UUID.3786.861988confirmed seconds minus120conservative reserve =
+**61.114366effective minutes**. Administrative/transport/offline gaps and old
+sessions supply no credit. Seven scientific checkpoints;14offline controls PASS.
+Evidence: research/data/aux_pn_mechanism_scope_20261031/{finish,session-ledger,accounting}.json.
+
+Existing history example consumed through actual learner/proof interfaces:
+no active board-only exact-WDL misuse found; new Pro596837f9 STOP applied.
+A separate q0 diagnostic FAILED its cap: first return lost after a consumer
+assertion, repair repeated a slot, actual5>4calls. Raw code/returns/correction
+preserved; producer permanently closed, descriptive results only. No new solver,
+game, training, build, worker or product default; old caps unchanged.
+
+Distinct original-source PN assessment qualifies existing simpler fallback,
+complete-horizon retained threshold, mature anyWIN baseline, proof witness/replay
+cost and local-action versus whole-service quality guarantees. It implements
+no PRIMARY mechanism, new wrapper/guard or duplicate rule/proof engine.
+Reports: AUX_HISTORY_CONSUMER_20261031 and AUX_PN_MECHANISM_SCOPE_20261031.
+
+Closing sandbox15b17795 new kernel/signature report+manifest read SOURCE_ONLY;
+194compressedmembers not consumed, lifecycleRUNNING. No product/Patrol delta
+after596837f9. PRIMARY's reported cost numbers are not AUX replication/adoption.
+No scheduler/PRIMARY state was changed by AUX; manual resume is not a new cadence grant.
+
 ## Accepted AUX4baedcf3 —2026-10-29
 
 Session safe_checkpoint accepted at00:14:45UTC, same22:42:58UTC origin.

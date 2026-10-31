@@ -1,3 +1,11 @@
+## Latest manual resume scope — 2026-10-31
+
+User said continue work in this DEV_AUX chat. This resumes own manual research,
+not another role or recurring schedule. Keep the latest explicit schedule/stop
+scope; another source's self-reported schedule is not itself authorization for
+AUX to change it. Temporary tasks/sources/budgets stay in WORK_PLAN/NEXT_WORK.
+Ordinary effective-time, no duplicate workers and own-checkout rules remain.
+
 ## Latest direct cadence -2026-10-27
 
 User changed both existing patrols to every180minutes, ACTIVE/originalbindings.

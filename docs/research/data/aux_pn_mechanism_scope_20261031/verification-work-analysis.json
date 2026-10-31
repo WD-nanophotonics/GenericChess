@@ -1,0 +1,64 @@
+{
+  "question": "What does the independent Session verifier actually pay for a certificate?",
+  "scope": "Source-derived public GameSession.submit call counts, not measured CPU/wall or a total primitive-cost model.",
+  "definitions": {
+    "N": "Number of visited tree-node occurrences in a successfully verified ordinary-action certificate, root included.",
+    "h0": "Number of ordinary actions in the authoritative root GameRecord, not a guessed board-only ply.",
+    "di": "Ordinary-edge depth of node occurrence i from the certificate root.",
+    "D": "Maximum such depth; certificate rank is a checked strategy-depth bound, not alpha-beta uniform completed depth."
+  },
+  "exact_success_formula": "submit_calls = N*h0 + sum_i(di)",
+  "derivation": [
+    "verify_session_certificate begins with replay_bound(root):h0 submits.",
+    "For each ordinary edge parent->child, GameSession.replay(parent_record) replays h0+d_parent actions, then execute submits the edge once: h0+d_child calls.",
+    "Sum over all nonroot edges plus the initial root replay. Distinct traversal occurrences count separately even if a Python subtree object were shared."
+  ],
+  "success_bounds": "N*h0+(N-1) <= submit_calls <= N*h0+min(N*(N-1)/2,(N-1)*D)",
+  "examples": [
+    {
+      "node_occurrences": 65,
+      "root_record_actions": 0,
+      "chain_public_submit_calls": 2080,
+      "star_public_submit_calls": 64,
+      "ratio": 32.5,
+      "scope": "Conditional abstract certificate shapes only; no claim these exact shapes are realized by the frozen games. No engine/prover execution."
+    },
+    {
+      "node_occurrences": 65,
+      "root_record_actions": 32,
+      "chain_public_submit_calls": 4160,
+      "star_public_submit_calls": 2144,
+      "ratio": 1.9402985074626866,
+      "scope": "Conditional abstract certificate shapes only; no claim these exact shapes are realized by the frozen games. No engine/prover execution."
+    },
+    {
+      "node_occurrences": 129,
+      "root_record_actions": 0,
+      "chain_public_submit_calls": 8256,
+      "star_public_submit_calls": 128,
+      "ratio": 64.5,
+      "scope": "Conditional abstract certificate shapes only; no claim these exact shapes are realized by the frozen games. No engine/prover execution."
+    }
+  ],
+  "partial_and_failed": [
+    "The exact equality is for a complete accepted ordinary-action tree. It cannot be inferred from a partial visit count alone.",
+    "Root admission replays h0 actions before the first verifier node is visited; zero nodes is not zero work.",
+    "A child replay/submit occurs before that child calls budget.visit. A node-budget stop may therefore have one completed transition beyond the count of newly visited nonroot nodes.",
+    "For V visited nodes and valid rank bound D, an outer-call upper estimate including that extra edge is (V+1)*h0+V*D; this excludes declaration/resignation operations and does not bound per-call work.",
+    "Full legal-defense enumeration, rule terminal/check computation, declaration assessment, Session initialization and metadata/record comparison are additional work not measured by submit count."
+  ],
+  "eager_batch": [
+    "Batched PN calls legal_successors before iterating inspected children. With cap1 it may inspect only the root yet generate B authoritative board successors before stopping on the first child visit.",
+    "The existing eager_board_successors/transitions/frontiers fields expose different costs; replacing all of them by PN nodes is invalid.",
+    "Atomic public replay/Core batches poll before/after and may overrun the nominal phase deadline. Actual elapsed/censored returns must be preserved; this is an existing granularity contract, not a newly reproduced bug."
+  ],
+  "memory": [
+    "Retained PN nodes keep full immutable state/record histories. Prefix entries can be shared while tuple reference arrays still grow with history.",
+    "No constant bytes-per-node or textbook depth-first memory advantage follows for the retained-tree threshold prototype; actual RSS remains UNKNOWN."
+  ],
+  "interpretation": "This identifies why fixed PN/verifier visit budgets do not equate whole service. It does not establish that replay is a removable dominant cost or justify a new verifier/kernel/timing campaign.",
+  "new_Player": 0,
+  "new_solver": 0,
+  "new_games": 0,
+  "new_training": 0
+}

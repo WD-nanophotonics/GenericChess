@@ -1,0 +1,22 @@
+{
+  "question": "Can textbook proof-tree deletion or any-win return be counted as new free capability in the current exact-policy route?",
+  "source_only": true,
+  "existing_baseline": "Public mainline already keeps qualifying completed root wins after later abort and optionally stops at any WIN; it preserves source/completed-depth metadata.",
+  "witness_memory": {
+    "paper": "Pages5-6/30 delete proved/disproved subtrees to reduce stored nodes while retaining proof/disproof truth summaries.",
+    "current_consumer": "Current certificate(node) recursively needs concrete selected OR edge and all AND edges, and SessionStrategyCursor later follows that concrete tree.",
+    "deduction": "Deleting the stored witness merely because pn==0 is not a drop-in memory optimization for this independently verified/cursor route. A value summary alone cannot regenerate full typed legal-defense evidence.",
+    "alternatives": "Retaining a compact witness or regenerating it are distinct space/time choices with construction/verification cost; neither was implemented or measured. Do not infer depth-first memory savings for the retained-tree prototype."
+  },
+  "rank_units": {
+    "certificate_rank": "Upper bound on worst-case remaining strategy edges in the returned witness, not shortest mate over all strategies.",
+    "peak_depth": "Maximum depth inspected by PN, not a complete uniform search layer.",
+    "completed_depth": "Uniform iteration depth retained by alpha-beta, with q-policy provenance separate.",
+    "consequence": "No ratio between these fields is a depth or speed advantage. Multiple winning actions have equal WDL even if witness lengths differ."
+  },
+  "exploration_not_gate": "The unknown online trigger rate and witness overhead motivate one cheap bounded matched test, not mandatory full-game proof/calibration before exploratory work. Existing user authorization remains; no new approval queue follows.",
+  "new_Player": 0,
+  "new_solver": 0,
+  "new_games": 0,
+  "new_training": 0
+}

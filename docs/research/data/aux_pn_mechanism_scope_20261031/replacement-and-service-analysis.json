@@ -1,0 +1,48 @@
+{
+  "question": "Which outcome and whole-service guarantees follow from verified-WIN substitution?",
+  "assumptions": [
+    "Same exact full rule/history and named acting seat.",
+    "Finite scored zero-sum WDL game, legal returned root actions; neutral/non-scoring Session outcomes excluded from numeric comparisons.",
+    "WIN certificate independently verified for the acting seat; action selected from its root OR edge, with protocol cancellation/deadline/dispatch status separately qualified."
+  ],
+  "replacement": {
+    "candidate_value": 1,
+    "baseline_interval": "[L_B,U_B]",
+    "gain_interval": "[1-U_B,1-L_B]",
+    "weak_guarantee": "Nonnegative root-action minimax gain against ANY legal baseline action at that SAME context on a successfully verified/adopted WIN slot.",
+    "strict_condition": "U_B<1; rootWIN or changed action alone does not establish it.",
+    "not_game_strength": "Actual future policy must follow a valid strategy and meet continuation service; root-action value is not an observed terminal win."
+  },
+  "baseline_first": {
+    "on_proof_success": "Replace retained legal prefix action by verified WIN action.",
+    "on_failure": "Keep that exact prefix action.",
+    "guarantee": "Never worse in minimax root-action value than THAT retained prefix action.",
+    "not_guaranteed": "No domination of a separately run full-service alpha-beta baseline. Time reserved for proof can change what uniform iterations complete; deeper search is not assumed monotone in actual quality."
+  },
+  "proof_first": {
+    "existing": "Current research chooser first allocates proof, then verification and fallback.",
+    "failure_case": "Fallback may receive less time/nodes; no retained full-budget baseline action is available.",
+    "judgment": "A proof success is safe as a root-action choice; a solve-or-fallback policy as a whole still needs matched full-service comparison."
+  },
+  "finite_panel": {
+    "M": "fixed planned paired slots",
+    "S": "verified AND usable candidateWIN slots",
+    "F": "remaining/failed/censored slots; retain in fixed denominator",
+    "difference": "D=(sum_S(1-Q_B)+sum_F(Q_H-Q_B))/M",
+    "lower_bound": "[sum_S(1-U_B)-2*|F|]/M",
+    "meaning": "This is a deterministic partial-information bound, not a probability/p-value or assumed natural visitation law.",
+    "success_only": "Without baseline action upper bounds below1, verified successes have zero guaranteed positive margin. Dropping unsuccessful/censored slots is not allowed.",
+    "missing_choice_scope": "For a missing/unreturned action, the interval ranges over possible legal completions of that planned slot; no actual action or WDL is imputed. If the protocol defines a failure penalty, that is a different explicit metric."
+  },
+  "continuation": [
+    "A root WIN certificate gives a decreasing-rank strategy, not a guarantee that an arbitrary later controller follows it.",
+    "SessionStrategyCursor binds exact state/record and observes already committed edges. Unexpected own actions invalidate continuation; arbitrary legal opponent defenses must all be covered.",
+    "Per-turn admission/time/cancel failure can censor actual play despite a logically valid root certificate. Record selected, dispatched, committed and actual rule-terminal outcomes separately.",
+    "commit_session_decision has one physical execute, then observer checks may execute hypothetical copies. Do not count these as multiple played moves or omit their whole-game execution cost."
+  ],
+  "new_Player": 0,
+  "new_solver": 0,
+  "new_games": 0,
+  "new_training": 0,
+  "claim_type": "Analytic decision bound, no empirical success-rate or transfer claim."
+}

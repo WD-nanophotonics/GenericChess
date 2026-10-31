@@ -1,0 +1,36 @@
+{
+  "question": "What mature public baseline capability and physical call accounting must a future PN comparison preserve?",
+  "source_commit": "62ca687a126a2c7a54079d66174f7e631f60ea96",
+  "source_only": true,
+  "existing_anywin": {
+    "files": [
+      "generic_chess/ai/alphabeta/search.py",
+      "generic_chess/ai/alphabeta/player.py",
+      "generic_chess/ai/alphabeta/tuning.py",
+      "tests/product/test_completed_root_win.py"
+    ],
+    "default": "stop_after_root_win=False; actual completed root child may already survive a later aborted iteration.",
+    "optional": "True exits after a qualifying improving mate-band root child or a compatible completed/warm winning return, with actual result source and last uniform completed depth preserved.",
+    "not_new_PN": "Saving a completed winning child is already baseline infrastructure. It is not a novel PN mechanism or proof of a completed deeper whole iteration.",
+    "not_Session_certificate": "PlayerDecision provides action/score/PV/provenance, not an independently checked all-defense SessionWinCertificate. Do not convert result_source or mate score alone into that transport.",
+    "prior_source_tests": "Read only: h3 all-defense controls, window equality refusal, Core/Native variants, warm TT, controls after callback and static-score clamp. They were NOT re-executed; no new Player call.",
+    "actual_learner": "Maintained q0 adapter rejects nonliteral completed_root_win as a TDLeaf target; this is an existing correct distinction."
+  },
+  "baseline_relevance": [
+    "Any future PN mechanism should state what it adds beyond this existing anytime behavior, its full-history TT, q policy, root tactical handling and actual current move ordering.",
+    "The old proof chooser simple fallback is not this baseline. Source search over scripts/generic_chess found no current direct solver+public AlphaBetaPlayer full-PlayerDecision chooser; this is scoped source coverage, not proof no future consumer can exist.",
+    "Proof rank is a checked worst-case strategy-depth bound, peak_depth is deepest inspected PN node, completed_depth is uniform alpha-beta completion; those units cannot be advertised as a depth speedup ratio.",
+    "Choosing any WIN is not necessarily shortest mate. A winning root action need not show a strength gain over another winning baseline action."
+  ],
+  "future_budget_arithmetic": {
+    "Pro_proposal": "At most32physical1second search-service queries arranged in pairs; construction/verification/whole comparison also need explicit bounded accounting.",
+    "example": "8families x2layouts x2arms=32physicalcalls=16pairedcomparisons, not32pairs.",
+    "meaning": "Clarification of a proposed future count, NOT a launched/frozen AUX schedule or implementation authorization.",
+    "failures": "Every attempted slot retains its outcome; a started failure still consumes its one physical invocation. Do not silently refill a missing return or reinterpret32pairs as32calls.",
+    "time": "Per-call nominal caps do not mathematically guarantee total actual32seconds when atomic operations overrun; actual cumulative service and a separate declared whole envelope must be reported."
+  },
+  "new_Player": 0,
+  "new_solver": 0,
+  "new_games": 0,
+  "new_training": 0
+}

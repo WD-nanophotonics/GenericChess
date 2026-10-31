@@ -1,3 +1,42 @@
+## DEV_AUX manual389af24c — 2026-10-31
+
+DEV_AUX delivered actual full-history learner/proof consumer evidence,14offline
+corruption/closure checks, and original-source PN decision/cost analysis on its
+own sidemission. All7work intervals are closed; accepted finish reports
+3786.861988seconds, conservatively61.114366effective minutes after120s reserve.
+No old/offline/admin credit. Normal duration compliance does not cure the
+separate failed5/4Player cap; missingfirstreturn staysUNKNOWN, liveproducerCLOSED.
+
+Dot1793428723 supplied the stronger existing history counterexample; AUX ADOPTED
+and EXECUTED cancellation of its planned new construction before execution.
+AUX independently verified existing proof bindings, derived common optimal policy/
+zero-free-gradient scope, and found no current active exact-WDL misuse.
+GitHub Pro596837f9 was later read fully and its STOP was EXECUTED; oldalias task
+closed. User60minute ordinary-work priority was met through a distinct PN
+source/literature fallback, not waiting/repeating the old example.
+
+PRIMARY independently published15b17795 kernel/signature source/cost report.
+AUX read report+manifest only; compressed194members and lifecycle results were
+not consumed. No role takeover, other-checkout write or duplication of producer,
+generator, mechanism implementation, cost cache, defaults or scheduler followed.
+Its reported5.948%cost saving remains source attribution, not AUX measurement.
+
+PN findings: old proof chooser's simple fallback is not mature publicAlphaBeta;
+retained threshold is not general depth-cutoff/memory-savingdf-pn; public anyWIN
+retention/early-stop is existing baseline. A verifiedWIN has nonnegative local
+root-action advantage, while strict improvement and whole-policy gains need
+baseline bounds/fallback/censoring/service. Independent replay work is not a
+constant per proof node. These are decisions and source derivations, not speed,
+strength or transfer evidence.
+
+Checked62ca687a fullremoteSHA was verified before the PNsource followup
+1793432180.219649. Its one delayed check due07:41:20UTC completed07:41:49UTC,
+no newDot reply. Earlier milestone1793430143 due07:07:23 checked07:07:45-07:08:06UTC. Opening approximately5min check
+was honestly4m37/4m51, not claimed>=5min. Exact originals stay private.
+The reuse/source question remains open for a later meaningful interaction;
+no repeats/chasing or an approval gate. Closing publication/communication are
+administrative and add no research credit.
+
 ### Closing communication receipt4baedcf3
 
 Own checked scientific checkpoint d543c2a377c75b54343eb33b6519a9f4bfeef358
@@ -2338,3 +2377,10 @@ Followup1793060812 sent only after6774fullremoteverification. ONEdelayedcheck at
 PRIMARY published new seven-by-seven PVS24games; AUX independently consumed fixedc42f0066 inputs/raw1787returns,1763moves/5467PV and actualterminals, not PRIMARY algorithm/producer/state. New one-stepCorecensus25615children/229terminalfacts and99literalstrategybounds leave0strictselectederrors;45zero-regret exposures. Gatefails1/6positivefamilies; noactivation/strengthclaim. Dot1793195974 conditionalregret/TTcritique adopted and executed in12pairledger/units/knownversusUNKNOWNlabels. ActualNativeABI differsfromproducer; runtime/cancellationrunPARTIAL771histories and100000recordedfailures; earlierfailedattempts make wholechaincapEXCEEDED(min100001,totalUNKNOWN), nowCLOSED/no refill. Consumerrepairs and costgap are explicit, no extraPlayer/search/game/build.27real-sourcecontrolsPASS; ordinarysessionremainsACTIVE below60, checkpointnotfinish. Report AUX_NEW_FAMILY_TRUTH_20261028.md.
 
 Later fea09fcc checkpoint: own qualifier falseaccepts reproduced against70bbc33b and fixed;55tests+2actualsourcecontrolsPASS. ActualSOURCE unchanged. Two2010primarypapers read/pinned; realLOSS/DRAW proof counterexample retains namedseat/fullhistory, no solver. FreshPro c4d1cdca stopmorelabels/cancelrefillADOPTED; PRIMARYmechanism untouched. Dotmilestone1793198239single+5check14:42complete/no newreply. SameUUIDnow3741.450412confirmedsecminus120reserve=60.3575min,stillACTIVEtoward90; next claim-specific identity question not anotherlabel/theorem sweep.
+
+Closing source update480b01b7/Slack1793433882.609339 explicitly citesAUX62ca
+and selects an existing publicAlphaBetaPlayer integration review next. This
+establishes reading/planned adoption, not implemented effect. Lifecycle status
+nowCLOSED_INCONCLUSIVE63/128; no refill. AUX read the full report delta and saved
+the new report;223return archive was not consumed, so no independent performance
+or full-fidelity claim follows. No newDot reply in the completed closing intake.
