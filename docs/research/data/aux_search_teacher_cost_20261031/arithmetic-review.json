@@ -1,0 +1,86 @@
+{
+  "scope": "Independent arithmetic/source-assumption review of EXISTING frozen cases only; no new model, cases, game or solver call.",
+  "method": "Fraction arithmetic, per-world path sums and finite-belief Bellman recursion distinct from saved four result constants.",
+  "proof_tree_count_rows_verified": 4,
+  "correlated_orders_verified": 6,
+  "source_context_values": [
+    {
+      "known_alternative": "0",
+      "adaptive_Q": [
+        "21/20",
+        "81/80"
+      ],
+      "initial_optimum": "21/20"
+    },
+    {
+      "known_alternative": "1",
+      "adaptive_Q": [
+        "91/80",
+        "6/5"
+      ],
+      "initial_optimum": "6/5"
+    }
+  ],
+  "own_two_bit_net": "7/40",
+  "original_sources_rechecked": "Furtak/Buro PDF5 Theorem6.1 fixed alpha and product expectation; Hay PDF4 Definition6 and PDF5 Example4 Qstar with adaptive continuation",
+  "qualifications": [
+    "The original fastest-cut theorem statement does not explicitly state statistical independence, but its displayed product expectation needs suitable factorization/conditional-cost invariance. The report uses only the qualified fixed-product model, not a distribution-free practical claim.",
+    "Hay source context Qstar permits later observations. Myopic Q from Definition6 stops after one hypothetical observation; these are distinct quantities.",
+    "All computation costs remain abstract utility or direct-submit units as labeled; no measured seconds-to-WDL exchange."
+  ],
+  "source_input_hashes": {
+    "analysis.json": "abc64b6135c949a55eff613cf255f916c510e51ab5ef9d669363b9555c029da3",
+    "consumer-cost-qualification.json": "1a47b3ad3f348d07df57bc267057e195e6fbc42154268546df42a09faac538fd",
+    "context-value-case.json": "1bc8cc3a28fc5d1ef2bd36866c52a9174415be856194cc21b46124fc80dfb0d5",
+    "operational-censoring-case.json": "8e7aa0c883f209d14645788c8f64a0e753b14256adfad71e99f13ef6dcbe9fa4",
+    "selection-source.json": "5368d6faea3d978aee4dbe834cf1c9a2abf5495d6da629f2c15fd0891130e281",
+    "selection-value-case.json": "c244d6c6b8efcf92e92b3d769047f26d76e2c5ed2830c6e5ff279511d839feed",
+    "source.json": "24e691853c9d99416473ffe5cc67a8898596da8abf111533a57c2525ca534b2f"
+  },
+  "closing_alternative_assessment": [
+    {
+      "alternative": "Train an action-cost/cheapest-PV teacher now",
+      "fresh_evidence": "Current actual TT/orderer/runtime fields plus original-source Section8: no per-action counterfactual cost target, no new usable prospective PN dataset.",
+      "decision": "DEFER execution; do not manufacture missing cost/WDL labels or reopen this source task.",
+      "decision_changing_input": "A real published fixed-policy caller and compatible completion/verification/service receipts; outcome and accounting schema assessed together."
+    },
+    {
+      "alternative": "Implement another continuation orderer or enable existing countermove alongside PRIMARY PN",
+      "fresh_evidence": "Existing Generic flag/default/query-local lifetime and learner non-use are now source-pinned; official mature source uses a different multi-context mechanism. Latest Pro keeps one prospective PRIMARY policy and assigns no duplicate AUX task.",
+      "decision": "REJECT duplicate implementation and automatic arm combination. Existing component is only a conditional baseline candidate.",
+      "decision_changing_input": "A separately selected single-mechanism evaluation in own scope, preserving service and new-family criteria; no current launch."
+    },
+    {
+      "alternative": "Refill partial terminal truth until selected quality appears",
+      "fresh_evidence": "Original25k cap produced20/1/3; saved-only censoring bounds and family imbalance now explicit. Last fetched sandbox still7a812fd1 without new consumer.",
+      "decision": "REJECT cap refill or exposed-context search. Negative/UNKNOWN results are sufficient to close this bounded evidence consumer.",
+      "decision_changing_input": "Genuinely new source/assignment under current user/Pro scope, with a new decision-changing question rather than extension of frozen inputs."
+    }
+  ],
+  "source_context_gain_over_stopping": [
+    {
+      "known_alternative": "0",
+      "stop_value": "1",
+      "observe_first_gain": "1/20",
+      "observe_second_gain": "1/80"
+    },
+    {
+      "known_alternative": "1",
+      "stop_value": "1",
+      "observe_first_gain": "11/80",
+      "observe_second_gain": "1/5"
+    }
+  ],
+  "no_numeric_transfer": {
+    "paper_plot": "Qstar minus stopping; saved case fields are absolute Qstar utility.",
+    "own_game_event": "terminal within two plies, not latent eventual return.",
+    "actual_service": "per-query whole-service wall/CPU, no fitted exchange rate to either abstract utility.",
+    "decision": "Do not compare paper Q gains, direct-submit proof counts and actual service seconds as if they shared a common unit."
+  },
+  "current_handoff_interpretation": {
+    "cheapest_cut": "An observed successful search path is a policy-conditioned witness, not an identified minimum-discovery-cost action.",
+    "operational_target": "Recorded solver completion, verified completion and usable whole-service decision must be separate labels, with lost returns missing.",
+    "deployment_test": "Only one selected actual mechanism and the same declared whole service can establish a practical improvement; source capability, node savings and output change alone do not.",
+    "scope": "No change to PRIMARY design, no extra arm or old packet refill. Actual generic full-rule target remains; present facts apply only to the declared plain-Leaper inputs."
+  }
+}

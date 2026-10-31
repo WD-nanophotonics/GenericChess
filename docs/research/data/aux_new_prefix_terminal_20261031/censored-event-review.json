@@ -1,0 +1,38 @@
+{
+  "scope": "Conservative OUTER bounds for the original equal-24-context, uniform-root-action/uniform-defense TWO-PLY terminal-loss event only. Not sharp feasible-game bounds or minimax/final return.",
+  "input_sha256": "a045646809faf11e3b7f78b59f935c5c2581278f6d502760615b28ad5bd530c9",
+  "new_Core_submits": 0,
+  "partial_context": {
+    "legal_root_actions": 44,
+    "action_records": 29,
+    "completed_actions": 28,
+    "unstarted_actions": 15,
+    "unfinished_action_observed_replies": 6,
+    "unfinished_action_legal_replies": 43,
+    "all_observed_replies_ongoing": true,
+    "uniform_loss_bounds": [
+      "0",
+      "31/86"
+    ],
+    "selected_action_completed_legal_replies": 2,
+    "selected_loss_bounds": [
+      "0",
+      "0"
+    ],
+    "upper_formula": "15/44 + (43-6)/(44*43) =31/86"
+  },
+  "original_24_context_uniform_loss_bounds": [
+    "1/48576",
+    "292511/2088768"
+  ],
+  "original_24_context_selected_loss_bounds": [
+    "0",
+    "1/8"
+  ],
+  "risk_difference_conservative_outer_bounds": [
+    "-6071/48576",
+    "292511/2088768"
+  ],
+  "complete20_conditional_event": "1/40480",
+  "decision": "No sign-identified full24 two-ply risk improvement. Actual final return and minimax effect remain unidentified. Missing3 contexts are assigned outer event ranges[0,1], not DRAW/WDL labels. No missing context rerun."
+}

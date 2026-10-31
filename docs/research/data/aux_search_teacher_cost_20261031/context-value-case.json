@@ -1,0 +1,31 @@
+{
+  "source": "Hay et al2012 Example4, exact recalculation for known third alternatives0and1, all source arm priors/cost unchanged. Not new game/cost performance data.",
+  "arm1_values": [
+    "-3/2",
+    "3/2"
+  ],
+  "arm2_values": [
+    "1/4",
+    "7/4"
+  ],
+  "independent_equal_priors": true,
+  "cost_in_abstract_payoff_units": "1/5",
+  "cases": [
+    {
+      "known_third_arm": "0",
+      "initial_best_mean": "1",
+      "Q_observe_first": "21/20",
+      "Q_observe_second": "81/80",
+      "optimal_first_computation": 1
+    },
+    {
+      "known_third_arm": "1",
+      "initial_best_mean": "1",
+      "Q_observe_first": "91/80",
+      "Q_observe_second": "6/5",
+      "optimal_first_computation": 2
+    }
+  ],
+  "consequence": "Even equal initial best posterior mean1 does not fix the most valuable next computation. Certainty and alternatives matter; per-arm marginal index need not rank investigations universally. This does not supply calibrated priors or a metacontroller for GenericChess.",
+  "execution": "four elementary posterior expectations for two declared contexts; no fitting/search/Core/Player/model update."
+}

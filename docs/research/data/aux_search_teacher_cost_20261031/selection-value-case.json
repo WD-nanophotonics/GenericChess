@@ -1,0 +1,83 @@
+{
+  "scope": "Own exact epistemic four-world counterexample, no RuleSet, Core, Player, proof search, fitting or policy deployment.",
+  "model": {
+    "fallback_known_draw": 0,
+    "candidate_WDL": "WIN+1 iff two independently unknown obligation bits are both1, otherwise LOSS-1",
+    "prior_each_bit": "Bernoulli1/2",
+    "computation": "reveal one unknown bit exactly",
+    "cost_per_computation_in_payoff_units": "1/20",
+    "max_computations": 2
+  },
+  "initial_candidate_expected_utility": "-1/2",
+  "initial_stop_value": 0,
+  "myopic_one_step_Q": "-1/20",
+  "myopic_stops": true,
+  "adaptive_policy": "Reveal x; if0 choose fallback, if1 reveal y then choose candidate iff y1 else fallback.",
+  "worlds": [
+    {
+      "x": 0,
+      "y": 0,
+      "candidate_actual_WDL": -1,
+      "probability": "1/4",
+      "adaptive_computations": 1,
+      "selected_payoff": 0,
+      "net_abstract_utility": "-1/20"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "candidate_actual_WDL": -1,
+      "probability": "1/4",
+      "adaptive_computations": 1,
+      "selected_payoff": 0,
+      "net_abstract_utility": "-1/20"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "candidate_actual_WDL": -1,
+      "probability": "1/4",
+      "adaptive_computations": 2,
+      "selected_payoff": 0,
+      "net_abstract_utility": "-1/10"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "candidate_actual_WDL": 1,
+      "probability": "1/4",
+      "adaptive_computations": 2,
+      "selected_payoff": 1,
+      "net_abstract_utility": "9/10"
+    }
+  ],
+  "adaptive_expected_computations": "3/2",
+  "perfect_info_gross_value": "1/4",
+  "adaptive_net_utility": "7/40",
+  "general_cost_positive_iff": "c < 1/6 with this policy/model",
+  "application_boundary": "Partial AND proof work may have delayed decision value; one-step failure to change an action is not universal evidence against a bounded multi-step test. Actual Leaper obligation independence, calibrated prior, proof-completion cost, verification and fallback opportunity are NOT supplied by this example.",
+  "units": "The abstract c is in payoff units. No conversion from milliseconds/nodes to WDL is given. Project matched-service comparisons are constrained objectives; do not subtract seconds from WDL or waive a hard deadline.",
+  "operational_targets": [
+    {
+      "target": "Returned PROVEN_WIN at declared solver allowance",
+      "labels": "actual solver return status under that declared version/input/budget; not latent WIN existence"
+    },
+    {
+      "target": "Independently verified AND usable proof decision",
+      "labels": "needs actual checker/selection/service receipts; PROVEN_WIN alone does not supply it"
+    },
+    {
+      "target": "Consumed service under fixed policy",
+      "labels": "actual charged wall/CPU including failed/aborted work; not unbounded time-to-proof"
+    },
+    {
+      "target": "Time-to-proof if allowed to continue",
+      "labels": "right-censored at budget when no proof; do not replace latent completion time by cap as an uncensored observation"
+    },
+    {
+      "target": "Latent full-history WDL or strict action advantage",
+      "labels": "only actual semantic bounds/truth or declared empirical endpoint; solver UNKNOWN is not LOSS/DRAW; missing/lost returns stay missing"
+    }
+  ],
+  "positive_next_hypothesis": "A context- and budget-conditioned predictor of usable proof completion is a legitimate supervised operational target distinct from material value learning. It requires real applicable call receipts and a cheap current consumer; no model/training framework is implemented or justified by this abstract example."
+}

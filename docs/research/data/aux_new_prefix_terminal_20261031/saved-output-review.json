@@ -1,0 +1,66 @@
+{
+  "method": "Independent saved-output reconstruction; no producer import, GameSession, Core replay or additional submit",
+  "input_sha256": "a045646809faf11e3b7f78b59f935c5c2581278f6d502760615b28ad5bd530c9",
+  "complete": 20,
+  "partial": 1,
+  "not_started": 3,
+  "root_action_records": 719,
+  "reply_records": 24092,
+  "terminal_witnesses": [
+    [
+      "lifecycle/return-050.json",
+      1,
+      44
+    ]
+  ],
+  "complete_context_equal_mixture_event": "1/40480",
+  "saved_selected_event": "0",
+  "all_complete_bounds": [
+    -1,
+    1
+  ],
+  "regret": [
+    0,
+    2
+  ],
+  "ordinary_transition_source": "generic_chess/core/semantic_executor.py SemanticEngine._transition step7 work.side=1-side",
+  "scope": "Only saved data consistency and source semantics; legal alternatives not independently re-enumerated; no original cap reopened",
+  "family_coverage": {
+    "0": {
+      "COMPLETE": 6
+    },
+    "1": {
+      "COMPLETE": 6
+    },
+    "2": {
+      "COMPLETE": 6
+    },
+    "3": {
+      "COMPLETE": 2,
+      "PARTIAL": 1,
+      "NOT_STARTED": 3
+    }
+  },
+  "lifecycle_prefix_is_not_full_record_ply": [
+    {
+      "prefix": 1,
+      "full_record_actions": 4
+    },
+    {
+      "prefix": 2,
+      "full_record_actions": 5
+    },
+    {
+      "prefix": 3,
+      "full_record_actions": 6
+    }
+  ],
+  "full_history_semantics": {
+    "max_ply": 96,
+    "repetition_limit": 4,
+    "capture_disposition": "remove_from_game",
+    "ordinary_turn": "alternates at each submit",
+    "all_selected_records_no_declaration": true,
+    "copy_semantics": "Session copy shares frozen GameState and immutable history tuples; submit replaces own state/history only. Original producer checks parent state+record at each completed root action."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "question": "Is cheap conditional response ordering already implemented, actually enabled, and equivalent to the Pro-linked mature continuation history?",
+  "upstream_repository": "official-stockfish/Stockfish",
+  "upstream_sha": "ff7cee4244ec96ea488c402669e3674c0574dce6",
+  "upstream_sources": {
+    "search.cpp": {
+      "url": "https://github.com/official-stockfish/Stockfish/blob/ff7cee4244ec96ea488c402669e3674c0574dce6/src/search.cpp",
+      "sha256": "7f485ec5df2f8aa013a8aac27f17f88f73befbce4072adeb77d43da5b8730895"
+    },
+    "movepick.cpp": {
+      "url": "https://github.com/official-stockfish/Stockfish/blob/ff7cee4244ec96ea488c402669e3674c0574dce6/src/movepick.cpp",
+      "sha256": "a6c7ee8c47a506c25aa8ef723ce2ab38a215caa49779a02459b00c8e5bf10033"
+    },
+    "history.h": {
+      "url": "https://github.com/official-stockfish/Stockfish/blob/ff7cee4244ec96ea488c402669e3674c0574dce6/src/history.h",
+      "sha256": "f6e957d6e717348f58aa308f88aefddb5975e6a6c1d23e936ecf3548cbb48c39"
+    },
+    "search.h": {
+      "url": "https://github.com/official-stockfish/Stockfish/blob/ff7cee4244ec96ea488c402669e3674c0574dce6/src/search.h",
+      "sha256": "80d6981444494876c27e4f3a0e8eeead7439ad8f8aa9c642c73a1222edd84a26"
+    }
+  },
+  "own_product_source": "480b01b7e3df1fb6a147edc40d05cfc7aa286b90; unchanged at Pro7a812fd1",
+  "source_coverage": "Upstream move history table/update, continuation offsets, quiet/evasion score, worker reset and call sites; not whole Stockfish correctness or playing evaluation. Own MoveOrderer, StagedMovePicker, negamax/root context, public Player, learner constructor and existing probe/tests read.",
+  "current_reuse": {
+    "engine_flag": "SearchTuning.use_countermove=True already exists, defaultFalse",
+    "existing_probe": "scripts/semantic_probe_cost.py --countermove already forwards actual flag",
+    "producer_hook": "negamax beta cutoff invokes record_countermove(prev_action,action) only when use_ordering and non-None previous search-path action",
+    "consumer_hook": "MoveOrderer/MovePicker only reorder members of actual legal list; TT/capture/promotion precedence can shadow quiet countermove priority",
+    "lifecycle": "one fresh MoveOrderer per root-search Context; shared across iterative depths, not retained by a persistent Player across choose calls",
+    "actual_played_prefix": "root negamax starts with previous actionNone; does not seed response context from the last played GameRecord action",
+    "learner": "maintained mainline_search.search constructs SearchTuning(root tacticalFalse,fullPVTrue) without countermove. Existing feature not used by that caller; no API option added."
+  },
+  "upstream_not_equivalent": "Stockfish uses multiple previous-ply piece/target contexts, in-check/capture conditioning, signed saturating updates and multiple history/threat/material terms. Generic single previous-fullAction response is a cheap component, not this whole heuristic. No constants/Chess piece priors/SEE/capture or pawn tables ported.",
+  "saved_return_observation": {
+    "measurement": {
+      "returns": 96,
+      "countermove_hits_all": 0
+    },
+    "signature-cost": {
+      "returns": 64,
+      "countermove_hits_all": 0
+    },
+    "lifecycle": {
+      "returns": 63,
+      "countermove_hits_all": 0
+    },
+    "source_constructor": "all three frozen script constructors pass only localhash tuning; countermove remains defaultFalse. Zero hits alone would not prove disabled or ineffective; frozen source supplies the first conclusion, no effect test supplies the second."
+  },
+  "first_opportunity_source_lemma": {
+    "premises": "ordinary fresh root Context, full-window iterative main search, no extra main extensions/research policy, q ordering does not use countermove, no external injected orderer history, distinct public root actions",
+    "if_no_attempt_beyond_D2": "No direct countermove priority can be consumed: D1 has root previousNone, D2 child previous keys are unique root actions not yet revisited. Later main iteration/work can create/reuse context. This is not an equal-wall action-equivalence claim.",
+    "caveat": "A retained completed_depth2 return may include aborted D3+ work and its hits; use actual work/result_source. Potential D3+ exposure need not be a hit; TT may already prioritize the same response, or the response is not an eligible quiet/legal member.",
+    "not_universal": "No rule/game strength prediction or new runtime test is claimed from this source argument."
+  },
+  "measurement_limits": [
+    "countermove_hits counts eligible priority exposure, not necessarily changed rank, cheaper proof, completed result effect or quality. Existing product source says this explicitly.",
+    "Current saved data did not enable the feature, so no acceleration/quality/learner benefit follows.",
+    "One future comparison must select one declared mechanism and preserve all fixed service/caps; do not add this to the current PRIMARY PN arm or call it a Stockfish port."
+  ],
+  "decision": "REUSE existing opt-in if this exact cheap one-step response mechanism is later selected; do not build a second conditional orderer, model or multi-history system now. Current PRIMARY owns its separate prospective policy experiment. New ordinary AUX work is source-only, zero new Player/PN/Core/game/train/build calls."
+}

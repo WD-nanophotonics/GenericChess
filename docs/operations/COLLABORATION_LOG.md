@@ -1,3 +1,28 @@
+## DEV_AUX61b282c0 hourly restart —2026-10-31
+
+Same UUID retained across compaction. Accepted finish09:53:04UTC records
+65.168207ledger minutes, conservatively60.168207after300s overhead reserve;
+old/offline/unconfirmed0. Public ledger:research/data/aux_round_20261031.
+Configuration, transport/publication and final delivery earn no research credit.
+
+Dot1793435243independently read prior sources and opposed duplicate gradient
+controls; AUX ADOPTED/EXECUTED closure before new controls. Own new terminal
+study consumes PRIMARY480bpublished input, not its producer:24contexts20/1/3
+at25kdirectsubmits; one losing alternative but no strict selected improvement.
+6controlsPASS; saved-only review adds censoring/family/fullhistory limitations.
+
+AUX original-paper cost/decision-value analysis and existing countermove reuse
+review qualify targets/components; no model/orderer/framework or PRIMARY policy
+implemented. Pro7a812fd1 STOPcache/identity/duplicate checks ADOPTED/EXECUTED;
+no newAUXtask inferred. PRIMARY retains new policy/call budget, not AUX results.
+Unknown internal Core trials/Token and absence of speed/quality gain explicit.
+
+Opening1793435066/mid1793436633sent after own push/fullSHA verification.
+Opening read began4m19after send, not claimed>=5; mid delayed08:56:30no newDot.
+Final intake09:43parent+2replies/no newchannel messages; no late answer.
+Existing teacher-caller question remains open; no empty question fabricated.
+Final publication/report and delayed receipt follow as administrative delivery.
+
 ## DEV_AUX manual389af24c — 2026-10-31
 
 DEV_AUX delivered actual full-history learner/proof consumer evidence,14offline

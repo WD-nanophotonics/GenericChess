@@ -1,0 +1,48 @@
+{
+  "question": "Which prediction labels survive budget censoring?",
+  "two_observationally_equivalent_workload_laws": [
+    {
+      "label": "A",
+      "success_time_seconds": [
+        1,
+        3
+      ],
+      "equal_probabilities": true,
+      "cap_seconds": 2,
+      "observed_spent_seconds": [
+        1,
+        2
+      ],
+      "proof_return_labels": [
+        "SUCCESS",
+        "UNKNOWN"
+      ],
+      "mean_spent": "3/2",
+      "mean_unbounded_success_time": 2
+    },
+    {
+      "label": "B",
+      "success_time_seconds": [
+        1,
+        100
+      ],
+      "equal_probabilities": true,
+      "cap_seconds": 2,
+      "observed_spent_seconds": [
+        1,
+        2
+      ],
+      "proof_return_labels": [
+        "SUCCESS",
+        "UNKNOWN"
+      ],
+      "mean_spent": "3/2",
+      "mean_unbounded_success_time": "101/2"
+    }
+  ],
+  "identifiable_in_this_finite_model": "Budget2 success frequency1/2 and consumed-service mean3/2 coincide. Unlimited mean proof time is not identified by the same records; cap is not an uncensored solve-time label.",
+  "logical_WDL": "Neither completion label proves which failed contexts are latentWIN; a finite resource UNKNOWN remains semanticUNKNOWN. Lost data is distinct from a recorded completed failure/timeout.",
+  "budget_conditioning": "Solver-only success, verified success and end-to-end usable selection are different targets. Changing proof/verifier/fallback allocation can change the overall endpoint; no blanket monotonicity of whole-policy quality is inferred from solver time.",
+  "decision": "An actual future caller may learn an explicitly supervised operational completion/cost target without knowing every WDL. The current source review supplies no actual calibrated priors, timing model, training set or caller implementation; no new campaign/estimator is built.",
+  "computation": "Exact arithmetic countermodel, not sampled runtime/game/training."
+}

@@ -1,0 +1,60 @@
+{
+  "actual_paths": {
+    "orderer": "generic_chess/ai/alphabeta/ordering.py::MoveOrderer.order",
+    "attempts": "generic_chess/ai/alphabeta/search.py::negamax.child_search",
+    "stats": "generic_chess/ai/alphabeta/statistics.py::SearchStatistics",
+    "TT": "generic_chess/ai/alphabeta/transposition.py::TTEntry",
+    "frontier": "generic_chess/core/search_runtime.py::SearchPathRuntime.legal_actions"
+  },
+  "mainline_source": "480b01b7e3df1fb6a147edc40d05cfc7aa286b90; product paths unchanged from own current checkout",
+  "cost_information_available": "TT stores key/depth/score/bound/best_action/generation, not per-action subtree cost. SearchStatistics stores aggregate generation/evaluation/ordering work, not counterfactual action costs. MoveOrderer stores pooled attempt/cutoff frequencies, not beta/depth/cost-conditioned labels.",
+  "branching_feature_not_free": "Current root legal action list is known, but child out-degree requires the child frontier or a reused previously generated count. Runtime legal cache belongs to current position and restores across pop; it is not a persistent all-child out-degree table. Do not treat paper prior-expanded child counts as current free features.",
+  "prefix_swap_saving": {
+    "assumptions": "fixed window, unchanged sibling costs/cut probabilities after previous failures, no sharing/alpha adaptation",
+    "i_then_j": "c_i+(1-p_i)*c_j",
+    "j_then_i": "c_j+(1-p_j)*c_i",
+    "saving_from_i_to_j": "p_j*c_i-p_i*c_j",
+    "net_condition": "extra feature/inference/reordering work H must be less than that saving in the SAME cost unit; caller whole deadline still applies",
+    "example": {
+      "c_i": 10,
+      "p_i": "9/10",
+      "c_j": 1,
+      "p_j": "1/2",
+      "gross": "41/10",
+      "net_if_H_5": "-9/10"
+    }
+  },
+  "full_window_root_example": {
+    "MAX_root": {
+      "A_MIN_leaves": [
+        3,
+        4
+      ],
+      "B_MIN_leaves": [
+        2,
+        100
+      ]
+    },
+    "A_then_B_leaf_evaluations": 3,
+    "B_then_A_leaf_evaluations": 4,
+    "root_beta_cut_probability_both": 0,
+    "reason": "Root searches both actions; alpha tightening changes later child work. A cut-node ratio theorem is not a universal root-order theorem."
+  },
+  "cache_conditioning_example": {
+    "A_AND_obligations": {
+      "X": 10,
+      "Y": 3
+    },
+    "B_AND_obligations": {
+      "X": 10,
+      "Z": 5
+    },
+    "cold_A": 13,
+    "cold_B": 15,
+    "Z_already_cached_A": 13,
+    "Z_already_cached_B": 10,
+    "scope": "Abstract additive proof discovery with perfect reusable subproof; not current verifier runtime/cost measurement. Same logical action can have different marginal work under a different cache."
+  },
+  "censoring": "An entered child increments record_attempt before negamax; cancellation may prevent any completed beta-cut outcome. The heuristic ratio can retain that denominator. It is not a completed Bernoulli-failure label or calibrated per-action win probability.",
+  "decision": "No cost teacher can be trained from one winning PV, a node-count-only certificate or aggregate cutoff counters by calling it a cheapest-cut label. This does not forbid exploratory contextual learning or require exhaustive counterfactual search. A new actual consumer and cheaper observable target could motivate a bounded future test; no implementation/arm/budget extension here."
+}

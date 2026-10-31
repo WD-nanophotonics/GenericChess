@@ -18,7 +18,11 @@ Selection is frozen before new Core work: take the first retained lifecycle
 return for every(root_index,prefix>0), in source-path order. That yields24
 previously unconsumed complete histories,8layouts in4motion families, with no
 score/gradient/outcome filtering. The last return is the original unpaired
-cancelledD3, not silently dropped. First-return arms include both signature-memo
+cancelledD3, not silently dropped. The source prefix counter1/2/3 means
+4/5/6actions in the FULL GameRecord after the three-action opening; it is not
+the absolute ply count. These rules use max_ply96,repetition_limit4and actual
+removal on capture; the old H6/repeat2domain is not transferred.
+First-return arms include both signature-memo
 ON and OFF; this is not a randomized new controller comparison.
 
 These are exposed8x8 AABBCC inputs, not the old4x4/H6/history-alias domain or
@@ -36,8 +40,11 @@ choices, replays the saved PV, then examines root actions and every legal reply.
 All ongoing suffixes retain[-1,1]. Defender intervals fold by MIN, root choices
 by MAX; one cooperative terminal cannot prove a forceable win.
 
-The fixed cap permits25,000 direct GameSession.submit attempts in13.507524s
-inside the producer. Its exact decomposition is105prefix-replay submissions,
+The fixed cap permits25,000 direct GameSession.submit attempts. The saved
+13.507524s is a pre-final-write elapsed snapshot inside the producer, not the
+complete invocation duration. The observed final stdout was13.535834s after
+the final save; its original wrapper was not retained, so this is a transcript
+observation, not a new immutable timing receipt. Its exact decomposition is105prefix-replay submissions,
 84saved-PV submissions,719root-action submissions and24,092defender replies.
 Internal Core trial transitions are UNKNOWN and are not called25,000nodes.
 Preparation, source review, interpreter startup, persistence, tests and analysis
@@ -52,7 +59,7 @@ is completed by a model, DRAW label, alternative root or second dispatch.
 ## One real terminal witness
 
 At lifecycle/return-050.json (family3,root6,prefix1,actual actor0), there are46
-legal root actions. The legal anchor move(0,3)->(0,4) remains ongoing but allows
+legal root actions after four actual recorded actions. The legal anchor move(0,3)->(0,4) remains ongoing but allows
 the legal B reply(4,7)->(1,6), whose actual Core result is CHECKMATE,winner1.
 It therefore certifies that particular root action's actor0 value is-1.
 
@@ -88,3 +95,38 @@ pass: all-defense versus cooperative outcomes, UNKNOWN preservation, strict
 regret requirements and immediate-WIN root bounds. No producer or Core expansion
 is repeated by those tests. Whole-role research is still active; this bounded
 substudy is not a60-minute session finish.
+
+## Saved-output and censoring review
+
+An independent reconstruction from the saved output, without Core replay,
+matches all719action records,24,092reply counts, completed MIN/MAX folds and
+the exact1/40480event. SemanticEngine._transition step7 switches side with
+work.side=1-side; this is the ordinary-action path supporting the defender MIN,
+rather than the separate transition_pass code. No new legal frontier was
+enumerated in this review. [Receipt](data/aux_new_prefix_terminal_20261031/saved-output-review.json).
+
+The original24context denominator gives a wider conclusion than the descriptive
+complete20context law. In the partial context,28of44actions completed, one
+has6of43replies observed and15actions never started. Every observed reply
+there remains ongoing. Its uniform-two-ply loss probability has the conservative
+outer range[0,15/44+37/(44*43)]=[0,31/86]. Its saved selected action actually
+completed both legal replies, neither terminal, so that short-event probability
+is0despite the context remaining PARTIAL.
+
+Giving the three never-started contexts the event range[0,1]yields full24
+uniform-event outer bounds[1/48576,292511/2088768], and saved-selected-event
+bounds[0,1/8]. Subtraction gives a conservative risk-difference outer range
+[-6071/48576,292511/2088768]. Thus even this original-cohort TWO-PLY event
+difference has no identified sign. These are outer bounds, not a claim that
+both extremes are realizable under the actual fixed rules, and no missing
+context is filled or called DRAW. [Censoring receipt](data/aux_new_prefix_terminal_20261031/censored-event-review.json).
+
+Coverage is also family-imbalanced: complete counts are6,6,6,2for families0–3;
+the one partial and three unstarted contexts all belong to family3. Merely
+representing four family IDs does not meet a prospective four-family stable
+quality criterion. No family qualifies here through strict selected regret.
+
+The event arithmetic and censoring ranges are post-hoc descriptions of these
+already-exposed fixed records, not a preregistered population or held-out policy
+effect estimate. The original before-dispatch freeze concerns selection and
+Core work caps; it does not make later summaries prospective tests.

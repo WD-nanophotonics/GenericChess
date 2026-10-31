@@ -1,3 +1,27 @@
+## Accepted DEV_AUX61b282c0 —2026-10-31
+
+Own latest user hourly restart; no other-role/scheduler mutation. Accepted
+safe_checkpoint09:53:04UTC:3910.092408confirmed seconds minus300s reserve =
+60.168207conservative effective minutes. Previous/offline/open-interruption0.
+[Ledger/accounting](data/aux_round_20261031/); administrative delivery no credit.
+
+[New terminal-prefix study](AUX_NEW_PREFIX_TERMINAL_20261031.md) CLOSED25kdirect
+submits,20complete/1partial/3unstarted. One losing alternative, all complete
+root/selected[-1,1], regret[0,2].6focused controlsPASS, no refill. Saved-only
+review qualifies original24event signUNKNOWN, fullhistory4/5/6actions, family
+complete counts6/6/6/2; no strict quality or learning claim.
+[Teacher cost](AUX_SEARCH_TEACHER_COST_20261031.md) original-source/exact arithmetic
+separates proof/verification/discovery/operational completion/decision value.
+[Continuation reuse](AUX_CONTINUATION_REUSE_20261031.md): existing countermove
+opt-in, defaultOFF/query-local; learner does not enable it; no measured gain.
+All three substudies CLOSED; no further abstract variants or instrumentation.
+
+Pro7a812fd1/blobaa482c23read/ADOPTED STOPcache/identity/duplicate checks EXECUTED.
+Dot1793435243duplicate-gradient objection ADOPTED/EXECUTED before new controls.
+Mid teacher-caller question has no reply at09:43closing intake. PRIMARY owns
+its prospective policy/producer/budget.0newPlayer/PN/game/train/build/default.
+Mutable executable next steps in own memo; old caps/stops/costs retained.
+
 ## Active DEV_AUX61b282c0 milestone —2026-10-31
 
 New hourly round from latest explicit user restart; previous ended389af time is
