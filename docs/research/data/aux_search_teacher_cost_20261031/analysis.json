@@ -1,0 +1,174 @@
+{
+  "scope": "Derived exact abstract controls; zero GameSession/Player/prover/model.apply. Not another actual game or measured clock cost.",
+  "winning_tree_shapes": {
+    "shallow_wide": {
+      "depths": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "nodes": 10,
+      "depth_sum": 21,
+      "rank": 3
+    },
+    "deep_narrow": {
+      "depths": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "nodes": 8,
+      "depth_sum": 28,
+      "rank": 7
+    },
+    "accepted_verifier_submit_costs": [
+      {
+        "root_prefix_actions": 0,
+        "shallow_wide": 21,
+        "deep_narrow": 28
+      },
+      {
+        "root_prefix_actions": 3,
+        "shallow_wide": 51,
+        "deep_narrow": 52
+      },
+      {
+        "root_prefix_actions": 4,
+        "shallow_wide": 61,
+        "deep_narrow": 60
+      },
+      {
+        "root_prefix_actions": 8,
+        "shallow_wide": 101,
+        "deep_narrow": 92
+      }
+    ],
+    "crossing_root_prefix": "7/2",
+    "not_forecast": "Public source-derived exact accepted-tree submitcounts only; producer discovery/eager frontiers, Core per-submit work and continuation are different costs."
+  },
+  "independent_two_action": {
+    "a": {
+      "cost": 10,
+      "cut_probability": "9/10"
+    },
+    "b": {
+      "cost": 1,
+      "cut_probability": "1/2"
+    },
+    "a_then_b_expected": "101/10",
+    "b_then_a_expected": "6",
+    "cost_saving_before_feature_cost": "41/10",
+    "condition": "fixed noninteracting per-action costs and independent cut events at a fixed window; no alpha adaptation/TT reuse"
+  },
+  "correlated_three_action": {
+    "worlds": [
+      {
+        "cut": {
+          "a": true,
+          "b": true,
+          "c": false
+        },
+        "probability": "1/2"
+      },
+      {
+        "cut": {
+          "a": false,
+          "b": false,
+          "c": true
+        },
+        "probability": "1/2"
+      }
+    ],
+    "costs": {
+      "a": "1",
+      "b": "9/10",
+      "c": "11/10"
+    },
+    "marginal_cut_probabilities": {
+      "a": "1/2",
+      "b": "1/2",
+      "c": "1/2"
+    },
+    "ratio_order": [
+      "b",
+      "a",
+      "c"
+    ],
+    "orders": [
+      {
+        "order": [
+          "a",
+          "b",
+          "c"
+        ],
+        "expected_cost": "2"
+      },
+      {
+        "order": [
+          "a",
+          "c",
+          "b"
+        ],
+        "expected_cost": "31/20"
+      },
+      {
+        "order": [
+          "b",
+          "a",
+          "c"
+        ],
+        "expected_cost": "39/20"
+      },
+      {
+        "order": [
+          "b",
+          "c",
+          "a"
+        ],
+        "expected_cost": "29/20"
+      },
+      {
+        "order": [
+          "c",
+          "a",
+          "b"
+        ],
+        "expected_cost": "8/5"
+      },
+      {
+        "order": [
+          "c",
+          "b",
+          "a"
+        ],
+        "expected_cost": "31/20"
+      }
+    ],
+    "better_order": [
+      "b",
+      "c",
+      "a"
+    ],
+    "conditional_after_b_fails": {
+      "a_cut_probability": 0,
+      "c_cut_probability": 1
+    },
+    "interpretation": "A latent input/failure prefix changes subsequent probabilities. Not a refutation of the paper fixed-product model; no universal optimality follows for pooled current-history statistics."
+  },
+  "actual_source_consumer": {
+    "relative_history": "(cutoffs+1)/(entered attempts+2), only optional quiet-slot reordering; no cost denominator. Same main-node action PVS retries count once; an interrupted entered child may have no completed cutoff outcome. Heuristic only, not a calibrated probability/teacher label.",
+    "no_patch": "No current product claim of optimal cost was found; no guard, model, producer or default change follows."
+  }
+}

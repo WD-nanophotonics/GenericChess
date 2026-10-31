@@ -1,3 +1,19 @@
+## Active DEV_AUX61b282c0 milestone —2026-10-31
+
+New hourly round from latest explicit user restart; previous ended389af time is
+not reused. Initial conditional-gradient fallback was already covered and
+stopped before new controls; Dot1793435243 independently confirms that closure.
+No repeating old learner/chamber/alias/TD-theory campaigns.
+
+[New persistent-prefix terminal evidence](AUX_NEW_PREFIX_TERMINAL_20261031.md)
+consumes genuinely new published histories from sandbox480b01b7.24frozen contexts;
+20complete/1partial/3NOT_STARTED at original25k direct-submit cap, no refill.
+One actual losing legal branch/mating reply; saved Player avoids it, but root
+and selected bounds remain[-1,1], no strict error/learning gain.6truth controls PASS.
+No Player/PN/game/train/build/default/PRIMARY state change. Whole session ACTIVE,
+not a60minute finish. Next distinct source task concerns what cheapest-cutoff
+teacher labels would actually mean; no learner or new search mechanism built.
+
 ## Accepted manual DEV_AUX389af24c — 2026-10-31
 
 Session safe_checkpoint accepted08:04:45UTC with memo ENDED, same06:31:01UTC

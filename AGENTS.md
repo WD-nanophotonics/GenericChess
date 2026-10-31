@@ -1,3 +1,11 @@
+## Latest explicit hourly restart — 2026-10-31
+
+The latest own-chat user heartbeat explicitly confirms restart of existing
+hourly patrols and work. It supersedes the earlier manual-only/paused-cadence
+interpretation below. DEV_AUX resumes only its own role/work/stops; preserve
+other stop scopes and original bindings. This records user authority, not a
+claim that AUX inspected or changed another role's scheduler/state. No new timer.
+
 ## Latest manual resume scope — 2026-10-31
 
 User said continue work in this DEV_AUX chat. This resumes own manual research,

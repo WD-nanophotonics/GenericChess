@@ -1,0 +1,99 @@
+{
+  "status": "CLOSED_AT_ORIGINAL_SUBMIT_CAP_NO_REFILL",
+  "complete": 20,
+  "partial": 1,
+  "not_started": 3,
+  "submit_attempts": 25000,
+  "seconds": 13.507523800013587,
+  "all_completed_selected_and_root_bounds": [
+    -1,
+    1
+  ],
+  "strict_selected_regret_lower_bound": 0,
+  "all_completed_regret_upper_bound": 2,
+  "one_new_literal_mating_reply": [
+    {
+      "source_path": "lifecycle/return-050.json",
+      "root_index": 6,
+      "prefix": 1,
+      "root_actions": 46,
+      "losing_action": {
+        "pattern_id": "legacy_078",
+        "geometry_id": "g44",
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 0,
+          "rank": 3
+        },
+        "to_square": {
+          "file": 0,
+          "rank": 4
+        },
+        "promotion_target_id": null
+      },
+      "defender_reply_count": 44,
+      "terminal_witnesses": [
+        {
+          "reply": {
+            "pattern_id": "legacy_050",
+            "geometry_id": "g31",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 4,
+              "rank": 7
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "result": {
+            "status": "checkmate",
+            "winner": 1,
+            "resigned_by": null,
+            "declaration_id": null,
+            "declared_by": null,
+            "declaration_outcome": null,
+            "declaration_score": null
+          },
+          "value_bounds": [
+            -1,
+            -1
+          ]
+        }
+      ],
+      "selected_action": {
+        "pattern_id": "legacy_038",
+        "geometry_id": "g26",
+        "actor_type_id": "B",
+        "from_square": {
+          "file": 3,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 4,
+          "rank": 3
+        },
+        "promotion_target_id": null
+      },
+      "full_root_value_bounds": [
+        -1,
+        1
+      ],
+      "observed_selected_bounds": [
+        -1,
+        1
+      ],
+      "two_uniform_plies_terminal_loss_probability": "1/2024"
+    }
+  ],
+  "finite_short_horizon_law": {
+    "distribution": "uniform over20fully enumerated literal fullcontexts, then one uniformly legal root action and one uniformly legal defender reply",
+    "terminal_loss_event_probability": "1/40480",
+    "baseline_saved_selected_action_then_uniform_reply_terminal_loss_event": 0,
+    "qualification": "finite two-ply event only, not expected final return, minimax action improvement or matched compute comparison;21stpartial and3notstarted excluded only from THIS explicitly20context descriptive law, remain missing in24context study denominator"
+  },
+  "Core_internal_trial_cost": "UNKNOWN",
+  "new_Player_PN_game_train": 0
+}
