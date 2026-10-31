@@ -6,8 +6,7 @@ motion families. Charged wall ON/OFF is **0.9405192694** (5.948% lower), process
 CPU **0.9416727025** (5.833% lower). Every complete group preserves action, score,
 PV, all non-clock search work and actual Native import/reuse counters. The last
 group is censored and retained, not refilled. These are development measurements,
-not strength, holdout or a product default. Persistent-controller transfer is
-prospectively frozen and **RUNNING; its results are not yet part of this evidence checkpoint**.
+not strength, holdout or a product default. Persistent-controller transfer is **CLOSED INCONCLUSIVE**:63 of128 calls returned;65 fixed slots remain NOT_RUN. No full warm-transfer claim or refill follows.
 
 ## Direction and full execution boundary
 
@@ -108,13 +107,21 @@ There are at most128 calls,30s each,1500s batch,1.5GiB RSS, a stage deadline08:0
 and the unchanged parent deadline. Warm prefix pairs, constructor cost once per
 controller, and common Core advancement cost remain distinct. No WDL is inferred.
 
+The lifecycle batch stopped cooperatively at its original whole-delivery reserve,
+after817.632 seconds. All63 returns are retained:31 complete pairs and one
+unpaired return;65 slots remain NOT_RUN. The23 qualified warm pairs cover only
+families0–3, below the full gate of128 returns/36 warm pairs/all8 families.
+Their descriptive wall ratio0.9367255 and CPU0.9365451 do not pass that missing
+coverage gate. Constructor and common Core costs remain separate. This is
+INCONCLUSIVE transfer evidence, not a strategic failure or a game result.
+
 ## Verification and evidence
 
-A saved-data consumer independently reaggregates160 original returns, verifies
-all14 frozen-source bindings and624 literal Core PV plies, with0 new Player
+A saved-data consumer independently reaggregates223 original returns, verifies
+all14 frozen-source bindings and875 literal Core PV plies, with0 new Player
 calls. This uses the shared Core, not an independent Core implementation or
-fresh hardware replication. Four initial Player fixture calls are separate from
-160 research returns. Exact project-only originals are in the byte-bound
+fresh hardware replication. Eight total Player fixture calls (initial plus final publication validation) are separate from
+223 research returns. Exact project-only originals are in the byte-bound
 [data packet](data/leaper_kernel_signature_20261031/manifest.json); capsule
 sources are data only. Slack/account originals stay private and are excluded.
 
@@ -129,3 +136,13 @@ framework, repeated history-existence study or additional cache campaign follows
 Its AUX recommendation is not an assignment or permission to change AUX state.
 The sole incoming change is that review document; own sandbox commits were
 combined without rewriting any history.
+
+## Next decision
+
+No further kernel/observer/cache matrix is selected. Next examine a single
+transferable proof/continuation-quality consumer using the existing public
+AlphaBetaPlayer contract. AUX published62ca687a126a2c7a54079d66174f7e631f60ea96
+reports a simplified normal-search adapter and loss of typed decision metadata;
+this is source advice, not a PRIMARY rerun or an implementation authorization
+to duplicate AUX solvers. Freeze a prospective bounded question only after
+checking the existing integration, full inclusive deadline and UNKNOWN fallback.

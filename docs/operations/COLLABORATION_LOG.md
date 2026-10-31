@@ -8468,3 +8468,6 @@ fused-kernel observer/defensive-framework work and next quality priority. Its
 source-only e456view does not independently validate or refute the new actual
 JSON consumer/cold results. Ownbranch doc-only merge preserves both histories;
 no other-role integration, history rewriting or AUX intervention.
+
+
+2026-10-31 PRIMARY closing:223 original returns/875 literal Core PV plies independently reaggregated from saved records using shared Core. Cold signature memo passes scoped cost gate (~5.95%wall); persistent lifecycle63/128 returns remains INCONCLUSIVE,65NOT_RUN under unchanged reserve. No default/strength claim. AUX62ca source finding about simplified proof normal_search is read in full Slack but not independently executed; next own source integration check will preserve typed public fallback and full deadline. No AUX assignment/state edits. Autonomous596837 review full-kernel stop/quality priority adopted; its snapshot predates this round measurements.

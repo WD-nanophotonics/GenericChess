@@ -69,6 +69,9 @@ def verify(base,out):
             gate=len(calls)==64 and s['reason'] is None and len(eligible)>=12 and len(fams)==8 and all(g[2][0]['cpu_seconds']+g[2][3]['cpu_seconds']>0 for g in eligible) and all(s['ratios'][m] is not None and s['ratios'][m]<=.95 for m in ('wall','cpu'))
             assert (s['status']=='PASS_SCOPED_EXACT_COST')==gate
         reports[name]={'returns':len(calls),'Core_PVplies':pvs,'raw_source_bindings':source_checks,'matched_complete_groups':sum(g[1] for g in groups),'status':'PASS'};total+=len(calls);pvcount+=pvs
+    if (base/'lifecycle/summary.json').exists():
+        from scripts.verify_leaper_signature_lifecycle import verify_lifecycle
+        lifecycle=verify_lifecycle(base);reports['lifecycle']=lifecycle;total+=lifecycle['returns'];pvcount+=lifecycle['Core_PVplies']
     result={'status':'PASS_SAVED_SCOPE','returns':total,'literal_CorePVplies':pvcount,'reports':reports,'new_Player_calls':0,'not_independent_timing_or_Core_implementation':True};write_record(Path(out),result);print(json.dumps(result));return result
 if __name__=='__main__':
     import sys;verify(sys.argv[1],sys.argv[2])

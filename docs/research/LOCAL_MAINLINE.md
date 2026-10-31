@@ -7,11 +7,15 @@ hourly patrols and PRIMARY work after the Oct29 stop. Pure Leaper first;
 mixed/legacy/promotion/drop/NNUE optimization remains deferred. Complete admitted
 semantics, typed histories and clocks stay authoritative.
 
-## Current decision —2026-10-31 exact signature cost, lifecycle pending
+## Current decision —2026-10-31 signature assessment closed
 
-Main: Does the cold exact-signature gain survive persistentPlayer/TT? |Execute
-conditional frozen128calls only after literal64prefixpaths are saved, isolated
-TTs/fullhistories and all originalcaps;no games |[current report](LEAPER_KERNEL_SIGNATURE_20261031.md) |Close warm workload parity/coverage/cost, then prioritize one transferable search-quality hypothesis;no automatic integration/default or morecachecampaigns.
+Main: Is there already a public full-service proof/continuation chooser? |Read pinned AUX62ca report and actual normal_search/public AlphaBetaPlayer consumers; compare typed fallback and inclusive deadline |Source-bound integration map and one prospective quality hypothesis |Reuse existing solver; no new cache matrix, warm-slot refill or default activation.
+
+Persistent lifecycle CLOSED INCONCLUSIVE:63/128 returns,65NOT_RUN,31complete
+pairs plus1unpaired;23qualifiedwarm pairs onlyfamilies0–3. Descriptive wall
+.9367255/CPU.9365451 do not satisfy128/36/all8coverage gate. Original delivery
+reserve ended dispatch; no refill. Total223researchreturns/875savedCorePVplies
+verified,0games/solver/training/Nativebuild/productchanges.
 
 Cold64D4ABBA CLOSED PASS:15completegroups/all8families, wall.9405192694 and
 CPU.9416727025 versus existinglocalhashON baseline;onegroupcensoredretained.
