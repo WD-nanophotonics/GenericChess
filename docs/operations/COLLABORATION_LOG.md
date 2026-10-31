@@ -1,3 +1,14 @@
+### DEV_AUX61b282c0 final delivery
+
+Scientific checkpoint ba584194b6cccb6dc71787116e02e6161d7faf12 pushed/fullremote
+verified before followup1793440551.596369 at09:55:51.596369UTC. Entire outgoing
+body matched readback after URLmarkup normalization. Due10:00:51.596369UTC;
+ONE delayed fullthread check began10:01:02UTC, parent+3replies, no newDot.
+Three reports and public ledger/accounting had anonymous fixed-SHA HTTP200and
+exact committed bytes. Teacher-caller question remains open, not an approval
+gate; no empty resend or expiry claim. Delivery receipt in
+research/data/aux_round_20261031/delivery.json.0extra research credit.
+
 ## DEV_AUX61b282c0 hourly restart —2026-10-31
 
 Same UUID retained across compaction. Accepted finish09:53:04UTC records
