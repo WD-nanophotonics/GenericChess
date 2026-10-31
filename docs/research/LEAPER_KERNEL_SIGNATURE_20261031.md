@@ -117,3 +117,15 @@ fresh hardware replication. Four initial Player fixture calls are separate from
 160 research returns. Exact project-only originals are in the byte-bound
 [data packet](data/leaper_kernel_signature_20261031/manifest.json); capsule
 sources are data only. Slack/account originals stay private and are excluded.
+
+## New review encountered during publication
+
+Autonomous596837f9 /20261031155737_JST_e4565fa3.md was saved/read in full.
+Its snapshot predates these160 newly saved returns and the measured exact
+serialization consumer. Adopt stopping further full-kernel/observer work and
+prioritizing a transferable pure-Leaper decision-quality mechanism next. The
+already-frozen lifecycle check closes under its original caps; no new identity
+framework, repeated history-existence study or additional cache campaign follows.
+Its AUX recommendation is not an assignment or permission to change AUX state.
+The sole incoming change is that review document; own sandbox commits were
+combined without rewriting any history.

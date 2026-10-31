@@ -11,7 +11,7 @@ semantics, typed histories and clocks stay authoritative.
 
 Main: Does the cold exact-signature gain survive persistentPlayer/TT? |Execute
 conditional frozen128calls only after literal64prefixpaths are saved, isolated
-TTs/fullhistories and all originalcaps;no games |[current report](LEAPER_KERNEL_SIGNATURE_20261031.md) |Warm workload parity/coverage/cost decide next optional integration;defaultOFF.
+TTs/fullhistories and all originalcaps;no games |[current report](LEAPER_KERNEL_SIGNATURE_20261031.md) |Close warm workload parity/coverage/cost, then prioritize one transferable search-quality hypothesis;no automatic integration/default or morecachecampaigns.
 
 Cold64D4ABBA CLOSED PASS:15completegroups/all8families, wall.9405192694 and
 CPU.9416727025 versus existinglocalhashON baseline;onegroupcensoredretained.
@@ -387,3 +387,9 @@ Late autonomousPatrol68f83ff0 was fully read/preserved at delivery. Its fd7d7eac
 snapshot predates this diagnostic and lacked direct user approval. Adopt the
 quality/algorithm GO/NO-GO priority above; do not retroactively call completed
 experiments review execution. No further Player/profile calls or AUX assignment.
+
+Latest autonomous596837f9 was read at publication;its e456snapshot predates this
+round160returns. Adopt fullkernelSTOP/qualitypriority, preserve new finite cost
+results and close already-frozen lifecycle without extra observer/registry work.
+No AUX task/state change. Next route is a single proof/continuation-quality
+hypothesis on4–8prospectively frozen distinct families, not another cache matrix.
