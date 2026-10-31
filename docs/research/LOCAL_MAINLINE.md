@@ -23,6 +23,11 @@ partialtailreturns UNKNOWN. [Rootschedule](LEAPER_ROOT_STABILITY_20261031.md):
 Allfinitecaps/negativegates closed,no retuning/refills/games/defaultactivation.
 Unused prototypes retired after exact source preservation;production restored.
 
+[Source/arithmetic feasibility](LEAPER_CONTINUATION_FEASIBILITY_20261031.md) adds
+a scoped counterexample: zero-margin cross-depth tests are not automatically
+leaf-offset invariant;ordinary TT cutoff/store cannot represent excluded actions.
+No product defect or rejection of all singular extensions follows;0Player/Core.
+
 Main: Can value-informed continuation allocation avoid a new chooser/TT framework? |
 Use pinnedStockfish singular/excluded-search source and actualnegamax/root paths
 to specify one bounded alternative-verification policy and its numerical-phase

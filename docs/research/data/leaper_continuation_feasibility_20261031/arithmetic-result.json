@@ -1,0 +1,91 @@
+{
+  "conclusion": "zero margin alone does not ensure bias invariance;toy arithmetic only",
+  "cross_depth": [
+    {
+      "bias": -3,
+      "excluded_depth1": 12,
+      "tt_depth2": 7,
+      "zero_margin_trigger": false
+    },
+    {
+      "bias": -2,
+      "excluded_depth1": 11,
+      "tt_depth2": 8,
+      "zero_margin_trigger": false
+    },
+    {
+      "bias": -1,
+      "excluded_depth1": 10,
+      "tt_depth2": 9,
+      "zero_margin_trigger": false
+    },
+    {
+      "bias": 0,
+      "excluded_depth1": 9,
+      "tt_depth2": 10,
+      "zero_margin_trigger": true
+    },
+    {
+      "bias": 1,
+      "excluded_depth1": 8,
+      "tt_depth2": 11,
+      "zero_margin_trigger": true
+    },
+    {
+      "bias": 2,
+      "excluded_depth1": 7,
+      "tt_depth2": 12,
+      "zero_margin_trigger": true
+    },
+    {
+      "bias": 3,
+      "excluded_depth1": 6,
+      "tt_depth2": 13,
+      "zero_margin_trigger": true
+    }
+  ],
+  "mixed_terminal": [
+    {
+      "bias": -3,
+      "chosen": "heuristic",
+      "heuristic": 4,
+      "terminal": 0
+    },
+    {
+      "bias": -2,
+      "chosen": "heuristic",
+      "heuristic": 3,
+      "terminal": 0
+    },
+    {
+      "bias": -1,
+      "chosen": "heuristic",
+      "heuristic": 2,
+      "terminal": 0
+    },
+    {
+      "bias": 0,
+      "chosen": "heuristic",
+      "heuristic": 1,
+      "terminal": 0
+    },
+    {
+      "bias": 1,
+      "chosen": "terminal",
+      "heuristic": 0,
+      "terminal": 0
+    },
+    {
+      "bias": 2,
+      "chosen": "terminal",
+      "heuristic": -1,
+      "terminal": 0
+    },
+    {
+      "bias": 3,
+      "chosen": "terminal",
+      "heuristic": -2,
+      "terminal": 0
+    }
+  ]
+}
