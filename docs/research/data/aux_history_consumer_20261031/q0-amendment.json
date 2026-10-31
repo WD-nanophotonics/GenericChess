@@ -1,0 +1,29 @@
+{
+  "reason": "After first actual search, env.record() JSON dict was compared to GameRecord dataclass; assertion failed. This is consumer validation bug, not production/search failure.",
+  "consumed_slot": {
+    "history": "DRAW",
+    "depth": 1
+  },
+  "paid_calls": 1,
+  "raw_return": "NOT_PERSISTED; value/action/nodes UNKNOWN, never reconstructed.",
+  "remaining_slots": [
+    {
+      "history": "WIN",
+      "depth": 1
+    },
+    {
+      "history": "DRAW",
+      "depth": 3
+    },
+    {
+      "history": "WIN",
+      "depth": 3
+    }
+  ],
+  "new_calls_maximum": 3,
+  "whole_remaining_seconds": 15,
+  "executed_source_sha256": "32d612c2c85eedf60fc4457fa79b5813077df8cf4c910da77e9cd235c5da9d70",
+  "original_dispatch_sha256": "ddffe6036e418b6573e58b1876e5078dd9e95b1f26ec9d21fe56d9438bdc20d4",
+  "repair": "Compare env.record() with record_value(before[0]); persist receipt immediately before assertions. Preserve first failed slot; no refill/replay.",
+  "initial_forecast": "Total original4calls unchanged, new experiments not added."
+}

@@ -1,0 +1,79 @@
+"""One fixed four-call q0 consumer: no games, fit, solver or automatic refill."""
+from pathlib import Path
+from time import perf_counter,process_time
+from unittest.mock import patch
+import hashlib,json
+from generic_chess.rules.schema import ruleset_from_dict
+from generic_chess.rules.compiler import compile_legacy_ruleset_for_semantic_execution
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record
+from generic_chess.core.actions import action_to_dict
+from generic_chess.learning.incremental import FixedScaleSessionEnv,Model
+from generic_chess.learning.mainline_search import search
+from scripts.research_record import record_value,write_record
+
+def run(folder, *, remaining_only=False):
+    folder=Path(folder);output=folder/'q0-observed.json'
+    if output.exists() and not remaining_only:raise RuntimeError('prospective four-call cap already dispatched')
+    previous=json.loads(output.read_bytes())if remaining_only else None
+    if remaining_only:
+        assert previous['actual_Player_calls']==1 and previous['rows']==[] and previous['status']=='DISPATCHED'
+        assert (folder/'q0-amendment.json').exists()
+    raw=(folder/'q0-protocol.json').read_bytes();p=json.loads(raw)
+    for name,expected in p['inputs'].items():
+        assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==expected
+    data=json.loads((folder/'repeat4-counterexample.json').read_bytes())
+    root_obs=json.loads((folder/'observed.json').read_bytes())
+    branches=json.loads((folder/'branch-observed.json').read_bytes())
+    safe=root_obs['matched_root_policy']['common_certified_optimal_action']
+    c=compile_legacy_ruleset_for_semantic_execution(ruleset_from_dict(data['rule']))
+    rows=sorted(data['rows'],key=lambda x:x['value'])
+    sessions={name:GameSession.replay(c,deserialize_game_record(json.dumps(row['record'])))for name,row in zip(('DRAW','WIN'),rows)}
+    start=perf_counter();cpu=process_time()
+    result=dict(protocol_sha256=hashlib.sha256(raw).hexdigest(),status='DISPATCHED',rows=[],actual_Player_calls=0,
+                new_games=0,new_solver_calls=0,new_training=0,pre_dispatch_prefix_actions=22)
+    # Persist dispatch BEFORE touching Player; a failed call consumes a slot.
+    write_record(output,result)
+    for slot in p['slots']:
+        if perf_counter()-start>=p['budget']['whole_seconds']:
+            result['status']='WHOLE_CAP_UNKNOWN';break
+        session=sessions[slot['history']]
+        env=FixedScaleSessionEnv(session,unit_type='A')
+        model=Model(**{k:p['model'][k]for k in ('weights','fixed','scale')})
+        before=(session.to_record(),session.state,session.result)
+        result['actual_Player_calls']+=1
+        write_record(output,result)
+        began=perf_counter()
+        receipt=search(env,model,depth=slot['depth'],nodes=10000,seconds=2.,seed=0)
+        result['last_return_before_validation']=dict(**slot,receipt=record_value(receipt))
+        write_record(output,result)
+        assert before==(session.to_record(),session.state,session.result)
+        selected=(action_to_dict(receipt.action.action)if receipt.action and receipt.action.kind=='ACTION'else None)
+        literal=FixedScaleSessionEnv(session,unit_type='A')
+        for choice in receipt.pv_choices:literal.push(choice)
+        assert env.record()==record_value(before[0])
+        if receipt.complete:
+            assert receipt.pv_choices and receipt.pv_choices[0]==receipt.action
+            assert receipt.value==((literal.terminal()*1000000)if receipt.pv_terminal else model.raw(literal.features()))
+        if not receipt.complete:bounds=[0,1];classification='UNKNOWN'
+        elif slot['history']=='WIN':bounds=[0,0];classification='CERTIFIED_OPTIMAL_FORCED_LOSS'
+        elif selected==safe:bounds=[0,0];classification='CERTIFIED_OPTIMAL_DRAW'
+        elif any(x['action']==selected and x['classification']=='CERTIFIED_LOSS'for x in branches['rows']):
+            bounds=[1,1];classification='CERTIFIED_STRICT_ERROR'
+        else:bounds=[0,1];classification='UNKNOWN'
+        result['rows'].append(dict(**slot,receipt=record_value(receipt),selected_action=selected,
+            actual_root_value_for0=0 if slot['history']=='DRAW'else 1,
+            actual_root_actor=1,actor_regret_bounds=bounds,classification=classification,
+            literal_leaf_terminal=literal.terminal(),literal_leaf_features=literal.features(),
+            literal_leaf_record=record_value(literal.record()),model_weights_after=model.weights,
+            measured_call_and_validation_seconds=perf_counter()-began))
+        write_record(output,result)
+    if result['actual_Player_calls']==4:result['status']='CAP_EXHAUSTED_PARTIAL'if remaining_only else'COMPLETE_CAP_EXHAUSTED'
+    result.update(whole_wall_seconds=perf_counter()-start,whole_CPU_seconds=process_time()-cpu,
+                  total_nodes_in_persisted_returns=sum(x['receipt']['nodes']for x in result['rows']),
+                  total_nodes='UNKNOWN_ONE_RETURN_LOST'if remaining_only else sum(x['receipt']['nodes']for x in result['rows']),
+                  post_query_PV_replay_actions=sum(len(x['receipt']['pv_choices'])for x in result['rows']),
+                  remaining_slots=max(0,4-result['actual_Player_calls']),
+                  limits='Old exposed diagnostic only. Regret labels independently supplied; current search scores/terminal PV are not root WDL. No strength/generalization/speed claim.')
+    write_record(output,result)
+    return result

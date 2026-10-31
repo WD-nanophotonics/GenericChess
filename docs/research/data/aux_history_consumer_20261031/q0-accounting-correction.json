@@ -1,0 +1,25 @@
+{
+  "status": "CAP_EXCEEDED_CLOSED_NO_REFILL",
+  "planned_calls": 4,
+  "actual_Player_calls": 5,
+  "first_dispatch_calls": 1,
+  "second_dispatch_calls": 4,
+  "unique_planned_slots": 4,
+  "duplicate_slot": {
+    "history": "DRAW",
+    "depth": 1
+  },
+  "first_return": "LOST_AFTER_ASSERTION; nodes/action/value UNKNOWN",
+  "second_dispatch_nodes": 136,
+  "total_paid_nodes": "UNKNOWN; at least136",
+  "raw_counter_problem": "q0-observed actual_Player_calls4 counts only second dispatch, not cumulative. Preserve raw, do not relabel as total.",
+  "cause": "Repair matched LF text against CRLF decoded bytes without checking replacement success. Resume loop remained all4slots. write_text added extra blank lines, visible in executed source.",
+  "executed_source_second_sha256": "29309e39245305aec5ee7eb0b8c5b55cb4d7e58441524a34381fe2945c99e26b",
+  "observed_sha256": "81f484dd2187bff1b96e7803f2bfc1309c6ed1226d1fb7553bcbf66f0e53baf2",
+  "first_dispatch_sha256": "ddffe6036e418b6573e58b1876e5078dd9e95b1f26ec9d21fe56d9438bdc20d4",
+  "action": "CLOSE Player probe permanently; no further calls, no reconstructed missing receipt, no confirmatory/fair-comparison or reproducible frozen-budget success claim. Retain second-dispatch rows as exposed descriptive diagnostic only.",
+  "scientific_observation": "Persisted D1 DRAW action has exact actor-regret1; D3 DRAW action has exact actor-regret0 and literal repetition PV. Both WIN actions zero-regret forcedloss. Search-aware effect is descriptive, no learning/strength/speed conclusion.",
+  "new_games": 0,
+  "new_solver": 0,
+  "new_training": 0
+}
