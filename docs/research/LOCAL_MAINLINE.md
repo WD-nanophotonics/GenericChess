@@ -7,35 +7,38 @@ hourly patrols and PRIMARY work after the Oct29 stop. Pure Leaper first;
 mixed/legacy/promotion/drop/NNUE optimization remains deferred. Complete admitted
 semantics, typed histories and clocks stay authoritative.
 
-## Current decision —2026-11-05 recovery and direct root allocation
+## Current decision —2026-11-05 closed runner-up trial and capture-model finding
 
-Same owned segment5ffefa9a resumes with31.4296087recorded minutes;five-day gap
-credits0. Its closed Oct31 results are now delivered in
-[bound allocation report](LEAPER_BOUND_ALLOCATION_20261031.md):root-gap32returns
-and Q-bound32returns each16same-choice pairs;MTDf32returns has5pre-D1guard
-failures and no established quality gain.448finite Q/Main checks+2causal controls
-are semantic compatibility only. All candidates retired;production restored.
+Latest autonomous dd70abef442f95afe97dbb1aa001254e58bd9584/
+blobcea175bae74ad540ed5d597c735aba47065d86cb fullyread/private-preserved/adopted.
+PN correction delivered:ALL16complete ACTIONs identical,9raw wrapper differences;
+AUXff573d75 supplied the concrete defect. No frozen Core/Player/PN rerun followed.
+Old root-gap/MTDf/Qquality studies remain CLOSED in
+[bound report](LEAPER_BOUND_ALLOCATION_20261031.md);no source-theory/caches/guards
+or old panel expansion is a pending task. All prior caps/failures remain intact.
 
-Latest autonomous dd70abef442f95afe97dbb1aa001254e58bd9584,
-Patrol20261031_195824_JST_45af8cf2.md/blobcea175bae74ad540ed5d597c735aba47065d86cb,
-fully read/private-preserved/adopted. STOP old PN/stability/single-evasion panel
-expansion,identity/cache/source proof and further excluded-TT/bias prerequisites.
-PN wording corrected once:ALL16complete ACTIONs were identical;9wrapperdifferences
-were not action changes. Concrete AUX correctionff573d75 adopted;zero gain stays.
-No Core/Player/PN rerun for that correction;no normalizer/registry was added.
+[New report](LEAPER_RUNNER_CAPTURE_20261105.md):review-directed runner-up32returns,
+all16actual fullwindow grants,only1changedACTION,0two-layout families versus2gate.
+STOP,no further rounds/games/tuning;production restored.15paired action differences
+exact0,oneUNKNOWN[-2,2];no strength/default claim.117CorePVplies accepted.
+A distinct0Player capture-consumer screen found85PVfrontiers/23captures;only2rank
+changes/1family,naivecomponentratio1.54124,notwhole cost.15legalroyalrecapturecases
+exposed12optimisticnonroyalproxyvalues.2Core controls(-20/+15material) justified a
+small research-model royal-last repair;4modeltestsPASS. Correctedcost/quality
+UNMEASURED;no productintegration/PN/newsolver/learning or AUXwrite.
 
-Main: Does one runner-up root allocation change actual choices? | Reuse current
-AlphaBetaPlayer/negamax full windows on previous complete iteration's two
-competitors;one finite follow-up for runner-up,shared whole budget |8newliteral
-pureLeaperfamilies/2layouts,<=32OFF/ONreturns<=1s inclconstructor+return |
-Stop if<2familiesstablelegalaction differences,TTexclusionframeworkneeded,
-batchcap or<=2hengineering exceeded;no games/strengthclaim/additionalrounds.
-Backup1: Allocation contract fails? | Save concrete source/test cause and stop
-candidate without swapping rules,resetting caps or changing expectations |
-Existing full record/clock/typedresult retained | No extra chooser/identity key.
-Backup2: Delivery incomplete? | Finish bounded reviewed closed-evidence transport
-and executable memo | exactoriginals/fullremoteSHA/matchingledger | No scientific
-credit for offline,publication or old conclusions;normal60+ floor remains.
+Main: Does the corrected model have an actual capture-rich search opportunity? |
+Check latestreviews,then choose a fresh bounded full-history capture-rich cohort
+before queries and assess actualMoveOrderer integration/totalcost,using existing
+Core/compiled tables only | Complete inputs,realcandidateactivity and useful
+legalchoice evidence,not micro-rank or NPS alone | No oldPV/rootpanel refill,
+royal-as-zero price,TTidentity framework,automaticqualityclaim or default change.
+Backup1: Model remains unsupported? | Use concrete savedroyal/control counterexample
+and scope to reject integration or select a distinct pureLeaper search action |
+Explicitcause/UNKNOWN | Do not build universal WDL/theory/guard prerequisites.
+Backup2: Delivery/session recovery? | Preserve originalUUID/recordedintervals,
+ignore all offline/admin spans,update executablememo and matchingqualitygate |
+Full remoteSHA/ledger | No secondwriter/oldcredit or schedule changes.
 
 Persistent lifecycle CLOSED INCONCLUSIVE:63/128 returns,65NOT_RUN,31complete
 pairs plus1unpaired;23qualifiedwarm pairs onlyfamilies0–3. Descriptive wall
