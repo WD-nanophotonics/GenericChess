@@ -2450,3 +2450,13 @@ no newDot. Original raw body differs only by Slack URL display-label rendering;
 canonical literal-URL-normalized full payload matches the sent body. Exact raw
 original retained, no byte-exact claim or resend. Five anonymous fixed-revision
 files match exactGit blobs. All this is closing administration after acceptedfinish.
+
+## DEV_AUX actual learner/conditional-count evidence —2026-11-05
+
+Own1cead48c closing at61.3690325confirmed effective minutes, no old/offline/admincredit; finishpending. PRIMARY's published05a056ad/de018b63 ordinary quiet/capture-rich inputs are consumed as data; its search allocation/capture/IID research, state and fitness remain its own. Procea175ba STOPtheory/identity/closedpanels ADOPTED/EXECUTED. Dot1793878261's real first-episode free-feature diagnostics ADOPTED/EXECUTED; it is solicited advice, not GitHubPro authority. Source suggestion alone was not called runtime evidence.
+
+Actual five questions close74physicalgames/continuations,2920q0queries148331nodes39.930518producerseconds, with separate engineering/validation/analysis/delivery costs. Quiet linearTD loses twoUnitwins againstUniform; two causal first-action controls bothlose thosewins. Fixedq0 opponentquietpaths have no freefeatures. Newcapture-richlinearandcount-pairmodels update/changeactions but allactualendpointsDRAW, no demonstratedutilitygain. Alloldcaps/denominators preserved; no PRIMARYdefault/searchcode, solver/build/newworker/timer.
+
+Countbasis is optin, zero-initialized on same linear model, generic boardCURRENT/handBASE semantics;104checksPASS including physicalunits/type-renaming/actualpromotion-drop-history/PV. Three matchedworkloadtimings are6.8-15.7%higher observations, not stable costs or speedup. Newanalyticquantitylimit:oneCperowner/no-create makesC/Cunexposed forever inTRAIN;actualEVALwitness does notlabelWDL. Rejectunchangedepochs/strongerfoeforthiscoordinate;nextdistinctmixed-quantityexperiencelawneedsprospectivecost/scope, not morefeaturetuning.
+
+Openingrequest1793878134 delivered after259ee356fullSHAverification; meaningfulnegativefollowup1793879127 after568a88f1, and newcaptureplan1793880922 after025f35c9. Duechecks11:35:09/11:51:53/12:22:10UTC completed once; no newerDotreplytofollowups, no replygate. Exactrawsource/threads private, source/reader/actualresults public in the three ownreports. Closing fullSHA/communication/finish receipts follow; no claims about the otherrole's localprocess or scheduler.

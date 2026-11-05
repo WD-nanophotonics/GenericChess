@@ -291,6 +291,23 @@ def test_promotion_drop_auxiliary_and_history_survive_library_adapter(feature_mo
                     current.action, current.value, current.pv_phi,
                     current.pv_terminal, current.samples, current.nodes)
             assert env.record() == before
+            if feature_mode == 'count_pairs':
+                # Exercise the actual public q0 consumer after promotion,
+                # hand changes and auxiliary/history transitions as well.
+                from generic_chess.learning.mainline_search import search
+                stack_before = tuple(env.stack)
+                receipt = search(env, model, depth=1, nodes=8192, seconds=10)
+                assert receipt.complete
+                leaf = env.replay()
+                for choice in receipt.pv_choices:
+                    leaf.push(choice)
+                if receipt.pv_terminal:
+                    assert receipt.pv_phi is None
+                    assert receipt.value == 1_000_000 * leaf.terminal()
+                else:
+                    assert receipt.pv_phi == leaf.features()
+                    assert receipt.value == model.raw(leaf.features())
+                assert env.record() == before and tuple(env.stack) == stack_before
         quantities = dict(zip(env.names, env.features()))
         if ply == 5:
             assert quantities[('board', 'TP')] == 1

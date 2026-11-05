@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import pytest
 from generic_chess.core.position import Hands
-from generic_chess.learning.incremental import FixedScaleSessionEnv,Model,MATE
+from generic_chess.learning.incremental import FixedScaleSessionEnv,Model,MATE,AlphaBeta
 from generic_chess.learning.mainline_search import search
 from generic_chess.session.session import GameSession
 from generic_chess.rules.compiler import compile_ruleset_for_execution
@@ -48,10 +48,14 @@ def test_zero_pair_initialization_preserves_linear_critic_and_fixed_unit():
     extended.apply([.01*g for g in gradient]);assert extended.weights[0]==1.
 
 
-def test_mainline_q0_and_literal_pv_keep_nonzero_pair_basis_and_replay_mode():
+@pytest.mark.parametrize('prefix', (0,1))
+def test_mainline_q0_and_literal_pv_keep_nonzero_pair_basis_and_replay_mode(prefix):
     p=Path(__file__).resolve().parents[2]/'docs/research/data/aux_capture_material_20261105/plan.json'
     row=json.loads(p.read_bytes())['worlds']['0']['train']
     env=FixedScaleSessionEnv(restore(L.compile_rule(L.ruleset_from_dict(row['RuleSet'])),row['record']),unit_type='A',feature_mode='count_pairs')
+    if prefix:
+        env.push(env.actions()[0])
+        assert env.terminal() is None and env.player()==1
     w=[1.,1.,1.,0.,0.,0.]+[.03*(i+1) for i in range(21)]
     model=Model(w);before=env.record()
     r=search(env,model,depth=2,nodes=2048,seconds=10)
@@ -59,7 +63,12 @@ def test_mainline_q0_and_literal_pv_keep_nonzero_pair_basis_and_replay_mode():
     leaf=env.replay();assert leaf.feature_mode=='count_pairs' and leaf.names==env.names
     for a in r.pv_choices:leaf.push(a)
     assert tuple(r.pv_phi)==leaf.features() and len(r.pv_phi)==27
-    assert r.value==model.raw(leaf.features()) and env.record()==before and not env.stack
+    assert r.value==model.raw(leaf.features()) and env.record()==before
+    # Fractional nonlinear critics must retain the independent complete q0
+    # value, including on the opposite seat; PV ties may choose differently.
+    reference=AlphaBeta(2,0).search(env,model,nodes=16384,seconds=10,seed=4321)
+    assert reference.complete and reference.value==pytest.approx(r.value,abs=1e-12)
+    assert env.record()==before
     assert leaf.search_view().features()==leaf.features()
 
 
@@ -75,3 +84,27 @@ def test_literal_terminal_bypasses_pair_model_and_unknown_mode_rejects(outcome,e
     assert r.complete and r.pv_terminal and r.value==expected and r.pv_phi is None and r.nodes==0
     with pytest.raises(ValueError,match='feature mode'):
         FixedScaleSessionEnv(s,unit_type='R',feature_mode='made_up')
+
+
+def test_type_renaming_preserves_physical_interactions_and_declared_unit():
+    from native_test_helpers import simple_ruleset
+    env,pos=env_and_position();compiled=env.session.compiled
+    rename={'A':'Z','B':'A','K':'K'};inverse={v:k for k,v in rename.items()}
+    def piece(p):
+        return None if p is None else replace(p,base_type_id=rename[p.base_type_id],current_type_id=rename[p.current_type_id])
+    initial=compiled.initial_position.board
+    rows=[[piece(initial[r*4+f]) for f in range(4)] for r in range(4)]
+    types=[replace(t,type_id=rename[t.type_id],name=rename[t.type_id]) for t in compiled.piece_types]
+    renamed=simple_ruleset(types,rows,drop_types=('Z','A'))
+    other=FixedScaleSessionEnv(GameSession(renamed),unit_type='Z',feature_mode='count_pairs')
+    target=replace(pos,board=tuple(map(piece,pos.board)),
+        hands=tuple(Hands(tuple(sorted((rename[t],n) for t,n in h.counts))) for h in pos.hands),ruleset_fingerprint=renamed.ruleset_fingerprint)
+    def canonical(name,back):
+        if name[0]=='pair':
+            left=(name[1],back.get(name[2],name[2]));right=(name[3],back.get(name[4],name[4]))
+            return ('pair',)+tuple(sorted((left,right)))
+        return (name[0],back.get(name[1],name[1]))
+    original={canonical(n,{}):x for n,x in zip(env.names,env.features_at(pos))}
+    transformed={canonical(n,inverse):x for n,x in zip(other.names,other.features_at(target))}
+    assert original==transformed
+    assert other.names[0]==('board','Z')  # SAME physical unit, not lexical A.

@@ -1,0 +1,87 @@
+{
+  "effective_work_seconds": 3682.1419499999997,
+  "id": "1cead48c-4d09-4e13-a121-550038be005b",
+  "research_stage_count": 9,
+  "started_at": "2026-11-05T11:20:15.416154+00:00",
+  "state": "active",
+  "work_intervals": [
+    {
+      "ended_at": "2026-11-05T11:34:46.631086+00:00",
+      "evidence": "scripts/aux_material_episode_20261105.py; artifacts/dev_aux/learner_1cead48c/plan.json:36slots frozen before Player;6actual Core input admissions; declared free B/C board channels with initial symmetric0features",
+      "question": "Can a new mixed pure-Leaper input support actual unchanged TDLeaf learning and paired terminal play, using current committed q0/Core and label-blind starts rather than another homogeneous zero-gradient or closed experiment?",
+      "started_at": "2026-11-05T11:29:36.477834+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T11:39:27.706807+00:00",
+      "evidence": "artifacts/dev_aux/learner_1cead48c/games.jsonl and summary.json: single frozen36slot study executed, actual B/C updates and terminal draws; no refills",
+      "question": "Does actual episode-frozen TDLeaf on the new ABC movement families expose free gradients and change paired terminal play under the frozen service budget?",
+      "started_at": "2026-11-05T11:38:57.337586+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T11:43:45.945262+00:00",
+      "evidence": "scripts/aux_material_episode_analysis_20261105.py;artifacts/dev_aux/learner_1cead48c/analysis.json:36full replay1137literalPV/Uniform streams,12independent TDsum reconstructions;7paired first-divergences, all saved leafUnit ties;2Unitwins lost",
+      "question": "Why did free-feature TD updates fail to preserve two observed Unit wins, and is the paired evidence semantically and causally qualified?",
+      "started_at": "2026-11-05T11:39:49.036342+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T11:48:49.427534+00:00",
+      "evidence": "artifacts/dev_aux/learner_1cead48c/older-study-comparison.json; retained TDterm readout: all12Bnegative terminal-search transitions,11Cnegative/1zero; old6x6ABCstrongteacher already tested, simple teacher escalation rejected as sufficient novelty",
+      "question": "Can retained empirical credit and two mate histories distinguish a terminal-reward/exposure failure from a changed material tie policy, and what distinct teacher contract would be useful?",
+      "started_at": "2026-11-05T11:46:22.793189+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T11:51:31.693061+00:00",
+      "evidence": "artifacts/dev_aux/learner_1cead48c/credit-attribution.json: allthreefamilies material-to-material aggregate B/Cpositive, terminal-search boundary aggregate B/Cnegative and dominates actual decrease; final actualreward residual0; no new calls",
+      "question": "Are draw-boundary search targets, rather than zero feature exposure or absent actual reward, the observed source of B/C drift in this completed sample?",
+      "started_at": "2026-11-05T11:50:19.099422+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T11:56:37.182410+00:00",
+      "evidence": "scripts/aux_material_first_action_20261105.py;artifacts/dev_aux/learner_1cead48c_first_action/plan.json:exactly2newcausalcontrols frozen beforecalls;old36slotsunchanged;globalplyseedalignedprecalls",
+      "question": "Can one prospectively fixed forced-first-action intervention distinguish the first learned action from later learned-policy effects in each of the two actual lost-win cases?",
+      "started_at": "2026-11-05T11:54:46.664987+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T12:00:59.646688+00:00",
+      "evidence": "artifacts/dev_aux/learner_1cead48c_first_action/{tails.jsonl,summary.json,analysis.json}:2forced-TDfirst/Unit-tail bothDRAW;40queries1890nodes0.666s;allRNG/fullrecords/literalPVsreplayed;firstaction sufficient under fixedstream,notminimaxQ",
+      "question": "Does forcing the learned first action then restoring Unit tail preserve or lose the two original Unit wins?",
+      "started_at": "2026-11-05T11:56:52.866624+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T12:04:56.157826+00:00",
+      "evidence": "scripts/aux_material_headtohead_20261105.py;artifacts/dev_aux/learner_1cead48c_headtohead/plan.json:9physicalzero-traininggames frozen beforecalls;unchangedmodels/Unitq0foe,duplicatedbaselineviewsdisclosed;precallqueryslackfix",
+      "question": "Does the already-frozen learned policy lose only weak-Uniform exploitation, or also lose against the unchanged Unit q0 policy under identical service?",
+      "started_at": "2026-11-05T12:02:59.001853+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T12:06:01.678526+00:00",
+      "evidence": "artifacts/dev_aux/learner_1cead48c_headtohead/{games.jsonl,summary.json,analysis.json}:9actualrepetitionDRAW,231queries13536nodes2.983s;6seatviewsfrom3baselinegames;fullrecords/literalPVs/frozenweightsvalidated",
+      "question": "Do unchanged learned models improve or lose actual play against Unit q0D2 on all three frozen evaluation families?",
+      "started_at": "2026-11-05T12:05:11.417116+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T12:14:14.589255+00:00",
+      "evidence": "scripts/aux_capture_material_plan_20261105.py;artifacts/dev_aux/learner_1cead48c_capture/plan.json:6TRAIN9EVALfrozennewcapture-richinputs;96relatedtestsPASSafterownbasetempfix;zeroPlayercallsnewpilot",
+      "question": "Do genuinely new capture-rich committed inputs provide a useful actual Unit-q0 teacher/learner signal where the earlier deterministic quiet starts had zero free-feature trajectories?",
+      "started_at": "2026-11-05T12:12:25.257207+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T12:20:55.511767+00:00",
+      "evidence": "scripts/aux_capture_material_analysis_20261105.py;artifacts/dev_aux/learner_1cead48c_capture/analysis.json:15games859queries41138nodes10.291s,allDRAW6updates4changedEVALrecords,1703literalPVedges/fullrecords/TDsumschecked",
+      "question": "Does the prospectively fixed new capture-rich input pilot yield nonzero TD gradients and actual frozen-model play effects against Unit q0 under its declared service?",
+      "started_at": "2026-11-05T12:15:43.771293+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T12:30:41.421078+00:00",
+      "evidence": "generic_chess/learning/{incremental.py,mainline_search.py};tests/development/test_count_pair_learning.py;artifacts/dev_aux/learner_1cead48c_pairs/plan.json:optincount-pairbasis,102checksPASSincludingactualq0/promote/drop/history;6TRAIN6EVALprospective,oldbaselinesreuse",
+      "question": "Can a minimal mechanically derived count-conditioned material basis preserve full Generic feature semantics and support a falsifiable actual-play control under the same TDLeaf/q0 service?",
+      "started_at": "2026-11-05T12:24:11.815296+00:00"
+    },
+    {
+      "ended_at": "2026-11-05T12:57:03.389723+00:00",
+      "evidence": "scripts/aux_count_pair_analysis_20261105.py;artifacts/dev_aux/learner_1cead48c_pairs/analysis.json:12actualgames653queries31065nodes9.142s,6updates2changedEVALrecords0utilitygain;all1294PVs/physicaltokenpairs/TDsumsverified;104semanticchecksPASS;C1structuralCCzeroandactualEVALwitness;3matchedworkloads6.8-15.7pctslowerobservations",
+      "question": "Does the opt-in count-conditioned material representation improve actual frozen-policy play versus exact existing linear and Unit baselines at the same service?",
+      "started_at": "2026-11-05T12:31:13.300324+00:00"
+    }
+  ]
+}
