@@ -376,19 +376,27 @@ class FixedScaleSessionEnv:
 
     supports_qsearch = False
 
-    def __init__(self, session, *, unit_type='P', use_runtime=True):
+    def __init__(self, session, *, unit_type='P', use_runtime=True, feature_mode='linear'):
+        if feature_mode not in ('linear', 'count_pairs'):
+            raise ValueError('unknown material feature mode')
+        self.feature_mode = feature_mode
         self.unit_type = unit_type
         self.use_runtime = use_runtime
         self.session = copy(session)
         self.stack = []
-        self.names = compile_channels(session.compiled, unit_type=unit_type)
+        self.base_names = compile_channels(session.compiled, unit_type=unit_type)
+        self.names = self.base_names + (_count_pair_names(self.base_names) if feature_mode == 'count_pairs' else ())
 
     def player(self):
         return self.session.state.position.side_to_move
 
+    def features_at(self, position):
+        if self.feature_mode == 'count_pairs':
+            return _count_pair_features(position, self.session.compiled, self.base_names)
+        return _material_features(position, self.session.compiled, self.base_names)
+
     def features(self):
-        return _material_features(self.session.state.position,
-                                  self.session.compiled, self.names)
+        return self.features_at(self.session.state.position)
 
     def search_view(self):
         from generic_chess.session.result import SessionStatus
@@ -453,7 +461,8 @@ class FixedScaleSessionEnv:
                                   deserialize_game_record(json.dumps(self.record())))
         if other.state != self.session.state or other.result != self.session.result or other.to_record() != self.session.to_record():
             raise ValueError('full Generic state/result/history did not survive replay')
-        return type(self)(other, unit_type=self.unit_type, use_runtime=self.use_runtime)
+        return type(self)(other, unit_type=self.unit_type, use_runtime=self.use_runtime,
+                          feature_mode=self.feature_mode)
 
 
 def _type_metadata(compiled):
@@ -475,6 +484,38 @@ def _material_features(position, compiled, names):
         for base, count in holding.counts:
             hand[base] += (1 if owner == 0 else -1) * count
     return tuple((board if kind == 'board' else hand)[name] for kind, name in names)
+
+
+
+def _count_pair_names(base_names):
+    # Fixed unit stays the first LINEAR coordinate. Pair terms are learned
+    # context interactions, not declared conservation/additivity relations.
+    return tuple(('pair',) + left + right
+                 for i, left in enumerate(base_names)
+                 for right in base_names[i:])
+
+
+def _count_pair_features(position, compiled, base_names):
+    linear = _material_features(position, compiled, base_names)
+    own = [Counter(), Counter()]
+    for piece in position.board:
+        if piece is not None:
+            own[piece.owner]['board', piece.current_type_id] += 1
+    for owner, hand in enumerate(position.hands):
+        for base, count in hand.counts:
+            own[owner]['hand', base] += count
+    pairs = []
+    for i, left in enumerate(base_names):
+        for j in range(i, len(base_names)):
+            right = base_names[j]
+            if i == j:
+                # Two distinct actors/stock units, not a self-interaction.
+                a, b = own[0][left], own[1][left]
+                pairs.append(a * (a - 1) // 2 - b * (b - 1) // 2)
+            else:
+                pairs.append(own[0][left] * own[0][right]
+                             - own[1][left] * own[1][right])
+    return linear + tuple(pairs)
 
 
 def _session_choices(actions, compiled, player):
@@ -501,6 +542,8 @@ class _RuntimeSearchEnv:
         self.runtime = SearchPathRuntime(source.session.state, source.session.compiled,
                                          history_witnesses=source.session._search_witnesses)
         self.names = source.names
+        self.base_names = source.base_names
+        self.feature_mode = source.feature_mode
         self.stack = []
         self.declaration = None
 
@@ -508,7 +551,9 @@ class _RuntimeSearchEnv:
         return self.runtime.position.side_to_move
 
     def features(self):
-        return _material_features(self.runtime.position, self.runtime.compiled, self.names)
+        if self.feature_mode == 'count_pairs':
+            return _count_pair_features(self.runtime.position, self.runtime.compiled, self.base_names)
+        return _material_features(self.runtime.position, self.runtime.compiled, self.base_names)
 
     def terminal(self):
         from generic_chess.session.result import session_result_from_terminal, SessionStatus

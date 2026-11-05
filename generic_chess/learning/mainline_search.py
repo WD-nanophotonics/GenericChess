@@ -14,7 +14,7 @@ from ..ai.alphabeta.tuning import SearchTuning
 from ..ai.limits import SearchLimits
 from .incremental import (
     BudgetEnd, FixedScaleSessionEnv, MATE, NonScoringTerminal, Receipt,
-    SearchAttempt, SessionChoice, _material_features,
+    SearchAttempt, SessionChoice,
 )
 
 
@@ -80,8 +80,7 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
 
     class Material:
         def evaluate(self, state):
-            value = model.raw(_material_features(state.position,
-                env.session.compiled, env.names))
+            value = model.raw(env.features_at(state.position))
             return value if state.position.side_to_move == 0 else -value
 
         def capture_order_value(self, mover, victim):
@@ -128,7 +127,7 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
     # Replaying the entire played prefix at every query would duplicate root
     # history admission. The episode/auditor still independently replay records.
     leaf = FixedScaleSessionEnv(env.session, unit_type=env.unit_type,
-                               use_runtime=env.use_runtime)
+                               use_runtime=env.use_runtime, feature_mode=env.feature_mode)
     if perf_counter() - began >= seconds:
         return receipt('PV_REPLAY_TIME_CAP')
     try:

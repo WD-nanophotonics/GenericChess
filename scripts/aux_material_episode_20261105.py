@@ -113,7 +113,7 @@ def run(out):
                         cfg['initial'] if slot['arm']=='Unit' else models[f].weights,
                         scale=cfg['scale'])
                     row.update(before=list(model.weights),initial_record=world['record'])
-                    env=FixedScaleSessionEnv(restore(compiled[f,phase],world['record']),unit_type='A')
+                    env=FixedScaleSessionEnv(restore(compiled[f,phase],world['record']),unit_type='A',feature_mode=cfg.get('feature_mode','linear'))
                     rng=random.Random(slot['seed'])
                     def opponent(env):
                         choices=sorted(env.actions(),key=lambda x:json.dumps(L.record_value(x),sort_keys=True))

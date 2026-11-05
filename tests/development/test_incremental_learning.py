@@ -255,7 +255,8 @@ def test_generic_qsearch_is_rejected_before_touching_session():
     assert env.record() == before and env.stack == []
 
 
-def test_promotion_drop_auxiliary_and_history_survive_library_adapter():
+@pytest.mark.parametrize('feature_mode', ('linear', 'count_pairs'))
+def test_promotion_drop_auxiliary_and_history_survive_library_adapter(feature_mode):
     fixtures = weird_rulesets()
     board = [[None] * 8 for _ in range(8)]
     for owner, type_id, file, rank in (
@@ -267,8 +268,8 @@ def test_promotion_drop_auxiliary_and_history_survive_library_adapter():
                     semantic_actions=(fixtures[1].semantic_actions[0], fixtures[2].semantic_actions[0]),
                     drop_allowed={'R': ((True,) * 64, (True,) * 64),
                                   'TP': ((False,) * 64, (False,) * 64)})
-    env = FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(rules)), unit_type='R')
-    assert env.names == (('board', 'R'), ('board', 'TP'), ('hand', 'R'), ('hand', 'TP'))
+    env = FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(rules)), unit_type='R', feature_mode=feature_mode)
+    assert env.base_names == (('board', 'R'), ('board', 'TP'), ('hand', 'R'), ('hand', 'TP'))
     route = (((1, 1), (1, 3), False), ((7, 7), (6, 7), False),
              ((1, 3), (1, 4), False), ((6, 7), (5, 7), False),
              ((0, 0), (1, 1), True), ((5, 7), (4, 7), False),
