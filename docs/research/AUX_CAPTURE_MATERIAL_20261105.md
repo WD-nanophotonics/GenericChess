@@ -1,0 +1,13 @@
+# Capture-rich input learner pilot: prospective
+
+Use ordinary committed inputs at sandbox de018b631cb8ac774565b702aab58a4f0effeea5, docs/research/data/leaper_capture_admission_20261105/inputs.json.gz. Read no archived source as code. PRIMARY's capture-order qualification remains CLOSED, all32fitnessNOT_RUN, no prototype/default activation. Shared generic_chess has no delta; the new research-helper test is outside the learner's dependency path.
+
+Question: do the genuinely new capture-rich geometries, under a fixed pure Unit-q0 foe, produce actual useful TD evidence and changed play on the other literal quantity layout? This differs from the earlier quiet q-bound inputs' identical zero-feature q0 repetition trajectories. It is not extra episodes on that closed study, nor the closed October23 Mobility/D4/Static campaign.
+
+Exactly source-order families0/1/2; layout0TRAIN/layout1EVAL. Allsix literal inputs admitted using existing Core/GameSession before calls. Sourcefamilies4/6/7 include known rejected inputs; these are not repaired or used as replacements. Firstthree selection uses source metadata, not search/outcome labels. Complete current rule max_ply64/repetition4 remain authoritative.
+
+Unchanged library Model/TDLeafEpisode/play_episode/publicq0: fixedA1, B/C1, hand0, scale10, eta.05/lambda.95, q0D2/2048nodes. Separate models per movement family. Six TRAIN episodes, roles0then1 once per family. Nine EVAL physical slots: oneUnit/Unit baseline plus TD/Unit bothseats per family. No learner duringEVAL, frozen final weights, no checkpoint selection. Reused baseline seatviews are not independent games. If a family model is exactly unchanged, skip itsEVAL and do not impute terminal results.
+
+Whole600seconds/1024queries/1200000nodes; game30seconds/65536nodes/horizon64, both actors charged. Logical15x64 bounds queries at960, aggregate slack permits final action commit. No replacements/refills/tuning, reverse controls, newsolver/search/default/worker. Prospective whole development/validation/delivery forecast20minutes, combined ownABC-chain actual costs retained, below120minute experiment threshold; no old H6 cap reset. UNKNOWN remainsUNKNOWN; scoring draws require actual Core terminal. Models, physical actions, terminal outcomes and cost are separate endpoints.
+
+The same small episode producer now accepts an explicit optional Unit opponent; defaultUniform behavior and public learner/search implementations stay unchanged. Executed older producer is pinned in acad59ac7cb74d980ea2ec99c6c2a5373cd2372d. Relevant learner/runtime compatibility:96testsPASS with own-checkout basetemp. Initial default pytest Temp permission errors were diagnosed and corrected; no domain assertion failed.

@@ -73,8 +73,9 @@ def freeze(out):
 def run(out):
     cfg=load(out/'plan.json')
     assert cfg['producer_sha256']==code_sha()
+    assert cfg.get('opponent_policy','Uniform') in ('Uniform','Unit')
     with (out/'execution.json').open('x',encoding='utf-8') as f:
-        json.dump(dict(started_utc=time.time(),source=SOURCE),f)
+        json.dump(dict(started_utc=time.time(),source=cfg['source']),f)
     began=time.perf_counter();cpu=time.process_time()
     compiled={}
     for f,world in cfg['worlds'].items():
@@ -121,7 +122,7 @@ def run(out):
                         return action
                     def query(ply,actor,receipt):
                         totals['queries']+=1;totals['nodes']+=receipt.nodes
-                        events.append(dict(kind='candidate',ply=ply,actor=actor,
+                        events.append(dict(kind='candidate' if actor==slot['role'] else 'Unit',ply=ply,actor=actor,
                             receipt=L.record_value(asdict(receipt))))
                     try:
                         remaining=cfg['game_seconds']-(time.perf_counter()-episode_began)
@@ -131,7 +132,7 @@ def run(out):
                             learner_color=slot['role'],horizon=cfg['horizon'],depth=cfg['depth'],
                             query_nodes=cfg['query_nodes'],max_nodes=min(cfg['game_nodes'],cfg['total_nodes']-totals['nodes']),
                             seconds=remaining,seed=slot['seed'],cancel=guard,
-                            on_query=query,search_backend='mainline',opponent_policy=opponent)
+                            on_query=query,search_backend='mainline',opponent_policy=opponent if cfg.get('opponent_policy','Uniform')=='Uniform' else None)
                         actual=env.terminal()
                         assert ep.outcome==actual
                         if phase=='eval':assert row['before']==model.weights
@@ -150,7 +151,7 @@ def run(out):
                 ending=row.get('result',{}).get('ending'),outcome=row.get('result',{}).get('outcome'),
                 weights=row.get('after'),wall=row.get('wall_seconds')),separators=(',',':')),flush=True)
     if not frozen:write(out/'frozen_weights.json',snapshot())
-    summary=dict(source=SOURCE,whole_wall_seconds=time.perf_counter()-began,
+    summary=dict(source=cfg['source'],whole_wall_seconds=time.perf_counter()-began,
         whole_cpu_seconds=time.process_time()-cpu,totals=totals,
         training_returned=sum(r['status']=='RETURNED' and r['slot']['phase']=='train' for r in rows),
         eval_returned=sum(r['status']=='RETURNED' and r['slot']['phase']=='eval' for r in rows),
