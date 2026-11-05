@@ -27,18 +27,21 @@ exposed12optimisticnonroyalproxyvalues.2Core controls(-20/+15material) justified
 small research-model royal-last repair;4modeltestsPASS. Correctedcost/quality
 UNMEASURED;no productintegration/PN/newsolver/learning or AUXwrite.
 
-Main: Does the corrected model have an actual capture-rich search opportunity? |
-Check latestreviews,then choose a fresh bounded full-history capture-rich cohort
-before queries and assess actualMoveOrderer integration/totalcost,using existing
-Core/compiled tables only | Complete inputs,realcandidateactivity and useful
-legalchoice evidence,not micro-rank or NPS alone | No oldPV/rootpanel refill,
-royal-as-zero price,TTidentity framework,automaticqualityclaim or default change.
-Backup1: Model remains unsupported? | Use concrete savedroyal/control counterexample
-and scope to reject integration or select a distinct pureLeaper search action |
-Explicitcause/UNKNOWN | Do not build universal WDL/theory/guard prerequisites.
-Backup2: Delivery/session recovery? | Preserve originalUUID/recordedintervals,
-ignore all offline/admin spans,update executablememo and matchingqualitygate |
-Full remoteSHA/ledger | No secondwriter/oldcredit or schedule changes.
+[Capture qualification](LEAPER_CAPTURE_ADMISSION_20261105.md) CLOSED beforefitness:
+16literal inputs admitted13/rejected3initialattackedanchors;5independentgeometry
+witnesses.22contracttestsPASS,32fitnessNOT_RUN,0games. Testedcandidate retired,
+productrestored;wholecost/qualityUNMEASURED. No rule/layout replacement/refill.
+
+Main: Can internal iterative ordering improve actual pureLeaper Player decisions? |
+ONEdefaultOFF existingnegamax shallowpass at internal PVdepth>=3 lackingTTmove,
+seed existingorderer only; fullhistory/leaf/TTidentity unchanged | boundedactual
+contracts,then prospectively frozen equalservice developmenttest | Stop on
+inactive/failedfrozengate;no runner-up/capturecohortrefill or automaticgames.
+Backup1: Shallowpass costs exceed use? | Preserve actualattempts/enteredwork and
+abort/undo/returnedchoices,retire without retuning | explicitfinite negative |
+No TTguardframework or failed-slot refill.
+Backup2: Continue useful work toward60–90effective minutes | sameUUID/exactledger,
+excludeadmin/offline,qualityreview+finish/finalcheck | fullremoteSHA | noearlyfinal.
 
 Persistent lifecycle CLOSED INCONCLUSIVE:63/128 returns,65NOT_RUN,31complete
 pairs plus1unpaired;23qualifiedwarm pairs onlyfamilies0–3. Descriptive wall
