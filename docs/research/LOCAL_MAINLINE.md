@@ -32,16 +32,18 @@ UNMEASURED;no productintegration/PN/newsolver/learning or AUXwrite.
 witnesses.22contracttestsPASS,32fitnessNOT_RUN,0games. Testedcandidate retired,
 productrestored;wholecost/qualityUNMEASURED. No rule/layout replacement/refill.
 
-Main: Can internal iterative ordering improve actual pureLeaper Player decisions? |
-ONEdefaultOFF existingnegamax shallowpass at internal PVdepth>=3 lackingTTmove,
-seed existingorderer only; fullhistory/leaf/TTidentity unchanged | boundedactual
-contracts,then prospectively frozen equalservice developmenttest | Stop on
-inactive/failedfrozengate;no runner-up/capturecohortrefill or automaticgames.
-Backup1: Shallowpass costs exceed use? | Preserve actualattempts/enteredwork and
-abort/undo/returnedchoices,retire without retuning | explicitfinite negative |
-No TTguardframework or failed-slot refill.
-Backup2: Continue useful work toward60–90effective minutes | sameUUID/exactledger,
-excludeadmin/offline,qualityreview+finish/finalcheck | fullremoteSHA | noearlyfinal.
+Internal iterative ordering CLOSED:32Q4returns/all16ON0attempts,D6-D10;
+1changedACTIONwith0intervention/differentretaineddepth,notcandidategain.17tests
+and237savedPVpliesPASS;prototype retired/noeligibilityretuning or games.
+Main: Does existing capture-onlyQ4 tradeoff improve pureLeaper fullgame utility? |
+Execute frozen12role-swappedgames/6newliteral6x6families,5sconstructor-to-return,
+Q4hard8/PVS/allNative/DEFAULT;completehistory/64ply/2Mnodes | actualCoreWDL,
+servicecost/checkingQactivity/UNKNOWN | 4000sloop/333sgame/110minwhole;no refill,
+default,learner/AUX/solver or oldcapture/IID/runnerup expansion.
+Backup1: Control/cap failure? | Keep originalreturns and UNKNOWN/NOT_RUN,stopat
+actualscope | exactcause/fullhistories | No threshold/layout/rule replacement.
+Backup2: Same ordinarysegment work | Preserve UUID/ledger,continue60–90effective
+and quality/finish/finalcheck | fullremoteSHA | No finite-result earlyfinal.
 
 Persistent lifecycle CLOSED INCONCLUSIVE:63/128 returns,65NOT_RUN,31complete
 pairs plus1unpaired;23qualifiedwarm pairs onlyfamilies0–3. Descriptive wall
