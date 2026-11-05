@@ -25,3 +25,49 @@ Cost correction BEFORE calls:55minutes cannot be treated as available balance be
 The literal plan now contains24roots/48slots, with TWO early-terminal prefixes retained unchanged:Commonfamily0/role1 ends atprefix6, EVALfamily0/layout0 atprefix2. These are not filtered/replaced. Distinguish executed episode services, actually played continuations(addedplies>0), terminal-root services and derived EVAL views. A literal-terminal EVALcontext may reuse its completed Unit record regardless of modelweights because no policy acts; record this as REUSED_TERMINAL_CONTEXT, not a new game. Exact frozen-policy reuse is separate and requires completed allD2/scoring data.
 
 Two focused risk checks PASS: an actual complete publicq0 callback followed by cancellation gives0consumedlearnerrows/0addedplies/UNKNOWN, and copying a nondefault fixed-index/scale Model isolates both branch weights. These validation calls are not trial Player returns. Experimental dispatch remains0 before publication. The controller stores actual consumed-query indices using observed_searches and the chronological complete-candidate prefix; callback counts alone are not learning evidence. The first Mixed episode's diagnostics are part of its already-budgeted slot, not a new screen.
+
+## Frozen result: closed, no refill
+
+The one prospective dispatch populated all48 slots through44 episode services:
+42 played post-prefix continuations,2 terminal-root services and4 explicitly
+reused terminal views.24 initializer paths performed184 Core actions.
+Actual1969 q0 queries/92515 nodes cost25.088638 wall seconds/25.03125 CPU seconds.
+No UNKNOWN or fatal error. The saved-only reader reconstructs24 RNG prefixes,
+44 complete records,3896 literal PV edges,physical pair features,actual consumed
+TD sums,warmup snapshots and final forks. It makes zero new Player calls.
+
+| Physical TRAIN group | services | consumed own rows | nonzero C/C gradients | queries | nodes | wall seconds |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Shared common | 6 | 135 | 0 | 269 | 11323 | 3.222880 |
+| Single fork | 6 | 110 | 0 | 220 | 11645 | 2.849390 |
+| Mixed fork | 6 | 153 | 91 | 305 | 15676 | 4.183672 |
+
+Common data is paid once and shared by both logical models. Equal episode
+views did not supply equal information or actual work. Single final C/C stays0
+in allthree families. Mixed C/C is[-.01365169288175646,-.02023119959972365,
++.001958061307657625]. First already-budgeted Mixed slot8 has28 consumed rows,
+27 nonzero C/C gradients; its independent eta*error*eligibility sum
+-.013651692881756458 matches observed net-.01365169288175646.
+It ends DRAW. Nonzero features,gradients,net updates and payoff are different facts.
+
+Across12 paired EVAL seat frames,Mixed-minus-Single WDL sum/mean and mean
+gamepoint gain are all0. Both arms W1/D10/L1;the W/L pair is the same root
+already terminal after its random prefix,with zero candidate decisions.
+Three changed complete records are alltwo-C layout and DRAW:f0role0 first
+differs atabsolute ply26,f0role1 at27,f2role1 at9. This establishes action-path
+effects,not improved play. Shared warmup,paired seats and reused terminals are
+not independent trials. No exact EVAL/TRAIN complete-root overlap was found;
+that is not a population holdout or independence claim.
+
+Readopt Dot's exposure-before-utility advice as EXECUTED. Reject unchanged
+extraepochs or a stronger foe as a remedy for structurally absent C/C in
+one-C TRAIN. This changed experience law remedies exposure but provides no
+demonstrated finite terminal gain. It changes placement AND quantity and other
+weights,so neither intrinsic C value nor pure C/C causal utility is identified.
+Close all48 slots; no tuning/refill/promotion. Default/search/rules unchanged.
+
+Full raw project trajectories/models/summary/analysis are compressed beside the
+unchanged prospective plan. Reader:scripts/aux_mixed_experience_analysis_20261105.py.
+Two focused controller tests PASS;prior104 tests remain earlier evidence.
+The new study closes at this publication checkpoint;carried costs and forecast
+are recorded in the role-local plan rather than reset by a new segment.

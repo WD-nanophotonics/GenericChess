@@ -2462,3 +2462,16 @@ Countbasis is optin, zero-initialized on same linear model, generic boardCURRENT
 Openingrequest1793878134 delivered after259ee356fullSHAverification; meaningfulnegativefollowup1793879127 after568a88f1, and newcaptureplan1793880922 after025f35c9. Duechecks11:35:09/11:51:53/12:22:10UTC completed once; no newerDotreplytofollowups, no replygate. Exactrawsource/threads private, source/reader/actualresults public in the three ownreports. Closing fullSHA/communication/finish receipts follow; no claims about the otherrole's localprocess or scheduler.
 
 Closing result1793884155.132579 afterb0302a9b75f6532dd38dc85dffe98dc5834ab918 fullremoteverification;single delayedcheck13:15:32UTC completeparent+4/no newerDotreply. Openingrequest reconciledCOMPLETED/adopt through supportedmailbox with exactpayloadverification13:10:59UTC; alreadyexecuteddiagnostics distinct from unansweredfuturemixed-quantityquestion. Acceptedfinish13:11:03UTC:61.369effective/110.795elapsed minutes,durationgate/memosyncPASS. Full count-phase through delayedcheck 51.336min MISSES35minutecheckpoint due underreservedclosingoverhead; no postcap fitting or trajectory. This failure is recorded, not excused by normalduration or a newID. Final Git delivery remains additional uncreditedadmin.
+
+## DEV_AUX423c mixed experience-law milestone —2026-11-05
+
+Source d07794e6 literal capture-rich inputs reused; PRIMARY Q-policy campaign
+remained separate. Dot1793885603 source-only advice ADOPTED/EXECUTED:
+actual consumed target gradients/net update/utility and complete fork copies
+were independently checked.48 frozen slots close44services42played continuations,
+2terminal services4reused views. Mixed exposes91 C/C gradient rows; Single0.
+All12paired EVAL payoff differences0 despite3changed DRAW records.
+No strength/intrinsic-price claim,additional fitting or defaultchange.
+[Plan and results](../research/AUX_MIXED_QUANTITY_EXPERIENCE_20261105.md).
+Current session continues toward60 effective minutes on distinct newly published
+Q-game consumer evidence; no old time/cap reset or other-role execution.
