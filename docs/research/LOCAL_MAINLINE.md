@@ -46,17 +46,25 @@ Fresh724-return/source latencytriage BEGIN/DONE:all6excesses essentiallyinside
 choose(outerdelta61–74us),notJSONtransport. Check/availabilitycountersmatch
 completepushes,butpatternalsoin528goodcalls. Legalityfrontiercanabortbefore
 lastmetrics;oldlivewarmTT/GC/eventtimesUNKNOWN. No guessedGC/Native/kernel fix.
-Main: Which uninterruptible operation causes actual budget excess? | First
-qualifyONEsmallselectivelegalityentry/exit/finally+GCeventobserver underbounded
-newcontexts;checkoutput/workdisturbance before<=4newservicecalls/30sbatch |
-actualevent/abort evidence | No oldgamequeryrepair/warmTTreconstruction,
-globalGCsetting,Nativebuild/TTidentity/guardframework or unboundedprofile.
-Backup1: Observercost/contractsfail? | KeepcauseUNKNOWN and assessone cheaper
-publiccallback-boundary contract with concreteuse | boundedfailure | No tuning,
-replay/refill or routineuserapprovalgate.
-Backup2: Decisionpanelresolution? | Join5previouslyunjoinedrolepair firstcommon-
-historytypedchoicedivergences fromsavedreturns | newdescriptivecounterexamples |
-No newPlayer/solver/regret claim or AUXlearning/librarywork.
+[Latency triage](LEAPER_LATENCY_TRIAGE_20261105.md) CLOSED with cause UNKNOWN.
+Original one-control collector failure retained;7controls+4probes NOT_RUN, no
+qualification/refill. TTcapacity eviction excluded for6; rootfallback regeneration
+also excluded (all6 completedmainiteration/no root fallback). Research-only pinned
+checkpoint proxy passes32contracts including deepundo/Corepostreturn/nooppolls;
+lastfailed receipt separate from later success. Cost UNMEASURED; no product use.
+Five new typed rolepair joins/12Corechildren:allfirstdivergences quiet, family4
+sameD7/differentchecks;202commonprefixreturns within5.1s. Sequential-game/global
+GC+liveTT+wallconfounding retained;no quality/eligibility restoration.
+Main: Does existing Native API expose an interruptible boundary? | Inspect current
+transient_legal_actions Python/C signature and installed capability, no build/query |
+exact supported/unsupported source evidence | One bounded check, no new framework,
+frozen probe/cap reset or speculative kernel replacement.
+Backup1: No supported Native boundary? | Retain latencyUNKNOWN; evaluate one new
+pure-Leaper decision-changing mechanism against current reviews and closed trials |
+prospective complete cost/question and distinct premise | No old panel refill,
+TTidentity/source-theory campaign or AUX duplication.
+Backup2: Existing choice evidence? | Use saved typed join and confounding limits |
+no new replay/query | Do not infer WDL/regret/strength from check/depth/PV.
 
 Persistent lifecycle CLOSED INCONCLUSIVE:63/128 returns,65NOT_RUN,31complete
 pairs plus1unpaired;23qualifiedwarm pairs onlyfamilies0–3. Descriptive wall

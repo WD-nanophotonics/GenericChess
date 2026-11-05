@@ -8486,3 +8486,15 @@ PRIMARY source/arithmetic continuation check: zero-margin cross-depth counterexa
 2026-11-05 PRIMARY same93b6c7b3 continued aftercapturefailure. FreshDotrequest1793879370 andfollowup1793880353 eachsingle+5checked;onlyoldsolicitedreply/no freshIIDreply atcheck. IID32actualreturns0attempts,17contracts/237PVpliesPASS;closedwithoutretuning. Existingcapture-onlyQ4directgameplan usesnewpureLeaperinputs,notAUXlearner oroldmixedQ1refill. No userapprovalgate/schedule/role/default change.
 
 2026-11-05 PRIMARY completed original12captureQ4games:12literalDRAW,6serviceoutliers/5gamesunqualified;724turns/4496PVpliesaccepted,no strength/defaultchange. ExistingQfollowup1793881590 single delayedcheck actual12:34:27Z versusdue12:31:30Z (+177.25s),no freshDot in covered4message thread;notreplyexpiry/workgate. No further empty Slackpoll/chase or AUXassignment. New724counter/clocktriage localizesinsidechoosebutcannotassignGC/Nativecause;futureboundedselectiveobserver is distinct from closedgame refill. Finalexplicitfetchd07794e6 showed40Patrolfilesunchangedfromcoveredf0d8,not a newreview validation. SameUUID/actualledger preserved;no schedule changes.
+
+
+### PRIMARY 2026-11-05 latency triage
+Existing round d5a7a0be resumed without old-gap credit or duplicate Dot request.
+GitHub sandbox549b159a/40Patrol files unchanged; latest dd70 guidance to stop
+closed panels/frameworks retained. Opening request1793886575.778969 and delayed
+13:55:20Z no-reply check remain preserved; no new outbound report or AUX task.
+One frozen control's collector defect closed with7controls+4probes NOT_RUN.
+New capacity/rootfallback exclusions and32proxy contracts narrow uncertainty,
+not establish Native/GC cause or observer cost. Five saved rolepair joins add
+12Corechildren; timing/TT/quality limits remain. No other-role code/state or
+computation changed; no independent AUX rerun claimed.
