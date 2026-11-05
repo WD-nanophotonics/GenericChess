@@ -1,7 +1,8 @@
 # DEV_AUX actual learning/play segment1cead48c —2026-11-05
 
-Current closing checkpoint:3682.141950confirmedseconds=61.3690325effective minutes,
-sameUUID/origin11:20:15Z, old/offline/admin0; normalfinish pending only delivery.
+Accepted safe_checkpoint 2026-11-05T13:11:03.102705+00:00:3682.141950confirmedseconds=61.3690325effective minutes,
+sameUUID/origin11:20:15Z, old/offline/admin0; durationgate/memosyncPASS.
+[Finish receipt](data/aux_count_pair_20261105/session-finish.json).
 [Quiet/mixed material study](AUX_MATERIAL_EPISODE_20261105.md) has12train/24eval:
 Unit2wins/10draws versusTD12draws; two separately frozen first-action controls
 bothloseUnitwins withUnit-tail. A9gamefixedq0opponentcontrol has identical
@@ -23,7 +24,10 @@ with carriedcosts, notmoreclosedslots or PRIMARYsearchwork. Mutable plan/memo
 hold exactnextactions. All74researchgames/2920queries/148331nodes/39.9305sproducer
 are reported with separate design/test/analysis/delivery costs and oldcaps intact.
 Procea175ba STOPtheory/identity/closedpanels adopted;Dotfirst-episodecorrection
-executed. Finalpublication/delayedcheck/acceptedfinish will close this record.
+executed. Acceptedfinish ENDED; closingDotreport1793884155/fullb0302a9b verified,
+one delayedcheck13:15:32UTC parent+4/no newDotreply. Final Git delivery administrative.
+The35minute count-phase full-delivery checkpoint was MISSED; actualclosingcost
+is retained separately from61.369effective research, no extra experimental allowance.
 
 ## DEV_AUX631ce76d interruption reconciled —2026-11-05
 
