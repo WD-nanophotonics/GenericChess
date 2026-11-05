@@ -72,7 +72,10 @@ def verify(base,output,reference_directory=None):
   pair=[next((x for x in calls if x['root']==ri and x['on']==on),None) for on in (False,True)]
   if not all(pair):relative.append(dict(root=ri,status='MISSING',difference_interval=[-2,2]));continue
   off,on=[x['decision'] for x in pair];post=next((x for x in posts if x['root']==ri),None)
-  if off['choice'] and off['choice']==on['choice']:relative.append(dict(root=ri,status='IDENTICAL_FULL_TYPED_CHOICE',difference_interval=[0,0]));continue
+  # Frozen16-pair panel uses ACTION only; compare its full payload, not list/dict wrappers.
+  off_choice,on_choice=off['choice'],on['choice']
+  same_action=(off_choice and off_choice[0]=='ACTION' and ((isinstance(on_choice,dict) and on_choice['kind']=='ACTION' and off_choice[1]==on_choice['action']) or (isinstance(on_choice,list) and off_choice==on_choice)))
+  if same_action:relative.append(dict(root=ri,status='IDENTICAL_FULL_TYPED_CHOICE',difference_interval=[0,0]));continue
   c,original=make_session(rows[ri])
   def actual_one_step_value(d):
    choice=d['choice']

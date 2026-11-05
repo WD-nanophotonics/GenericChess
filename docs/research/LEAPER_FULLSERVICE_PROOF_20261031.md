@@ -2,10 +2,12 @@
 
 The frozen16-root/8-development-family panel shows **zero relative action-value
 gain in every pair**. All32original returns and4separate real-interface fixtures
-are retained. Seven pairs choose the identical complete action. In the other
-nine, PN supplies independently verified one-ply checkmate certificates, but the
-public baseline independently finds an immediate Core win too. Those two
-winning choices both have value+1, so each relative difference is exactly0.
+are retained. **All16pairs choose the identical complete ACTION.** The nine
+raw wrapper differences are normal ["ACTION",action] versus proof
+{"kind":"ACTION","action":action,...}; their full action payloads match.
+Those nine PN returns also supply verified one-ply checkmate certificates and
+the baseline independently finds that same immediate Core win. Each relative
+difference is exactly0.
 This is not a proof of optimal root value on all sixteen states, class strength,
 or a reason to activate the chooser. The preregistered two-family strict-gain
 gate fails; no tuning, new dataset, extra control arm or refill follows.
@@ -74,3 +76,5 @@ Private Slack/account wrappers remain excluded. Reviewed reference source must
 be obtained separately at its pinned SHA; never execute data-packet capsules.
 
 Accounting clarification: actual reused PN searches were16fitness+2fixture+7postassessment=25. Producer verification made9checker calls; each saved-reader pass adds9checker calls. These phases are distinct and are not additional Player fitness returns.
+
+Correction2026-11-05: adopted the concrete AUX ff573d757098c17be579979e20fda96d0a37d9ea comparison and autonomous dd70abef review. Fixed only the wrapper equality in the saved reader and this wording; the zero-value conclusion and all frozen originals remain unchanged. No Core/Player/PN replay or new identity/normalization layer.
