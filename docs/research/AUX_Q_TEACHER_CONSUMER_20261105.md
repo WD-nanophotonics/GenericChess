@@ -56,3 +56,47 @@ difference is descriptive under DIFFERENT search service,not improvement.
 This checks whether the current supported consumer can actually use these
 new complete-history worlds,not a benchmark against PRIMARY. Freeze plan/code
 on sidemission before dispatch;single execution marker prevents repeats.
+
+## Actual current q0 consumption result and remaining interface
+
+The one18call probe completed all18 requestedD2receipts,952nodes,.326145wall
+seconds. All18were accepted by actual TDLeafEpisode.observe;9have nonzero
+free gradients. A separate saved-only pass reconstructs36PVedges and exact
+leaf/score/node-attempt arithmetic. No TDfinish/apply or game was performed.
+Fourteen actions differ from sourceQ4 under different service/evaluator/TT;
+this is not a speedup or quality comparison. All6initialroots have zero free
+gradient;later fixed clockcontexts expose9. C/C remains0 everywhere.
+
+Alternative usage of a DEFAULT searcher is as a fixed opponent,with candidate
+targets still coming from its own q0 Model. Existing opponent_policy logs no
+query/nodework;it is suitable for Uniform moves,not searchedfoes. Add one optin
+opponent_search callback to the existing play_episode query path. Its actual
+Receipt nodes/queries,partial work,cancellation and callback are charged;
+only candidateactor receipts reach learner.observe. No new search or teacher
+gradient implementation. Invalid negative/noninteger work rejects;overrun pays
+the observednodes and ends UNKNOWN before acting. Simultaneous policy/search
+configuration rejects before either is called. Defaults remain unchanged.
+
+113 relevant regressions PASS,including actual public DEFAULTQ4 aspolicy-only
+foe,poisoned/unavailablefoevalue/phi,partialwork,postreturnstop,overrun and both
+candidatecolors. Six initial Temp-directory permission setup errors were fixed
+by using own-checkout basetemp;they were not algorithm failures or a need for
+user approval. One mistyped nonexistent testpath ran no tests before correction.
+
+## Prospective12 short-horizon experience probes (zero dispatched)
+
+Do the source DEFAULT first-action differences cause different OWN consumed
+TD transitions and updates than Unit? Use all6newliteral source initialhistories,
+candidateplayer1 and two foes;alternate armorderbyfamily. Same Unit27 candidate,
+fixedA1/scale10,eta.05/lambda.95,q0D2/2048nodes;two candidate decisions atmost
+within4totalplies. Unitfoeq0D2,DEFAULTfoe existingpublicD2/Q4/hard8/default
+rule-derived evaluation,freshPlayer/TTperquery,diskOFF,setup/returninsidebudget.
+DEFAULTisnotassertedstronger. Its values/features are nevercandidateTDtargets.
+
+Freeze12slots in paid-opponent-plan.json.gz beforePlayer;oneexecutionmarker,
+no refill/replacements/tuning/checkpointselection. Perfoequery1.5seconds,
+2048nodes;episode5seconds/8192nodes;whole60seconds/48queries/98304nodes.
+Earlyterminal/censor/UNKNOWN/NOT_RUN retained. Four-ply ongoing is UNKNOWN,
+notDRAW. The endpoint is ownconsumedfeatures/error/netupdate and paidcost,
+notterminalstrength,PRIMARYQquality,timingobserver or a closedmixedlawextension.
+Research/test/setup cost is separate from the tiny measured searchbatch.

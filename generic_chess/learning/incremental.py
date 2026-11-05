@@ -663,7 +663,7 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
                  horizon=128, depth=2, query_nodes=4096, max_nodes=250_000,
                  seconds=60.0, seed=0, cancel=lambda: None, on_query=None,
                  iterative=False, opponent_depth=None, opponent_iterative=None,
-                 search_backend=None, opponent_policy=None):
+                 search_backend=None, opponent_policy=None, opponent_search=None):
     """One bounded episode; training and evaluation share the same play path.
 
     The caller owns roots, seeds, aggregate budgets, stop flags and output.
@@ -680,9 +680,15 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
     ``iterative`` switches apply to that reference; mainline always iterates.
     An explicit opponent_policy selects a real legal reply without a search.
     Such moves pay time/plies but create no fabricated search receipt or nodes.
+    A search-based foe instead uses opponent_search with the normal search
+    keyword contract and Receipt return. Its queries/nodes/cancellation are paid
+    and logged by this loop; its values/features never enter TD observations.
+    It must bound all its setup/return work by the passed nodes/seconds/cancel.
     """
     if learner_color not in (0, 1) or horizon < 1 or query_nodes < 1 or max_nodes < 1 or not isfinite(seconds) or seconds <= 0:
         raise ValueError('invalid episode budget or player')
+    if opponent_policy is not None and opponent_search is not None:
+        raise ValueError('choose opponent_policy or opponent_search, not both')
     if search_backend is None:
         search_backend = 'mainline' if isinstance(env, FixedScaleSessionEnv) else 'reference'
     if search_backend not in ('mainline', 'reference'):
@@ -740,14 +746,21 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
             else:
                 search = completed_depth_search if current_iterative else AlphaBeta(current_depth, 0).search
                 search_kwargs = dict(depth=current_depth) if current_iterative else {}
+            if actor != learner_color and opponent_search is not None:
+                search, search_kwargs = opponent_search, dict(depth=current_depth)
             receipt = search(
                 env, current, nodes=min(query_nodes, remaining),
                 seconds=min(5., max(1e-9, deadline - time.perf_counter())),
                 seed=seed + ply, cancel=guard, **search_kwargs)
+            if type(receipt.nodes) is not int or receipt.nodes < 0:
+                raise ValueError('search receipt requires nonnegative integer nodes')
             nodes += receipt.nodes
             queries += 1
             if on_query is not None:
                 on_query(ply, actor, receipt)
+            if receipt.nodes > min(query_nodes, remaining):
+                ending = 'SEARCH_NODE_OVERRUN_UNKNOWN'
+                break
             if not receipt.complete:
                 ending = receipt.reason
                 break
