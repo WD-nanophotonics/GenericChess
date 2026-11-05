@@ -9,3 +9,15 @@ The prospective plan fixes q0 depth2/query2048nodes, game30seconds/65536nodes/64
 This changed premise uses new6x6ABC inputs and actual learner/paired terminal play, rather than closed homogeneous fixed-feature or3x3/4x4A/B controls. It does not reopen old experiments or PRIMARY root-allocation work. No new search, solver, Native build, default or worker. Parameter movement, physical choices and actual terminal utility are separate endpoints. UNKNOWN is neverDRAW; the small exposed study cannot establish general strength or universal prices.
 
 Plan and runner are published before the first Player call. Results will be appended without altering the frozen plan.
+
+## Actual frozen result and mechanism
+
+All36slots returned scoring terminals in16.848895seconds/16.796875CPU seconds,1137queries/60702nodes. All1137completed depth2.12training episodes allDRAW and allupdated: final(B,C) family0(.888838932850,.928338787021), family1(.867967614204,.945587272054), family2(.891395120577,.963996827667). A stays1; unused hand channels stay0.
+
+Evaluation is12pairs, not24pairs: Unit2WIN/10DRAW, TD0WIN/12DRAW, noUNKNOWN. The realized mean TD-minus-Unit WDL utility is-2/12; game-point difference-1/12. This small development sample provides no benefit and two worse realized outcomes; it does not establish population strength or minimax value.33of36games hit actual max_ply,1repetition,2Unitcheckmates. Training/evaluation use literal rule max_ply64, not an imputed horizonDRAW.
+
+Saved-data analysis replayed all36complete records, all1137literal PVs and legal Uniform seed streams, checked actual terminal outcomes, frozen evaluation and before/after TD sums. First-budgeted episode has25nonzero free-gradient rows, B/C exposure25/19, rank2; zero initial symmetric material does not mean zero learning. Across12episodes,11free-feature rank2 and1rank1(Cunexposed). Every training final actual-outcome residual contributes0because the last completed search already predicts literalDRAW; observed interior transitions, including transitions to search-terminalDRAW, account for the entire update. This is not evidence that eventual terminal semantics had no effect.
+
+Seven of12paired trajectories differ; all first differences occur on a candidate turn after identical full-history prefixes. The two worse pairs are family1/role0/rep0 firstply26 and family2/role1/rep1 firstply19. At all7firstdifferences the TWO SAVED PV leaves tie under Unit and separate under TD. Those leaf cross-values are descriptive; different opponent PV replies mean they are not counterfactual action-Q values or proof of a locally bad move. No actual action-quality label or new search is inferred.
+
+Current judgment: this run disproves a zero-gradient explanation for these inputs but supplies no case for deploying these learned weights. Keep Unit baseline and close the frozen36slots; no more episodes, selection or tuning. A useful next decision is whether there is a genuinely different, affordable training signal/opponent contract, rather than extending these same seeds or treating tie changes as quality.
