@@ -13,6 +13,12 @@ docs/ui/ADR-WEB-002-engine-sync.md. Future updates require explicit user directi
 The complete Python Core AI, rules, generation, session, clocks and evaluation
 are frozen from ff073a3b57b46873ccb23078fa7d950a40133891. Source hashes are in
 docs/ui/AI_BASELINE.json. Use generic_chess/ui/ai_backend.py as the player factory.
+UI Test is authoritative for the browser and desktop frontend. When the user
+authorizes a sandbox backend update, import only the reviewed production engine
+sources and required backend dependencies. Do not import sandbox frontend changes
+or merge the whole branch. Make any required interface adaptation on ui-test and
+verify that the frontend and save compatibility are preserved.
+
 No completion-search prototypes, training, price experiments or research files
 are runtime dependencies. Research history in this Git checkout is reference,
 not a task backlog or permission to change the engine.
