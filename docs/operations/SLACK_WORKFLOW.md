@@ -1,3 +1,12 @@
+# Current transport note — 2026-11-06
+
+The local consult/begin-send/bind/reconcile state-machine implementation has been
+removed under explicit user approval. Use the existing Slack connector directly;
+do not rebuild it or add another registry. Keep messages focused on question,
+reason, experiment, result and next step. Existing authorization, role boundaries,
+confidentiality and publication controls remain applicable. Broader legacy-policy
+simplification is pending because platform approval rejected that separate edit.
+
 # GenericChess Slack collaboration workflow â€”2026-10-24
 
 ## Review sources and current authority

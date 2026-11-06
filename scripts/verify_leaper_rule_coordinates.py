@@ -22,7 +22,6 @@ from generic_chess.rules.schema import RuleInitialSetupOption
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action
 from tools.local_agent.common import write_json
-from tools.local_agent.slack_transport import save_plugin_original
 
 
 def verify(bundle,output,reuse_pair_phase=None):
@@ -36,7 +35,7 @@ def verify(bundle,output,reuse_pair_phase=None):
     for key,v in docs.items():
         assert digest(v)==p['logical_json_sha256'][key]
         original=p['documents_utf8'][key].encode('utf-8');assert hashlib.sha256(original).hexdigest()==p['original_json_sha256'][key]
-        restored[key]=output/(key+'.json');save_plugin_original(restored[key],original)
+        restored[key]=output/(key+'.json');restored[key].parent.mkdir(parents=True,exist_ok=True);restored[key].write_bytes(original)
     compiled={};rule_raw={}
     for factor in p['factorized_rules']:
         mu=docs[factor['common_mu_reference']];n=mu['board_size'];support=mu['support'];m=next(z['mask'] for z in docs['scale/results']['summaries'] if z['fingerprint']==factor['fingerprint'])
@@ -169,7 +168,7 @@ def verify_forward_screen(bundle,output):
     for name,text in data['documents_utf8'].items():
         if Path(name).name!=name:raise ValueError('flat scientific names required')
         value=text.encode('utf-8');assert hashlib.sha256(value).hexdigest()==manifest['original_sha256'][name]
-        save_plugin_original(raw/name,value)
+        (raw/name).parent.mkdir(parents=True,exist_ok=True);(raw/name).write_bytes(value)
     costs=qualify_cost_screen(raw,output/'costs-checked.json')
     # Recheck all actual finite one-ply copied observations through Core.
     inputs={(w['n'],w['mask'],w['rank']):w for w in L.load(raw/'edge-inputs.json')['worlds']};roots=edges=0

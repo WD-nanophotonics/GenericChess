@@ -8498,3 +8498,12 @@ New capacity/rootfallback exclusions and32proxy contracts narrow uncertainty,
 not establish Native/GC cause or observer cost. Five saved rolepair joins add
 12Corechildren; timing/TT/quality limits remain. No other-role code/state or
 computation changed; no independent AUX rerun claimed.
+
+
+### 2026-11-06 user-directed cleanup
+Removed the latency observers, redundant boundary tests, current-tree triage
+archive and Slack receipt/state-machine implementation. Original Q-game data and
+results remain. Scientific readers now use ordinary file output. Primary plans
+stop the timing-tail detour. Session-control and broader policy simplification
+were rejected by automatic approval and remain pending; AUX files unchanged.
+This is maintenance, not scientific progress or research-time credit.

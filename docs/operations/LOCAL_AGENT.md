@@ -1,5 +1,15 @@
 # Local Agent operations
 
+## USER 2026-11-06 correction
+
+Do not continue the latency/GC/callback observer branch. It does not change the
+negative capture-only Q result. Prioritize actual pure-Leaper decision-quality
+experiments. Do not create communication/audit wrappers or count their tests and
+records as scientific work. The Slack mailbox CLI and its receipt state machine
+were removed under user approval; use the existing Slack connector for authorized
+communication. Existing session and publication controls are unchanged.
+
+
 AGENTS.md owns current user authority, PUBLIC/reasons, safety/Agent boundaries,
 stops, research integrity and duration rules. This file owns operating methods;
 LOCAL_MAINLINE.md owns revisable research choices. Do not reconstruct current

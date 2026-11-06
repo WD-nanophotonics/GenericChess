@@ -2,7 +2,6 @@
 import gzip,hashlib,json,io
 from pathlib import Path,PurePosixPath
 from tools.local_agent.common import ROOT
-from tools.local_agent.slack_transport import save_plugin_original
 from scripts.verify_leaper_kernel_signature import verify
 
 def run(data,out):
@@ -16,7 +15,7 @@ def run(data,out):
         for m in json.loads(payload)['members']:
             p=PurePosixPath(m['path']);assert not p.is_absolute() and '..' not in p.parts and ':' not in str(p) and '\\' not in str(p) and str(p) not in names
             b=m['original_utf8'].encode('utf-8');assert len(b)==m['bytes'] and hashlib.sha256(b).hexdigest()==m['sha256']==manifest['member_hashes'][str(p)]
-            names.add(str(p));save_plugin_original(out/str(p),b);count+=1
+            names.add(str(p));(out/str(p)).parent.mkdir(parents=True,exist_ok=True);(out/str(p)).write_bytes(b);count+=1
     assert count==manifest['members']==len(manifest['member_hashes'])
     result=verify(out,out/'public-reader.json');print({'literal_members':count,'research_returns':result['returns'],'Core_PVplies':result['literal_CorePVplies'],'new_Player':0});return result
 if __name__=='__main__':

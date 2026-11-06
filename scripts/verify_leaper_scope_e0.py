@@ -7,7 +7,6 @@ from scripts.leaper_parity_scope import semantic_qualification,bind_histories
 from scripts.leaper_single_entity_scope import qualify_local_packet
 from scripts.verify_leaper_h6_e0 import qualify as qualify_h6
 from tools.local_agent.common import write_json
-from tools.local_agent.slack_transport import save_plugin_original
 
 def recover_original_json(value,expected,path):
     # This is deterministic recovery of byte-exact scientific JSON, NOT a
@@ -16,7 +15,7 @@ def recover_original_json(value,expected,path):
         raw=(json.dumps(value,sort_keys=sorted_keys,ensure_ascii=ascii_text,indent=indent)+'\n').encode()
         if crlf:raw=raw.replace(b'\n',b'\r\n')
         if hashlib.sha256(raw).hexdigest()==expected:
-            save_plugin_original(path,raw);return path
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw);return path
     raise ValueError('cannot recover claimed original JSON bytes: '+path.name)
 
 def verify(bundle,output):

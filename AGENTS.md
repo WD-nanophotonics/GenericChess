@@ -1,5 +1,22 @@
 # GenericChess local research policy
 
+## USER 2026-11-06 — stop overengineering
+
+The user explicitly approved removing the recent latency observers, redundant
+boundary tests and communication receipt state machine. Defensive programming
+(防御性编程) and overengineering are prohibited: no extra IDs, SHA gates,
+receipts, provenance registries, observers or contract-test layers for reporting
+or hypothetical faults. Do not expand minor timing outliers or callback stages
+into another engineering project. Process, audit, documentation, test counts and
+commit counts are not scientific progress. Keep only necessary checks for legal
+moves, terminal results, learning/Arena outcomes, reproducibility, actual data
+loss, cross-role writes and irreversible mistakes. Stop once the current
+scientific decision has enough evidence. Existing session/publication controls
+remain in place; no additional compliance machinery is to be built.
+Both existing patrols remain PAUSED. Work and changes stay in this PRIMARY
+checkout; AUX's files/state are not part of this cleanup.
+
+
 ## User-authorized two-checkout cleanup — 2026-10-21
 
 The user explicitly approved cleaning both this PRIMARY checkout and the existing

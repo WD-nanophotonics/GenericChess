@@ -71,33 +71,13 @@ assessments remain preserved. No timeout tolerance changed and no old game slot
 was rerun. The current ordinary session continues through substantive acceptance,
 not a new worker or renewed user consent queue.
 
-## Concrete next question: cancellation latency
+## Decision after user correction — 2026-11-06
 
-A new saved-data/source triage locates all six overshoots essentially inside
-`choose_action`: outer minus internal clocks differ only61–74 microseconds, and
-the outer clock ends before JSON recording. Record serialization/transport thus
-is not the observed excess region. All six have completed/balanced runtime
-pushes and complete check/availability query counters, but that same pattern
-occurs in528 within-tolerance calls. It does not identify a cause.
+No useful improvement was demonstrated. Preserve the original game outcomes and
+qualification limits; do not refill frozen slots. The timing outliers do not
+justify a separate observer/GC/callback investigation. That branch and its
+current-tree audit machinery were deleted under explicit user approval.
 
-The Native legality frontier can raise at its post-kernel checkpoint before
-publishing last-call timing metrics. Success counters therefore do not exclude
-an interrupted frontier attempt. Native atomic work, Python allocation/GC and
-scheduling remain UNKNOWN. Live warm-TT contents and event times were not saved;
-GameRecord/PV summaries cannot reconstruct the old live cache. No GC setting,
-Native kernel, TT identity, budget or default was changed based on a guess.
-
-Next: qualify one small selective entry/exit/finally plus GC-event observer on
-new controlled contexts, with an explicit disturbance check and at most four
-new service calls/30-second batch only if useful. This is a concrete latency
-investigation, not a completed-game refill, new quality panel or guard framework.
-
-[Exact project evidence](data/leaper_capture_q_policy_20261105/manifest.json)
-includes compressed and decoded hashes. Materialize DATA for
-`scripts.verify_leaper_capture_q_games`; never execute archived source strings.
-
-The same owned research segment ended at82.410 recorded effective minutes across
-763 actual intervals. Matching substantive quality review, normal session finish
-and research final-check passed; all producers are closed. Wall/transport/admin
-spans were not credited. The next executable memo retains the concrete latency
-question; existing roles, hourly schedules and bindings are unchanged.
+[Original scientific inputs and results](data/leaper_capture_q_policy_20261105/manifest.json)
+remain available. Future work should compare actual search decision quality at
+equal total cost. No product default changes follow from this negative study.

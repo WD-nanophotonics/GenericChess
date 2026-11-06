@@ -6,22 +6,12 @@ import json
 from pathlib import Path
 import sys
 
-from .advice import consult, consult_status, begin_send, reconcile_snapshot, record_decision
 from .common import ROOT, STATE, LocalFlowError, git, read_json, write_json
 from .git_ops import publish, promote
 
 
 ACTIVITY = STATE / "activity.json"
 PATROLS = STATE / "patrol.json"
-
-
-def consultation_summary(result: dict) -> dict:
-    return {key: result[key] for key in ('request_id', 'state', 'channel_id',
-            'thread_ts', 'response_sha256', 'unreviewed_response_sha256',
-            'evaluation', 'held_events', 'automatic_retry_available', 'request_readback') if key in result} | {
-            'matched_reply_posts': len({v['message_ts'] for v in result.get('revisions', [])}),
-            'reply_revision_count': len(result.get('revisions', [])),
-            'supplement_thread_count': len(result.get('supplement_threads', {}))}
 
 
 def status() -> dict:
@@ -32,7 +22,6 @@ def status() -> dict:
         "dirty": bool(git("status", "--porcelain")),
         "origin_sandbox": git("rev-parse", "origin/sandbox"),
         "last_activity": read_json(ACTIVITY),
-        "last_consultation": consultation_summary(consult_status()),
     }
 
 
@@ -107,30 +96,10 @@ def parser() -> argparse.ArgumentParser:
     end.add_argument('--reason', required=True)
     end.add_argument('--evidence', required=True)
     end.add_argument('--alternative', action='append', default=[], help='fresh checkpoint question; repeat for no_viable_action')
-    receipt = sub.add_parser("slack-bind-sent")
-    receipt.add_argument("--request-id", required=True)
-    receipt.add_argument("--channel-id", required=True)
-    receipt.add_argument("--message-ts", required=True)
     patrol_parser = sub.add_parser("patrol")
     patrol_parser.add_argument("--record", action="store_true")
     n = sub.add_parser("note")
     n.add_argument("--summary", required=True)
-    c = sub.add_parser("consult")
-    c.add_argument("--question-file", type=Path)
-    c.add_argument("--daily", action="store_true")
-    c.add_argument("--code-file", type=Path, action="append", default=[])
-    c.add_argument("--begin-send", metavar="REQUEST_ID")
-    cs = sub.add_parser("consult-status")
-    cs.add_argument("--request-id")
-    cs.add_argument("--full", action="store_true", help="include full request/reply evidence")
-    rec = sub.add_parser("reconcile")
-    rec.add_argument("--request-id", required=True)
-    rec.add_argument("--snapshot-file", type=Path)
-    rec.add_argument("--supplement-thread", action="store_true", help="explicitly associate a complete advisor-origin thread; never rebind the original request")
-    rec.add_argument("--sent-receipt-file", type=Path, help="known successful root only; rendered payload remains unverified")
-    rec.add_argument("--decision", choices=["adopt", "defer", "reject"])
-    rec.add_argument("--reason")
-    rec.add_argument("--full", action="store_true", help="include full request/reply evidence")
     pub = sub.add_parser("publish")
     pub.add_argument("--tests", nargs="+", required=True)
     pub.add_argument("--branch", default="sandbox", choices=["sandbox", "codex/deepseek-aux"])
@@ -173,51 +142,18 @@ def main(argv: list[str] | None = None) -> int:
                     result['checkpoint_count'] = len(result.pop('checkpoints'))
                 result.pop('work_intervals', None)
         elif args.command == 'stop':
-            from .slack_transport import stop
-            result = stop()
-        elif args.command == 'slack-bind-sent':
-            from .slack_transport import bind_sent
-            result = bind_sent(args.request_id, args.channel_id, args.message_ts)
+            path = STATE / 'rollout.json'
+            result = read_json(path)
+            result['user_paused'] = True
+            write_json(path, result)
         elif args.command == "patrol":
             result = patrol(args.record)
         elif args.command == "note":
             result = note(args.summary)
-        elif args.command == "consult":
-            if args.begin_send:
-                if args.question_file or args.code_file or args.daily:
-                    raise LocalFlowError("begin-send cannot change an existing request")
-                result = begin_send(args.begin_send)
-            elif args.question_file:
-                result = consult(args.question_file, args.daily, args.code_file)
-            else:
-                raise LocalFlowError("provide --question-file or --begin-send")
-        elif args.command == "consult-status":
-            result = consult_status(request_id=args.request_id)
-        elif args.command == "reconcile":
-            if bool(args.decision) != bool(args.reason):
-                raise LocalFlowError('decision and evidence-based reason must be supplied together')
-            if args.supplement_thread and not args.snapshot_file:
-                raise LocalFlowError('supplement thread requires a complete snapshot')
-            if args.sent_receipt_file and not args.snapshot_file:
-                raise LocalFlowError('send receipt requires a complete thread snapshot')
-            if args.snapshot_file:
-                result = reconcile_snapshot(args.request_id, args.snapshot_file, args.sent_receipt_file, args.supplement_thread)
-                if args.decision:
-                    result = record_decision(args.request_id, args.decision, args.reason)
-            elif args.decision and args.reason:
-                result = record_decision(args.request_id, args.decision, args.reason)
-            else:
-                if read_json(STATE / 'advisor.json').get('transport') == 'slack':
-                    from .slack_transport import reconcile
-                    result = reconcile(args.request_id)
-                else:
-                    result = consult_status(request_id=args.request_id)
         elif args.command == "publish":
             result = publish(args.tests, branch=args.branch)
         else:
             result = promote(args.candidate, args.tests)
-        if args.command in {'consult-status', 'reconcile'} and not args.full:
-            result = consultation_summary(result)
         print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
         return 0
     except (LocalFlowError, OSError, ValueError, json.JSONDecodeError) as exc:
