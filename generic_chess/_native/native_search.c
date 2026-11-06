@@ -507,6 +507,18 @@ int gc_iterative_search(GCSearchContext *ctx, GCPosition *pos,
         return 1;
     }
     if (max_depth == 0) {
+        /* A zero-depth request still honors caller control before evaluating
+         * the root.  The root itself is already the one mandatory visited
+         * node, matching the positive-depth zero-budget boundary. */
+        if (gc_search_check_budget(ctx, 1) != GC_SEARCH_CONTINUE) {
+            ctx->final_control = ctx->control;
+            result->score = 0;
+            result->has_action = 0;
+            result->completed_depth = 0;
+            result->nodes = ctx->nodes;
+            result->status = GC_FIXED_SEARCH_OK;
+            return 1;
+        }
         result->score = gc_evaluate_material(ctx->rules, ctx->eval, pos);
         result->has_action = 0;
         result->completed_depth = 0;

@@ -5,8 +5,8 @@ from ..rules.compiled import CompiledRuleSet
 from .material_values import UIMaterialProfileCache
 
 
-ENGINE_BASE_SHA = "7b988c9f247fd3eb96ca17daedf28e5c4d93b3cd"
-ENGINE_LABEL = "Core q4 · 2026-10-12"
+ENGINE_BASE_SHA = "ff073a3b57b46873ccb23078fa7d950a40133891"
+ENGINE_LABEL = "Core q4 · 2026-11-06"
 
 
 def create_ui_player(compiled: CompiledRuleSet, *, use_disk_cache: bool = True) -> AlphaBetaPlayer:

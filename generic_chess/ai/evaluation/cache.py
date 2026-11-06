@@ -87,6 +87,13 @@ class MovementCapabilityCache:
         self._memory.clear()
 
 
+def _profile_scope(compiled) -> str:
+    # Equal RuleSet fingerprints can have different supported profile inputs:
+    # semantic normalization retains all declarations; legacy closes initial
+    # types. Never reuse one representation's table for the other.
+    return "semantic-all-types" if hasattr(compiled, "ir") else "legacy-reachable-types"
+
+
 class EvaluationProfileCache:
     """RuleSet-level profile cache with memory and optional disk layers."""
 
@@ -105,11 +112,12 @@ class EvaluationProfileCache:
         self._capability_cache = capability_cache or MovementCapabilityCache()
 
     def _memory_key(self, compiled: CompiledRuleSet, config: EvaluationConfig) -> tuple:
-        return (compiled.ruleset_fingerprint, config.evaluator_version, config_hash(config))
+        return (compiled.ruleset_fingerprint, config.evaluator_version, config_hash(config),
+                _profile_scope(compiled))
 
     def _disk_path(self, compiled: CompiledRuleSet, config: EvaluationConfig) -> Path:
         fp = compiled.ruleset_fingerprint[:16]
-        return (self._disk_dir or default_cache_dir()) / f"profile-{fp}-{config_hash(config)[:12]}.json"
+        return (self._disk_dir or default_cache_dir()) / f"profile-{fp}-{_profile_scope(compiled)}-{config_hash(config)[:12]}.json"
 
     def get_or_build(
         self, compiled: CompiledRuleSet, config: EvaluationConfig
@@ -130,7 +138,7 @@ class EvaluationProfileCache:
                 compiled, config, capability_cache=self._capability_cache
             )
             self._memory.put(key, profile)
-            self._store_disk(profile)
+            self._store_disk(profile, _profile_scope(compiled))
             return profile, False
 
     def _load_disk(
@@ -144,7 +152,8 @@ class EvaluationProfileCache:
         except (OSError, ValueError):
             return None
         if (
-            raw.get("schema_version") != 1
+            raw.get("profile_cache_scope") != _profile_scope(compiled)
+            or raw.get("schema_version") != 1
             or raw.get("evaluator_version") != config.evaluator_version
             or raw.get("ruleset_fingerprint") != compiled.ruleset_fingerprint
             or raw.get("config_hash") != config_hash(config)
@@ -155,17 +164,18 @@ class EvaluationProfileCache:
         except (KeyError, TypeError, ValueError):
             return None
 
-    def _store_disk(self, profile: RuleSetEvaluationProfile) -> None:
+    def _store_disk(self, profile: RuleSetEvaluationProfile, scope: str) -> None:
         if not self._use_disk:
             return
         directory = self._disk_dir or default_cache_dir()
         try:
             directory.mkdir(parents=True, exist_ok=True)
-            path = self._disk_path_for(profile)
+            path = self._disk_path_for(profile, scope)
             fd, tmp = tempfile.mkstemp(dir=str(directory), suffix=".tmp")
             try:
                 with os.fdopen(fd, "w", encoding="utf-8") as fh:
-                    json.dump(_profile_to_dict(profile), fh, sort_keys=True)
+                    json.dump(dict(_profile_to_dict(profile), profile_cache_scope=scope),
+                              fh, sort_keys=True)
                 os.replace(tmp, path)
             except Exception:
                 try:
@@ -176,10 +186,10 @@ class EvaluationProfileCache:
         except OSError:
             pass  # disk cache is best-effort; never fail the search because of it
 
-    def _disk_path_for(self, profile: RuleSetEvaluationProfile) -> Path:
+    def _disk_path_for(self, profile: RuleSetEvaluationProfile, scope: str) -> Path:
         directory = self._disk_dir or default_cache_dir()
         fp = profile.ruleset_fingerprint[:16]
-        return directory / f"profile-{fp}-{profile.config_hash[:12]}.json"
+        return directory / f"profile-{fp}-{scope}-{profile.config_hash[:12]}.json"
 
     def clear(self) -> None:
         self._memory.clear()

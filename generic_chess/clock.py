@@ -2,7 +2,7 @@
 
 The clock is match-level infrastructure, not game rules: it never enters
 positions, records or Core.  A callable ``now()`` (default
-``time.monotonic``) can be injected so tests use a fake clock.
+``time.perf_counter``) can be injected so tests use a fake clock.
 """
 
 from __future__ import annotations
@@ -59,12 +59,12 @@ class MatchClock:
         control: TimeControl,
         *,
         active_owner: int = 0,
-        now: Callable[[], float] = time.monotonic,
+        now: Callable[[], float] | None = None,
     ) -> None:
         if active_owner not in (0, 1):
             raise ValueError("active_owner must be 0 or 1")
         self._control = control
-        self._now = now
+        self._now = time.perf_counter if now is None else now
         self._remaining = [
             control.for_owner(0).main_seconds * 1000,
             control.for_owner(1).main_seconds * 1000,
@@ -75,7 +75,7 @@ class MatchClock:
         ]
         self._active = active_owner
         self._running = control.mode is not TimeControlMode.NONE
-        self._started_at = now()
+        self._started_at = self._now()
         self._turn_elapsed_ms = 0
 
     def state(self) -> ClockState:

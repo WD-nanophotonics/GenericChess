@@ -4,10 +4,11 @@ from __future__ import annotations
 
 from ...core.attacks import anchor_square, pseudo_attacks
 from ...core.coordinates import index_to_square, square_to_index
-from ...core.movement import LeapAtom, RayAtom, empty_mobility
+from ...core.movement import LeapAtom, RayAtom, empty_forward_mobility, empty_mobility
 from ...core.position import Position
 from ...core.position import GameState
 from ...rules.compiled import CompiledRuleSet
+from .analyzer import profile_movement_atoms
 from .config import EvaluationConfig
 from .profile import RuleSetEvaluationProfile
 
@@ -42,17 +43,43 @@ class Evaluator:
                               for idx in range(compiled.board_size ** 2))
                         for owner in (0, 1)))
         self._zones: dict[tuple[str, int], frozenset[int]] = {}
+        self._promotion_forward: dict[tuple[str, int], tuple[tuple[int, ...], ...]] = {}
         if config.promotion_potential_weight:
             for pt in compiled.piece_types:
                 if not pt.is_promotable:
                     continue
+                # Use the same geometry-only movement projection as the static
+                # price profile. Legacy-only forward tables omit semantic-only
+                # movers (notably canonical Western pawns), which would make
+                # every square look like a promotion zone.
+                atoms = profile_movement_atoms(compiled, pt.type_id)
                 for owner in (0, 1):
-                    zone = frozenset(
-                        idx
+                    allowed = compiled.promotion_allowed.get(pt.type_id, ((), ()))
+                    forward = tuple(
+                        tuple(
+                            square_to_index(target, compiled.board_size)
+                            for target in empty_forward_mobility(
+                                compiled.board_size,
+                                owner,
+                                index_to_square(idx, compiled.board_size),
+                                atoms,
+                            )
+                        )
                         for idx in range(compiled.board_size * compiled.board_size)
-                        if not compiled.empty_forward_mobility[pt.type_id][owner][idx]
+                    )
+                    # Match Core's structural target filter; mask entries with
+                    # no mobile promotion result are not executable variants.
+                    zone = frozenset(
+                        target_idx
+                        for _, to in allowed[owner]
+                        for target_idx in (square_to_index(to, compiled.board_size),)
+                        if any(
+                            compiled.empty_mobility[target][owner][target_idx]
+                            for target in pt.promotion_target_ids
+                        )
                     )
                     self._zones[(pt.type_id, owner)] = zone
+                    self._promotion_forward[(pt.type_id, owner)] = forward
 
     def evaluate(self, state: GameState) -> int:
         position = state.position
@@ -108,7 +135,7 @@ class Evaluator:
         if idx in zone:
             bonus = weight * unit
         else:
-            forward = self._compiled.empty_forward_mobility[base][owner][idx]
+            forward = self._promotion_forward[(base, owner)][idx]
             if any(t in zone for t in forward):
                 bonus = weight * unit // 2
             else:

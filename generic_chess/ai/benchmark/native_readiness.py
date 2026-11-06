@@ -231,7 +231,13 @@ def _run_budget_fixture(
                 "completed_depth": decision.completed_depth,
                 "selective_depth": decision.selective_depth,
                 "termination_reason": decision.termination_reason,
-                "fallback": decision.termination_reason == "fallback",
+                # Stop cause and retained result source are independent. A
+                # node/time/cancel abort may retain only a legal fallback.
+                "fallback": decision.result_source in {
+                    "fallback",
+                    "legal_fallback",
+                    "root_scan_fallback",
+                } or decision.termination_reason == "fallback",
                 "tt_probes": decision.tt_probes,
                 "tt_hits": decision.tt_hits,
                 "tt_cutoffs": decision.tt_cutoffs,

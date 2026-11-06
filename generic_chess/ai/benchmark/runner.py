@@ -78,10 +78,26 @@ def _timing_invalid(elapsed: float, seconds: float | None) -> bool:
 
 def _adjudicate(session: GameSession, candidate_color: int) -> str:
     status = session.result.status
-    if status in (SessionStatus.CHECKMATE, SessionStatus.STALEMATE) and session.result.winner is not None:
+    if status in (
+        SessionStatus.CHECKMATE,
+        SessionStatus.STALEMATE,
+        SessionStatus.PERPETUAL_CHECK,
+        SessionStatus.RULE_LOSS,
+        SessionStatus.DECLARATION,
+    ) and session.result.winner is not None:
         return "candidate_win" if session.result.winner == candidate_color else "candidate_loss"
-    if status in (SessionStatus.STALEMATE, SessionStatus.REPETITION, SessionStatus.MAX_PLY):
+    if status in (
+        SessionStatus.STALEMATE,
+        SessionStatus.REPETITION,
+        SessionStatus.MAX_PLY,
+        SessionStatus.ACTION_CLASS_DRAW,
+        SessionStatus.NO_PROGRESS_DRAW,
+    ):
         return "rule_draw"
+    if status is SessionStatus.DECLARATION:
+        # RESTART/no-contest has no terminal reward in this single-game
+        # benchmark; do not fabricate a draw or count it as a failure.
+        return "unresolved"
     if status is SessionStatus.RESIGNATION:
         return "candidate_win" if session.result.resigned_by != candidate_color else "candidate_loss"
     return "unresolved"
@@ -116,18 +132,32 @@ def play_game(
             max_time_seconds=config.seconds,
             max_nodes=config.nodes,
         )
-        started = time.monotonic()
+        started = time.perf_counter()
         decision = player.choose_action(session, limits)
-        elapsed = time.monotonic() - started
-        fallback = decision.termination_reason == "fallback"
+        elapsed = time.perf_counter() - started
+        # The search result records *why it stopped* separately from *which
+        # result was retained*. An interrupted first iteration can therefore
+        # have termination_reason="node_limit" while its action is only a
+        # legal/root-scan fallback. Exclude those games from benchmark utility.
+        fallback = decision.result_source in {
+            "fallback",
+            "legal_fallback",
+            "root_scan_fallback",
+        } or decision.termination_reason == "fallback"
         timing_invalid = _timing_invalid(elapsed, config.seconds)
+        is_declaration = decision.choice_kind == "DECLARATION"
+        declaration = decision.declaration if is_declaration else None
         events.append(
             MoveEvent(
                 game_key=game_key,
                 position_key=position_key,
-                ply=session.state.ply_count + 1,
+                ply=session.state.ply_count if is_declaration else session.state.ply_count + 1,
                 side=side,
-                action=str(decision.action) if decision.action is not None else "<none>",
+                action=(
+                    f"<declaration:{declaration.declaration_id}:{declaration.outcome}>"
+                    if declaration is not None
+                    else str(decision.action) if decision.action is not None else "<none>"
+                ),
                 completed_depth=decision.completed_depth,
                 nodes=decision.nodes,
                 qnodes=decision.qnodes,
@@ -140,6 +170,22 @@ def play_game(
         )
         fallback_flags[side] = fallback_flags[side] or fallback
         timing_flags[side] = timing_flags[side] or timing_invalid
+        if is_declaration:
+            if declaration is None:
+                failed = True
+                break
+            try:
+                declared = session.declare(declaration.declaration_id)
+            except ValueError:
+                failed = True
+                break
+            if (
+                declared.declared_by != declaration.actor
+                or declared.declaration_outcome != declaration.outcome
+                or declared.declaration_score != declaration.weighted_score
+            ):
+                failed = True
+            break
         if decision.action is None:
             failed = True
             break

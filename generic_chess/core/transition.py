@@ -169,20 +169,21 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
             if action not in legal_actions(state, compiled):
                 raise IllegalActionError(f"action is not legal in the current state: {action}")
             return _transition(state, action, compiled)
-        binding = semantic_action_for(engine, state.position, action)
-        new_pos = engine.apply(state.position, binding)
-        ply = state.ply_count + 1
-        key = repetition_identity_key(new_pos, compiled)
-        counts = update_repetition_counts(state.repetition_counts, key)
-        history = _history_record(state, new_pos, action, compiled, key)
-        status = engine.terminal_result(new_pos, ply, counts, history)
-        return GameState(
-            position=new_pos,
-            ply_count=ply,
-            repetition_counts=counts,
-            terminal_status=status,
-            history=history,
+        # The resolver consumes the complete S0-S4 legal iterator and rejects
+        # ambiguous legacy actions.  Rebuilding its exact binding is the same
+        # step engine.apply performs after its duplicate membership traversal.
+        semantic_action = semantic_action_for(engine, state.position, action)
+        pattern = next(
+            p for p in engine.ir.patterns
+            if p.pattern_id == semantic_action.pattern_id
         )
+        binding = engine._make_binding_from_action(
+            state.position, semantic_action, pattern
+        )
+        return _semantic_transition(
+            state, semantic_action, binding, action, compiled
+        )
+
     ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:
         raise IllegalActionError(

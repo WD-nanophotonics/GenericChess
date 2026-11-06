@@ -6,6 +6,7 @@ import random
 from dataclasses import replace
 
 from ..core.coordinates import Square, index_to_square
+from ..core.movement import LeapAtom, atom_targets
 from ..core.movegen import legal_actions_from_position
 from ..rules.compiler import compile_ruleset
 from ..rules.schema import RuleSet
@@ -17,6 +18,34 @@ from .piece_generator import generate_ordinary_types, make_anchor_type, ordinary
 from .promotion_derivation import derive_promotion_data
 from .report import GeneratedGame, GenerationReport, PieceTypeReport
 from .setup_generator import build_initial_setup
+
+
+def _initial_anchors_attacked(n, rows, types_by_id) -> bool:
+    """Cheap exact pseudo-attack rejection for this atom-only generator.
+
+    Full compilation/validation still owns accepted candidates. Pinned pieces
+    attack and rays protect their first occupied square, matching Core.
+    """
+    board = tuple(piece for row in rows for piece in row)
+    for target, anchor in enumerate(board):
+        if anchor is None or not types_by_id[anchor.current_type_id].is_anchor:
+            continue
+        square = index_to_square(target, n)
+        for source, piece in enumerate(board):
+            if piece is None or piece.owner == anchor.owner:
+                continue
+            for atom in types_by_id[piece.current_type_id].movement_atoms:
+                path = atom_targets(n, piece.owner, index_to_square(source, n), atom)
+                if square not in path:
+                    continue
+                if isinstance(atom, LeapAtom):
+                    return True
+                for destination in path:
+                    if destination == square:
+                        return True
+                    if board[destination.rank * n + destination.file] is not None:
+                        break
+    return False
 
 
 def _try_generate(rng: random.Random, cfg: GeneratorConfig) -> GeneratedGame:
@@ -32,6 +61,10 @@ def _try_generate(rng: random.Random, cfg: GeneratorConfig) -> GeneratedGame:
     )
     types = (anchor,) + ordinary
     types_by_id = {t.type_id: t for t in types}
+
+    initial_position = build_initial_setup(rng, cfg.setup_preset, n, ids)
+    if _initial_anchors_attacked(n, initial_position, types_by_id):
+        raise GenerationError('initial position anchor attacked')
 
     promotion_allowed: dict[str, tuple[frozenset[tuple[Square, Square]], ...]] = {}
     promotion_forced: dict[str, tuple[frozenset[Square], ...]] = {}
@@ -51,7 +84,6 @@ def _try_generate(rng: random.Random, cfg: GeneratorConfig) -> GeneratedGame:
         for t in ordinary
     }
 
-    initial_position = build_initial_setup(rng, cfg.setup_preset, n, ids)
     ruleset = RuleSet(
         schema_version=1,
         board_size=n,

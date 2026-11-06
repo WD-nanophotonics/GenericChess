@@ -59,6 +59,14 @@ class SearchStatistics:
     ordering_calls: int = 0
     ordered_moves: int = 0
     ordering_seconds: float = 0.0
+    quiet_geometry_build_seconds: float = 0.0
+    quiet_geometry_target_entries: int = 0
+    quiet_geometry_calls: int = 0
+    quiet_geometry_reorders: int = 0
+    relative_history_attempts: int = 0
+    relative_history_cutoffs: int = 0
+    relative_history_entries: int = 0
+    relative_history_reorders: int = 0
     legal_generation_calls: int = 0
     # Explicit search requests (root/main/qsearch/TT-PV), including cached
     # boundaries and aborted attempts. perf_counter duration; runtime-internal
@@ -95,6 +103,8 @@ class SearchStatistics:
     runtime_exact_position_comparisons: int = 0
     runtime_legacy_incremental_updates: int = 0
     runtime_semantic_full_diff_fallbacks: int = 0
+    runtime_semantic_local_hash_updates: int = 0
+    runtime_position_identity_hash_cached: bool = False
     runtime_snapshot_exact_comparisons: int = 0
     runtime_collision_checks: int = 0
     runtime_collision_fallbacks: int = 0
@@ -133,3 +143,8 @@ class SearchStatistics:
     result_source: str = "unknown"
     result_ordinary_qdepth: int | None = None
     result_check_hard_qdepth: int | None = None
+
+    # Appended: preserve all existing positional constructor fields.
+    main_check_extensions: int = 0
+    main_extension_max_path: int = 0
+    main_search_max_ply: int = 0

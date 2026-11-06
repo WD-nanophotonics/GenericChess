@@ -1,5 +1,22 @@
 # ADR-WEB-002: User-authorized production engine synchronization
 
+## 2026-11-06 integration
+
+The user requested the established AI in the UI branch. Production backend
+sources are updated to sandbox ff073a3b57b46873ccb23078fa7d950a40133891. Existing desktop/Web
+interfaces, human material values, saved games and Core q4/hard8 configuration
+remain. Current search cancellation/result handling, full history/adjudication,
+semantic transitions and evaluation fixes are included. Experimental tuning
+switches remain off; no trained model or research script becomes a dependency.
+Native sources remain optional and coherent; UI works without a native build.
+The dated metadata and existing baseline manifest now identify this update.
+Validation passed: real desktop/Web PVE in both human seats, original save
+roundtrips and standard material values, UI cancellation/lifecycle, search/
+evaluation/budget regressions and the built Web launcher. TypeScript/Vite
+production build succeeds. Native acceleration is not required or activated.
+
+## Historical 2026-10-12 integration
+
 Date: 2026-10-12. Mode: local. Delivery branch: ui-test only.
 
 ## Decision and source

@@ -186,7 +186,9 @@ class ArenaGameResult:
         Keeping it out of the score path prevents a restart from silently
         becoming half a point.
         """
-        return self.result != "no_contest"
+        return self.result != "no_contest" and not (
+            self.result == "declaration" and self.winner is None
+        )
 
     @property
     def child_points(self) -> float | None:

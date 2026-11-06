@@ -35,6 +35,7 @@ generic_chess = ["ui/i18n/*.json"]
 name = "generic_chess._native_core"
 sources = [
   "generic_chess/_native/native_module.c",
+  "generic_chess/_native/native_payload.c",
   "generic_chess/_native/native_rules.c",
   "generic_chess/_native/native_state.c",
   "generic_chess/_native/native_hash.c",

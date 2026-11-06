@@ -11,8 +11,13 @@ from ..core.actions import Action
 class PlayerDecision:
     """Result of one ``Player.choose_action`` call.
 
-    ``action`` is ``None`` only for terminal positions.  Scores are always in
-    the side-to-move perspective of the root position.
+    ``action`` is ``None`` for terminal positions or already finished sessions.
+    A selected declaration is represented separately. Scores are always in
+    the side-to-move perspective of the root position. If a bounded search is
+    interrupted before a full iteration completes, ``action`` can still hold a
+    legal root fallback while ``principal_variation`` is empty. Otherwise the
+    variation is the line from the last completed iteration (or a separately
+    completed root proof).
     """
 
     action: Action | None
@@ -57,6 +62,14 @@ class PlayerDecision:
     ordering_calls: int = 0
     ordered_moves: int = 0
     ordering_seconds: float = 0.0
+    quiet_geometry_build_seconds: float = 0.0
+    quiet_geometry_target_entries: int = 0
+    quiet_geometry_calls: int = 0
+    quiet_geometry_reorders: int = 0
+    relative_history_attempts: int = 0
+    relative_history_cutoffs: int = 0
+    relative_history_entries: int = 0
+    relative_history_reorders: int = 0
     legal_generation_calls: int = 0
     legal_generation_seconds: float = 0.0
     evaluation_calls: int = 0
@@ -89,3 +102,20 @@ class PlayerDecision:
     result_source: str = "unknown"
     result_ordinary_qdepth: int | None = None
     result_check_hard_qdepth: int | None = None
+
+    # Completed Core search-runtime pushes include q-action classification and
+    # root probes as well as searched successors. They exclude failed pushes
+    # and S3 candidate trials; nodes/qnodes keep their existing budget meaning.
+    # None means this player/result did not report a Core runtime observation.
+    # Append optional fields to preserve existing positional constructors.
+    runtime_pushes: int | None = None
+    runtime_pops: int | None = None
+    runtime_depth_balanced: bool | None = None
+    runtime_semantic_local_hash_updates: int | None = None
+    runtime_position_identity_hash_cached: bool | None = None
+    runtime_semantic_full_diff_fallbacks: int | None = None
+
+    # Appended: preserve all existing positional constructor fields.
+    main_check_extensions: int = 0
+    main_extension_max_path: int = 0
+    main_search_max_ply: int = 0

@@ -19,6 +19,37 @@ class IncompleteAdjudicationHistoryError(ValueError):
     """Raised when a threshold rule lacks authoritative completed-move history."""
 
 
+def _no_progress_count_after_transition(count, before, after, policy, mover_type, ply):
+    """Shared progress fact; ambiguous inventory changes fail closed.
+
+    Public replay raises immediately when it examines the record. Search keeps
+    that first error in its path context until this rule's priority is reached.
+    """
+    capture = False
+    if policy.reset_on_capture:
+        before_counts = [0, 0]
+        after_counts = [0, 0]
+        for piece in before.board:
+            if piece is not None:
+                before_counts[piece.owner] += 1
+        for owner, hand in enumerate(before.hands):
+            before_counts[owner] += hand.total()
+        for piece in after.board:
+            if piece is not None:
+                after_counts[piece.owner] += 1
+        for owner, hand in enumerate(after.hands):
+            after_counts[owner] += hand.total()
+        actor = before.side_to_move
+        deltas = [after_counts[i] - before_counts[i] for i in (0, 1)]
+        if deltas[1 - actor] < 0 and deltas[actor] in (0, -deltas[1 - actor]):
+            capture = True
+        elif any(deltas):
+            raise IncompleteAdjudicationHistoryError(
+                f"no-progress history capture fact is ambiguous at action {ply}"
+            )
+    return 0 if capture or mover_type in policy.reset_mover_type_ids else count + 1
+
+
 def no_progress_draw_status(
     policy, position, ply_count, repetition_counts, history, compiled
 ):
@@ -68,7 +99,6 @@ def no_progress_draw_status(
                     "no-progress history root is not a declared initial setup"
                 )
         count = 0
-        reset_types = frozenset(policy.reset_mover_type_ids)
         for ply, record in enumerate(history[1:], start=1):
             if not record.action_signature:
                 raise IncompleteAdjudicationHistoryError(
@@ -100,31 +130,9 @@ def no_progress_draw_status(
                 raise IncompleteAdjudicationHistoryError(
                     f"no-progress history action {ply} does not replay exactly"
                 )
-            capture = False
-            if policy.reset_on_capture:
-                before_counts = [0, 0]
-                after_counts = [0, 0]
-                for piece in before.board:
-                    if piece is not None:
-                        before_counts[piece.owner] += 1
-                for owner, hand in enumerate(before.hands):
-                    before_counts[owner] += hand.total()
-                for piece in replayed.position.board:
-                    if piece is not None:
-                        after_counts[piece.owner] += 1
-                for owner, hand in enumerate(replayed.position.hands):
-                    after_counts[owner] += hand.total()
-                deltas = [after_counts[i] - before_counts[i] for i in (0, 1)]
-                if deltas[1 - actor] < 0 and deltas[actor] in (0, -deltas[1 - actor]):
-                    capture = True
-                elif any(deltas):
-                    raise IncompleteAdjudicationHistoryError(
-                        f"no-progress history capture fact is ambiguous at action {ply}"
-                    )
-            if capture or mover_type in reset_types:
-                count = 0
-            else:
-                count += 1
+            count = _no_progress_count_after_transition(
+                count, before, replayed.position, policy, mover_type, ply
+            )
         if (
             replayed.position != position
             or replayed.ply_count != ply_count

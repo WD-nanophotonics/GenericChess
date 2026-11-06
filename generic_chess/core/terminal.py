@@ -339,7 +339,7 @@ def _repeated_cycle_target_history_projection(runtime):
     from .adjudication import IncompleteAdjudicationHistoryError
     from .identity import position_identity_key
     from .position import HistoryRecord
-    from .search_runtime import RuntimePositionIdentity
+    from .search_runtime import RuntimePositionIdentity, _runtime_position_identity
 
     if (
         not getattr(runtime, "_history_complete", False)
@@ -374,7 +374,11 @@ def _repeated_cycle_target_history_projection(runtime):
         or projected[0].action_signature != ""
         or projected[-1].position_key
         != position_identity_key(runtime.position, compiled)
-        or runtime.history[-1].identity.position != runtime.position
+        # Private identity omits declared auxiliary defaults; the live state
+        # retains the complete physical representation. Compare through the
+        # same exact logical identity authority, including foreign aux values.
+        or runtime.history[-1].identity
+        != _runtime_position_identity(runtime.position, compiled)
     ):
         raise IncompleteAdjudicationHistoryError(
             "repeated-cycle target rule requires an exact search-history boundary"
@@ -491,6 +495,16 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     limit = getattr(compiled, "repetition_limit", compiled.support.repetition_limit if hasattr(compiled, "support") else 4)
     if runtime.occurrence_count() >= limit:
         return TerminalResult(TerminalStatus.REPETITION)
+    policy = getattr(compiled, "no_progress_draw", None)
+    if policy is not None and runtime.ply_count >= policy.threshold_plies:
+        if checkpoint is not None:
+            checkpoint()
+        from .no_progress_context import status
+        no_progress = status(runtime)
+        if checkpoint is not None:
+            checkpoint()
+        if no_progress == "DRAW":
+            return TerminalResult(TerminalStatus.NO_PROGRESS_DRAW)
     automatic = automatic_adjudication_status(
         getattr(compiled, "automatic_adjudications", ()),
         runtime.ply_count,

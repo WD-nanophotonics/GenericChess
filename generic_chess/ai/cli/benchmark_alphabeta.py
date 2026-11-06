@@ -18,10 +18,44 @@ from ...generation.config import GeneratorConfig
 from ...generation.generator import generate_game
 from ...rules.serialization import deserialize_ruleset
 from ...rules.compiler import compile_ruleset_for_execution
-from ...session.result import SessionStatus
+from ...session.result import SessionResult, SessionStatus
 from ...session.session import GameSession
 from ..alphabeta.player import AlphaBetaPlayer
 from ..limits import SearchLimits
+
+
+def _int_at_least(value: str, minimum: int) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be an integer") from exc
+    if parsed < minimum:
+        raise argparse.ArgumentTypeError(f"must be >= {minimum}")
+    return parsed
+
+
+def _result_bucket(result: SessionResult, ai_color: int) -> str:
+    if result.winner is not None:
+        return "ab" if result.winner == ai_color else "random"
+    if result.status in (
+        SessionStatus.STALEMATE,
+        SessionStatus.REPETITION,
+        SessionStatus.MAX_PLY,
+        SessionStatus.ACTION_CLASS_DRAW,
+        SessionStatus.NO_PROGRESS_DRAW,
+    ):
+        return "draw"
+    # No-contest declarations and external stopping/caps are not rule draws.
+    return "unresolved"
+
+
+def _decision_action_label(decision) -> str:
+    if decision.choice_kind == "DECLARATION" and decision.declaration is not None:
+        return (
+            f"<declaration:{decision.declaration.declaration_id}:"
+            f"{decision.declaration.outcome}>"
+        )
+    return str(decision.action) if decision.action is not None else "<none>"
 
 
 def _load_compiled(args):
@@ -47,13 +81,28 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--board-size", type=int, default=8)
     parser.add_argument("--preset", default="classic_like")
     parser.add_argument("--hybrid", action="store_true")
-    parser.add_argument("--nodes", type=int, default=100_000)
-    parser.add_argument("--max-depth", type=int, default=None)
-    parser.add_argument("--repeat", type=int, default=3)
+    parser.add_argument(
+        "--nodes", type=lambda value: _int_at_least(value, 0), default=100_000
+    )
+    parser.add_argument(
+        "--max-depth", type=lambda value: _int_at_least(value, 0), default=None
+    )
+    parser.add_argument(
+        "--repeat", type=lambda value: _int_at_least(value, 1), default=3
+    )
     parser.add_argument("--fresh-tt", action="store_true", help="reset the TT before every run")
-    parser.add_argument("--vs-random", type=int, default=0)
+    parser.add_argument(
+        "--vs-random", type=lambda value: _int_at_least(value, 0), default=0
+    )
     parser.add_argument("--no-disk", action="store_true")
     args = parser.parse_args(argv)
+    if args.ruleset is None:
+        if args.board_size < 4:
+            parser.error("--board-size must be >= 4 when generating a ruleset")
+        if args.preset not in ("classic_like", "bilateral_random", "free_random"):
+            parser.error(
+                "--preset must be one of: classic_like, bilateral_random, free_random"
+            )
 
     compiled = _load_compiled(args)
     limits = SearchLimits(max_nodes=args.nodes, max_depth=args.max_depth, quiescence_max_depth=4)
@@ -69,16 +118,23 @@ def main(argv: list[str] | None = None) -> int:
         if args.fresh_tt:
             player.reset()
         session = GameSession(compiled)
-        started = time.monotonic()
+        started = time.perf_counter()
         decision = player.choose_action(session, limits)
-        elapsed = time.monotonic() - started
-        nps = decision.nodes / elapsed if elapsed > 0 else 0.0
+        elapsed = time.perf_counter() - started
+        total_nodes = decision.nodes + decision.qnodes
+        main_nps = decision.nodes / elapsed if elapsed > 0 else 0.0
+        q_nps = decision.qnodes / elapsed if elapsed > 0 else 0.0
+        total_nps = (
+            total_nodes / elapsed if elapsed > 0 else 0.0
+        )
         print(
-            f"run {i + 1}: action={decision.action} score={decision.score} "
-            f"depth={decision.completed_depth} nodes={decision.nodes} "
-            f"qnodes={decision.qnodes} elapsed={elapsed:.3f}s nps={nps:,.0f} "
+            f"run {i + 1}: action={_decision_action_label(decision)} score={decision.score} "
+            f"depth={decision.completed_depth} nodes={decision.nodes} qnodes={decision.qnodes} "
+            f"total_nodes={total_nodes} elapsed={elapsed:.3f}s "
+            f"main_nps={main_nps:,.0f} q_nps={q_nps:,.0f} total_nps={total_nps:,.0f} "
             f"tt={decision.tt_probes}/{decision.tt_hits}/{decision.tt_cutoffs} "
-            f"cutoffs={decision.beta_cutoffs} reason={decision.termination_reason}"
+            f"cutoffs={decision.beta_cutoffs} result_source={decision.result_source} "
+            f"reason={decision.termination_reason}"
         )
         print(f"  PV: {' '.join(str(a) for a in decision.principal_variation) or '-'}")
         if best is None or decision.nodes > best.nodes:
@@ -92,7 +148,7 @@ def main(argv: list[str] | None = None) -> int:
 def _vs_random(compiled, games: int, nodes: int, seed: int) -> None:
     rng = random.Random(seed)
     ab = AlphaBetaPlayer(compiled, use_disk_cache=False)
-    wins = {"ab": 0, "random": 0, "draw": 0}
+    wins = {"ab": 0, "random": 0, "draw": 0, "unresolved": 0}
     total_plies = 0
     print(f"\nAlphaBeta vs Random ({games} games, {nodes} nodes/move, seed {seed})")
     for game_idx in range(games):
@@ -105,6 +161,14 @@ def _vs_random(compiled, games: int, nodes: int, seed: int) -> None:
                 break
             if session.state.ply_count % 2 == (0 if ab_first else 1):
                 decision = ab.choose_action(session, SearchLimits(max_nodes=nodes))
+                if decision.choice_kind == "DECLARATION":
+                    declaration = decision.declaration
+                    if declaration is not None:
+                        try:
+                            session.declare(declaration.declaration_id)
+                        except ValueError:
+                            pass
+                    break
                 action = decision.action
             else:
                 actions = legal_actions(session.state, compiled)
@@ -116,16 +180,10 @@ def _vs_random(compiled, games: int, nodes: int, seed: int) -> None:
             session.submit(action)
             total_plies += 1
         result = session.result
-        if result.status is SessionStatus.RESIGNATION or result.status is SessionStatus.CHECKMATE:
-            winner = result.winner
-            if winner == (0 if ab_first else 1):
-                wins["ab"] += 1
-            else:
-                wins["random"] += 1
-        else:
-            wins["draw"] += 1
+        wins[_result_bucket(result, 0 if ab_first else 1)] += 1
     print(
         f"AB wins: {wins['ab']}  Random wins: {wins['random']}  draws: {wins['draw']}  "
+        f"unresolved: {wins['unresolved']}  "
         f"avg plies: {total_plies / games:.1f}"
     )
 

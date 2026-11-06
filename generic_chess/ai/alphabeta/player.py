@@ -6,25 +6,36 @@ import time
 
 from ...rules.compiled import CompiledRuleSet
 from ...session.session import GameSession
+from ...session.result import SessionStatus
+from ...core.errors import ensure_ruleset_match
 from ..cancellation import CancellationToken
 from ..decision import PlayerDecision
 from ..evaluation.cache import EvaluationProfileCache
-from ..evaluation.config import EvaluationConfig
+from ..evaluation.config import EvaluationConfig, MATE_SCORE
 from ..evaluation.evaluator import Evaluator
+from ..evaluation.profile import require_default_profile_metadata
 from ..limits import SearchLimits
 from .search import run_root_search
 from .native_legality import NativeSemanticLegalityProvider
 from .statistics import SearchStatistics
 from .transposition import TranspositionTable
 from .tuning import SearchTuning
+from .rule_clock import capped_pure_leaper_limits
 
 
 class AlphaBetaPlayer:
-    """Deterministic, rule-derived alpha-beta player for any GenericChess RuleSet.
+    """Deterministic alpha-beta player for supported GenericChess RuleSets.
 
-    The evaluation profile is built once per RuleSet (cached); the
-    transposition table is kept across moves for the same RuleSet and cleared
-    when a different RuleSet is loaded or the caller changes q depth semantics.
+    The built-in rule-derived profile is cached per RuleSet and currently
+    requires square-board legacy movement metadata. Semantic-only or
+    rectangular rulesets use the same search interface with a compatible
+    caller-supplied ``evaluator_override``; the caller then owns evaluation
+    semantics. The transposition table is kept across moves for the same
+    RuleSet and cleared when a different RuleSet is loaded or the caller
+    changes q-depth semantics. SearchTuning.stop_after_root_win is an optional
+    any-win objective: it may retain a completed root child before the whole
+    iteration finishes, or stop on a compatible cached winning root. The result
+    keeps its actual completed depth/source; shortest mate is not promised.
     """
 
     def __init__(
@@ -43,18 +54,31 @@ class AlphaBetaPlayer:
         use_native_semantic_legality: bool = True,
         tuning: SearchTuning = SearchTuning(),
         evaluator_override=None,
+        # Opt-in: stop repeating complete finite-clock trees in admitted pure Leapers.
+        cap_pure_leaper_rule_clock: bool = False,
         # Readonly (position, checkpoint=...) -> bool or None to decline.
         # Caller supplies matching rule semantics; exceptions propagate.
         availability_provider=None,
         # Opt-in Core-owned terminal probe; default and UI policy stay unchanged.
         use_native_semantic_availability: bool = False,
+        # Optional child-check query; pair with Native availability to share
+        # one readonly state import. Defaults and UI policy stay unchanged.
+        use_native_semantic_check: bool = False,
+        check_provider=None,
+        # Experimental strict plain-Leaper state-only imports; default OFF.
+        use_native_transient_imports: bool = False,
     ) -> None:
+        if tuning.use_one_check_extension:
+            from ...core.search_runtime import _plain_leaper_hash_patterns
+            if _plain_leaper_hash_patterns(compiled) is None:
+                raise ValueError("main check extension requires certified pure-Leaper executable IR")
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
         self._profile = None
         self._profile_cache_hit = False
         self._profile_cache = profile_cache
         if evaluator_override is None:
+            require_default_profile_metadata(compiled)
             self._profile_cache = profile_cache or EvaluationProfileCache(
                 use_disk=use_disk_cache, disk_dir=disk_cache_dir
             )
@@ -72,9 +96,12 @@ class AlphaBetaPlayer:
         self._use_ordering = use_ordering
         self._use_native_semantic_legality = bool(use_native_semantic_legality)
         self._use_native_semantic_availability = bool(use_native_semantic_availability)
+        self._use_native_semantic_check = bool(use_native_semantic_check)
         self._native_legality_provider = (
-            NativeSemanticLegalityProvider.try_create(compiled)
-            if self._use_native_semantic_legality or self._use_native_semantic_availability
+            (NativeSemanticLegalityProvider.try_create(compiled, transient_imports=True)
+             if use_native_transient_imports else NativeSemanticLegalityProvider.try_create(compiled))
+            if (self._use_native_semantic_legality or self._use_native_semantic_availability
+                or self._use_native_semantic_check)
             else None
         )
         # Optional state-local boolean only; Core keeps adjudication/history.
@@ -83,7 +110,13 @@ class AlphaBetaPlayer:
                 and self._use_native_semantic_availability
                 and self._native_legality_provider is not None):
             self._availability_provider = self._native_legality_provider.has_legal_action
+        self._check_provider = check_provider
+        if (self._check_provider is None and self._use_native_semantic_check
+                and self._native_legality_provider is not None):
+            self._check_provider = self._native_legality_provider.in_check
         self._tuning = tuning
+        self._cap_pure_leaper_rule_clock = bool(cap_pure_leaper_rule_clock)
+        self._last_rule_clock_cap: int | None = None
 
     @property
     def compiled(self) -> CompiledRuleSet:
@@ -108,13 +141,24 @@ class AlphaBetaPlayer:
         return self._use_native_semantic_availability
 
     @property
+    def use_native_semantic_check(self) -> bool:
+        """Requested optional query; unsupported providers retain Core check."""
+        return self._use_native_semantic_check
+
+    @property
     def native_legality_provider(self):
         return self._native_legality_provider
+
+    @property
+    def last_rule_clock_cap(self) -> int | None:
+        """Effective requested depth ceiling; it does not certify completion."""
+        return self._last_rule_clock_cap
 
     def reset(self) -> None:
         """Clear search state (e.g., after loading a different RuleSet)."""
         self._tt.clear()
         self._tt_q_depths = None
+        self._last_rule_clock_cap = None
 
     def choose_action(
         self,
@@ -126,7 +170,32 @@ class AlphaBetaPlayer:
         recorder=None,
     ) -> PlayerDecision:
         state = session.state
-        started = time.monotonic()
+        self._last_rule_clock_cap = None
+        started = time.perf_counter()
+        result = getattr(session, "result", None)
+        if result is not None and result.status in (SessionStatus.RESIGNATION, SessionStatus.DECLARATION):
+            # These session terminals deliberately leave the Core state/history
+            # ongoing. Searching that state would return an unexecutable action
+            # or reselect a declaration which has already ended the session.
+            ensure_ruleset_match(state.position, self._compiled)
+            score = (0 if result.winner is None else
+                     MATE_SCORE if result.winner == state.position.side_to_move
+                     else -MATE_SCORE)
+            return PlayerDecision(
+                action=None, score=score, principal_variation=(),
+                completed_depth=0, selective_depth=0, nodes=0, qnodes=0,
+                elapsed_seconds=time.perf_counter() - started,
+                tt_probes=0, tt_hits=0, tt_cutoffs=0, beta_cutoffs=0,
+                evaluation_profile_cache_hit=self._profile_cache_hit,
+                termination_reason="terminal_position", choice_kind="TERMINAL",
+                result_source="terminal",
+            )
+        if self._cap_pure_leaper_rule_clock:
+            ensure_ruleset_match(state.position, self._compiled)
+            capped = capped_pure_leaper_limits(state, self._compiled, limits)
+            if capped is not limits:
+                self._last_rule_clock_cap = capped.max_depth
+                limits = capped
         stats = SearchStatistics()
         q_depths = (limits.quiescence_max_depth, limits.quiescence_hard_max_depth)
         if self._tt_q_depths != q_depths:
@@ -152,10 +221,11 @@ class AlphaBetaPlayer:
                 else None
             ),
             availability_provider=self._availability_provider,
+            check_provider=self._check_provider,
             recorder=recorder,
             progress_callback=progress_callback,
         )
-        elapsed = time.monotonic() - started
+        elapsed = time.perf_counter() - started
         return PlayerDecision(
             action=action,
             score=score,
@@ -190,6 +260,9 @@ class AlphaBetaPlayer:
             checking_move_qactions=stats.checking_move_qactions,
             checking_drop_qactions=stats.checking_drop_qactions,
             nonchecking_drop_excluded=stats.nonchecking_drop_excluded,
+            main_check_extensions=stats.main_check_extensions,
+            main_extension_max_path=stats.main_extension_max_path,
+            main_search_max_ply=stats.main_search_max_ply,
             pvs_null_window_searches=stats.pvs_null_window_searches,
             pvs_researches=stats.pvs_researches,
             aspiration_fail_low=stats.aspiration_fail_low,
@@ -203,6 +276,14 @@ class AlphaBetaPlayer:
             ordering_calls=stats.ordering_calls,
             ordered_moves=stats.ordered_moves,
             ordering_seconds=stats.ordering_seconds,
+            quiet_geometry_build_seconds=stats.quiet_geometry_build_seconds,
+            quiet_geometry_target_entries=stats.quiet_geometry_target_entries,
+            quiet_geometry_calls=stats.quiet_geometry_calls,
+            quiet_geometry_reorders=stats.quiet_geometry_reorders,
+            relative_history_attempts=stats.relative_history_attempts,
+            relative_history_cutoffs=stats.relative_history_cutoffs,
+            relative_history_entries=stats.relative_history_entries,
+            relative_history_reorders=stats.relative_history_reorders,
             legal_generation_calls=stats.legal_generation_calls,
             legal_generation_seconds=stats.legal_generation_seconds,
             evaluation_calls=stats.evaluation_calls,
@@ -227,4 +308,18 @@ class AlphaBetaPlayer:
             result_source=stats.result_source,
             result_ordinary_qdepth=stats.result_ordinary_qdepth,
             result_check_hard_qdepth=stats.result_check_hard_qdepth,
+            runtime_pushes=stats.runtime_pushes if stats.runtime_root_imports else None,
+            runtime_pops=stats.runtime_pops if stats.runtime_root_imports else None,
+            runtime_semantic_local_hash_updates=(
+                stats.runtime_semantic_local_hash_updates if stats.runtime_root_imports else None
+            ),
+            runtime_position_identity_hash_cached=(
+                stats.runtime_position_identity_hash_cached if stats.runtime_root_imports else None
+            ),
+            runtime_semantic_full_diff_fallbacks=(
+                stats.runtime_semantic_full_diff_fallbacks if stats.runtime_root_imports else None
+            ),
+            runtime_depth_balanced=(
+                stats.runtime_depth_balanced if stats.runtime_root_imports else None
+            ),
         )

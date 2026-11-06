@@ -8,7 +8,11 @@ from typing import TYPE_CHECKING, Mapping
 from ...core.pieces import PieceType
 from ...core.coordinates import BoardShape
 from ...rules.compiled import CompiledRuleSet
-from .analyzer import MovementCapabilityProfile, build_movement_capability
+from .analyzer import (
+    MovementCapabilityProfile,
+    build_movement_capability,
+    profile_movement_atoms,
+)
 from .config import EvaluationConfig, MAX_STATIC_EVAL, config_hash
 
 if TYPE_CHECKING:
@@ -75,11 +79,80 @@ def _drop_profile(
     return freedom, avg
 
 
+def require_default_profile_metadata(compiled):
+    """Name the existing static-profile boundary before cache lookup/build."""
+    if compiled.board_size is None:
+        raise ValueError(
+            "default evaluation requires square-board legacy metadata; "
+            "supply an evaluator for rectangular search"
+        )
+    if not hasattr(compiled, "piece_types"):
+        raise ValueError(
+            "default evaluation requires legacy movement metadata; "
+            "supply evaluator_override for semantic-only search"
+        )
+
+
+def _initially_reachable_type_ids(compiled: CompiledRuleSet) -> set[str]:
+    """Conservatively close types over initial legacy states and promotions.
+
+    Captures to hand preserve a piece's base type, and drops restore that same
+    type. Promotion changes only the current type and marks the piece promoted,
+    so a promoted target must not itself become a new promotion source unless
+    that type is independently present as an unpromoted base type. Square-level
+    promotion feasibility is intentionally over-approximated: including an
+    impossible target is safer than missing an actually reachable type.
+
+    Semantic executables may change current types through arbitrary effects;
+    until that transition graph is explicitly analyzed, keep every declared
+    type in their normalization set.
+    """
+    if hasattr(compiled, "ir"):
+        return set(compiled.types_by_id)
+
+    reachable: set[str] = set()
+    promotion_sources: set[str] = set()
+    positions = (compiled.initial_position, *compiled.initial_setup_positions.values())
+    for position in positions:
+        for piece in position.board:
+            if piece is not None:
+                reachable.add(piece.base_type_id)
+                reachable.add(piece.current_type_id)
+                if not piece.promoted:
+                    promotion_sources.add(piece.base_type_id)
+                elif compiled.capture_disposition == "capture_to_hand":
+                    masks = compiled.drop_allowed.get(piece.base_type_id, ())
+                    if any(any(owner_mask) for owner_mask in masks):
+                        promotion_sources.add(piece.base_type_id)
+        for owner in (0, 1):
+            for type_id, count in position.hands[owner].counts:
+                if count <= 0:
+                    continue
+                reachable.add(type_id)
+                masks = compiled.drop_allowed.get(type_id, ())
+                if any(any(owner_mask) for owner_mask in masks):
+                    promotion_sources.add(type_id)
+
+    for type_id in promotion_sources:
+        piece_type = compiled.types_by_id.get(type_id)
+        if piece_type is None or not piece_type.is_promotable:
+            continue
+        allowed = compiled.promotion_allowed.get(type_id, ())
+        if not any(owner_pairs for owner_pairs in allowed):
+            continue
+        reachable.update(
+            target_id for target_id in piece_type.promotion_target_ids
+            if target_id in compiled.types_by_id
+        )
+    return reachable
+
+
 def build_ruleset_profile(
     compiled: CompiledRuleSet,
     config: EvaluationConfig,
     capability_cache: "MovementCapabilityCache | None" = None,
 ) -> RuleSetEvaluationProfile:
+    require_default_profile_metadata(compiled)
     n = compiled.board_size
     if n is None:
         raise ValueError(
@@ -92,17 +165,27 @@ def build_ruleset_profile(
     ordinary: list[PieceType] = []
 
     for pt in compiled.piece_types:
+        atoms = profile_movement_atoms(compiled, pt.type_id)
         if capability_cache is not None:
-            capability, _ = capability_cache.get_or_build(n, pt.movement_atoms, config)
+            capability, _ = capability_cache.get_or_build(n, atoms, config)
         else:
-            capability = build_movement_capability(n, pt.movement_atoms, config)
+            capability = build_movement_capability(n, atoms, config)
         capabilities[pt.type_id] = capability
         raw[pt.type_id] = _raw_capability_score(capability, config)
         drop[pt.type_id] = _drop_profile(compiled, pt.type_id, n)
         if not pt.is_anchor:
             ordinary.append(pt)
 
-    median_raw = _median([raw[pt.type_id] for pt in ordinary]) if ordinary else 0.0
+    reachable_type_ids = _initially_reachable_type_ids(compiled)
+    normalization_types = [pt for pt in ordinary if pt.type_id in reachable_type_ids]
+    # A ruleset with no reachable ordinary type still needs finite diagnostics;
+    # in that degenerate case retain the historical all-declared fallback.
+    if not normalization_types:
+        normalization_types = ordinary
+    median_raw = (
+        _median([raw[pt.type_id] for pt in normalization_types])
+        if normalization_types else 0.0
+    )
     scale = config.normal_piece_median_value
 
     def normalized_board(type_id: str, is_anchor: bool) -> int:
@@ -150,7 +233,10 @@ def build_ruleset_profile(
             is_promotable=pt.is_promotable,
         )
 
-    median_value = _median([board_value[pt.type_id] for pt in ordinary]) if ordinary else 0
+    median_value = (
+        _median([board_value[pt.type_id] for pt in normalization_types])
+        if normalization_types else 0
+    )
     return RuleSetEvaluationProfile(
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         schema_version=1,

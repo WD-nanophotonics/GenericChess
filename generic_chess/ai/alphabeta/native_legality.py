@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import time
 import threading
+import sys
 
 from ...core.coordinates import index_to_square
 from ...core.semantic_executor import (
@@ -20,6 +21,12 @@ from ...core.semantic_executor import (
 )
 from ...rules.ir import CompiledSemanticRuleset
 
+
+# Python owns these references; the C helper borrows them only for one call.
+_PAYLOAD_NAMES = tuple(map(sys.intern, (
+    "owner", "base_type_id", "current_type_id", "promoted", "board", "hands",
+    "counts", "aux_state", "side_to_move",
+)))
 
 _U8 = 0xFF
 _GEOMETRY_MASK = 0xFFF
@@ -37,7 +44,7 @@ class NativeSemanticLegalityProvider:
     excludes them so the caller uses Core instead of accepting an empty set.
     """
 
-    def __init__(self, compiled, engine, native_rules, *, strict: bool = False):
+    def __init__(self, compiled, engine, native_rules, *, strict: bool = False, transient_imports: bool = False):
         self.compiled = compiled
         self.engine = engine
         self.native_rules = native_rules
@@ -51,7 +58,23 @@ class NativeSemanticLegalityProvider:
             condition.kind == "no_legal_reply"
             for pattern in engine._patterns for condition in pattern.postconditions
         )
+        # Both bounds belong to immutable compiled rules. Resolve once rather
+        # than importing and taking a minimum at every search frontier.
+        from ...native.compiler import GC_SEM_MAX_PLY
+        self._max_supported_ply = min(
+            compiled.support.max_ply, GC_SEM_MAX_PLY
+        ) - int(self._requires_reply_probe)
         self._metrics_local = threading.local()
+        # Older installed kernels remain fully usable through the Python builder.
+        self._payload_builder = getattr(native_rules.backend_module, "semantic_core_payload", None)
+        self.transient_imports = False
+        if transient_imports:
+            from ...core.search_runtime import _plain_leaper_hash_patterns
+            self.transient_imports = (
+                getattr(compiled, "piece_types", None) is not None
+                and _plain_leaper_hash_patterns(compiled) is not None
+                and hasattr(native_rules.backend_module, "semantic_pack_transient_position")
+            )
         self.compile_seconds = 0.0
 
     @property
@@ -63,6 +86,41 @@ class NativeSemanticLegalityProvider:
         """Current thread's actual readonly availability calls, independent of legality."""
         return dict(getattr(self._metrics_local, "availability", {}))
 
+    @property
+    def check_metrics(self):
+        """Actual readonly child-check imports/queries in the current thread."""
+        return dict(getattr(self._metrics_local, "check", {}))
+
+    def in_check(self, position, side, checkpoint=None):
+        """Readonly check with one-use input handoff to availability.
+
+        Only the complete immutable position object is associated. No check,
+        availability, history, terminal result or score is cached. Frontiers
+        retain their separate actual-ply import.
+        """
+        from ...native.semantic import pack_position, in_check
+
+        self._metrics_local.check_handoff = None
+        if checkpoint is not None:
+            checkpoint()
+        if position.ruleset_fingerprint != self.native_rules.fingerprint:
+            raise ValueError("Native check compiled source mismatch")
+        if isinstance(side, bool) or not isinstance(side, int) or side not in (0, 1):
+            raise ValueError("side must be 0 or 1")
+        metrics = getattr(self._metrics_local, "check", None)
+        if metrics is None:
+            metrics = dict(calls=0, imports=0, queries=0)
+            self._metrics_local.check = metrics
+        metrics["calls"] += 1
+        packed = self._pack_position(position, 0)
+        metrics["imports"] += 1
+        value = in_check(self.native_rules, packed, side)
+        metrics["queries"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        self._metrics_local.check_handoff = (position, packed)
+        return value
+
     def has_legal_action(self, position, checkpoint=None):
         """Core pre-adjudication availability: readonly bool, or None to decline.
 
@@ -72,6 +130,10 @@ class NativeSemanticLegalityProvider:
         Native's nested reply cutoff cannot implement that predicate.
         """
         from ...native.semantic import pack_position, has_legal_action
+
+        # Consume the one-use input before any poll/eligibility failure.
+        handoff = getattr(self._metrics_local, "check_handoff", None)
+        self._metrics_local.check_handoff = None
 
         metrics = getattr(self._metrics_local, "availability", None)
         if metrics is None:
@@ -85,8 +147,12 @@ class NativeSemanticLegalityProvider:
         if self._requires_reply_probe and self.compiled.support.max_ply <= 1:
             metrics["declines"] += 1
             return None
-        packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
-        metrics["imports"] += 1
+        if handoff is not None and handoff[0] is position:
+            packed = handoff[1]
+            metrics["reused_imports"] = metrics.get("reused_imports", 0) + 1
+        else:
+            packed = self._pack_position(position, 0)
+            metrics["imports"] += 1
         value = has_legal_action(self.native_rules, packed)
         metrics["queries"] += 1
         if checkpoint is not None:
@@ -99,18 +165,20 @@ class NativeSemanticLegalityProvider:
         # that reply parent at max_ply, one ply before the outer cutoff.
         # Pure semantic IR products expose this on the typed support payload;
         # a legacy compatibility attribute is not required for execution.
-        return ply_count < self.compiled.support.max_ply - int(self._requires_reply_probe)
+        return ply_count < self._max_supported_ply
 
     @classmethod
-    def try_create(cls, compiled, *, strict: bool = False):
+    def try_create(cls, compiled, *, strict: bool = False, transient_imports: bool = False):
         """Create an active provider or return ``None`` for normal fallback."""
         if not isinstance(compiled, CompiledSemanticRuleset):
             return None
         engine = semantic_engine_for(compiled)
         if engine is None:
             return None
-        # Installed kernels bind these filters to the affected piece instead
-        # of the action actor. Preserve Core legality for these rules.
+        # Keep the separate conservative automatic-admission boundary.
+        # Corrected kernels advertise actor-relative binding and can compile
+        # these rules directly; widening this provider policy is not selected.
+        # This exclusion does not diagnose the currently installed kernel.
         if any(
             effect.kind in ("move", "shift", "remove")
             and effect.piece_type_ref is not None
@@ -129,12 +197,35 @@ class NativeSemanticLegalityProvider:
                 return None
         except Exception:
             return None
-        provider = cls(compiled, engine, native_rules, strict=strict)
+        provider = cls(compiled, engine, native_rules, strict=strict, transient_imports=transient_imports)
         provider.compile_seconds = time.perf_counter() - started
         return provider
 
+    def _pack_payload(self, payload):
+        from ...native.semantic import pack_position
+        if self.transient_imports:
+            # Certified rules have no aux slots. Keep transport validation and
+            # ordinary pack API unchanged; only the capsule's authority differs.
+            if payload["aux_state"]:
+                raise ValueError("plain transient import unexpectedly contains aux state")
+            return self.native_rules.backend_module.semantic_pack_transient_position(
+                self.native_rules.capsule, payload)
+        return pack_position(self.native_rules, payload)
+
+    def _pack_position(self, position, ply_count):
+        return self._pack_payload(self._state_only_payload(position, ply_count))
+
     def _state_only_payload(self, position, ply_count):
         """Build exactly the F20 state-only payload; never read history/SHA."""
+        if self._payload_builder is not None:
+            return self._payload_builder(
+                position, self.type_map, len(self.type_ids), ply_count, _PAYLOAD_NAMES
+            )
+        return self._python_state_only_payload(position, ply_count)
+
+    def _python_state_only_payload(self, position, ply_count):
+        """Compatibility path for an older optional Native binary."""
+        type_map = self.type_map
         board = []
         for piece in position.board:
             if piece is None:
@@ -143,21 +234,21 @@ class NativeSemanticLegalityProvider:
             if piece.owner not in (0, 1):
                 raise ValueError("Native legality payload has an invalid owner")
             try:
-                base = self.type_map[piece.base_type_id]
-                current = self.type_map[piece.current_type_id]
+                base = type_map[piece.base_type_id]
+                current = type_map[piece.current_type_id]
             except KeyError as exc:
                 raise ValueError("Native legality payload has an unknown piece type") from exc
-            board.append([base, current, int(piece.owner), int(bool(piece.promoted))])
+            board.append([base, current, int(piece.owner), 1 if piece.promoted else 0])
 
         hands = []
         for hand in position.hands:
             counts = [0] * len(self.type_ids)
             for type_id, count in hand.counts:
-                if type_id not in self.type_map:
+                if type_id not in type_map:
                     raise ValueError("Native legality payload has an unknown hand type")
                 if int(count) < 0:
                     raise ValueError("Native legality payload has a negative hand count")
-                counts[self.type_map[type_id]] = int(count)
+                counts[type_map[type_id]] = int(count)
             hands.append(counts)
         return {
             "side": int(position.side_to_move),
@@ -226,7 +317,7 @@ class NativeSemanticLegalityProvider:
             checkpoint()
         payload_started = time.perf_counter()
         payload = self._state_only_payload(position, ply_count)
-        native_position = pack_position(self.native_rules, payload)
+        native_position = self._pack_payload(payload)
         payload_seconds = time.perf_counter() - payload_started
         if checkpoint is not None:
             checkpoint()

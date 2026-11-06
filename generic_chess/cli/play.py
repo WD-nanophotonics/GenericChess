@@ -12,6 +12,7 @@ from ..generation.config import GenerationError
 from ..generation.generator import generate_game
 from ..core.actions import (
     Action,
+    PassAction,
     action_drop_base_type_id,
     action_promotion_target_id,
     action_source_square,
@@ -144,7 +145,9 @@ HELP_TEXT = """commands:
 
 
 def visible_action_alias(action: Action) -> str:
-    """Return the generic coordinate alias accepted by the CLI."""
+    """Return the visible CLI alias, including the exact token for a pass."""
+    if isinstance(action, PassAction):
+        return str(action)
     source = action_source_square(action)
     if source is None:
         return f"{action_drop_base_type_id(action)}@{square_str(action_target_square(action))}"

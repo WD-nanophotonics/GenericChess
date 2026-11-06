@@ -41,9 +41,14 @@ def _normalized_value(
     value_scale: float,
     dynamic=None,
     dynamic_weights=None,
+    spatial=None,
+    spatial_weights=None,
+    control=None,
+    control_weights=None,
 ) -> float:
     v = linear_value(
-        features, board_weights, hand_weights, dynamic, dynamic_weights
+        features, board_weights, hand_weights, dynamic, dynamic_weights,
+        spatial, control, spatial_weights, control_weights,
     )
     return math.tanh(v / value_scale) if value_scale > 0 else 0.0
 
@@ -59,6 +64,8 @@ def tdleaf_update(
     ``checkpoint`` weights first; the eligibility-traced updates are then
     accumulated and applied once.
     """
+    if checkpoint.compact_nonlinear:
+        raise NotImplementedError("TDLeaf does not support compact nonlinear checkpoints")
     value_scale = config.value_scale or checkpoint.value_scale
     alpha = config.alpha
     if alpha is None:
@@ -85,15 +92,21 @@ def tdleaf_update(
         points = trajectory.points
         if not points:
             continue
-        # Frozen evaluator: precompute all leaf values.
+        for point in points:
+            if point.leaf_terminal_z is not None and point.leaf_terminal_z not in (-1., 0., 1.):
+                raise ValueError("terminal PV leaf requires a finite W/L/D value")
+        # Scoring terminal PV leaves are constants under the frozen evaluator.
+        # Older records without the marker retain their recorded feature contract.
         values = [
-            _normalized_value(
+            p.leaf_terminal_z if p.leaf_terminal_z is not None else _normalized_value(
                 trajectory.leaf_features_at(p),
                 checkpoint.board_weights,
                 checkpoint.hand_weights,
                 value_scale,
                 trajectory.dynamic_features_at(p),
                 checkpoint.dynamic_weights,
+                dict(p.leaf_feature_spatial), checkpoint.spatial_occupancy_weights,
+                p.leaf_feature_control, checkpoint.localized_control_weights,
             )
             for p in points
         ]
@@ -106,7 +119,8 @@ def tdleaf_update(
             u_next = terminal if t == len(points) - 1 else values[t + 1]
             delta = u_next - u_t
             td_errors.append(delta)
-            grad_scale = (1.0 - u_t * u_t) / value_scale
+            grad_scale = (0.0 if point.leaf_terminal_z is not None
+                          else (1.0 - u_t * u_t) / value_scale)
             for tid, bc in zip(trajectory.type_ids, point.leaf_feature_board):
                 eligibility_board[tid] = (
                     config.lambd * eligibility_board.get(tid, 0.0)
