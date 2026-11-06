@@ -1,0 +1,15 @@
+{
+  "question": "Does only extending the authoritative clock4\u21928/16 improve exact decisive teacher support?",
+  "inputs": "first2564x4+1285x5saved slots, fixed before results; identical initial boards and legal action histories",
+  "clocks": [
+    8,
+    16
+  ],
+  "nodes": 1500,
+  "batch_seconds": 360,
+  "model": "unchanged/no training in this experiment",
+  "labels": "Core/existing solver; UNKNOWN distinct; one proven winning action certifies rootWIN even if other root actions unresolved",
+  "expected_seconds": 180,
+  "maximum_calls": 768,
+  "no_refill": true
+}

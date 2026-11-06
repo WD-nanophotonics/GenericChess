@@ -2,8 +2,8 @@
 
 AGENTS.md owns authority/roles; LOCAL_AGENT.md methods; SLACK_WORKFLOW.md contact.
 CHATGPT_REVIEW_WORKFLOW.md adds current GitHub ChatGPT Patrol intake to Slack.
-PRIMARY publishes sandbox only. USER2026-10-31 explicitly resumed both existing
-hourly patrols and PRIMARY work after the Oct29 stop. Pure Leaper first;
+PRIMARY publishes sandbox only. This is a user-started manual research round;
+both hourly patrols remain PAUSED. Pure Leaper first;
 mixed/legacy/promotion/drop/NNUE optimization remains deferred. Complete admitted
 semantics, typed histories and clocks stay authoritative.
 
@@ -42,24 +42,57 @@ gain/strength/defaultchange.3507.093sloop<4000,allslotsclosed,no refill. Product
 unchanged,producer retired.286239fullQquietcheckclassificationsvs0capture-only
 are actualfrontiercounters,notmatching-stateexecutedmove orcostbenefit estimates.
 
-## Current direction — user correction 2026-11-06
+## Current research direction — 2026-11-07
 
-Stop the latency/GC/callback investigation. The recent observer/proxy code,
-redundant boundary tests and current-tree audit archive have been deleted.
-The twelve literal capture-only Q games drew; no improvement was demonstrated.
-Preserve that scientific result and its limitations. Six timing outliers do not
-justify another observer, identity or receipt project.
+Science is OPEN. Rule-Conditioned Pure-Leaper Neural Player replaces the old
+aspiration/latency/local-search queue. The user authorized this manual hour;
+both patrols remain PAUSED, with no AUX/worker/UI writes or scheduler changes.
+[Implementation and evidence](LEAPER_NEURAL_MAINLINE_20261107.md) record the
+60.635 verified effective minutes, with unverified gaps/admin excluded.
 
-Next research must answer pure-Leaper action quality at equal total cost. Check
-whether existing aspiration-window evidence already answers its utility; if not,
-use a small paired-game comparison with the existing Player/GameSession rather
-than a new framework. Fix literal rules, controls and game/time budget before
-playing. Use actual W/D/L and cost, including negative/inconclusive outcomes;
-changed actions, depth or test counts alone are not success. Product defaults
-remain unchanged and AUX learning remains its own work.
+A: separate structural DeepSets+2roundGNN value entry is implemented,10779shared
+parameters; names/IDs are not learned inputs. Same parameter structure executes
+4x4/5x5and more types/counts, but this is functional scope,not generic accuracy.
+Core remains sole legality/history/terminal authority. Standalone exact teacher
+reuses existing threshold proof; new bounds preserveUNKNOWN when onlynonloss
+is proven. No production/default/search-player change.
 
-The immediate task is this bounded, explicitly approved cleanup, not a normal
-research round. Both existing hourly patrols remain PAUSED.
+B:4ply firstpilot failed label support. Clock-only768calls supported8ply over16.
+New8ply3seed study:4x4heldout mean balanced.945674vs.892754structurebaseline,
+but decisive.962963vs.977778 => preregistered gateFAIL.5x5mean decisive.438596vs
+.842105baseline, conditional on110exact/512roots. No5training/transferclaim.
+
+Closed followups:216crossed-factor roots;2160D4Core replays;64deadline roots;
+single input-group and readout ablations. Prospective readout study stopped at
+600.319s,1692returns/468NOT_RUN,1290UNKNOWN/376D/22W/4L. sum16decisive mean
+.576923vs.487179meanreadout, gain.089744<.10and26<30support; proper scores worse.
+Two equivalences with olderclock8inputs retained,so not whollyfresh. NO_GO,no
+refill/adoption. Tested noTTroot-only teacher fails12exactvs45reference/72cases;
+22.53svs16.79s. This does not refute root-predicate proof with existingTT.
+
+NextMain: teacher-root proof efficiency. Neutral3piece geometry supply also
+CLOSED at300.102s/457starts/55NOT_RUN.5x5richmask23has25W/Lvs14short/225each,
+below60and15/class; solvedsubset has noDRAW. Do not fit newNN on this source.
+962of1290savedUNKNOWN already have a certifiedDRAWaction => root[0,1],notDRAW.
+First inspect/reuse existing thresholdpredicate engine, full-historyTT and action
+order, change only rootproof goal/query scheduling. Preserve old all-action
+strong/optimal-actions contract via separate rootresult. Design one bounded
+same-source comparison including wholecost,node-accounting and exact/UNKNOWN
+controls, not a new search framework or revival of failed noTTcandidate.
+Prospective next-run forecast60–75min inclengineering/validation/analysis; fixed
+comparison should use<=96calls/180s and stop on any exact contradiction. NOT_STARTED.
+
+Reserve: frozen partial bounds may support future data use, but no relabeling
+or newloss is authorized by their existence. First version remainsWDLvalue-only.
+After independent4x4value acceptance, preregister untouched5zero-shot and same
+architecture/data/optimizer/budget transfer-vs-scratch plus4retention, charging
+pretraining too. FixedABP actual swapped-side play and wholechoose cost come
+later. Dedicated player-search rewrites require measuredABPbottleneck. No
+Native/MCTS/Transformer/policy/multi-network/19x19expansion from this round.
+
+Current standalone sources: scripts/leaper_neural_rules.py,
+scripts/leaper_neural_teacher.py,scripts/leaper_neural_model.py,
+scripts/leaper_neural_experiment.py. All older finite panels stay CLOSED.
 
 Persistent lifecycle CLOSED INCONCLUSIVE:63/128 returns,65NOT_RUN,31complete
 pairs plus1unpaired;23qualifiedwarm pairs onlyfamilies0–3. Descriptive wall

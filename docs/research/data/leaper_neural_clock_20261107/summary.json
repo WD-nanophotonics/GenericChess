@@ -1,0 +1,56 @@
+{
+  "seconds": 264.7051967999432,
+  "stop": null,
+  "calls": 768,
+  "not_run": 0,
+  "conditions": [
+    {
+      "size": 4,
+      "clock": 8,
+      "labels": {
+        "UNKNOWN": 118,
+        "DRAW": 95,
+        "WIN": 25,
+        "LOSS": 18
+      },
+      "all_root_solved": 124,
+      "winning_action_only": 14
+    },
+    {
+      "size": 4,
+      "clock": 16,
+      "labels": {
+        "UNKNOWN": 246,
+        "WIN": 6,
+        "LOSS": 4
+      },
+      "all_root_solved": 4,
+      "winning_action_only": 6
+    },
+    {
+      "size": 5,
+      "clock": 8,
+      "labels": {
+        "UNKNOWN": 96,
+        "WIN": 8,
+        "DRAW": 21,
+        "LOSS": 3
+      },
+      "all_root_solved": 25,
+      "winning_action_only": 7
+    },
+    {
+      "size": 5,
+      "clock": 16,
+      "labels": {
+        "UNKNOWN": 125,
+        "LOSS": 2,
+        "WIN": 1
+      },
+      "all_root_solved": 2,
+      "winning_action_only": 1
+    }
+  ],
+  "newNNtraining": 0,
+  "scope": "same fixed boards/history; only clock changes; budget censoring disclosed; not full-game strength or transfer"
+}

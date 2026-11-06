@@ -1,0 +1,901 @@
+{
+  "seconds": 4.768354000058025,
+  "original_comparisons": [
+    {
+      "size": 4,
+      "baseline": "material",
+      "baseline_reproduced": true,
+      "intervals": {
+        "roots": 160,
+        "repetitions": 2000,
+        "balanced_difference_95": [
+          0.03424244746565819,
+          0.09666228294372559,
+          0.1667138934135437
+        ],
+        "decisive_difference_95": [
+          -0.029629647731781006,
+          0.051851868629455566,
+          0.1407407522201538
+        ],
+        "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+      }
+    },
+    {
+      "size": 4,
+      "baseline": "structure",
+      "baseline_reproduced": true,
+      "intervals": {
+        "roots": 160,
+        "repetitions": 2000,
+        "balanced_difference_95": [
+          0.009442250244319439,
+          0.0521739199757576,
+          0.09373302012681961
+        ],
+        "decisive_difference_95": [
+          -0.059259235858917236,
+          -0.014814794063568115,
+          0.037037014961242676
+        ],
+        "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+      }
+    },
+    {
+      "size": 5,
+      "baseline": "material",
+      "baseline_reproduced": true,
+      "intervals": {
+        "roots": 110,
+        "repetitions": 2000,
+        "balanced_difference_95": [
+          0.04313439503312111,
+          0.1588319092988968,
+          0.2877492904663086
+        ],
+        "decisive_difference_95": [
+          -0.31578946113586426,
+          -0.14035087823867798,
+          0.0350877046585083
+        ],
+        "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+      }
+    },
+    {
+      "size": 5,
+      "baseline": "structure",
+      "baseline_reproduced": true,
+      "intervals": {
+        "roots": 110,
+        "repetitions": 2000,
+        "balanced_difference_95": [
+          -0.2613171637058258,
+          -0.1299348920583725,
+          0.00021368441230151802
+        ],
+        "decisive_difference_95": [
+          -0.5789473652839661,
+          -0.4035087525844574,
+          -0.2280701994895935
+        ],
+        "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+      }
+    }
+  ],
+  "factor_results": [
+    {
+      "original_combination": true,
+      "labels": [
+        3,
+        14,
+        3
+      ],
+      "models": [
+        {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.800000011920929,
+          "balanced_accuracy": 0.817460318406423,
+          "recall_LDW": [
+            1.0,
+            0.7857142686843872,
+            0.6666666865348816
+          ],
+          "decisive_accuracy": 0.8333333134651184,
+          "cross_entropy": 0.23318727314472198,
+          "brier": 0.1737157553434372
+        },
+        {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.8500000238418579,
+          "balanced_accuracy": 0.9285714228947958,
+          "recall_LDW": [
+            1.0,
+            0.7857142686843872,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.40266504883766174,
+          "brier": 0.2177160084247589
+        },
+        {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.8500000238418579,
+          "balanced_accuracy": 0.7539682586987814,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9285714030265808,
+            0.6666666865348816
+          ],
+          "decisive_accuracy": 0.6666666865348816,
+          "cross_entropy": 0.24253471195697784,
+          "brier": 0.17567183077335358
+        }
+      ],
+      "baselines": {
+        "material": {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.6499999761581421,
+          "balanced_accuracy": 0.7460317611694336,
+          "recall_LDW": [
+            1.0,
+            0.5714285969734192,
+            0.6666666865348816
+          ],
+          "decisive_accuracy": 0.8333333134651184,
+          "cross_entropy": 0.6653287410736084,
+          "brier": 0.4277768135070801
+        },
+        "structure": {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.75,
+          "balanced_accuracy": 0.8809523781140646,
+          "recall_LDW": [
+            1.0,
+            0.6428571343421936,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.5867413282394409,
+          "brier": 0.36717382073402405
+        }
+      },
+      "intervals": {
+        "material": {
+          "roots": 20,
+          "repetitions": 2000,
+          "balanced_difference_95": [
+            -0.044973552227020264,
+            0.08465608954429626,
+            0.21699748933315277
+          ],
+          "decisive_difference_95": [
+            -0.1111111044883728,
+            0.0,
+            0.1111111044883728
+          ],
+          "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+        },
+        "structure": {
+          "roots": 20,
+          "repetitions": 2000,
+          "balanced_difference_95": [
+            -0.2142857164144516,
+            -0.04100529104471207,
+            0.12182565033435822
+          ],
+          "decisive_difference_95": [
+            -0.3888888955116272,
+            -0.1666666865348816,
+            0.0
+          ],
+          "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+        }
+      }
+    },
+    {
+      "original_combination": false,
+      "labels": [
+        3,
+        89,
+        12
+      ],
+      "models": [
+        {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.8942307829856873,
+          "balanced_accuracy": 0.8274032672246298,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.898876428604126,
+            0.9166666865348816
+          ],
+          "decisive_accuracy": 0.8666666746139526,
+          "cross_entropy": 0.3199266195297241,
+          "brier": 0.13855960965156555
+        },
+        {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.9038461446762085,
+          "balanced_accuracy": 0.9385143717130026,
+          "recall_LDW": [
+            1.0,
+            0.898876428604126,
+            0.9166666865348816
+          ],
+          "decisive_accuracy": 0.9333333373069763,
+          "cross_entropy": 0.32311809062957764,
+          "brier": 0.13947167992591858
+        },
+        {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.9038461446762085,
+          "balanced_accuracy": 0.7237827877203623,
+          "recall_LDW": [
+            0.3333333432674408,
+            0.9213483333587646,
+            0.9166666865348816
+          ],
+          "decisive_accuracy": 0.800000011920929,
+          "cross_entropy": 0.48104286193847656,
+          "brier": 0.15433652698993683
+        }
+      ],
+      "baselines": {
+        "material": {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.6634615659713745,
+          "balanced_accuracy": 0.7134831547737122,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.6404494643211365,
+            0.8333333134651184
+          ],
+          "decisive_accuracy": 0.800000011920929,
+          "cross_entropy": 0.8370122909545898,
+          "brier": 0.529144287109375
+        },
+        "structure": {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.7019230723381042,
+          "balanced_accuracy": 0.7284644246101379,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.6853932738304138,
+            0.8333333134651184
+          ],
+          "decisive_accuracy": 0.800000011920929,
+          "cross_entropy": 0.6366406083106995,
+          "brier": 0.40019604563713074
+        }
+      },
+      "intervals": {
+        "material": {
+          "roots": 104,
+          "repetitions": 2000,
+          "balanced_difference_95": [
+            0.003721929620951414,
+            0.11584477126598358,
+            0.23418903350830078
+          ],
+          "decisive_difference_95": [
+            -0.04444444179534912,
+            0.06666666269302368,
+            0.2222222089767456
+          ],
+          "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+        },
+        "structure": {
+          "roots": 104,
+          "repetitions": 2000,
+          "balanced_difference_95": [
+            -0.014575532637536526,
+            0.10070744901895523,
+            0.21953551471233368
+          ],
+          "decisive_difference_95": [
+            -0.04444444179534912,
+            0.06666666269302368,
+            0.2222222089767456
+          ],
+          "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+        }
+      }
+    },
+    {
+      "original_combination": null,
+      "labels": [
+        6,
+        103,
+        15
+      ],
+      "models": [
+        {
+          "n": 124,
+          "classes": [
+            6,
+            103,
+            15
+          ],
+          "accuracy": 0.8790322542190552,
+          "balanced_accuracy": 0.8611650466918945,
+          "recall_LDW": [
+            0.8333333134651184,
+            0.8834951519966125,
+            0.8666666746139526
+          ],
+          "decisive_accuracy": 0.8571428656578064,
+          "cross_entropy": 0.30593642592430115,
+          "brier": 0.1442299634218216
+        },
+        {
+          "n": 124,
+          "classes": [
+            6,
+            103,
+            15
+          ],
+          "accuracy": 0.8951612710952759,
+          "balanced_accuracy": 0.9389428297678629,
+          "recall_LDW": [
+            1.0,
+            0.8834951519966125,
+            0.9333333373069763
+          ],
+          "decisive_accuracy": 0.9523809552192688,
+          "cross_entropy": 0.3359481990337372,
+          "brier": 0.15209172666072845
+        },
+        {
+          "n": 124,
+          "classes": [
+            6,
+            103,
+            15
+          ],
+          "accuracy": 0.8951612710952759,
+          "balanced_accuracy": 0.7629989186922709,
+          "recall_LDW": [
+            0.5,
+            0.9223300814628601,
+            0.8666666746139526
+          ],
+          "decisive_accuracy": 0.761904776096344,
+          "cross_entropy": 0.44257378578186035,
+          "brier": 0.15777769684791565
+        }
+      ],
+      "baselines": {
+        "material": {
+          "n": 124,
+          "classes": [
+            6,
+            103,
+            15
+          ],
+          "accuracy": 0.6612903475761414,
+          "balanced_accuracy": 0.7548004190127054,
+          "recall_LDW": [
+            0.8333333134651184,
+            0.6310679316520691,
+            0.800000011920929
+          ],
+          "decisive_accuracy": 0.8095238208770752,
+          "cross_entropy": 0.8093215227127075,
+          "brier": 0.5127946734428406
+        },
+        "structure": {
+          "n": 124,
+          "classes": [
+            6,
+            103,
+            15
+          ],
+          "accuracy": 0.7096773982048035,
+          "balanced_accuracy": 0.793203870455424,
+          "recall_LDW": [
+            0.8333333134651184,
+            0.6796116232872009,
+            0.8666666746139526
+          ],
+          "decisive_accuracy": 0.8571428656578064,
+          "cross_entropy": 0.628592312335968,
+          "brier": 0.3948698937892914
+        }
+      },
+      "intervals": {
+        "material": {
+          "roots": 124,
+          "repetitions": 2000,
+          "balanced_difference_95": [
+            0.02193097211420536,
+            0.09863360971212387,
+            0.18649409711360931
+          ],
+          "decisive_difference_95": [
+            -0.0476190447807312,
+            0.0476190447807312,
+            0.1746031641960144
+          ],
+          "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+        },
+        "structure": {
+          "roots": 124,
+          "repetitions": 2000,
+          "balanced_difference_95": [
+            -0.022262677550315857,
+            0.06076950952410698,
+            0.1497923880815506
+          ],
+          "decisive_difference_95": [
+            -0.1111111044883728,
+            0.0,
+            0.1269841194152832
+          ],
+          "scope": "Paired class-stratified bootstrap conditional on exact saved roots, averaging seed accuracies; excludes teacher-UNKNOWN and rule-distribution uncertainty."
+        }
+      }
+    }
+  ],
+  "teacher_selection": [
+    {
+      "size": 4,
+      "family": 0,
+      "total": 256,
+      "labels": {
+        "UNKNOWN": 86,
+        "DRAW": 170
+      }
+    },
+    {
+      "size": 4,
+      "family": 1,
+      "total": 256,
+      "labels": {
+        "UNKNOWN": 126,
+        "DRAW": 129,
+        "WIN": 1
+      }
+    },
+    {
+      "size": 4,
+      "family": 2,
+      "total": 256,
+      "labels": {
+        "UNKNOWN": 140,
+        "DRAW": 111,
+        "WIN": 5
+      }
+    },
+    {
+      "size": 4,
+      "family": 3,
+      "total": 256,
+      "labels": {
+        "UNKNOWN": 30,
+        "WIN": 83,
+        "LOSS": 102,
+        "DRAW": 41
+      }
+    },
+    {
+      "size": 4,
+      "family": 4,
+      "total": 256,
+      "labels": {
+        "UNKNOWN": 124,
+        "DRAW": 71,
+        "WIN": 52,
+        "LOSS": 9
+      }
+    },
+    {
+      "size": 4,
+      "family": 5,
+      "total": 256,
+      "labels": {
+        "UNKNOWN": 148,
+        "DRAW": 62,
+        "WIN": 25,
+        "LOSS": 21
+      }
+    },
+    {
+      "size": 5,
+      "family": 0,
+      "total": 86,
+      "labels": {
+        "UNKNOWN": 54,
+        "DRAW": 32
+      }
+    },
+    {
+      "size": 5,
+      "family": 1,
+      "total": 86,
+      "labels": {
+        "UNKNOWN": 68,
+        "DRAW": 18
+      }
+    },
+    {
+      "size": 5,
+      "family": 2,
+      "total": 85,
+      "labels": {
+        "UNKNOWN": 72,
+        "DRAW": 12,
+        "WIN": 1
+      }
+    },
+    {
+      "size": 5,
+      "family": 3,
+      "total": 85,
+      "labels": {
+        "UNKNOWN": 59,
+        "DRAW": 16,
+        "LOSS": 10
+      }
+    },
+    {
+      "size": 5,
+      "family": 4,
+      "total": 85,
+      "labels": {
+        "UNKNOWN": 74,
+        "DRAW": 8,
+        "WIN": 3
+      }
+    },
+    {
+      "size": 5,
+      "family": 5,
+      "total": 85,
+      "labels": {
+        "UNKNOWN": 75,
+        "DRAW": 5,
+        "WIN": 3,
+        "LOSS": 2
+      }
+    }
+  ],
+  "factor_errors": [
+    {
+      "slot": 9,
+      "family": 3,
+      "initial_pieces": 3,
+      "extra_owner": 0,
+      "prefix": 1,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "slot": 13,
+      "family": 1,
+      "initial_pieces": 4,
+      "extra_owner": 0,
+      "prefix": 2,
+      "original_combination": true,
+      "label": "DRAW",
+      "predicted_LDW": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "slot": 29,
+      "family": 3,
+      "initial_pieces": 4,
+      "extra_owner": 1,
+      "prefix": 2,
+      "original_combination": false,
+      "label": "LOSS",
+      "predicted_LDW": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "slot": 33,
+      "family": 3,
+      "initial_pieces": 5,
+      "extra_owner": 0,
+      "prefix": 1,
+      "original_combination": false,
+      "label": "LOSS",
+      "predicted_LDW": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "slot": 37,
+      "family": 5,
+      "initial_pieces": 4,
+      "extra_owner": 1,
+      "prefix": 1,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "slot": 39,
+      "family": 3,
+      "initial_pieces": 4,
+      "extra_owner": 0,
+      "prefix": 2,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "slot": 42,
+      "family": 3,
+      "initial_pieces": 5,
+      "extra_owner": 0,
+      "prefix": 1,
+      "original_combination": false,
+      "label": "WIN",
+      "predicted_LDW": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "slot": 46,
+      "family": 4,
+      "initial_pieces": 4,
+      "extra_owner": 0,
+      "prefix": 2,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "slot": 51,
+      "family": 4,
+      "initial_pieces": 4,
+      "extra_owner": 1,
+      "prefix": 2,
+      "original_combination": true,
+      "label": "DRAW",
+      "predicted_LDW": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "slot": 80,
+      "family": 3,
+      "initial_pieces": 5,
+      "extra_owner": 1,
+      "prefix": 2,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "slot": 94,
+      "family": 3,
+      "initial_pieces": 4,
+      "extra_owner": 0,
+      "prefix": 2,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "slot": 107,
+      "family": 0,
+      "initial_pieces": 5,
+      "extra_owner": 1,
+      "prefix": 0,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "slot": 122,
+      "family": 4,
+      "initial_pieces": 3,
+      "extra_owner": 1,
+      "prefix": 0,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "slot": 134,
+      "family": 4,
+      "initial_pieces": 4,
+      "extra_owner": 0,
+      "prefix": 2,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "slot": 137,
+      "family": 3,
+      "initial_pieces": 3,
+      "extra_owner": 1,
+      "prefix": 2,
+      "original_combination": true,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "slot": 150,
+      "family": 5,
+      "initial_pieces": 5,
+      "extra_owner": 1,
+      "prefix": 0,
+      "original_combination": true,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "slot": 161,
+      "family": 3,
+      "initial_pieces": 3,
+      "extra_owner": 1,
+      "prefix": 2,
+      "original_combination": true,
+      "label": "LOSS",
+      "predicted_LDW": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "slot": 168,
+      "family": 4,
+      "initial_pieces": 4,
+      "extra_owner": 1,
+      "prefix": 2,
+      "original_combination": true,
+      "label": "WIN",
+      "predicted_LDW": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "slot": 192,
+      "family": 4,
+      "initial_pieces": 3,
+      "extra_owner": 1,
+      "prefix": 0,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "slot": 200,
+      "family": 5,
+      "initial_pieces": 4,
+      "extra_owner": 1,
+      "prefix": 2,
+      "original_combination": false,
+      "label": "DRAW",
+      "predicted_LDW": [
+        1,
+        2,
+        1
+      ]
+    }
+  ],
+  "hypothesis": "Old slot coupling may exaggerate within-distribution value quality. This check changes only heldout factor sampling, freezing networks and teacher budget.",
+  "limitations": [
+    "Exact labels are selected by finite solver budget, not missing at random.",
+    "Six exposed families only; no heldout movement or cross-rule generalization evidence.",
+    "Finite8-ply WDL is not full-length strength.",
+    "Bootstrap conditions on saved roots and does not make seed repetitions independent datasets."
+  ]
+}

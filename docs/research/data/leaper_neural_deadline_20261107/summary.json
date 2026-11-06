@@ -1,0 +1,131 @@
+{
+  "seconds": 5.774365900084376,
+  "roots": 64,
+  "not_run": 0,
+  "stop": null,
+  "strata": [
+    {
+      "size": 4,
+      "seed": 0,
+      "correct": true,
+      "deadlines": {
+        "6": 21,
+        "8": 3,
+        "7": 2,
+        "4": 14,
+        "2": 5
+      }
+    },
+    {
+      "size": 4,
+      "seed": 0,
+      "correct": false,
+      "deadlines": {}
+    },
+    {
+      "size": 4,
+      "seed": 1,
+      "correct": true,
+      "deadlines": {
+        "6": 20,
+        "8": 3,
+        "7": 2,
+        "4": 14,
+        "2": 5
+      }
+    },
+    {
+      "size": 4,
+      "seed": 1,
+      "correct": false,
+      "deadlines": {
+        "6": 1
+      }
+    },
+    {
+      "size": 4,
+      "seed": 2,
+      "correct": true,
+      "deadlines": {
+        "6": 18,
+        "8": 3,
+        "7": 2,
+        "4": 13,
+        "2": 5
+      }
+    },
+    {
+      "size": 4,
+      "seed": 2,
+      "correct": false,
+      "deadlines": {
+        "6": 3,
+        "4": 1
+      }
+    },
+    {
+      "size": 5,
+      "seed": 0,
+      "correct": true,
+      "deadlines": {
+        "8": 5,
+        "6": 2,
+        "4": 1,
+        "2": 2
+      }
+    },
+    {
+      "size": 5,
+      "seed": 0,
+      "correct": false,
+      "deadlines": {
+        "4": 3,
+        "6": 4,
+        "2": 2
+      }
+    },
+    {
+      "size": 5,
+      "seed": 1,
+      "correct": true,
+      "deadlines": {
+        "4": 1,
+        "2": 2,
+        "8": 2
+      }
+    },
+    {
+      "size": 5,
+      "seed": 1,
+      "correct": false,
+      "deadlines": {
+        "4": 3,
+        "6": 6,
+        "8": 3,
+        "2": 2
+      }
+    },
+    {
+      "size": 5,
+      "seed": 2,
+      "correct": true,
+      "deadlines": {
+        "8": 5,
+        "6": 2,
+        "4": 1,
+        "2": 2
+      }
+    },
+    {
+      "size": 5,
+      "seed": 2,
+      "correct": false,
+      "deadlines": {
+        "4": 3,
+        "6": 4,
+        "2": 2
+      }
+    }
+  ],
+  "limitation": "Earliest of sampled proven deadlines, not exact distance-to-mate. Node-cap UNKNOWN can conceal earlier proof; original full histories retained. Outcome-conditioned diagnostic, no new representative accuracy claim."
+}

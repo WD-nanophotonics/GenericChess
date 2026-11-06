@@ -1,0 +1,54 @@
+{
+  "status": "NO_GO_OR_INCONCLUSIVE",
+  "seconds": 300.1015173001215,
+  "starts": 457,
+  "not_run_starts": 55,
+  "stop": "batch_cap",
+  "conditions": [
+    {
+      "size": 4,
+      "mask": 3,
+      "calls": 217,
+      "labels": {
+        "LOSS": 58,
+        "UNKNOWN": 80,
+        "WIN": 79
+      },
+      "seconds": 56.38391119800508
+    },
+    {
+      "size": 4,
+      "mask": 23,
+      "calls": 217,
+      "labels": {
+        "LOSS": 76,
+        "UNKNOWN": 73,
+        "WIN": 68
+      },
+      "seconds": 54.88410010072403
+    },
+    {
+      "size": 5,
+      "mask": 3,
+      "calls": 225,
+      "labels": {
+        "UNKNOWN": 211,
+        "LOSS": 6,
+        "WIN": 8
+      },
+      "seconds": 83.16952889948152
+    },
+    {
+      "size": 5,
+      "mask": 23,
+      "calls": 225,
+      "labels": {
+        "UNKNOWN": 200,
+        "LOSS": 13,
+        "WIN": 12
+      },
+      "seconds": 95.22352959704585
+    }
+  ],
+  "limitation": "New teacher-source feasibility only on neutral three-piece paired starts and finite8ply games. No new NN fit, transfer/strength result or outcome-selected replacement of old panels. Changed geometry also changes branching/per-node cost; report wall cost, not just counts."
+}

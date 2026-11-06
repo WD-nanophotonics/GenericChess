@@ -1,0 +1,141 @@
+{
+  "seconds": 53.02029789984226,
+  "calls": 216,
+  "not_run": 0,
+  "stop": null,
+  "conditions": [
+    {
+      "original_combination": true,
+      "total": 36,
+      "labels": {
+        "DRAW": 14,
+        "UNKNOWN": 16,
+        "WIN": 3,
+        "LOSS": 3
+      },
+      "models": [
+        {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.800000011920929,
+          "balanced_accuracy": 0.817460318406423,
+          "recall_LDW": [
+            1.0,
+            0.7857142686843872,
+            0.6666666865348816
+          ],
+          "decisive_accuracy": 0.8333333134651184,
+          "cross_entropy": 0.23318727314472198,
+          "brier": 0.1737157553434372
+        },
+        {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.8500000238418579,
+          "balanced_accuracy": 0.9285714228947958,
+          "recall_LDW": [
+            1.0,
+            0.7857142686843872,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.40266504883766174,
+          "brier": 0.2177160084247589
+        },
+        {
+          "n": 20,
+          "classes": [
+            3,
+            14,
+            3
+          ],
+          "accuracy": 0.8500000238418579,
+          "balanced_accuracy": 0.7539682586987814,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9285714030265808,
+            0.6666666865348816
+          ],
+          "decisive_accuracy": 0.6666666865348816,
+          "cross_entropy": 0.24253471195697784,
+          "brier": 0.17567183077335358
+        }
+      ]
+    },
+    {
+      "original_combination": false,
+      "total": 180,
+      "labels": {
+        "UNKNOWN": 76,
+        "DRAW": 89,
+        "WIN": 12,
+        "LOSS": 3
+      },
+      "models": [
+        {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.8942307829856873,
+          "balanced_accuracy": 0.8274032672246298,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.898876428604126,
+            0.9166666865348816
+          ],
+          "decisive_accuracy": 0.8666666746139526,
+          "cross_entropy": 0.3199266195297241,
+          "brier": 0.13855960965156555
+        },
+        {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.9038461446762085,
+          "balanced_accuracy": 0.9385143717130026,
+          "recall_LDW": [
+            1.0,
+            0.898876428604126,
+            0.9166666865348816
+          ],
+          "decisive_accuracy": 0.9333333373069763,
+          "cross_entropy": 0.32311809062957764,
+          "brier": 0.13947167992591858
+        },
+        {
+          "n": 104,
+          "classes": [
+            3,
+            89,
+            12
+          ],
+          "accuracy": 0.9038461446762085,
+          "balanced_accuracy": 0.7237827877203623,
+          "recall_LDW": [
+            0.3333333432674408,
+            0.9213483333587646,
+            0.9166666865348816
+          ],
+          "decisive_accuracy": 0.800000011920929,
+          "cross_entropy": 0.48104286193847656,
+          "brier": 0.15433652698993683
+        }
+      ]
+    }
+  ],
+  "limitation": "Finite8-ply exact subset only; UNKNOWN selection is not random;216fresh slots across108factor cells give small class support. Frozen model diagnostic, no retraining/transfer/play."
+}

@@ -1,0 +1,138 @@
+{
+  "conditions": [
+    {
+      "study": "clock8",
+      "size": 4,
+      "mask": null,
+      "calls": 256,
+      "unknown": 118,
+      "unknown_with_proven_nonloss_action": 97,
+      "unknown_without_nontrivial_root_lower_bound": 21,
+      "known_action_labels_in_unknown": {
+        "DRAW": 249,
+        "UNKNOWN": 429,
+        "LOSS": 46
+      }
+    },
+    {
+      "study": "clock8",
+      "size": 5,
+      "mask": null,
+      "calls": 128,
+      "unknown": 96,
+      "unknown_with_proven_nonloss_action": 67,
+      "unknown_without_nontrivial_root_lower_bound": 29,
+      "known_action_labels_in_unknown": {
+        "DRAW": 177,
+        "UNKNOWN": 568,
+        "LOSS": 3
+      }
+    },
+    {
+      "study": "factor4",
+      "size": 4,
+      "mask": null,
+      "calls": 216,
+      "unknown": 92,
+      "unknown_with_proven_nonloss_action": 82,
+      "unknown_without_nontrivial_root_lower_bound": 10,
+      "known_action_labels_in_unknown": {
+        "DRAW": 233,
+        "UNKNOWN": 359,
+        "LOSS": 19
+      }
+    },
+    {
+      "study": "factor4",
+      "size": 5,
+      "mask": null,
+      "calls": 0,
+      "unknown": 0,
+      "unknown_with_proven_nonloss_action": 0,
+      "unknown_without_nontrivial_root_lower_bound": 0,
+      "known_action_labels_in_unknown": {}
+    },
+    {
+      "study": "readout5",
+      "size": 4,
+      "mask": null,
+      "calls": 0,
+      "unknown": 0,
+      "unknown_with_proven_nonloss_action": 0,
+      "unknown_without_nontrivial_root_lower_bound": 0,
+      "known_action_labels_in_unknown": {}
+    },
+    {
+      "study": "readout5",
+      "size": 5,
+      "mask": null,
+      "calls": 1692,
+      "unknown": 1290,
+      "unknown_with_proven_nonloss_action": 962,
+      "unknown_without_nontrivial_root_lower_bound": 328,
+      "known_action_labels_in_unknown": {
+        "DRAW": 2637,
+        "UNKNOWN": 7324,
+        "LOSS": 44
+      }
+    },
+    {
+      "study": "supply",
+      "size": 4,
+      "mask": 3,
+      "calls": 217,
+      "unknown": 80,
+      "unknown_with_proven_nonloss_action": 27,
+      "unknown_without_nontrivial_root_lower_bound": 53,
+      "known_action_labels_in_unknown": {
+        "LOSS": 105,
+        "UNKNOWN": 294,
+        "DRAW": 35
+      }
+    },
+    {
+      "study": "supply",
+      "size": 4,
+      "mask": 23,
+      "calls": 217,
+      "unknown": 73,
+      "unknown_with_proven_nonloss_action": 45,
+      "unknown_without_nontrivial_root_lower_bound": 28,
+      "known_action_labels_in_unknown": {
+        "DRAW": 126,
+        "UNKNOWN": 417,
+        "LOSS": 27
+      }
+    },
+    {
+      "study": "supply",
+      "size": 5,
+      "mask": 3,
+      "calls": 225,
+      "unknown": 211,
+      "unknown_with_proven_nonloss_action": 80,
+      "unknown_without_nontrivial_root_lower_bound": 131,
+      "known_action_labels_in_unknown": {
+        "UNKNOWN": 1366,
+        "DRAW": 85,
+        "LOSS": 29
+      }
+    },
+    {
+      "study": "supply",
+      "size": 5,
+      "mask": 23,
+      "calls": 225,
+      "unknown": 200,
+      "unknown_with_proven_nonloss_action": 30,
+      "unknown_without_nontrivial_root_lower_bound": 170,
+      "known_action_labels_in_unknown": {
+        "UNKNOWN": 1622,
+        "DRAW": 59,
+        "LOSS": 24
+      }
+    }
+  ],
+  "inference": "For an ongoing two-player root, one certifiedDRAWaction proves rootWDL in{DRAW,WIN}; any unresolved action prevents calling it exactDRAW. These UNKNOWNs carry a sound nonloss bound, not a DRAWlabel. All previously recorded statuses remain unchanged.",
+  "consequence": "This zero-query analysis distinguishes missing exact classification from absence of any teacher information. It does not train a new loss, relabel UNKNOWN, add solver queries or establish independent label distribution; overlapping studies are not summed as independent data."
+}

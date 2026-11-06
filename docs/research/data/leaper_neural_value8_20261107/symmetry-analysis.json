@@ -1,0 +1,946 @@
+{
+  "seconds": 3.3943486001808196,
+  "roots": 270,
+  "Core_transformed_replays": 2160,
+  "solver_queries": 0,
+  "training": 0,
+  "models": [
+    {
+      "seed": 0,
+      "size": 4,
+      "roots": 160,
+      "decisive_roots": 45,
+      "top_class_changes_under_D4": 18,
+      "decisive_any_view_correct": 45,
+      "decisive_all_views_wrong": 0,
+      "mean_probability_range": 0.08883867412805557,
+      "views": [
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.918749988079071,
+          "balanced_accuracy": 0.9623188376426697,
+          "recall_LDW": [
+            1.0,
+            0.886956512928009,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.1803942322731018,
+          "brier": 0.10947658866643906
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.9536231954892477,
+          "recall_LDW": [
+            1.0,
+            0.8608695864677429,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.19334015250205994,
+          "brier": 0.12197347730398178
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.893750011920929,
+          "balanced_accuracy": 0.9507246414820353,
+          "recall_LDW": [
+            1.0,
+            0.852173924446106,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.19797684252262115,
+          "brier": 0.12748673558235168
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.918749988079071,
+          "balanced_accuracy": 0.9623188376426697,
+          "recall_LDW": [
+            1.0,
+            0.886956512928009,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.1853673756122589,
+          "brier": 0.11695508658885956
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.893750011920929,
+          "balanced_accuracy": 0.9507246414820353,
+          "recall_LDW": [
+            1.0,
+            0.852173924446106,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.18922683596611023,
+          "brier": 0.11884281784296036
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.9420289794603983,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8695651888847351,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.1992851197719574,
+          "brier": 0.12304161489009857
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.90625,
+          "balanced_accuracy": 0.956521729628245,
+          "recall_LDW": [
+            1.0,
+            0.8695651888847351,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.19796624779701233,
+          "brier": 0.1253158301115036
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.90625,
+          "balanced_accuracy": 0.956521729628245,
+          "recall_LDW": [
+            1.0,
+            0.8695651888847351,
+            1.0
+          ],
+          "decisive_accuracy": 1.0,
+          "cross_entropy": 0.17423352599143982,
+          "brier": 0.1119239330291748
+        }
+      ]
+    },
+    {
+      "seed": 0,
+      "size": 5,
+      "roots": 110,
+      "decisive_roots": 19,
+      "top_class_changes_under_D4": 2,
+      "decisive_any_view_correct": 11,
+      "decisive_all_views_wrong": 8,
+      "mean_probability_range": 0.051954276859760284,
+      "views": [
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.9090909361839294,
+          "balanced_accuracy": 0.6471306582291921,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.5263158082962036,
+          "cross_entropy": 0.29633188247680664,
+          "brier": 0.13617558777332306
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.918181836605072,
+          "balanced_accuracy": 0.6947497030099233,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.4285714328289032
+          ],
+          "decisive_accuracy": 0.5789473652839661,
+          "cross_entropy": 0.2935977876186371,
+          "brier": 0.1450655460357666
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.918181836605072,
+          "balanced_accuracy": 0.6947497030099233,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.4285714328289032
+          ],
+          "decisive_accuracy": 0.5789473652839661,
+          "cross_entropy": 0.2803853750228882,
+          "brier": 0.14158354699611664
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.5995116084814072,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.4736842215061188,
+          "cross_entropy": 0.27873533964157104,
+          "brier": 0.14038918912410736
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.918181836605072,
+          "balanced_accuracy": 0.6947497030099233,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.4285714328289032
+          ],
+          "decisive_accuracy": 0.5789473652839661,
+          "cross_entropy": 0.2928920090198517,
+          "brier": 0.13458094000816345
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.9090909361839294,
+          "balanced_accuracy": 0.6471306582291921,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.5263158082962036,
+          "cross_entropy": 0.2717524766921997,
+          "brier": 0.13933129608631134
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.9090909361839294,
+          "balanced_accuracy": 0.6471306582291921,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.5263158082962036,
+          "cross_entropy": 0.286753386259079,
+          "brier": 0.14800168573856354
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.918181836605072,
+          "balanced_accuracy": 0.6947497030099233,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.4285714328289032
+          ],
+          "decisive_accuracy": 0.5789473652839661,
+          "cross_entropy": 0.2988583445549011,
+          "brier": 0.14073608815670013
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "size": 4,
+      "roots": 160,
+      "decisive_roots": 45,
+      "top_class_changes_under_D4": 15,
+      "decisive_any_view_correct": 44,
+      "decisive_all_views_wrong": 1,
+      "mean_probability_range": 0.09582370519638062,
+      "views": [
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.893750011920929,
+          "balanced_accuracy": 0.939130445321401,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8608695864677429,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.2957872152328491,
+          "brier": 0.15190908312797546
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.893750011920929,
+          "balanced_accuracy": 0.939130445321401,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8608695864677429,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.28933995962142944,
+          "brier": 0.14534030854701996
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.893750011920929,
+          "balanced_accuracy": 0.939130445321401,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8608695864677429,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.3040187954902649,
+          "brier": 0.1568990796804428
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.9420289794603983,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8695651888847351,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.29768189787864685,
+          "brier": 0.16054250299930573
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.90625,
+          "balanced_accuracy": 0.9449275334676107,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8782608509063721,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.3324575126171112,
+          "brier": 0.1570533961057663
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.887499988079071,
+          "balanced_accuracy": 0.9362318913141886,
+          "recall_LDW": [
+            0.95652174949646,
+            0.852173924446106,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.31296294927597046,
+          "brier": 0.16405344009399414
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.90625,
+          "balanced_accuracy": 0.9449275334676107,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8782608509063721,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.2674054801464081,
+          "brier": 0.14068260788917542
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.9420289794603983,
+          "recall_LDW": [
+            0.95652174949646,
+            0.8695651888847351,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.2833337187767029,
+          "brier": 0.14596562087535858
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "size": 5,
+      "roots": 110,
+      "decisive_roots": 19,
+      "top_class_changes_under_D4": 6,
+      "decisive_any_view_correct": 7,
+      "decisive_all_views_wrong": 12,
+      "mean_probability_range": 0.060583874583244324,
+      "views": [
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8727272748947144,
+          "balanced_accuracy": 0.5119047661622366,
+          "recall_LDW": [
+            0.25,
+            1.0,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.2631579041481018,
+          "cross_entropy": 0.49284616112709045,
+          "brier": 0.21491064131259918
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8454545736312866,
+          "balanced_accuracy": 0.41300366322199505,
+          "recall_LDW": [
+            0.25,
+            0.9890109896659851,
+            0.0
+          ],
+          "decisive_accuracy": 0.15789473056793213,
+          "cross_entropy": 0.4730631709098816,
+          "brier": 0.23162280023097992
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8454545736312866,
+          "balanced_accuracy": 0.41300366322199505,
+          "recall_LDW": [
+            0.25,
+            0.9890109896659851,
+            0.0
+          ],
+          "decisive_accuracy": 0.15789473056793213,
+          "cross_entropy": 0.45421427488327026,
+          "brier": 0.21786820888519287
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8727272748947144,
+          "balanced_accuracy": 0.5119047661622366,
+          "recall_LDW": [
+            0.25,
+            1.0,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.2631579041481018,
+          "cross_entropy": 0.49869340658187866,
+          "brier": 0.21332918107509613
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8818181753158569,
+          "balanced_accuracy": 0.5396825472513834,
+          "recall_LDW": [
+            0.3333333432674408,
+            1.0,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.31578946113586426,
+          "cross_entropy": 0.4825507402420044,
+          "brier": 0.20047582685947418
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8636363744735718,
+          "balanced_accuracy": 0.4841269900401433,
+          "recall_LDW": [
+            0.1666666716337204,
+            1.0,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.21052631735801697,
+          "cross_entropy": 0.5126485228538513,
+          "brier": 0.22290444374084473
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8636363744735718,
+          "balanced_accuracy": 0.4642857164144516,
+          "recall_LDW": [
+            0.25,
+            1.0,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.21052631735801697,
+          "cross_entropy": 0.4476456642150879,
+          "brier": 0.21438418328762054
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8636363744735718,
+          "balanced_accuracy": 0.4884004940589269,
+          "recall_LDW": [
+            0.3333333432674408,
+            0.9890109896659851,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.2631579041481018,
+          "cross_entropy": 0.4667896330356598,
+          "brier": 0.21811296045780182
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "size": 4,
+      "roots": 160,
+      "decisive_roots": 45,
+      "top_class_changes_under_D4": 16,
+      "decisive_any_view_correct": 44,
+      "decisive_all_views_wrong": 1,
+      "mean_probability_range": 0.10228268057107925,
+      "views": [
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.9624999761581421,
+          "balanced_accuracy": 0.9355731010437012,
+          "recall_LDW": [
+            0.8695651888847351,
+            0.9826086759567261,
+            0.9545454382896423
+          ],
+          "decisive_accuracy": 0.9111111164093018,
+          "cross_entropy": 0.10750508308410645,
+          "brier": 0.06215556338429451
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.96875,
+          "balanced_accuracy": 0.9616600672403971,
+          "recall_LDW": [
+            0.95652174949646,
+            0.9739130139350891,
+            0.9545454382896423
+          ],
+          "decisive_accuracy": 0.9555555582046509,
+          "cross_entropy": 0.11222419887781143,
+          "brier": 0.06070141866803169
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.925000011920929,
+          "balanced_accuracy": 0.9175230662027994,
+          "recall_LDW": [
+            0.9130434989929199,
+            0.9304347634315491,
+            0.9090909361839294
+          ],
+          "decisive_accuracy": 0.9111111164093018,
+          "cross_entropy": 0.15426981449127197,
+          "brier": 0.0976913571357727
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.9624999761581421,
+          "balanced_accuracy": 0.9594203035036722,
+          "recall_LDW": [
+            0.9130434989929199,
+            0.9652174115180969,
+            1.0
+          ],
+          "decisive_accuracy": 0.9555555582046509,
+          "cross_entropy": 0.10186253488063812,
+          "brier": 0.06275497376918793
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.9624999761581421,
+          "balanced_accuracy": 0.9594203035036722,
+          "recall_LDW": [
+            0.9130434989929199,
+            0.9652174115180969,
+            1.0
+          ],
+          "decisive_accuracy": 0.9555555582046509,
+          "cross_entropy": 0.10873182117938995,
+          "brier": 0.05920832231640816
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.956250011920929,
+          "balanced_accuracy": 0.9681159456570944,
+          "recall_LDW": [
+            0.95652174949646,
+            0.947826087474823,
+            1.0
+          ],
+          "decisive_accuracy": 0.9777777791023254,
+          "cross_entropy": 0.11706290394067764,
+          "brier": 0.06958851218223572
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.949999988079071,
+          "balanced_accuracy": 0.9529644250869751,
+          "recall_LDW": [
+            0.95652174949646,
+            0.947826087474823,
+            0.9545454382896423
+          ],
+          "decisive_accuracy": 0.9555555582046509,
+          "cross_entropy": 0.12708839774131775,
+          "brier": 0.07945099472999573
+        },
+        {
+          "n": 160,
+          "classes": [
+            23,
+            115,
+            22
+          ],
+          "accuracy": 0.9624999761581421,
+          "balanced_accuracy": 0.9349143703778585,
+          "recall_LDW": [
+            0.9130434989929199,
+            0.9826086759567261,
+            0.9090909361839294
+          ],
+          "decisive_accuracy": 0.9111111164093018,
+          "cross_entropy": 0.10890885442495346,
+          "brier": 0.05973009392619133
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "size": 5,
+      "roots": 110,
+      "decisive_roots": 19,
+      "top_class_changes_under_D4": 7,
+      "decisive_any_view_correct": 12,
+      "decisive_all_views_wrong": 7,
+      "mean_probability_range": 0.05965474620461464,
+      "views": [
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.918181836605072,
+          "balanced_accuracy": 0.6507936616738638,
+          "recall_LDW": [
+            0.6666666865348816,
+            1.0,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.5263158082962036,
+          "cross_entropy": 0.38437309861183167,
+          "brier": 0.15441516041755676
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8909090757369995,
+          "balanced_accuracy": 0.5717338174581528,
+          "recall_LDW": [
+            0.5833333134651184,
+            0.9890109896659851,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.42105263471603394,
+          "cross_entropy": 0.3674987554550171,
+          "brier": 0.1596718579530716
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.5995116084814072,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.4736842215061188,
+          "cross_entropy": 0.30234044790267944,
+          "brier": 0.1371830850839615
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.9090909361839294,
+          "balanced_accuracy": 0.6031746119260788,
+          "recall_LDW": [
+            0.6666666865348816,
+            1.0,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.4736842215061188,
+          "cross_entropy": 0.3214327394962311,
+          "brier": 0.1367485076189041
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.5753968209028244,
+          "recall_LDW": [
+            0.5833333134651184,
+            1.0,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.42105263471603394,
+          "cross_entropy": 0.36577078700065613,
+          "brier": 0.14895479381084442
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.9272727370262146,
+          "balanced_accuracy": 0.698412706454595,
+          "recall_LDW": [
+            0.6666666865348816,
+            1.0,
+            0.4285714328289032
+          ],
+          "decisive_accuracy": 0.5789473652839661,
+          "cross_entropy": 0.31538912653923035,
+          "brier": 0.12514497339725494
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.8999999761581421,
+          "balanced_accuracy": 0.5995116084814072,
+          "recall_LDW": [
+            0.6666666865348816,
+            0.9890109896659851,
+            0.1428571492433548
+          ],
+          "decisive_accuracy": 0.4736842215061188,
+          "cross_entropy": 0.3243918716907501,
+          "brier": 0.15188252925872803
+        },
+        {
+          "n": 110,
+          "classes": [
+            12,
+            91,
+            7
+          ],
+          "accuracy": 0.918181836605072,
+          "balanced_accuracy": 0.6507936616738638,
+          "recall_LDW": [
+            0.6666666865348816,
+            1.0,
+            0.2857142984867096
+          ],
+          "decisive_accuracy": 0.5263158082962036,
+          "cross_entropy": 0.3668402135372162,
+          "brier": 0.1578698456287384
+        }
+      ]
+    }
+  ],
+  "limitation": "Equivalent rotated/reflected views of the same heldout roots are dependent, not new samples. Sensitivity alone does not identify the cause of cross-size failure; no ensemble or new selection of best view."
+}

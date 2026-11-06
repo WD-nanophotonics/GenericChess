@@ -1,0 +1,14 @@
+{
+  "question": "Does fixed-reference sum readout improve frozen4x4GNN value on fresh5x5roots?",
+  "seed": 20261113,
+  "size": 5,
+  "max_ply": 8,
+  "nodes": 1500,
+  "slots": 2160,
+  "batch_seconds": 600,
+  "factors": "6families x3initialpiececounts x2extraowners x3prefixlengths x20replicates, randomized before labels",
+  "changes": "one readout only: mean vs sum/16; same three4x4checkpoints, no training/fine-tuning/search/default changes",
+  "gate": "Atleast30exact decisive roots; all3seed decisive accuracies nondecreasing; mean decisive gain>=.10 and mean balanced gain>=.05. This qualifies only the readout mechanism, not transfer-vs-scratch or playing strength.",
+  "label_scope": "finite8-ply exact subset, UNKNOWN not DRAW; no outcome-based input replacement or budget refill",
+  "cost_forecast": "roughly7-10minutes including teacher+inference; hard600second dispatch bound plus one1500node in-flight call; preserve all NOT_RUN"
+}

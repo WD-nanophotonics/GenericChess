@@ -1,0 +1,37 @@
+{
+  "question": "Does frozen 4x4 value survive independent sampling of factors previously tied to slot?",
+  "size": 4,
+  "max_ply": 8,
+  "seed": 20261110,
+  "nodes": 1500,
+  "seconds": 180.0,
+  "factors": {
+    "family": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "pieces": [
+      3,
+      4,
+      5
+    ],
+    "extra_owner": [
+      0,
+      1
+    ],
+    "prefix": [
+      0,
+      1,
+      2
+    ],
+    "replicates": 2
+  },
+  "slots": 216,
+  "training": 0,
+  "no_refill": true,
+  "decisions": "Report exact coverage and decisive/balanced accuracy on seen versus new family/count/owner combinations. No transfer or strength claim; unsupported labels stay UNKNOWN."
+}

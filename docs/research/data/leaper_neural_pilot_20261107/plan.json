@@ -1,0 +1,27 @@
+{
+  "seed": 20261107,
+  "roots4": 384,
+  "roots5": 128,
+  "teacher_nodes_per_root": 1500,
+  "teacher_batch_seconds": 600.0,
+  "max_ply": 4,
+  "repetition_limit": 3,
+  "pieces": "3/4/5, cycled; two royal anchors plus ordinary leapers",
+  "samples": "nonterminal Core-legal inputs; optional0/1/2 uniform legal prefix; no outcome selection",
+  "split": "D4/color/rename-normalized current board+remainingclock groups assigned before labels,80/20",
+  "scope": "short4ply games; not full-length game strength or complete4x4 solve",
+  "training": {
+    "hidden": 24,
+    "rounds": 2,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "epochs": 160,
+    "batch_size": 32,
+    "lr": 0.003,
+    "threads": 2
+  },
+  "continuation": "Only interpret transfer if heldout4x4 balanced accuracy beats both cheap baselines by>=.05 and decisive accuracy improves. No tuning/refills after results."
+}

@@ -1,0 +1,156 @@
+{
+  "reason": "In ordinary alternating nonzero leaps with permanent removal, same side-to-move board cannot recur in2plies: opponent cannot reverse the mover-owned piece change, and capture cannot be undone. Therefore minimum return cycle4plies; third occurrence first atply8. Under globalmax_ply8/repetitionlimit3, omitted earlier-history maps cannot cause an earlier different WDL than the clock draw. This argument covers these initial0/1/2prefix datasets, not general history-sensitive games.",
+  "witness": [
+    {
+      "ply": 1,
+      "current_repetition": 1,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "ply": 2,
+      "current_repetition": 1,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "ply": 3,
+      "current_repetition": 1,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "ply": 4,
+      "current_repetition": 2,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "ply": 5,
+      "current_repetition": 2,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "ply": 6,
+      "current_repetition": 2,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "ply": 7,
+      "current_repetition": 2,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "ply": 8,
+      "current_repetition": 3,
+      "status": "repetition",
+      "winner": null
+    }
+  ],
+  "record": {
+    "actions": [
+      {
+        "from": [
+          0,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": [
+          3,
+          3
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          3,
+          2
+        ]
+      },
+      {
+        "from": [
+          0,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          0
+        ]
+      },
+      {
+        "from": [
+          3,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          3,
+          3
+        ]
+      },
+      {
+        "from": [
+          0,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": [
+          3,
+          3
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          3,
+          2
+        ]
+      },
+      {
+        "from": [
+          0,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          0
+        ]
+      },
+      {
+        "from": [
+          3,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          3,
+          3
+        ]
+      }
+    ],
+    "resigned_by": null,
+    "ruleset_fingerprint": "0defd4277e43c431ec04629ecf47868db085f15a1ebd81f61d00a2c331535087",
+    "schema_version": 1
+  }
+}

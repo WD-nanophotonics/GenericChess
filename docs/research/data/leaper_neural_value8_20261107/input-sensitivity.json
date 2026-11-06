@@ -1,0 +1,609 @@
+{
+  "seconds": 0.6347641001921147,
+  "results": [
+    {
+      "seed": 0,
+      "size": 4,
+      "intervention": "actual",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.918749988079071,
+        "balanced_accuracy": 0.9623188376426697,
+        "recall_LDW": [
+          1.0,
+          0.886956512928009,
+          1.0
+        ],
+        "decisive_accuracy": 1.0,
+        "cross_entropy": 0.180394247174263,
+        "brier": 0.10947658866643906
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 0,
+      "size": 5,
+      "intervention": "actual",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.9090909361839294,
+        "balanced_accuracy": 0.6471306582291921,
+        "recall_LDW": [
+          0.6666666865348816,
+          0.9890109896659851,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.29633188247680664,
+        "brier": 0.13617557287216187
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 0,
+      "size": 4,
+      "intervention": "explicit_size_at4",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.918749988079071,
+        "balanced_accuracy": 0.9623188376426697,
+        "recall_LDW": [
+          1.0,
+          0.886956512928009,
+          1.0
+        ],
+        "decisive_accuracy": 1.0,
+        "cross_entropy": 0.180394247174263,
+        "brier": 0.10947658866643906
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 0,
+      "size": 5,
+      "intervention": "explicit_size_at4",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.9090909361839294,
+        "balanced_accuracy": 0.6471306582291921,
+        "recall_LDW": [
+          0.6666666865348816,
+          0.9890109896659851,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.29081401228904724,
+        "brier": 0.13566382229328156
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.014689682051539421
+    },
+    {
+      "seed": 0,
+      "size": 4,
+      "intervention": "relative_leaps_at4",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.918749988079071,
+        "balanced_accuracy": 0.9623188376426697,
+        "recall_LDW": [
+          1.0,
+          0.886956512928009,
+          1.0
+        ],
+        "decisive_accuracy": 1.0,
+        "cross_entropy": 0.180394247174263,
+        "brier": 0.10947658866643906
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 0,
+      "size": 5,
+      "intervention": "relative_leaps_at4",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.9090909361839294,
+        "balanced_accuracy": 0.6471306582291921,
+        "recall_LDW": [
+          0.6666666865348816,
+          0.9890109896659851,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.2907431125640869,
+        "brier": 0.13552890717983246
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.04820384830236435
+    },
+    {
+      "seed": 0,
+      "size": 4,
+      "intervention": "absolute_coordinates_in_training_range",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.918749988079071,
+        "balanced_accuracy": 0.9623188376426697,
+        "recall_LDW": [
+          1.0,
+          0.886956512928009,
+          1.0
+        ],
+        "decisive_accuracy": 1.0,
+        "cross_entropy": 0.180394247174263,
+        "brier": 0.10947658866643906
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 0,
+      "size": 5,
+      "intervention": "absolute_coordinates_in_training_range",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.9090909361839294,
+        "balanced_accuracy": 0.6471306582291921,
+        "recall_LDW": [
+          0.6666666865348816,
+          0.9890109896659851,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.2975531220436096,
+        "brier": 0.13686183094978333
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.002700615441426635
+    },
+    {
+      "seed": 1,
+      "size": 4,
+      "intervention": "actual",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.893750011920929,
+        "balanced_accuracy": 0.939130445321401,
+        "recall_LDW": [
+          0.95652174949646,
+          0.8608695864677429,
+          1.0
+        ],
+        "decisive_accuracy": 0.9777777791023254,
+        "cross_entropy": 0.2957872152328491,
+        "brier": 0.15190908312797546
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 1,
+      "size": 5,
+      "intervention": "actual",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.8727272748947144,
+        "balanced_accuracy": 0.5119047661622366,
+        "recall_LDW": [
+          0.25,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.2631579041481018,
+        "cross_entropy": 0.49284616112709045,
+        "brier": 0.21491064131259918
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 1,
+      "size": 4,
+      "intervention": "explicit_size_at4",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.893750011920929,
+        "balanced_accuracy": 0.939130445321401,
+        "recall_LDW": [
+          0.95652174949646,
+          0.8608695864677429,
+          1.0
+        ],
+        "decisive_accuracy": 0.9777777791023254,
+        "cross_entropy": 0.2957872152328491,
+        "brier": 0.15190908312797546
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 1,
+      "size": 5,
+      "intervention": "explicit_size_at4",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.8727272748947144,
+        "balanced_accuracy": 0.5119047661622366,
+        "recall_LDW": [
+          0.25,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.2631579041481018,
+        "cross_entropy": 0.4545634090900421,
+        "brier": 0.20613281428813934
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.012282031588256359
+    },
+    {
+      "seed": 1,
+      "size": 4,
+      "intervention": "relative_leaps_at4",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.893750011920929,
+        "balanced_accuracy": 0.939130445321401,
+        "recall_LDW": [
+          0.95652174949646,
+          0.8608695864677429,
+          1.0
+        ],
+        "decisive_accuracy": 0.9777777791023254,
+        "cross_entropy": 0.2957872152328491,
+        "brier": 0.15190908312797546
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 1,
+      "size": 5,
+      "intervention": "relative_leaps_at4",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.918181836605072,
+        "balanced_accuracy": 0.7628205219904581,
+        "recall_LDW": [
+          0.75,
+          0.9670329689979553,
+          0.5714285969734192
+        ],
+        "decisive_accuracy": 0.6842105388641357,
+        "cross_entropy": 0.2571132779121399,
+        "brier": 0.12869812548160553
+      },
+      "changed_predictions": 11,
+      "mean_probability_shift": 0.23525092005729675
+    },
+    {
+      "seed": 1,
+      "size": 4,
+      "intervention": "absolute_coordinates_in_training_range",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.893750011920929,
+        "balanced_accuracy": 0.939130445321401,
+        "recall_LDW": [
+          0.95652174949646,
+          0.8608695864677429,
+          1.0
+        ],
+        "decisive_accuracy": 0.9777777791023254,
+        "cross_entropy": 0.2957872152328491,
+        "brier": 0.15190908312797546
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 1,
+      "size": 5,
+      "intervention": "absolute_coordinates_in_training_range",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.8727272748947144,
+        "balanced_accuracy": 0.5119047661622366,
+        "recall_LDW": [
+          0.25,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.2631579041481018,
+        "cross_entropy": 0.49654194712638855,
+        "brier": 0.2150871604681015
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0019225117284804583
+    },
+    {
+      "seed": 2,
+      "size": 4,
+      "intervention": "actual",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.9624999761581421,
+        "balanced_accuracy": 0.9355731010437012,
+        "recall_LDW": [
+          0.8695651888847351,
+          0.9826086759567261,
+          0.9545454382896423
+        ],
+        "decisive_accuracy": 0.9111111164093018,
+        "cross_entropy": 0.10750508308410645,
+        "brier": 0.06215556338429451
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 2,
+      "size": 5,
+      "intervention": "actual",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.918181836605072,
+        "balanced_accuracy": 0.6507936616738638,
+        "recall_LDW": [
+          0.6666666865348816,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.38437309861183167,
+        "brier": 0.15441516041755676
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 2,
+      "size": 4,
+      "intervention": "explicit_size_at4",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.9624999761581421,
+        "balanced_accuracy": 0.9355731010437012,
+        "recall_LDW": [
+          0.8695651888847351,
+          0.9826086759567261,
+          0.9545454382896423
+        ],
+        "decisive_accuracy": 0.9111111164093018,
+        "cross_entropy": 0.10750508308410645,
+        "brier": 0.06215556338429451
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 2,
+      "size": 5,
+      "intervention": "explicit_size_at4",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.918181836605072,
+        "balanced_accuracy": 0.6507936616738638,
+        "recall_LDW": [
+          0.6666666865348816,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.36137452721595764,
+        "brier": 0.14708879590034485
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.012940898537635803
+    },
+    {
+      "seed": 2,
+      "size": 4,
+      "intervention": "relative_leaps_at4",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.9624999761581421,
+        "balanced_accuracy": 0.9355731010437012,
+        "recall_LDW": [
+          0.8695651888847351,
+          0.9826086759567261,
+          0.9545454382896423
+        ],
+        "decisive_accuracy": 0.9111111164093018,
+        "cross_entropy": 0.10750508308410645,
+        "brier": 0.06215556338429451
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 2,
+      "size": 5,
+      "intervention": "relative_leaps_at4",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.8999999761581421,
+        "balanced_accuracy": 0.5952380994955698,
+        "recall_LDW": [
+          0.5,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.42105263471603394,
+        "cross_entropy": 0.4284572899341583,
+        "brier": 0.1804998368024826
+      },
+      "changed_predictions": 2,
+      "mean_probability_shift": 0.036044396460056305
+    },
+    {
+      "seed": 2,
+      "size": 4,
+      "intervention": "absolute_coordinates_in_training_range",
+      "metrics": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.9624999761581421,
+        "balanced_accuracy": 0.9355731010437012,
+        "recall_LDW": [
+          0.8695651888847351,
+          0.9826086759567261,
+          0.9545454382896423
+        ],
+        "decisive_accuracy": 0.9111111164093018,
+        "cross_entropy": 0.10750508308410645,
+        "brier": 0.06215556338429451
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0
+    },
+    {
+      "seed": 2,
+      "size": 5,
+      "intervention": "absolute_coordinates_in_training_range",
+      "metrics": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.918181836605072,
+        "balanced_accuracy": 0.6507936616738638,
+        "recall_LDW": [
+          0.6666666865348816,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.38023945689201355,
+        "brier": 0.1533983051776886
+      },
+      "changed_predictions": 0,
+      "mean_probability_shift": 0.0028790582437068224
+    }
+  ],
+  "training": 0,
+  "solver_queries": 0,
+  "interpretation": "Mechanistic sensitivity of frozen predictions ONLY: three isolated altered-input groups; no tensor intervention is a valid substitute for board size/rule metadata or a tested new network.",
+  "limitation": "Existing5x5development roots already exposed; finite exact subset; changes can be out of distribution; do not choose best perturbation and call it transfer success."
+}

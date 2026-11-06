@@ -1,0 +1,576 @@
+{
+  "status": "B_NO_GO_OR_INCONCLUSIVE",
+  "baselines": {
+    "material": {
+      "train": {
+        "n": 722,
+        "classes": [
+          109,
+          469,
+          144
+        ],
+        "accuracy": 0.7673130035400391,
+        "balanced_accuracy": 0.8230850497881571,
+        "recall_LDW": [
+          0.963302731513977,
+          0.7142857313156128,
+          0.7916666865348816
+        ],
+        "decisive_accuracy": 0.8656126260757446,
+        "cross_entropy": 0.6170481443405151,
+        "brier": 0.3805537819862366
+      },
+      "validation4": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.7749999761581421,
+        "balanced_accuracy": 0.8466403086980184,
+        "recall_LDW": [
+          1.0,
+          0.7217391133308411,
+          0.8181818127632141
+        ],
+        "decisive_accuracy": 0.9111111164093018,
+        "cross_entropy": 0.6246874332427979,
+        "brier": 0.3881564736366272
+      },
+      "zero_shot5": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.4363636374473572,
+        "balanced_accuracy": 0.44108669956525165,
+        "recall_LDW": [
+          0.9166666865348816,
+          0.4065934121608734,
+          0.0
+        ],
+        "decisive_accuracy": 0.5789473652839661,
+        "cross_entropy": 0.773202121257782,
+        "brier": 0.528408408164978
+      }
+    },
+    "structure": {
+      "train": {
+        "n": 722,
+        "classes": [
+          109,
+          469,
+          144
+        ],
+        "accuracy": 0.7659279704093933,
+        "balanced_accuracy": 0.8376718560854594,
+        "recall_LDW": [
+          0.9541284441947937,
+          0.6908315420150757,
+          0.8680555820465088
+        ],
+        "decisive_accuracy": 0.9051383137702942,
+        "cross_entropy": 0.47362110018730164,
+        "brier": 0.3027278184890747
+      },
+      "validation4": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.793749988079071,
+        "balanced_accuracy": 0.8927536209424337,
+        "recall_LDW": [
+          0.95652174949646,
+          0.7217391133308411,
+          1.0
+        ],
+        "decisive_accuracy": 0.9777777791023254,
+        "cross_entropy": 0.46377792954444885,
+        "brier": 0.29424649477005005
+      },
+      "zero_shot5": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.6181818246841431,
+        "balanced_accuracy": 0.7341270049413046,
+        "recall_LDW": [
+          0.9166666865348816,
+          0.5714285969734192,
+          0.7142857313156128
+        ],
+        "decisive_accuracy": 0.8421052694320679,
+        "cross_entropy": 0.678168535232544,
+        "brier": 0.46958082914352417
+      }
+    }
+  },
+  "models": [
+    {
+      "seed": 0,
+      "epochs": 160,
+      "seconds": 14.007359500043094,
+      "parameters": 10779,
+      "train": {
+        "n": 722,
+        "classes": [
+          109,
+          469,
+          144
+        ],
+        "accuracy": 0.9238227009773254,
+        "balanced_accuracy": 0.9528893232345581,
+        "recall_LDW": [
+          1.0,
+          0.8933901786804199,
+          0.9652777910232544
+        ],
+        "decisive_accuracy": 0.9802371263504028,
+        "cross_entropy": 0.14926254749298096,
+        "brier": 0.09800614416599274
+      },
+      "validation4": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.918749988079071,
+        "balanced_accuracy": 0.9623188376426697,
+        "recall_LDW": [
+          1.0,
+          0.886956512928009,
+          1.0
+        ],
+        "decisive_accuracy": 1.0,
+        "cross_entropy": 0.180394247174263,
+        "brier": 0.10947658866643906
+      },
+      "zero_shot5": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.9090909361839294,
+        "balanced_accuracy": 0.6471306582291921,
+        "recall_LDW": [
+          0.6666666865348816,
+          0.9890109896659851,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.29633188247680664,
+        "brier": 0.13617557287216187
+      },
+      "curve": [
+        {
+          "epoch": 1,
+          "loss": 1.0823571457426964,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.6499999761581421,
+            "balanced_accuracy": 0.5206851239005724,
+            "recall_LDW": [
+              0.08695652335882187,
+              0.747826099395752,
+              0.7272727489471436
+            ],
+            "decisive_accuracy": 0.4000000059604645,
+            "cross_entropy": 1.033888578414917,
+            "brier": 0.6304202079772949
+          }
+        },
+        {
+          "epoch": 41,
+          "loss": 0.17243066260854292,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.8999999761581421,
+            "balanced_accuracy": 0.9536231954892477,
+            "recall_LDW": [
+              1.0,
+              0.8608695864677429,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.22525842487812042,
+            "brier": 0.12962870299816132
+          }
+        },
+        {
+          "epoch": 81,
+          "loss": 0.1494857981346981,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.893750011920929,
+            "balanced_accuracy": 0.9507246414820353,
+            "recall_LDW": [
+              1.0,
+              0.852173924446106,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.2636471390724182,
+            "brier": 0.1552848517894745
+          }
+        },
+        {
+          "epoch": 121,
+          "loss": 0.14452418627170974,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.9375,
+            "balanced_accuracy": 0.9710144996643066,
+            "recall_LDW": [
+              1.0,
+              0.9130434989929199,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.19576720893383026,
+            "brier": 0.10615237802267075
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "epochs": 160,
+      "seconds": 14.069769900059327,
+      "parameters": 10779,
+      "train": {
+        "n": 722,
+        "classes": [
+          109,
+          469,
+          144
+        ],
+        "accuracy": 0.9168975353240967,
+        "balanced_accuracy": 0.9479665756225586,
+        "recall_LDW": [
+          0.963302731513977,
+          0.8805969953536987,
+          1.0
+        ],
+        "decisive_accuracy": 0.9841897487640381,
+        "cross_entropy": 0.20695355534553528,
+        "brier": 0.12623122334480286
+      },
+      "validation4": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.893750011920929,
+        "balanced_accuracy": 0.939130445321401,
+        "recall_LDW": [
+          0.95652174949646,
+          0.8608695864677429,
+          1.0
+        ],
+        "decisive_accuracy": 0.9777777791023254,
+        "cross_entropy": 0.2957872152328491,
+        "brier": 0.15190908312797546
+      },
+      "zero_shot5": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.8727272748947144,
+        "balanced_accuracy": 0.5119047661622366,
+        "recall_LDW": [
+          0.25,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.2631579041481018,
+        "cross_entropy": 0.49284616112709045,
+        "brier": 0.21491064131259918
+      },
+      "curve": [
+        {
+          "epoch": 1,
+          "loss": 1.1001934186243285,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.612500011920929,
+            "balanced_accuracy": 0.4801054000854492,
+            "recall_LDW": [
+              0.0,
+              0.7130434513092041,
+              0.7272727489471436
+            ],
+            "decisive_accuracy": 0.35555556416511536,
+            "cross_entropy": 1.0727744102478027,
+            "brier": 0.650203287601471
+          }
+        },
+        {
+          "epoch": 41,
+          "loss": 0.19507457361326982,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.925000011920929,
+            "balanced_accuracy": 0.965217391649882,
+            "recall_LDW": [
+              1.0,
+              0.895652174949646,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.17719535529613495,
+            "brier": 0.10973906517028809
+          }
+        },
+        {
+          "epoch": 81,
+          "loss": 0.13337899121221083,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.9437500238418579,
+            "balanced_accuracy": 0.9623188376426697,
+            "recall_LDW": [
+              0.95652174949646,
+              0.9304347634315491,
+              1.0
+            ],
+            "decisive_accuracy": 0.9777777791023254,
+            "cross_entropy": 0.1537146270275116,
+            "brier": 0.0831955298781395
+          }
+        },
+        {
+          "epoch": 121,
+          "loss": 0.11670589597684194,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.9312499761581421,
+            "balanced_accuracy": 0.9681159456570944,
+            "recall_LDW": [
+              1.0,
+              0.904347836971283,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.20150873064994812,
+            "brier": 0.11450918018817902
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "epochs": 160,
+      "seconds": 13.812522400170565,
+      "parameters": 10779,
+      "train": {
+        "n": 722,
+        "classes": [
+          109,
+          469,
+          144
+        ],
+        "accuracy": 0.9653739333152771,
+        "balanced_accuracy": 0.9544540246327718,
+        "recall_LDW": [
+          0.9541284441947937,
+          0.9786780476570129,
+          0.9305555820465088
+        ],
+        "decisive_accuracy": 0.9407114386558533,
+        "cross_entropy": 0.0761946439743042,
+        "brier": 0.04476334899663925
+      },
+      "validation4": {
+        "n": 160,
+        "classes": [
+          23,
+          115,
+          22
+        ],
+        "accuracy": 0.9624999761581421,
+        "balanced_accuracy": 0.9355731010437012,
+        "recall_LDW": [
+          0.8695651888847351,
+          0.9826086759567261,
+          0.9545454382896423
+        ],
+        "decisive_accuracy": 0.9111111164093018,
+        "cross_entropy": 0.10750508308410645,
+        "brier": 0.06215556338429451
+      },
+      "zero_shot5": {
+        "n": 110,
+        "classes": [
+          12,
+          91,
+          7
+        ],
+        "accuracy": 0.918181836605072,
+        "balanced_accuracy": 0.6507936616738638,
+        "recall_LDW": [
+          0.6666666865348816,
+          1.0,
+          0.2857142984867096
+        ],
+        "decisive_accuracy": 0.5263158082962036,
+        "cross_entropy": 0.38437309861183167,
+        "brier": 0.15441516041755676
+      },
+      "curve": [
+        {
+          "epoch": 1,
+          "loss": 1.102450848946611,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.581250011920929,
+            "balanced_accuracy": 0.46561264991760254,
+            "recall_LDW": [
+              0.0,
+              0.6695652008056641,
+              0.7272727489471436
+            ],
+            "decisive_accuracy": 0.35555556416511536,
+            "cross_entropy": 1.0530495643615723,
+            "brier": 0.6379024386405945
+          }
+        },
+        {
+          "epoch": 41,
+          "loss": 0.18243934870426676,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.875,
+            "balanced_accuracy": 0.9420289794603983,
+            "recall_LDW": [
+              1.0,
+              0.8260869383811951,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.28298109769821167,
+            "brier": 0.16714386641979218
+          }
+        },
+        {
+          "epoch": 81,
+          "loss": 0.164530974758629,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.918749988079071,
+            "balanced_accuracy": 0.9623188376426697,
+            "recall_LDW": [
+              1.0,
+              0.886956512928009,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.21333618462085724,
+            "brier": 0.13417090475559235
+          }
+        },
+        {
+          "epoch": 121,
+          "loss": 0.12436083739319007,
+          "validation": {
+            "n": 160,
+            "classes": [
+              23,
+              115,
+              22
+            ],
+            "accuracy": 0.9375,
+            "balanced_accuracy": 0.9710144996643066,
+            "recall_LDW": [
+              1.0,
+              0.9130434989929199,
+              1.0
+            ],
+            "decisive_accuracy": 1.0,
+            "cross_entropy": 0.1284167468547821,
+            "brier": 0.07596711814403534
+          }
+        }
+      ]
+    }
+  ],
+  "seconds": 43.128999799955636,
+  "mean_validation4_balanced_accuracy": 0.9456741280025907,
+  "best_baseline": 0.8927536209424337,
+  "continued_to_transfer": false,
+  "preprocessing_seconds": 1.1944850001018494,
+  "end_to_end_training_seconds": 44.32348520006053,
+  "limitation": "Only finite-clock games and6exposed movement pairs; labels exact for those full clocks. No5x5 finetuning, no Arena/strength/general-transfer claim. All exact5x5 data used only for untouched zero-shot description; they are not yet a5x5train/test study."
+}

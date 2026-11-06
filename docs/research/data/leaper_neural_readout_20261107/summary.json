@@ -1,0 +1,174 @@
+{
+  "status": "NO_GO_OR_INCONCLUSIVE",
+  "seconds": 600.3189767999575,
+  "slots": 1692,
+  "not_run": 468,
+  "stop": "batch_cap",
+  "labels": {
+    "UNKNOWN": 1290,
+    "DRAW": 376,
+    "LOSS": 4,
+    "WIN": 22
+  },
+  "decisive_exact": 26,
+  "pairs": [
+    {
+      "seed": 0,
+      "mean": {
+        "n": 402,
+        "classes": [
+          4,
+          376,
+          22
+        ],
+        "accuracy": 0.9552238583564758,
+        "balanced_accuracy": 0.6907640099525452,
+        "recall_LDW": [
+          0.5,
+          0.9813829660415649,
+          0.5909090638160706
+        ],
+        "decisive_accuracy": 0.5769230723381042,
+        "cross_entropy": 0.15227194130420685,
+        "brier": 0.07062200456857681
+      },
+      "fixed": {
+        "n": 402,
+        "classes": [
+          4,
+          376,
+          22
+        ],
+        "accuracy": 0.9353233575820923,
+        "balanced_accuracy": 0.8628304203351339,
+        "recall_LDW": [
+          1.0,
+          0.9521276354789734,
+          0.6363636255264282
+        ],
+        "decisive_accuracy": 0.692307710647583,
+        "cross_entropy": 0.2276114523410797,
+        "brier": 0.1012309342622757
+      }
+    },
+    {
+      "seed": 1,
+      "mean": {
+        "n": 402,
+        "classes": [
+          4,
+          376,
+          22
+        ],
+        "accuracy": 0.9477611780166626,
+        "balanced_accuracy": 0.4376208782196045,
+        "recall_LDW": [
+          0.0,
+          0.9946808218955994,
+          0.3181818127632141
+        ],
+        "decisive_accuracy": 0.26923078298568726,
+        "cross_entropy": 0.24466551840305328,
+        "brier": 0.09421803802251816
+      },
+      "fixed": {
+        "n": 402,
+        "classes": [
+          4,
+          376,
+          22
+        ],
+        "accuracy": 0.9502487778663635,
+        "balanced_accuracy": 0.5352192123730978,
+        "recall_LDW": [
+          0.25,
+          0.9920212626457214,
+          0.3636363744735718
+        ],
+        "decisive_accuracy": 0.3461538553237915,
+        "cross_entropy": 0.286039799451828,
+        "brier": 0.08946705609560013
+      }
+    },
+    {
+      "seed": 2,
+      "mean": {
+        "n": 402,
+        "classes": [
+          4,
+          376,
+          22
+        ],
+        "accuracy": 0.9626865386962891,
+        "balanced_accuracy": 0.707688589890798,
+        "recall_LDW": [
+          0.5,
+          0.9867021441459656,
+          0.6363636255264282
+        ],
+        "decisive_accuracy": 0.6153846383094788,
+        "cross_entropy": 0.16238655149936676,
+        "brier": 0.06523953378200531
+      },
+      "fixed": {
+        "n": 402,
+        "classes": [
+          4,
+          376,
+          22
+        ],
+        "accuracy": 0.9527363181114197,
+        "balanced_accuracy": 0.8008542855580648,
+        "recall_LDW": [
+          0.75,
+          0.9707446694374084,
+          0.6818181872367859
+        ],
+        "decisive_accuracy": 0.692307710647583,
+        "cross_entropy": 0.22052878141403198,
+        "brier": 0.07884044200181961
+      }
+    }
+  ],
+  "baselines": {
+    "material": {
+      "n": 402,
+      "classes": [
+        4,
+        376,
+        22
+      ],
+      "accuracy": 0.6915422677993774,
+      "balanced_accuracy": 0.6935041944185892,
+      "recall_LDW": [
+        0.75,
+        0.6941489577293396,
+        0.6363636255264282
+      ],
+      "decisive_accuracy": 0.6538461446762085,
+      "cross_entropy": 0.7273939847946167,
+      "brier": 0.46909600496292114
+    },
+    "structure": {
+      "n": 402,
+      "classes": [
+        4,
+        376,
+        22
+      ],
+      "accuracy": 0.7313432693481445,
+      "balanced_accuracy": 0.8614603479703268,
+      "recall_LDW": [
+        1.0,
+        0.7207446694374084,
+        0.8636363744735718
+      ],
+      "decisive_accuracy": 0.8846153616905212,
+      "cross_entropy": 0.5508637428283691,
+      "brier": 0.35734832286834717
+    }
+  },
+  "mean_decisive_gain": 0.08974359432856242,
+  "mean_balanced_gain": 0.12094348006778295,
+  "limitation": "Only paired readout qualification on6exposed movement families and finite8-ply exact teacher subset. No5x5training, transfer-vs-scratch, independent rules or playing-strength result. No adoption/default change."
+}

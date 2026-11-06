@@ -1,0 +1,1147 @@
+{
+  "lines": [
+    {
+      "source_slot": 29,
+      "root_label": "WIN",
+      "root_actor": 0,
+      "terminal": false,
+      "realized": null,
+      "final_status": "ongoing",
+      "steps": [
+        {
+          "actor": 0,
+          "teacher_label": "WIN",
+          "basis": "proven_winning_action",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 1,
+          "teacher_label": "LOSS",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              4
+            ],
+            "to": [
+              1,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "status": "UNKNOWN",
+          "ply": 2
+        }
+      ],
+      "rules": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "K",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "A",
+            "name": "A",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "B",
+            "name": "B",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          }
+        ],
+        "initial_position": [
+          [
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ]
+        ],
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 3,
+        "max_ply": 8,
+        "stalemate_result": "draw",
+        "board_size": 5,
+        "metadata": {},
+        "capture_disposition": "remove_from_game"
+      },
+      "final_record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6d0bdbc88c687dbf10ea04d72883d64812b361051b508432f0eab479ee4c7b58",
+        "schema_version": 1
+      }
+    },
+    {
+      "source_slot": 25,
+      "root_label": "LOSS",
+      "root_actor": 0,
+      "terminal": true,
+      "realized": "LOSS",
+      "final_status": "checkmate",
+      "steps": [
+        {
+          "actor": 0,
+          "teacher_label": "LOSS",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              4
+            ],
+            "to": [
+              1,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 1,
+          "teacher_label": "WIN",
+          "basis": "proven_winning_action",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 0,
+          "teacher_label": "LOSS",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              4
+            ],
+            "to": [
+              0,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 1,
+          "teacher_label": "WIN",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 0,
+          "teacher_label": "LOSS",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              4
+            ],
+            "to": [
+              1,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 1,
+          "teacher_label": "WIN",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              4,
+              3
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 0,
+          "teacher_label": "LOSS",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              4
+            ],
+            "to": [
+              0,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "ongoing"
+        },
+        {
+          "actor": 1,
+          "teacher_label": "WIN",
+          "basis": "all_root_actions",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              1
+            ],
+            "to": [
+              0,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "status_after": "checkmate"
+        }
+      ],
+      "rules": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "K",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "A",
+            "name": "A",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -2,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  -2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "B",
+            "name": "B",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          }
+        ],
+        "initial_position": [
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null
+          ]
+        ],
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 3,
+        "max_ply": 8,
+        "stalemate_result": "draw",
+        "board_size": 5,
+        "metadata": {},
+        "capture_disposition": "remove_from_game"
+      },
+      "final_record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "4e1c1107301505ef8b0abef4ca47cb6f883825134712cdfc25864aede4796cda",
+        "schema_version": 1
+      }
+    }
+  ],
+  "scope": "Two labelled5x5rich-leap examples, at most8plies each, same1500node teacher per step. A line checks literal Core outcome, not independent proof against every reply or playing strength."
+}

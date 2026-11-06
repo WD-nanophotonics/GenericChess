@@ -1,0 +1,32 @@
+{
+  "seconds": 39.42869099997915,
+  "calls": 72,
+  "not_run": 0,
+  "stop": null,
+  "methods": {
+    "reference": {
+      "labels": {
+        "UNKNOWN": 27,
+        "DRAW": 35,
+        "WIN": 8,
+        "LOSS": 2
+      },
+      "seconds": 16.78673570090905,
+      "nodes": 78576
+    },
+    "root_value": {
+      "labels": {
+        "UNKNOWN": 60,
+        "DRAW": 6,
+        "WIN": 5,
+        "LOSS": 1
+      },
+      "seconds": 22.528020600322634,
+      "nodes": 98776
+    }
+  },
+  "conflicts": 0,
+  "extra_exact": 0,
+  "lost_exact": 33,
+  "limitation": "Diagnostic reuses saved inputs for a new teacher comparison, not independent fitness data; equal node budgets do not imply equal wall cost or identical proof goals. Candidate does not certify all optimal actions. No NN retraining or player change."
+}

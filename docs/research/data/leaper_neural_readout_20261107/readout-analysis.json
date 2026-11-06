@@ -1,0 +1,24 @@
+{
+  "older_clock8_roots": 128,
+  "overlap_slots": [
+    61,
+    1549
+  ],
+  "overlap_count": 2,
+  "readout_balanced_gain_95": [
+    0.04088759794831276,
+    0.12123898416757584,
+    0.2022150307893753
+  ],
+  "readout_decisive_gain_95": [
+    0.03846153989434242,
+    0.08974358439445496,
+    0.14102564752101898
+  ],
+  "mean_brier_actual": 0.07669319212436676,
+  "mean_brier_fixed": 0.08984614411989848,
+  "mean_CE_actual": 0.18644133706887564,
+  "mean_CE_fixed": 0.24472667773564658,
+  "interpretation": "Primary preregistered gate remainsNO_GO:26<30decisive support and.089744<.10mean gain. Readout probability scores worsen on average. No exclusion or refill changes that result.",
+  "limitations": "Conditional exact-subset bootstrap,5000class-stratified root resamples,mean of3seed accuracies; does not treat seeds or transformed views as independent samples. Any prior-input overlap is retained and invalidates a wholly-fresh claim."
+}

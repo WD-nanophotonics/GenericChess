@@ -1,0 +1,11 @@
+{
+  "question": "Can root-only interval proof obtain more exact WDL at comparable total cost than all-action threshold proof?",
+  "slots": 72,
+  "selection": "first72 randomized factorial slots, without outcome selection",
+  "nodes": 1500,
+  "seconds": 180,
+  "model_changes": 0,
+  "training": 0,
+  "player_search_changes": 0,
+  "stop": "Any conflicting exact labels invalidates candidate; retain censored/not-run. No old label replacement or panel refill."
+}

@@ -1,5 +1,19 @@
 # GenericChess local research policy
 
+## USER 2026-11-07 — new scientific mainline
+
+The user started one manual hour on the six-part Slack Rule-Conditioned
+Pure-Leaper Neural Player direction. This supersedes the old aspiration/local
+search queue. Build the separate structural rule encoder/GNN value research
+module and reuse an applicable existing exact teacher; Core owns legality and
+terminal/history semantics. Evaluate4x4 value then4→5 transfer/scratch, then
+fixed-ABP actual play. Dedicated search rewrites require a concrete measured
+bottleneck. No product/UI default change, new worker, AUX write or scheduler
+resume. Keep the one-network/value-only initial scope; no policy/MCTS/Transformer
+expansion or piece-name/ID input. Details and current evidence belong in
+LOCAL_MAINLINE, not permanent policy or heartbeat prompts.
+
+
 ## USER 2026-11-06 — stop overengineering
 
 The user explicitly approved removing the recent latency observers, redundant
