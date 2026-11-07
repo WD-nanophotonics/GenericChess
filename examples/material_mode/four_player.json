@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "width": 8,
+  "height": 8,
+  "players": 4,
+  "piece_types": [
+    {
+      "type_id": "K",
+      "name": "Anchor",
+      "is_anchor": true,
+      "movement_atoms": [
+        {
+          "kind": "leap",
+          "offset": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            -1,
+            0
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            -1,
+            1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            0,
+            -1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            0,
+            1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            1,
+            -1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "type_id": "F",
+      "name": "Forward leap",
+      "is_anchor": false,
+      "movement_atoms": [
+        {
+          "kind": "leap",
+          "offset": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "type_id": "N",
+      "name": "Knight leaps",
+      "is_anchor": false,
+      "movement_atoms": [
+        {
+          "kind": "leap",
+          "offset": [
+            1,
+            2
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            2,
+            1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            -1,
+            2
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            -2,
+            1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            1,
+            -2
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            2,
+            -1
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            -1,
+            -2
+          ]
+        },
+        {
+          "kind": "leap",
+          "offset": [
+            -2,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "type_id": "R",
+      "name": "Orthogonal rays",
+      "is_anchor": false,
+      "movement_atoms": [
+        {
+          "kind": "ray",
+          "direction": [
+            1,
+            0
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            -1,
+            0
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            0,
+            1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            0,
+            -1
+          ],
+          "max_steps": null
+        }
+      ]
+    },
+    {
+      "type_id": "B",
+      "name": "Diagonal rays",
+      "is_anchor": false,
+      "movement_atoms": [
+        {
+          "kind": "ray",
+          "direction": [
+            1,
+            1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            -1,
+            1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            1,
+            -1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            -1,
+            -1
+          ],
+          "max_steps": null
+        }
+      ]
+    },
+    {
+      "type_id": "Q",
+      "name": "Combined rays",
+      "is_anchor": false,
+      "movement_atoms": [
+        {
+          "kind": "ray",
+          "direction": [
+            1,
+            0
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            -1,
+            0
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            0,
+            1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            0,
+            -1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            1,
+            1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            -1,
+            1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            1,
+            -1
+          ],
+          "max_steps": null
+        },
+        {
+          "kind": "ray",
+          "direction": [
+            -1,
+            -1
+          ],
+          "max_steps": null
+        }
+      ]
+    }
+  ],
+  "formation": [
+    {
+      "type_id": "N",
+      "square": [
+        2,
+        0
+      ]
+    },
+    {
+      "type_id": "K",
+      "square": [
+        3,
+        0
+      ]
+    },
+    {
+      "type_id": "F",
+      "square": [
+        4,
+        0
+      ]
+    }
+  ],
+  "ray_multiplier": "0.6",
+  "purchase_penalty": true,
+  "repetition_limit": 4,
+  "max_ply": 512,
+  "starting_player": 0
+}
